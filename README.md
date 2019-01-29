@@ -1,2 +1,2 @@
 # Parallax
-Web Application usinf Databases for Mariana Sala I.A.P. Querétaro, México.
+Web Application using Databases,PHP,JavaScript and HTML5 for Mariana Sala I.A.P. Querétaro, México.
