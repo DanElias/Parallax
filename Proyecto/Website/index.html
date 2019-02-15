@@ -29,8 +29,8 @@
         <script type="text/javascript" src="js/materialize.js"></script>
         <script>
             $(document).ready(function(){$('.parallax').parallax();}) ;
-            $(document).ready(function(){$('.carousel').carousel();});
-            $('.carousel.carousel-slider').carousel({ullWidth: true,indicators: true});
+            $(document).ready(function(){$('.carousel').carousel({fullWidth: true,indicators: true}).css('height',$(window).height());});
+            $('.carousel.carousel-slider').carousel({fullWidth: true,indicators: true});
             $(document).ready(function(){$('.materialboxed').materialbox();});
             $(document).ready(function(){$('.tooltipped').tooltip();});
         
@@ -49,15 +49,16 @@
             </div>
         </nav>
         
-        <div class="parallax-container z-depth-4">
-            <header id="home_header"> 
-            <section>
-                <h3 class="my_header_text">Lab 7 DAW </h3>
-            </section>
-            </header>
-            <div class="parallax "><img src="images/si5.jpg" width="100%" >
-            </div>
+        <div class="full-slider">
+                <div class="carousel carousel-slider" data-indicators="true">
+                    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+                    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+                    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+                    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+                </div>
         </div>
+        
+        
         
         <div class="section white z-depth-5">
             
