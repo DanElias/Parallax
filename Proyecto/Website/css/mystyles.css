@@ -1,0 +1,425 @@
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('fonts/bebasneue-regular-webfont.woff2') format('woff2'),
+    url('fonts/bebasneue-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'aller';
+    src: url('fonts/aller_rg-webfont.woff2') format('woff2'),
+    url('fonts/aller_rg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin: 0
+}
+
+.nav_text{
+    font-family: Staatliches;
+    font-size: 1.3em;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: background-color: #16181c;;
+}
+
+audio{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+table{
+    margin: 0;
+    border: 0;
+}
+
+header{
+    background-size: 1350px 820px;
+    height: 250px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-family: 'bebas_neueregular';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 70px;
+    color: white;
+    padding-top: 40px;
+}
+
+h6{
+    margin: 0;
+    opacity: 0;
+}
+
+.textfield{
+    font-size: 30px;
+    font-family: aller;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+    color: gray;
+}
+
+.basiclabel{
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+}
+
+#labelmistake, .labelmistake{
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+    color: indianred;
+}
+
+#labelcorrect,.labelcorrect{
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+    color: limegreen;
+}
+
+#labelsecurity{
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+    color: limegreen;
+}
+
+
+.mybuttons{
+    font-family: aller;
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+    color: white;
+    background-color: #3a3b51;
+    border: none;
+}
+
+
+.first_table{
+   width: 100%;
+    text-align: center;
+    background-color: rgba(4, 7, 12,0.75);
+    table-layout: fixed;
+    word-wrap: break-word;
+    padding-top: 10px;
+}
+
+.second_table{
+   width: 100%;
+    text-align: left;
+    background-color: rgba(4, 7, 12,0.75);
+    table-layout: fixed;
+    word-wrap: break-word;
+    height: 100%;
+}
+
+.third_table{
+   width: 100%;
+    text-align: left;
+    background-color: rgba(4, 7, 12,0.75);
+}
+
+.img_cell{
+    padding: 20px;
+}
+
+.table_text{
+    font-family: 'aller';
+    font-size: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.information{
+    font-family: 'bebas_neueregular';
+    font-size: 30px;
+    color: white;
+    margin-top: 0px;
+}
+
+video {
+    position: inherit;
+    min-width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+#home_header{
+    background-image: url('img/sunset_header.jpg');
+    
+}
+
+#home_body{
+    background-image: url('img/code.jpg');
+}
+
+#passwords_header{
+    background-image: url('img/password.jpg');
+}
+
+#passwords_body{
+    background-image: url('img/code.jpg');
+}
+
+#tienda_header{
+    background-image: url('img/code.jpg');
+    text-shadow: 4px 4px darkslategray;
+    background-color: 
+}
+
+#tienda_body{
+    background-image: url('img/code.jpg');
+}
+
+.body{
+    height: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.parallax2 {
+  /* The image used */
+  
+
+  /* Full height */
+    height: auto;
+    height: 100%;
+    margin: 0;
+    transform-style: preserve-3d;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    will-change: transform;
+    will-change:scroll-position;
+    transition-timing-function:steps();
+background-color: white;
+ 
+}
+
+.information{
+    box-sizing: content-box;
+    height: 100%;
+    height: auto;
+}
+
+footer{
+    height: 350px;
+    background-color: #16181c;
+    padding: 50px;
+    font-family: 'bebas_neueregular';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 30px;
+    color:white;
+}
+
+section{
+    margin: 0;
+}
+
+input{
+    font-family: 'bebas_neueregular';
+}
+
+.boton_sumar, .boton_restar{
+    font-family:'bebas_neueregular';
+    border-color: rgba(255,255,255,1);
+    border-radius: 50px 50px 50px 50px;
+    background-color: #141e2b;
+    font-size: 30px;
+    color: white;
+}
+
+.boton_restar{
+    font-size: 30px;
+}
+
+#carrito{
+    font-size: 20px;
+}
+
+#validar1, #validar2, #validar3{
+    color:limegreen;
+}
+
+#cita{
+    font-size: 20px;
+}
+
+#watermark{
+    z-index: 99;
+    position: fixed;
+    width:10%;
+    bottom:0px;
+    left:90%;
+    margin:0 auto;
+    opacity: 0.5;
+}
+
+.my_header_text{
+    font-family: Staatliches;
+    padding-top: 1em;
+    font-size: 2em;
+}
+
+.my_normal_text{
+    font-size:1.5em;
+    font-family: Ubuntu;
+  text-align: justify;
+  text-justify: inter-word;
+    
+}
+
+.my_heading_text{
+    font-family: Staatliches;
+    color: #1e2a3d;
+}
+
+.my_table{
+    background-color: rgba(19, 28, 43, 0.7);
+    height: auto;
+    height: 100%;
+    font-family: Ubuntu;
+    color: white;
+    font-size: 1.5em;
+    align-content: center;
+    text-align: center;
+}
+
+.my_parallax_container{
+    height: auto;
+    height: 100%;
+}
+
+.card_text{
+    color: rgba(19, 28, 43, 1);
+}
+
+.my_card{
+    opacity: 1;
+    margin: 0 auto;
+    border: 0;
+    width: 70%;
+    font-size: 0.8em;
+    height: 100%
+}
+
+.my_card_title{
+    font-family: Staatliches;
+    font-size: 200%;
+    text-shadow: 3px 3px rgba(19, 28, 43, 0.8);
+    
+}
+
+.my_table_title{
+    font-family: Staatliches;
+    font-size: 400%;   
+}
+
+.my_table_title2{
+    font-family: Staatliches;
+    font-size: 300%;   
+}
+
+
+
+.my_copyright{
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.table_icon{
+    vertical-align: baseline;
+   font-size: 120% !important;
+}
+
+.my_footer{
+    background-color: #0d131c;
+    font-family: Staatliches;
+}
+
+.logo_foot{
+    vertical-align: bottom;
+}
+
+.carousel_item_text_align{
+    padding: 50px;
+    text-align: justify;
+  text-justify: inter-word;
+}
+
+
+
+
