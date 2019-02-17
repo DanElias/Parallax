@@ -30,7 +30,9 @@ body{
 .nav_text{
     font-family: Staatliches;
     font-size: 1.3em;
+    color: #2d5c85;
 }
+
 
 
 ul {
@@ -318,14 +320,12 @@ input{
     font-size: 20px;
 }
 
-#watermark{
+.watermark{
     z-index: 99;
-    position: fixed;
-    width:10%;
-    bottom:0px;
-    left:90%;
-    margin:0 auto;
-    opacity: 0.5;
+    
+    margin-left: 4em;
+    border: 0;
+    padding: 0;
 }
 
 .my_header_text{
@@ -406,7 +406,7 @@ input{
 }
 
 .my_footer{
-    background-color: #0d131c;
+    background-color: #2d5d86;
     font-family: Staatliches;
 }
 
@@ -419,6 +419,17 @@ input{
     text-align: justify;
   text-justify: inter-word;
 }
+
+.logo_principal{
+    padding: 5%;
+    width: 60%;
+    position: absolute;
+    z-index: 99;
+    margin-left: 20%;
+}
+
+
+
 
 
 

@@ -4272,7 +4272,7 @@ table span.badge {
 
 nav {
   color: #fff;
-  background-color: #223047;
+  background-color: white;
   width: 100%;
   height: 56px;
   line-height: 56px;
@@ -5051,6 +5051,8 @@ small {
 
 .tabs.tabs-transparent .indicator {
   background-color: #fff;
+     text-align: center;
+    align-items: center;
 }
 
 .tabs.tabs-fixed-width {
@@ -5112,6 +5114,8 @@ small {
   height: 2px;
   background-color: #f6b2b5;
   will-change: left, right;
+     text-align: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 992px) {
@@ -8290,8 +8294,10 @@ input[type=range]::-ms-thumb {
 }
 
 .slider.fullscreen ul.indicators {
-  z-index: 2;
-  bottom: 30px;
+    z-index: 2;
+    bottom: 30px;
+    text-align: center;
+    align-items: center;
 }
 
 .slider .slides {
@@ -8355,10 +8361,14 @@ input[type=range]::-ms-thumb {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
   border-radius: 50%;
+    text-align: center;
+    align-items: center;
 }
 
 .slider .indicators .indicator-item.active {
   background-color: #4CAF50;
+     text-align: center;
+    align-items: center;
 }
 
 .carousel {
@@ -8389,6 +8399,8 @@ input[type=range]::-ms-thumb {
 
 .carousel.carousel-slider .carousel-fixed-item.with-indicators {
   bottom: 68px;
+     text-align: center;
+    align-items: center;
 }
 
 .carousel.carousel-slider .carousel-item {
@@ -8430,6 +8442,8 @@ input[type=range]::-ms-thumb {
   right: 0;
   bottom: 0;
   margin: 0;
+    text-align: center;
+    align-items: center;
 }
 
 .carousel .indicators .indicator-item {
@@ -8443,10 +8457,14 @@ input[type=range]::-ms-thumb {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
   border-radius: 50%;
+     text-align: center;
+    align-items: center;
 }
 
 .carousel .indicators .indicator-item.active {
   background-color: #fff;
+     text-align: center;
+    align-items: center;
 }
 
 .carousel.scrolling .carousel-item .materialboxed,
