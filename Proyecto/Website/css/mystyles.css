@@ -356,6 +356,7 @@ input{
     font-size: 1.5em;
     align-content: center;
     text-align: center;
+    
 }
 
 .my_parallax_container{
@@ -393,10 +394,14 @@ input{
     font-size: 300%;   
 }
 
-
+.my_title_icon{
+    font-size: 1.5em;
+    vertical-align: text-bottom;
+    
+}
 
 .my_copyright{
-    font-size: 0.8em;
+    font-size: 0.5em;
     text-align: center;
 }
 
@@ -428,6 +433,77 @@ input{
     margin-left: 20%;
 }
 
+.my_side_nav{
+    background-color: #1c2e4c;
+    color: white;
+    font-family: Staatliches;
+    font-size: 1.5em;
+}
+
+.wrapper {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+      .wrapper {
+            padding-left: 0px;
+        }
+    }
+
+.my_modal_header{
+    font-family: Staatliches;
+    font-size: 2.5em;
+    color: white;
+    padding-left: 1em;
+    padding: 0.5em;
+}
+
+.my_modal_header1{
+    background-color: #342d96;
+    margin: 0 auto;
+    border: 0;
+    position: fixed;
+    z-index: 99;
+}
+
+.my_modal_header_eliminar{
+    background-color: #f44336;
+    margin: 0 auto;
+    border: 0;
+    position: fixed;
+    z-index: 99;
+}
+
+
+.my_modal_header2{
+    font-family: Staatliches;
+    font-size: 2.5em;
+    color: #ff2348;
+}
+
+.my_modal{
+    background-color: white;
+}
+
+
+
+.my_modal_description2{
+    text-align: center;
+}
+
+.my_modal_buttons{
+    text-align: center;
+}
+
+.my_modal_content{
+    color: #1c2e4c;
+}
+        
+
+
+.first_col_data_table{
+    padding-left: 1em;
+}
 
 
 

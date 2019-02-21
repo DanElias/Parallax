@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+        
+        <!--Esta es mi hoja de estilos css-->
+        <link type="text/css" rel="stylesheet" href="css/mystyles.css"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <title>Mariana Sala I.A.P.</title>
+        
+        <!--<link rel="shortcut icon" type="image/jpg" href="images/si1.jpg"/>-->
+        
+    </head>
+
+    <body>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script>
+            $(document).ready(function(){$('.parallax').parallax();}) ;
+            $(document).ready(function(){$('.carousel').carousel({fullWidth: true, autoplay: true, indicators: false}).css('height',$(window).height()*0.8);});
+            $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
+            autoplay();
+            function autoplay() { 
+                $('.carousel').carousel('next'); 
+                setTimeout(autoplay, 4500); 
+            } 
+            $(document).ready(function(){$('.materialboxed').materialbox();});
+            $(document).ready(function(){$('.tooltipped').tooltip();});
+            $(document).ready(function(){$('.sidenav').sidenav();});
+            $(document).ready(function(){$('.modal').modal();});
+        </script>
+        
+        <div class="wrapper ">
+        <nav>
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
+                    <li><a href="index.html" class="nav_text hoverable">Sitio Web</a></li>
+                    <li><a href="#" class="nav_text hoverable">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        
+       <ul id="slide-out" class="sidenav sidenav-fixed z-depth-3">
+            <li>
+                <div class="user-view my_side_nav">
+                    <div class="background">
+                        <img src="images/f1.jpg">
+                    </div>
+                    <a href="#user"><img class="circle" src="images/adminpic.jpg"></a>
+                    <a href="#name"><span class="white-text">Admin - Mariana Sala</span></a>
+                    <a href="#email"><span class="white-text email"></span></a>
+                </div>
+            </li>
+            <!--<li><a class="subheader">Subheader</a></li>-->
+            <li><a class="waves-effect hoverable" href="admin.html"><i class="material-icons">home</i>Inicio</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect hoverable" href="beneficiarios.html"><i class="material-icons">accessibility_new</i>Beneficiarios</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect hoverable" href="reportes_beneficiarios.html"><i class="material-icons">assessment</i>Reportes de Beneficiarios</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect hoverable" href="egresos.html"><i class="material-icons">monetization_on</i>Egresos</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect hoverable" href="reportes_egresos.html"><i class="material-icons">description</i>Reportes de Egresos</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect hoverable" href="proveedores.html"><i class="material-icons">group</i>Proveedores</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect hoverable" href="cuentas.html"><i class="material-icons">receipt</i>Cuentas Contables</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect hoverable" href="eventos.html"><i class="material-icons">calendar_today</i>Eventos</a></li>
+            <li><div class="divider"></div></li>
+            </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large "><i class="material-icons">menu</i></a>
+        
+        
+        <div class="wrapper">
+        
+        <div class="section white z-depth-5">
+            <div class="row container">
+                <h2 class="header my_heading_text">Bienvenido 👋</h2>
+                <p class="grey-text text-darken-3 lighten-2 my_normal_text">Hoy es 20 de febrero de 2019<br> Actualmente son las 16:35 hrs.</p>
+            </div>
+        </div>
+    
+        </div><!--div del wrapper que empieza después del sidenav-->
+        
+        <script>
+            
+        </script>
+    
+    </body>
+</html>
