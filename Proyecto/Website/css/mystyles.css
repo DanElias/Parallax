@@ -490,11 +490,16 @@ width: 100%;
 }
 
 
-
-
-
 .my_modal_header_eliminar{
     background-color: #f44336;
+    margin: 0 auto;
+    border: 0;
+    position: fixed;
+    z-index: 99;
+}
+
+.my_modal_header_estado{
+    background-color: #00bfa5;
     margin: 0 auto;
     border: 0;
     position: fixed;
