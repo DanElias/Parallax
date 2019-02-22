@@ -41,6 +41,7 @@
             $(document).ready(function(){$('.modal').modal();});
             $(document).ready(function(){$('.datepicker').datepicker();});
             $(document).ready(function(){$('select').formSelect();});
+            $(document).ready(function(){$('.tabs').tabs();});
         </script>
         
         <div class="wrapper ">
@@ -88,21 +89,39 @@
         
         <div class="wrapper">
         
-        <div class="section white z-depth-5">
-            <div class="row container">
+        <div class="section white z-depth-5 margin_section">
+            <div class="sections_header">
                 <h2 class="header my_heading_text">Beneficiarios<i class="material-icons my_title_icon">accessibility_new</i></h2>
                 
-                
-                <!-- Este row es de los botones al principio de la sección beneficiarios-->
-                 <div class="row">
-                    <div class="col s6">
-                        <a class="waves-effect waves-light btn teal accent-4 hoverable">Consultar Beneficiarios <i class="material-icons">description</i></a>
-                     </div>
-                    <div class="col s6">
-                        <!-- Modal Trigger -->
-                        <a class="waves-effect waves-light btn modal-trigger indigo darken-1 hoverable" href="#modal1">Agregar Beneficiario<i class="material-icons right">person_add</i></a>     
-                    </div>
+                <div class="row no_margin">
+                    <form class="col s8">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <i class="material-icons prefix my_search">search</i>
+                          <input id="icon_prefix" type="text" class="validate">
+                          <label for="icon_prefix">First Name</label>
+                        </div>   
+                      </div>
+                    </form>
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger amber darken-2 hoverable" href="#modal1">Agregar Beneficiario<i class="material-icons right">person_add</i></a>  
                 </div>
+                        
+                
+                 <div class="row">
+	               <div class="col s12 no-padding">
+		              <ul class="tabs mytabs white">
+			                 <li class="tab mytab"><a href="#test1">ID</a></li>
+                             <li class="tab mytab"><a href="#test2">Nombre</a></li>
+                             <li class="tab mytab"><a href="#test3">Edad</a></li>
+                             <li class="tab mytab"><a href="#test4">Sexo</a></li>
+                             <li class="tab mytab"><a href="#test4">Grado</a></li>
+                             <li class="tab mytab"><a href="#test4">Grupo</a></li>
+                             <li class="tab mytab"><a href="#test4">Status</a></li>
+                             <li class="tab mytab"><a href="#test4">Estado</a></li>
+                        </ul>
+                    </div>
+                 </div>
                 
                 
                 <!-- Modal Structure -->
@@ -277,7 +296,7 @@
             <div>
             <table class="stripped highlight responsive-table my_data_table">
                 <thead>
-                    <tr>
+                    <tr class="my_table_headers">
                         <th class="first_col_data_table">ID</th>
                         <th>Nombre</th>
                         <th>Edad</th>
@@ -288,6 +307,7 @@
                         <th>Teléfono</th>
                         <th>Status</th>
                         <th>Editar</th>
+                        <th>Estado</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
@@ -304,8 +324,13 @@
                         <td>4421234567</td>
                         <td>Medio</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-2 hoverable" href="#modal1">
+                            <button class="waves-effect waves-light btn modal-trigger light-blue  darken-3 hoverable" href="#modal1">
                                     <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger hoverable" href="#modal1">
+                                    <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
@@ -326,8 +351,13 @@
                         <td>4421234567</td>
                         <td>Medio</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-2 hoverable" href="#modal1">
+                            <button class="waves-effect waves-light btn modal-trigger light-blue darken-3 hoverable" href="#modal1">
                                     <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger hoverable" href="#modal1">
+                                    <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
@@ -348,8 +378,13 @@
                         <td>4421234567</td>
                         <td>Medio</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-2 hoverable" href="#modal1">
+                            <button class="waves-effect waves-light btn modal-trigger light-blue darken-3 hoverable" href="#modal1">
                                     <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger hoverable" href="#modal1">
+                                    <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>

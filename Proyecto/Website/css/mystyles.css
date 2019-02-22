@@ -356,7 +356,12 @@ input{
     font-size: 1.5em;
     align-content: center;
     text-align: center;
-    
+}
+
+.my_data_table{
+    margin: 20px;
+    table-layout: fixed;
+width: 100%;
 }
 
 .my_parallax_container{
@@ -506,7 +511,47 @@ input{
 }
 
 
+.mytabs .mytab a{
+            color:#1c2e4c;
+            font-family: aller;
+            font-size: 1.2em;
+        } /*Black color to the text*/
+
+        .mytabs .mytab a:hover {
+            background-color:skyblue;
+            color:black;
+        } /*Text color on hover*/
+
+        .mytabs .mytab a.active {
+            background-color:white;
+            color:#1c2e4c;
+        } /*Background and text color when a tab is active*/
+
+        .mytabs .myindicator {
+            background-color:#1c2e4c;
+        } /*Color of underline*/
 
 
+.sections_header{
+    padding-left: 5em;
+}
 
+.my_search{
+    color: #1c2e4c;
+}
 
+.no_margin{
+    margin: 0 auto;
+}
+
+.margin_section{
+    margin: auto;
+    border: white;
+    border-width: thick;
+    width: 100%;
+    
+}
+
+.my_table_headers{
+    color: dimgray;
+}
