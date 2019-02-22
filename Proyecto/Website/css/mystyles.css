@@ -332,6 +332,8 @@ input{
     font-family: Staatliches;
     padding-top: 1em;
     font-size: 2em;
+    
+    
 }
 
 .my_normal_text{
@@ -344,7 +346,7 @@ input{
 
 .my_heading_text{
     font-family: Staatliches;
-    color: #1e2a3d;
+    color: #0d3d63;
 }
 
 .my_table{
@@ -455,12 +457,21 @@ width: 100%;
         }
     }
 
+.my_modal_header_row{
+    position: fixed;
+    z-index: 99;
+    border: 0;
+    margin: 0 auto;
+    
+}
+
 .my_modal_header{
     font-family: Staatliches;
     font-size: 2.5em;
     color: white;
     padding-left: 1em;
     padding: 0.5em;
+    z-index: 99;
 }
 
 .my_modal_header1{
@@ -468,8 +479,19 @@ width: 100%;
     margin: 0 auto;
     border: 0;
     position: fixed;
-    z-index: 99;
+    
 }
+
+.my_modal_header_editar{
+    background-color: #ffb300;
+    margin: 0 auto;
+    border: 0;
+    position: fixed;
+}
+
+
+
+
 
 .my_modal_header_eliminar{
     background-color: #f44336;
@@ -484,6 +506,7 @@ width: 100%;
     font-family: Staatliches;
     font-size: 2.5em;
     color: #ff2348;
+    margin: 0 auto;
 }
 
 .my_modal{
@@ -513,8 +536,11 @@ width: 100%;
 
 .mytabs .mytab a{
             color:#1c2e4c;
-            font-family: aller;
-            font-size: 1.2em;
+            font-family: Roboto;
+            font-size: 1em;
+    display:-webkit-flex;
+    display: -ms-flexbox;
+    display: flex
         } /*Black color to the text*/
 
         .mytabs .mytab a:hover {
@@ -537,7 +563,7 @@ width: 100%;
 }
 
 .my_search{
-    color: #1c2e4c;
+    color: #0d3d63;
 }
 
 .no_margin{

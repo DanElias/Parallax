@@ -7,6 +7,8 @@
     
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap">
         
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
@@ -93,18 +95,18 @@
             <div class="sections_header">
                 <h2 class="header my_heading_text">Beneficiarios<i class="material-icons my_title_icon">accessibility_new</i></h2>
                 
-                <div class="row no_margin">
-                    <form class="col s8">
-                      <div class="row">
-                        <div class="input-field col s6">
+                <div class="row no_margin my_search">
+                    <form class="col s8 my_search">
+                      <div class="row my_search">
+                        <div class="input-field col s6 my_search ">
                           <i class="material-icons prefix my_search">search</i>
-                          <input id="icon_prefix" type="text" class="validate">
-                          <label for="icon_prefix">First Name</label>
+                          <input id="icon_prefix" type="text" class="validate my_search">
+                          <label for="icon_prefix" class="my_search">First Name</label>
                         </div>   
                       </div>
                     </form>
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger amber darken-2 hoverable" href="#modal1">Agregar Beneficiario<i class="material-icons right">person_add</i></a>  
+                    <a class="waves-effect waves-light btn modal-trigger blue  hoverable" href="#modal1">Agregar Beneficiario<i class="material-icons right">person_add</i></a>  
                 </div>
                         
                 
@@ -125,10 +127,14 @@
                 
                 
                 <!-- Modal Structure -->
-                <div id="modal1" class="modal modal-fixed-footer my_modal">
-                    <div  class="my_modal_header1 z-depth-2 col s12">
-                         <h4 class="my_modal_header">Agregar Beneficiario</h4>  
-                    </div><br>  
+                <div id="modal1" class="modal modal-fixed-footer my_modal ">
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header1 z-depth-2 col s12">
+                            <h4 class="my_modal_header ">Agregar Beneficiario</h4>  
+                        </div> 
+                    </div>
+                    <br><br><br>
+                    
                     <div class="modal-content my_modal_content">
                         <p>Aquí puede agregar un nuevo beneficiario</p>
                         
@@ -263,14 +269,17 @@
                     </div>
                 </div>
                 
+                
                 <!-- Modal Structure --> <!--Los modals puedes estar en cualquier parte del html y tienen un boton trigger que tiene como atributo el id del modal al que está invocando-->
                 <div id="modal2" class="modal  my_modal">
-                    <div  class="my_modal_header_eliminar z-depth-2 col s12">
-                         <h4 class="my_modal_header">Eliminar</h4>  
-                    </div><br>  
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header_eliminar z-depth-2 col s12">
+                             <h4 class="my_modal_header">Eliminar</h4>  
+                        </div>
+                    </div><br><br>
                     <div class="modal-content my_modal_content">
                         <br><br>
-                        <h5 class="my_modal_description2">¿Seguro que quieres eliminar este elemento?</h5>
+                        <h5 class="my_modal_description2">¿Quieres eliminar este elemento de manera permanente, nunca volverlo a ver?</h5>
                         <br>
                         <br>
                         
@@ -291,6 +300,149 @@
                     </div>
                 </div>
                 
+                 <!-- Modal Structure -->
+                <div id="modal3" class="modal modal-fixed-footer my_modal ">
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header_editar z-depth-2 col s12">
+                            <h4 class="my_modal_header ">Editar Beneficiario</h4>  
+                        </div> 
+                    </div>
+                    <br><br><br>
+                    
+                    <div class="modal-content my_modal_content">
+                        <p>Aquí puede editar al beneficiario</p>
+                        
+                         <!-- Inicio del form de beneficiarios-->
+                        <form class="col s12">
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                  <i class="material-icons prefix">recent_actors</i>
+                                  <input  type="text" class="validate">
+                                  <label>Matrícula</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">face</i>
+                                    <input  type="text" class="validate">
+                                    <label for="icon_prefix">Nombres</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input type="tel" class="validate">
+                                    <label>Apellidos</label>
+                                </div>
+                            </div>
+                            
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                  <i class="material-icons prefix">cake</i>
+                                  <input  type="text" class="validate">
+                                  <label>Fecha de nacimiento</label>
+                                </div>
+
+                                 <div class="input-field col s6">
+                                     <i class="material-icons prefix">group</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Hombre</option>
+                                        <option value="2">Mujer</option>
+                                    </select>
+                                    <label >Sexo</label>
+                                </div>
+                            </div>
+                            
+                             <div class="row">
+                                <div class="input-field col s6">
+                                         <i class="material-icons prefix">school</i>
+                                        <select>
+                                            <option value="" disabled selected></option>
+                                            <option value="1">1ro Preescolar</option>
+                                            <option value="2">2do Preescolar</option>
+                                            <option value="3">3ro Preescolar</option>
+                                            <option value="4">4to Preescolar</option>
+                                            <option value="5">1ro Primaria</option>
+                                            <option value="6">2do Primaria</option>
+                                            <option value="7">3ro Primaria</option>
+                                            <option value="8">4to Primaria</option>
+                                            <option value="9">5to Primaria</option>
+                                            <option value="10">6to Primaria</option>
+                                            <option value="11">1ro Secundaria</option>
+                                            <option value="12">2do Secundaria</option>
+                                            <option value="13">3ro Secundaria</option>
+                                        </select>
+                                        <label>Grado Escolar</label>
+                                </div>
+                                <div class="input-field col s6">
+                                     <i class="material-icons prefix">business</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Grupo 1</option>
+                                        <option value="2">Grupo 2</option>
+                                        <option value="3">Grupo 3</option>
+                                    </select>
+                                    <label >Grupo (Mariana Sala)</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">supervised_user_circle</i>
+                                    <input type="text" class="validate">
+                                    <label>Nombre(s) del Padre o Tutor</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <i class="material-icons prefix">phone_iphone</i>
+                                  <input type="text" class="validate">
+                                  <label>Teléfono</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                     <i class="material-icons prefix">device_hub</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Bajo</option>
+                                        <option value="2">Medio Bajo</option>
+                                        <option value="3">Medio</option>
+                                    </select>
+                                    <label >Estatus Socioeconómico</label>
+                                </div>
+                                 <!-- Switch -->
+                                  <div class="switch col s6 center vertical-align">
+                                    <label>
+                                      Beneficiario Inactivo
+                                      <input type="checkbox">
+                                      <span class="lever"></span>
+                                      Beneficiario Activo!
+                                    </label>
+                                  </div>
+                            </div>
+                            
+                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+                            <div class="my_modal_buttons">
+                                <div class="row">
+                                    <div class="col s6">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                                        <i class="material-icons right">check_circle_outline</i>
+                                    </button>
+                                    </div>
+                                    <div class="col s6">
+                                        <button class="btn waves-effect waves-light red" type="submit" name="action">Cancelar
+                                            <i class="material-icons right">highlight_off</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    <!-- Final del form de beneficiarios-->
+    
+                    </div>
+                </div>
+                
             </div>
             
             <div>
@@ -306,8 +458,8 @@
                         <th>Nombre Tutor</th>
                         <th>Teléfono</th>
                         <th>Status</th>
-                        <th>Editar</th>
                         <th>Estado</th>
+                        <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
@@ -324,17 +476,18 @@
                         <td>4421234567</td>
                         <td>Medio</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger light-blue  darken-3 hoverable" href="#modal1">
-                                    <i class="material-icons right">edit</i>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger hoverable" href="#modal1">
+                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" href="#modal3">
                                     <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger red hoverable" href="#modal2">
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
                                 <i class="material-icons right">delete</i>
                             </button>
                         </td>
@@ -351,17 +504,18 @@
                         <td>4421234567</td>
                         <td>Medio</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger light-blue darken-3 hoverable" href="#modal1">
-                                    <i class="material-icons right">edit</i>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger hoverable" href="#modal1">
+                            <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal3">
                                     <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger red hoverable" href="#modal2">
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
                                 <i class="material-icons right">delete</i>
                             </button>
                         </td>
@@ -378,20 +532,22 @@
                         <td>4421234567</td>
                         <td>Medio</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger light-blue darken-3 hoverable" href="#modal1">
-                                    <i class="material-icons right">edit</i>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger hoverable" href="#modal1">
+                            <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal3">
                                     <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger red hoverable" href="#modal2">
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
                                 <i class="material-icons right">delete</i>
                             </button>
                         </td>
+                       
                     </tr>
                     
                 </tbody>
