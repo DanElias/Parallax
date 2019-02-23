@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+
+    <!--Hoja de estilos de Parallax Web Solutions-->
+    <link type="text/css" rel="stylesheet" href="css/loginCSS.css"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="shortcut icon" href="images/Logo_Insitucion.ico" />
+    <!-- Titulo de la pagina web-->
+
+    <title>Login</title>
+
+
+    <!--<link rel="shortcut icon" type="image/jpg" href="images/si1.jpg"/>-->
+
+</head>
+
+<body ng-app="mainModule" ng-controller="mainController">
+<div id="login-page" class="row">
+    <div class="col s12 z-depth-6 card-panel">
+        <form class="login-form">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mail_outline</i>
+                    <input class="validate" id="email" type="email">
+                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input id="password" type="password">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <a href="admin.html" class="btn waves-effect waves-light col s12">LogoIn</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m6 l6">
+                    <p class="margin right-align medium-small"><a href="#">Olvidaste la contraseña?</a></p>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src = js/loginScript.js></script>
+
+
+</html>
