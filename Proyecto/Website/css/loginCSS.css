@@ -1,6 +1,6 @@
 html,
 body {
-    height: 100%;
+    height: 50%;
 }
 html {
     display: table;
@@ -9,11 +9,23 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
-    background: #4ECDC4;
+    background: #7dcdc4;
 }
 
 #login-page {
-    width: 500px;
+    width: 600px;
+}
+
+h2{
+    text-align: center;
+    color: white;
+}
+img.logo-login{
+    width: 40%;
+    position: relative;
+    align: center;
+
+
 }
 
 .card {
