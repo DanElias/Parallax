@@ -30,38 +30,24 @@
     </head>
 
     <body>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.js"></script>
-        <script>
-            $(document).ready(function(){$('.parallax').parallax();}) ;
-            $(document).ready(function(){$('.carousel').carousel({fullWidth: true, autoplay: true, indicators: false}).css('height',$(window).height()*0.8);});
-            $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
-            autoplay();
-            function autoplay() { 
-                $('.carousel').carousel('next'); 
-                setTimeout(autoplay, 4500); 
-            } 
-            $(document).ready(function(){$('.materialboxed').materialbox();});
-            $(document).ready(function(){$('.tooltipped').tooltip();});
-            $(document).ready(function(){$('.sidenav').sidenav();});
-            $(document).ready(function(){$('.modal').modal();});
-            $(document).ready(function(){$('.datepicker').datepicker();});
-            $(document).ready(function(){$('select').formSelect();});
-            $(document).ready(function(){$('.tabs').tabs();});
-        </script>
         
         <div class="wrapper ">
-        <nav>
-            <div class="nav-wrapper">
-                <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
-                    <li><a href="index.html" class="nav_text hoverable">Sitio Web</a></li>
-                    <li><a href="#" class="nav_text hoverable">Cerrar sesión</a></li>
-                </ul>
-            </div>
-        </nav>
+
+            <!--Barra superior Nav-->
+            <nav>
+                <div class="nav-wrapper">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
+                        <li><a href="index.html" class="nav_text hoverable">Sitio Web</a></li>
+                        <li><a href="#" class="nav_text hoverable">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        
+
+        <!--Menu Izqueirdo-->
         <ul id="slide-out" class="sidenav sidenav-fixed z-depth-3">
+
+            <!--Logo y fondo de color-->
             <li>
                 <div class="user-view my_side_nav">
                     <div class="background">
@@ -69,10 +55,12 @@
                     </div>
                     <a href="#user"><img class="circle" src="images/adminpic.jpg"></a>
                     <a href="#name"><span class="white-text">Admin - Mariana Sala</span></a>
-                    <a href="#email"><span class="white-text email"></span></a>
+                   <!-- <a href="#email"><span class="white-text email"></span></a>   Campo inesesario -->
                 </div>
             </li>
-            <!--<li><a class="subheader">Subheader</a></li>-->
+            <!--<li><a class="subheader">Subheader</a></li> Subhead inesesario-->
+
+            <!--Campos del menu lateral-->
             <li><a class="waves-effect hoverable" href="admin.html"><i class="material-icons">home</i>Inicio</a></li>
             <li><div class="divider"></div></li>
             <li><a class="waves-effect hoverable" href="beneficiarios.html"><i class="material-icons">accessibility_new</i>Beneficiarios</a></li>
@@ -89,7 +77,9 @@
             <li><div class="divider"></div></li>
             <li><a class="waves-effect hoverable" href="eventos.html"><i class="material-icons">calendar_today</i>Eventos</a></li>
             <li><div class="divider"></div></li>
-            </ul>
+
+        </ul>
+        <!--Fin de Menu lateral -->
         <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large "><i class="material-icons">menu</i></a>
         
         
@@ -110,10 +100,11 @@
                       </div>
                     </form>
                     <!-- Modal Trigger -->
+                    <!--Boton para agregar beneficiario-->
                     <a class="waves-effect waves-light btn modal-trigger blue  hoverable" href="#modal1">Agregar Beneficiario<i class="material-icons right">person_add</i></a>  
                 </div>
                         
-                
+                <!--Barra de seleccion de filtros-->
                  <div class="row">
 	               <div class="col s12 no-padding">
 		              <ul class="tabs mytabs white">
@@ -130,11 +121,11 @@
                  </div>
                 
                 
-                <!-- Modal Structure -->
+                <!-- Form de Beneficiarios, se abre un cuadro tipo pop-->
                 <div id="modal1" class="modal modal-fixed-footer my_modal ">
                     <div class="row my_modal_header_row">
                         <div  class="my_modal_header1 z-depth-2 col s12">
-                            <h4 class="my_modal_header ">Agregar Beneficiario</h4>  
+                            <h4 class="my_modal_header ">Agregar Beneficiarios</h4>
                         </div> 
                     </div>
                     <br><br><br>
@@ -144,7 +135,8 @@
                         
                          <!-- Inicio del form de beneficiarios-->
                         <form class="col s12">
-                            
+
+                            <!--Area para Matriucla-->
                             <div class="row">
                                 <div class="input-field col s12">
                                   <i class="material-icons prefix">recent_actors</i>
@@ -153,19 +145,22 @@
                                 </div>
                             </div>
 
+                            <!--Area para Nombre-->
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">face</i>
                                     <input  type="text" class="validate">
                                     <label for="icon_prefix">Nombres</label>
                                 </div>
+
+                                <!--Area para Apellidos-->
                                 <div class="input-field col s6">
                                     <input type="tel" class="validate">
                                     <label>Apellidos</label>
                                 </div>
                             </div>
-                            
 
+                            <!--Area para Fecha de nacieminto-->
                             <div class="row">
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">cake</i>
@@ -173,6 +168,7 @@
                                   <label>Fecha de nacimiento</label>
                                 </div>
 
+                                <!--Area para Sexo-->
                                  <div class="input-field col s6">
                                      <i class="material-icons prefix">group</i>
                                     <select>
@@ -183,7 +179,8 @@
                                     <label >Sexo</label>
                                 </div>
                             </div>
-                            
+
+                            <!--Area para Grado escolar-->
                              <div class="row">
                                 <div class="input-field col s6">
                                          <i class="material-icons prefix">school</i>
@@ -205,6 +202,8 @@
                                         </select>
                                         <label>Grado Escolar</label>
                                 </div>
+
+                                 <!--Area para Grupo-->
                                 <div class="input-field col s6">
                                      <i class="material-icons prefix">business</i>
                                     <select>
@@ -216,13 +215,16 @@
                                     <label >Grupo (Mariana Sala)</label>
                                 </div>
                             </div>
-                            
+
+                            <!--Area para nombre del padre o tututor-->
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">supervised_user_circle</i>
                                     <input type="text" class="validate">
                                     <label>Nombre(s) del Padre o Tutor</label>
                                 </div>
+
+                                <!--Area para Telefono-->
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">phone_iphone</i>
                                   <input type="text" class="validate">
@@ -230,6 +232,7 @@
                                 </div>
                             </div>
 
+                            <!--Area para Estatus-->
                             <div class="row">
                                 <div class="input-field col s6">
                                      <i class="material-icons prefix">device_hub</i>
@@ -241,7 +244,7 @@
                                     </select>
                                     <label >Estatus Socioeconómico</label>
                                 </div>
-                                 <!-- Switch -->
+                                 <!-- Switch activo o inactivo-->
                                   <div class="switch col s6 center vertical-align">
                                     <label>
                                       Beneficiario Inactivo
@@ -267,12 +270,12 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!--Fin de todos los campos-->
                         </form>
-                    <!-- Final del form de beneficiarios-->
-    
                     </div>
                 </div>
-                
+                <!-- Final del form de beneficiarios-->
                 
                 <!-- Modal Structure --> <!--Los modals puedes estar en cualquier parte del html y tienen un boton trigger que tiene como atributo el id del modal al que está invocando-->
                 <div id="modal2" class="modal  my_modal">
@@ -305,7 +308,7 @@
                 </div>
                 
                 
-                 <!-- Modal Structure -->
+                 <!-- Form para editar beneficiario-->
                 <div id="modal3" class="modal modal-fixed-footer my_modal ">
                     <div class="row my_modal_header_row">
                         <div  class="my_modal_header_editar z-depth-2 col s12">
@@ -317,9 +320,10 @@
                     <div class="modal-content my_modal_content">
                         <p>Aquí puede editar al beneficiario</p>
                         
-                         <!-- Inicio del form de beneficiarios-->
+                         <!-- Inicio del form de Editar beneficiarios-->
                         <form class="col s12">
-                            
+
+                            <!--Editar Matricula-->
                             <div class="row">
                                 <div class="input-field col s12">
                                   <i class="material-icons prefix">recent_actors</i>
@@ -328,6 +332,7 @@
                                 </div>
                             </div>
 
+                            <!--Editar Nombre-->
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">face</i>
@@ -339,8 +344,8 @@
                                     <label>Apellidos</label>
                                 </div>
                             </div>
-                            
 
+                            <!--Editar Fecha de nacieminto-->
                             <div class="row">
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">cake</i>
@@ -348,6 +353,7 @@
                                   <label>Fecha de nacimiento</label>
                                 </div>
 
+                                <!--Editar Sexo-->
                                  <div class="input-field col s6">
                                      <i class="material-icons prefix">group</i>
                                     <select>
@@ -358,28 +364,31 @@
                                     <label >Sexo</label>
                                 </div>
                             </div>
-                            
+
+                            <!--Editar Grado escolar-->
                              <div class="row">
                                 <div class="input-field col s6">
-                                         <i class="material-icons prefix">school</i>
-                                        <select>
-                                            <option value="" disabled selected></option>
-                                            <option value="1">1ro Preescolar</option>
-                                            <option value="2">2do Preescolar</option>
-                                            <option value="3">3ro Preescolar</option>
-                                            <option value="4">4to Preescolar</option>
-                                            <option value="5">1ro Primaria</option>
-                                            <option value="6">2do Primaria</option>
-                                            <option value="7">3ro Primaria</option>
-                                            <option value="8">4to Primaria</option>
-                                            <option value="9">5to Primaria</option>
-                                            <option value="10">6to Primaria</option>
-                                            <option value="11">1ro Secundaria</option>
-                                            <option value="12">2do Secundaria</option>
-                                            <option value="13">3ro Secundaria</option>
+                                    <i class="material-icons prefix">school</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">1ro Preescolar</option>
+                                        <option value="2">2do Preescolar</option>
+                                        <option value="3">3ro Preescolar</option>
+                                        <option value="4">4to Preescolar</option>
+                                        <option value="5">1ro Primaria</option>
+                                        <option value="6">2do Primaria</option>
+                                        <option value="7">3ro Primaria</option>
+                                        <option value="8">4to Primaria</option>
+                                        <option value="9">5to Primaria</option>
+                                        <option value="10">6to Primaria</option>
+                                        <option value="11">1ro Secundaria</option>
+                                        <option value="12">2do Secundaria</option>
+                                        <option value="13">3ro Secundaria</option>
                                         </select>
-                                        <label>Grado Escolar</label>
+                                    <label>Grado Escolar</label>
                                 </div>
+
+                                 <!--Editar grupo-->
                                 <div class="input-field col s6">
                                      <i class="material-icons prefix">business</i>
                                     <select>
@@ -391,23 +400,27 @@
                                     <label >Grupo (Mariana Sala)</label>
                                 </div>
                             </div>
-                            
+
+                            <!--Editar Padre o tutor-->
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">supervised_user_circle</i>
                                     <input type="text" class="validate">
                                     <label>Nombre(s) del Padre o Tutor</label>
                                 </div>
+
+                                <!--Editar telefono-->
                                 <div class="input-field col s6">
-                                  <i class="material-icons prefix">phone_iphone</i>
-                                  <input type="text" class="validate">
-                                  <label>Teléfono</label>
+                                    <i class="material-icons prefix">phone_iphone</i>
+                                    <input type="text" class="validate">
+                                    <label>Teléfono</label>
                                 </div>
                             </div>
 
+                            <!--Editar Estatus-->
                             <div class="row">
                                 <div class="input-field col s6">
-                                     <i class="material-icons prefix">device_hub</i>
+                                    <i class="material-icons prefix">device_hub</i>
                                     <select>
                                         <option value="" disabled selected></option>
                                         <option value="1">Bajo</option>
@@ -416,18 +429,19 @@
                                     </select>
                                     <label >Estatus Socioeconómico</label>
                                 </div>
-                                 <!-- Switch -->
+
+                                 <!-- Switch de activo o inactivo-->
                                   <div class="switch col s6 center vertical-align">
-                                    <label>
-                                      Beneficiario Inactivo
-                                      <input type="checkbox">
-                                      <span class="lever"></span>
-                                      Beneficiario Activo!
-                                    </label>
+                                      <label>
+                                          Beneficiario Inactivo
+                                          <input type="checkbox">
+                                          <span class="lever"></span>
+                                          Beneficiario Activo!
+                                      </label>
                                   </div>
                             </div>
                             
-                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+                            <!-botones para guardar o cancelar edicion-->
                             <div class="my_modal_buttons">
                                 <div class="row">
                                     <div class="col s6">
@@ -435,6 +449,7 @@
                                         <i class="material-icons right">check_circle_outline</i>
                                     </button>
                                     </div>
+
                                     <div class="col s6">
                                         <button class="btn waves-effect waves-light red" type="submit" name="action">Cancelar
                                             <i class="material-icons right">highlight_off</i>
@@ -444,7 +459,6 @@
                             </div>
                         </form>
                     <!-- Final del form de beneficiarios-->
-    
                     </div>
                 </div>
                 
@@ -454,6 +468,8 @@
                              <h4 class="my_modal_header">Estado Beneficiario</h4>  
                         </div>
                     </div><br><br>
+
+
                     <div class="modal-content my_modal_content">
                         <br><br><br>
                         <h5 class="my_modal_description2">Cambiar el estado del beneficiario</h5>
@@ -461,7 +477,7 @@
                         <br>
                         <br>
                         <div>
-                        <!-- Switch -->
+                        <!-- Switch para activar o desactivar estado del beneficiario-->
                               <div class="switch col s6 center vertical-align">
                                 <label>
                                   Beneficiario Inactivo
@@ -471,13 +487,16 @@
                                 </label>
                               </div>
                         </div><br><br>
-                        
+
+                        <!--Cambiar estado-->
                         <div class="my_modal_buttons">
                             <div class="row">
                                 <div class="col s6">
-                                <button class="modal-close btn waves-effect waves-light" type="submit" name="action">Cambiar Estado<i class="material-icons right">check_circle_outline</i>
-                                </button>
+                                    <button class="modal-close btn waves-effect waves-light" type="submit" name="action">Cambiar Estado<i class="material-icons right">check_circle_outline</i>
+                                    </button>
                                 </div>
+
+                                <!--No cambiar estado-->
                                 <div class="col s6">
                                     <button class="modal-close btn waves-effect waves-light red" type="submit" name="action">NO Cambiar Estado
                                         <i class="material-icons right">highlight_off</i>
@@ -487,117 +506,118 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
-            
-            <div>
-            <table class="stripped highlight responsive-table my_data_table">
-                <thead>
-                    <tr class="my_table_headers">
-                        <th class="first_col_data_table">ID</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Sexo</th>
-                        <th>Grado Escolar</th>
-                        <th>Grupo</th>
-                        <th>Nombre Tutor</th>
-                        <th>Teléfono</th>
-                        <th>Status</th>
-                        <th>Estado</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    <tr>
-                        <td class="first_col_data_table">A120</td>
-                        <td>Carlos Sánchez Martínez</td>
-                        <td>12</td>
-                        <td>Hombre</td>
-                        <td>1ro Primaria</td>
-                        <td>Cachorros</td>
-                        <td>Manuel Sánchez</td>
-                        <td>4421234567</td>
-                        <td>Medio</td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" href="#modal4">
-                                    <i class="material-icons right">power_settings_new</i>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
-                                    <i class="material-icons right">edit</i>
-                            </button>
-                        </td>
-                        
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
-                                <i class="material-icons right">delete</i>
-                            </button>
-                        </td>
-                    </tr>
-                    
-                     <tr>
-                        <td class="first_col_data_table">A120</td>
-                        <td>Carlos Sánchez Martínez</td>
-                        <td>12</td>
-                        <td>Hombre</td>
-                        <td>1ro Primaria</td>
-                        <td>Cachorros</td>
-                        <td>Manuee Sánchez</td>
-                        <td>4421234567</td>
-                        <td>Medio</td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal4">
-                                    <i class="material-icons right">power_settings_new</i>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
-                                    <i class="material-icons right">edit</i>
-                            </button>
-                        </td>
-                        
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
-                                <i class="material-icons right">delete</i>
-                            </button>
-                        </td>
-                    </tr>
-                    
-                     <tr>
-                        <td class="first_col_data_table">A120</td>
-                        <td>Carlos Sánchez Martínez</td>
-                        <td>12</td>
-                        <td>Hombre</td>
-                        <td>1ro Primaria</td>
-                        <td>Cachorros</td>
-                        <td>Manuee Sánchez</td>
-                        <td>4421234567</td>
-                        <td>Medio</td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal4">
-                                    <i class="material-icons right">power_settings_new</i>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
-                                    <i class="material-icons right">edit</i>
-                            </button>
-                        </td>
-                        
-                        <td>
-                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
-                                <i class="material-icons right">delete</i>
-                            </button>
-                        </td>
-                       
-                    </tr>
-                    
-                </tbody>
-            </table>
-                </div>
+            <!--Descripcoion de cada columna-->
+            <div>
+                <table class="stripped highlight responsive-table my_data_table">
+                    <thead>
+                        <tr class="my_table_headers">
+                            <th class="first_col_data_table">ID</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Sexo</th>
+                            <th>Grado Escolar</th>
+                            <th>Grupo</th>
+                            <th>Nombre Tutor</th>
+                            <th>Teléfono</th>
+                            <th>Status</th>
+                            <th>Estado</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+
+                    <!--Nombre ejemplo, esto es desechable-->
+                    <tbody>
+                        <tr>
+                            <td class="first_col_data_table">A120</td>
+                            <td>Carlos Sánchez Martínez</td>
+                            <td>12</td>
+                            <td>Hombre</td>
+                            <td>1ro Primaria</td>
+                            <td>Cachorros</td>
+                            <td>Manuel Sánchez</td>
+                            <td>4421234567</td>
+                            <td>Medio</td>
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" href="#modal4">
+                                        <i class="material-icons right">power_settings_new</i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                        <i class="material-icons right">edit</i>
+                                </button>
+                            </td>
+
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
+                                    <i class="material-icons right">delete</i>
+                                </button>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td class="first_col_data_table">A120</td>
+                            <td>Carlos Sánchez Martínez</td>
+                            <td>12</td>
+                            <td>Hombre</td>
+                            <td>1ro Primaria</td>
+                            <td>Cachorros</td>
+                            <td>Manuee Sánchez</td>
+                            <td>4421234567</td>
+                            <td>Medio</td>
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal4">
+                                        <i class="material-icons right">power_settings_new</i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                        <i class="material-icons right">edit</i>
+                                </button>
+                            </td>
+
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
+                                    <i class="material-icons right">delete</i>
+                                </button>
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td class="first_col_data_table">A120</td>
+                            <td>Carlos Sánchez Martínez</td>
+                            <td>12</td>
+                            <td>Hombre</td>
+                            <td>1ro Primaria</td>
+                            <td>Cachorros</td>
+                            <td>Manuee Sánchez</td>
+                            <td>4421234567</td>
+                            <td>Medio</td>
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal4">
+                                        <i class="material-icons right">power_settings_new</i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                        <i class="material-icons right">edit</i>
+                                </button>
+                            </td>
+
+                            <td>
+                                <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
+                                    <i class="material-icons right">delete</i>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
             
         </div>
             
@@ -608,4 +628,8 @@
         </script>
     
     </body>
+    <!--Scripts Java-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src = js/beneficiariosScript.js></script>
 </html>
