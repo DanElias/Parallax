@@ -1,0 +1,18 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.js"></script>
+<script>
+    $(document).ready(function(){$('.parallax').parallax();}) ;
+    $(document).ready(function(){$('.carousel').carousel({fullWidth: true, autoplay: true, indicators: false}).css('height',$(window).height()*0.8);});
+    $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
+    autoplay();
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+    }
+    $(document).ready(function(){$('.materialboxed').materialbox();});
+    $(document).ready(function(){$('.tooltipped').tooltip();});
+    $(document).ready(function(){$('.sidenav').sidenav();});
+    $(document).ready(function(){$('.modal').modal();});
+</script>
+
+</html>

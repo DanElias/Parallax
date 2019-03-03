@@ -1,7 +1,8 @@
 <?php
 
+//Funciones de util para login
 function header_html($titulo="LogIn") {
-    include("views/_header_login.html");
+    include("../views/_header_login.html");
 }
 
 function login($email, $password) {
