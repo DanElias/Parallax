@@ -39,3 +39,8 @@ img.logo-login{
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.colores{
+    color:red;
+    text-align: center;
+}

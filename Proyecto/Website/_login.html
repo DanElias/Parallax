@@ -12,8 +12,15 @@
     <div class="col s12 z-depth-6 card-panel">
 
         <!--Inicio de formulario-->
-        <form class="login-form">
+        <form class="login-form"  action="login.php" method="POST">
             <div class="row"></div>
+
+
+            <?php if(isset($error)): ?>
+            <div class="colores">
+                <?=$error ?>
+            </div>
+            <?php endif ?>
 
                 <!--Campo para mail -->
             <div class="row">
@@ -36,8 +43,9 @@
 
             <!--Campo para entrar una vez llenado los campos -->
             <div class="row">
+
                 <div class="input-field col s12">
-                    <a href="admin.html" class="btn waves-effect waves-light col s12">Entrar</a>
+                    <button type="submit" class="btn waves-effect waves-light col s12" id="submit" name="submit" >Entrar</button>
                 </div>
             </div>
 
