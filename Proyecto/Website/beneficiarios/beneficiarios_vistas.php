@@ -1,10 +1,9 @@
-<? php
+<?php
 
     require_once("../admin/util_Admin.php");
 
-    header_html;
+    header_html();
     
-
-
-
+    sidenav_html();
+    
 ?>

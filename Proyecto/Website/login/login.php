@@ -13,7 +13,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
     $usuario = login(htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["password"]));
     if ($usuario != "") {
         $_SESSION["usuario"] = $usuario; //Asignacion de usaurio y contraseña en util_Login.php
-        header("location:../admin/admin.php");
+        header("location:../admin/admin_vista.php");
     } else {
         $error = "Usuario y/o contraseña incorrectos";
         header_html();
