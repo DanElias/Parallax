@@ -30,7 +30,7 @@ body{
 .nav_text{
     font-family: Staatliches;
     font-size: 1.3em;
-    color: #2d5c85;
+    color: white;
 }
 
 
@@ -332,8 +332,6 @@ input{
     font-family: Staatliches;
     padding-top: 1em;
     font-size: 2em;
-    
-    
 }
 
 .my_normal_text{
@@ -360,10 +358,23 @@ input{
     text-align: center;
 }
 
+.my_table2{
+    background-color: rgba(63, 127, 191, 0.7);
+    height: auto;
+    height: 100%;
+    font-family: Ubuntu;
+    color: white;
+    font-size: 1.5em;
+    align-content: center;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+}
+
 .my_data_table{
     margin: 20px;
     table-layout: fixed;
-width: 100%;
+    width: 100%;
 }
 
 .my_parallax_container{
@@ -381,7 +392,7 @@ width: 100%;
     border: 0;
     width: 70%;
     font-size: 0.8em;
-    height: 100%
+    height: 100%;
 }
 
 .my_card_title{
@@ -438,13 +449,6 @@ width: 100%;
     position: absolute;
     z-index: 99;
     margin-left: 20%;
-}
-
-.my_side_nav{
-    background-color: #1c2e4c;
-    color: white;
-    font-family: Staatliches;
-    font-size: 1.5em;
 }
 
 .wrapper {
@@ -538,31 +542,6 @@ width: 100%;
     padding-left: 1em;
 }
 
-
-.mytabs .mytab a{
-            color:#1c2e4c;
-            font-family: Roboto;
-            font-size: 1em;
-    display:-webkit-flex;
-    display: -ms-flexbox;
-    display: flex
-        } /*Black color to the text*/
-
-        .mytabs .mytab a:hover {
-            background-color:skyblue;
-            color:black;
-        } /*Text color on hover*/
-
-        .mytabs .mytab a.active {
-            background-color:white;
-            color:#1c2e4c;
-        } /*Background and text color when a tab is active*/
-
-        .mytabs .myindicator {
-            background-color:#1c2e4c;
-        } /*Color of underline*/
-
-
 .sections_header{
     padding-left: 5em;
 }
@@ -586,3 +565,30 @@ width: 100%;
 .my_table_headers{
     color: dimgray;
 }
+
+.modal{
+    background-color:white;
+}
+
+.close_style{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    cursor:pointer; 
+}
+
+.my_alert{
+    z-index: 999 !important;
+}
+
+
+.flexbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
