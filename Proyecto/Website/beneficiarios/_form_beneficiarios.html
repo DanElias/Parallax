@@ -18,7 +18,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">face</i>
-                                    <input  type="text" class="validate">
+                                    <input  type="text" class="validate" required>
                                     <label for="icon_prefix">Nombre</label>
                                 </div>
                             </div>
@@ -27,13 +27,13 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">cake</i>
-                                  <input  type="date" name="fecha_nacimiento">
+                                  <input  type="date" name="fecha_nacimiento"  required>
                                   <label>Fecha de nacimiento</label>
                                 </div>
 
                                  <div class="input-field col s6">
                                      <i class="material-icons prefix">group</i>
-                                    <select>
+                                    <select  required>
                                         <option value="" disabled selected></option>
                                         <option value="1">Hombre</option>
                                         <option value="2">Mujer</option>
@@ -45,7 +45,7 @@
                              <div class="row">
                                 <div class="input-field col s6">
                                          <i class="material-icons prefix">school</i>
-                                        <select>
+                                        <select  required>
                                             <option value="" disabled selected></option>
                                             <option value="1">1ro Preescolar</option>
                                             <option value="2">2do Preescolar</option>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="input-field col s6">
                                      <i class="material-icons prefix">business</i>
-                                    <select>
+                                    <select  required>
                                         <option value="" disabled selected></option>
                                         <option value="1">Grupo 1</option>
                                         <option value="2">Grupo 2</option>
@@ -76,11 +76,22 @@
                             </div>
                             
                             <!-- Aqui va un botoncito de agregar tutor-->
+                            <div class="row">
+                                 <div class="col s12 m12">
+                                    <!-- Modal Trigger -->
+                                    <div class="my_add_button_container responsive">
+                                        <a class="waves-effect waves-light btn modal-trigger blue darken-2 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes agregar un beneficiario" href="#_form_eliminar_beneficiarios">Agregar Tutor<i class="material-icons right">person_add</i></a>  
+                                        <!-- Aquí faltaría que después de que se haya registrado el tutor en el
+                                        el form de beneficiario aparezca como: se ha guardado el tutor y aparezca solo el nombre del tutor-->
+                                    </div>
+                                </div>
+                            </div>
+                           
                             
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">home</i>
-                                    <input  type="text" class="validate">
+                                    <input  type="text" class="validate"  required>
                                     <label for="icon_prefix">Domicilio</label>
                                 </div>
                             </div>
@@ -89,7 +100,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">domain</i>
-                                    <input  type="text" class="validate">
+                                    <input  type="text" class="validate"  required>
                                     <label for="icon_prefix">Nombre Escuela</label>
                                 </div>
                             </div>
@@ -97,14 +108,14 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">local_hospital</i>
-                                    <input  type="text" class="validate">
+                                    <input  type="text" class="validate"  required>
                                     <label for="icon_prefix">Enfermedades y Alergias</label>
                                 </div>
                             </div>
                             
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">attach_money</i>
+                                    <i class="material-icons prefix" required >attach_money</i>
                                     <input  type="text" class="validate">
                                     <label for="icon_prefix">Cuota</label>
                                 </div>
@@ -113,7 +124,7 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                     <i class="material-icons prefix">device_hub</i>
+                                     <i class="material-icons prefix"  required>device_hub</i>
                                     <select>
                                         <option value="" disabled selected></option>
                                         <option value="1">Bajo</option>
@@ -142,7 +153,7 @@
                                     </button>
                                     </div>
                                     <div class="col s6">
-                                        <button class="btn waves-effect waves-light red" type="submit" name="action">Cancelar
+                                        <button class="btn waves-effect waves-light red modal-close">Cancelar
                                             <i class="material-icons right">highlight_off</i>
                                         </button>
                                     </div>

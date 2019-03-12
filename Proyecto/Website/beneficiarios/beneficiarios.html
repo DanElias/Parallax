@@ -1,7 +1,7 @@
 
         <div class="wrapper">
         
-        <div class="section white z-depth-5 margin_section">
+        <div class="section white  my_section">
             <div class="sections_header">
                 
                 <div class="row">
@@ -20,7 +20,7 @@
                 <form class="col s8 my_search">
                 <div class="row no_margin my_search">
                       <div class="row my_search">
-                        <div class="input-field col s6 my_search tooltipped" data-position="bottom" data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a las casillas seleccionadas y la palabra introducida">
+                        <div class="input-field col s6 my_search tooltipped" data-position="bottom" data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra introducida y a las casillas de los filtros de búsqueda seleccionados">
                           <i class="material-icons prefix my_search">search</i>
                           <input id="icon_prefix" type="text" class="validate my_search">
                           <label for="icon_prefix" class="my_search">Nombre</label>
@@ -80,7 +80,7 @@
             
             
                 
-            <div class='table-wrapper responsive-table'>
+            <div class='table-wrapper responsive-table new_data_table'>
             <table class="stripped highlight responsive-table data_table fixed_header">
                 <thead>
                     <tr class="my_table_headers">
@@ -89,14 +89,14 @@
                         <th>Edad</th>
                         <th>Fecha Nac.</th>
                         <th>Sexo</th>
-                        <th>Grado Escolar</th>
+                        <th>Grado</th>
                         <th>Grupo</th>
                         <th>Cuota</th>
                         <th>Domicilio</th>
                         <th>Status</th>
                         <th>Escuela</th>
-                        <th>Enfer./ Alergias</th>
-                        <th>Nombre Tutor</th>
+                        <th>Enf/ Alergias</th>
+                        <th>Tutor</th>
                         <th>Estado</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
@@ -119,18 +119,18 @@
                         <td>Alergia al paracetamol</td>
                         <td>Martín Sánchez</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes editar el estado" href="#_form_estado_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" href="#_form_estado_beneficiarios">
                                     <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes editar los datos de este renglon" href="#_form_editar_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#_form_editar_beneficiarios">
                                     <i class="material-icons right">edit</i>
                             </button>
                         </td>
                         
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes eliminar este renglon" href="#_form_eliminar_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#_form_eliminar_beneficiarios">
                                 <i class="material-icons right">delete</i>
                             </button>
                         </td>
@@ -151,22 +151,56 @@
                         <td>Alergia al paracetamol</td>
                         <td>Martín Sánchez</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes editar el estado" href="#_form_estado_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" href="#_form_estado_beneficiarios">
                                     <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes editar los datos de este renglon" href="#_form_editar_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#_form_editar_beneficiarios">
                                     <i class="material-icons right">edit</i>
                             </button>
                         </td>
                         
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes eliminar este renglon" href="#_form_eliminar_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#_form_eliminar_beneficiarios">
                                 <i class="material-icons right">delete</i>
                             </button>
                         </td>
                     </tr>
+                    
+                        
+                     <tr>
+                        <td class="first_col_data_table">2</td>
+                        <td>Carlos Sánchez</td>
+                        <td>17</td>
+                        <td>28/03/2000</td>
+                        <td>Hombre</td>
+                        <td>1ro de Primaria</td>
+                        <td>Osos</td>
+                        <td>$150</td>
+                        <td>Calle Cerrrada de los Montes #54,Col. Bolanos</td>
+                        <td>Medio Bajo</td>
+                        <td>Secundaria Técnica No.21</td>
+                        <td>Alergia al paracetamol</td>
+                        <td>Martín Sánchez</td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" data-position="bottom" data-tooltip="Aquí puedes editar el estado" href="#_form_estado_beneficiarios">
+                                    <i class="material-icons right">power_settings_new</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" data-position="bottom" data-tooltip="Aquí puedes editar los datos de este renglon" href="#_form_editar_beneficiarios">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" data-position="bottom" data-tooltip="Aquí puedes eliminar este renglon" href="#_form_eliminar_beneficiarios">
+                                <i class="material-icons right">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    
                     
                      <tr>
                         <td class="first_col_data_table">3</td>
@@ -183,18 +217,51 @@
                         <td>Alergia al paracetamol</td>
                         <td>Martín Sánchez</td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes editar el estado" href="#_form_estado_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" data-position="bottom" data-tooltip="Aquí puedes editar el estado" href="#_form_estado_beneficiarios">
                                     <i class="material-icons right">power_settings_new</i>
                             </button>
                         </td>
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes editar los datos de este renglon" href="#_form_editar_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" data-position="bottom" data-tooltip="Aquí puedes editar los datos de este renglon" href="#_form_editar_beneficiarios">
                                     <i class="material-icons right">edit</i>
                             </button>
                         </td>
                         
                         <td>
-                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes eliminar este renglon" href="#_form_eliminar_beneficiarios">
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" data-position="bottom" data-tooltip="Aquí puedes eliminar este renglon" href="#_form_eliminar_beneficiarios">
+                                <i class="material-icons right">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    
+                    
+                     <tr>
+                        <td class="first_col_data_table">3</td>
+                        <td>Carlos Sánchez</td>
+                        <td>17</td>
+                        <td>28/03/2000</td>
+                        <td>Hombre</td>
+                        <td>1ro de Primaria</td>
+                        <td>Osos</td>
+                        <td>$150</td>
+                        <td>Calle Cerrrada de los Montes #54,Col. Bolanos</td>
+                        <td>Medio Bajo</td>
+                        <td>Secundaria Técnica No.21</td>
+                        <td>Alergia al paracetamol</td>
+                        <td>Martín Sánchez</td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" data-position="bottom" data-tooltip="Aquí puedes editar el estado" href="#_form_estado_beneficiarios">
+                                    <i class="material-icons right">power_settings_new</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" data-position="bottom" data-tooltip="Aquí puedes editar los datos de este renglon" href="#_form_editar_beneficiarios">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" data-position="bottom" data-tooltip="Aquí puedes eliminar este renglon" href="#_form_eliminar_beneficiarios">
                                 <i class="material-icons right">delete</i>
                             </button>
                         </td>
