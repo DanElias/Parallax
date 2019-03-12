@@ -8,7 +8,7 @@ function header_html($titulo="LogIn") {
 function login($email, $password) {
     $usuario = "";
 
-    if ($email == "mariana@ms.mx" && $password == "1234") {
+    if ($email == "" && $password == "") {
         $usuario = "Mariana Sala";
     }
 
