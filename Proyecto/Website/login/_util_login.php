@@ -7,6 +7,7 @@ function header_html($titulo="LogIn") {
 
 function login($email, $password) {
     $usuario = "";
+    //Usuario y contraseña en blancos
 
     if ($email == "" && $password == "") {
         $usuario = "Mariana Sala";
