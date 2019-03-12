@@ -1,0 +1,562 @@
+        <div class="wrapper">
+        
+        <div class="section white z-depth-5 margin_section">
+            <div class="sections_header">
+                <h2 class="header my_heading_text">Beneficiarios<i class="material-icons my_title_icon">accessibility_new</i></h2>
+                
+                <div class="row no_margin my_search">
+                    <form class="col s8 my_search">
+                      <div class="row my_search">
+                        <div class="input-field col s6 my_search ">
+                          <i class="material-icons prefix my_search">search</i>
+                          <input id="icon_prefix" type="text" class="validate my_search">
+                          <label for="icon_prefix" class="my_search">Nombre</label>
+                        </div>   
+                      </div>
+                    </form>
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger blue  hoverable" href="#modal1">Agregar Beneficiario<i class="material-icons right">person_add</i></a>  
+                </div>
+                        
+                
+                 <div class="row">
+	               <div class="col s12 no-padding">
+		              <ul class="tabs mytabs white">
+			                 <li class="tab mytab"><a href="#test1">ID</a></li>
+                             <li class="tab mytab"><a href="#test2">Nombre</a></li>
+                             <li class="tab mytab"><a href="#test3">Edad</a></li>
+                             <li class="tab mytab"><a href="#test4">Sexo</a></li>
+                             <li class="tab mytab"><a href="#test4">Grado</a></li>
+                             <li class="tab mytab"><a href="#test4">Grupo</a></li>
+                             <li class="tab mytab"><a href="#test4">Status</a></li>
+                             <li class="tab mytab"><a href="#test4">Estado</a></li>
+                        </ul>
+                    </div>
+                 </div>
+                
+                
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal modal-fixed-footer my_modal ">
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header1 z-depth-2 col s12">
+                            <h4 class="my_modal_header ">Agregar Beneficiario</h4>  
+                        </div> 
+                    </div>
+                    <br><br><br>
+                    
+                    <div class="modal-content my_modal_content">
+                        <p>Aquí puede agregar un nuevo beneficiario</p>
+                        
+                         <!-- Inicio del form de beneficiarios-->
+                        <form class="col s12">
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                  <i class="material-icons prefix">recent_actors</i>
+                                  <input  type="text" class="validate">
+                                  <label>Matrícula</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">face</i>
+                                    <input  type="text" class="validate">
+                                    <label for="icon_prefix">Nombres</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input type="tel" class="validate">
+                                    <label>Apellidos</label>
+                                </div>
+                            </div>
+                            
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                  <i class="material-icons prefix">cake</i>
+                                  <input  type="text" class="validate">
+                                  <label>Fecha de nacimiento</label>
+                                </div>
+
+                                 <div class="input-field col s6">
+                                     <i class="material-icons prefix">group</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Hombre</option>
+                                        <option value="2">Mujer</option>
+                                    </select>
+                                    <label >Sexo</label>
+                                </div>
+                            </div>
+                            
+                             <div class="row">
+                                <div class="input-field col s6">
+                                         <i class="material-icons prefix">school</i>
+                                        <select>
+                                            <option value="" disabled selected></option>
+                                            <option value="1">1ro Preescolar</option>
+                                            <option value="2">2do Preescolar</option>
+                                            <option value="3">3ro Preescolar</option>
+                                            <option value="4">4to Preescolar</option>
+                                            <option value="5">1ro Primaria</option>
+                                            <option value="6">2do Primaria</option>
+                                            <option value="7">3ro Primaria</option>
+                                            <option value="8">4to Primaria</option>
+                                            <option value="9">5to Primaria</option>
+                                            <option value="10">6to Primaria</option>
+                                            <option value="11">1ro Secundaria</option>
+                                            <option value="12">2do Secundaria</option>
+                                            <option value="13">3ro Secundaria</option>
+                                        </select>
+                                        <label>Grado Escolar</label>
+                                </div>
+                                <div class="input-field col s6">
+                                     <i class="material-icons prefix">business</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Grupo 1</option>
+                                        <option value="2">Grupo 2</option>
+                                        <option value="3">Grupo 3</option>
+                                    </select>
+                                    <label >Grupo (Mariana Sala)</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">supervised_user_circle</i>
+                                    <input type="text" class="validate">
+                                    <label>Nombre(s) del Padre o Tutor</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <i class="material-icons prefix">phone_iphone</i>
+                                  <input type="text" class="validate">
+                                  <label>Teléfono</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                     <i class="material-icons prefix">device_hub</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Bajo</option>
+                                        <option value="2">Medio Bajo</option>
+                                        <option value="3">Medio</option>
+                                    </select>
+                                    <label >Estatus Socioeconómico</label>
+                                </div>
+                                 <!-- Switch -->
+                                  <div class="switch col s6 center vertical-align">
+                                    <label>
+                                      Beneficiario Inactivo
+                                      <input type="checkbox" checked>
+                                      <span class="lever"></span>
+                                      Beneficiario Activo!
+                                    </label>
+                                  </div>
+                            </div>
+                            
+                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+                            <div class="my_modal_buttons">
+                                <div class="row">
+                                    <div class="col s6">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                                        <i class="material-icons right">check_circle_outline</i>
+                                    </button>
+                                    </div>
+                                    <div class="col s6">
+                                        <button class="btn waves-effect waves-light red" type="submit" name="action">Cancelar
+                                            <i class="material-icons right">highlight_off</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    <!-- Final del form de beneficiarios-->
+    
+                    </div>
+                </div>
+                
+                
+                <!-- Modal Structure --> <!--Los modals puedes estar en cualquier parte del html y tienen un boton trigger que tiene como atributo el id del modal al que está invocando-->
+                <div id="modal2" class="modal  my_modal">
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header_eliminar z-depth-2 col s12">
+                             <h4 class="my_modal_header">Eliminar</h4>  
+                        </div>
+                    </div><br><br>
+                    <div class="modal-content my_modal_content">
+                        <br><br>
+                        <h5 class="my_modal_description2">¿Quieres eliminar este elemento de manera permanente, nunca volverlo a ver?</h5>
+                        <br>
+                        <br>
+                        
+                        <div class="my_modal_buttons">
+                            <div class="row">
+                                <div class="col s6">
+                                <button class="modal-close btn waves-effect waves-light" type="submit" name="action">Esto seguro
+                                    de Eliminar<i class="material-icons right">check_circle_outline</i>
+                                </button>
+                                </div>
+                                <div class="col s6">
+                                    <button class="modal-close btn waves-effect waves-light red" type="submit" name="action">NO Eliminar
+                                        <i class="material-icons right">highlight_off</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                 <!-- Modal Structure -->
+                <div id="modal3" class="modal modal-fixed-footer my_modal ">
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header_editar z-depth-2 col s12">
+                            <h4 class="my_modal_header ">Editar Beneficiario</h4>  
+                        </div> 
+                    </div>
+                    <br><br><br>
+                    
+                    <div class="modal-content my_modal_content">
+                        <p>Aquí puede editar al beneficiario</p>
+                        
+                         <!-- Inicio del form de beneficiarios-->
+                        <form class="col s12">
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                  <i class="material-icons prefix">recent_actors</i>
+                                  <input  type="text" class="validate">
+                                  <label>Matrícula</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">face</i>
+                                    <input  type="text" class="validate">
+                                    <label for="icon_prefix">Nombres</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input type="tel" class="validate">
+                                    <label>Apellidos</label>
+                                </div>
+                            </div>
+                            
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                  <i class="material-icons prefix">cake</i>
+                                  <input  type="text" class="validate">
+                                  <label>Fecha de nacimiento</label>
+                                </div>
+
+                                 <div class="input-field col s6">
+                                     <i class="material-icons prefix">group</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Hombre</option>
+                                        <option value="2">Mujer</option>
+                                    </select>
+                                    <label >Sexo</label>
+                                </div>
+                            </div>
+                            
+                             <div class="row">
+                                <div class="input-field col s6">
+                                         <i class="material-icons prefix">school</i>
+                                        <select>
+                                            <option value="" disabled selected></option>
+                                            <option value="1">1ro Preescolar</option>
+                                            <option value="2">2do Preescolar</option>
+                                            <option value="3">3ro Preescolar</option>
+                                            <option value="4">4to Preescolar</option>
+                                            <option value="5">1ro Primaria</option>
+                                            <option value="6">2do Primaria</option>
+                                            <option value="7">3ro Primaria</option>
+                                            <option value="8">4to Primaria</option>
+                                            <option value="9">5to Primaria</option>
+                                            <option value="10">6to Primaria</option>
+                                            <option value="11">1ro Secundaria</option>
+                                            <option value="12">2do Secundaria</option>
+                                            <option value="13">3ro Secundaria</option>
+                                        </select>
+                                        <label>Grado Escolar</label>
+                                </div>
+                                <div class="input-field col s6">
+                                     <i class="material-icons prefix">business</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Grupo 1</option>
+                                        <option value="2">Grupo 2</option>
+                                        <option value="3">Grupo 3</option>
+                                    </select>
+                                    <label >Grupo (Mariana Sala)</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">supervised_user_circle</i>
+                                    <input type="text" class="validate">
+                                    <label>Nombre(s) del Padre o Tutor</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <i class="material-icons prefix">phone_iphone</i>
+                                  <input type="text" class="validate">
+                                  <label>Teléfono</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                     <i class="material-icons prefix">device_hub</i>
+                                    <select>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Bajo</option>
+                                        <option value="2">Medio Bajo</option>
+                                        <option value="3">Medio</option>
+                                    </select>
+                                    <label >Estatus Socioeconómico</label>
+                                </div>
+                                 <!-- Switch -->
+                                  <div class="switch col s6 center vertical-align">
+                                    <label>
+                                      Beneficiario Inactivo
+                                      <input type="checkbox">
+                                      <span class="lever"></span>
+                                      Beneficiario Activo!
+                                    </label>
+                                  </div>
+                            </div>
+                            
+                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+                            <div class="my_modal_buttons">
+                                <div class="row">
+                                    <div class="col s6">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                                        <i class="material-icons right">check_circle_outline</i>
+                                    </button>
+                                    </div>
+                                    <div class="col s6">
+                                        <button class="btn waves-effect waves-light red" type="submit" name="action">Cancelar
+                                            <i class="material-icons right">highlight_off</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    <!-- Final del form de beneficiarios-->
+    
+                    </div>
+                </div>
+                
+                  <div id="modal4" class="modal  my_modal">
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header_estado z-depth-2 col s12">
+                             <h4 class="my_modal_header">Estado Beneficiario</h4>  
+                        </div>
+                    </div><br><br>
+                    <div class="modal-content my_modal_content">
+                        <br><br><br>
+                        <h5 class="my_modal_description2">Cambiar el estado del beneficiario</h5>
+                        <br>
+                        <br>
+                        <br>
+                        <div>
+                        <!-- Switch -->
+                              <div class="switch col s6 center vertical-align">
+                                <label>
+                                  Beneficiario Inactivo
+                                  <input type="checkbox" checked>
+                                  <span class="lever"></span>
+                                  Beneficiario Activo!
+                                </label>
+                              </div>
+                        </div><br><br>
+                        
+                        <div class="my_modal_buttons">
+                            <div class="row">
+                                <div class="col s6">
+                                <button class="modal-close btn waves-effect waves-light" type="submit" name="action">Cambiar Estado<i class="material-icons right">check_circle_outline</i>
+                                </button>
+                                </div>
+                                <div class="col s6">
+                                    <button class="modal-close btn waves-effect waves-light red" type="submit" name="action">NO Cambiar Estado
+                                        <i class="material-icons right">highlight_off</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div>
+            <table class="stripped highlight responsive-table my_data_table">
+                <thead>
+                    <tr class="my_table_headers">
+                        <th class="first_col_data_table">ID</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Sexo</th>
+                        <th>Grado Escolar</th>
+                        <th>Grupo</th>
+                        <th>Nombre Tutor</th>
+                        <th>Teléfono</th>
+                        <th>Status</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="first_col_data_table">A120</td>
+                        <td>Carlos Sánchez Martínez</td>
+                        <td>12</td>
+                        <td>Hombre</td>
+                        <td>1ro Primaria</td>
+                        <td>Cachorros</td>
+                        <td>Manuel Sánchez</td>
+                        <td>4421234567</td>
+                        <td>Medio</td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  green accent-3 hoverable" href="#modal4">
+                                    <i class="material-icons right">power_settings_new</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
+                                <i class="material-icons right">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    
+                     <tr>
+                        <td class="first_col_data_table">A120</td>
+                        <td>Carlos Sánchez Martínez</td>
+                        <td>12</td>
+                        <td>Hombre</td>
+                        <td>1ro Primaria</td>
+                        <td>Cachorros</td>
+                        <td>Manuee Sánchez</td>
+                        <td>4421234567</td>
+                        <td>Medio</td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal4">
+                                    <i class="material-icons right">power_settings_new</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
+                                <i class="material-icons right">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    
+                     <tr>
+                        <td class="first_col_data_table">A120</td>
+                        <td>Carlos Sánchez Martínez</td>
+                        <td>12</td>
+                        <td>Hombre</td>
+                        <td>1ro Primaria</td>
+                        <td>Cachorros</td>
+                        <td>Manuee Sánchez</td>
+                        <td>4421234567</td>
+                        <td>Medio</td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger green accent-3 hoverable" href="#modal4">
+                                    <i class="material-icons right">power_settings_new</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger amber darken-1 hoverable" href="#modal3">
+                                    <i class="material-icons right">edit</i>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button class="waves-effect waves-light btn modal-trigger  red accent-3 hoverable" href="#modal2">
+                                <i class="material-icons right">delete</i>
+                            </button>
+                        </td>
+                       
+                    </tr>
+                    
+                </tbody>
+            </table>
+                </div>
+            
+        </div>
+            
+        </div><!--div del wrapper que empieza después del sidenav-->
+
+
+
+
+<div class="parallax-container my_parallax_container" id="about">
+            <div class="my_table">
+                <br><br>
+                <div class="row">
+                    <div class="col s12 my_table_title hoverable">Form de evento!</div>
+                </div>
+                <br>
+                
+                <!-- este es el trigger del form del modal-->
+                 <div class="row"> 
+                    <div class="col s12"> 
+                        <a class="modal-trigger waves-effect waves-light btn  blue hoverable" id="boton_modal_evento" href="#modal1">Agregar Evento<i class="material-icons right">person_add</i></a>  
+                    </div>
+                </div><br>
+                
+                <!-- estas son las preguntas que se contestan en cada lab-->
+                 <div class="row" id="preguntas"> 
+                    <div class="col s12"> 
+                    <strong>¿Por qué es una buena práctica separar el controlador de la vista?
+                    </strong><br><br>Porque de esta manera tienes más control sobre lo que se está incluyendo en el código. De esta manera tenemos todo más organizado y sabes qué es lo que en verdad se está enviando al servidor y lo que esté está regresando y validando.
+                    </div>
+                </div><br>
+                
+                 <div class="row"> 
+                    <div class="col s12"> 
+                    <strong>Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?
+                    </strong><br><br>$GLOBALS: contiene una referencia a cada variable que tiene un scope global en el código.<br><br>$_SERVER: tiene información de la dirección de headers, scripts y paths.<br><br>$_FILES: los items que han sido cargados al script a través del Post.<br><br>$_REQUEST: tiene los contenidos de $_GET, $_POST, $_COOKIE<br><br>$_SESSION: tiene las variables de sesión<br><br>$_PHP_SELF: tiene el nombre del archivo php que lo contiene.<br><br>$php_errormsg: Tiene el texto del último error generado por el PHP
+                    </div>
+                </div><br>
+                
+                 <div class="row"> 
+                    <div class="col s12"> 
+                    <strong>Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención?</strong><br><br>array_key_exists(): devuelve true si la llave está en el array. Es cualquier valor posible para índice de un array.
+                    method_exists(): devuelve true si el objeto dado tiene el método que se está buscando.[2]
+                    </div>
+                </div><br>
+                
+                <div class="row" id="preguntas"> 
+                    <div class="col s12"> 
+                    <strong>¿Qué es XSS y cómo se puede prevenir?
+                    </strong><br><br>Cross-Site Scripting Attacks
+                    Es agregar código malicioso para ser ejecutado en los sitios web. Puede ser como un hyperlink que lleve al usuario a otro sitio. La pantalla del sitio será muy similar y el usuario no se dará cuenta de que es otro sitio y mandará sus datos. Con XSS se incluyen etiquetas script que cambian la ejecución del sitio.
+                    Con htmlspecialchars se filtra la salida del contenido que se muestra en el navegador. También puede usarse html entities.[3]<br><br>[1]https://www.tutorialspoint.com/php/php_predefined_variables.htm<br>[2]https://www.exakat.io/top-100-php-functions/<br>[3]https://manuais.iessanclemente.net/index.php/Evitar_ataques_XSS_y_CSRF_con_PHP
+                    </div>
+                </div><br>
+                
+            </div>
+            <div class="parallax"><img src="partials/images/bg1.jpg" width="100%" ></div>
+        </div>

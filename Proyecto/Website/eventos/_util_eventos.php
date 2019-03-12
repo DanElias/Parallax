@@ -12,4 +12,12 @@ function footer_html(){
     include("../views/_footer_admin.html");
 }
 
+function evento_html(){
+    include("_evento.html");
+}
+
+function form_evento(){
+    include("_form_evento.html");
+}
+
 ?>

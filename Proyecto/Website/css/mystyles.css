@@ -34,7 +34,6 @@ body{
 }
 
 
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -345,6 +344,8 @@ input{
 .my_heading_text{
     font-family: Staatliches;
     color: #0d3d63;
+    font-size: 4em;
+    padding: 0.2em;
 }
 
 .my_table{
@@ -590,5 +591,64 @@ input{
   align-items: center;
 }
 
+.my_side_nav{
+    font-family: Staatliches;
+    background-color: #0d3d63;
+    font-size: 1.5em;
+}
+
+.my_icon_align{
+    vertical-align: bottom;
+    color: #ffc107;
+}
+
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+      top: 0;
+      width: 20px;
+
+      height: 20px;
+
+      /*border: 2px solid #e6ee9c;*/
+        border: 0;
+
+      background-color: #1e88e5;
+
+      z-index: 0;
+}
+
+.my_add_button_container{
+    margin: 4em;
+}
+
+.my_header_admin{
+    color: #0d3d63 ;
+}
+
+fixed_header{
+    width: calc(100%);
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.fixed_header{
+    width: calc(100%);
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: calc(100%);
+  overflow: auto;
+  width: calc(100%);
+    text-align: center;
+}
+
+.fixed_header thead tr {
+   display: block;
+    text-align: center;
+}
 
 
