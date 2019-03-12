@@ -6,6 +6,7 @@ session_start(); //Inicio de sesion
 
 
 //Condicionales para el caso de hacer logout
+
 if(isset($_SESSION["usuario"])) {
     header_html();
     include("_admin.html");
