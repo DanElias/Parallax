@@ -1,7 +1,7 @@
 <?php
 
 //util de admin para que el nombre del header sea correcto
-require_once ("util_Admin.php");
+require_once ("_util_eventos.php");
 session_start(); //Inicio de sesion
 
 //Condicionales para el caso de hacer logout
@@ -12,7 +12,7 @@ if(isset($_SESSION["usuario"])) {
     footer_html();
 
 } else {
-    header("location:../login/login.php");
+    header("location:../login/_login.php");
 
 }
 ?>
