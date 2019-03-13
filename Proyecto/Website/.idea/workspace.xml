@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/mystyles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+            <state relative-caret-position="309">
+              <caret line="226" column="36" lean-forward="true" selection-start-line="226" selection-start-column="36" selection-end-line="226" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -177,7 +173,6 @@
         <option value="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" />
-        <option value="$PROJECT_DIR$/css/mystyles.css" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_grafica_grupos.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_graficas_edades.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_cutoas.html" />
@@ -186,6 +181,7 @@
         <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_genero.html" />
         <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" />
+        <option value="$PROJECT_DIR$/css/mystyles.css" />
       </list>
     </option>
   </component>
@@ -302,16 +298,15 @@
       <workItem from="1552236928617" duration="371000" />
       <workItem from="1552315020569" duration="178000" />
       <workItem from="1552352958636" duration="6069000" />
-      <workItem from="1552412949945" duration="9511000" />
+      <workItem from="1552412949945" duration="9677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31217000" />
+    <option name="totallyTimeSpent" value="31383000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1987076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -615,8 +610,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/mystyles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        <state relative-caret-position="309">
+          <caret line="226" column="36" lean-forward="true" selection-start-line="226" selection-start-column="36" selection-end-line="226" selection-end-column="36" />
         </state>
       </provider>
     </entry>

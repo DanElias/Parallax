@@ -11,7 +11,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: background-color: #16181c;;
+  background-color: #16181c;;
 }
 
 audio{
@@ -199,34 +199,6 @@ video {
     min-width: 100%;
     overflow: hidden;
     z-index: -1;
-}
-
-
-#home_header{
-    background-image: url('img/sunset_header.jpg');
-    
-}
-
-#home_body{
-    background-image: url('img/code.jpg');
-}
-
-#passwords_header{
-    background-image: url('img/password.jpg');
-}
-
-#passwords_body{
-    background-image: url('img/code.jpg');
-}
-
-#tienda_header{
-    background-image: url('img/code.jpg');
-    text-shadow: 4px 4px darkslategray;
-    background-color: 
-}
-
-#tienda_body{
-    background-image: url('img/code.jpg');
 }
 
 .body{
