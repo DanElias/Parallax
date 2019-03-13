@@ -15,7 +15,7 @@
         beneficiarios_html();
         footer_html();
     } else {
-        header("location:../login/_login.php");
+        header("location:../login/_login_vista.php");
         
     }
     
