@@ -13,10 +13,10 @@ function footer_html(){
 }
 
 function evento_html(){
-    include("_evento.html");
+    include("eventos.html");
 }
 
-function form_evento(){
+function form_evento_html(){
     include("_form_evento.html");
 }
 

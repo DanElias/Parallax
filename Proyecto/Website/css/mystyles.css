@@ -375,9 +375,14 @@ input{
 
 .my_title_icon{
     font-size: 1.5em;
-    vertical-align: text-bottom;
-    
+    vertical-align: text-bottom; 
 }
+
+.my_title_icon_middle{
+    font-size: 1.5em;
+    vertical-align: text-top; 
+}
+
 .myButtonIcon{
 
     font-size:1.5em;
