@@ -9,11 +9,11 @@
         header_html();
         sidenav_html();
         form_beneficiarios_html();
+        form_tutor_html();
         form_eliminar_beneficiarios_html();
         form_estado_beneficiarios_html();
         beneficiarios_html();
         footer_html();
-        
     } else {
         header("location:../login/_login.php");
         
