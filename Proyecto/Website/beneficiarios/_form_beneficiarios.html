@@ -27,8 +27,8 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">cake</i>
-                                  <input  type="date" name="fecha_nacimiento"  required>
-                                  <label>Fecha de nacimiento</label>
+                                  <input  type="date" name="fecha_nacimiento "  required>
+                                  <label>Fecha de nacimiento ddmmAAAA</label>
                                 </div>
 
                                  <div class="input-field col s6">
@@ -77,11 +77,52 @@
                             
                             <!-- Aqui va un botoncito de agregar tutor-->
                             <div class="row">
-                                 <div class="col s12 m12">
+                                 <div class="col s3 m3 center">
                                     <!-- Modal Trigger -->
-                                    <div class="my_add_button_container responsive">
-                                        <a class="waves-effect waves-light btn modal-trigger blue darken-2 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes agregar un beneficiario" href="#_form_tutor">Agregar Tutor<i class="material-icons right">person_add</i></a>  
-                                    </div>
+                                    <p>Agregar Tutor</p>
+                                    <a class="center waves-effect waves-light btn-floating modal-trigger blue darken-2 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes agregar un tutor" href="#_form_tutor"><i class="material-icons right">add</i></a>
+                                </div>
+                                
+                                <div class="col s9 m9 center">
+                                <div class='table-wrapper responsive-table new_data_table'>
+                                    <table class="stripped highlight responsive-table data_table fixed_header">
+                                        <thead>
+                                            <tr class="my_table_headers">
+                                                <th>Nombre Tutor</th>
+                                                <th>Mas informacion</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Carlos Sánchez</td>
+                                                <td><a href="">Mas informacion</a></td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small" href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small" href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>Karla Suárez</td>
+                                                <td><a href="">Mas informacion</a></td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small" href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small" href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>   
+                                
                                 </div>
                             </div>
                            

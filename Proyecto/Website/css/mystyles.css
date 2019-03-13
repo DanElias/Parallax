@@ -520,7 +520,7 @@ input{
 }
 
 .my_search{
-    color: #0d3d63;
+    color: #673ab7;
 }
 
 .no_margin{
@@ -611,6 +611,14 @@ html,body
     overflow-x: hidden; 
 }
 
+my_search_button{
+    position: relative;
+    right:    0;
+    bottom:   0;
+}
 
+my_search{
+    position: absolute;
+}
 
 
