@@ -32,4 +32,12 @@ function form_tutor_html(){
     include("_form_tutor.html");
 }
 
+function modal_informacion_beneficiarios_html(){
+    include("_modal_informacion_beneficiarios.html");
+}
+
+function modal_informacion_tutor_html(){
+    include("_modal_informacion_tutor.html");
+}
+
 ?>

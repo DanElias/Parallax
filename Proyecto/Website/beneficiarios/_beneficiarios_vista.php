@@ -12,6 +12,8 @@
         form_tutor_html();
         form_eliminar_beneficiarios_html();
         form_estado_beneficiarios_html();
+        modal_informacion_beneficiarios_html();
+        modal_informacion_tutor_html();
         beneficiarios_html();
         footer_html();
     } else {

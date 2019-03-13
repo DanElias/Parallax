@@ -508,8 +508,6 @@ input{
 .my_modal_content{
     color: #1c2e4c;
 }
-        
-
 
 .first_col_data_table{
     padding-left: 1em;
@@ -619,6 +617,22 @@ my_search_button{
 
 my_search{
     position: absolute;
+}
+
+.mi_titulo{
+    font-family: Staatliches;
+    color: #0d3d63;
+    font-size: 1.5em;
+    margin 0 !important; 
+    display: inline-block;
+}
+
+.mi_parrafo{
+    font-family: Ubuntu;
+    color: #0d3d63;
+    font-size: 1.2em;
+    margin: 0 !important;
+    display: inline-block;
 }
 
 
