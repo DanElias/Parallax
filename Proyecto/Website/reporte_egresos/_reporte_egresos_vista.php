@@ -9,6 +9,10 @@ session_start(); //Inicio de sesion
 if(isset($_SESSION["usuario"])) {
     header_html();
     sidenav_html();
+    body_reporte_egresos();
+    form_monto();
+    form_cuenta();
+    form_proveedor();
     footer_html();
 
 } else {
