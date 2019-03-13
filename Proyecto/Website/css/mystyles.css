@@ -308,6 +308,13 @@ input{
     padding: 0.2em;
 }
 
+.my_heading_text_medium{
+    font-family: Staatliches;
+    color: #0d3d63;
+    font-size: 3.3em;
+    padding: 0.2em;
+}
+
 .my_table{
     background-color: rgba(19, 28, 43, 0.7);
     height: auto;

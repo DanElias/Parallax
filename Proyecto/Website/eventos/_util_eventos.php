@@ -24,4 +24,8 @@ function modal_informacion_evento_html(){
     include("_modal_informacion_evento.html");
 }
 
+function form_eliminar_evento_html(){
+    include("_form_eliminar_evento.html");
+}
+
 ?>
