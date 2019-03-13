@@ -28,4 +28,8 @@ function form_estado_beneficiarios_html(){
     include("_form_estado_beneficiarios.html");
 }
 
+function form_tutor_html(){
+    include("_form_tutor.html");
+}
+
 ?>
