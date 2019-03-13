@@ -9,10 +9,16 @@ session_start(); //Inicio de sesion
 if(isset($_SESSION["usuario"])) {
     header_html();
     sidenav_html();
+    body_proveedores();
+    form_agregar_proveedor();
+    form_editar_proveedor();
+    form_eliminar_proveedor();
+    form_estado_proveedor();
     footer_html();
 
 } else {
     header("location:../login/_login_vista.php");
 
 }
+
 ?>
