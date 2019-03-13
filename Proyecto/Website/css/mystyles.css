@@ -160,6 +160,22 @@ h6{
     border: none;
 }
 
+.myBigButton{
+    font-family: aller;
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+    color: white;
+    width: 5em;
+    height: 5em;
+    background-color: #4c5cee;
+    border: none;
+}
+
 
 .first_table{
    width: 100%;
@@ -418,6 +434,11 @@ input{
     vertical-align: text-bottom;
     
 }
+.myButtonIcon{
+
+    font-size:1.5em;
+
+}
 
 .my_copyright{
     font-size: 0.5em;
@@ -532,7 +553,6 @@ input{
 .my_modal_buttons{
     text-align: center;
 }
-
 .my_modal_content{
     color: #1c2e4c;
 }

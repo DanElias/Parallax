@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/_admin_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_admin_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/_util_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_util_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/_login_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_login_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/_util_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_util_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_header_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_header_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_sidenav_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_sidenav_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,20 +16,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/_sidenav_admin.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            <state relative-caret-position="26">
+              <caret line="25" column="179" selection-start-line="25" selection-start-column="179" selection-end-line="25" selection-end-column="179" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/mystyles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/materialize.css">
+        <entry file="file://$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="2794" column="13" selection-start-line="2794" selection-start-column="13" selection-end-line="2794" selection-end-column="13" />
+            <state relative-caret-position="15">
+              <caret line="1" column="81" selection-start-line="1" selection-start-column="81" selection-end-line="1" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_genero.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grado.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_estatus.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_cutoas.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_edades.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grupos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -51,7 +120,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>.ico</find>
-      <find>button</find>
       <find>card</find>
       <find>login-page</find>
       <find>waterma</find>
@@ -60,6 +128,9 @@
       <find>slideou</find>
       <find>sidenav</find>
       <find>material</find>
+      <find>sidenav</find>
+      <find>button</find>
+      <find>icon</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,7 +142,6 @@
         <option value="$PROJECT_DIR$/js/loginScript.js" />
         <option value="$PROJECT_DIR$/beneficiarios.html" />
         <option value="$PROJECT_DIR$/proveedores.html" />
-        <option value="$PROJECT_DIR$/css/mystyles.css" />
         <option value="$PROJECT_DIR$/login2.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/login.html" />
@@ -98,21 +168,32 @@
         <option value="$PROJECT_DIR$/login/_login_vista.php" />
         <option value="$PROJECT_DIR$/admin/_admin_vista.php" />
         <option value="$PROJECT_DIR$/admin/_util_admin.php" />
-        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
         <option value="$PROJECT_DIR$/login/_util_login.php" />
         <option value="$PROJECT_DIR$/admin/_admin.html" />
         <option value="$PROJECT_DIR$/views/_header_admin.html" />
         <option value="$PROJECT_DIR$/css/materialize.css" />
         <option value="$PROJECT_DIR$/views/_sidenav_admin.html" />
+        <option value="$PROJECT_DIR$/views/_sidenav_admin2.html" />
+        <option value="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" />
+        <option value="$PROJECT_DIR$/css/mystyles.css" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/_grafica_grupos.html" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_graficas_edades.html" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_cutoas.html" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_estatus.html" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grado.html" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_genero.html" />
+        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
+        <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="650" />
-    <option name="y" value="23" />
     <option name="width" value="630" />
-    <option name="height" value="777" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -129,6 +210,32 @@
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="proveedores" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="reporte_beneficiarios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="reporte_beneficiarios" type="462c0819:PsiDirectoryNode" />
+              <item name="graficas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
@@ -152,11 +259,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reporte_beneficiarios/graficas" />
       <recent name="$PROJECT_DIR$/proveedores" />
       <recent name="$PROJECT_DIR$/beneficiarios" />
       <recent name="$PROJECT_DIR$/login" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -195,18 +302,18 @@
       <workItem from="1552236928617" duration="371000" />
       <workItem from="1552315020569" duration="178000" />
       <workItem from="1552352958636" duration="6069000" />
-      <workItem from="1552412949945" duration="1360000" />
+      <workItem from="1552412949945" duration="9511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23066000" />
+    <option name="totallyTimeSpent" value="31217000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.315832" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1987076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -232,13 +339,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/proveedores/proveedores.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/loginScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -247,13 +347,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login2.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="196" column="60" lean-forward="true" selection-start-line="196" selection-start-column="60" selection-end-line="196" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/loginCSS.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
@@ -280,13 +373,6 @@
     <entry file="file://$PROJECT_DIR$/login/util_Login.php" />
     <entry file="file://$PROJECT_DIR$/egresos/egresos_vista.php" />
     <entry file="file://$PROJECT_DIR$/login/login.php" />
-    <entry file="file://$PROJECT_DIR$/beneficiarios/beneficiarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7545">
-          <caret line="503" column="24" selection-start-line="503" selection-start-column="24" selection-end-line="503" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/beneficiarios/beneficiarios_vistas.php" />
     <entry file="file://$PROJECT_DIR$/views/_header_login.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -296,34 +382,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/util_Admin.php" />
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proveedores/_util_proveedores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proveedores/_proveedores_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_egresos/_util_reporte_egresos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -361,13 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -392,44 +443,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/sidenav2.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/_header_admin.html">
+    <entry file="file://$PROJECT_DIR$/images/f1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/_sidenav_admin2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="270">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/mystyles.css">
+    <entry file="file://$PROJECT_DIR$/views/_header_admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="236" column="22" selection-start-line="236" selection-start-column="22" selection-end-line="236" selection-end-column="22" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proveedores/_proveedores_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_egresos/_util_reporte_egresos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="136" column="30" lean-forward="true" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proveedores/_util_proveedores.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proveedores/proveedores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/materialize.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="2794" column="13" selection-start-line="2794" selection-start-column="13" selection-end-line="2794" selection-end-column="13" />
+        <state relative-caret-position="24">
+          <caret line="5897" column="9" selection-start-line="5897" selection-start-column="1" selection-end-line="5897" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/f1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/_sidenav_admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="17" column="155" lean-forward="true" selection-start-line="17" selection-start-column="115" selection-end-line="17" selection-end-column="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/beneficiarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grupos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_edades.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_cutoas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_estatus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grado.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_genero.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="81" selection-start-line="1" selection-start-column="81" selection-end-line="1" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="25" column="179" selection-start-line="25" selection-start-column="179" selection-end-line="25" selection-end-column="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mystyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
         </state>
       </provider>
     </entry>

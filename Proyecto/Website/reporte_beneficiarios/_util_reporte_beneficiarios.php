@@ -12,8 +12,8 @@ function footer_html(){
     include("../views/_footer_admin.html");
 }
 
-function body_admin_main(){
-    include("_admin.html");
+function body_beneficiarios(){
+    include("_reporte_beneficiarios.html");
 }
 
 ?>
