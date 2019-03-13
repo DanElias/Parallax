@@ -20,4 +20,8 @@ function form_evento_html(){
     include("_form_evento.html");
 }
 
+function modal_informacion_evento_html(){
+    include("_modal_informacion_evento.html");
+}
+
 ?>
