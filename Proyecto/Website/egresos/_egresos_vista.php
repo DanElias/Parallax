@@ -9,10 +9,11 @@ session_start(); //Inicio de sesion
 if(isset($_SESSION["usuario"])) {
     header_html();
     sidenav_html();
+    body_egresos();
     footer_html();
 
 } else {
-    header("location:../login/_login.php");
+    header("location:../login/_login_vista.php");
 
 }
 ?>

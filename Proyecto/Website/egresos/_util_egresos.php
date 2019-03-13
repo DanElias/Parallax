@@ -11,5 +11,8 @@ function sidenav_html(){
 function footer_html(){
     include("../views/_footer_admin.html");
 }
+function body_egresos(){
+    include("_egresos.html");
+}
 
 ?>
