@@ -12,8 +12,20 @@ function footer_html(){
     include("../views/_footer_admin.html");
 }
 
-function body_admin_main(){
-    include("_admin.html");
+function body_reporte_egresos(){
+    include("_reporte_egresos.html");
+}
+
+function form_proveedor(){
+    include("graficas/_grafica_proveedor.html");
+}
+
+function form_cuenta(){
+    include("graficas/_grafica_cuenta.html");
+}
+
+function form_monto(){
+    include("graficas/_grafica_monto.html");
 }
 
 ?>
