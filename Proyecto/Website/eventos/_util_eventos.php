@@ -13,11 +13,19 @@ function footer_html(){
 }
 
 function evento_html(){
-    include("_evento.html");
+    include("eventos.html");
 }
 
-function form_evento(){
+function form_evento_html(){
     include("_form_evento.html");
+}
+
+function modal_informacion_evento_html(){
+    include("_modal_informacion_evento.html");
+}
+
+function form_eliminar_evento_html(){
+    include("_form_eliminar_evento.html");
 }
 
 ?>
