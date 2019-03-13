@@ -1,14 +1,15 @@
 --PROVEEDOR
 CREATE TABLE proveedor(
-	rfc char(13) NOT NULL,
+	rfc char(13) NOT NULL PRIMARY KEY,
 	alias varchar(20),
 	razon_social varchar(30),
 	nombre_contacto varchar(40),
 	telefono_contacto varchar(20),
-	cuenta_bancaria char(20), --se supone que son 20 alfanumericos	
+	cuenta_bancaria char(18), --se supone que son 18
 	banco varchar(40),
-	
 )
+
+drop table proveedor
 SELECT * FROM proveedor
 
 --LLAVE PRIMARIA
@@ -69,7 +70,7 @@ CREATE TABLE beneficiario(
 
 ALTER TABLE beneficiario add constraint pk_beneficiario PRIMARY KEY (id_beneficiario)	--PRIMARIA
 sp_helpconstraint beneficiario
-
+drop 
 -------------------------------------------------
 --TUTOR
 CREATE TABLE tutor(
@@ -102,7 +103,7 @@ ALTER TABLE beneficiario_tutor add constraint fk_id_beneficiario FOREIGN KEY (id
 ALTER TABLE beneficiario_tutor add constraint fk_id_tutor FOREIGN KEY(id_tutor)	 REFERENCES tutor--FORANEA
 sp_helpconstraint beneficiario_tutor
 
-
+drop table beneficiario_tutor
 -------------------------------------------------
 --EVENTO
 CREATE TABLE evento(
@@ -148,7 +149,7 @@ ALTER TABLE usuario add constraint pk_usuario PRIMARY KEY (id_usuario)	--PRIMARI
 ALTER TABLE usuario add constraint fk_usuario FOREIGN KEY (id_rol) REFERENCES rol	--FORANEA
 sp_helpconstraint usuario
 
-
+drop table usuario
 -------------------------------------------------
 
 --PRIVELEGIO
@@ -160,7 +161,7 @@ CREATE TABLE privilegio(
 ALTER TABLE privilegio add constraint pk_privilegio PRIMARY KEY (id_privilegio)	--PRIMARIA COMPUESTA 
 sp_helpconstraint privilegio
 -------------------------------------------------
-
+drop table privilegio
 
 
 --POSEE PRIVILEGIO
@@ -177,7 +178,7 @@ ALTER TABLE rol_privilegio add constraint fk_id_rol FOREIGN KEY (id_rol) REFEREN
 ALTER TABLE rol_privilegio add constraint fk_id_privilegio FOREIGN KEY(id_privilegio) REFERENCES	privilegio--FORANEA
 sp_helpconstraint rol_privilegio
 
-
+drop table rol_privilegio
 ------------------------------
 SET DATEFORMAT dmy
 BULK INSERT eq02.eq02.[proveedor] 
@@ -191,3 +192,5 @@ BULK INSERT eq02.eq02.[proveedor]
 	)
 
 
+SELECT * 
+FROM Proveedor
