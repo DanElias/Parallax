@@ -7,24 +7,28 @@ CREATE TABLE proveedor(
 	telefono_contacto varchar(20),
 	cuenta_bancaria char(20), --se supone que son 20 alfanumericos	
 	banco varchar(40),
-
-	--LLAVE PRIMARIA
-	PRIMARY KEY(rfc)
+	
 )
+SELECT * FROM proveedor
 
+--LLAVE PRIMARIA
+ALTER TABLE proveedor add constraint pk_proveedor PRIMARY KEY (rfc)
 sp_helpconstraint proveedor
+-------------------------------------------------
 
 --CUENTA CONTABLE
 CREATE TABLE cuenta_contable(
 	id_cuentacontable numeric(2) NOT NULL ,
 	nombre varchar(20),
 	descripcion varchar(40),
-
-	--PRIMARIA
-	PRIMARY KEY(id_cuentacontable)
+	
 )
+
+--PRIMARIA
+ALTER TABLE cuenta_contable add constraint pk_cuenta PRIMARY KEY (id_cuentacontable)
 sp_helpconstraint cuenta_contable
 
+-------------------------------------------------
 --EGRESO
 CREATE TABLE egreso(
 	folio_factura varchar(30) NOT NULL,
@@ -34,18 +38,17 @@ CREATE TABLE egreso(
 	observaciones varchar(100),
 	cuenta_bancaria numeric(20),
 	rfc char(13),
-	id_cuentacontable numeric(2),
-
-	--PRIMARIA
-	PRIMARY KEY (folio_factura),
-	 
-	--FORANEAS
-	FOREIGN KEY(rfc) REFERENCES proveedor,
-	FOREIGN KEY(id_cuentacontable) REFERENCES cuenta_contable
+	id_cuentacontable numeric(2)
 )
 
+ALTER TABLE egreso add constraint pk_egreso PRIMARY KEY (folio_factura)	--PRIMARIA
+--FORANEAS
+ALTER TABLE egreso add constraint pf_id FOREIGN KEY (id_cuentacontable) REFERENCES cuenta_contable
+ALTER TABLE egreso add constraint pf_rfc FOREIGN KEY(rfc) REFERENCES proveedor
 sp_helpconstraint egreso
 
+
+-------------------------------------------------
 --BENEFICIARIO
 CREATE TABLE beneficiario(
 	id_beneficiario numeric(3) NOT NULL,
@@ -62,13 +65,12 @@ CREATE TABLE beneficiario(
 	enfermedades_alergias varchar(50),
 	cuota numeric(4),
 
-	--PRIMARIA
-	PRIMARY KEY(id_beneficiario)
 )
 
+ALTER TABLE beneficiario add constraint pk_beneficiario PRIMARY KEY (id_beneficiario)	--PRIMARIA
 sp_helpconstraint beneficiario
 
-
+-------------------------------------------------
 --TUTOR
 CREATE TABLE tutor(
 	id_tutor numeric(3) NOT NULL,
@@ -79,12 +81,13 @@ CREATE TABLE tutor(
 	nombre_empresa varchar(30),
 	grado_estudio varchar(20),
 	titulo_obtenido varchar(20)
-
-	PRIMARY KEY(id_tutor)
 )
 
+ALTER TABLE tutor add constraint pk_tutor PRIMARY KEY (id_tutor)	--PRIMARIA
 sp_helpconstraint tutor
 
+
+-------------------------------------------------
 --TIENE TUTOR
 CREATE TABLE beneficiario_tutor(
 
@@ -92,17 +95,15 @@ CREATE TABLE beneficiario_tutor(
 	id_tutor numeric(3) NOT NULL, 
 	parentesco varchar(30),
 
-	--PRIMARIA COMPUESTA 
-	PRIMARY KEY (id_beneficiario, id_tutor),
-
-	--FORANEAS
-	FOREIGN KEY (id_beneficiario) REFERENCES beneficiario,
-	FOREIGN KEY (id_tutor) REFERENCES tutor
 )
 
+ALTER TABLE beneficiario_tutor add constraint pk_beneficiario_tutor PRIMARY KEY (id_beneficiario, id_tutor)	--PRIMARIA COMPUESTA 
+ALTER TABLE beneficiario_tutor add constraint fk_id_beneficiario FOREIGN KEY (id_beneficiario) REFERENCES beneficiario	--FORANEA
+ALTER TABLE beneficiario_tutor add constraint fk_id_tutor FOREIGN KEY(id_tutor)	 REFERENCES tutor--FORANEA
 sp_helpconstraint beneficiario_tutor
 
 
+-------------------------------------------------
 --EVENTO
 CREATE TABLE evento(
 	id_evento numeric(2) NOT NULL,
@@ -115,20 +116,22 @@ CREATE TABLE evento(
 	PRIMARY KEY(id_evento)
 )
 
+--ALTER TABLE evento DROP CONSTRAINT  PK__evento__AF150CA51B0907CE
+ALTER TABLE evento add constraint pk_evento PRIMARY KEY (id_evento)
 sp_helpconstraint evento
 
+
+-------------------------------------------------
 --ROL
 CREATE TABLE rol(
 	id_rol numeric(2) NOT NULL,
 	descripcion varchar(50),
-
-	--PRIMARIA
-	PRIMARY KEY(id_rol)
 )
-
+ALTER TABLE rol add constraint pk_rol PRIMARY KEY (id_rol)	--PRIMARIA 
 sp_helpconstraint rol
 
 
+-------------------------------------------------
 --USUARIO
 CREATE TABLE usuario(
 	id_usuario numeric(2) NOT NULL,
@@ -140,43 +143,51 @@ CREATE TABLE usuario(
 	fecha_creacio datetime,
 	id_rol numeric(2),
 
-	--PRIMARIA
-	PRIMARY KEY (id_usuario)
-
-	--FOREANEA
-	FOREIGN KEY (id_rol) REFERENCES rol
 )
-
+ALTER TABLE usuario add constraint pk_usuario PRIMARY KEY (id_usuario)	--PRIMARIA COMPUESTA 
+ALTER TABLE usuario add constraint fk_usuario FOREIGN KEY (id_rol) REFERENCES rol	--FORANEA
 sp_helpconstraint usuario
 
+
+-------------------------------------------------
 
 --PRIVELEGIO
 CREATE TABLE privilegio(
 	id_privilegio numeric(2) NOT NULL,
 	permiso numeric(1),
 
-	--PRIMARIA
-	PRIMARY KEY(id_privilegio)
 )
-
+ALTER TABLE privilegio add constraint pk_privilegio PRIMARY KEY (id_privilegio)	--PRIMARIA COMPUESTA 
 sp_helpconstraint privilegio
+-------------------------------------------------
+
+
 
 --POSEE PRIVILEGIO
-CREATE TABLE rol_priviledio(
-	id_rol numeric(2),
-	id_privilegio numeric(2),
-
-	--PRIMARIA
-	PRIMARY KEY (id_rol, id_privilegio)
-	--FORANEAS
-	FOREIGN KEY(id_rol) REFERENCES rol,
-	FOREIGN KEY(id_privilegio) REFERENCES privilegio
+CREATE TABLE rol_privilegio(
+	id_rol numeric(2) NOT NULL,
+	id_privilegio numeric(2) NOT NULL,
 	
 )
 
+DROP TABLE rol_privilegio
+
+ALTER TABLE rol_privilegio add constraint pk_rol_privilegio PRIMARY KEY (id_rol, id_privilegio)	--PRIMARIA COMPUESTA 
+ALTER TABLE rol_privilegio add constraint fk_id_rol FOREIGN KEY (id_rol) REFERENCES	rol--FORANEA
+ALTER TABLE rol_privilegio add constraint fk_id_privilegio FOREIGN KEY(id_privilegio) REFERENCES	privilegio--FORANEA
 sp_helpconstraint rol_privilegio
 
 
-
+------------------------------
+SET DATEFORMAT dmy
+BULK INSERT eq02.eq02.[proveedor] 
+	FROM 'e:\wwwroot\eq02\proveedor.csv'
+	WITH
+	(
+		CODEPAGE = 'ACP',
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '\n'
+	
+	)
 
 
