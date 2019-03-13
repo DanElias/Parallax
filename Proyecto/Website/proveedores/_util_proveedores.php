@@ -25,8 +25,9 @@ function form_editar_proveedor(){
 function form_eliminar_proveedor(){
     include("forms/_form_eliminar_proveedor.html");
 }
-function form_estado_proveedor(){
-    include("forms/_form_estado_proveedor.html");
+
+function modal_informacion_proveedores(){
+    include("_modal_informacion_proveedores.html");
 }
 
 

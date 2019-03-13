@@ -13,7 +13,7 @@ if(isset($_SESSION["usuario"])) {
     form_agregar_proveedor();
     form_editar_proveedor();
     form_eliminar_proveedor();
-    form_estado_proveedor();
+    modal_informacion_proveedores();
     footer_html();
 
 } else {
