@@ -1,38 +1,9 @@
-@font-face {
-    font-family: 'lemonmilkregular';
-    src: url('fonts/lemonmilk-webfont.woff2') format('woff2'),
-         url('fonts/lemonmilk-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'bebas_neueregular';
-    src: url('fonts/bebasneue-regular-webfont.woff2') format('woff2'),
-    url('fonts/bebasneue-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: 'aller';
-    src: url('fonts/aller_rg-webfont.woff2') format('woff2'),
-    url('fonts/aller_rg-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body{
-    margin: 0
-}
 
 .nav_text{
     font-family: Staatliches;
     font-size: 1.3em;
-    color: #2d5c85;
+    color: white;
 }
-
 
 
 ul {
@@ -40,7 +11,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: background-color: #16181c;;
+  background-color: white;
 }
 
 audio{
@@ -161,6 +132,22 @@ h6{
     border: none;
 }
 
+.myBigButton{
+    font-family: aller;
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: block;
+    color: white;
+    width: 5em;
+    height: 5em;
+    background-color: #4c5cee;
+    border: none;
+}
+
 
 .first_table{
    width: 100%;
@@ -212,34 +199,6 @@ video {
     min-width: 100%;
     overflow: hidden;
     z-index: -1;
-}
-
-
-#home_header{
-    background-image: url('img/sunset_header.jpg');
-    
-}
-
-#home_body{
-    background-image: url('img/code.jpg');
-}
-
-#passwords_header{
-    background-image: url('img/password.jpg');
-}
-
-#passwords_body{
-    background-image: url('img/code.jpg');
-}
-
-#tienda_header{
-    background-image: url('img/code.jpg');
-    text-shadow: 4px 4px darkslategray;
-    background-color: 
-}
-
-#tienda_body{
-    background-image: url('img/code.jpg');
 }
 
 .body{
@@ -332,8 +291,6 @@ input{
     font-family: Staatliches;
     padding-top: 1em;
     font-size: 2em;
-    
-    
 }
 
 .my_normal_text{
@@ -347,6 +304,15 @@ input{
 .my_heading_text{
     font-family: Staatliches;
     color: #0d3d63;
+    font-size: 4em;
+    padding: 0.2em;
+}
+
+.my_heading_text_medium{
+    font-family: Staatliches;
+    color: #0d3d63;
+    font-size: 3.3em;
+    padding: 0.2em;
 }
 
 .my_table{
@@ -360,10 +326,23 @@ input{
     text-align: center;
 }
 
+.my_table2{
+    background-color: rgba(63, 127, 191, 0.7);
+    height: auto;
+    height: 100%;
+    font-family: Ubuntu;
+    color: white;
+    font-size: 1.5em;
+    align-content: center;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+}
+
 .my_data_table{
     margin: 20px;
     table-layout: fixed;
-width: 100%;
+    width: 100%;
 }
 
 .my_parallax_container{
@@ -381,7 +360,7 @@ width: 100%;
     border: 0;
     width: 70%;
     font-size: 0.8em;
-    height: 100%
+    height: 100%;
 }
 
 .my_card_title{
@@ -403,8 +382,18 @@ width: 100%;
 
 .my_title_icon{
     font-size: 1.5em;
-    vertical-align: text-bottom;
-    
+    vertical-align: text-bottom; 
+}
+
+.my_title_icon_middle{
+    font-size: 1.5em;
+    vertical-align: text-top; 
+}
+
+.myButtonIcon{
+
+    font-size:1.5em;
+
 }
 
 .my_copyright{
@@ -438,13 +427,6 @@ width: 100%;
     position: absolute;
     z-index: 99;
     margin-left: 20%;
-}
-
-.my_side_nav{
-    background-color: #1c2e4c;
-    color: white;
-    font-family: Staatliches;
-    font-size: 1.5em;
 }
 
 .wrapper {
@@ -506,6 +488,14 @@ width: 100%;
     z-index: 99;
 }
 
+.my_modal_header_tutor{
+    background-color: #d81b60;
+    margin: 0 auto;
+    border: 0;
+    position: fixed;
+    z-index: 99;
+}
+
 
 .my_modal_header2{
     font-family: Staatliches;
@@ -527,48 +517,20 @@ width: 100%;
 .my_modal_buttons{
     text-align: center;
 }
-
 .my_modal_content{
     color: #1c2e4c;
 }
-        
-
 
 .first_col_data_table{
     padding-left: 1em;
 }
-
-
-.mytabs .mytab a{
-            color:#1c2e4c;
-            font-family: Roboto;
-            font-size: 1em;
-    display:-webkit-flex;
-    display: -ms-flexbox;
-    display: flex
-        } /*Black color to the text*/
-
-        .mytabs .mytab a:hover {
-            background-color:skyblue;
-            color:black;
-        } /*Text color on hover*/
-
-        .mytabs .mytab a.active {
-            background-color:white;
-            color:#1c2e4c;
-        } /*Background and text color when a tab is active*/
-
-        .mytabs .myindicator {
-            background-color:#1c2e4c;
-        } /*Color of underline*/
-
 
 .sections_header{
     padding-left: 5em;
 }
 
 .my_search{
-    color: #0d3d63;
+    color: #673ab7;
 }
 
 .no_margin{
@@ -586,3 +548,103 @@ width: 100%;
 .my_table_headers{
     color: dimgray;
 }
+
+.modal{
+    background-color:white;
+}
+
+.close_style{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    cursor:pointer; 
+}
+
+.my_alert{
+    z-index: 999 !important;
+}
+
+
+.flexbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my_side_nav{
+    font-family: Staatliches;
+    background-color: #0d3d63;
+    font-size: 1.5em;
+}
+
+.my_icon_align{
+    vertical-align: bottom;
+    color: #ffc107;
+}
+
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+      top: 0;
+      width: 20px;
+
+      height: 20px;
+
+      /*border: 2px solid #e6ee9c;*/
+        border: 0;
+
+      background-color: #1e88e5;
+
+      z-index: 0;
+}
+
+.my_add_button_container{
+    margin: 4em;
+}
+
+.my_header_admin{
+    color: #0d3d63 ;
+}
+
+.new_data_table{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+.html_admin,.body_admin
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+my_search_button{
+    position: relative;
+    right:    0;
+    bottom:   0;
+}
+
+my_search{
+    position: absolute;
+}
+
+.mi_titulo{
+    font-family: Staatliches;
+    color: #0d3d63;
+    font-size: 1.5em;
+    margin 0 !important; 
+    display: inline-block;
+}
+
+.mi_parrafo{
+    font-family: Ubuntu;
+    color: #0d3d63;
+    font-size: 1.2em;
+    margin: 0 !important;
+    display: inline-block;
+}
+
+

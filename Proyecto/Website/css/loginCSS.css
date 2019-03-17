@@ -9,7 +9,8 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
-    background: #7dcdc4;
+    background-image: linear-gradient(#7dcdc4, #136a96);
+    /*background: #7dcdc4;*/
 }
 
 #login-page {
@@ -37,4 +38,9 @@ img.logo-login{
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.colores{
+    color:red;
+    text-align: center;
 }

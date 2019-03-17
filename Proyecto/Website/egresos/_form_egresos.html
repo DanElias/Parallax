@@ -1,0 +1,164 @@
+<!-- Modal Structure -->
+                <div id="_form_egresos" class="modal modal-fixed-footer my_modal ">
+                    <div class="row my_modal_header_row">
+                        <div  class="my_modal_header1 z-depth-2 col s12">
+                            <h4 class="my_modal_header ">Agregar Egreso</h4>  
+                        </div> 
+                    </div>
+                    <br><br><br>
+                    
+                    <div class="modal-content my_modal_content">
+                        <p>Aquí puede agregar egresos</p>
+                        
+                         <!-- Inicio del form de beneficiarios-->
+                        <form class="col s12">
+                            
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">clear_all</i>
+                                    <input  type="text" class="validate" required>
+                                    <label for="icon_prefix">Folio Factura</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">library_books</i>
+                                    <input  type="text" class="validate" required>
+                                    <label for="icon_prefix">Concepto</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">attach_money</i>
+                                    <input  type="text" class="validate" required>
+                                    <label for="icon_prefix">Importe</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">calendar_today</i>
+                                    <input  type="text" class="validate" required>
+                                    <label for="icon_prefix">Fecha</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">account_balance</i>
+                                    <input  type="text" class="validate" required>
+                                    <label for="icon_prefix">Cuenta Bancaria</label>
+                                </div>
+                            </div>
+                            
+                            <!-- Aqui va un botoncito de agregar tutor-->
+                            <div class="row">
+                                 <div class="col s3 m3 center">
+                                    <!-- Modal Trigger -->
+                                    <p>Agregar Proveedor</p>
+                                    <a class="center waves-effect waves-light btn-floating modal-trigger blue darken-2 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes agregar un proveedor" href="#_form_agregar_proveedor"><i class="material-icons right">add</i></a>
+                                </div>
+                                
+                                <div class="col s9 m9 center">
+                                <div class='table-wrapper responsive-table new_data_table'>
+                                    <table class="stripped highlight responsive-table data_table fixed_header">
+                                        <thead>
+                                            <tr class="my_table_headers">
+                                                <th>Alias</th>
+                                                <th>Mas informacion</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Carlos Sánchez</td>
+                                                <td><a class="modal-trigger" href="#_modal_informacion_proveedores">Mas informacion</a></td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small" href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small" href="#_form_eliminar_proveedor_lista"><i class="material-icons">delete</i></a>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>   
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                 <div class="col s3 m3 center">
+                                    <!-- Modal Trigger -->
+                                    <p>Agregar Cuenta Contable</p>
+                                    <a class="center waves-effect waves-light btn-floating modal-trigger blue darken-2 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes agregar una nueva cuenta contable" href="#_form_cuentacontable"><i class="material-icons right">add</i></a>
+                                </div>
+                                
+                                <div class="col s9 m9 center">
+                                <div class='table-wrapper responsive-table new_data_table'>
+                                    <table class="stripped highlight responsive-table data_table fixed_header">
+                                        <thead>
+                                            <tr class="my_table_headers">
+                                                <th>Nombre Cuenta</th>
+                                                <th>Mas informacion</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Papeleria</td>
+                                                <td><a class="modal-trigger" href="#_modal_informacion_cuentacontable">Mas informacion</a></td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small" href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small" href="#_form_eliminar_cuentacontable_lista"><i class="material-icons">delete</i></a>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>   
+                                
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">description</i>
+                                    <input  type="text" class="validate" required>
+                                    <label for="icon_prefix">Observaciones</label>
+                                </div>
+                            </div>
+                            
+                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+                            <div class="my_modal_buttons">
+                                <div class="row">
+                                    <div class="col s6">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                                        <i class="material-icons right">check_circle_outline</i>
+                                    </button>
+                                    </div>
+                                    <div class="col s6">
+                                        <button class="btn waves-effect waves-light red modal-close">Cancelar
+                                            <i class="material-icons right">highlight_off</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    <!-- Final del form de beneficiarios-->
+    
+                    </div>
+                </div>
+                
