@@ -2,8 +2,6 @@
 
 //Inicio de sesion
 require_once("_util_login.php");
-
-
 session_start();
 
 //Condicionales de validacion de email
