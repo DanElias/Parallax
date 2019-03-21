@@ -10,7 +10,7 @@ function login($email, $password) {
     //Usuario y contraseña en blancos
 
     if ($email == "" && $password == "") {
-        $usuario = "Mariana Sala";
+        $usuario = "Nombre de la usuaria"; //debera jalar los datos de la base de datos especificamente Nombre
     }
 
     return $usuario;
