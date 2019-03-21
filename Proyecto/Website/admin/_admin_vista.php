@@ -9,6 +9,8 @@ session_start(); //Inicio de sesion
 if(isset($_SESSION["usuario"])) {
     //Llamada de funciones (util.php) de lo que se nesecite en el form
     header_html();
+    fecha();
+    hora();
     body_admin_main();
     sidenav_html();
     footer_html();
