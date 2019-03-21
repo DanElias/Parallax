@@ -1,4 +1,4 @@
-<?php
+<?php 
 
     require_once("html_structures.php");
     require_once("logical_functions.php");

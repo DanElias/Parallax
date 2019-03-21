@@ -542,7 +542,6 @@ input{
     border: white;
     border-width: thick;
     width: 100%;
-    
 }
 
 .my_table_headers{
@@ -560,6 +559,14 @@ input{
     font-size: 20px;
     color: white;
     cursor:pointer; 
+}
+
+.my_big_modal{
+    width: 100% !important;
+    max-height: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    
 }
 
 .my_alert{
