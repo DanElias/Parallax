@@ -562,9 +562,9 @@ input{
 }
 
 .my_big_modal{
-    width: 100% !important;
-    max-height: 100% !important;
-    height: 100% !important;
+    width: 99% !important;
+    max-height: 97% !important;
+    height: 98% !important;
     top: 0 !important;
     
 }
