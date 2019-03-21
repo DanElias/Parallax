@@ -7,10 +7,18 @@ function header_html($titulo="LogIn") {
 
 function login($email, $password) {
     $usuario = "";
-    //Usuario y contraseña en blancos
+    
 
+    //Usuario y contraseña en blancos
+    
+    //$SQL == Llamamos funcion de util sql -- > Obtener si existen email y contraserña
+    
+    //Select de usaurio arroja renglon
+    
+    //variable row con campo
+    //Otra consulta de esa consulta y seleccionamso correo y contraseña 
     if ($email == "" && $password == "") {
-        $usuario = "Nombre de la usuaria"; //debera jalar los datos de la base de datos especificamente Nombre
+        $usuario = "usuario"; //debera jalar los datos de la base de datos especificamente Nombre
     }
 
     return $usuario;
@@ -21,4 +29,8 @@ function info($mensaje) {
     echo $mensaje;
 }
 
+function hora_fecha(){
+    date_default_timezone_set('GMT-6');
+    
+}
 ?>

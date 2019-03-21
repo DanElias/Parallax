@@ -2,10 +2,10 @@
 
     //se conecta con la base de datos indicada
     function conectDb(){//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "lab14";
+        $servername = "10.25.18.106,10433";
+        $username = "eq02";
+        $password = "wikefuco";
+        $dbname = "eq02";
         
         $con = mysqli_connect($servername, $username, $password, $dbname);
         
