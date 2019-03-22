@@ -12,6 +12,11 @@ function header_html($titulo="LogIn") {
 *@Input: email,password
 *@Ouptu: 1 o 0 
 */
+/*
+function vista_admin(){
+    include()
+}
+*/
 function autentificarse($email,$password){
     $con = conectDb();
 
@@ -26,13 +31,14 @@ function autentificarse($email,$password){
 *Esta funcion dependiendo del email y el password regresara el nombre del usuario 
 */
 function login($email,$password) {
-     $usuario = "";
 
-    if ($email == "" && $password == "") {
-        $usuario = "usuario";
-    }
 
-    return $usuario;
+   // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
+      $con = conectDb();
+    $sql = "SELECT nombre FROM login WHERE email = '$email' And password = '$password'";
+    $result = mysqli_query($con,$sql);
+
+    return $result;
 }
 
 function info($mensaje) {
