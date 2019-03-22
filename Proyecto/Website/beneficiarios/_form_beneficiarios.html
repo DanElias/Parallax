@@ -1,17 +1,16 @@
 <!-- Modal Structure -->
-                <div id="_form_beneficiarios" class="modal modal-fixed-footer my_modal my_big_modal">
-                    <div class="row my_modal_header_row">
+                <div id="_form_beneficiarios" class="modal modal-fixed-footer my_modal my_big_modal" style="margin:10px; overflow-y:hidden">
+                    <div class="row my_modal_header_row" style="width:80%">
                             <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                             
-                        <div class="my_modal_header1">
-                            <div class="col s11 my_form_title">
-                               Agregar Beneficiario
+                        <div class="my_modal_header1" style="width:100%; height:6em; ">
+                            <div class="col s11" style="font-family:Staatliches; color:white; font-size:40px;">
+                               &nbsp;  &nbsp;  &nbsp; Agregar Beneficiario
                              </div>
                          
                             <div class="col s1">
-                                 <br> 
-                                <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center" style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
-                                   ×
+                                <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center" style="font-size:2em;font-family: Ubuntu;" href="#_form_eliminar_beneficiarios">
+                                    x
                                 </a>
                             </div>
                         </div>
@@ -22,7 +21,7 @@
                     
                     <div class="modal-content my_modal_content">
                         <p>Aquí puede agregar un nuevo beneficiario</p>
-                       
+                        
                          <!-- Inicio del form de beneficiarios-->
                         <form class="col s12">
                             
@@ -37,42 +36,42 @@
 
                                 <div class="input-field col s3">
                                   <i class="material-icons prefix">cake</i>
-                                  <input  type="date" name="fecha_nacimiento " id="fecha_nacimiento"  required>
-                                  <label for="fecha_nacimiento">Fecha de nacimiento ddmmAAAA</label>
+                                  <input  type="date" name="fecha_nacimiento "  required>
+                                  <label>Fecha de nacimiento ddmmAAAA</label>
                                 </div>
 
                                  <div class="input-field col s3">
                                      <i class="material-icons prefix">group</i>
-                                    <select id="sexo" required >
+                                    <select  required>
                                         <option value="" disabled selected></option>
                                         <option value="1">Hombre</option>
                                         <option value="2">Mujer</option>
                                     </select>
-                                    <label for="sexo">Sexo</label>
+                                    <label >Sexo</label>
                                 </div>
                             </div>
                             
                              <div class="row">
                                  <div class="input-field col s4">
                                     <i class="material-icons prefix">home</i>
-                                    <input  type="text" class="validate" id="colonia" required>
-                                    <label for="colonia">Colonia</label>
+                                    <input  type="text" class="validate"  required>
+                                    <label for="icon_prefix">Colona</label>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix"></i>
-                                    <input  type="text" class="validate"  id="calle" required>
-                                    <label for="calle">Calle</label>
+                                    <input  type="text" class="validate"  required>
+                                    <label for="icon_prefix">Calle</label>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix"></i>
-                                    <input  type="text" class="validate"  id="numero" required>
-                                    <label for="numero">Numero</label>
+                                    <input  type="text" class="validate"  required>
+                                    <label for="icon_prefix">Numero</label>
                                 </div>
                                
                             </div>
                         
                             <div class="row">
-                                 <div class="input-field col s3" id="grado">
+                                 <div class="input-field col s3">
                                          <i class="material-icons prefix">school</i>
                                         <select  required>
                                             <option value="" disabled selected></option>
@@ -90,22 +89,14 @@
                                             <option value="12">2do Secundaria</option>
                                             <option value="13">3ro Secundaria</option>
                                         </select>
-                                        <label for="grado">Grado Escolar</label>
+                                        <label>Grado Escolar</label>
                                 </div>
-<<<<<<< HEAD
-                                <div class="input-field col s3" id="grupo">
-=======
-
-                                <div class="input-field col s3" id="grupo">
-
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix">domain</i>
                                     <input  type="text" class="validate"  required>
                                     <label for="icon_prefix">Nombre Escuela</label>
                                 </div>
                                 <div class="input-field col s3">
-
->>>>>>> 6fb0c12856a54830c44f244688ddc9c53b3a3659
                                      <i class="material-icons prefix">business</i>
                                     <select  required>
                                         <option value="" disabled selected></option>
@@ -113,33 +104,18 @@
                                         <option value="2">Grupo 2</option>
                                         <option value="3">Grupo 3</option>
                                     </select>
-<<<<<<< HEAD
-                                    <label for="grupo">Grupo (Mariana Sala)</label>
-                                </div>
+                                    <label >Grupo (Mariana Sala)</label>
+                                </div>                       
                                 <div class="input-field col s3">
-                                    <i class="material-icons prefix">domain</i>
-                                    <input  type="text" class="validate"  id="escuela" required>
-                                    <label for="escuela">Nombre Escuela</label>
-=======
-
->>>>>>> 6fb0c12856a54830c44f244688ddc9c53b3a3659
+                                    <i class="material-icons prefix" required >attach_money</i>
+                                    <input  type="text" class="validate">
+                                    <label for="icon_prefix">Cuota</label>
                                 </div>
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix">local_hospital</i>
-                                    <input  type="text" class="validate" id="enfermedades" required>
-                                    <label for="enfermedades">Enfermedades y Alergias</label>
+                                    <input  type="text" class="validate"  required>
+                                    <label for="icon_prefix">Enfermedades y Alergias</label>
                                 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 6fb0c12856a54830c44f244688ddc9c53b3a3659
-                                <div class="input-field col s3">
-                                    <i class="material-icons prefix" required >attach_money</i>
-                                    <input  type="text" class="validate" id="cuota">
-                                    <label for="cuota">Cuota</label>
-<<<<<<< HEAD
-=======
-
                                 <div class="input-field col s6">
                                      <i class="material-icons prefix"  required>device_hub</i>
                                     <select>
@@ -149,38 +125,25 @@
                                         <option value="3">Medio</option>
                                     </select>
                                     <label >Estatus Socioeconómico</label>
-
->>>>>>> 6fb0c12856a54830c44f244688ddc9c53b3a3659
                                 </div>
+
                                 <div class="switch col s3 center vertical-align">
                                     <label>
                                       Beneficiario Inactivo
-                                      <input type="checkbox" id="activo" checked>
+                                      <input type="checkbox" checked>
                                       <span class="lever"></span>
                                       Beneficiario Activo!
                                     </label>
-                                  </div>
+                                  </div>  
+                                
                             </div>
                             
             
                             <div class="row">
-<<<<<<< HEAD
-                                <div class="input-field col s6">
-                                     <i class="material-icons prefix"  id="estatus" required>device_hub</i>
-                                    <select>
-                                        <option value="" disabled selected></option>
-                                        <option value="1">Bajo</option>
-                                        <option value="2">Medio Bajo</option>
-                                        <option value="3">Medio</option>
-                                    </select>
-                                    <label for="estatus">Estatus Socioeconómico</label>
-                                </div>
-                                 <!-- Switch -->
-                                  
-=======
->>>>>>> 6fb0c12856a54830c44f244688ddc9c53b3a3659
+                                   <!-- Switch -->
+                                
                             </div>
-                            
+                            <br>
                              <!-- Aqui va un botoncito de agregar tutor-->
                             <div class="row">
                                  <div class="col s3 m3 center">
