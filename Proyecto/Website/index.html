@@ -1,220 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
-    
-    <head>
-        <meta charset="utf-8">
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
-        
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-        
-        <!--Esta es mi hoja de estilos css-->
-        <link type="text/css" rel="stylesheet" href="css/mystyles.css"/>
 
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <!--Icono-->
-        <link rel="shortcut icon" href="images/Logo_Insitucion.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 
-        <!-- Titulo de paginas-->
-        <title>Mariana Sala I.A.P.</title>
-        
-        <!--<link rel="shortcut icon" type="image/jpg" href="images/si1.jpg"/>-->
-        
-    </head>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
 
-    <body>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.js"></script>
-        <script>
-            $(document).ready(function(){$('.parallax').parallax();}) ;
-            $(document).ready(function(){$('.carousel').carousel({fullWidth: true, autoplay: true, indicators: false}).css('height',$(window).height()*0.8);});
-            $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
-            autoplay();
-            function autoplay() { 
-                $('.carousel').carousel('next'); 
-                setTimeout(autoplay, 4500); 
-            } 
-            $(document).ready(function(){$('.materialboxed').materialbox();});
-            $(document).ready(function(){$('.tooltipped').tooltip();});
-        </script>
-        
-        
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo my_nav"><img class="responsive-img watermark" id="logo" src="images/watermark.png" width=120></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
-                    <li class="blue"><a href="#home" class="nav_text hoverable">Inicio</a></li>
-                    <li class="amber darken-2"><a href="login/_login_vista.php" class="nav_text hoverable">LOGIN</a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        
-        
-        <div class="full-slider">
-            <img src="images/logocolor.png" class="logo_principal center ">
-                <div class="carousel carousel-slider center" data-indicators="true" autoplay="true"> 
-                    <a class="carousel-item" href="#one!">
-                        <div class="parallax-container">
-                            <div class="parallax ">
-                                <img src="images/f1.jpg">
-                            </div>
-                        </div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <div class="parallax-container">
-                            <div class="parallax ">
-                                <img src="images/f2.jpg">
-                            </div>
-                        </div>
-                    </a>
-                    <a class="carousel-item" href="#three!">
-                        <div class="parallax-container">
-                            <div class="parallax ">
-                                <img src="images/f3.jpg">
-                            </div>
-                        </div>
-                    </a>
-                    <a class="carousel-item" href="#four!">
-                        <div class="parallax-container">
-                            <div class="parallax ">
-                               <img src="images/f4.jpg">
-                            </div>
-                        </div>
-                    </a>
-                    <a class="carousel-item" href="#five!">
-                        <div class="parallax-container">
-                            <div class="parallax ">
-                               <img src="images/f5.jpg">
-                            </div>
-                        </div>
-                    </a>
+    <!--Esta es mi hoja de estilos css-->
+    <link type="text/css" rel="stylesheet" href="css/mystyles.css"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--Icono-->
+    <link rel="shortcut icon" href="images/Logo_Insitucion.ico"/>
+
+    <!-- Titulo de paginas-->
+    <title>Mariana Sala I.A.P.</title>
+
+    <!--<link rel="shortcut icon" type="image/jpg" href="images/si1.jpg"/>-->
+
+</head>
+
+<body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            fullWidth: true,
+            autoplay: true,
+            indicators: false
+        }).css('height', $(window).height() * 0.8);
+    });
+    $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
+    autoplay();
+
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+    }
+
+    $(document).ready(function () {
+        $('.materialboxed').materialbox();
+    });
+    $(document).ready(function () {
+        $('.tooltipped').tooltip();
+    });
+</script>
+
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo my_nav"><img class="responsive-img watermark" id="logo" src="images/watermark.png"
+                                                   width=120></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
+            <li class="blue"><a href="#home" class="nav_text hoverable">Inicio</a></li>
+            <li class="amber darken-2"><a href="login/_login_vista.php" class="nav_text hoverable">LOGIN</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="full-slider">
+    <img src="images/logocolor.png" class="logo_principal center ">
+    <div class="carousel carousel-slider center" data-indicators="true" autoplay="true">
+        <a class="carousel-item" href="#one!">
+            <div class="parallax-container">
+                <div class="parallax ">
+                    <img src="images/f1.jpg">
                 </div>
             </div>
-        
-        <div class="section white z-depth-5">
-            <div class="row container">
-                <h2 class="header my_heading_text">Bienvenido 👋</h2>
-                <p class="grey-text text-darken-3 lighten-2 my_normal_text">Brindamos apoyo educativo a niños y jóvenes de escasos recursos de la comunidad Puerta Cielo y sus alrededores en el estado de Querétaro. </p>
-            </div>
-        </div>
-        
-        <div class="parallax-container my_parallax_container" id="about">
-            <div class="my_table">
-                <br><br>
-                <div class="row">
-                    <div class="col s12 my_table_title hoverable">¡CONÓCENOS! 🤝</div>
-                </div>
-                <br>
-                 <div class="row">
-                    <div class="col s4">
-                        <div class="card hoverable my_card" id="card1">
-                            <div class="card-image materialboxed">
-                                <img src="images/g4.jpg">
-                                <span class="card-title my_card_title">ACTIVIDADES 🎓</span>
-                                <a href="https://www.facebook.com/MarianaSalasIap/" target=”_blank” class="btn-floating halfway-fab waves-effect waves-light green accent-3 hoverable btn tooltipped" data-position="right" data-tooltip="Visit my SoundCloud account"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p class="card_text">Damos apoyo académico a niños</p>
-                            </div>
-                        </div>
-                    </div>
-                     
-                    <div class="col s4">
-                        <div class="card hoverable my_card" id="card2">
-                            <div class="card-image materialboxed">
-                                <img src="images/g2.jpg">
-                                <span class="card-title my_card_title">PROGRAMAS 🎨</span>
-                                <a href="https://www.facebook.com/MarianaSalasIap/" target=”_blank”  class="btn-floating halfway-fab waves-effect waves-light amber darken-1 hoverable btn tooltipped" data-position="right" data-tooltip="Visit my Instagram account"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p class="card_text">Tenemos 3 programas de apoyo a niños</p>
-                            </div>
-                        </div>
-                    </div>
-                     
-                    <div class="col s4">
-                        <div class="card hoverable my_card" id="card3">
-                            <div class="card-image materialboxed">
-                                <img src="images/g3.jpg">
-                                <span class="card-title my_card_title">VOLUNTARIADOS 💫</span>
-                                <a href="https://www.facebook.com/MarianaSalasIap/" target=”_blank”  class="btn-floating halfway-fab waves-effect waves-light red hoverable btn tooltipped" data-position="right" data-tooltip="Visit my GitHub account"><i class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p class="card_text">Actualmente puedes hacer voluntariado</p>
-                            </div>
-                        </div>
-                    </div>
-                </div><br><br>
-            </div>
-            <div class="parallax"><img src="images/f1.jpg" width="100%" ></div>
-        </div>
-        
-        
-        <div class="parallax-container my_parallax_container" id="projects" >
-            <div class="my_table">
-                <div class="carousel carousel-slider center">
-                     <div class="carousel-fixed-item center">
-                        <a class="btn waves-effect white grey-text darken-text-2">button</a>
-                    </div>
-                    <div class="carousel-item amber darken-4 white-text carousel_item_text_align" href="#one!">
-                        <h2>Info</h2>
-                        <p class="white-text"></p>
-                    </div>
-                    <div class="carousel-item blue darken-2 white-text carousel_item_text_align" href="#two!">
-                        <h2>Info</h2>
-                        <p class="white-text">info</p>
-                    </div>
-                    <div class="carousel-item amber darken-4 white-text carousel_item_text_align" href="#three!">
-                        <h2>Info</h2>
-                        <p class="white-text">Info</p>
-                    </div>
-                    <div class="carousel-item blue darken-2 white-text carousel_item_text_align" href="#four!">
-                        <h2>Info</h2>
-                        <p class="white-text">Info</p>
-                    </div>
-                    
+        </a>
+        <a class="carousel-item" href="#two!">
+            <div class="parallax-container">
+                <div class="parallax ">
+                    <img src="images/f2.jpg">
                 </div>
             </div>
-            
-            
-            <div class="parallax"><img src="images/si4.jpg" width="100%" ></div>
-            
-            
+        </a>
+        <a class="carousel-item" href="#three!">
+            <div class="parallax-container">
+                <div class="parallax ">
+                    <img src="images/f3.jpg">
+                </div>
+            </div>
+        </a>
+        <a class="carousel-item" href="#four!">
+            <div class="parallax-container">
+                <div class="parallax ">
+                    <img src="images/f4.jpg">
+                </div>
+            </div>
+        </a>
+        <a class="carousel-item" href="#five!">
+            <div class="parallax-container">
+                <div class="parallax ">
+                    <img src="images/f5.jpg">
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="section white z-depth-5">
+    <div class="row container">
+        <h2 class="header my_heading_text">Bienvenido 👋</h2>
+        <p class="grey-text text-darken-3 lighten-2 my_normal_text">Brindamos apoyo educativo a niños y jóvenes de
+            escasos recursos de la comunidad Puerta Cielo y sus alrededores en el estado de Querétaro. </p>
+    </div>
+</div>
+
+<div class="parallax-container my_parallax_container" id="about">
+    <div class="my_table">
+        <br><br>
+        <div class="row">
+            <div class="col s12 my_table_title hoverable">¡CONÓCENOS! 🤝</div>
         </div>
-        
-        <footer class="page-footer my_footer" id="footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Mariana Sala I.A.P.<hr></h5>
-                <p class="grey-text text-lighten-4">¡Gracias por visitar nuestra página! <img class="responsive-img logo_foot" src="images/watermark.png"></p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text"> &nbsp; &nbsp;Links con más información: <hr></h5>
+        <br>
+        <div class="row">
+            <div class="col s4">
+                <div class="card hoverable my_card" id="card1">
+                    <div class="card-image materialboxed">
+                        <img src="images/g4.jpg">
+                        <span class="card-title my_card_title">ACTIVIDADES 🎓</span>
+                        <a href="https://www.facebook.com/MarianaSalasIap/" target=”_blank”
+                           class="btn-floating halfway-fab waves-effect waves-light green accent-3 hoverable btn tooltipped"
+                           data-position="right" data-tooltip="Visit my SoundCloud account"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p class="card_text">Damos apoyo académico a niños</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card hoverable my_card" id="card2">
+                    <div class="card-image materialboxed">
+                        <img src="images/g2.jpg">
+                        <span class="card-title my_card_title">PROGRAMAS 🎨</span>
+                        <a href="https://www.facebook.com/MarianaSalasIap/" target=”_blank”
+                           class="btn-floating halfway-fab waves-effect waves-light amber darken-1 hoverable btn tooltipped"
+                           data-position="right" data-tooltip="Visit my Instagram account"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p class="card_text">Tenemos 3 programas de apoyo a niños</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card hoverable my_card" id="card3">
+                    <div class="card-image materialboxed">
+                        <img src="images/g3.jpg">
+                        <span class="card-title my_card_title">VOLUNTARIADOS 💫</span>
+                        <a href="https://www.facebook.com/MarianaSalasIap/" target=”_blank”
+                           class="btn-floating halfway-fab waves-effect waves-light red hoverable btn tooltipped"
+                           data-position="right" data-tooltip="Visit my GitHub account"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p class="card_text">Actualmente puedes hacer voluntariado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <div class="parallax"><img src="images/f1.jpg" width="100%"></div>
+</div>
+
+
+<div class="parallax-container my_parallax_container" id="projects">
+    <div class="my_table">
+        <div class="carousel carousel-slider center">
+            <div class="carousel-fixed-item center">
+                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+            </div>
+            <div class="carousel-item amber darken-4 white-text carousel_item_text_align" href="#one!">
+                <h2>Info</h2>
+                <p class="white-text"></p>
+            </div>
+            <div class="carousel-item blue darken-2 white-text carousel_item_text_align" href="#two!">
+                <h2>Info</h2>
+                <p class="white-text">info</p>
+            </div>
+            <div class="carousel-item amber darken-4 white-text carousel_item_text_align" href="#three!">
+                <h2>Info</h2>
+                <p class="white-text">Info</p>
+            </div>
+            <div class="carousel-item blue darken-2 white-text carousel_item_text_align" href="#four!">
+                <h2>Info</h2>
+                <p class="white-text">Info</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax"><img src="images/si4.jpg" width="100%"></div>
+
+
+</div>
+
+<footer class="page-footer my_footer" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Mariana Sala I.A.P.
+                    <hr>
+                </h5>
+                <p class="grey-text text-lighten-4">¡Gracias por visitar nuestra página! <img
+                        class="responsive-img logo_foot" src="images/watermark.png"></p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text"> &nbsp; &nbsp;Links con más información:
+                    <hr>
+                </h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                  <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                  <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
+                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
+                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
+                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
                 </ul>
-              </div>
             </div>
-          </div>
-          <div class="my_copyright">
-              <hr>
-            Copyright Parallax Web Solutions 2019 ©
-          </div>
-        </footer>
-        
-        <script>
-            
-        </script>
-    
-    </body>
+        </div>
+    </div>
+    <div class="my_copyright">
+        <hr>
+        Copyright Parallax Web Solutions 2019 ©
+    </div>
+</footer>
+
+<script>
+
+</script>
+
+</body>
 </html>

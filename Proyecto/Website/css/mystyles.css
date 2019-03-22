@@ -1,5 +1,5 @@
 
-.nav_text{
+.nav_text {
     font-family: Staatliches;
     font-size: 1.3em;
     color: white;
@@ -7,41 +7,41 @@
 
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
 }
 
-audio{
+audio {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
 li {
-  float: left;
+    float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 li a:hover {
-  background-color: #111;
+    background-color: #111;
 }
 
-table{
+table {
     margin: 0;
     border: 0;
 }
 
-header{
+header {
     background-size: 1350px 820px;
     height: 250px;
     background-attachment: fixed;
@@ -50,19 +50,19 @@ header{
     background-size: cover;
     text-align: center;
     font-family: 'bebas_neueregular';
-    font-weight:normal;
-    font-style:normal;
+    font-weight: normal;
+    font-style: normal;
     font-size: 70px;
     color: white;
     padding-top: 40px;
 }
 
-h6{
+h6 {
     margin: 0;
     opacity: 0;
 }
 
-.textfield{
+.textfield {
     font-size: 30px;
     font-family: aller;
     margin: auto;
@@ -74,7 +74,7 @@ h6{
     color: gray;
 }
 
-.basiclabel{
+.basiclabel {
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -84,7 +84,7 @@ h6{
     display: block;
 }
 
-#labelmistake, .labelmistake{
+#labelmistake, .labelmistake {
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -95,7 +95,7 @@ h6{
     color: indianred;
 }
 
-#labelcorrect,.labelcorrect{
+#labelcorrect, .labelcorrect {
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -106,7 +106,7 @@ h6{
     color: limegreen;
 }
 
-#labelsecurity{
+#labelsecurity {
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -118,7 +118,7 @@ h6{
 }
 
 
-.mybuttons{
+.mybuttons {
     font-family: aller;
     font-size: 30px;
     margin: auto;
@@ -132,7 +132,7 @@ h6{
     border: none;
 }
 
-.myBigButton{
+.myBigButton {
     font-family: aller;
     font-size: 30px;
     margin: auto;
@@ -149,45 +149,45 @@ h6{
 }
 
 
-.first_table{
-   width: 100%;
+.first_table {
+    width: 100%;
     text-align: center;
-    background-color: rgba(4, 7, 12,0.75);
+    background-color: rgba(4, 7, 12, 0.75);
     table-layout: fixed;
     word-wrap: break-word;
     padding-top: 10px;
 }
 
-.second_table{
-   width: 100%;
+.second_table {
+    width: 100%;
     text-align: left;
-    background-color: rgba(4, 7, 12,0.75);
+    background-color: rgba(4, 7, 12, 0.75);
     table-layout: fixed;
     word-wrap: break-word;
     height: 100%;
 }
 
-.third_table{
-   width: 100%;
+.third_table {
+    width: 100%;
     text-align: left;
-    background-color: rgba(4, 7, 12,0.75);
+    background-color: rgba(4, 7, 12, 0.75);
 }
 
-.img_cell{
+.img_cell {
     padding: 20px;
 }
 
-.table_text{
+.table_text {
     font-family: 'aller';
     font-size: 20px;
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 20px;
     padding-bottom: 20px;
-    
+
 }
 
-.information{
+.information {
     font-family: 'bebas_neueregular';
     font-size: 30px;
     color: white;
@@ -201,121 +201,121 @@ video {
     z-index: -1;
 }
 
-.body{
+.body {
     height: 100%;
     height: auto;
     margin: 0;
 }
 
 .parallax2 {
-  /* The image used */
-  
+    /* The image used */
 
-  /* Full height */
+
+    /* Full height */
     height: auto;
     height: 100%;
     margin: 0;
     transform-style: preserve-3d;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     will-change: transform;
-    will-change:scroll-position;
-    transition-timing-function:steps();
-background-color: white;
- 
+    will-change: scroll-position;
+    transition-timing-function: steps();
+    background-color: white;
+
 }
 
-.information{
+.information {
     box-sizing: content-box;
     height: 100%;
     height: auto;
 }
 
-footer{
+footer {
     height: 350px;
     background-color: #16181c;
     padding: 50px;
     font-family: 'bebas_neueregular';
-    font-weight:normal;
-    font-style:normal;
+    font-weight: normal;
+    font-style: normal;
     font-size: 30px;
-    color:white;
+    color: white;
 }
 
-section{
+section {
     margin: 0;
 }
 
-input{
+input {
     font-family: 'bebas_neueregular';
 }
 
-.boton_sumar, .boton_restar{
-    font-family:'bebas_neueregular';
-    border-color: rgba(255,255,255,1);
+.boton_sumar, .boton_restar {
+    font-family: 'bebas_neueregular';
+    border-color: rgba(255, 255, 255, 1);
     border-radius: 50px 50px 50px 50px;
     background-color: #141e2b;
     font-size: 30px;
     color: white;
 }
 
-.boton_restar{
+.boton_restar {
     font-size: 30px;
 }
 
-#carrito{
+#carrito {
     font-size: 20px;
 }
 
-#validar1, #validar2, #validar3{
-    color:limegreen;
+#validar1, #validar2, #validar3 {
+    color: limegreen;
 }
 
-#cita{
+#cita {
     font-size: 20px;
 }
 
-.watermark{
+.watermark {
     z-index: 99;
-    
+
     margin-left: 4em;
     border: 0;
     padding: 0;
 }
 
-.my_header_text{
+.my_header_text {
     font-family: Staatliches;
     padding-top: 1em;
     font-size: 2em;
 }
 
-.my_normal_text{
-    font-size:1.5em;
+.my_normal_text {
+    font-size: 1.5em;
     font-family: Ubuntu;
-  text-align: justify;
-  text-justify: inter-word;
-    
+    text-align: justify;
+    text-justify: inter-word;
+
 }
 
-.my_heading_text{
+.my_heading_text {
     font-family: Staatliches;
     color: #0d3d63;
     font-size: 4em;
     padding: 0.2em;
 }
 
-.my_heading_text_medium{
+.my_heading_text_medium {
     font-family: Staatliches;
     color: #0d3d63;
     font-size: 3.3em;
     padding: 0.2em;
 }
 
-.my_table{
+.my_table {
     background-color: rgba(19, 28, 43, 0.7);
     height: auto;
     height: 100%;
@@ -326,7 +326,7 @@ input{
     text-align: center;
 }
 
-.my_table2{
+.my_table2 {
     background-color: rgba(63, 127, 191, 0.7);
     height: auto;
     height: 100%;
@@ -339,22 +339,22 @@ input{
     margin: 1em;
 }
 
-.my_data_table{
+.my_data_table {
     margin: 20px;
     table-layout: fixed;
     width: 100%;
 }
 
-.my_parallax_container{
+.my_parallax_container {
     height: auto;
     height: 100%;
 }
 
-.card_text{
+.card_text {
     color: rgba(19, 28, 43, 1);
 }
 
-.my_card{
+.my_card {
     opacity: 1;
     margin: 0 auto;
     border: 0;
@@ -363,65 +363,65 @@ input{
     height: 100%;
 }
 
-.my_card_title{
+.my_card_title {
     font-family: Staatliches;
     font-size: 200%;
     text-shadow: 3px 3px rgba(19, 28, 43, 0.8);
-    
+
 }
 
-.my_table_title{
+.my_table_title {
     font-family: Staatliches;
-    font-size: 400%;   
+    font-size: 400%;
 }
 
-.my_table_title2{
+.my_table_title2 {
     font-family: Staatliches;
-    font-size: 300%;   
+    font-size: 300%;
 }
 
-.my_title_icon{
+.my_title_icon {
     font-size: 1.5em;
-    vertical-align: text-bottom; 
+    vertical-align: text-bottom;
 }
 
-.my_title_icon_middle{
+.my_title_icon_middle {
     font-size: 1.5em;
-    vertical-align: text-top; 
+    vertical-align: text-top;
 }
 
-.myButtonIcon{
+.myButtonIcon {
 
-    font-size:1.5em;
+    font-size: 1.5em;
 
 }
 
-.my_copyright{
+.my_copyright {
     font-size: 0.5em;
     text-align: center;
 }
 
-.table_icon{
+.table_icon {
     vertical-align: baseline;
-   font-size: 120% !important;
+    font-size: 120% !important;
 }
 
-.my_footer{
+.my_footer {
     background-color: #2d5d86;
     font-family: Staatliches;
 }
 
-.logo_foot{
+.logo_foot {
     vertical-align: bottom;
 }
 
-.carousel_item_text_align{
+.carousel_item_text_align {
     padding: 50px;
     text-align: justify;
-  text-justify: inter-word;
+    text-justify: inter-word;
 }
 
-.logo_principal{
+.logo_principal {
     padding: 5%;
     width: 60%;
     position: absolute;
@@ -433,21 +433,21 @@ input{
     padding-left: 300px;
 }
 
-@media only screen and (max-width : 992px) {
-      .wrapper {
-            padding-left: 0px;
-        }
+@media only screen and (max-width: 992px) {
+    .wrapper {
+        padding-left: 0px;
     }
+}
 
-.my_modal_header_row{
+.my_modal_header_row {
     position: fixed;
     z-index: 99;
     border: 0;
     margin: 0 auto;
-    
+
 }
 
-.my_modal_header{
+.my_modal_header {
     font-family: Staatliches;
     font-size: 2.5em;
     color: white;
@@ -456,17 +456,17 @@ input{
     z-index: 99;
 }
 
-.my_modal_header1{
+.my_modal_header1 {
     background-color: #342d96;
     margin: 0 auto;
     border: 0;
     position: fixed;
-    width:100%; 
-    height:6em;
-    
+    width: 100%;
+    height: 6em;
+
 }
 
-.my_modal_header_editar{
+.my_modal_header_editar {
     background-color: #ffb300;
     margin: 0 auto;
     border: 0;
@@ -474,7 +474,7 @@ input{
 }
 
 
-.my_modal_header_eliminar{
+.my_modal_header_eliminar {
     background-color: #f44336;
     margin: 0 auto;
     border: 0;
@@ -482,7 +482,7 @@ input{
     z-index: 99;
 }
 
-.my_modal_header_estado{
+.my_modal_header_estado {
     background-color: #00bfa5;
     margin: 0 auto;
     border: 0;
@@ -490,7 +490,7 @@ input{
     z-index: 99;
 }
 
-.my_modal_header_tutor{
+.my_modal_header_tutor {
     background-color: #d81b60;
     margin: 0 auto;
     border: 0;
@@ -499,166 +499,165 @@ input{
 }
 
 
-.my_modal_header2{
+.my_modal_header2 {
     font-family: Staatliches;
     font-size: 2.5em;
     color: #ff2348;
     margin: 0 auto;
 }
 
-.my_modal{
+.my_modal {
     background-color: white;
 }
 
 
-
-.my_modal_description2{
+.my_modal_description2 {
     text-align: center;
 }
 
-.my_modal_buttons{
+.my_modal_buttons {
     text-align: center;
 }
-.my_modal_content{
+
+.my_modal_content {
     color: #1c2e4c;
 }
 
-.first_col_data_table{
+.first_col_data_table {
     padding-left: 1em;
 }
 
-.sections_header{
+.sections_header {
     padding-left: 5em;
 }
 
-.my_search{
+.my_search {
     color: #673ab7;
 }
 
-.no_margin{
+.no_margin {
     margin: 0 auto;
 }
 
-.margin_section{
+.margin_section {
     margin: auto;
     border: white;
     border-width: thick;
     width: 100%;
 }
 
-.my_table_headers{
+.my_table_headers {
     color: dimgray;
 }
 
-.modal{
-    background-color:white;
+.modal {
+    background-color: white;
 }
 
-.close_style{
+.close_style {
     position: absolute;
     right: 10px;
     top: 10px;
     font-size: 20px;
     color: white;
-    cursor:pointer; 
+    cursor: pointer;
 }
 
-.my_big_modal{
+.my_big_modal {
     width: 99% !important;
     max-height: 97% !important;
     height: 98% !important;
     top: 0 !important;
-    margin:10px; 
-    overflow-y:hidden
+    margin: 10px;
+    overflow-y: hidden
 }
 
-.my_big_modal_proveedor{
+.my_big_modal_proveedor {
     width: 60% !important;
     max-height: 97% !important;
     height: 80% !important;
     top: 0 !important;
-    margin:10px; 
-    overflow-y:hidden
+    margin: 10px;
+    overflow-y: hidden
 }
 
-.my_alert{
+.my_alert {
     z-index: 999 !important;
 }
 
 
-.flexbox{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.my_side_nav{
+.my_side_nav {
     font-family: Staatliches;
     background-color: #0d3d63;
     font-size: 1.5em;
 }
 
-.my_icon_align{
+.my_icon_align {
     vertical-align: bottom;
     color: #ffc107;
 }
 
 [type="checkbox"].filled-in:checked + span:not(.lever):after {
-      top: 0;
-      width: 20px;
+    top: 0;
+    width: 20px;
 
-      height: 20px;
+    height: 20px;
 
-      /*border: 2px solid #e6ee9c;*/
-        border: 0;
+    /*border: 2px solid #e6ee9c;*/
+    border: 0;
 
-      background-color: #1e88e5;
+    background-color: #1e88e5;
 
-      z-index: 0;
+    z-index: 0;
 }
 
-.my_add_button_container{
+.my_add_button_container {
     margin: 4em;
 }
 
-.my_header_admin{
-    color: #0d3d63 ;
+.my_header_admin {
+    color: #0d3d63;
 }
 
-.new_data_table{
+.new_data_table {
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
 }
 
-.html_admin,.body_admin
-{
+.html_admin, .body_admin {
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
-my_search_button{
+my_search_button {
     position: relative;
-    right:    0;
-    bottom:   0;
+    right: 0;
+    bottom: 0;
 }
 
-my_search{
+my_search {
     position: absolute;
 }
 
-.mi_titulo{
+.mi_titulo {
     font-family: Staatliches;
     color: #0d3d63;
     font-size: 1.5em;
-    margin 0 !important; 
+    margin 0 !important;
     display: inline-block;
 }
 
-.mi_parrafo{
+.mi_parrafo {
     font-family: Ubuntu;
     color: #0d3d63;
     font-size: 1.2em;
@@ -666,10 +665,10 @@ my_search{
     display: inline-block;
 }
 
-.my_form_title{
-    font-family:Staatliches; 
-    color:white; 
-    font-size:2.3em; 
-    padding:0.4em !important; 
-    padding-left:1em !important;
+.my_form_title {
+    font-family: Staatliches;
+    color: white;
+    font-size: 2.3em;
+    padding: 0.4em !important;
+    padding-left: 1em !important;
 }

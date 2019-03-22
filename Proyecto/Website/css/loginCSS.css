@@ -2,10 +2,12 @@ html,
 body {
     height: 50%;
 }
+
 html {
     display: table;
     margin: auto;
 }
+
 body {
     display: table-cell;
     vertical-align: middle;
@@ -17,11 +19,12 @@ body {
     width: 600px;
 }
 
-h2{
+h2 {
     text-align: center;
     color: white;
 }
-img.logo-login{
+
+img.logo-login {
     width: 40%;
     position: relative;
     align: center;
@@ -40,7 +43,7 @@ img.logo-login{
     transform: translate(-50%, -50%);
 }
 
-.colores{
-    color:red;
+.colores {
+    color: red;
     text-align: center;
 }
