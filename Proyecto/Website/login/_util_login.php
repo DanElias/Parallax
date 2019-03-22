@@ -1,27 +1,44 @@
 <?php
 
+require_once("../basesdedatos/_conection_queries_db.php");
 //Funciones de util para login
 function header_html($titulo="LogIn") {
     include("../views/_header_login.html");
 }
 
-function login($email, $password) {
-    $usuario = "";
-    
+/*
+*Esta funcion recibira como parametros el correo y la contraseña enviados por el metodo post
+*seguido se buscara un elemento que cumpla con las especificaciones 
+*@Input: email,password
+*@Ouptu: 1 o 0 
+*/
+/*
+function vista_admin(){
+    include()
+}
+*/
+function autentificarse($email,$password){
+    $con = conectDb();
 
-    //Usuario y contraseña en blancos
-    
-    //$SQL == Llamamos funcion de util sql -- > Obtener si existen email y contraserña
-    
-    //Select de usaurio arroja renglon
-    
-    //variable row con campo
-    //Otra consulta de esa consulta y seleccionamso correo y contraseña 
-    if ($email == "" && $password == "") {
-        $usuario = "usuario"; //debera jalar los datos de la base de datos especificamente Nombre
-    }
+    $sql = "SELECT email,password FROM login WHERE email = '$email' And password = '$password'";
+    $result = mysqli_query($con,$sql);
 
-    return $usuario;
+    return $result;
+
+}
+
+/*
+*Esta funcion dependiendo del email y el password regresara el nombre del usuario 
+*/
+function login($email,$password) {
+
+
+   // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
+      $con = conectDb();
+    $sql = "SELECT nombre FROM login WHERE email = '$email' And password = '$password'";
+    $result = mysqli_query($con,$sql);
+
+    return $result;
 }
 
 function info($mensaje) {
