@@ -109,7 +109,7 @@ CREATE TABLE usuario(
 	email varchar(30),
 	nombre varchar(30),
 	apellido varchar(30),
-	passwd varchar(40), 
+	passwd varchar(255), 
 	fecha_nacimiento date, 
 	fecha_creacion date,
 	id_rol numeric(2),
