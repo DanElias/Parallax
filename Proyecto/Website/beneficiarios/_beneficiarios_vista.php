@@ -2,6 +2,7 @@
 
     require_once("_util_beneficiarios.php");
     session_start(); //Inicio de sesion
+    $_SESSION['usuario'] = 'user';
 
     //Condicionales para el caso de hacer logout
 

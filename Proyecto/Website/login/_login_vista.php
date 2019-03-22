@@ -22,6 +22,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])) {
     //Te manda a location de admin
     header("location:../admin/_admin_vista.php");
 
+
         //Si si existe , saca el nombre de la sesion (correo y contraseñas)
         if(mysqli_num_rows($usuario)){
             while($row = mysqli_fetch_assoc($usuario)){
