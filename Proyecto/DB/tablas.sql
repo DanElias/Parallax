@@ -106,10 +106,10 @@ CREATE TABLE privilegio(
 -------------------------- USUARIO -------------------------------
 CREATE TABLE usuario(
 	id_usuario int IDENTITY(1,1) NOT NULL,
-	correo varchar(30),
+	email varchar(30),
 	nombre varchar(30),
 	apellido varchar(30),
-	contrasena varchar(40), 
+	passwd varchar(40), 
 	fecha_nacimiento date, 
 	fecha_creacion date,
 	id_rol numeric(2),
