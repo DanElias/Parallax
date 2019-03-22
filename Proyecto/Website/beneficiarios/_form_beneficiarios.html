@@ -7,6 +7,7 @@
                         <div class="my_modal_header1">
                             <div class="col s11 my_form_title">
                                Agregar Beneficiario
+                               <i class="material-icons my_title_icon">accessibility_new</i>
                              </div>
                          
                             <div class="col s1">
@@ -32,42 +33,42 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">face</i>
-                                    <input  type="text" class="validate" id="nombre" required>
+                                    <input  type="text" class="validate" id="nombre" name="nombre" required>
                                     <label for="nombre">Nombre</label>
                                 </div>
 
                                 <div class="input-field col s3">
                                   <i class="material-icons prefix">cake</i>
-                                  <input  type="date" name="fecha_nacimiento "  required>
-                                  <label>Fecha de nacimiento ddmmAAAA</label>
+                                  <input  type="date" name="fecha_nacimiento"  id="fecha_nacimiento" required>
+                                  <label for="fecha_nacimiento">Fecha de nacimiento ddmmAAAA</label>
                                 </div>
 
                                  <div class="input-field col s3">
                                      <i class="material-icons prefix">group</i>
-                                    <select  required>
+                                    <select  id="sexo" name="sexo" required>
                                         <option value="" disabled selected></option>
                                         <option value="1">Hombre</option>
                                         <option value="2">Mujer</option>
                                     </select>
-                                    <label >Sexo</label>
+                                    <label for="sexo">Sexo</label>
                                 </div>
                             </div>
                             
                              <div class="row">
                                  <div class="input-field col s4">
                                     <i class="material-icons prefix">home</i>
-                                    <input  type="text" class="validate"  required>
-                                    <label for="icon_prefix">Colona</label>
+                                    <input  type="text" class="validate" id="colonia" name="colonia" required>
+                                    <label for="colonia">Colonia</label>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix"></i>
-                                    <input  type="text" class="validate"  required>
-                                    <label for="icon_prefix">Calle</label>
+                                    <input  type="text" class="validate"  id="calle" name="calle" required>
+                                    <label for="calle">Calle</label>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix"></i>
-                                    <input  type="text" class="validate"  required>
-                                    <label for="icon_prefix">Numero</label>
+                                    <input  type="text" class="validate"  id="numero_domicilio" name="numero_domicilio" required>
+                                    <label for="numero_domicilio">Numero</label>
                                 </div>
                                
                             </div>
@@ -75,7 +76,7 @@
                             <div class="row">
                                  <div class="input-field col s3">
                                          <i class="material-icons prefix">school</i>
-                                        <select  required>
+                                        <select  id="grado" name="grado" required>
                                             <option value="" disabled selected></option>
                                             <option value="1">1ro Preescolar</option>
                                             <option value="2">2do Preescolar</option>
@@ -91,48 +92,48 @@
                                             <option value="12">2do Secundaria</option>
                                             <option value="13">3ro Secundaria</option>
                                         </select>
-                                        <label>Grado Escolar</label>
+                                        <label for="grado">Grado Escolar</label>
                                 </div>
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix">domain</i>
-                                    <input  type="text" class="validate"  required>
-                                    <label for="icon_prefix">Nombre Escuela</label>
+                                    <input  type="text" class="validate"  id="escuela" name="escuela" required>
+                                    <label for="escuela">Nombre Escuela</label>
                                 </div>
                                 <div class="input-field col s3">
                                      <i class="material-icons prefix">business</i>
-                                    <select  required>
+                                    <select  id="grupo" name="grupo" required>
                                         <option value="" disabled selected></option>
                                         <option value="1">Grupo 1</option>
                                         <option value="2">Grupo 2</option>
                                         <option value="3">Grupo 3</option>
                                     </select>
-                                    <label >Grupo (Mariana Sala)</label>
+                                    <label for="grupo">Grupo (Mariana Sala)</label>
                                 </div>                       
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix" required >attach_money</i>
-                                    <input  type="text" class="validate">
-                                    <label for="icon_prefix">Cuota</label>
+                                    <input  type="text" id="cuota" name="cuota" class="validate">
+                                    <label for="cuota">Cuota</label>
                                 </div>
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix">local_hospital</i>
-                                    <input  type="text" class="validate"  required>
-                                    <label for="icon_prefix">Enfermedades y Alergias</label>
+                                    <input  type="text" class="validate"  id="enfermedades" name="enfermedades" required>
+                                    <label for="enfermedades">Enfermedades y Alergias</label>
                                 </div>
                                 <div class="input-field col s6">
                                      <i class="material-icons prefix"  required>device_hub</i>
-                                    <select>
+                                <select id=status name="status" required>
                                         <option value="" disabled selected></option>
                                         <option value="1">Bajo</option>
                                         <option value="2">Medio Bajo</option>
                                         <option value="3">Medio</option>
                                     </select>
-                                    <label >Estatus Socioeconómico</label>
+                                    <label for="status" >Estatus Socioeconómico</label>
                                 </div>
 
                                 <div class="switch col s3 center vertical-align">
                                     <label>
                                       Beneficiario Inactivo
-                                      <input type="checkbox" checked>
+                                      <input type="checkbox" id="estado" name="estado" checked>
                                       <span class="lever"></span>
                                       Beneficiario Activo!
                                     </label>

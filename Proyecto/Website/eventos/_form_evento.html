@@ -6,6 +6,7 @@
                         <div class="my_modal_header1">
                             <div class="col s11 my_form_title">
                                Agregar Evento
+                               <i class=" material-icons my_title_icon_middle">calendar_today</i>
                              </div>
                          
                             <div class="col s1">
@@ -29,16 +30,16 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">event</i>
-                                  <input  type="text" class="validate" name="nombre_evento">
-                                  <label>Nombre del evento</label>
+                                  <input  type="text" class="validate" name="nombre_evento" id="nombre_evento">
+                                  <label for="nombre_evento">Nombre del evento</label>
                                 </div>
                                 <div class="input-field col s2">
                                   <i class="material-icons prefix">calendar_today</i>
-                                <input type="date" name="fecha_evento">
+                                <input type="date" name="fecha_evento" id="fecha_evento">
                                 </div>
                                  <div class="input-field col s2">
                                   <i class="material-icons prefix">access_time</i>
-                                <input type="time" name="hora_evento">
+                                <input type="time" name="hora_evento" id="hora_evento">
                                 </div>
                             </div>
                         
@@ -46,15 +47,35 @@
                             <div class="row">
                                 <div class="input-field col s2">
                                   <i class="material-icons prefix">place</i>
-                                  <input  type="text" class="validate" name="lugar_evento">
-                                  <label>Lugar</label>
+                                  <input  type="text" class="validate" name="lugar_evento" id="lugar_evento" >
+                                  <label for="lugar_evento">Lugar</label>
                                 </div>
                                 <div class="input-field col s10">
                                   <i class="material-icons prefix">description</i>
-                                  <input  type="text" class="validate" name="descripcion_evento">
-                                  <label>Descripción</label>
+                                  <input  type="text" class="validate" name="descripcion_evento" id="descripcion_evento">
+                                  <label for="descripcion_evento">Descripción</label>
                                 </div>
                             </div>
+                            
+                            <form class="col s12" action="_subir_imagen.php" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Agrega una imagen para el evento:</div>
+                                    <div class="input-field col s4">
+                                      <i class="material-icons prefix">icon</i>
+                                      <input  type="file" name="fileToUpload" id="fileToUpload">
+                                       
+                                    </div>
+                                
+                                    <div class="col s1">
+                                    <button class="btn waves-effect waves-light" type="submit" name="submit" value="Upload Image">Subir Imagen
+                                        <i class="material-icons right">check_circle_outline</i>
+                                    </button>
+                                    </div>
+                                    <div class="col s1">
+                                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href=""><i class="material-icons">delete</i></a>
+                                    </div>
+                                </div><br><br>
+                            </form>
 
                             <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                             <div class="my_modal_buttons">
