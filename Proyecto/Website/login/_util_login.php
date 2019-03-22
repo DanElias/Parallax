@@ -12,11 +12,6 @@ function header_html($titulo="LogIn") {
 *@Input: email,password
 *@Ouptu: 1 o 0 
 */
-/*
-function vista_admin(){
-    include()
-}
-*/
 function autentificarse($email,$password){
     $con = conectDb();
 
