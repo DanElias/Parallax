@@ -657,4 +657,10 @@ my_search{
     display: inline-block;
 }
 
-
+.my_form_title{
+    font-family:Staatliches; 
+    color:white; 
+    font-size:2.3em; 
+    padding:0.4em !important; 
+    padding-left:1em !important;
+}
