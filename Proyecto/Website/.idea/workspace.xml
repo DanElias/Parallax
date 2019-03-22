@@ -2,13 +2,101 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_agregar_usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/_agregar_usuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/_admin_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_admin_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/_util_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_util_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basesdedatos/_eventos_nombre_query.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_eventos_nombre_query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basesdedatos/_eventos_todo_query.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_eventos_todo_query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_eliminar_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_eliminar_beneficiarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_estado_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_estado_beneficiarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_tutor.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_tutor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_modal_informacion_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_modal_informacion_beneficiarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_modal_informacion_tutor.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_modal_informacion_tutor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beneficiarios/beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/beneficiarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/loginCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/loginCSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/materialize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuentas_contables/_form_cuentacontable.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_form_cuentacontable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuentas_contables/_form_eliminar_cuentacontable.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_form_eliminar_cuentacontable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuentas_contables/_modal_informacion_cuentacontable.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_modal_informacion_cuentacontable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuentas_contables/_util_cuentas_contables.php" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_util_cuentas_contables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuentas_contables/cuentascontables.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/cuentascontables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_egresos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_egresos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_egresos_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_form_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_egresos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_form_eliminar_cuentacontable_lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_eliminar_cuentacontable_lista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_form_eliminar_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_eliminar_egresos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_form_eliminar_proveedor_lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_eliminar_proveedor_lista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_modal_informacion_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_modal_informacion_egresos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egresos/_util_egresos.php" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_util_egresos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error_handling_alerts.php" beforeDir="false" afterPath="$PROJECT_DIR$/error_handling_alerts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_eventos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_eventos_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_form_eliminar_evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_form_eliminar_evento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_form_evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_form_evento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_form_subir_imagen.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_form_subir_imagen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_modal_informacion_evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_modal_informacion_evento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_registro_evento.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_registro_evento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_subir_imagen.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_subir_imagen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/_util_eventos.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_util_eventos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos/eventos.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/eventos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_structures.php" beforeDir="false" afterPath="$PROJECT_DIR$/html_structures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loginScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/loginScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/materialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/myjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logical_functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/logical_functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/_login_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_login_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/_util_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_util_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/_modal_informacion_proveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_modal_informacion_proveedores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/_proveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_proveedores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/_proveedores_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_proveedores_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/_util_proveedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_util_proveedores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/forms/_form_agregar_proveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/forms/_form_agregar_proveedor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/forms/_form_editar_proveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/forms/_form_editar_proveedor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proveedores/forms/_form_eliminar_proveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/forms/_form_eliminar_proveedor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte_egresos/_util_reporte_egresos.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_util_reporte_egresos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_footer_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_footer_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_footer_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_footer_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_header_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_header_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_modal_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_modal_confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_parallax.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_parallax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_sidenav_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_sidenav_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_sidenav_admin2.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_sidenav_admin2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sidenav2.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/sidenav2.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,19 +131,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/login/util_Login.php" />
-        <option value="$PROJECT_DIR$/reporte_egresos/util_reporte_egresos.php" />
-        <option value="$PROJECT_DIR$/reporte_beneficiarios/util_reporte_beneficiarios.php" />
-        <option value="$PROJECT_DIR$/admin/_util_admin.php" />
-        <option value="$PROJECT_DIR$/login/_util_login.php" />
-        <option value="$PROJECT_DIR$/admin/_admin.html" />
-        <option value="$PROJECT_DIR$/views/_header_admin.html" />
-        <option value="$PROJECT_DIR$/css/materialize.css" />
-        <option value="$PROJECT_DIR$/views/_sidenav_admin.html" />
-        <option value="$PROJECT_DIR$/views/_sidenav_admin2.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_grafica_grupos.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_graficas_edades.html" />
-        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_cutoas.html" />
         <option value="$PROJECT_DIR$/beneficiarios/beneficiarios.html" />
         <option value="$PROJECT_DIR$/css/mystyles.css" />
@@ -70,10 +147,8 @@
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" />
         <option value="$PROJECT_DIR$/logout.php" />
-        <option value="$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php" />
         <option value="$PROJECT_DIR$/login/_login_vista.php" />
         <option value="$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php" />
-        <option value="$PROJECT_DIR$/admin/_admin_vista.php" />
         <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_cuenta.html" />
         <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_monto.html" />
         <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_proveedor.html" />
@@ -94,6 +169,19 @@
         <option value="$PROJECT_DIR$/egresos/_util_egresos.php" />
         <option value="$PROJECT_DIR$/egresos/_egresos_vista.php" />
         <option value="$PROJECT_DIR$/egresos/_egresos.html" />
+        <option value="$PROJECT_DIR$/egresos/_modal_informacion_egresos.html" />
+        <option value="$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html" />
+        <option value="$PROJECT_DIR$/cuentas_contables/_form_cuentacontable.html" />
+        <option value="$PROJECT_DIR$/cuentas_contables/_form_eliminar_cuentacontable.html" />
+        <option value="$PROJECT_DIR$/admin/_admin.html" />
+        <option value="$PROJECT_DIR$/admin/_admin_vista.php" />
+        <option value="$PROJECT_DIR$/admin/_util_admin.php" />
+        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
+        <option value="$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php" />
+        <option value="$PROJECT_DIR$/basesdedatos/_eventos_nombre_query.php" />
+        <option value="$PROJECT_DIR$/basesdedatos/_eventos_todo_query.php" />
+        <option value="$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php" />
+        <option value="$PROJECT_DIR$/login/_login.html" />
       </list>
     </option>
   </component>
@@ -110,7 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,32 +205,18 @@
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="beneficiarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="egresos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -203,20 +276,22 @@
       <workItem from="1552674684549" duration="22000" />
       <workItem from="1552674707726" duration="99000" />
       <workItem from="1552675610397" duration="23000" />
+      <workItem from="1553265144557" duration="444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40165000" />
+    <option name="totallyTimeSpent" value="40609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27588996" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27588996" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.04109589" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.04109589" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -260,167 +335,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/_footer_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/sidenav2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/f1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/_sidenav_admin2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="136" column="30" lean-forward="true" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/materialize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="5897" column="9" selection-start-line="5897" selection-start-column="1" selection-end-line="5897" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/mystyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_edades.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_estatus.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_genero.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_cuotas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/_header_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="70" lean-forward="true" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grupos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/_util_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/_admin_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_egresos/graficas/_grafica_grado.html" />
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_egresos/graficas/_grafica_monto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporte_egresos/graficas/_grafica_cuenta.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reporte_egresos/graficas/_grafica_proveedor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -470,13 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_eliminar_beneficiarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proveedores/forms/_form_estado_proveedor.html" />
     <entry file="file://$PROJECT_DIR$/proveedores/_util_proveedores.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -489,23 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_estado_beneficiarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_tutor.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -533,38 +423,10 @@
     <entry file="file://$PROJECT_DIR$/cuentas_contables/_util_cuentas_contables.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egresos/_egresos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/_sidenav_admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="128" lean-forward="true" selection-start-line="19" selection-start-column="113" selection-end-line="19" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egresos/_egresos_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -575,10 +437,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php">
+    <entry file="file://$PROJECT_DIR$/egresos/_egresos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        <state relative-caret-position="1547">
+          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egresos/_egresos_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egresos/_form_egresos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2382" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egresos/_form_eliminar_cuentacontable_lista.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egresos/_form_eliminar_egresos.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egresos/_form_eliminar_proveedor_lista.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egresos/_modal_informacion_egresos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1651">
+          <caret line="93" column="38" lean-forward="true" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_eliminar_beneficiarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_estado_beneficiarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_tutor.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_modal_informacion_beneficiarios.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_modal_informacion_tutor.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -586,6 +513,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/loginCSS.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/materialize.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mystyles.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuentas_contables/_form_cuentacontable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuentas_contables/_form_eliminar_cuentacontable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/_admin.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/_admin_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/_util_admin.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_eventos_nombre_query.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_eventos_todo_query.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/loginScript.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/materialize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/myjs.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_login.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
         </state>
       </provider>
     </entry>

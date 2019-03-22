@@ -2,7 +2,8 @@
 
 require_once("../basesdedatos/_conection_queries_db.php");
 //Funciones de util para login
-function header_html($titulo="LogIn") {
+function header_html($titulo = "LogIn")
+{
     include("../views/_header_login.html");
 }
 
@@ -12,16 +13,12 @@ function header_html($titulo="LogIn") {
 *@Input: email,password
 *@Ouptu: 1 o 0 
 */
-/*
-function vista_admin(){
-    include()
-}
-*/
-function autentificarse($email,$password){
+function autentificarse($email, $password)
+{
     $con = conectDb();
 
     $sql = "SELECT email,password FROM login WHERE email = '$email' And password = '$password'";
-    $result = mysqli_query($con,$sql);
+    $result = mysqli_query($con, $sql);
 
     return $result;
 
@@ -30,24 +27,28 @@ function autentificarse($email,$password){
 /*
 *Esta funcion dependiendo del email y el password regresara el nombre del usuario 
 */
-function login($email,$password) {
+function login($email, $password)
+{
 
 
-   // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
-      $con = conectDb();
+    // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
+    $con = conectDb();
     $sql = "SELECT nombre FROM login WHERE email = '$email' And password = '$password'";
-    $result = mysqli_query($con,$sql);
+    $result = mysqli_query($con, $sql);
 
     return $result;
 }
 
-function info($mensaje) {
+function info($mensaje)
+{
     $mensaje = $mensaje;
     echo $mensaje;
 }
 
-function hora_fecha(){
+function hora_fecha()
+{
     date_default_timezone_set('GMT-6');
-    
+
 }
+
 ?>
