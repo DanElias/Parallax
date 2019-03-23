@@ -1,6 +1,6 @@
 <?php
 
-function header_html($titulo = "MS - Proveedores")
+function header_html($titulo = "Proveedores")
 {
     include("../views/_header_admin.html");
 }

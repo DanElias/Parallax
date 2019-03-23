@@ -1,6 +1,6 @@
 <?php
 
-function header_html($titulo = "MS - Cuentas Contables")
+function header_html($titulo = "Cuentas Contables")
 {
     include("../views/_header_admin.html");
 }

@@ -1,4 +1,14 @@
+.my_card_small{
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
 
+}
 .nav_text {
     font-family: Staatliches;
     font-size: 1.3em;
@@ -653,7 +663,7 @@ my_search {
     font-family: Staatliches;
     color: #0d3d63;
     font-size: 1.5em;
-    margin 0 !important;
+    margin: 0 !important;
     display: inline-block;
 }
 
