@@ -2,18 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/usuarios/_usuarios.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/_usuarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_usuarios_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/_util_usuarios.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/usuarios/_registro_usuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/_modal_informacion_proveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_form_informacion_usuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/_usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_usuarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/_util_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_util_usuarios.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_editar_usuario.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_editar_proveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/forms/_form_editar_usuario.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/usuarios/_registro_usuario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/login/_login_vista.php" />
         <option value="$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php" />
         <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_cuenta.html" />
         <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_monto.html" />
@@ -100,6 +113,7 @@
         <option value="$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html" />
         <option value="$PROJECT_DIR$/usuarios/_util_usuarios.php" />
         <option value="$PROJECT_DIR$/usuarios/_usuarios.html" />
+        <option value="$PROJECT_DIR$/usuarios/_registro_usuario.php" />
       </list>
     </option>
   </component>
@@ -116,12 +130,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
@@ -138,7 +158,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,16 +229,18 @@
       <workItem from="1553351519549" duration="1091000" />
       <workItem from="1553359615782" duration="6711000" />
       <workItem from="1553367584825" duration="1669000" />
+      <workItem from="1553378193010" duration="2510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51018000" />
+    <option name="totallyTimeSpent" value="53528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29530746" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3001618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -267,20 +288,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_eliminar_beneficiarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_form_estado_beneficiarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/beneficiarios/_form_tutor.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -461,23 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login/_login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/_util_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/_admin_vista.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -549,6 +539,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_login.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_util_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/_form_informacion_usuario.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/_registro_usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>

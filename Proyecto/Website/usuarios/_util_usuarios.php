@@ -37,8 +37,10 @@ function form_eliminar_usuario()
 
 function modal_informacion_usuario()
 {
-    include("_modal_informacion_usuario.html");
+    include("_form_informacion_usuario.html");
 }
+
+
 
 
 ?>
