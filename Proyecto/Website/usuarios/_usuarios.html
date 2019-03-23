@@ -5,7 +5,7 @@
 
             <div class="row">
                 <div class="col s12 m6">
-                    <div class="header my_heading_text">Usuarios<i class="material-icons my_title_icon"></i>
+                    <div class="header my_heading_text">Usuario<i class="material-icons my_title_icon"></i>
                     </div>
                 </div>
 
@@ -13,8 +13,8 @@
                     <!-- Modal Trigger -->
                     <div class="my_add_button_container responsive">
                         <a class="waves-effect waves-light btn modal-trigger blue darken-2 hoverable tooltipped"
-                           data-position="bottom" data-tooltip="Aquí puedes agregar un beneficiario"
-                           href="#_form_beneficiarios">Agregar Usuario<i
+                           data-position="bottom" data-tooltip="Aquí puedes agregar un proveedor"
+                           href="#_form_agregar_usuario">Agregar proveedor<i
                                 class="material-icons right">person_add</i></a>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                              data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra introducida y a las casillas de los filtros de búsqueda seleccionados">
                             <i class="material-icons prefix my_search">search</i>
                             <input id="icon_prefix" type="text" class="validate my_search">
-                            <label for="icon_prefix" class="my_search">Introduce una palabra clave</label>
+                            <label for="icon_prefix" class="my_search">Introduce un palabra clave</label>
                         </div>
 
                         <div class="input-field col s2">
@@ -37,18 +37,64 @@
                 </form>
             </div>
 
+
+            <!--<div class="row">
+                <div class="col m2">
+                    <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Nombre</span>
+                    </label> &nbsp;
+                </div>
+
+
+               <div class="col m2 s4">
+                    <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Edad</span>
+                    </label> &nbsp;
+                </div>
+
+                <div class="col m2 s4">
+                    <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Tutor</span>
+                    </label> &nbsp;
+                </div>
+
+                <div class="col m2 s4">
+                    <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Grado</span>
+                    </label> &nbsp;
+                </div>
+
+                <div class="col m2 s4">
+                    <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Status</span>
+                    </label> &nbsp;
+                </div>
+
+                <div class="col m2 s4">
+                    <label>
+                    <input type="checkbox" class="filled-in checkbox-orange" checked="checked" />
+                    <span>Grupo</span>
+                    </label> &nbsp;
+                </div>
+
+            </div>-->
+
+
         </div>
 
         <div class='table-wrapper responsive-table new_data_table'>
             <table class="stripped highlight responsive-table data_table fixed_header">
                 <thead>
                 <tr class="my_table_headers">
-                    <th class="first_col_data_table">ID</th>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>Grupo</th>
+                    <th class="first_col_data_table">RFC</th>
+                    <th>Alias</th>
+                    <th>Clabe</th>
                     <th>Mas informacion</th>
-                    <th>Estado</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -56,18 +102,13 @@
 
                 <tbody>
                 <tr>
-                    <td class="first_col_data_table">1</td>
-                    <td>Carlos Sánchez</td>
-                    <td>17</td>
-                    <td>Osos</td>
-                    <td><a class="modal-trigger" href="#_modal_informacion_beneficiarios">Mas información</a></td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"
-                           href="#_form_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>
-                    </td>
+                    <td class="first_col_data_table">MALH990731C21</td>
+                    <td>Papeleria Doña Juana</td>
+                    <td>002115016003269411</td>
+                    <td><a class="modal-trigger" href="#_modal_informacion_proveedores">Mas información</a></td>
                     <td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"
-                           href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+                           href="#_form_editar_proveedor"><i class="material-icons">edit</i></a>
                     </td>
                     <td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
@@ -76,18 +117,13 @@
                 </tr>
 
                 <tr>
-                    <td class="first_col_data_table">1</td>
-                    <td>Carlos Sánchez</td>
-                    <td>17</td>
-                    <td>Osos</td>
-                    <td><a class="modal-trigger" href="#_modal_informacion_beneficiarios">Mas información</a></td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"
-                           href="#_form_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>
-                    </td>
+                    <td class="first_col_data_table">MALH990731C21</td>
+                    <td>Papeleria Doña Juana</td>
+                    <td>002115016003269411</td>
+                    <td><a class="modal-trigger" href="#_modal_informacion_proveedores">Mas información</a></td>
                     <td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"
-                           href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+                           href="#_form_editar_proveedor"><i class="material-icons">edit</i></a>
                     </td>
                     <td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
@@ -97,18 +133,13 @@
 
 
                 <tr>
-                    <td class="first_col_data_table">1</td>
-                    <td>Carlos Sánchez</td>
-                    <td>17</td>
-                    <td>Osos</td>
-                    <td><a class="modal-trigger" href="#_modal_informacion_beneficiarios">Mas información</a></td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"
-                           href="#_form_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>
-                    </td>
+                    <td class="first_col_data_table">MALH990731C21</td>
+                    <td>Papeleria Doña Juana</td>
+                    <td>002115016003269411</td>
+                    <td><a class="modal-trigger" href="#_modal_informacion_proveedores">Mas información</a></td>
                     <td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"
-                           href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+                           href="#_form_editar_proveedor"><i class="material-icons">edit</i></a>
                     </td>
                     <td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
@@ -122,4 +153,4 @@
 
     </div>
 
-</div><!--div del wrapper que empieza después del sidenav-->
+</div><!-
