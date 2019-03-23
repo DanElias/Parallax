@@ -4,7 +4,7 @@
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
     $servername = "localhost";
-    $username = "danelias";
+    $username = "root";
     $password = "";
     $dbname = "proyecto";
 
@@ -133,6 +133,23 @@ function closeDb($mysql)
             return false;
         }
     }
+
+    function registrar_usuario($usuario,$nombre,$apellido,$password,$fecha_nacimiento,$fecha_creacion,$id_rol)
+    {
+    $conn = conectDb();
+
+    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"".$usuario."\",\"".$nombre."\",\"".$apellido."\",\"".$password."\",\"".$fecha_nacimiento."\",\"".$fecha_creacion."\",\"".$id_rol."\")";
+
+    if(mysqli_query($conn,$sql)){
+        closeDb($conn);
+        return true;
+    }
+    else{
+        closeDb($conn);
+        return false;
+    }
+}
+
 
 
 

@@ -5,24 +5,6 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 
 //Funcion que va a ir en queries
 
-function registrar_usuario($usuario,$nombre,$apellido,$password,$fecha_nacimiento,$fecha_creacion,$id_rol)
-{
-	$conn = conectDb();
-
-    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"".$usuario."\",\"".$nombre."\",\"".$apellido."\",\"".$password."\",\"".$fecha_nacimiento."\",\"".$fecha_creacion."\",\"".$id_rol."\")";
-
-    if(mysqli_query($conn,$sql)){
-        closeDb($conn);
-        return true;
-    }
-    else{
-        closeDb($conn);
-        return false;
-    }
-}
-
-
-
 
 if (isset($_POST["submit"])) 
 {
