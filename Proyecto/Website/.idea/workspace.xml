@@ -2,31 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/_usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_usuarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/_usuarios.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/usuarios/_usuarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_usuarios_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/_util_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_util_usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/views/_form_agregar_usuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/_util_usuarios.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_editar_usuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,7 +83,6 @@
         <option value="$PROJECT_DIR$/login/_login.html" />
         <option value="$PROJECT_DIR$/_agregar_usuario.html" />
         <option value="$PROJECT_DIR$/views/_sidenav_admin.html" />
-        <option value="$PROJECT_DIR$/usuarios/_util_usuarios.php" />
         <option value="$PROJECT_DIR$/usuarios/_usuarios.php" />
         <option value="$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php" />
         <option value="$PROJECT_DIR$/egresos/_util_egresos.php" />
@@ -110,9 +96,10 @@
         <option value="$PROJECT_DIR$/usuarios/_usuarios_vista.php" />
         <option value="$PROJECT_DIR$/usuarios/views/_agregar_usuario.html" />
         <option value="$PROJECT_DIR$/usuarios/views/_form_agregar_usuario.html" />
-        <option value="$PROJECT_DIR$/usuarios/_usuarios.html" />
         <option value="$PROJECT_DIR$/usuarios/forms/_form_editar_usuario.html" />
         <option value="$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html" />
+        <option value="$PROJECT_DIR$/usuarios/_util_usuarios.php" />
+        <option value="$PROJECT_DIR$/usuarios/_usuarios.html" />
       </list>
     </option>
   </component>
@@ -222,16 +209,15 @@
       <workItem from="1553351207807" duration="275000" />
       <workItem from="1553351519549" duration="1091000" />
       <workItem from="1553359615782" duration="6711000" />
-      <workItem from="1553367584825" duration="634000" />
+      <workItem from="1553367584825" duration="1669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49983000" />
+    <option name="totallyTimeSpent" value="51018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29530746" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -475,20 +461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios/_util_usuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios/_usuarios_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/_login.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -538,20 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios/_usuarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_editar_usuario.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -561,8 +519,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="153">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/_usuarios_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/_util_usuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/_usuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
         </state>
       </provider>
     </entry>
