@@ -2,82 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_agregar_usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/_agregar_usuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/_admin_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_admin_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/_util_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_util_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basesdedatos/_eventos_nombre_query.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_eventos_nombre_query.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basesdedatos/_eventos_todo_query.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_eventos_todo_query.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_beneficiarios_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_beneficiarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_eliminar_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_eliminar_beneficiarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_estado_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_estado_beneficiarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_form_tutor.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_form_tutor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_modal_informacion_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_modal_informacion_beneficiarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_modal_informacion_tutor.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_modal_informacion_tutor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/beneficiarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/loginCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/loginCSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/materialize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuentas_contables/_form_cuentacontable.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_form_cuentacontable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuentas_contables/_form_eliminar_cuentacontable.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_form_eliminar_cuentacontable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuentas_contables/_modal_informacion_cuentacontable.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_modal_informacion_cuentacontable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuentas_contables/_util_cuentas_contables.php" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_util_cuentas_contables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuentas_contables/cuentascontables.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/cuentascontables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_egresos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_egresos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_egresos_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_form_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_egresos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_form_eliminar_cuentacontable_lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_eliminar_cuentacontable_lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_form_eliminar_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_eliminar_egresos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_form_eliminar_proveedor_lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_form_eliminar_proveedor_lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_modal_informacion_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_modal_informacion_egresos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_util_egresos.php" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_util_egresos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error_handling_alerts.php" beforeDir="false" afterPath="$PROJECT_DIR$/error_handling_alerts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_eventos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_eventos_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_form_eliminar_evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_form_eliminar_evento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_form_evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_form_evento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_form_subir_imagen.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_form_subir_imagen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_modal_informacion_evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_modal_informacion_evento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_registro_evento.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_registro_evento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_subir_imagen.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_subir_imagen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_util_eventos.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_util_eventos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/eventos.html" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/eventos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_structures.php" beforeDir="false" afterPath="$PROJECT_DIR$/html_structures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/loginScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/loginScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/materialize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logical_functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/logical_functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/_login_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_login_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/_util_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_util_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proveedores/_modal_informacion_proveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_modal_informacion_proveedores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/_proveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_proveedores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/_proveedores_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_proveedores_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/_util_proveedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_util_proveedores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/forms/_form_agregar_proveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/forms/_form_agregar_proveedor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/forms/_form_editar_proveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/forms/_form_editar_proveedor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/forms/_form_eliminar_proveedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/forms/_form_eliminar_proveedor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos.html" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_reporte_egresos_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_egresos/_util_reporte_egresos.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_egresos/_util_reporte_egresos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_footer_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_footer_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_footer_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_footer_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_header_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_header_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_modal_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_modal_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_parallax.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_parallax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_sidenav_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_sidenav_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_sidenav_admin2.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_sidenav_admin2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sidenav2.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/sidenav2.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/logout.php">
+        <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="476">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -205,6 +131,11 @@
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -276,18 +207,20 @@
       <workItem from="1552674684549" duration="22000" />
       <workItem from="1552674707726" duration="99000" />
       <workItem from="1552675610397" duration="23000" />
-      <workItem from="1553265144557" duration="444000" />
+      <workItem from="1553265144557" duration="1107000" />
+      <workItem from="1553351207807" duration="275000" />
+      <workItem from="1553351519549" duration="1091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40609000" />
+    <option name="totallyTimeSpent" value="42638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27588996" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2855987" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -335,13 +268,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reporte_egresos/graficas/_grafica_proveedor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -367,13 +293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -605,6 +524,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_agregar_usuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-291" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
