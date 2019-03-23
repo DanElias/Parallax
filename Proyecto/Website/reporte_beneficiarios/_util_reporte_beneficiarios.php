@@ -1,6 +1,6 @@
 <?php
 
-function header_html($titulo = "MS - Reportes Beneficiarios")
+function header_html($titulo = "Reportes Beneficiarios")
 {
     include("../views/_header_admin.html");
 }
