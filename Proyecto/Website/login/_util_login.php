@@ -17,7 +17,7 @@ function autentificarse($email, $password)
 {
     $con = conectDb();
 
-    $sql = "SELECT email,password FROM login WHERE email = '$email' And password = '$password'";
+    $sql = "SELECT email,passwd FROM usuario WHERE email = '$email' And passwd = '$password'";
     $result = mysqli_query($con, $sql);
 
     return $result;
@@ -33,7 +33,7 @@ function login($email, $password)
 
     // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
     $con = conectDb();
-    $sql = "SELECT nombre FROM login WHERE email = '$email' And password = '$password'";
+    $sql = "SELECT nombre FROM usuario WHERE email = '$email' And passwd = '$password'";
     $result = mysqli_query($con, $sql);
 
     return $result;

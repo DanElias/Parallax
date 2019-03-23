@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_agregar_usuario.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/beneficiarios/_util_beneficiarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuentas_contables/_util_cuentas_contables.php" beforeDir="false" afterPath="$PROJECT_DIR$/cuentas_contables/_util_cuentas_contables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egresos/_util_egresos.php" beforeDir="false" afterPath="$PROJECT_DIR$/egresos/_util_egresos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventos/_util_eventos.php" beforeDir="false" afterPath="$PROJECT_DIR$/eventos/_util_eventos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proveedores/_util_proveedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/proveedores/_util_proveedores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_sidenav_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_sidenav_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/_util_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_util_login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/usuarios/_usuarios.html">
+        <entry file="file://$PROJECT_DIR$/login/_util_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="104" selection-start-line="7" selection-start-column="104" selection-end-line="7" selection-end-column="104" />
+            <state relative-caret-position="408">
+              <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -66,8 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_genero.html" />
-        <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grado.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/graficas/_grafica_grupos.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios.html" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_reporte_beneficiarios_vista.php" />
@@ -99,7 +89,6 @@
         <option value="$PROJECT_DIR$/admin/_admin.html" />
         <option value="$PROJECT_DIR$/admin/_admin_vista.php" />
         <option value="$PROJECT_DIR$/admin/_util_admin.php" />
-        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
         <option value="$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php" />
         <option value="$PROJECT_DIR$/basesdedatos/_eventos_nombre_query.php" />
         <option value="$PROJECT_DIR$/basesdedatos/_eventos_todo_query.php" />
@@ -117,6 +106,9 @@
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" />
         <option value="$PROJECT_DIR$/css/mystyles.css" />
         <option value="$PROJECT_DIR$/usuarios/_usuarios.html" />
+        <option value="$PROJECT_DIR$/usuarios/views/_form_agregar_usuario.html" />
+        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
+        <option value="$PROJECT_DIR$/login/_util_login.php" />
       </list>
     </option>
   </component>
@@ -144,12 +136,7 @@
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,12 +211,12 @@
       <workItem from="1553265144557" duration="1107000" />
       <workItem from="1553351207807" duration="275000" />
       <workItem from="1553351519549" duration="1091000" />
-      <workItem from="1553359615782" duration="4257000" />
+      <workItem from="1553359615782" duration="5573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46895000" />
+    <option name="totallyTimeSpent" value="48211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
@@ -283,20 +270,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/egresos/_egresos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egresos/_egresos_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/egresos/_form_egresos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2382" />
@@ -383,9 +356,6 @@
     <entry file="file://$PROJECT_DIR$/admin/_util_admin.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/basesdedatos/_eventos_fecha_query.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -417,13 +387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -553,8 +516,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/_usuarios.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="119">
           <caret line="7" column="104" selection-start-line="7" selection-start-column="104" selection-end-line="7" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/views/_form_agregar_usuario.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/_util_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
         </state>
       </provider>
     </entry>

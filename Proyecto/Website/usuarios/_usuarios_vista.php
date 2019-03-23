@@ -7,7 +7,7 @@ if (isset($_SESSION["usuario"])) {
     sidenav_html();
     body_usuarios();
 
-
+    
 } else {
     header("location:../login/_login_vista.php");
 
