@@ -1,6 +1,6 @@
 <?php
 
-function header_html($titulo = "MS - Egresos")
+function header_html($titulo = "Egresos")
 {
     include("../views/_header_admin.html");
 }

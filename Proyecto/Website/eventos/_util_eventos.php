@@ -1,6 +1,6 @@
 <?php
 
-function header_html($titulo = "MS - Admin")
+function header_html($titulo = "Eventos")
 {
     include("../views/_header_admin.html");
 }
