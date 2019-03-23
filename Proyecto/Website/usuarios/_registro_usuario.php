@@ -39,7 +39,7 @@ if (isset($_POST["submit"]))
         && $_POST["password2"] != "" && $_POST["rol"] != "") {
 
 
-        $registrar =  registrar_usuario( $_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["password"], $_POST["fecha_nacimiento"], $_POST["fecha_nacimiento"], $_POST["rol"]);
+        $registrar =  registrar_usuario( $_POST["nombre"],$_POST["apellido"],$_POST["email"],password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"], $_POST["fecha_nacimiento"], $_POST["rol"]);
 
 
     }
