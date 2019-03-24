@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection"/>
+
+    <!--Esta es mi hoja de estilos css-->
+    <link type="text/css" rel="stylesheet" href="../css/mystyles.css"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--Icono-->
+    <link rel="shortcut icon" href="images/Logo_Insitucion.ico"/>
+
+    <!-- Titulo de paginas-->
+    <title>Mariana Sala I.A.P.</title>
+
+    <!--<link rel="shortcut icon" type="image/jpg" href="images/si1.jpg"/>-->
+
+</head>
+
+<body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            fullWidth: true,
+            autoplay: true,
+            indicators: false
+        }).css('height', $(window).height() * 0.8);
+    });
+    $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
+    autoplay();
+
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+    }
+
+    $(document).ready(function () {
+        $('.materialboxed').materialbox();
+    });
+    $(document).ready(function () {
+        $('.tooltipped').tooltip();
+    });
+</script>
+
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo my_nav"><img class="responsive-img watermark" id="logo" src="../images/watermark.png" width=120></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
+            <li class="blue"><a href="_home_vista.php" class="nav_text hoverable">Inicio</a></li>
+            <li class="teal lighten-1"><a href="_eventos_vista.php" class="nav_text hoverable">EVENTOS</a></li>
+            <li class="amber darken-2"><a href="../login/_login_vista.php" class="nav_text hoverable">LOGIN</a></li>
+        </ul>
+    </div>
+</nav>

@@ -682,3 +682,25 @@ my_search {
     padding: 0.4em !important;
     padding-left: 1em !important;
 }
+
+.card-stacked {
+        max-height: 100%;
+        display: inline-block;
+}
+
+.card .card-content {
+    padding: 15px 25px !important;
+}
+.card-action {
+padding: 5px 25px !important;
+}
+
+.my_card_image{
+    position: relative;
+    float: left;
+    width:  10em;
+    height: 10em;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
