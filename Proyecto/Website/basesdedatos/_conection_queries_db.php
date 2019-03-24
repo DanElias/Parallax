@@ -1,29 +1,27 @@
 <?php
 
 //se conecta con la base de datos indicada
-function conectDb()
-{//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "proyecto";
+    function conectDb(){//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "proyecto";
 
-    $con = mysqli_connect($servername, $username, $password, $dbname);
+        $con = mysqli_connect($servername, $username, $password, $dbname);
 
-    //Check connection
-    if (!$con) {
-        //die("Connection failed: ".mysqli_connect_error());
-        die("Error 505: Internal Sever Error");
+        //Check connection
+        if (!$con) {
+            //die("Connection failed: ".mysqli_connect_error());
+            die("Error 505: Internal Sever Error");
+        }
+
+        return $con;
     }
 
-    return $con;
-}
-
 //cierra la conexión con la base de datos
-function closeDb($mysql)
-{
-    mysqli_close($mysql);
-}
+    function closeDb($mysql){
+        mysqli_close($mysql);
+    }
 
  //obtiene todas las tuplas con todos sus datos
     function obtenerEventos(){
@@ -119,7 +117,7 @@ function closeDb($mysql)
     }
     
     //borra el evento que tenga el id 
-     function eliminarEventoPorID($id_evento){
+    function eliminarEventoPorID($id_evento){
         $conn = conectDb();
         
         $sql = "DELETE FROM evento WHERE id_evento ='".$id_evento."'";
@@ -134,21 +132,40 @@ function closeDb($mysql)
         }
     }
 
-    function registrar_usuario($usuario,$nombre,$apellido,$password,$fecha_nacimiento,$fecha_creacion,$id_rol)
-    {
-    $conn = conectDb();
+    function registrar_usuario($usuario,$nombre,$apellido,$password,$fecha_nacimiento,$fecha_creacion,$id_rol){
+        $conn = conectDb();
 
-    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"".$usuario."\",\"".$nombre."\",\"".$apellido."\",\"".$password."\",\"".$fecha_nacimiento."\",\"".$fecha_creacion."\",\"".$id_rol."\")";
+        $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"".$usuario."\",\"".$nombre."\",\"".$apellido."\",\"".$password."\",\"".$fecha_nacimiento."\",\"".$fecha_creacion."\",\"".$id_rol."\")";
 
-    if(mysqli_query($conn,$sql)){
-        closeDb($conn);
-        return true;
+        if(mysqli_query($conn,$sql)){
+            closeDb($conn);
+            return true;
+        }
+        else{
+            closeDb($conn);
+            return false;
+        }
     }
-    else{
-        closeDb($conn);
-        return false;
+
+    function registrar_proveedor($rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco){
+        $conn = conectDb();
+        //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
+
+         $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) 
+                VALUES ('$rfc', '$alias','$razon', '$nombre', '$telefono', '$cuenta', '$banco')";
+
+    
+        //'$rfc','$alias','$razon','$nombre','$telefono','$cuenta','$banco''
+        
+        if(mysqli_query($conn,$sql)){
+            closeDb($conn);
+            return true;
+        }else{
+            closeDb($conn);
+            return false;
+        }
+ 
     }
-}
 
 
 
