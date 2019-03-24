@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_header_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_header_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/_admin.html">
+        <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state relative-caret-position="605">
+              <caret line="162" column="24" lean-forward="true" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -103,7 +101,6 @@
         <option value="$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html" />
         <option value="$PROJECT_DIR$/usuarios/_util_usuarios.php" />
         <option value="$PROJECT_DIR$/usuarios/_usuarios.html" />
-        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
         <option value="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" />
         <option value="$PROJECT_DIR$/login/_util_login.php" />
         <option value="$PROJECT_DIR$/login/_login_vista.php" />
@@ -111,6 +108,7 @@
         <option value="$PROJECT_DIR$/css/mystyles.css" />
         <option value="$PROJECT_DIR$/views/_header_admin.html" />
         <option value="$PROJECT_DIR$/admin/_admin.html" />
+        <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
       </list>
     </option>
   </component>
@@ -145,7 +143,12 @@
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="basesdedatos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="proveedores" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,12 +225,12 @@
       <workItem from="1553351519549" duration="1091000" />
       <workItem from="1553359615782" duration="6711000" />
       <workItem from="1553367584825" duration="1669000" />
-      <workItem from="1553378193010" duration="11591000" />
+      <workItem from="1553378193010" duration="12444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62609000" />
+    <option name="totallyTimeSpent" value="63462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,9 +319,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/beneficiarios/_modal_informacion_tutor.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -513,13 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1894">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/_util_usuarios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -602,6 +595,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proveedores/registrar_proveedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-415" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="162" column="24" lean-forward="true" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="24" />
         </state>
       </provider>
     </entry>
