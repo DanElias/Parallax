@@ -34,6 +34,22 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down my_nav ">
                 <li><a href="../index.html" class="nav_text hoverable my_header_admin">Sitio Web</a></li>
                 <li><a href="../logout.php" class="nav_text hoverable my_header_admin">Cerrar sesión</a></li>
+                <div style="float:right;">
+                    <script type="text/javascript">
+                        function startTime(){
+                            today=new Date();
+                            h=today.getHours();
+                            m=today.getMinutes();
+                            s=today.getSeconds();
+                            m=checkTime(m);
+                            s=checkTime(s);
+                            document.getElementById('reloj').innerHTML=h+":"+m;
+                            t=setTimeout('startTime()',500);}
+                        function checkTime(i)
+                        {if (i<10) {i="0" + i;}return i;}
+                        window.onload=function(){startTime();}
+                    </script>
+                    <div id="reloj" class = "my_clock" ></div>
             </ul>
         </div>
     </nav>

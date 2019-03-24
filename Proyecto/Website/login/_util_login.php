@@ -17,10 +17,14 @@ function autentificarse($email, $password)
 {
     $con = conectDb();
 
-    $sql = "SELECT email,passwd FROM usuario WHERE email = '$email' And passwd = '$password'";
-    $result = mysqli_query($con, $sql);
+    //$sql = "SELECT email,passwd FROM usuario WHERE email = '$email' And passwd = '$password'";
+    $sql = "SELECT passwd FROM usuario WHERE email = '$email'";
 
-    return $result;
+    $result = mysqli_query($con, $sql);
+    $row =  mysqli_fetch_assoc($result);
+    $contra = password_verify($password,$row['passwd']);
+    return $contra;
+
 
 }
 

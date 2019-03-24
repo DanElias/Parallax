@@ -11,14 +11,9 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     //Datos que va a tomar, validar con htmltiteies
     $_POST['email'] = htmlentities($_POST['email']);
     $_POST['password'] = htmlentities($_POST['password']);
-
-    //Llamar funciones de validar y usaurio
-    $validar = autentificarse(($_POST["email"]), ($_POST["password"]));
     $usuario = login($_POST["email"], $_POST["password"]);
 
-    //De la funcion validar (que regresa el objeto de Sql) si encuentra la consulta entra al if
-    if (mysqli_num_rows($validar)) {
-
+    if (autentificarse(($_POST["email"]), ($_POST["password"]))) {
         //Te manda a location de admin
         header("location:../admin/_admin_vista.php");
 
