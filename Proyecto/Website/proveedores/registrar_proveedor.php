@@ -39,12 +39,12 @@
             echo "<h1>TODOS LOS CAMPOS ESTAN LLENOS</h1>";
             $registrar = registrar_proveedor($_POST["rfc"],$_POST["alias"], $_POST["razon_social"],$_POST["nombre_contacto"],$_POST["telefono_proveedor"],$_POST["cuenta_bancaria"],$_POST["banco"]);
 
-
+           /*
            if($registrar){
                 echo "<h1>DEBE ESTAR EN LA BASE DE DATOS</h1>";
            }else{
                 echo "<h1>NO FUNCIONO</h1>";
-           }
+           }*/
         }
     	header("location:./_proveedores_vista.php");
 
