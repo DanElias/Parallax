@@ -134,11 +134,11 @@ function closeDb($mysql)
         }
     }
 
-    function registrar_usuario($usuario,$nombre,$apellido,$password,$fecha_nacimiento,$fecha_creacion,$id_rol)
+    function registrar_usuario($email,$nombre,$apellido,$password,$fecha_nacimiento,$fecha_creacion,$id_rol)
     {
     $conn = conectDb();
 
-    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"".$usuario."\",\"".$nombre."\",\"".$apellido."\",\"".$password."\",\"".$fecha_nacimiento."\",\"".$fecha_creacion."\",\"".$id_rol."\")";
+    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"".$email."\",\"".$nombre."\",\"".$apellido."\",\"".$password."\",\"".$fecha_nacimiento."\",\"".$fecha_creacion."\",\"".$id_rol."\")";
 
     if(mysqli_query($conn,$sql)){
         closeDb($conn);

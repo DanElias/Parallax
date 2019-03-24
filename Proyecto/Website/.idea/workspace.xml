@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="" />
+    <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/_login_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_login_vista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/_util_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_util_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/_registro_usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_registro_usuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,10 +18,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+        <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="527">
+              <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -55,8 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cuentas_contables/_cuentas_contables_vista.php" />
-        <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_cuenta.html" />
         <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_monto.html" />
         <option value="$PROJECT_DIR$/reporte_egresos/graficas/_grafica_proveedor.html" />
         <option value="$PROJECT_DIR$/reporte_egresos/_util_reporte_egresos.php" />
@@ -96,7 +101,6 @@
         <option value="$PROJECT_DIR$/proveedores/_util_proveedores.php" />
         <option value="$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php" />
         <option value="$PROJECT_DIR$/css/mystyles.css" />
-        <option value="$PROJECT_DIR$/login/_util_login.php" />
         <option value="$PROJECT_DIR$/usuarios/_usuarios_vista.php" />
         <option value="$PROJECT_DIR$/usuarios/views/_agregar_usuario.html" />
         <option value="$PROJECT_DIR$/usuarios/views/_form_agregar_usuario.html" />
@@ -104,15 +108,20 @@
         <option value="$PROJECT_DIR$/usuarios/forms/_form_eliminar_usuario.html" />
         <option value="$PROJECT_DIR$/usuarios/_util_usuarios.php" />
         <option value="$PROJECT_DIR$/usuarios/_usuarios.html" />
-        <option value="$PROJECT_DIR$/usuarios/_registro_usuario.php" />
         <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
+        <option value="$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html" />
+        <option value="$PROJECT_DIR$/login/_util_login.php" />
+        <option value="$PROJECT_DIR$/login/_login_vista.php" />
+        <option value="$PROJECT_DIR$/usuarios/_registro_usuario.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-42" />
+    <option name="y" value="414" />
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="310" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -138,7 +147,18 @@
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
               <item name="usuarios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -215,12 +235,12 @@
       <workItem from="1553351519549" duration="1091000" />
       <workItem from="1553359615782" duration="6711000" />
       <workItem from="1553367584825" duration="1669000" />
-      <workItem from="1553378193010" duration="3789000" />
+      <workItem from="1553378193010" duration="7857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54807000" />
+    <option name="totallyTimeSpent" value="58875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
@@ -490,35 +510,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/_login.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error_handling_alerts.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/_form_informacion_usuario.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/login/_util_login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="153">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios/_form_informacion_usuario.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/error_handling_alerts.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1894">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/_util_usuarios.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -543,15 +563,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/_registro_usuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="357">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+    <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_usuario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="527">
+          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
         </state>
       </provider>
     </entry>
