@@ -1,3 +1,11 @@
+.my_clock{
+    font-size:25px;
+    font-family: Staatliches;
+    color: #0d3d63;
+    margin-right: 1em;
+
+
+}
 .my_card_small{
     position: relative;
     margin: 0.5rem 0 1rem 0;
