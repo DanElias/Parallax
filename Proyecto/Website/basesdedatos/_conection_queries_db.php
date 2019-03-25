@@ -168,6 +168,21 @@
  
     }
 
+    function registrar_cuenta_contable($nombre_cuenta,$descripcion_cuenta){
+    $conn = conectDb();
+
+    $sql = "INSERT INTO cuenta_contable(nombre, descripcion) VALUES (\"".$nombre_cuenta."\",\"".$descripcion_cuenta."\")";
+
+    if(mysqli_query($conn,$sql)){
+        closeDb($conn);
+        return true;
+    }
+    else{
+        closeDb($conn);
+        return false;
+    }
+}
+
 
 
 
