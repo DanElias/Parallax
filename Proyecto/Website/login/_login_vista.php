@@ -11,6 +11,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     //Datos que va a tomar, validar con htmltiteies
     $_POST['email'] = htmlentities($_POST['email']);
     $_POST['password'] = htmlentities($_POST['password']);
+
     $usuario = login($_POST["email"], $_POST["password"]);
 
     if (autentificarse(($_POST["email"]), ($_POST["password"]))) {
