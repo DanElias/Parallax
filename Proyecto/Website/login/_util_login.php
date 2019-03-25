@@ -43,16 +43,5 @@ function login($email, $password)
     return $result;
 }
 
-function info($mensaje)
-{
-    $mensaje = $mensaje;
-    echo $mensaje;
-}
-
-function hora_fecha()
-{
-    date_default_timezone_set('GMT-6');
-
-}
 
 ?>

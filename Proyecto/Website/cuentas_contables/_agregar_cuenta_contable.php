@@ -14,9 +14,9 @@ $_POST["descripcion_cuenta"] = htmlentities($_POST["descripcion_cuenta"]);
 if(isset($_POST["nombre_cuenta"])
     && isset($_POST["descripcion_cuenta"])
     &&$_POST["nombre_cuenta"] != ""
-    && $_POST["descripcion_cuenta"] != "") {
-
-$registrar =  registrar_cuenta_contable($_POST["nombre_cuenta"],$_POST["descripcion_cuenta"]);
+    && $_POST["descripcion_cuenta"] != "")
+{
+    $registrar =  registrar_cuenta_contable($_POST["nombre_cuenta"],$_POST["descripcion_cuenta"]);
 }
 header("location:./_cuentas_contables_vista.php");
 

@@ -136,6 +136,7 @@
     function registrar_usuario($usuario,$nombre,$apellido,$password,$fecha_nacimiento,$fecha_creacion,$id_rol){
         $conn = conectDb();
 
+        //Query de SQl para insertar en la tabla de usaurios
         $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"".$usuario."\",\"".$nombre."\",\"".$apellido."\",\"".$password."\",\"".$fecha_nacimiento."\",\"".$fecha_creacion."\",\"".$id_rol."\")";
 
         if(mysqli_query($conn,$sql)){
@@ -151,7 +152,7 @@
     function registrar_proveedor($rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco){
         $conn = conectDb();
         //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
-
+        //Query de SQl para insertar en la tabla de proveedores
          $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) 
                 VALUES ('$rfc', '$alias','$razon', '$nombre', '$telefono', '$cuenta', '$banco')";
 
@@ -171,6 +172,7 @@
     function registrar_cuenta_contable($nombre_cuenta,$descripcion_cuenta){
     $conn = conectDb();
 
+        //Query de SQl para insertar en la tabla de cuenta contable
     $sql = "INSERT INTO cuenta_contable(nombre, descripcion) VALUES (\"".$nombre_cuenta."\",\"".$descripcion_cuenta."\")";
 
     if(mysqli_query($conn,$sql)){

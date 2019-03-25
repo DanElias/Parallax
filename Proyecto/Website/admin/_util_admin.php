@@ -21,18 +21,5 @@ function body_admin_main()
     include("_admin.html");
 }
 
-function fecha()
-{
-    setlocale(LC_ALL, "es_MX.UTF-8");
-    $date = strftime("%A %d de %B del %Y");
-    return $date;
-}
-
-function hora()
-{
-    setlocale(LC_ALL, "es_MX.UTF-8");
-    $hora = strftime("%H:%M");
-    return $hora;
-}
 
 ?>

@@ -5,6 +5,8 @@ session_start(); //Inicio de sesion
 //Condicionales para el caso de hacer logout
 
 if (isset($_SESSION["usuario"])) {
+
+    //Htmls a llamar
     header_html();
     sidenav_html();
     form_beneficiarios_html();
