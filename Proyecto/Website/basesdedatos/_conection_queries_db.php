@@ -151,8 +151,7 @@
 
     function registrar_proveedor($rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco){
         $conn = conectDb();
-        //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
-        //Query de SQl para insertar en la tabla de proveedores
+       
          $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) 
                 VALUES ('$rfc', '$alias','$razon', '$nombre', '$telefono', '$cuenta', '$banco')";
 
@@ -169,21 +168,31 @@
  
     }
 
+    function 
+
     function registrar_cuenta_contable($nombre_cuenta,$descripcion_cuenta){
-    $conn = conectDb();
+        $conn = conectDb();
 
-        //Query de SQl para insertar en la tabla de cuenta contable
-    $sql = "INSERT INTO cuenta_contable(nombre, descripcion) VALUES (\"".$nombre_cuenta."\",\"".$descripcion_cuenta."\")";
+            //Query de SQl para insertar en la tabla de cuenta contable
+        $sql = "INSERT INTO cuenta_contable(nombre, descripcion) VALUES (\"".$nombre_cuenta."\",\"".$descripcion_cuenta."\")";
 
-    if(mysqli_query($conn,$sql)){
-        closeDb($conn);
-        return true;
+        if(mysqli_query($conn,$sql)){
+            closeDb($conn);
+            return true;
+        }
+        else{
+            closeDb($conn);
+            return false;
+        }
     }
-    else{
-        closeDb($conn);
-        return false;
+
+    function obtener_proveedores(){
+        $conn = conectDb();
+        $sql = "SELECT * FROM Proveedor";
+        $result = mysqli_query($conn,$sql);
+        return $result;
     }
-}
+
 
 
 
