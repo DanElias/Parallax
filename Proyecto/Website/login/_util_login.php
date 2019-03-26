@@ -13,21 +13,6 @@ function header_html($titulo = "LogIn")
 *@Input: email,password
 *@Ouptu: 1 o 0
 */
-function autentificarse($email, $password)
-{
-    $con = conectDb();
-    password_hash($_POST["password"], PASSWORD_DEFAULT);
-    die();
-    //$sql = "SELECT email,passwd FROM usuario WHERE email = '$email' And passwd = '$password'";
-    $sql = "SELECT passwd FROM usuario WHERE email = '$email'";
-
-    $result = mysqli_query($con, $sql);
-    $row =  mysqli_fetch_assoc($result);
-    $contra = password_verify($password,$row['passwd']);
-    return $contra;
-
-
-}
 
 /*
 *Esta funcion dependiendo del email y el password regresara el nombre del usuario
