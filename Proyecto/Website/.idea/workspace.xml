@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/loginCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/loginCSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mystyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mystyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/_usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_usuarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/_usuarios_vista.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_usuarios_vista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/_util_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/_util_usuarios.php" afterDir="false" />
-    </list>
+    <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_rol.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+            <state relative-caret-position="391">
+              <caret line="48" column="36" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -251,12 +244,12 @@
       <workItem from="1553538548478" duration="1000" />
       <workItem from="1553539089388" duration="731000" />
       <workItem from="1553539848989" duration="3462000" />
-      <workItem from="1553563524616" duration="5891000" />
+      <workItem from="1553563524616" duration="5966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74625000" />
+    <option name="totallyTimeSpent" value="74700000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -665,8 +658,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_rol.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        <state relative-caret-position="391">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="36" />
         </state>
       </provider>
     </entry>
