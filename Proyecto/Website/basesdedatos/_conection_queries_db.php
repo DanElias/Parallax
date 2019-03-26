@@ -215,6 +215,18 @@ function login($email, $password)
     return $result;
 }
 
+function obtenerUsuario(){
+
+    $conn = conectDb();
+
+    $sql = "SELECT id_usuario, email, nombre, fecha de cracion, id_rol FROM usuario";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;
+}
 
 
 

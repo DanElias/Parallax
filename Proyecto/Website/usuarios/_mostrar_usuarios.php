@@ -3,7 +3,7 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
 require_once("../basesdedatos/_conection_queries_db.php");
 
-$result=obtenerEventos();
+$result=obtenerUsuario();
 $query_table="";
 
 if(mysqli_num_rows($result)>0){
@@ -11,12 +11,12 @@ if(mysqli_num_rows($result)>0){
     while($row = mysqli_fetch_assoc($result)){
         $row_date=explode('-',$row["fecha"]);
         $query_table.="<tr>";
-        $query_table.='<td>'.$row["nombre"].'</td>';
+        $query_table.='<td>'.$row["id_usuario"].'</td>';
+        $query_table.="<td>".$row["email"]." hrs. </td>";
+        $query_table.="<td>".$row["nombre"]."</td>";
         $query_table.="<td>". $row_date[2]."/".$row_date[1]."/".$row_date[0]."</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
-        $query_table.="<td>".$row["hora"]." hrs. </td>";
-        $query_table.="<td>".$row["lugar"]."</td>";
-        $query_table.="<td>".$row["descripcion"]."</td>";
-        $query_table.='<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id='.$row['id_evento'].'">Mas información</a></td>';
+        $query_table.="<td>".$row["id_rol"]."</td>";
+        $query_table.='<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id='.$row['id_usuario'].'">Mas información</a></td>';
         $query_table.=
             '<td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id='.$row['id_evento'].'">
@@ -39,10 +39,11 @@ if(mysqli_num_rows($result)>0){
                         <table class="stripped highlight responsive-table data_table fixed_header">
                             <thead>
                             <tr class="my_table_headers">
+                                <th>ID</th>
                                 <th>Nombre</th>
-                                <th>Fecha</th>
-                                <th>Hora</th>
-                                <th>Más Información</th>
+                                <th>email</th>
+                                <th>Fecha de creacion</th>
+                                <th>ID Rol</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>
