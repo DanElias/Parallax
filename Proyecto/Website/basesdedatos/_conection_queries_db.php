@@ -185,6 +185,37 @@
     }
 }
 
+function autentificarse($email, $password)
+{
+    $con = conectDb();
+
+    //$sql = "SELECT email,passwd FROM usuario WHERE email = '$email' And passwd = '$password'";
+    $sql = "SELECT passwd FROM usuario WHERE email = '$email'";
+
+    $result = mysqli_query($con, $sql);
+    $row =  mysqli_fetch_assoc($result);
+    $contra = password_verify($password,$row['passwd']);
+    return $contra;
+
+
+}
+
+/*
+*Esta funcion dependiendo del email y el password regresara el nombre del usuario
+*/
+function login($email, $password)
+{
+
+
+    // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
+    $con = conectDb();
+    $sql = "SELECT nombre FROM usuario WHERE email = '$email'";
+    $result = mysqli_query($con, $sql);
+
+    return $result;
+}
+
+
 
 
 
