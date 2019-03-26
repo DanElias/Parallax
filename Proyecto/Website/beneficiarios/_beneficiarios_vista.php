@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 require_once("_util_beneficiarios.php");
-session_start(); //Inicio de sesion
+ //Inicio de sesion
 //Condicionales para el caso de hacer logout
 $_SESSION["usuario"]="Hugo";// Borrar antes de hacer merge
 if (isset($_SESSION["usuario"])) {

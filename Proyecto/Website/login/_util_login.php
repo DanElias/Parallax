@@ -9,14 +9,15 @@ function header_html($titulo = "LogIn")
 
 /*
 *Esta funcion recibira como parametros el correo y la contraseña enviados por el metodo post
-*seguido se buscara un elemento que cumpla con las especificaciones 
+*seguido se buscara un elemento que cumpla con las especificaciones
 *@Input: email,password
-*@Ouptu: 1 o 0 
+*@Ouptu: 1 o 0
 */
 function autentificarse($email, $password)
 {
     $con = conectDb();
-
+    password_hash($_POST["password"], PASSWORD_DEFAULT);
+    die();
     //$sql = "SELECT email,passwd FROM usuario WHERE email = '$email' And passwd = '$password'";
     $sql = "SELECT passwd FROM usuario WHERE email = '$email'";
 
@@ -29,7 +30,7 @@ function autentificarse($email, $password)
 }
 
 /*
-*Esta funcion dependiendo del email y el password regresara el nombre del usuario 
+*Esta funcion dependiendo del email y el password regresara el nombre del usuario
 */
 function login($email, $password)
 {
