@@ -40,6 +40,11 @@ function modal_informacion_usuario()
     include("_form_informacion_usuario.html");
 }
 
+function form_agregar_rol()
+{
+    include("forms/_form_agregar_rol.html");
+}
+
 
 
 

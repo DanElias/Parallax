@@ -1,0 +1,116 @@
+<!-- Modal Structure -->
+<div id="_form_agregar_rol" class="modal modal-fixed-footer my_modal  my_small_modal">
+    <div class="row my_modal_header_row">
+        <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+
+        <div class="my_modal_header1">
+            <div class="col s11 my_form_title">
+                Agregar Rol
+                <i class="material-icons my_title_icon">supervisor_account</i>
+            </div>
+
+            <div class="col s1">
+                <br>
+                <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center" style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
+                    ×
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+    <br><br><br>
+
+    <div class="modal-content my_modal_content">
+
+        <!-- Inicio del form de beneficiarios-->
+        <form class="col s12" action = "_registro_usuario.php" method="POST">
+
+            <!-- el ID del Beneficiario se genera solito-->
+
+            <?php if(isset($error)): ?>
+            <div class="colores">
+                <?=$error ?>
+            </div>
+            <?php endif ?>
+
+            <div class="row">
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">face</i>
+                    <input  type="text" class="validate" name="nombre" id="nombre" name ="nombre" value = "ROl">
+                    <label for="nombre">Nombre del Rol</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class ="s1">
+                    <label for = "beneficiario">
+                        <input type="checkbox" class="filled-in" checked="checked" id="beneficiario" name ="beneficiario" />
+                        <span>Beneficiarios</span>
+                    </label>
+                </div>
+                <div class ="s1">
+                    <label for = "reporte_beneficiario">
+                        <input type="checkbox" class="filled-in" checked="checked" id="reporte_beneficiario" name ="reporte_beneficiario"/>
+                        <span>Reporte de Beneficiarios</span>
+                    </label>
+                </div>
+                <div class ="s1">
+                    <label for = "egresos">
+                        <input type="checkbox" class="filled-in" checked="checked" id="egresos" name ="egresos"/>
+                        <span>Egresos</span>
+                    </label>
+                </div>
+                <div class ="s1">
+                    <label for = "reporte_egresos">
+                        <input type="checkbox" class="filled-in" checked="checked" id="reporte_egresos" name ="reporte_egresos"/>
+                        <span>Reporte Egresos</span>
+                    </label>
+                </div>
+                <div class ="s1">
+                    <label for = "proveedores">
+                        <input type="checkbox" class="filled-in" checked="checked" id="proveedores" name ="proveedores"/>
+                        <span>Proveedores</span>
+                    </label>
+                </div>
+
+                <div class ="s1">
+                    <label for = "cuentas_contables">
+                        <input type="checkbox" class="filled-in" checked="checked" id="cuentas_contables" name ="cuentas_contables"/>
+                        <span>Cuentas Contables</span>
+                    </label>
+                </div>
+
+                <div class ="s1">
+                    <label for = "eventos">
+                        <input type="checkbox" class="filled-in" checked="checked" id="eventos" name ="eventos"/>
+                        <span>Eventos</span>
+                    </label>
+                </div>
+                <div class ="s1">
+                    <label for = "usuarios">
+                        <input type="checkbox" class="filled-in" checked="checked" id="usuarios" name ="beneficiario"/>
+                        <span>Usuarios</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="my_modal_buttons">
+                <div class="row">
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light" type="submit" name="submit">Guardar
+                            <i class="material-icons right">check_circle_outline</i>
+                        </button>
+                    </div>
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light red modal-close">Cancelar
+                            <i class="material-icons right">highlight_off</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Final del form de beneficiarios-->
+
+    </div>
+</div>

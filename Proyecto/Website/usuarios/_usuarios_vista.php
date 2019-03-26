@@ -11,6 +11,7 @@ if (isset($_SESSION["usuario"])) {
     sidenav_html();
     body_proveedores();
     form_agregar_usuario();
+    form_agregar_rol();
     form_editar_usuario();
     form_eliminar_usuario();
     modal_informacion_usuario();
