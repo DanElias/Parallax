@@ -3,8 +3,12 @@
 require_once("_util_eventos.php");
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 
+session_start();
+
+$_SESSION['link_imagen'];
+
 $GLOBALS['error'];
-$GLOBALS['link_imagen'];
+//$GLOBALS['link_imagen'];
 $GLOBALS['id_evento'];
 
 if (isset($_POST["submit"])) {
@@ -40,7 +44,7 @@ if (isset($_POST["submit"])) {
                 //EN ESTA PARTE A CONTINUACION HARÉ EL REGISTRO EN LA BASE DE DATOS
                 //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
                 //------------------------------------------------------------------------------------------------------------
-                if (insertarEvento($_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $GLOBALS['link_imagen'])) {
+                if (insertarEvento($_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])) {
 
                     /*------------------------------------------------EN ESTA PARTE YA VOY A MOSTRAR LA INFORMACION DEL EVENTO GUARDADO EN LA PÁGINA*/
                     header_html();
@@ -129,10 +133,14 @@ function checkmydate()
 function validar_imagen()
 {
     $target_dir = "uploads/";
+    //var_dump($_FILES);
+    //die();
+    
+    //var_dump($_FILES["fileToUpload"]["tmp_name"]);
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
     //-------------------------------------------------------------------------------------------------------------------//
-    $GLOBALS['link_imagen'] = "../eventos/" . $target_file; //Guardo el link de la imagen para mandarlo a la base de datos
+    $_SESSION['link_imagen'] = "../eventos/" . $target_file; //Guardo el link de la imagen para mandarlo a la base de datos
     //------------------------------------------------------------------------------------------------------------------//
 
     $uploadOk = 1;
