@@ -35,6 +35,18 @@ function form_eliminar_evento_html()
     include("_form_eliminar_evento.html");
 }
 
+function controller_modal_informacion_evento_php(){
+    include("_controller_modal_informacion_evento.php");
+}
+
+function controller_modal_mas_informacion_evento_php(){
+    include("_controller_modal_mas_informacion_evento.php");
+}
+
+function controller_tabla_eventos_php(){
+    include("_controller_tabla_eventos.php");
+}
+
 function alerta_error($error){
     $alerta='
     <div id="_form_alerta_error" class="modal  my_modal">

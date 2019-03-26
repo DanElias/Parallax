@@ -5,6 +5,7 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 
 $GLOBALS['error'];
 $GLOBALS['link_imagen'];
+$GLOBALS['id_evento'];
 
 if (isset($_POST["submit"])) {
     //Aquí guardo lo que está en los campos del form en variables
@@ -45,11 +46,22 @@ if (isset($_POST["submit"])) {
                     header_html();
                     sidenav_html();
                     evento_html();
+                    
+                    //Esta sección es para obtener el id del evento que acabo de subir y poder mostrarlo en mi modal//
+                    $result=obtenerEventoReciente();
+                    $row=mysqli_fetch_assoc($result);
+                    if(!isset( $GLOBALS['id_evento'])){
+                        $GLOBALS['id_evento']=$row['id_evento'];
+                    }
+                    
+                    controller_modal_informacion_evento_php();
                     form_evento_html();
                     form_eliminar_evento_html();
-                    modal_informacion_evento_html();
+                    controller_tabla_eventos_php();
+                   
                     echo
                     "<script type='text/javascript'>
+                                    alert(\"¡El evento se ha registrado de manera exitosa!\");
                                     jQuery(document).ready(function(){
                                           jQuery('#_modal_informacion_evento').modal();
                                           jQuery(document).ready(function(){

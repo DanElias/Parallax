@@ -1,16 +1,16 @@
 
 <?php
+
     require_once("../basesdedatos/_conection_queries_db.php");
-    require_once("_util_sitio.php");
     
-    $result=obtenerEventos();
-    
+    $result=obtenerEventosPorID($GLOBALS['id_evento']);
+
     $cards="";
     
-    if(mysqli_num_rows($result)>0){
+     if(mysqli_num_rows($result)>0){
         //output data of each row;
         while($row = mysqli_fetch_assoc($result)){
-            $row_date=explode('-',$row["fecha"]);
+           $row_date=explode('-',$row["fecha"]);
             $cards.='
                 <div class="row" style="width: 80%;">
                     <div class="col s12 m12">
@@ -70,29 +70,42 @@
                 </div>
                 <br><br>';
         }
-        
-         echo '
-            <div class="parallax-container my_parallax_container" id="about">
-            <div class="my_table">
-            <br><br><br>
-        
-        '.$cards.'
-            </div>
-            <div class="parallax"><img src="../images/f4.jpg" width="100%">
-            </div>
-            </div>
-        ';
-        
     }
     else{ // si no hay eventos registrados en la tabla
         echo "no encontramos eventos registrados";
     }
     
     
+    echo '
+    <!-- Modal Structure -->
+    <div id="_modal_informacion_evento" class="modal modal-fixed-footer my_modal  my_big_modal">
+        <div class="row my_modal_header_row">
+            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
     
-            
-
-        
-       
-
+            <div class="my_modal_header1">
+                <div class="col s11 my_form_title">
+                    Informacion Evento
+                </div>
+    
+                <div class="col s1">
+                    <br>
+                    <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center"
+                       style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
+                        ×
+                    </a>
+                </div>
+            </div>
+    
+    
+        </div>
+        <br><br><br>
+    
+        <div class="modal-content my_modal_content">
+            <div>
+            <br><br><br>
+        '.$cards.'
+            </div>
+         </div>
+    </div>';
+                
 ?>
