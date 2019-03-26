@@ -2,14 +2,14 @@
                 <div id="_form_tutor" class="modal modal-fixed-footer my_modal my_big_modal">
                    <div class="row my_modal_header_row">
                             <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
-                            
+
                         <div class="my_modal_header1 pink darken-1">
                             <div class="col s11 my_form_title">
                                Agregar Tutor
                              </div>
-                         
+
                             <div class="col s1">
-                                 <br> 
+                                 <br>
                                 <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center" style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
                                    ×
                                 </a>
@@ -17,13 +17,13 @@
                         </div>
                     </div>
                     <br><br><br>
-                    
+
                     <div class="modal-content my_modal_content">
                         <p>Aquí puede agregar el tutor de un beneficiario</p>
-                        
+
                          <!-- Inicio del form de beneficiarios-->
-                        <form class="col s12">
-                            
+                        <form class="col s12" method="post" action="_registro_tutor.php">
+
                             <!-- el ID del Tutor se genera solito-->
                             <div class="row">
                                 <div class="input-field col s12">
@@ -40,7 +40,7 @@
                                   <label for="fecha_nacimiento_tutor">Fecha de nacimiento  ddmmAAAA</label>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">phone</i>
@@ -48,7 +48,7 @@
                                     <label for="telefono">Telefono</label>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">work</i>
@@ -56,7 +56,7 @@
                                     <label for="ocupacion">Ocupacion </label>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">domain</i>
@@ -64,7 +64,7 @@
                                     <label for="empresa">Nombre de Empresa</label>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">file_copy</i>
@@ -72,7 +72,7 @@
                                     <label for="titulo">Titulo Obtenido</label>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">school</i>
@@ -80,8 +80,8 @@
                                     <label for="grado_estudios_tutor">Grado de Estudios</label>
                                 </div>
                             </div>
-                            
-                            
+
+
                             <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                             <div class="my_modal_buttons">
                                 <div class="row">
@@ -102,4 +102,3 @@
 
     </div>
 </div>
-                
