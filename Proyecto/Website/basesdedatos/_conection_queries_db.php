@@ -66,9 +66,23 @@
     }
     
     function obtenerEventosPorID($id_evento){
+        
         $conn = conectDb();
         
         $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE id_evento = '".$id_evento."'";
+        
+        $result = mysqli_query($conn, $sql);
+        
+        closeDb($conn);
+        
+        return $result;
+    }
+    
+    function obtenerEventoReciente(){
+        
+        $conn = conectDb();
+        
+        $sql = "SELECT id_evento FROM evento ORDER BY id_evento DESC LIMIT 1";
         
         $result = mysqli_query($conn, $sql);
         
@@ -99,10 +113,10 @@
     }
     
     //Inserta un nuevo evento en la base de datos
-    function editarEvento($id_evento, $nombre_evento,$fecha_evento,$lugar_evento, $descripcion_evento){
+    function editarEvento($id_evento, $nombre_evento,$fecha_evento,$hora_evento,$lugar_evento, $descripcion_evento, $imagen_evento){
         $conn=conectDb();
         
-        $sql="UPDATE evento SET id_evento=$id_evento, nombre='".$nombre_evento."', fecha='".$fecha_evento."', lugar='".$lugar_evento."', descripcion='".$descripcion_evento."'
+        $sql="UPDATE evento SET id_evento=".$id_evento.", nombre='".$nombre_evento."', fecha='".$fecha_evento."', hora='".$hora_evento."', lugar='".$lugar_evento."', descripcion='".$descripcion_evento."', imagen='".$imagen_evento."'
         WHERE id_evento=".$id_evento."";
         
         if(mysqli_query($conn,$sql)){

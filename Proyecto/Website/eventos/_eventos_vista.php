@@ -10,6 +10,7 @@ if (isset($_SESSION["usuario"])) {
     header_html();
     sidenav_html();
     evento_html();
+    controller_tabla_eventos_php();
     form_evento_html();
     form_eliminar_evento_html();
     modal_informacion_evento_html();
