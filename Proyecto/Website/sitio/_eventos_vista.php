@@ -4,9 +4,9 @@
     
     header_sitio_html();
     
-     _parallax("../images/eventos_header.jpg","Eventos");
+    _parallax("../images/eventos_header.jpg","Eventos");
      
-     cards_eventos_html();
+    controller_cards_eventos_php();
 
     footer_sitio_html();
     

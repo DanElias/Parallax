@@ -31,6 +31,10 @@
     function cards_eventos_html(){
         include("_cards_eventos.html");
     }
+    
+    function controller_cards_eventos_php(){
+         include("_controller_cards_eventos.php");
+    }
 
 
 ?>
