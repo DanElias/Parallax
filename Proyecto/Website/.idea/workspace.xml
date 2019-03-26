@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/_util_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/_util_login.php" afterDir="false" />
-    </list>
+    <list default="true" id="24b708ab-3c5b-46fb-93db-1c0057e8da38" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,46 +11,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuarios/forms/_form_agregar_rol.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="48" column="36" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login/_util_login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="2703">
               <caret line="216" selection-start-line="216" selection-end-line="216" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuarios/_registrar_rol.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/usuarios/_mostrar_usuarios.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="85">
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -97,7 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/proveedores/_form_agregar_proveedor.html" />
         <option value="$PROJECT_DIR$/proveedores/_form_eliminar_proveedor.html" />
         <option value="$PROJECT_DIR$/proveedores/_form_editar_proveedor.html" />
         <option value="$PROJECT_DIR$/proveedores/forms/_form_eliminar_proveedor.html" />
@@ -148,6 +116,7 @@
         <option value="$PROJECT_DIR$/usuarios/_registrar_rol.php" />
         <option value="$PROJECT_DIR$/login/_util_login.php" />
         <option value="$PROJECT_DIR$/basesdedatos/_conection_queries_db.php" />
+        <option value="$PROJECT_DIR$/usuarios/_mostrar_usuarios.php" />
       </list>
     </option>
   </component>
@@ -186,7 +155,17 @@
             <path>
               <item name="Website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="eventos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -206,15 +185,15 @@
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/reporte_egresos" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/proveedores/forms" />
       <recent name="$PROJECT_DIR$/reporte_beneficiarios/graficas" />
       <recent name="$PROJECT_DIR$/reporte_beneficiarios" />
       <recent name="$PROJECT_DIR$/proveedores" />
       <recent name="$PROJECT_DIR$/beneficiarios" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reporte_egresos" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -275,7 +254,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75337000" />
+    <option name="totallyTimeSpent" value="75386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -378,13 +357,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/proveedores/_util_proveedores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reporte_beneficiarios/_util_reporte_beneficiarios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -675,17 +647,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="216" selection-start-line="216" selection-end-line="216" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/_login_vista.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basesdedatos/_conection_queries_db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2703">
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios/_mostrar_usuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
         </state>
       </provider>
     </entry>
