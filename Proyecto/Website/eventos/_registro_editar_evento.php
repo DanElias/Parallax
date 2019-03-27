@@ -5,17 +5,27 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 
 session_start();
 
-$_SESSION['link_imagen'];
-$_SESSION['error_evento'];
-$_SESSION['id_evento'];
+$_SESSION['link_imagen']=" ";
+$_SESSION['error_evento']=" ";
+$_SESSION['id_evento']=" ";
+
 
 if (isset($_POST["submit"])) {
     //Aquí guardo lo que está en los campos del form en variables
+    $_POST["id_evento"] = htmlentities($_POST["id_evento"]);
     $_POST["nombre_evento"] = htmlentities($_POST["nombre_evento"]);
     $_POST["fecha_evento"] = htmlentities($_POST["fecha_evento"]);
     $_POST["hora_evento"] = htmlentities($_POST["hora_evento"]);
     $_POST["lugar_evento"] = htmlentities($_POST["lugar_evento"]);
     $_POST["descripcion_evento"] = htmlentities($_POST["descripcion_evento"]);
+    
+    /*var_dump($_POST["id_evento"]);
+    var_dump($_POST["nombre_evento"]);
+    var_dump($_POST["fecha_evento"]);
+    var_dump($_POST["hora_evento"]);
+    var_dump($_POST["lugar_evento"]);
+    var_dump($_POST["descripcion_evento"]);
+    die();*/
 
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
     if (isset($_POST["nombre_evento"])
@@ -42,21 +52,20 @@ if (isset($_POST["submit"])) {
                 //EN ESTA PARTE A CONTINUACION HARÉ EL REGISTRO EN LA BASE DE DATOS
                 //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
                 //------------------------------------------------------------------------------------------------------------
-                if (insertarEvento($_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])) {
-
+                if (editarEvento($_POST["id_evento"],$_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])) {
                     /*------------------------------------------------EN ESTA PARTE YA VOY A MOSTRAR LA INFORMACION DEL EVENTO GUARDADO EN LA PÁGINA*/
                     header_html();
                     sidenav_html();
                     evento_html();
                     
                     //Esta sección es para obtener el id del evento que acabo de subir y poder mostrarlo en mi modal//
-                    $result=obtenerEventoReciente();
+                    $result=obtenerEventosPorID($_POST["id_evento"]);
                     $row=mysqli_fetch_assoc($result);
                     if(!isset($_SESSION['id_evento'])){
                         $_SESSION['id_evento']=$row['id_evento'];
                     }
                     else{
-                         $_SESSION['id_evento']=$row['id_evento'];
+                        $_SESSION['id_evento']=$row['id_evento'];
                     }
                     
                     controller_modal_informacion_evento_php();
@@ -76,6 +85,9 @@ if (isset($_POST["submit"])) {
                             </script>";
                     footer_html();
                     /*----------------------------------------------------------------------------------------------------------------------------------*/
+                }
+                else{
+                    echo '<script>alert("HOLA");</script>';
                 }
             }
 
@@ -143,7 +155,7 @@ function validar_imagen()
     //-------------------------------------------------------------------------------------------------------------------//
     $_SESSION['link_imagen'] = "../eventos/" . $target_file; //Guardo el link de la imagen para mandarlo a la base de datos
     //------------------------------------------------------------------------------------------------------------------//
-
+    
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
