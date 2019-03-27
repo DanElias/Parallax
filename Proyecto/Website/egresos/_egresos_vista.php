@@ -12,6 +12,7 @@ if (isset($_SESSION["usuario"])) {
     body_egresos();
     form_egresos();
     form_eliminar_egresos();
+    controller_tabla_egresos_php();
     modal_informacion_egresos();
     form_agregar_proveedor();
     form_editar_proveedor();

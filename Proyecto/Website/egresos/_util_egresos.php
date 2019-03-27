@@ -59,6 +59,9 @@ function modal_informacion_proveedores()
     include("../proveedores/_modal_informacion_proveedores.html");
 }
 
+function controller_tabla_proveedores_php(){
+    include("_controller_tabla_proveedores.php");
+}
 //--------------------------------------------------------------------------------------------------------
 
 //forms y modals de cuentas contable

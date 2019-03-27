@@ -193,57 +193,8 @@
         return $result;
     }
 
-    function construir_drop(){
-        $pattern = strtolower($_GET['pattern']);
-        $words =  array();
-        $result = obtener_proveedores();
-        $i=0;
-        
-        //se hace una consulta a la base de datos y se pasan los nombres a un arreglo
-        if(mysqli_num_rows($result)>0){
-            //echo "LA CONSULTA DEBIO HABER SIDO EXITOSA";
-            while ($row = mysqli_fetch_assoc($result)) {                
-                    $words[$i] = $row['nombre_contacto'];
-                    $i = $i+1;
-
-                }
-        }
-        
-    
-        $response="";
-        $size=0;
-        for($i=0; $i<count($words); $i++)
-        {
-           $pos=stripos(strtolower($words[$i]),$pattern);
-           if(!($pos===false))
-           {
-             $size++;
-             $word=$words[$i];
-             $response.="<option value=\"$word\">$word</option>";
-           }
-        }
-
-        if($size>0)
-          echo "<select id=\"list\" size=$size onclick=\"selectValue()\">$response</select>";
-        /*
-        //$pattern = strtolower($_GET['pattern']);
-        $words =  array();
-        $result = obtener_proveedores();
-        $i=0;
-        $str = "<select>";
-
-        //se hace una consulta a la base de datos y se pasan los nombres a un arreglo
-        if(mysqli_num_rows($result)>0){
-            //echo "LA CONSULTA DEBIO HABER SIDO EXITOSA";
-            while ($row = mysqli_fetch_assoc($result)) {                
-                    $str.= "<option>".$row['razon_social']."</option>";
-            }
-            $str.="</select>";
-        }*/
-    }
-    
-
-    //mostrara la razon social de los proveedores en el drop de egresos 
+   
+   //mostrara la razon social de los proveedores en el drop de egresos 
     function obtener_cuentacontable(){
         $conn = conectDb();
         $sql = "SELECT nombre FROM cuenta_contable";
@@ -255,7 +206,7 @@
     function registrar_egreso($folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc, $id_cuentacontable){
         //mandar el insert
 
-    }    
+    }       
 
 
 
