@@ -269,5 +269,19 @@ function obtenerEgresos(){
 }
 
 
+function obtenerCuentas(){
+
+    $conn = conectDb();
+
+    $sql = "SELECT id_cuentacontable, nombre,descripcion FROM cuenta_contable";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;
+}
+
+
 
 ?>

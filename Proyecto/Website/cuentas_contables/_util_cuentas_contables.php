@@ -35,4 +35,8 @@ function modal_informacion_cuentacontable_html()
     include("_modal_informacion_cuentacontable.html");
 }
 
+function controller_tabla_cuentas_php(){
+    include("_controller_tablas_cuentas.php");
+}
+
 ?>

@@ -12,6 +12,7 @@ if (isset($_SESSION["usuario"])) {
     cuentacontable_html();
     form_cuentacontable_html();
     form_eliminar_cuentacontable_html();
+    controller_tabla_cuentas_php();
     modal_informacion_cuentacontable_html();
     footer_html();
 } else {
