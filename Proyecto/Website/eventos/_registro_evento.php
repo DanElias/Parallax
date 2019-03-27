@@ -6,10 +6,8 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 session_start();
 
 $_SESSION['link_imagen'];
-
-$GLOBALS['error'];
-//$GLOBALS['link_imagen'];
-$GLOBALS['id_evento'];
+$_SESSION['error_evento'];
+$_SESSION['id_evento'];
 
 if (isset($_POST["submit"])) {
     //Aquí guardo lo que está en los campos del form en variables
@@ -54,8 +52,8 @@ if (isset($_POST["submit"])) {
                     //Esta sección es para obtener el id del evento que acabo de subir y poder mostrarlo en mi modal//
                     $result=obtenerEventoReciente();
                     $row=mysqli_fetch_assoc($result);
-                    if(!isset( $GLOBALS['id_evento'])){
-                        $GLOBALS['id_evento']=$row['id_evento'];
+                    if(!isset($_SESSION['id_evento'])){
+                        $_SESSION['id_evento']=$row['id_evento'];
                     }
                     
                     controller_modal_informacion_evento_php();
@@ -80,22 +78,22 @@ if (isset($_POST["submit"])) {
 
         } // si hay errores revisar cuáles son y mostrarlos
         else {
-            $GLOBALS['error'] = "<br><br> El evento no se ha podido registrar.";
+            $_SESSION['error_evento']  = "<br><br> El evento no se ha podido registrar.";
             checkmydate();
             if (is_numeric($_POST["nombre_evento"])) {
-                $GLOBALS['error'] .= "<br><br> El nombre del evento no debe incluir sólo números";
+            $_SESSION['error_evento'] .= "<br><br> El nombre del evento no debe incluir sólo números";
             }
             if (is_numeric($_POST["descripcion_evento"])) {
-                $GLOBALS['error'] .= "<br><br> La descripción del evento no debe incluir sólo números";
+                $_SESSION['error_evento'] .= "<br><br> La descripción del evento no debe incluir sólo números";
             }
             if (is_numeric($_POST["lugar_evento"])) {
-                $GLOBALS['error'] .= "<br><br> El lugar del evento no debe incluir sólo números";
+                $_SESSION['error_evento'] .= "<br><br> El lugar del evento no debe incluir sólo números";
             }
             mostrar_alerta_error();
         }
 
     } else {
-        $GLOBALS['error'] .= "<br><br> Olvidaste llenar todos los campos del formulario <br> El evento no se ha podido registrar.";
+        $_SESSION['error_evento'] .= "<br><br> Olvidaste llenar todos los campos del formulario <br> El evento no se ha podido registrar.";
         mostrar_alerta_error();
     }
 } else {
@@ -111,17 +109,17 @@ function checkmydate()
 
     // se valida que no se registre un evento que tiene una fecha que ya pasó -> hay error
     if ($test_date[0] < $test_current[0]) {
-        $GLOBALS['error'] .= "<br><br> Hay errores en la fecha: El año seleccionado ya pasó.";
+        $_SESSION['error_evento'] .= "<br><br> Hay errores en la fecha: El año seleccionado ya pasó.";
         return true;
     }
     // si se escoge un mes que ya paso de este mismo año -> hay error
     if ($test_date[0] == $test_current[0] && $test_date[1] < $test_current[1]) {
-        $GLOBALS['error'] .= "<br><br>  Hay errores en la fecha: El mes seleccionado ya pasó.";
+        $_SESSION['error_evento'] .= "<br><br>  Hay errores en la fecha: El mes seleccionado ya pasó.";
         return true;
     }
     //si se escoge un día que ya paso de este mismo mes y año -> hay error
     if ($test_date[0] == $test_current[0] && $test_date[1] == $test_current[1] && $test_date[2] < $test_current[2]) {
-        $GLOBALS['error'] .= "<br><br> Hay errores en la fecha: El día seleccionado ya pasó.";
+        $_SESSION['error_evento'] .= "<br><br> Hay errores en la fecha: El día seleccionado ya pasó.";
         return true;
     }
 
@@ -160,7 +158,7 @@ function validar_imagen()
     if (file_exists($target_file)) {
 
         /*aqui revisar donde voy a desplegar el error*/
-        $GLOBALS['error'] .= "<br><br> La imagen seleccionada tiene el mismo nombre que otra imagen que ya se había subido.";
+        $_SESSION['error_evento'] .= "<br><br> La imagen seleccionada tiene el mismo nombre que otra imagen que ya se había subido.";
 
         $uploadOk = 0;
     }
@@ -168,7 +166,7 @@ function validar_imagen()
     if ($_FILES["fileToUpload"]["size"] > 500000000) {
 
         /*aqui revisar donde voy a desplegar el error*/
-        $GLOBALS['error'] .= "<br><br> Tu imagen es muy grande.";
+        $_SESSION['error_evento'] .= "<br><br> Tu imagen es muy grande.";
 
         $uploadOk = 0;
     }
@@ -178,14 +176,14 @@ function validar_imagen()
         && $imageFileType != "gif") {
 
         /*aqui revisar donde voy a desplegar el error*/
-        $GLOBALS['error'] .= "<br><br> Sólo puedes subir archivos JPG, JPEG, PNG & GIF.";
+        $_SESSION['error_evento'] .= "<br><br> Sólo puedes subir archivos JPG, JPEG, PNG & GIF.";
         $uploadOk = 0;
     }
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
 
         /*aqui revisar donde voy a desplegar el error*/
-        $GLOBALS['error'] .= "<br><br> Nosotros no logramos subir la imagen, inténtalo más tarde. ";
+        $_SESSION['error_evento'] .= "<br><br> Nosotros no logramos subir la imagen, inténtalo más tarde. ";
         // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -198,7 +196,7 @@ function validar_imagen()
         } else {
 
             /*aqui revisar donde voy a desplegar el error*/
-            $GLOBALS['error'] .= "<br><br> Ocurrió un error de nuestra parte al intentar subir tu archivo, vuelve a intentarlo más tarde.";
+            $_SESSION['error_evento'] .= "<br><br> Ocurrió un error de nuestra parte al intentar subir tu archivo, vuelve a intentarlo más tarde.";
 
             $uploadOk = 0;
         }
@@ -219,7 +217,7 @@ function mostrar_alerta_error()
     evento_html();
     form_evento_html();
     form_eliminar_evento_html();
-    alerta_error($GLOBALS['error']);
+    alerta_error($_SESSION['error_evento']);
     modal_informacion_evento_html();
     echo
     "<script type='text/javascript'>
