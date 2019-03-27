@@ -40,5 +40,8 @@ function modal_informacion_proveedores()
     include("_modal_informacion_proveedores.html");
 }
 
+function controller_tabla_proveedores_php(){
+    include("_controller_tabla_proveedores.php");
+}
 
 ?>

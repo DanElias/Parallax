@@ -242,6 +242,18 @@ function obtenerUsuario(){
     return $result;
 }
 
+function obtenerProveedor(){
+
+    $conn = conectDb();
+
+    $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;
+}
 
 
 

@@ -13,6 +13,7 @@ if (isset($_SESSION["usuario"])) {
     form_agregar_proveedor();
     form_editar_proveedor();
     form_eliminar_proveedor();
+    controller_tabla_proveedores_php();
     modal_informacion_proveedores();
     footer_html();
 
