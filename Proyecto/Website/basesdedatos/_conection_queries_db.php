@@ -223,7 +223,7 @@ function login($email, $password)
 
     // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
     $con = conectDb();
-    $sql = "SELECT nombre FROM usuario WHERE email = '$email'";
+    $sql = "SELECT nombre,id_rol FROM usuario WHERE email = '$email'";
     $result = mysqli_query($con, $sql);
 
     return $result;

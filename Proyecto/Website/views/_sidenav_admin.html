@@ -1,3 +1,4 @@
+
 <ul id="slide-out" class="sidenav sidenav-fixed z-depth-3">
     <li>
         <div class="user-view my_side_nav">
@@ -8,45 +9,62 @@
             <a href="#name"><span class="white-text"><?=$_SESSION["usuario"]?></span></a>
             <a href="#email"><span class="white-text email"></span></a>
         </div>
+
     </li>
+
     <!--<li><a class="subheader">Subheader</a></li>-->
+
     <li><a class="waves-effect hoverable" href="../admin/_admin_vista.php"><i class="material-icons">home</i>Inicio</a>
     </li>
+    <?php if($_SESSION['id_rol'] == 1): ?>
+
+    <!--Area de beneficiarios-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../beneficiarios/_beneficiarios_vista.php"><i class="material-icons">accessibility_new</i>Beneficiarios</a>
     </li>
+
+    <?php endif ?>
+    <!--Area de Reportes beneficiarios-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../reporte_beneficiarios/_reporte_beneficiarios_vista.php"><i
             class="material-icons">assessment</i>Reportes de Beneficiarios</a></li>
+
+    <!--Area de Egresos-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../egresos/_egresos_vista.php"><i
             class="material-icons">monetization_on</i>Egresos</a></li>
+    <!--Area de Reporte egresos-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../reporte_egresos/_reporte_egresos_vista.php"><i
             class="material-icons">description</i>Reportes de Egresos</a></li>
+
+    <!--Area de Proveedores-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../proveedores/_proveedores_vista.php"><i
             class="material-icons">group</i>Proveedores</a></li>
+    <!--Area de Cuentas contables-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../cuentas_contables/_cuentas_contables_vista.php"><i
             class="material-icons">receipt</i>Cuentas Contables</a></li>
+    <!--Area de Eventos-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../eventos/_eventos_vista.php"><i
             class="material-icons">calendar_today</i>Eventos</a></li>
+    <!--Area de Usuarios-->
     <li>
         <div class="divider"></div>
     </li>

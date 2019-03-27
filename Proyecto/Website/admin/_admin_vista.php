@@ -13,6 +13,7 @@ if (isset($_SESSION['usuario'])) {
     sidenav_html();
     footer_html();
 
+
     //Si no hay una sesion activa, reedirigria a login
 } else {
     header("location:../login/_login_vista.php");

@@ -58,7 +58,19 @@
     });
 </script>
 
+<?php if (isset($_SESSION["usuario"])): ?>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo my_nav"><img class="responsive-img watermark" id="logo" src="../images/watermark.png" width=120></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
+            <li class="blue"><a href="_home_vista.php" class="nav_text hoverable">Inicio</a></li>
+            <li class="teal lighten-1"><a href="_eventos_vista.php" class="nav_text hoverable">EVENTOS</a></li>
+            <li class="amber darken-2"><a href="../admin/_admin_vista.php" class="nav_text hoverable"><?=$_SESSION["usuario"]?></a></li>
+        </ul>
+    </div>
+</nav>
 
+<?php else : ?>
 <nav>
     <div class="nav-wrapper">
         <a href="#" class="brand-logo my_nav"><img class="responsive-img watermark" id="logo" src="../images/watermark.png" width=120></a>
@@ -69,3 +81,5 @@
         </ul>
     </div>
 </nav>
+<?php endif ?>
+

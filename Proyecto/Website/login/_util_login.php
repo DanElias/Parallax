@@ -7,5 +7,14 @@ function header_html($titulo = "LogIn")
     include("../views/_header_login.html");
 }
 
+function body_html(){
+    include("_login.html");
+}
 
+function footer_hml()
+{
+    include("../views/_footer_login.html");
+}
 ?>
+
+
