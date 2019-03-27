@@ -9,12 +9,13 @@ session_start(); //Inicio de sesion
 if (isset($_SESSION["usuario"])) {
     header_html();
     sidenav_html();
-    body_proveedores();
+    body_usuarios();
     form_agregar_usuario();
     form_agregar_rol();
     form_editar_usuario();
     form_eliminar_usuario();
     modal_informacion_usuario();
+    controller_tabla_usuarios_php();
     footer_html();
 
 } else {
