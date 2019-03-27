@@ -1,5 +1,8 @@
 <?php
 
+function controller_tabla_egresos_php(){
+    include("_controller_tabla_egresos.php");
+}
 function header_html($titulo = "Egresos")
 {
     include("../views/_header_admin.html");

@@ -18,6 +18,7 @@ if (isset($_SESSION["usuario"])) {
     form_eliminar_proveedor_lista();
     modal_informacion_proveedores();
     form_cuentacontable_html();
+    controller_tabla_egresos_php();
     form_eliminar_cuentacontable_lista_html();
     modal_informacion_cuentacontable_html();
     footer_html();

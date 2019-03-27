@@ -255,6 +255,19 @@ function obtenerProveedor(){
     return $result;
 }
 
+function obtenerEgresos(){
+
+    $conn = conectDb();
+
+    $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;
+}
+
 
 
 ?>
