@@ -15,7 +15,7 @@ if (isset($_POST["submit"]))
     //Validar que no este vacio y llamar funcion para registrar lo que este en los campos
     if(isset($_POST["nombre"])) {
 
-        $registrar =  registrar_usuario($_POST["email"],$_POST["nombre"],$_POST["apellido"],password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["fecha_nacimiento"],$_POST["rol"]);
+        $registrar =  registrar_Rol( $_POST["nombre"]);
 
     }else{
         $error= "Debe llenar este campo";

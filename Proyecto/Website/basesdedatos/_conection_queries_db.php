@@ -163,7 +163,24 @@
         }
     }
 
-    function registrar_proveedor($rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco){
+    function registrar_Rol($nombre){
+        $conn = conectDb();
+
+        //Query de SQl para insertar en la tabla de usaurios
+        $sql = "INSERT INTO rol(descripcion) VALUES (\"".$nombre."\")";
+
+        if(mysqli_query($conn,$sql)){
+            closeDb($conn);
+            return true;
+        }
+        else{
+            closeDb($conn);
+            return false;
+        }
+    }
+
+
+function registrar_proveedor($rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco){
         $conn = conectDb();
         //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
         //Query de SQl para insertar en la tabla de proveedores
