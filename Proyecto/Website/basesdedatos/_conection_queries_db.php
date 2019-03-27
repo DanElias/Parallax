@@ -116,7 +116,7 @@
     function editarEvento($id_evento, $nombre_evento,$fecha_evento,$hora_evento,$lugar_evento, $descripcion_evento, $imagen_evento){
         $conn=conectDb();
         
-        $sql="UPDATE evento SET id_evento=".$id_evento.", nombre='".$nombre_evento."', fecha='".$fecha_evento."', hora='".$hora_evento."', lugar='".$lugar_evento."', descripcion='".$descripcion_evento."', imagen='".$imagen_evento."'
+        $sql="UPDATE evento SET id_evento=$id_evento, nombre='".$nombre_evento."', fecha='".$fecha_evento."', hora='".$hora_evento."', lugar='".$lugar_evento."', descripcion='".$descripcion_evento."', imagen='".$imagen_evento."'
         WHERE id_evento=".$id_evento."";
         
         if(mysqli_query($conn,$sql)){
