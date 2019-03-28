@@ -311,5 +311,17 @@ function obtenerCuentas()
     return $result;
 }
 
+function obtenerUsuariosPorID($id_usuario){
+
+    $conn = conectDb();
+
+    $sql = "SELECT id_evento FROM usuario WHERE id_usuario = '".$id_usuario."'";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;
+}
 
 ?>
