@@ -27,14 +27,12 @@ if (isset($_POST["submit"])) {
         && $_POST["fecha_evento"] != ""
         && $_POST["hora_evento"] != ""
         && $_POST["lugar_evento"] != ""
-        && $_POST["descripcion_evento"] != "")
-        {
+        && $_POST["descripcion_evento"] != "") {
 
         // si no hay errores entonces mostrar pantalla de éxito
         if (!checkmydate() && !is_numeric($_POST["nombre_evento"])
             && !is_numeric($_POST["descripcion_evento"])
-            && !is_numeric($_POST["lugar_evento"]))
-            {
+            && !is_numeric($_POST["lugar_evento"])) {
 
             //Validar que la imagen insertada sea valida
             if (validar_imagen()) {
@@ -48,22 +46,21 @@ if (isset($_POST["submit"])) {
                     header_html();
                     sidenav_html();
                     evento_html();
-                    
+
                     //Esta sección es para obtener el id del evento que acabo de subir y poder mostrarlo en mi modal//
-                    $result=obtenerEventoReciente();
-                    $row=mysqli_fetch_assoc($result);
-                    if(!isset($_SESSION['id_evento'])){
-                        $_SESSION['id_evento']=$row['id_evento'];
+                    $result = obtenerEventoReciente();
+                    $row = mysqli_fetch_assoc($result);
+                    if (!isset($_SESSION['id_evento'])) {
+                        $_SESSION['id_evento'] = $row['id_evento'];
+                    } else {
+                        $_SESSION['id_evento'] = $row['id_evento'];
                     }
-                    else{
-                         $_SESSION['id_evento']=$row['id_evento'];
-                    }
-                    
+
                     controller_modal_informacion_evento_php();
                     form_evento_html();
                     form_eliminar_evento_html();
                     controller_tabla_eventos_php();
-                   
+
                     echo
                     "<script type='text/javascript'>
                                     alert(\"¡El evento se ha registrado de manera exitosa!\");
@@ -81,10 +78,10 @@ if (isset($_POST["submit"])) {
 
         } // si hay errores revisar cuáles son y mostrarlos
         else {
-            $_SESSION['error_evento']  = "<br><br> El evento no se ha podido registrar.";
+            $_SESSION['error_evento'] = "<br><br> El evento no se ha podido registrar.";
             checkmydate();
             if (is_numeric($_POST["nombre_evento"])) {
-            $_SESSION['error_evento'] .= "<br><br> El nombre del evento no debe incluir sólo números";
+                $_SESSION['error_evento'] .= "<br><br> El nombre del evento no debe incluir sólo números";
             }
             if (is_numeric($_POST["descripcion_evento"])) {
                 $_SESSION['error_evento'] .= "<br><br> La descripción del evento no debe incluir sólo números";
@@ -136,7 +133,7 @@ function validar_imagen()
     $target_dir = "uploads/";
     //var_dump($_FILES);
     //die();
-    
+
     //var_dump($_FILES["fileToUpload"]["tmp_name"]);
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 

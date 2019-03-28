@@ -6,15 +6,17 @@
     margin: 10px;
     overflow-y: hidden
 }
-.my_clock{
-    font-size:25px;
+
+.my_clock {
+    font-size: 25px;
     font-family: Staatliches;
     color: #0d3d63;
     margin-right: 1em;
 
 
 }
-.my_card_small{
+
+.my_card_small {
     position: relative;
     margin: 0.5rem 0 1rem 0;
     background-color: #fff;
@@ -25,6 +27,7 @@
     border-radius: 2px;
 
 }
+
 .nav_text {
     font-family: Staatliches;
     font-size: 1.3em;
@@ -700,23 +703,24 @@ my_search {
 }
 
 .card-stacked {
-        max-height: 100%;
-        display: inline-block;
+    max-height: 100%;
+    display: inline-block;
 }
 
 .card .card-content {
     padding: 15px 25px !important;
 }
+
 .card-action {
-padding: 5px 25px !important;
+    padding: 5px 25px !important;
 }
 
-.my_card_image{
+.my_card_image {
     position: relative;
     float: left;
-    width:  10em;
+    width: 10em;
     height: 10em;
     background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

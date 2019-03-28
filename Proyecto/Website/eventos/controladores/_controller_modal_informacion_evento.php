@@ -1,27 +1,26 @@
-
 <?php
 
-    require_once("../../basesdedatos/_conection_queries_db.php");
+require_once("../../basesdedatos/_conection_queries_db.php");
 
-    $result=obtenerEventosPorID($_SESSION['id_evento']);
-    $cards="";
-    
-     if(mysqli_num_rows($result)>0){
-        //output data of each row;
-        while($row = mysqli_fetch_assoc($result)){
-           $row_date=explode('-',$row["fecha"]);
-            $cards.='
+$result = obtenerEventosPorID($_SESSION['id_evento']);
+$cards = "";
+
+if (mysqli_num_rows($result) > 0) {
+    //output data of each row;
+    while ($row = mysqli_fetch_assoc($result)) {
+        $row_date = explode('-', $row["fecha"]);
+        $cards .= '
                 <div class="row" style="width: 80%;">
                     <div class="col s12 m12">
                         <div class="card horizontal" >
                             <div class="card-image">
-                                <img src="'.$row["imagen"].'" class="" style="object-fit:cover">
+                                <img src="' . $row["imagen"] . '" class="" style="object-fit:cover">
                             </div>
                                 <div class="card-stacked">
                                     <div class="card-content">
                                         <p style="font-family: Staatliches; color: #0d3d63; font-size: 1.2em;">
                                             <i class="material-icons prefix">event</i>
-                                            '.$row["nombre"].'
+                                            ' . $row["nombre"] . '
                                             <hr>
                                         </p>
         
@@ -29,7 +28,7 @@
                                         <div class="col m12 s12">
                                             <div>
                                                 <i class="material-icons prefix">calendar_today</i>
-                                                Fecha: '.$row_date[2].'/'.$row_date[1].'/'.$row_date[0].'
+                                                Fecha: ' . $row_date[2] . '/' . $row_date[1] . '/' . $row_date[0] . '
                                             </div>
                                         </div>
                                     </div>
@@ -39,7 +38,7 @@
                                         <div class="col m12 s12">
                                             <div>
                                                 <i class="material-icons prefix">access_time</i>
-                                                Hora: '.$row["hora"].'
+                                                Hora: ' . $row["hora"] . '
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +48,7 @@
                                         <div class="col s12">
                                             <div>
                                                 <i class="material-icons prefix">place</i>
-                                                Lugar: '.$row["lugar"].'
+                                                Lugar: ' . $row["lugar"] . '
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +57,7 @@
                                         <div class="col s12">
                                             <div>
                                                 <i class="material-icons prefix">description</i>
-                                                Descripcion: '.$row["descripcion"].'
+                                                Descripcion: ' . $row["descripcion"] . '
                                             </div>
                                         </div>
                                     </div>
@@ -68,14 +67,13 @@
                     </div>
                 </div>
                 <br><br>';
-        }
     }
-    else{ // si no hay eventos registrados en la tabla
-        echo "no encontramos eventos registrados";
-    }
-    
-    
-    echo '
+} else { // si no hay eventos registrados en la tabla
+    echo "no encontramos eventos registrados";
+}
+
+
+echo '
     <!-- Modal Structure -->
     <div id="_modal_informacion_evento" class="modal modal-fixed-footer my_modal  my_big_modal">
         <div class="row my_modal_header_row">
@@ -102,9 +100,9 @@
         <div class="modal-content my_modal_content">
             <div>
             <br><br><br>
-        '.$cards.'
+        ' . $cards . '
             </div>
          </div>
     </div>';
-                
+
 ?>

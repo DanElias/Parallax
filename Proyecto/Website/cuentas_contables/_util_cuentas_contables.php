@@ -26,13 +26,13 @@ function form_cuentacontable_html()
 }
 
 
-
 function modal_informacion_cuentacontable_html()
 {
     include("forms/_form_informacion_cuentacontable.html");
 }
 
-function controller_tabla_cuentas_php(){
+function controller_tabla_cuentas_php()
+{
     include("controladores/_controller_tablas_cuentas.php");
 }
 

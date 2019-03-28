@@ -44,10 +44,14 @@ function form_agregar_rol()
 {
     include("forms/_form_agregar_rol.html");
 }
-function controller_modal_informacion_usuarios_php(){
+
+function controller_modal_informacion_usuarios_php()
+{
     include("_controller_modal_informacion_usuarios.php");
 }
-function controller_tabla_usuarios_php(){
+
+function controller_tabla_usuarios_php()
+{
     include("_controller_tabla_usuarios.php");
 }
 

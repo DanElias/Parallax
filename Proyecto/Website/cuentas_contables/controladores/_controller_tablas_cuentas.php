@@ -3,31 +3,31 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
 require_once("../../basesdedatos/_conection_queries_db.php");
 
-$result=obtenerCuentas();
-$query_table="";
+$result = obtenerCuentas();
+$query_table = "";
 
-if(mysqli_num_rows($result)>0){
+if (mysqli_num_rows($result) > 0) {
     //output data of each row;
-    while($row = mysqli_fetch_assoc($result)){
+    while ($row = mysqli_fetch_assoc($result)) {
 
-        $query_table.="<tr>";
-        $query_table.='<td>'.$row["id_cuentacontable"].'</td>';
-        $query_table.="<td>".$row["nombre"]."</td>";
-        $query_table.="<td>".$row["descripcion"]."</td>";
-        $query_table.='<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id='.$row['id_cuentacontable'].'">Mas información</a></td>';
-        $query_table.=
+        $query_table .= "<tr>";
+        $query_table .= '<td>' . $row["id_cuentacontable"] . '</td>';
+        $query_table .= "<td>" . $row["nombre"] . "</td>";
+        $query_table .= "<td>" . $row["descripcion"] . "</td>";
+        $query_table .= '<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id=' . $row['id_cuentacontable'] . '">Mas información</a></td>';
+        $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id='.$row['id_cuentacontable'].'">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id=' . $row['id_cuentacontable'] . '">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
-        $query_table.=
+        $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usuario.php?id='.$row['id_cuentacontable'].'">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usuario.php?id=' . $row['id_cuentacontable'] . '">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
-        $query_table.="</tr>";
+        $query_table .= "</tr>";
     }
 
     echo '
@@ -47,7 +47,7 @@ if(mysqli_num_rows($result)>0){
                             </thead>
     
                             <tbody>'
-        . $query_table.
+        . $query_table .
         '</tbody>
                         </table>
                     </div>
@@ -56,8 +56,7 @@ if(mysqli_num_rows($result)>0){
             
             </div><!--div del wrapper que empieza después del sidenav-->';
 
-}
-else{ // si no hay eventos registrados en la tabla
+} else { // si no hay eventos registrados en la tabla
     echo "No encontramos eventos registrados";
 }
 

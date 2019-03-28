@@ -2,7 +2,7 @@
 
 require_once("../html_structures.php");
 
-$error ='';
+$error = '';
 $info = '';
 
 $target_dir = "uploads/";

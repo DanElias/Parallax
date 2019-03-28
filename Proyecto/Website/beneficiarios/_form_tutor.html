@@ -1,104 +1,105 @@
 <!-- Modal Structure -->
-                <div id="_form_tutor" class="modal modal-fixed-footer my_modal my_big_modal">
-                   <div class="row my_modal_header_row">
-                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
-                            
-                        <div class="my_modal_header1 pink darken-1">
-                            <div class="col s11 my_form_title">
-                               Agregar Tutor
-                             </div>
-                         
-                            <div class="col s1">
-                                 <br> 
-                                <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center" style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
-                                   ×
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <br><br><br>
-                    
-                    <div class="modal-content my_modal_content">
-                        <p>Aquí puede agregar el tutor de un beneficiario</p>
-                        
-                         <!-- Inicio del form de beneficiarios-->
-                        <form class="col s12">
-                            
-                            <!-- el ID del Tutor se genera solito-->
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">person</i>
-                                    <input  type="text" class="validate" id="nombre_tutor" name="nombre_tutor" required>
-                                    <label for="nombre_tutor">Nombre</label>
-                                </div>
-                            </div>
+<div id="_form_tutor" class="modal modal-fixed-footer my_modal my_big_modal">
+    <div class="row my_modal_header_row">
+        <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
 
-                            <div class="row">
-                                <div class="input-field col s12">
-                                  <i class="material-icons prefix">cake</i>
-                                  <input  type="date"  id="fecha_nacimiento_tutor"  name="fecha_nacimiento_tutor"  required>
-                                  <label for="fecha_nacimiento_tutor">Fecha de nacimiento  ddmmAAAA</label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">phone</i>
-                                    <input  type="text" class="validate" id="telefono" name="telefono" required>
-                                    <label for="telefono">Telefono</label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">work</i>
-                                    <input  type="text" class="validate" id="ocupacion" name="ocupacion" required>
-                                    <label for="ocupacion">Ocupacion </label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">domain</i>
-                                    <input  type="text" class="validate" id="empresa" name="empresa" required>
-                                    <label for="empresa">Nombre de Empresa</label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">file_copy</i>
-                                    <input  type="text" class="validate" id="titulo" name="titulo" required>
-                                    <label for="titulo">Titulo Obtenido</label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">school</i>
-                                    <input  type="text" class="validate"  id="grado_estudios_tutor" name="grado_estudios_tutor" required>
-                                    <label for="grado_estudios_tutor">Grado de Estudios</label>
-                                </div>
-                            </div>
-                            
-                            
-                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
-                            <div class="my_modal_buttons">
-                                <div class="row">
-                                    <div class="col s6">
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
-                                        <i class="material-icons right">check_circle_outline</i>
-                                    </button>
-                                    </div>
-                                    <div class="col s6">
-                                        <button class="btn waves-effect waves-light red modal-close">Cancelar
-                                            <i class="material-icons right">highlight_off</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    <!-- Final del form de beneficiarios-->
+        <div class="my_modal_header1 pink darken-1">
+            <div class="col s11 my_form_title">
+                Agregar Tutor
+            </div>
+
+            <div class="col s1">
+                <br>
+                <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center"
+                   style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
+                    ×
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="modal-content my_modal_content">
+        <p>Aquí puede agregar el tutor de un beneficiario</p>
+
+        <!-- Inicio del form de beneficiarios-->
+        <form class="col s12">
+
+            <!-- el ID del Tutor se genera solito-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" class="validate" id="nombre_tutor" name="nombre_tutor" required>
+                    <label for="nombre_tutor">Nombre</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">cake</i>
+                    <input type="date" id="fecha_nacimiento_tutor" name="fecha_nacimiento_tutor" required>
+                    <label for="fecha_nacimiento_tutor">Fecha de nacimiento ddmmAAAA</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">phone</i>
+                    <input type="text" class="validate" id="telefono" name="telefono" required>
+                    <label for="telefono">Telefono</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">work</i>
+                    <input type="text" class="validate" id="ocupacion" name="ocupacion" required>
+                    <label for="ocupacion">Ocupacion </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">domain</i>
+                    <input type="text" class="validate" id="empresa" name="empresa" required>
+                    <label for="empresa">Nombre de Empresa</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">file_copy</i>
+                    <input type="text" class="validate" id="titulo" name="titulo" required>
+                    <label for="titulo">Titulo Obtenido</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">school</i>
+                    <input type="text" class="validate" id="grado_estudios_tutor" name="grado_estudios_tutor" required>
+                    <label for="grado_estudios_tutor">Grado de Estudios</label>
+                </div>
+            </div>
+
+
+            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+            <div class="my_modal_buttons">
+                <div class="row">
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                            <i class="material-icons right">check_circle_outline</i>
+                        </button>
+                    </div>
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light red modal-close">Cancelar
+                            <i class="material-icons right">highlight_off</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Final del form de beneficiarios-->
 
     </div>
 </div>

@@ -35,20 +35,24 @@ function form_eliminar_evento_html()
     include("_form_eliminar_evento.html");
 }
 
-function controller_modal_informacion_evento_php(){
+function controller_modal_informacion_evento_php()
+{
     include("controladores/_controller_modal_informacion_evento.php");
 }
 
-function controller_modal_mas_informacion_evento_php(){
+function controller_modal_mas_informacion_evento_php()
+{
     include("controladores/_controller_modal_mas_informacion_evento.php");
 }
 
-function controller_tabla_eventos_php(){
+function controller_tabla_eventos_php()
+{
     include("controladores/_controller_tabla_eventos.php");
 }
 
-function alerta_error($error){
-    $alerta='
+function alerta_error($error)
+{
+    $alerta = '
     <div id="_form_alerta_error" class="modal  my_modal">
         <div class="row my_modal_header_row">
             <div class="my_modal_header_eliminar z-depth-2 col s12">
@@ -61,7 +65,7 @@ function alerta_error($error){
             <h5 class="my_modal_description2">Detectamos algunos pequeños errores: </h5>
             <div class="row">
                 <div class="col s12">
-                        <h5>'.$error.'<h5>
+                        <h5>' . $error . '<h5>
                 </div>
             <div>
             <br>
@@ -80,7 +84,7 @@ function alerta_error($error){
     </div>';
 
     echo $alerta;
-    
+
 }
 
 ?>

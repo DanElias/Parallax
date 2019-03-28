@@ -6,8 +6,7 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 //Funcion que va a ir en queries
 
 
-if (isset($_POST["submit"])) 
-{
+if (isset($_POST["submit"])) {
     //Valdiamos que no se pongan cosas raras
     $_POST["nombre"] = htmlentities($_POST["nombre"]);
     $_POST["apellido"] = htmlentities($_POST["apellido"]);
@@ -17,7 +16,7 @@ if (isset($_POST["submit"]))
     $_POST["rol"] = htmlentities($_POST["rol"]);
 
     //Validar que no este vacio y llamar funcion para registrar lo que este en los campos
-    if(isset($_POST["nombre"])
+    if (isset($_POST["nombre"])
         && isset($_POST["apellido"])
         && isset($_POST["email"])
         && isset($_POST["password"])
@@ -30,12 +29,12 @@ if (isset($_POST["submit"]))
         && $_POST["password2"] != ""
         && $_POST["rol"] != "") {
 
-        $registrar =  registrar_usuario($_POST["email"],$_POST["nombre"],$_POST["apellido"],password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["fecha_nacimiento"],$_POST["rol"]);
+        $registrar = registrar_usuario($_POST["email"], $_POST["nombre"], $_POST["apellido"], password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"], $_POST["fecha_nacimiento"], $_POST["rol"]);
 
-    }else{
-        $error= "Debe llenar este campo";
+    } else {
+        $error = "Debe llenar este campo";
     }
-	header("location:./_usuarios_vista.php");
+    header("location:./_usuarios_vista.php");
 
 
 }

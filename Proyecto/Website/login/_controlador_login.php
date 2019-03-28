@@ -23,7 +23,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                 $_SESSION['id_rol'] = $row['id_rol'];
             }
         }
-    }else {
+    } else {
         //Reedireccion a login si no esta la sesion iniciada
         $error = "Usuario y/o contraseña incorrectos";
         header_html();

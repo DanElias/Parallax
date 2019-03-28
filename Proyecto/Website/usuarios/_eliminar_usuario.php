@@ -4,22 +4,22 @@ require_once("../basesdedatos/_conection_queries_db.php");
 require_once("_util_usuarios.php");
 
 
-$_GET['id']= htmlentities($_GET['id']);
+$_GET['id'] = htmlentities($_GET['id']);
 
 //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
-if (isset($_GET['id']) && $_GET['id'] != ""){
+if (isset($_GET['id']) && $_GET['id'] != "") {
     //EN ESTA PARTE A CONTINUACION HARÉ EL REGISTRO EN LA BASE DE DATOS
     //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
     //------------------------------------------------------------------------------------------------------------
 
-    $result=obtenerEventosPorID($_GET['id']);
-    $row=mysqli_fetch_assoc($result);
+    $result = obtenerEventosPorID($_GET['id']);
+    $row = mysqli_fetch_assoc($result);
 
     echo $filename;
 
     if (file_exists($filename)) {
         unlink($filename);
-        if(eliminarEventoPorID($_GET['id'])){
+        if (eliminarEventoPorID($_GET['id'])) {
             header_html();
             sidenav_html();
             evento_html();
@@ -31,13 +31,11 @@ if (isset($_GET['id']) && $_GET['id'] != ""){
                                 alert(\"¡El evento se ha borrado de manera exitosa!\");
                     </script>";
             footer_html();
-        }
-        else{
+        } else {
             echo "Por ele momento no";
         }
 
-    }
-    else {
+    } else {
         echo "UJU Por el momento no podemos eliminar el evento. Inténtalo más tarde";
     }
 
@@ -48,8 +46,10 @@ if (isset($_GET['id']) && $_GET['id'] != ""){
 }
 
 
-function eliminarimagen(){
+function eliminarimagen()
+{
 
 
 }
+
 ?>

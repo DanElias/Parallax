@@ -1,20 +1,20 @@
 <?php
 
-    // en este php mando llamar mis funciones de query y conexiones con la base de datos
-    require_once("_util_eventos.php");
-    require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
-    session_start();
-    $_SESSION['id_evento'] = $_GET['id'];
-    $_GET['id']= htmlentities($_GET['id']);
-        $result=obtenerEventosPorID($_GET['id']);
-        $edit_form = '';
+// en este php mando llamar mis funciones de query y conexiones con la base de datos
+require_once("_util_eventos.php");
+require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
+session_start();
+$_SESSION['id_evento'] = $_GET['id'];
+$_GET['id'] = htmlentities($_GET['id']);
+$result = obtenerEventosPorID($_GET['id']);
+$edit_form = '';
 
-        if(mysqli_num_rows($result)>0){
-            //output data of each row;
-            while($row = mysqli_fetch_assoc($result)){
+if (mysqli_num_rows($result) > 0) {
+    //output data of each row;
+    while ($row = mysqli_fetch_assoc($result)) {
 
-                $edit_form='
-                <script> alert('.$row['id_evento'].'); </script>
+        $edit_form = '
+                <script> alert(' . $row['id_evento'] . '); </script>
                 
                  <!-- Modal Structure -->
                     <div id="_form_editar_evento" class="modal my_modal modal1  my_big_modal" name="modal1">
@@ -47,17 +47,17 @@
                                 <div class="row">
                                     <div class="input-field col s6">
                                       <i class="material-icons prefix">event</i>
-                                      <input  type="text" class="validate" name="nombre_evento" id="nombre_evento" value="'.$row['nombre'].'">
+                                      <input  type="text" class="validate" name="nombre_evento" id="nombre_evento" value="' . $row['nombre'] . '">
                                       <label for="nombre_evento">Nombre del evento</label>
-                                      <input  type="hidden" name="id_evento" id="id_evento" value='.$row['id_evento'].'>
+                                      <input  type="hidden" name="id_evento" id="id_evento" value=' . $row['id_evento'] . '>
                                     </div>
                                     <div class="input-field col s2">
                                       <i class="material-icons prefix">calendar_today</i>
-                                    <input type="date" name="fecha_evento" id="fecha_evento" value="'.$row['fecha'].'" required>
+                                    <input type="date" name="fecha_evento" id="fecha_evento" value="' . $row['fecha'] . '" required>
                                     </div>
                                      <div class="input-field col s2">
                                       <i class="material-icons prefix">access_time</i>
-                                    <input type="time" name="hora_evento" id="hora_evento" value="'.$row['hora'].'">
+                                    <input type="time" name="hora_evento" id="hora_evento" value="' . $row['hora'] . '">
                                     </div>
                                 </div>
                             
@@ -65,12 +65,12 @@
                                 <div class="row">
                                     <div class="input-field col s2">
                                       <i class="material-icons prefix">place</i>
-                                      <input  type="text" class="validate" name="lugar_evento" id="lugar_evento" value="'.$row['lugar'].'" >
+                                      <input  type="text" class="validate" name="lugar_evento" id="lugar_evento" value="' . $row['lugar'] . '" >
                                       <label for="lugar_evento">Lugar</label>
                                     </div>
                                     <div class="input-field col s10">
                                       <i class="material-icons prefix">description</i>
-                                      <input  type="text" class="validate" name="descripcion_evento" id="descripcion_evento" value="'.$row['descripcion'].'">
+                                      <input  type="text" class="validate" name="descripcion_evento" id="descripcion_evento" value="' . $row['descripcion'] . '">
                                       <label for="descripcion_evento">Descripción</label>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <div> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Agrega una imagen para el evento:</div>
                                         <div class="input-field col s4">
                                           <i class="material-icons prefix">icon</i>
-                                          <input  type="file" name="fileToUpload" id="fileToUpload" required value="'.$row['imagen'].'">
+                                          <input  type="file" name="fileToUpload" id="fileToUpload" required value="' . $row['imagen'] . '">
                                         </div>
                                         
                                         <!--<div class="col s1">
@@ -117,18 +117,18 @@
                         </div>
                     </div>';
 
-            }
+    }
 
-            header_html();
-            sidenav_html();
-            evento_html();
-            controller_modal_informacion_evento_php();
-            form_evento_html();
-            form_eliminar_evento_html();
-            controller_tabla_eventos_php();
-            echo $edit_form;
-            echo
-            "<script type='text/javascript'>
+    header_html();
+    sidenav_html();
+    evento_html();
+    controller_modal_informacion_evento_php();
+    form_evento_html();
+    form_eliminar_evento_html();
+    controller_tabla_eventos_php();
+    echo $edit_form;
+    echo
+    "<script type='text/javascript'>
                             jQuery(document).ready(function(){
                                   jQuery('#_form_editar_evento').modal();
                                   jQuery(document).ready(function(){
@@ -136,10 +136,9 @@
                                   });
                             });
                     </script>";
-            footer_html();
-        }
-        else{ // si no hay eventos registrados en la tabla
-            echo "No encontramos evento";
-        }
+    footer_html();
+} else { // si no hay eventos registrados en la tabla
+    echo "No encontramos evento";
+}
 
 ?>
