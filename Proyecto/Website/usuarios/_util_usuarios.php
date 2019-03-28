@@ -47,12 +47,12 @@ function form_agregar_rol()
 
 function controller_modal_informacion_usuarios_php()
 {
-    include("_controller_modal_informacion_usuarios.php");
+    include("controladores/_controller_modal_informacion_usuarios.php");
 }
 
 function controller_tabla_usuarios_php()
 {
-    include("_controller_tabla_usuarios.php");
+    include("controladores/_controller_tabla_usuarios.php");
 }
 
 ?>
