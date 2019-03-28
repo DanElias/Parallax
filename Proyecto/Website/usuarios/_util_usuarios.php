@@ -35,10 +35,6 @@ function form_eliminar_usuario()
     include("forms/_form_eliminar_usuario.html");
 }
 
-function modal_informacion_usuario()
-{
-    include("_form_informacion_usuario.html");
-}
 
 function form_agregar_rol()
 {
