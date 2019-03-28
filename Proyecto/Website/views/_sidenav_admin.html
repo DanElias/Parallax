@@ -16,7 +16,7 @@
 
     <li><a class="waves-effect hoverable" href="../admin/_admin_vista.php"><i class="material-icons">home</i>Inicio</a>
     </li>
-    <?php if($_SESSION['id_rol'] == 1): ?>
+
 
     <!--Area de beneficiarios-->
     <li>
@@ -25,7 +25,7 @@
     <li><a class="waves-effect hoverable" href="../beneficiarios/_beneficiarios_vista.php"><i class="material-icons">accessibility_new</i>Beneficiarios</a>
     </li>
 
-    <?php endif ?>
+
     <!--Area de Reportes beneficiarios-->
     <li>
         <div class="divider"></div>
@@ -65,6 +65,7 @@
     <li><a class="waves-effect hoverable" href="../eventos/_eventos_vista.php"><i
             class="material-icons">calendar_today</i>Eventos</a></li>
     <!--Area de Usuarios-->
+    <?php if($_SESSION['id_rol'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
@@ -72,5 +73,6 @@
     <li>
         <div class="divider"></div>
     </li>
+    <?php endif ?>
 </ul>
 <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large "><i class="material-icons">menu</i></a>
