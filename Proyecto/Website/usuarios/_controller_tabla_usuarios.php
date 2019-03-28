@@ -15,7 +15,6 @@ if(mysqli_num_rows($result)>0){
         $query_table.="<td>".$row["email"]."</td>";
         $query_table.="<td>".$row["id_rol"]."</td>";
         $query_table.="<td>". $row_date[2]."/".$row_date[1]."/".$row_date[0]."</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
-        $query_table.='<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id='.$row['id_usuario'].'">Mas información</a></td>';
         $query_table.=
             '<td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id='.$row['id_usuario'].'">
@@ -42,7 +41,6 @@ if(mysqli_num_rows($result)>0){
                                 <th>Email</th>
                                 <th>Rol</th>
                                 <th>Fecha de creacion</th>
-                                <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>
@@ -60,7 +58,7 @@ if(mysqli_num_rows($result)>0){
 
 }
 else{ // si no hay eventos registrados en la tabla
-    echo "No encontramos eventos registrados";
+    echo "No encontramos Usuarios registrados";
 }
 
 ?>

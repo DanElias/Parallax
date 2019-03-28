@@ -2,17 +2,20 @@
 
 //se conecta con la base de datos indicada
     function conectDb(){//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
+
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "proyecto";
 
-        $con = mysqli_connect($servername, $username, $password, $dbname);
+        $con = @mysqli_connect($servername, $username, $password, $dbname);
 
         //Check connection
         if (!$con) {
+
             //die("Connection failed: ".mysqli_connect_error());
-            die("Error 505: Internal Sever Error");
+
+            die(include("error_server_card.html"));
         }
 
         return $con;
@@ -299,6 +302,32 @@ function obtenerCuentas(){
     return $result;
 }
 
+function obtenerUsuariosPorID($id_usuario){
 
+    $conn = conectDb();
+
+    $sql = "SELECT id_evento FROM usuario WHERE id_usuario = '".$id_usuario."'";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;
+}
+
+function eliminarUsuarioPorID($id_usuario){
+    $conn = conectDb();
+
+    $sql = "DELETE FROM usuario WHERE id_evento ='".$id_usuario."'";
+
+    if(mysqli_query($conn,$sql)){
+        closeDb($conn);
+        return true;
+    }
+    else{
+        closeDb($conn);
+        return false;
+    }
+}
 
 ?>
