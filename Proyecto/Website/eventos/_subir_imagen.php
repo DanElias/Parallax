@@ -1,9 +1,9 @@
 <?php
 
-require_once("html_structures.php");
+require_once("../html_structures.php");
 
-$error;
-$info;
+$error ='';
+$info = '';
 
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

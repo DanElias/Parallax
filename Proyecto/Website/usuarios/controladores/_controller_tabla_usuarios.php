@@ -1,29 +1,30 @@
 <?php
 
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
-require_once("../basesdedatos/_conection_queries_db.php");
+require_once("../../basesdedatos/_conection_queries_db.php");
 
-$result=obtenerProveedor();
+$result=obtenerUsuario();
 $query_table="";
 
 if(mysqli_num_rows($result)>0){
     //output data of each row;
     while($row = mysqli_fetch_assoc($result)){
-
-        $query_table.='<td>'.$row["rfc"].'</td>';
-        $query_table.="<td>".$row["alias"]."</td>";
-        $query_table.="<td>".$row["telefono_contacto"]."</td>";
-        $query_table.="<td>".$row["cuenta_bancaria"]."</td>";
-        $query_table.='<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id='.$row['rfc'].'">Mas información</a></td>';
+        $row_date=explode('-',$row["fecha_creacion"]);
+        $query_table.="<tr>";
+        $query_table.='<td>'.$row["nombre"].'</td>';
+        $query_table.="<td>".$row["email"]."</td>";
+        $query_table.="<td>".$row["id_rol"]."</td>";
+        $query_table.="<td>". $row_date[2]."/".$row_date[1]."/".$row_date[0]."</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
+        $query_table.='<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id='.$row['id_usuario'].'">Mas información</a></td>';
         $query_table.=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id='.$row['rfc'].'">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id='.$row['id_usuario'].'">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
         $query_table.=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usuario.php?id='.$row['rfc'].'">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usuario.php?id='.$row['id_usuario'].'">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
@@ -37,10 +38,10 @@ if(mysqli_num_rows($result)>0){
                         <table class="stripped highlight responsive-table data_table fixed_header">
                             <thead>
                             <tr class="my_table_headers">
-                                <th>RFC</th>
-                                <th>Alias</th>
-                                <th>Telefono</th>
-                                <th>Cuenta bancaria</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Rol</th>
+                                <th>Fecha de creacion</th>
                                 <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>

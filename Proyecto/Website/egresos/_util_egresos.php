@@ -1,7 +1,7 @@
 <?php
 
 function controller_tabla_egresos_php(){
-    include("_controller_tabla_egresos.php");
+    include("controladores/_controller_tabla_egresos.php");
 }
 function header_html($titulo = "Egresos")
 {
@@ -25,17 +25,17 @@ function body_egresos()
 
 function form_egresos()
 {
-    include("_form_egresos.html");
+    include("forms/_form_egresos.html");
 }
 
 function form_eliminar_egresos()
 {
-    include("_form_eliminar_egresos.html");
+    include("forms/_form_eliminar_egresos.html");
 }
 
 function modal_informacion_egresos()
 {
-    include("_modal_informacion_egresos.html");
+    include("forms/_form_informacion_egresos.html");
 }
 
 //-------------------------------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ function form_editar_proveedor()
 
 function form_eliminar_proveedor_lista()
 {
-    include("_form_eliminar_proveedor_lista.html");
+    include("forms/_form_eliminar_proveedor_lista.html");
 }
 
 function modal_informacion_proveedores()
@@ -68,17 +68,17 @@ function modal_informacion_proveedores()
 
 function form_cuentacontable_html()
 {
-    include("../cuentas_contables/_form_cuentacontable.html");
+    include("../cuentas_contables/forms/_form_cuentacontable.html");
 }
 
 function form_eliminar_cuentacontable_lista_html()
 {
-    include("_form_eliminar_cuentacontable_lista.html");
+    include("forms/_form_eliminar_egresos.html");
 }
 
 function modal_informacion_cuentacontable_html()
 {
-    include("../cuentas_contables/_modal_informacion_cuentacontable.html");
+    include("../cuentas_contables/forms/_form_informacion_cuentacontable.html");
 }
 
 ?>

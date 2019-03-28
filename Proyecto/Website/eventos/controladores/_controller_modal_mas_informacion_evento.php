@@ -1,9 +1,9 @@
 
 <?php
 
-    require_once("../basesdedatos/_conection_queries_db.php");
-    require_once("_util_eventos.php");
-    
+    require_once("../../basesdedatos/_conection_queries_db.php");
+    require_once("../_util_eventos.php");
+
      $_GET['id']= htmlentities($_GET['id']);
      if (isset($_GET['id']) && $_GET['id'] != ""){
          $result=obtenerEventosPorID($_GET['id']);
@@ -77,7 +77,7 @@
                 echo "no encontramos eventos registrados";
             }
             
-            //Aqui habría que separar la vista del controlador
+            //Aqui habría que separar la vista del controladores
             header_html();
             sidenav_html();
             evento_html();

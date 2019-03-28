@@ -1,16 +1,16 @@
+
 <?php
 
-require_once("../basesdedatos/_conection_queries_db.php");
+    require_once("../../basesdedatos/_conection_queries_db.php");
 
-$result=obtenerEventosPorID($_SESSION['id_evento']);
-
-$cards="";
-
-if(mysqli_num_rows($result)>0){
-    //output data of each row;
-    while($row = mysqli_fetch_assoc($result)){
-        $row_date=explode('-',$row["fecha"]);
-        $cards.='
+    $result=obtenerEventosPorID($_SESSION['id_evento']);
+    $cards="";
+    
+     if(mysqli_num_rows($result)>0){
+        //output data of each row;
+        while($row = mysqli_fetch_assoc($result)){
+           $row_date=explode('-',$row["fecha"]);
+            $cards.='
                 <div class="row" style="width: 80%;">
                     <div class="col s12 m12">
                         <div class="card horizontal" >
@@ -68,14 +68,14 @@ if(mysqli_num_rows($result)>0){
                     </div>
                 </div>
                 <br><br>';
+        }
     }
-}
-else{ // si no hay eventos registrados en la tabla
-    echo "no encontramos eventos registrados";
-}
-
-
-echo '
+    else{ // si no hay eventos registrados en la tabla
+        echo "no encontramos eventos registrados";
+    }
+    
+    
+    echo '
     <!-- Modal Structure -->
     <div id="_modal_informacion_evento" class="modal modal-fixed-footer my_modal  my_big_modal">
         <div class="row my_modal_header_row">
@@ -106,5 +106,5 @@ echo '
             </div>
          </div>
     </div>';
-
+                
 ?>

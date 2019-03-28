@@ -17,26 +17,23 @@ function footer_html()
 
 function cuentacontable_html()
 {
-    include("cuentascontables.html");
+    include("_cuentascontables.html");
 }
 
 function form_cuentacontable_html()
 {
-    include("_form_cuentacontable.html");
+    include("forms/_form_cuentacontable.html");
 }
 
-function form_eliminar_cuentacontable_html()
-{
-    include("_form_eliminar_cuentacontable.html");
-}
+
 
 function modal_informacion_cuentacontable_html()
 {
-    include("_modal_informacion_cuentacontable.html");
+    include("forms/_form_informacion_cuentacontable.html");
 }
 
 function controller_tabla_cuentas_php(){
-    include("_controller_tablas_cuentas.php");
+    include("controladores/_controller_tablas_cuentas.php");
 }
 
 ?>

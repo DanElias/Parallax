@@ -234,6 +234,7 @@ function mostrar_alerta_error()
     form_eliminar_evento_html();
     alerta_error($_SESSION['error_evento']);
     modal_informacion_evento_html();
+
     echo
     "<script type='text/javascript'>
             jQuery(document).ready(function(){
