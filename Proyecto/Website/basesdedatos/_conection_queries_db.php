@@ -40,6 +40,8 @@ function obtenerEventos()
     return $result;
 }
 
+//---------------------------------------------------Eventos-------------------------------------------------------------------
+
 // regresa todos los datos de una tupla cuyo nombre sea igual al especificado
 function obtenerEventosPorNombre($nombre_evento)
 {
@@ -153,6 +155,7 @@ function eliminarEventoPorID($id_evento)
     }
 }
 
+//---------------------------------------------------Usuarios-------------------------------------------------------------------
 
 function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $fecha_creacion, $id_rol)
 {
@@ -169,6 +172,7 @@ function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacim
         return false;
     }
 }
+//---------------------------------------------------Rol------------------------------------------------------------------------
 
 function registrar_Rol($nombre)
 {
@@ -186,6 +190,7 @@ function registrar_Rol($nombre)
     }
 }
 
+//---------------------------------------------------Proveedor-------------------------------------------------------------------
 
 function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco)
 {
@@ -208,6 +213,8 @@ function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, 
 
 }
 
+//---------------------------------------------------Cuenta contable-------------------------------------------------------------------
+
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {
     $conn = conectDb();
@@ -223,6 +230,7 @@ function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
         return false;
     }
 }
+//---------------------------------------------------Login-------------------------------------------------------------------
 
 function autentificarse($email, $password)
 {
@@ -281,7 +289,7 @@ function obtenerProveedor()
 
     return $result;
 }
-
+//---------------------------------------------------Egreso-------------------------------------------------------------------
 function obtenerEgresos()
 {
 
@@ -311,17 +319,5 @@ function obtenerCuentas()
     return $result;
 }
 
-function obtenerUsuariosPorID($id_usuario){
-
-    $conn = conectDb();
-
-    $sql = "SELECT id_evento FROM usuario WHERE id_usuario = '".$id_usuario."'";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
-    return $result;
-}
 
 ?>
