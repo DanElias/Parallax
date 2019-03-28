@@ -20,55 +20,76 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/proveedores/forms/_form_agregar_proveedor.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/reporte_beneficiarios/_reporte_beneficiarios.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/reporte_egresos/_reporte_egresos.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/sitio/_cards_eventos.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/sitio/_controller_cards_eventos.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/usuarios/controladores/_controller_modal_informacion_usuarios.php">
+        <entry file="file://$PROJECT_DIR$/Proyecto/Website/basesdedatos/_conection_queries_db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state relative-caret-position="272">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/usuarios/_eliminar_usuario.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Proyecto/Website/egresos/controladores/_controller_tabla_egresos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/_footer_admin.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Proyecto/Website/proveedores/controladores/_controller_tabla_proveedores.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proyecto/Website/cuentas_contables/controladores/_controller_tablas_cuentas.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_informacion_evento.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_mas_informacion_evento.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/_modal_confirm.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_tabla_eventos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,25 +107,25 @@
         <option value="$PROJECT_DIR$/Proyecto/Website/eventos/_util_eventos.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/eventos/_registro_editar_evento.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/proveedores/_util_proveedores.php" />
-        <option value="$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_mas_informacion_evento.php" />
-        <option value="$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_tabla_eventos.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/usuarios/controladores/_controller_tabla_usuarios.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/admin/_admin.html" />
         <option value="$PROJECT_DIR$/Proyecto/Website/basesdedatos/_conection_queries_db.php" />
-        <option value="$PROJECT_DIR$/Proyecto/Website/cuentas_contables/controladores/_controller_tablas_cuentas.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/cuentas_contables/forms/_form_cuentacontable.html" />
         <option value="$PROJECT_DIR$/Proyecto/Website/cuentas_contables/_agregar_cuenta_contable.php" />
-        <option value="$PROJECT_DIR$/Proyecto/Website/egresos/controladores/_controller_tabla_egresos.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/egresos/forms/_form_egresos.html" />
         <option value="$PROJECT_DIR$/Proyecto/Website/egresos/_egresos.html" />
-        <option value="$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_informacion_evento.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/eventos/_eliminar_evento.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/login/_controlador_login.php" />
-        <option value="$PROJECT_DIR$/Proyecto/Website/proveedores/controladores/_controller_tabla_proveedores.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/proveedores/forms/_form_agregar_proveedor.html" />
         <option value="$PROJECT_DIR$/Proyecto/Website/sitio/_cards_eventos.html" />
         <option value="$PROJECT_DIR$/Proyecto/Website/usuarios/controladores/_controller_modal_informacion_usuarios.php" />
         <option value="$PROJECT_DIR$/Proyecto/Website/usuarios/_eliminar_usuario.php" />
+        <option value="$PROJECT_DIR$/Proyecto/Website/egresos/controladores/_controller_tabla_egresos.php" />
+        <option value="$PROJECT_DIR$/Proyecto/Website/proveedores/controladores/_controller_tabla_proveedores.php" />
+        <option value="$PROJECT_DIR$/Proyecto/Website/cuentas_contables/controladores/_controller_tablas_cuentas.php" />
+        <option value="$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_informacion_evento.php" />
+        <option value="$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_mas_informacion_evento.php" />
+        <option value="$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_tabla_eventos.php" />
       </list>
     </option>
   </component>
@@ -144,80 +165,6 @@
               <item name="Parallax" type="462c0819:PsiDirectoryNode" />
               <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="basesdedatos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="beneficiarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas_contables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas_contables" type="462c0819:PsiDirectoryNode" />
-              <item name="controladores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas_contables" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="egresos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="egresos" type="462c0819:PsiDirectoryNode" />
-              <item name="controladores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="egresos" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
               <item name="eventos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -227,86 +174,6 @@
               <item name="Website" type="462c0819:PsiDirectoryNode" />
               <item name="eventos" type="462c0819:PsiDirectoryNode" />
               <item name="controladores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="proveedores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="proveedores" type="462c0819:PsiDirectoryNode" />
-              <item name="controladores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="proveedores" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="reporte_beneficiarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="reporte_egresos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="sitio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
-              <item name="controladores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Parallax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Parallax" type="462c0819:PsiDirectoryNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -359,7 +226,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6798000" />
+    <option name="totallyTimeSpent" value="6854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
@@ -452,20 +319,6 @@
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/proveedores/_modal_informacion_proveedores.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_mas_informacion_evento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_tabla_eventos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="50" lean-forward="true" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/usuarios/controladores/_controller_tabla_usuarios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -490,8 +343,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/basesdedatos/_conection_queries_db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -516,38 +369,17 @@
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/css/mystyles.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/cuentas_contables/controladores/_controller_tablas_cuentas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/cuentas_contables/forms/_form_cuentacontable.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/cuentas_contables/_agregar_cuenta_contable.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/egresos/controladores/_controller_tabla_egresos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/egresos/forms/_form_egresos.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/egresos/_egresos.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_informacion_evento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/_eliminar_evento.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -567,13 +399,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/login/_controlador_login.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/proveedores/controladores/_controller_tabla_proveedores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/proveedores/forms/_form_agregar_proveedor.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -603,14 +428,52 @@
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/_footer_admin.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/_sidenav_admin2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/sidenav2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/_sidenav_admin2.html" />
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/sidenav2.html" />
     <entry file="file://$PROJECT_DIR$/Proyecto/Website/views/_modal_confirm.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/egresos/controladores/_controller_tabla_egresos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/proveedores/controladores/_controller_tabla_proveedores.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/cuentas_contables/controladores/_controller_tablas_cuentas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_informacion_evento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_modal_mas_informacion_evento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/Website/eventos/controladores/_controller_tabla_eventos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -1,7 +1,7 @@
 <?php
 
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
-require_once("../../basesdedatos/_conection_queries_db.php");
+require_once("../basesdedatos/_conection_queries_db.php");
 
 $result = obtenerEventos();
 $query_table = "";

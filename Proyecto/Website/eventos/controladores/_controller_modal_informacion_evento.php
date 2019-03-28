@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../basesdedatos/_conection_queries_db.php");
+require_once("../basesdedatos/_conection_queries_db.php");
 
 $result = obtenerEventosPorID($_SESSION['id_evento']);
 $cards = "";
