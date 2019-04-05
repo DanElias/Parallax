@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 require_once("_util_beneficiarios.php");
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 
-session_start();
+
 
 //$_SESSION['link_imagen'];
 $_SESSION['error_tutor'];

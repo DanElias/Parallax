@@ -70,10 +70,10 @@ function alerta_error($error)
             <div>
             <br>
             <br>
-    
+
             <div class="my_modal_buttons">
                 <div class="row">
-    
+
                     <div class="col s12 m12">
                         <button class="modal-close btn waves-effect waves-light modal-close">Ok, estoy enterado.
                         </button>
@@ -86,5 +86,6 @@ function alerta_error($error)
     echo $alerta;
 
 }
+
 
 ?>
