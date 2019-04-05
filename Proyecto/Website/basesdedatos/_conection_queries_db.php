@@ -259,13 +259,15 @@ function obtenerUsuario()
 
     $conn = conectDb();
 
-    $sql = "SELECT id_usuario, nombre, email, fecha_creacion,id_rol FROM usuario";
+    $sql = "SELECT email, nombre, apellido FROM usuario";
 
     $result = mysqli_query($conn, $sql);
 
     closeDb($conn);
 
     return $result;
+
+    echo $result;
 }
 
 function obtenerProveedor()

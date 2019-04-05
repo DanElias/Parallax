@@ -35,15 +35,20 @@
                         <div class="input-field col s4 my_search tooltipped" data-position="bottom"
                              data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra introducida y a las casillas de los filtros de búsqueda seleccionados">
                             <i class="material-icons prefix my_search">search</i>
-                            <input id="buscar_usuario" type="text" class="validate my_search" onkeyup="filtrarUsuario()">
-                            <label for="buscar_usuario" class="my_search"  >Introduce un palabra clave</label>
+                            <input id="input_query_nombre" type="text" class="validate my_search" onkeyup="sendRequest()" >
+                            <label for="input_query_nombre" class="my_search"  >Introduce un palabra clave</label>
                         </div>
 
                         <div class="input-field col s2">
                             <a class="btn btn-medium waves-effect waves-light deep-purple hoverable">Buscar</a>
                         </div>
                     </div>
+
+
                 </form>
+                <div id="ajax_tabla_nombres">
+
+                </div>
             </div>
         </div>
 
@@ -52,4 +57,5 @@
 
 </div>
 
-</div><!-
+</div>
+<script type="text/javascript" src="../js/ajax.js"></script>
