@@ -56,7 +56,7 @@ if (mysqli_num_rows($result) > 0) {
             </div><!--div del wrapper que empieza después del sidenav-->';
 
 } else { // si no hay eventos registrados en la tabla
-    echo "No encontramos eventos registrados";
+    echo "No encontramos Egresos registrados";
 }
 
 ?>
