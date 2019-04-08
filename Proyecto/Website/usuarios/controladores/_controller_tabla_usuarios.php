@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) > 0) {
         <div class="wrapper">
              <div class="section white  my_section">
                     <div class="table-wrapper responsive-table new_data_table">
-                        <table class="stripped highlight responsive-table data_table fixed_header">
+                        <table class="stripped highlight responsive-table data_table fixed_header" id="myTable">
                             <thead>
                             <tr class="my_table_headers">
                                 <th>Nombre</th>

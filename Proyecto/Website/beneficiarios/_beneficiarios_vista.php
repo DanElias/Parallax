@@ -14,9 +14,10 @@ if (isset($_SESSION["usuario"])) {
     form_eliminar_beneficiarios_html();
     form_estado_beneficiarios_html();
     modal_informacion_beneficiarios_html();
-    modal_informacion_tutor_html();
+    //modal_informacion_tutor_html();
     beneficiarios_html();
     footer_html();
+    echo '<script src="js/ajax.js"></script>';
 } else {
     header("location:../login/_login_vista.php");
 

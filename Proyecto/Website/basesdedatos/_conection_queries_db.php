@@ -8,21 +8,18 @@ function conectDb()
     $password = "";
     $dbname = "proyecto";
 
-    $con = mysqli_connect($servername, $username, $password, $dbname);
+    $con = new mysqli($servername, $username, $password, $dbname);
 
-    //Check connection
-    if (!$con) {
-        //die("Connection failed: ".mysqli_connect_error());
-        die("Error 505: Internal Sever Error");
+    if($con->connect_error){
+      die("Connection failed: " . $con->connection_error);
     }
-
     return $con;
 }
 
 //cierra la conexión con la base de datos
 function closeDb($mysql)
 {
-    mysqli_close($mysql);
+    $mysql->close();
 }
 
 //obtiene todas las tuplas con todos sus datos
@@ -106,7 +103,7 @@ function insertarEvento($nombre_evento, $fecha_evento, $hora_evento, $lugar_even
 
     //INSERT INTO evento VALUES (,'Venta de Garage' ,'2019-03-28', '16:30:00','Mariana Sala I.A.P.' ,'Vamos a vender mobiliario para obtener fondos.', '../eventos/uploads/f3.jpg')
 
-    $sql = "INSERT INTO evento (id_evento, nombre, fecha, hora, lugar, descripcion, imagen) VALUES 
+    $sql = "INSERT INTO evento (id_evento, nombre, fecha, hora, lugar, descripcion, imagen) VALUES
         (0,\"" . $nombre_evento . "\",\"" . $fecha_evento . "\",\"" . $hora_evento . "\",\"" . $lugar_evento . "\",\"" . $descripcion_evento . "\",\"" . $imagen_evento . "\")";
 
     if (mysqli_query($conn, $sql)) {
@@ -192,7 +189,7 @@ function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, 
     $conn = conectDb();
     //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
     //Query de SQl para insertar en la tabla de proveedores
-    $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) 
+    $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco)
                 VALUES ('$rfc', '$alias','$razon', '$nombre', '$telefono', '$cuenta', '$banco')";
 
 
@@ -323,5 +320,58 @@ function obtenerUsuariosPorID($id_usuario){
 
     return $result;
 }
+
+  function registrarTutor($nombre, $telefono, $fecha, $ocupacion, $empresa, $grado, $titulo){
+    $conn = conectDb();
+    $sql = "INSERT INTO tutor(nombre, telefono, fecha_nacimiento, ocupacion, nombre_empresa, grado_estudio, titulo_obtenido) VALUES (?,?,'".$fecha."',?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssssss',$nombre,$telefono,$ocupacion,$empresa,$grado,$titulo);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+  function getNombreTutor(){
+    $conn = conectDb();
+    $sql = "SELECT id_tutor,nombre FROM tutor";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function getNombreBeneficiarios(){
+    $conn = conectDb();
+    $sql = "SELECT id_tutor,nombre FROM beneficiario";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function getInfoTutores(){
+    $conn = conectDb();
+    $sql = "SELECT * FROM tutor";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
 
 ?>
