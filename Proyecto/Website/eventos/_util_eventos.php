@@ -37,17 +37,17 @@ function form_eliminar_evento_html()
 
 function controller_modal_informacion_evento_php()
 {
-    include("controladores/_controller_modal_informacion_evento.php");
+    include("_controller_modal_informacion_evento.php");
 }
 
 function controller_modal_mas_informacion_evento_php()
 {
-    include("controladores/_controller_modal_mas_informacion_evento.php");
+    include("c_controller_modal_mas_informacion_evento.php");
 }
 
 function controller_tabla_eventos_php()
 {
-    include("controladores/_controller_tabla_eventos.php");
+    include("_controller_tabla_eventos.php");
 }
 
 function alerta_error($error)

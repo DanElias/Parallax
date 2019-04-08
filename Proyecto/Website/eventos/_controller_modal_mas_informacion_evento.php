@@ -1,7 +1,7 @@
 <?php
 
 require_once("../basesdedatos/_conection_queries_db.php");
-require_once("../_util_eventos.php");
+require_once("_util_eventos.php");
 
 $_GET['id'] = htmlentities($_GET['id']);
 if (isset($_GET['id']) && $_GET['id'] != "") {

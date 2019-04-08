@@ -5,6 +5,7 @@ require_once("../basesdedatos/_conection_queries_db.php");
 $result = obtenerEventosPorID($_SESSION['id_evento']);
 $cards = "";
 
+
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
