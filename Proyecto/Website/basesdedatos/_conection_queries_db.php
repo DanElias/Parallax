@@ -11,7 +11,7 @@ function conectDb()
     $con = new mysqli($servername, $username, $password, $dbname);
 
     if($con->connect_error){
-      die("Connection failed: " . $con->connection_error);
+      die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
     }
     return $con;
 }

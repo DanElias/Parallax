@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
         && $_POST["descripcion_evento"] != "") {
 
         // si no hay errores entonces mostrar pantalla de éxito
-        if (!checkmydate() && !is_numeric($_POST["nombre_evento"])
+        if (!is_numeric($_POST["nombre_evento"])
             && !is_numeric($_POST["descripcion_evento"])
             && !is_numeric($_POST["lugar_evento"])) {
 
@@ -79,7 +79,7 @@ if (isset($_POST["submit"])) {
         } // si hay errores revisar cuáles son y mostrarlos
         else {
             $_SESSION['error_evento'] = "<br><br> El evento no se ha podido registrar.";
-            checkmydate();
+        
             if (is_numeric($_POST["nombre_evento"])) {
                 $_SESSION['error_evento'] .= "<br><br> El nombre del evento no debe incluir sólo números";
             }
@@ -216,6 +216,7 @@ function mostrar_alerta_error()
     sidenav_html();
     evento_html();
     form_evento_html();
+    controller_tabla_eventos_php();
     form_eliminar_evento_html();
     alerta_error($_SESSION['error_evento']);
     modal_informacion_evento_html();

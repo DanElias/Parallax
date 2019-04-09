@@ -14,8 +14,6 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
 
         $edit_form = '
-                <script> alert(' . $row['id_evento'] . '); </script>
-                
                  <!-- Modal Structure -->
                     <div id="_form_editar_evento" class="modal my_modal modal1  my_big_modal" name="modal1">
                         <div class="row my_modal_header_row">
@@ -138,7 +136,31 @@ if (mysqli_num_rows($result) > 0) {
                     </script>";
     footer_html();
 } else { // si no hay eventos registrados en la tabla
-    echo "No encontramos evento";
+    $_SESSION['error_evento']="No encontramos el evento especificado, inténtalo más tarde";
+    mostrar_alerta_error_modal_editar();
+}
+
+
+function mostrar_alerta_error_modal_editar()
+{
+    header_html();
+    sidenav_html();
+    evento_html();
+    form_evento_html();
+    controller_tabla_eventos_php();
+    form_eliminar_evento_html();
+    alerta_error($_SESSION['error_evento']);
+    modal_informacion_evento_html();
+    echo
+    "<script type='text/javascript'>
+            jQuery(document).ready(function(){
+                  jQuery('#_form_alerta_error').modal();
+                  jQuery(document).ready(function(){
+                      jQuery('#_form_alerta_error').modal('open');
+                  });
+            });
+    </script>";
+    footer_html();
 }
 
 ?>

@@ -19,14 +19,6 @@ if (isset($_POST["submit"])) {
     $_POST["lugar_evento"] = htmlentities($_POST["lugar_evento"]);
     $_POST["descripcion_evento"] = htmlentities($_POST["descripcion_evento"]);
 
-    /*var_dump($_POST["id_evento"]);
-    var_dump($_POST["nombre_evento"]);
-    var_dump($_POST["fecha_evento"]);
-    var_dump($_POST["hora_evento"]);
-    var_dump($_POST["lugar_evento"]);
-    var_dump($_POST["descripcion_evento"]);
-    die();*/
-
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
     if (isset($_POST["nombre_evento"])
         && isset($_POST["hora_evento"])
@@ -40,7 +32,7 @@ if (isset($_POST["submit"])) {
         && $_POST["descripcion_evento"] != "") {
 
         // si no hay errores entonces mostrar pantalla de éxito
-        if (!checkmydate() && !is_numeric($_POST["nombre_evento"])
+        if ( !is_numeric($_POST["nombre_evento"])
             && !is_numeric($_POST["descripcion_evento"])
             && !is_numeric($_POST["lugar_evento"])) {
 
@@ -83,14 +75,21 @@ if (isset($_POST["submit"])) {
                     footer_html();
                     /*----------------------------------------------------------------------------------------------------------------------------------*/
                 } else {
-                    echo '<script>alert("HOLA");</script>';
+                    $_SESSION['error_evento'] = "No logramos registrar la edición de tu evento. Inténtalo más tarde";
+                    mostrar_alerta_error_registro_editar();
+                   
                 }
+            } else {
+                 $_SESSION['error_evento'] = "No logramos registrar la edición de tu evento. Inténtalo más tarde";
+                mostrar_alerta_error_registro_editar();
+               
+                
             }
 
         } // si hay errores revisar cuáles son y mostrarlos
         else {
             $_SESSION['error_evento'] = "<br><br> El evento no se ha podido registrar.";
-            checkmydate();
+
             if (is_numeric($_POST["nombre_evento"])) {
                 $_SESSION['error_evento'] .= "<br><br> El nombre del evento no debe incluir sólo números";
             }
@@ -100,15 +99,19 @@ if (isset($_POST["submit"])) {
             if (is_numeric($_POST["lugar_evento"])) {
                 $_SESSION['error_evento'] .= "<br><br> El lugar del evento no debe incluir sólo números";
             }
-            mostrar_alerta_error();
+            mostrar_alerta_error_registro_editar();
+            
         }
 
     } else {
         $_SESSION['error_evento'] .= "<br><br> Olvidaste llenar todos los campos del formulario <br> El evento no se ha podido registrar.";
-        mostrar_alerta_error();
+        mostrar_alerta_error_registro_editar();
+       
     }
 } else {
-    mostrar_alerta_error();
+     $_SESSION['error_evento'] = "No logramos registrar la edición de tu evento. Inténtalo más tarde";
+    mostrar_alerta_error_registro_editar();
+       
 }
 
 function checkmydate()
@@ -176,6 +179,7 @@ function validar_imagen()
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 500000000) {
 
+
         /*aqui revisar donde voy a desplegar el error*/
         $_SESSION['error_evento'] .= "<br><br> Tu imagen es muy grande.";
 
@@ -221,12 +225,13 @@ function validar_imagen()
 
 }
 
-function mostrar_alerta_error()
+function mostrar_alerta_error_registro_editar()
 {
     header_html();
     sidenav_html();
     evento_html();
     form_evento_html();
+    controller_tabla_eventos_php();
     form_eliminar_evento_html();
     alerta_error($_SESSION['error_evento']);
     modal_informacion_evento_html();

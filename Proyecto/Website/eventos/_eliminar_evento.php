@@ -33,24 +33,43 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
                     </script>";
             footer_html();
         } else {
-            echo "Por ele momento no";
+            $_SESSION['error_evento']="Por el momento no podemos eliminar el evento. Inténtalo más tarde";
+            mostrar_alerta_error_eliminar();
         }
 
     } else {
-        echo "UJU Por el momento no podemos eliminar el evento. Inténtalo más tarde";
+         $_SESSION['error_evento']="Por el momento no podemos eliminar el evento. Inténtalo más tarde";
+         mostrar_alerta_error_eliminar();
     }
 
 
     //--------------------------------------------------------------------------------------------------------------
 } else {
-    echo "Por el momento no podemos eliminar el evento. Inténtalo más tarde";
+    $_SESSION['error_evento']="Por el momento no podemos eliminar el evento. Inténtalo más tarde";
+    mostrar_alerta_error_eliminar();
 }
 
 
-function eliminarimagen()
+
+function mostrar_alerta_error_eliminar()
 {
-
-
+    header_html();
+    sidenav_html();
+    evento_html();
+    form_evento_html();
+    form_eliminar_evento_html();
+    alerta_error($_SESSION['error_evento']);
+    modal_informacion_evento_html();
+    echo
+    "<script type='text/javascript'>
+            jQuery(document).ready(function(){
+                  jQuery('#_form_alerta_error').modal();
+                  jQuery(document).ready(function(){
+                      jQuery('#_form_alerta_error').modal('open');
+                  });
+            });
+    </script>";
+    footer_html();
 }
 
 ?>
