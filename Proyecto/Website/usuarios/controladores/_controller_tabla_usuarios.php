@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
     require_once("../../basesdedatos/_conection_queries_db.php");
     $pattern = strtolower($_GET['pattern']);
 
@@ -48,6 +49,7 @@
                         <th>Apellido</th> 
                     </tr>'.$response.'</table> </div>';
     }
+
 
 
 ?>
