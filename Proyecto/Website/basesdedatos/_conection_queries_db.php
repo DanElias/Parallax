@@ -516,7 +516,7 @@ function obtenerUsuariosPorID($id_usuario){
     $conn = conectDb();
     $sql = "SELECT id_evento FROM usuario WHERE id_usuario = ?";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('i', $id_usuario)
+      $stmt->bind_param('i', $id_usuario);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
