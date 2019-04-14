@@ -73,16 +73,38 @@
 </nav>
 
 <?php else : ?>
+
+<div class="nav-container">
+      <div class="nav-row">
+          
+          <div class="nav-logo" id="nav-logo" style="padding:0em !important; display:none;">
+            <a href="_home_vista.php" style="padding:0em !important;">
+             <img class="responsive-img" id="logo"src="../images/watermark.png" width=90 style="padding: 0em !important;">
+            </a>
+          </div>
+          
+          <div class="nav-controls">
+              <a href="_home_vista.php"  class="nav_text my_nav_option" id="boton_inicio" style="display:none;">Inicio</a>
+              <a href="_eventos_vista.php"  class="nav_text my_nav_option" id="boton_eventos" style="display:none;">Eventos</a>
+              <a href="../login/_login_vista.php" class="nav_text my_nav_option" id="boton_login" style="display:none;">Login</a>
+              <a href="../login/_login_vista.php" class="nav_text my_nav_option" id="boton_apoyo" style="display:none;">¡Apóyanos!</a>
+          </div>
+      </div>
+</div>
+
+<!--
 <nav>
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo my_nav"><img class="responsive-img watermark" id="logo"
+    <div class="nav-wrapper my_animated_nav">
+        <a href="#" class="brand-logo"><img class="responsive-img watermark" id="logo"
                                                    src="../images/watermark.png" width=120></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="blue"><a href="_home_vista.php" class="nav_text hoverable">Inicio</a></li>
             <li class="teal lighten-1"><a href="_eventos_vista.php" class="nav_text hoverable">EVENTOS</a></li>
             <li class="amber darken-2"><a href="../login/_login_vista.php" class="nav_text hoverable">LOGIN</a></li>
         </ul>
     </div>
-</nav>
+    
+</nav>-->
+
 <?php endif ?>
 

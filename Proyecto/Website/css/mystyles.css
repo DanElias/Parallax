@@ -32,7 +32,8 @@
 .nav_text {
     font-family: Staatliches;
     font-size: 1.3em;
-    color: white;
+    letter-spacing: 0.05em;
+    color:white;
 }
 
 
@@ -725,3 +726,57 @@ my_search {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.nav-container {
+  height: 5em;
+  width: 100%;
+  position: fixed;
+  color: white;
+  letter-spacing: 0.025em;
+  transition: background-color 0.2s linear;
+  z-index: 999999;
+}
+  
+.solid-nav {
+    background-color: white;
+    transition: background-color 0.2s linear;
+    color: blue !important;
+  }
+  
+  .nav-row{
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 5em;
+    padding-right: 3em;
+    padding-top: 1.5em;
+}
+    
+.nav-logo {
+    display: inline-block;
+}
+    
+.nav-controls {
+    float: right;
+}
+
+.my_nav_option{
+    padding-left: 1em;
+}
+
+.my_logo{
+    padding-top: 0 !important;
+    margin:0 auto;
+}
+
+.my_text_shadow{
+  
+  text-decoration: underline;
+  transition: all 0.2s linear;
+}
+
+.my_text_noshadow{
+  text-shadow: rgba(255,0,0,0);
+  transition:  text-shadow 0.2s linear;
+}
+
+

@@ -18,7 +18,7 @@ function home_sitio_html()
 function _parallax($image_url, $titulo)
 {
     $parallax_container =
-        '<div class="parallax-container z-depth-4">
+        '<div class="parallax-container first-container z-depth-4">
             <header id="home_header"> 
             <section>
                 <h3 class="my_header_text">' . $titulo . '</h3>
