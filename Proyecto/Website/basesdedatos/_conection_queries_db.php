@@ -25,22 +25,21 @@ function closeDb($mysql)
 //obtiene todas las tuplas con todos sus datos
 function obtenerEventos()
 {
-
     $conn = conectDb();
-
     $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
 // regresa todos los datos de una tupla cuyo nombre sea igual al especificado
 function obtenerEventosPorNombre($nombre_evento)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE nombre LIKE '%" . $nombre_evento . "%'";
 
@@ -48,13 +47,24 @@ function obtenerEventosPorNombre($nombre_evento)
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE nombre LIKE '%?%'";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$nombre_evento);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
+
 }
 
 // regresa todos los datos de una tupla cuyo fecha ocurra antes o igual a una fecha especificada.
 function obtenerEventosPorFecha($fecha_evento)
 {//Las fechas se guardan como 1998-03-28
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE fecha LIKE '%" . $fecha_evento . "%'";
 
@@ -64,13 +74,23 @@ function obtenerEventosPorFecha($fecha_evento)
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE fecha LIKE '%?%'";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$fecha_evento);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
 function obtenerEventosPorID($id_evento)
 {
 
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE id_evento = '" . $id_evento . "'";
 
@@ -79,12 +99,23 @@ function obtenerEventosPorID($id_evento)
     closeDb($conn);
 
     return $result;
+    */
+    $conn = conectDb();
+    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE id_evento = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id_evento);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
 }
 
 function obtenerEventoReciente()
 {
 
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT id_evento FROM evento ORDER BY id_evento DESC LIMIT 1";
 
@@ -92,13 +123,22 @@ function obtenerEventoReciente()
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT id_evento FROM evento ORDER BY id_evento DESC LIMIT 1";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
 //Inserta un nuevo evento en la base de datos
 function insertarEvento($nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
 
 
     //INSERT INTO evento VALUES (,'Venta de Garage' ,'2019-03-28', '16:30:00','Mariana Sala I.A.P.' ,'Vamos a vender mobiliario para obtener fondos.', '../eventos/uploads/f3.jpg')
@@ -112,14 +152,28 @@ function insertarEvento($nombre_evento, $fecha_evento, $hora_evento, $lugar_even
     } else {
         closeDb($conn);
         return false;
+    }*/
+    $conn = conectDb();
+    $sql = "INSERT INTO evento (nombre, fecha, hora, lugar, descripcion, imagen) VALUES (?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssssss',$nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
     }
+    closeDB($conn);
 
 }
 
 //Inserta un nuevo evento en la base de datos
 function editarEvento($id_evento, $nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "UPDATE evento SET id_evento=$id_evento, nombre='" . $nombre_evento . "', fecha='" . $fecha_evento . "', hora='" . $hora_evento . "', lugar='" . $lugar_evento . "', descripcion='" . $descripcion_evento . "', imagen='" . $imagen_evento . "'
         WHERE id_evento=" . $id_evento . "";
@@ -130,14 +184,28 @@ function editarEvento($id_evento, $nombre_evento, $fecha_evento, $hora_evento, $
     } else {
         closeDb($conn);
         return false;
+    }*/
+    $conn = conectDb();
+    $sql = "UPDATE evento SET id_evento=?, nombre=?, fecha=?, hora=?, lugar=?, descripcion=?, imagen=? WHERE id_evento=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('issssssi',$id_evento, $nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento, $id_evento);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
     }
+    closeDB($conn);
 
 }
 
 //borra el evento que tenga el id
 function eliminarEventoPorID($id_evento)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "DELETE FROM evento WHERE id_evento ='" . $id_evento . "'";
 
@@ -147,13 +215,27 @@ function eliminarEventoPorID($id_evento)
     } else {
         closeDb($conn);
         return false;
+    }*/
+    $conn = conectDb();
+    $sql = "DELETE FROM evento WHERE id_evento = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id_evento);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
     }
+    closeDB($conn);
 }
 
 
 function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $fecha_creacion, $id_rol)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     //Query de SQl para insertar en la tabla de usaurios
     $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (\"" . $usuario . "\",\"" . $nombre . "\",\"" . $apellido . "\",\"" . $password . "\",\"" . $fecha_nacimiento . "\",\"" . $fecha_creacion . "\",\"" . $id_rol . "\")";
@@ -164,12 +246,26 @@ function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacim
     } else {
         closeDb($conn);
         return false;
+    }*/
+    $conn = conectDb();
+    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (?,?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssssssi',$usuario, $nombre, $apellido, $password, $fecha_nacimiento, $fecha_creacion, $id_rol);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
     }
+    closeDB($conn);
 }
 
 function registrar_Rol($nombre)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     //Query de SQl para insertar en la tabla de usaurios
     $sql = "INSERT INTO rol(descripcion) VALUES (\"" . $nombre . "\")";
@@ -180,13 +276,27 @@ function registrar_Rol($nombre)
     } else {
         closeDb($conn);
         return false;
+    }*/
+    $conn = conectDb();
+    $sql = "INSERT INTO rol(descripcion) VALUES (?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$nombre);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
     }
+    closeDB($conn);
 }
 
 
 function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
     //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
     //Query de SQl para insertar en la tabla de proveedores
     $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco)
@@ -201,13 +311,27 @@ function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, 
     } else {
         closeDb($conn);
         return false;
+    }*/
+    $conn = conectDb();
+    $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (?,?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('sssssss',$rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
     }
+    closeDB($conn);
 
 }
 
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     //Query de SQl para insertar en la tabla de cuenta contable
     $sql = "INSERT INTO cuenta_contable(nombre, descripcion) VALUES (\"" . $nombre_cuenta . "\",\"" . $descripcion_cuenta . "\")";
@@ -218,17 +342,40 @@ function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
     } else {
         closeDb($conn);
         return false;
+    }*/
+    $conn = conectDb();
+    $sql = "INSERT INTO cuenta_contable(nombre, descripcion) VALUES (?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ss',$nombre_cuenta, $descripcion_cuenta);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
     }
+    closeDB($conn);
 }
 
 function autentificarse($email, $password)
 {
-    $con = conectDb();
+    /*$con = conectDb();
 
     //$sql = "SELECT email,passwd FROM usuario WHERE email = '$email' And passwd = '$password'";
     $sql = "SELECT passwd FROM usuario WHERE email = '$email'";
 
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $sql);*/
+    $conn = conectDb();
+    $sql = "SELECT passwd FROM usuario WHERE email = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$email);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+    }
     $row = mysqli_fetch_assoc($result);
     $contra = password_verify($password, $row['passwd']);
     return $contra;
@@ -243,18 +390,28 @@ function login($email, $password)
 {
 
 
-    // SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
+    /*// SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
     $con = conectDb();
     $sql = "SELECT nombre,id_rol FROM usuario WHERE email = '$email'";
     $result = mysqli_query($con, $sql);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT nombre,id_rol FROM usuario WHERE email = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$email);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
 function obtenerUsuario()
 {
 
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT id_usuario, nombre, email, fecha_creacion,id_rol FROM usuario";
 
@@ -262,13 +419,22 @@ function obtenerUsuario()
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT id_usuario, nombre, email, fecha_creacion,id_rol FROM usuario";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
 function obtenerProveedor()
 {
 
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
 
@@ -276,13 +442,22 @@ function obtenerProveedor()
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
 function obtenerEgresos()
 {
 
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
 
@@ -290,6 +465,15 @@ function obtenerEgresos()
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
@@ -297,7 +481,7 @@ function obtenerEgresos()
 function obtenerCuentas()
 {
 
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT id_cuentacontable, nombre,descripcion FROM cuenta_contable";
 
@@ -305,12 +489,21 @@ function obtenerCuentas()
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT id_cuentacontable, nombre,descripcion FROM cuenta_contable";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
 function obtenerUsuariosPorID($id_usuario){
 
-    $conn = conectDb();
+    /*$conn = conectDb();
 
     $sql = "SELECT id_evento FROM usuario WHERE id_usuario = '".$id_usuario."'";
 
@@ -318,6 +511,16 @@ function obtenerUsuariosPorID($id_usuario){
 
     closeDb($conn);
 
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT id_evento FROM usuario WHERE id_usuario = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i', $id_usuario)
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
     return $result;
 }
 
