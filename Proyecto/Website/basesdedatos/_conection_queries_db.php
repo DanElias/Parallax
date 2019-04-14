@@ -340,7 +340,7 @@ function obtenerUsuariosPorID($id_usuario){
 
   function getNombreTutor(){
     $conn = conectDb();
-    $sql = "SELECT id_tutor,nombre FROM tutor";
+    $sql = "SELECT id_tutor,nombre,apellido FROM tutor";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
@@ -352,7 +352,7 @@ function obtenerUsuariosPorID($id_usuario){
 
   function getNombreBeneficiarios(){
     $conn = conectDb();
-    $sql = "SELECT id_tutor,nombre FROM beneficiario";
+    $sql = "SELECT id_tutor,nombre,apellido FROM beneficiario";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();

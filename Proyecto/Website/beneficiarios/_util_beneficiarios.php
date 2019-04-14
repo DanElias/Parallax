@@ -45,38 +45,12 @@ function modal_informacion_beneficiarios_html()
     include("_modal_informacion_beneficiarios.html");
 }
 
-/*function modal_informacion_tutor_html()
-{
-    include("_modal_informacion_tutor.html");
-}*/
-
-/*function imprimirnombreTutor($result){
-  while($row = mysqli_fetch_assoc($result)){
-
-    echo '<tr>
-      <td>';
-    echo $row['nombre'];
-    echo '</td>
-      <td><a class="modal-trigger" href="#_modal_informacion_tutor">Mas informacion</a></td>
-      <td>
-          <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-             href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-      </td>
-      <td>
-          <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-             href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-      </td>
-    </tr>';
-
-  }
-}
-*/
 function imprimirnombreTutor($result){
   while($row = mysqli_fetch_assoc($result)){
 
     echo '<tr>
       <td>';
-    echo $row['nombre'];
+    echo $row['nombre'].' '.$row['apellido'];
     echo '</td>
       <td><a class="modal-trigger" href="#_modal_informacion_tutor_'.$row['id_tutor'].'">Mas informacion</a></td>
       <td>
@@ -109,7 +83,7 @@ function modalesTutores($result){
 
                 <div class="col s12">
                     <p class="mi_titulo s6">Nombre:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">'.$row['nombre'].'</p>
+                    <p class="mi_parrafo s6">'.$row['nombre'].' '.$row['apellido'].'</p>
                 </div>
 
                 <div class="col s12">
