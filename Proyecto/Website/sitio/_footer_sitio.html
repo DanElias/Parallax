@@ -1,30 +1,50 @@
-<footer class="page-footer my_footer" id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Mariana Sala I.A.P.
-                    <hr>
-                </h5>
-                <p class="grey-text text-lighten-4">¡Gracias por visitar nuestra página! <img
-                        class="responsive-img logo_foot" src="../images/watermark.png"></p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text"> &nbsp; &nbsp;Links con más información:
-                    <hr>
-                </h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="my_copyright">
-        <hr>
-        Copyright Parallax Web Solutions 2019 ©
-    </div>
-</footer>
+
+
+<footer class="footer-distributed" id="footer">
+
+			<div class="footer-left">
+				<div class="my_footer_title">Mariana Sala I.A.P.</div>
+				<p class="footer-company-name">Parallax Web Solutions © 2019</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<a target="_blank" href="https://www.google.com/maps/place/Educational+Center+Mariana+Sala+I.A.P./@20.6182497,-100.3733119,15z/data=!4m2!3m1!1s0x0:0xcba36e8ecbfad194?sa=X&ved=2ahUKEwiCr7vgrdHhAhVJQ6wKHRxbCgAQ_BIwEXoECAoQCA">
+					    <i class="fa fa-map-marker hoverable"></i>
+					</a>
+					<a target="_blank" href="https://www.google.com/maps/place/Educational+Center+Mariana+Sala+I.A.P./@20.6182497,-100.3733119,15z/data=!4m2!3m1!1s0x0:0xcba36e8ecbfad194?sa=X&ved=2ahUKEwiCr7vgrdHhAhVJQ6wKHRxbCgAQ_BIwEXoECAoQCA">
+					   <p><span href>Abraham González, Bolaños, 76149</span> Santiago de Querétaro, Qro., México</p>
+					</a>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>01 442 245 2537</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:marianasala@gmail.com">marianasala@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>Redes Sociales</span>
+					
+				</p>
+
+				<div class="footer-icons">
+					<a href="https://www.facebook.com/MarianaSalasIap/" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.facebook.com/MarianaSalasIap/" target="_blank"><i class="fa fa-twitter"></i></a>
+				</div>
+
+			</div>
+
+		</footer>
 
 <script>
 
@@ -51,15 +71,23 @@
             
             
     
-            if (scrollTop >= height - 40) {
-                $('.nav-container').addClass('solid-nav');
-                $('.nav_text').css('color', '#0d3d63');
+            if (scrollTop >= height - 50) {
+                $('.nav-container').addClass('solid-nav')
+                $('.nav_text').css('color', '#1565c0')
                 $('#nav-logo').fadeIn('slow')
             } else {
-                $('.nav-container').removeClass('solid-nav');
-                $('.nav_text').css('color', 'white');
+                $('.nav-container').removeClass('solid-nav')
+                $('.nav_text').css('color', 'white')
                 $('#nav-logo').fadeOut('fastver')
             }
+            
+            if (scrollTop >= height - 450) {
+                $('.mision').fadeIn(2000)
+                $('.vision').fadeIn(2000)
+            }
+           
+            
+            
     
         });
     });

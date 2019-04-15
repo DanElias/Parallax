@@ -19,7 +19,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!--Icono-->
-    <link rel="shortcut icon" href="images/Logo_Insitucion.ico"/>
+    <link rel="shortcut icon" href="../images/Logo_Insitucion.ico"/>
+    
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Titulo de paginas-->
     <title>Mariana Sala I.A.P.</title>
@@ -59,18 +63,25 @@
 </script>
 
 <?php if (isset($_SESSION["usuario"])): ?>
-<nav>
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo my_nav"><img class="responsive-img watermark" id="logo"
-                                                   src="../images/watermark.png" width=120></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down my_nav">
-            <li class="blue"><a href="_home_vista.php" class="nav_text hoverable">Inicio</a></li>
-            <li class="teal lighten-1"><a href="_eventos_vista.php" class="nav_text hoverable">EVENTOS</a></li>
-            <li class="amber darken-2"><a href="../admin/_admin_vista.php"
-                                          class="nav_text hoverable"><?=$_SESSION["usuario"]?></a></li>
-        </ul>
-    </div>
-</nav>
+
+<div class="nav-container">
+      <div class="nav-row">
+          
+          <div class="nav-logo" id="nav-logo" style="padding:0em !important; display:none;">
+            <a href="_home_vista.php" style="padding:0em !important;">
+             <img class="responsive-img" id="logo"src="../images/watermark.png" width=90 style="padding: 0em !important;">
+            </a>
+          </div>
+          
+          <div class="nav-controls">
+              <a href="_home_vista.php"  class="nav_text my_nav_option" id="boton_inicio" style="display:none;">Inicio</a>
+              <a href="_eventos_vista.php"  class="nav_text my_nav_option" id="boton_eventos" style="display:none;">Eventos</a>
+              <a href="../login/_login_vista.php" class="nav_text my_nav_option" id="boton_login" style="display:none;">Login</a>
+              <a href="../login/_login_vista.php" class="nav_text my_nav_option" id="boton_apoyo" style="display:none;">¡Apóyanos!</a>
+              <a href="../login/_login_vista.php" class="nav_text my_nav_option" id="boton_apoyo" style="display:none;"><?=$_SESSION["usuario"]?></a>
+          </div>
+      </div>
+</div>
 
 <?php else : ?>
 

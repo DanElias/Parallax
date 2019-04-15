@@ -267,14 +267,13 @@ video {
 }
 
 footer {
-    height: 350px;
     background-color: #16181c;
-    padding: 50px;
     font-family: 'bebas_neueregular';
     font-weight: normal;
     font-style: normal;
     font-size: 30px;
     color: white;
+    margin: 0 auto;
 }
 
 section {
@@ -347,7 +346,7 @@ input {
 }
 
 .my_table {
-    background-color: rgba(19, 28, 43, 0.7);
+    background-color: rgba(41, 80, 152, 0.7);
     height: auto;
     height: 100%;
     font-family: Ubuntu;
@@ -382,7 +381,9 @@ input {
 }
 
 .card_text {
-    color: rgba(19, 28, 43, 1);
+    color: #455a64;
+    font-size: 0.8em !important;
+    text-align: justify;
 }
 
 .my_card {
@@ -777,6 +778,232 @@ my_search {
 .my_text_noshadow{
   text-shadow: rgba(255,0,0,0);
   transition:  text-shadow 0.2s linear;
+}
+
+.my_heading_text_one{
+    color: rgba(34, 167, 171, 1) !important;
+    font-family: Staatliches;
+    font-size: 4em;
+    padding: 0.2em;
+    letter-spacing: 0.035em;
+}
+
+
+.mision_header{
+    color: #ffb300; 
+    font-size:2em;
+}
+
+.values{
+    background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
+    height: auto;
+    height: 100%;
+    font-family: Ubuntu;
+    color: white;
+    font-size: 1.5em;
+    padding-left: 11em;
+    padding-right: 4.5em;
+    
+}
+
+.values_text{
+    font-family: Staatliches; 
+    font-size: 2em;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height:50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #00aced;
+  color: white;
+}
+
+.my_card_title2 {
+    font-family: Staatliches;
+    font-size: 200%;
+    color: #00bfa5;
+}
+
+.footer-distributed{
+	background-color: #01579b;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	padding: 55px 50px;
+	font-size: 1em !important;
+	color: white;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color: white;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  white;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  white;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  white;
+}
+
+.footer-distributed .footer-company-name{
+	color:  white;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color: #ff9800;
+	color: white;
+	font-size: 30px;
+	width: 58px;
+	height: 58px;
+	text-align: margin-top;
+	line-height: 15px;
+	margin: 10px 15px;
+	vertical-align: margin-top;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 14px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: white;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  white;
+	text-decoration: none;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  white;
+	font-size: 20px;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background-color:  white;
+	border-radius: 50px;
+
+	font-size: 25px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 1px;
+
+	margin-right: 1em;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+.my_footer_title {
+    font-family: Staatliches;
+    font-size: 3em;
+    letter-spacing: 0.05em;
+    text-decoration: none !important;
 }
 
 

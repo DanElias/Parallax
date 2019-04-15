@@ -16,7 +16,6 @@ if (mysqli_num_rows($result) > 0) {
         $query_table .= "<td>" . $row_date[2] . "/" . $row_date[1] . "/" . $row_date[0] . "</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
         $query_table .= "<td>" . $row["hora"] . " hrs. </td>";
         $query_table .= "<td>" . $row["lugar"] . "</td>";
-        $query_table .= "<td>" . $row["descripcion"] . "</td>";
         $query_table .= '<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id=' . $row['id_evento'] . '">Mas información</a></td>';
         $query_table .=
             '<td>
@@ -43,6 +42,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <th>Nombre</th>
                                 <th>Fecha</th>
                                 <th>Hora</th>
+                                <th>Lugar</th>
                                 <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
