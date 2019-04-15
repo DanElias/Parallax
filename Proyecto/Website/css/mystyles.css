@@ -1,4 +1,9 @@
-
+.apoyanos{
+    font-family: Ubuntu;
+    color: #0d3d63;
+    font-size: 1em;
+    text-align:left;
+}
 .my_small_modal {
     width: 60% !important;
     max-height: 70% !important;

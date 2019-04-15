@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
@@ -8,11 +8,13 @@ function conectDb()
     $password = "";
     $dbname = "proyecto";
 
-    $con = new mysqli($servername, $username, $password, $dbname);
+    @$con = new mysqli($servername, $username, $password, $dbname);
 
     if($con->connect_error){
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
-      echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
+        include("error_server_card.html");
+      //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
+
     }
     return $con;
 }
