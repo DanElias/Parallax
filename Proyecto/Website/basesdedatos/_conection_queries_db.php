@@ -4,7 +4,7 @@
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
     $servername = "localhost";
-    $username = "danelias";
+    $username = "root";
     $password = "";
     $dbname = "proyecto";
 
