@@ -13,6 +13,7 @@ function conectDb()
     if($con->connect_error){
       die("Connection failed: " . $con->connection_error);
     }
+    $con->set_charset("utf8");
     return $con;
 }
 
@@ -352,7 +353,19 @@ function obtenerUsuariosPorID($id_usuario){
 
   function getNombreBeneficiarios(){
     $conn = conectDb();
-    $sql = "SELECT id_tutor,nombre,apellido FROM beneficiario";
+    $sql = "SELECT id_beneficiario,nombre,apellido,fecha_nacimiento,grupo,estado FROM beneficiario";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function getInfoBeneficiarios(){
+    $conn = conectDb();
+    $sql = "SELECT * FROM beneficiario";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
