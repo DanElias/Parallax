@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
         <div class="wrapper">
              <div class="section white  my_section">
                     <div class="table-wrapper responsive-table new_data_table">
-                        <table class="stripped highlight responsive-table data_table fixed_header">
+                        <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
                             <thead>
                             <tr class="my_table_headers">
                                 <th>Folio Factura</th>
@@ -46,13 +46,19 @@ if (mysqli_num_rows($result) > 0) {
                             </thead>
     
                             <tbody>'
-        . $query_table .
-        '</tbody>
+                                . $query_table .
+                                '</tbody>
                         </table>
+                        
+                         <div class="col-md-12 center text-center">
+                            <br>
+                            <ul class="pagination pager" id="myPager"></ul>
+                            <br>
+                    	    <span class="left" id="total_reg"></span>
+                        </div>
+                        
                     </div>
-            
                 </div>
-            
             </div><!--div del wrapper que empieza después del sidenav-->';
 
 } else { // si no hay eventos registrados en la tabla

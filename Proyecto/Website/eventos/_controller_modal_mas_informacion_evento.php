@@ -143,10 +143,10 @@ function mostrar_alerta_error_modal_mas_informacion()
     modal_informacion_evento_html();
     echo
     "<script type='text/javascript'>
-            jQuery(document).ready(function(){
-                  jQuery('#_form_alerta_error').modal();
-                  jQuery(document).ready(function(){
-                      jQuery('#_form_alerta_error').modal('open');
+            $(document).ready(function(){
+                  $('#_form_alerta_error').modal();
+                  $(document).ready(function(){
+                      $('#_form_alerta_error').modal('open');
                   });
             });
     </script>";

@@ -1,24 +1,8 @@
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 <script type="text/javascript" src="../js/materialize.js"></script>
+<script type="text/javascript" src="../js/pagination.js"></script>
 
 <script>
-    $(document).ready(function () {
-        $('.parallax').parallax();
-    });
-    $(document).ready(function () {
-        $('.carousel').carousel({
-            fullWidth: true,
-            autoplay: true,
-            indicators: false
-        }).css('height', $(window).height() * 0.8);
-    });
-    $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
-    autoplay();
-
-    function autoplay() {
-        $('.carousel').carousel('next');
-        setTimeout(autoplay, 4500);
-    }
 
     $(document).ready(function () {
         $('.materialboxed').materialbox();
@@ -38,6 +22,21 @@
     $(document).ready(function () {
         $('select').formSelect();
     });
+    
+    //Este es el jquery de la paginacion de las tablas
+    $(document).ready(function(){
+      $('#my_pagination_table').pageMe({
+        pagerSelector:'#myPager',
+        activeColor: 'blue',
+        prevText:'Anterior',
+        nextText:'Siguiente',
+        showPrevNext:true,
+        hidePageNumbers:false,
+        perPage:3
+      });
+    });
+    
+    
 </script>
 
 </html>
