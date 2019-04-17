@@ -12,11 +12,11 @@ $edit_form = '';
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
-        
+
 
         $edit_form = '
                  <!-- Modal Structure -->
-                    <div id="_form_editar_cuenta_contable" class="modal my_modal modal1" name="modal1">
+                    <div id="_form_editar_usuario" class="modal my_modal modal1" name="modal1">
                         <div class="row my_modal_header_row">
                                 <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                                 
@@ -39,29 +39,60 @@ if (mysqli_num_rows($result) > 0) {
                         <br><br><br>
                         
                         <div class="modal-content my_modal_content">
-                            <p>Aquí puede editar la cuenta</p>
+                            <p>Aquí puede editar el usuario</p>
             
-                            <form class="col s12" action="_registro_editar_usaurio.php" method="post" enctype="multipart/form-data">
+                            <form class="col s12" action="_registro_editar_usuario.php" method="post" enctype="multipart/form-data">
                                 
+                                                      <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">description</i>
+                                        <input type="text" class="validate" name="nombre" id="nombre" value = "' . $row['nombre'] . '"> 
+                                        <label for="nombre">Nombre</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">description</i>
+                                        <input type="text" class="validate" name="apellido" id="apellido" value = "' . $row['apellido'] . '">
+                                        <label for="apellido">Apellido</label>
+                                    </div>
+                    
+                    
+                                </div>
                                 <div class="row">
-                                    <div class="input-field col s12 m12">
-                                      <i class="material-icons prefix">event</i>
-                                      <input  type="text" class="validate" name="nombre" id="nombre" value="' . $row['nombre'] . '">
-                                      <label for="nombre_evento">Nombre de la cuenta contable</label>
-                                      <input  type="hidden" name="id_cuentacontable" id="id_cuentacontable" value=' . $row['id_cuentacontable'] . '>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">email</i>
+                                        <input type="email" class="validate" name="email" id="email" value = "' . $row['email'] . '">
+                                        <label for="email">Correo Electronico</label>
                                     </div>
                                 </div>
-                            
-                                
                                 <div class="row">
-                                    <div class="input-field col s12 m12">
-                                      <i class="material-icons prefix">description</i>
-                                      <input  type="text" class="validate" name="descripcion" id="descripcion" value="' . $row['descripcion'] . '">
-                                      <label for="descripcion_evento">Descripción</label>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">lock</i>
+                                        <input type="password" class="validate" name="password" id="password" >
+                                        <label for="password">Contraseña</label>
                                     </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">lock</i>
+                                        <input type="password" class="validate" name="password2" id="password2">
+                                        <label for="password">Confirmar contraseña</label>
+                                    </div>
+                    
                                 </div>
-    
-                                <!-- botones de guardar y eliminar del modal de editar cuenta contable-->
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">cake</i>
+                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required value = "' . $row['fecha_nacimiento'] . '">
+                                        <label for="fecha_nacimiento">Fecha de nacimiento ddmmAAAA</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">cake</i>
+                                        <input type="text" name="rol" id="rol" value = "' . $row['id_rol'] . '">
+                                        <label for="rol">ROL</label>
+                                    </div>
+                    
+                    
+                                </div>
+                    
+                                <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                                 <div class="my_modal_buttons">
                                     <div class="row">
                                         <div class="col s6">
@@ -82,21 +113,21 @@ if (mysqli_num_rows($result) > 0) {
                     </div>';
 
     }
-    
+
     echo $edit_form;
     echo
     "<script type='text/javascript'>
                             jQuery(document).ready(function(){
-                                  jQuery('#_form_editar_cuenta_contable').modal();
+                                  jQuery('#_form_editar_usuario').modal();
                                   jQuery(document).ready(function(){
-                                      jQuery('#_form_editar_cuenta_contable').modal('open');
+                                      jQuery('#_form_editar_usuario').modal('open');
                                       M.updateTextFields(); 
                                   });
                             });
                     </script>";
-                    
+
     //M.updateTextFields() sirve para que se actualizen los text fields y se mueven los labels de los campos que ya estan llenos.
-    
+
 }
 
 ?>

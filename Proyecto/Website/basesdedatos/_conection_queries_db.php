@@ -440,6 +440,24 @@ function editarCuenta($id_cuentacontable, $nombre, $descripcion)
     closeDB($conn);
 
 }
+function editarUsuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $fecha_creacion, $id_rol)
+{
+    $conn = conectDb();
+    $sql = "UPDATE usuario SET  nombre=?, apellido=? , password=?,fecha_nacimiento=?,id_rol=?   WHERE id_usuario=?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('ssssssi',$usuario, $nombre, $apellido, $password, $fecha_nacimiento, $id_rol);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        return false;
+    }
+    closeDB($conn);
+
+}
 
 
 function eliminarCuentaPorID($id_cuentacontable)
@@ -618,7 +636,7 @@ function obtenerUsuariosPorID($id_usuario){
 
     return $result;*/
     $conn = conectDb();
-    $sql = "SELECT id_evento FROM usuario WHERE id_usuario = ?";
+    $sql = "SELECT id_usuario,nombre,apellido,email,fecha_nacimiento,id_rol FROM usuario WHERE id_usuario = ?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i', $id_usuario);
       $stmt->execute();
