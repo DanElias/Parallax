@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
+
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
@@ -420,6 +420,30 @@ function obtenerCuentaPorID($id_cuentacontable)
     closeDB($conn);
     return $result;
 }
+function obtenerUsuariosPorID($id_usuario){
+
+    /*$conn = conectDb();
+
+    $sql = "SELECT id_evento FROM usuario WHERE id_usuario = '".$id_usuario."'";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT id_usuario,nombre,apellido,email,fecha_nacimiento,id_rol FROM usuario WHERE id_usuario = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
 
 
 function editarCuenta($id_cuentacontable, $nombre, $descripcion)
@@ -624,28 +648,6 @@ function obtenerCuentas()
     return $result;
 }
 
-function obtenerUsuariosPorID($id_usuario){
-
-    /*$conn = conectDb();
-
-    $sql = "SELECT id_evento FROM usuario WHERE id_usuario = '".$id_usuario."'";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
-    return $result;*/
-    $conn = conectDb();
-    $sql = "SELECT id_usuario,nombre,apellido,email,fecha_nacimiento,id_rol FROM usuario WHERE id_usuario = ?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('i', $id_usuario);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-}
 
   function registrarTutor($nombre, $telefono, $fecha, $ocupacion, $empresa, $grado, $titulo){
     $conn = conectDb();
