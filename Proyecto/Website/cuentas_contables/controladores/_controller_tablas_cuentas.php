@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
                     </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usaurio.php?id='.$row['id_cuentacontable'].'">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_cuenta_contable.php?id='.$row['id_cuentacontable'].'">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';

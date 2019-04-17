@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="modal-content my_modal_content">
                             <p>Aquí puede editar la cuenta</p>
             
-                            <form class="col s12" action="_registro_editar_usaurio.php" method="post" enctype="multipart/form-data">
+                            <form class="col s12" action="_registro_editar_cuenta_contable.php" method="post" enctype="multipart/form-data">
                                 
                                 <div class="row">
                                     <div class="input-field col s12 m12">

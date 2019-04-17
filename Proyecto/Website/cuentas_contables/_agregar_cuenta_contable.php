@@ -49,7 +49,7 @@ if (isset($_POST["submit"])){
                             });
                     </script>";
             footer_html();
-            echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
+            echo '<script type="text/javascript" src="ajax_cuentas_contables.js"></script>';
             /*-----------------------------------------------------------------------------------------------------------------*/
 
         }
