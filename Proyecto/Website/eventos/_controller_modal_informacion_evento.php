@@ -128,6 +128,7 @@ function mostrar_alerta_error_modal_informacion()
             });
     </script>";
     footer_html();
+     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
 }
 
 ?>

@@ -16,6 +16,8 @@ if (isset($_SESSION["usuario"])) {
     form_eliminar_evento_html();
     modal_informacion_evento_html();
     footer_html();
+    echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
+    
 } else {
     header("location:../login/_login.php");
 

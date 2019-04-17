@@ -16,8 +16,6 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
     $row = mysqli_fetch_assoc($result);
     $filename = $row['imagen'];
 
-    echo $filename;
-
     if (file_exists($filename)) {
         unlink($filename);
         if (eliminarEventoPorID($_GET['id'])) {
@@ -32,6 +30,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
                                 alert(\"¡El evento se ha borrado de manera exitosa!\");
                     </script>";
             footer_html();
+            echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
         } else {
             $_SESSION['error_evento']="Por el momento no podemos eliminar el evento. Inténtalo más tarde";
             mostrar_alerta_error_eliminar();
@@ -70,6 +69,7 @@ function mostrar_alerta_error_eliminar()
             });
     </script>";
     footer_html();
+    echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
 }
 
 ?>

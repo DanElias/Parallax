@@ -9,12 +9,11 @@ $query_table = "";
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
-
         $query_table .= "<tr>";
         $query_table .= '<td>' . $row["id_cuentacontable"] . '</td>';
         $query_table .= "<td>" . $row["nombre"] . "</td>";
         $query_table .= "<td>" . $row["descripcion"] . "</td>";
-        $query_table .= '<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id=' . $row['id_cuentacontable'] . '">Mas información</a></td>';
+        $query_table .= '<td><a class="modal-trigger" href="javascript:void(0);" onclick="mostrar_informacion_cuenta('.$row['id_cuentacontable'].')">Mas información</a></td>';
         $query_table .=
             '<td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id=' . $row['id_cuentacontable'] . '">
@@ -23,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
                     </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usuario.php?id=' . $row['id_cuentacontable'] . '">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_cuenta_contable.php?id='.$row['id_cuentacontable'].'">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
@@ -56,6 +55,9 @@ if (mysqli_num_rows($result) > 0) {
                             <ul class="pagination pager" id="myPager"></ul>
                             <br>
                     	    <span class="left" id="total_reg"></span>
+                        </div>
+                        
+                        <div id="modal_informacion_cuenta_ajax">
                         </div>
                         
                     </div>

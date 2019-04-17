@@ -92,7 +92,6 @@ function obtenerEventosPorFecha($fecha_evento)
 
 function obtenerEventosPorID($id_evento)
 {
-
     /*$conn = conectDb();
 
     $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE id_evento = '" . $id_evento . "'";
@@ -219,6 +218,7 @@ function eliminarEventoPorID($id_evento)
         closeDb($conn);
         return false;
     }*/
+    
     $conn = conectDb();
     $sql = "DELETE FROM evento WHERE id_evento = ?";
     if($stmt = $conn->prepare($sql)){
@@ -361,6 +361,74 @@ function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
     }
     closeDB($conn);
 }
+
+function obtener_cuenta_contable_reciente()
+{
+    $conn = conectDb();
+    $sql = "SELECT id_cuentacontable FROM cuenta_contable ORDER BY id_cuentacontable DESC LIMIT 1";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function obtenerCuentaPorID($id_cuentacontable)
+{
+    $conn = conectDb();
+    $sql = "SELECT nombre,descripcion FROM cuenta_contable WHERE id_cuentacontable = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
+function editarCuenta($id_cuentacontable, $nombre, $descripcion)
+{
+    $conn = conectDb();
+    $sql = "UPDATE cuenta_contable SET id_cuentacontable=?, nombre=?, descripcion=?  WHERE id_cuentacontable=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('issi', $id_cuentacontable, $nombre, $descripcion, $id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+
+}
+
+
+function eliminarCuentaPorID($id_cuentacontable)
+{
+    
+    $conn = conectDb();
+    $sql = "DELETE FROM cuenta_contable WHERE id_cuentacontable = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i', $id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
 
 function autentificarse($email, $password)
 {

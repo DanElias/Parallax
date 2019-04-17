@@ -72,6 +72,7 @@ if (isset($_POST["submit"])) {
                                     });
                             </script>";
                     footer_html();
+                    echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
                     /*----------------------------------------------------------------------------------------------------------------------------------*/
                 }
             }
@@ -230,6 +231,7 @@ function mostrar_alerta_error()
             });
     </script>";
     footer_html();
+    echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
 }
 
 ?>

@@ -4,9 +4,9 @@
 require_once("_util_eventos.php");
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 session_start();
-$_SESSION['id_evento'] = $_GET['id'];
-$_GET['id'] = htmlentities($_GET['id']);
-$result = obtenerEventosPorID($_GET['id']);
+$_SESSION['id_evento'] = $_POST['id'];
+$_POST['id'] = htmlentities($_POST['id']);
+$result = obtenerEventosPorID($_POST['id']);
 $edit_form = '';
 
 if (mysqli_num_rows($result) > 0) {
@@ -116,14 +116,7 @@ if (mysqli_num_rows($result) > 0) {
                     </div>';
 
     }
-
-    header_html();
-    sidenav_html();
-    evento_html();
-    controller_modal_informacion_evento_php();
-    form_evento_html();
-    form_eliminar_evento_html();
-    controller_tabla_eventos_php();
+    
     echo $edit_form;
     echo
     "<script type='text/javascript'>
@@ -131,10 +124,13 @@ if (mysqli_num_rows($result) > 0) {
                                   jQuery('#_form_editar_evento').modal();
                                   jQuery(document).ready(function(){
                                       jQuery('#_form_editar_evento').modal('open');
+                                      M.updateTextFields(); 
                                   });
                             });
                     </script>";
-    footer_html();
+                    
+    //M.updateTextFields() sirve para que se actualizen los text fields y se mueven los labels de los campos que ya estan llenos.}
+    
 } else { // si no hay eventos registrados en la tabla
     $_SESSION['error_evento']="No encontramos el evento especificado, inténtalo más tarde";
     mostrar_alerta_error_modal_editar();
@@ -161,6 +157,7 @@ function mostrar_alerta_error_modal_editar()
             });
     </script>";
     footer_html();
+    echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
 }
 
 ?>

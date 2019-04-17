@@ -26,9 +26,9 @@ function form_cuentacontable_html()
 }
 
 
-function modal_informacion_cuentacontable_html()
+function controller_modal_informacion_cuentacontable()
 {
-    include("forms/_form_informacion_cuentacontable.html");
+    include("controladores/_controller_modal_informacion_cuenta_contable.php");
 }
 
 function controller_tabla_cuentas_php()

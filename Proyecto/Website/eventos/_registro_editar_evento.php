@@ -73,6 +73,7 @@ if (isset($_POST["submit"])) {
                                     });
                             </script>";
                     footer_html();
+                    echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
                     /*----------------------------------------------------------------------------------------------------------------------------------*/
                 } else {
                     $_SESSION['error_evento'] = "No logramos registrar la edición de tu evento. Inténtalo más tarde";
@@ -246,6 +247,7 @@ function mostrar_alerta_error_registro_editar()
             });
     </script>";
     footer_html();
+     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
 }
 
 ?>

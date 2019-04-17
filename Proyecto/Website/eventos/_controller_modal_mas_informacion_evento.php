@@ -3,9 +3,9 @@
 require_once("../basesdedatos/_conection_queries_db.php");
 require_once("_util_eventos.php");
 
-$_GET['id'] = htmlentities($_GET['id']);
-if (isset($_GET['id']) && $_GET['id'] != "") {
-    $result = obtenerEventosPorID($_GET['id']);
+$_POST['id'] = htmlentities($_POST['id']);
+if (isset($_POST['id']) && $_POST['id'] != "") {
+    $result = obtenerEventosPorID($_POST['id']);
     $cards = "";
 
     if (mysqli_num_rows($result) > 0) {
@@ -77,12 +77,13 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
     }
 
     //Aqui habría que separar la vista del controladores
-    header_html();
-    sidenav_html();
-    evento_html();
-    form_evento_html();
-    form_eliminar_evento_html();
-    controller_tabla_eventos_php();
+    
+    //header_html();
+    //sidenav_html();
+    //evento_html();
+    //form_evento_html();
+    //form_eliminar_evento_html();
+    //controller_tabla_eventos_php();
 
     echo '
             <!-- Modal Structure -->
@@ -126,8 +127,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
             </script>
             
             ';
-
-    footer_html();
+    //footer_html();
 
 }
 
@@ -151,6 +151,7 @@ function mostrar_alerta_error_modal_mas_informacion()
             });
     </script>";
     footer_html();
+     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
 }
 
 

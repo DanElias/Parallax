@@ -16,16 +16,16 @@ if (mysqli_num_rows($result) > 0) {
         $query_table .= "<td>" . $row_date[2] . "/" . $row_date[1] . "/" . $row_date[0] . "</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
         $query_table .= "<td>" . $row["hora"] . " hrs. </td>";
         $query_table .= "<td>" . $row["lugar"] . "</td>";
-        $query_table .= '<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id=' . $row['id_evento'] . '">Mas información</a></td>';
+        $query_table .= '<td><a class="modal-trigger" href="javascript:void(0);" onclick="mostrar_informacion_evento('.$row['id_evento'].')">Mas información</a></td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id=' . $row['id_evento'] . '">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_evento('.$row['id_evento'].')">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_evento.php?id=' . $row['id_evento'] . '">
+                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_eliminar_evento.php?id=' . $row['id_evento'] . '">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
@@ -62,6 +62,14 @@ if (mysqli_num_rows($result) > 0) {
                             <br>
                     	    <span class="left" id="total_reg"></span>
                         </div>
+                        
+                        <div id="modal_informacion_evento_ajax">
+                        
+                        </div>
+                        
+                        <div id="modal_editar_evento_ajax">
+                        
+                        </div>
                           
                     </div>
             
@@ -84,8 +92,6 @@ if (mysqli_num_rows($result) > 0) {
                             </tbody>
                         </table>
                         
-                       
-                          
                     </div>
                 </div>
         </div><!--div del wrapper que empieza después del sidenav-->';
