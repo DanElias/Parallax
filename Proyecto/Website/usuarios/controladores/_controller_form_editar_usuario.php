@@ -1,7 +1,7 @@
 <?php
 
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
-require_once("../_util_cuentas_contables.php");
+require_once("../_util_usuarios.php");
 require_once("../../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 session_start();
 $_SESSION['id'] = $_POST['id'];

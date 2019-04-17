@@ -10,22 +10,22 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
     //EN ESTA PARTE A CONTINUACION HARÉ EL REGISTRO EN LA BASE DE DATOS
     //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
     //-----------------------------------------------------------------------------------------------------------
-
-    if (eliminarUsuarioPorID($_GET['id'])) {
-        header_html();
-        sidenav_html();
-        body_usuarios();
-        form_agregar_usuario();
-        controller_tabla_usuarios_php();
-        controller_modal_informacion_usuarios_php();
-
-        echo
-        "<script type='text/javascript'>
-                                alert(\"¡El usuario se ha borrado de manera exitosa!\");
+    
+        if (eliminarCuentaPorID($_GET['id'])) {
+            header_html();
+            sidenav_html();
+            cuentacontable_html();
+            form_cuentacontable_html();
+            controller_tabla_cuentas_php();
+            controller_modal_informacion_cuentacontable();
+            
+            echo
+            "<script type='text/javascript'>
+                                alert(\"¡La cuenta contable se ha borrado de manera exitosa!\");
                     </script>";
-        footer_html();
-        echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
-    }
+            footer_html();
+            echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
+        }
 
     //--------------------------------------------------------------------------------------------------------------
 }

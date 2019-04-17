@@ -9,17 +9,14 @@ session_start(); //Inicio de sesion
 if (isset($_SESSION["usuario"])) {
     header_html();
     sidenav_html();
-    body_usuarios();
-    form_agregar_usuario();
-    form_agregar_rol();
-    form_editar_usuario();
-    form_eliminar_usuario();
-    controller_tabla_usuarios_php();
+    usuarios_html();
+    form_usuario_html();
+    controller_tabla_usuario_php();
     footer_html();
-
+    echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
+    
 } else {
     header("location:../login/_login_vista.php");
 
 }
-
 ?>

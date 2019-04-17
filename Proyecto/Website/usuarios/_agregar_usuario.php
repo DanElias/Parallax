@@ -1,5 +1,5 @@
 <?php
-require_once("_util_cuentas_contables.php");
+require_once("_util_usuarios.php");
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 
 //Funcion que va a ir en queries

@@ -13,7 +13,7 @@ if (isset($_SESSION["usuario"])) {
     form_cuentacontable_html();
     controller_tabla_cuentas_php();
     footer_html();
-    echo '<script type="text/javascript" src="ajax_cuentas_contables.js"></script>';
+    echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
     
 } else {
     header("location:../login/_login_vista.php");
