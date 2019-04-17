@@ -110,7 +110,7 @@ h6 {
 
 .textfield {
     font-size: 30px;
-    font-family: aller;
+    font-family: Roboto;
     margin: auto;
     text-align: center;
     align-content: center;
@@ -165,7 +165,7 @@ h6 {
 
 
 .mybuttons {
-    font-family: aller;
+    font-family: Roboto;
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -179,7 +179,7 @@ h6 {
 }
 
 .myBigButton {
-    font-family: aller;
+    font-family: Roboto;
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -224,7 +224,7 @@ h6 {
 }
 
 .table_text {
-    font-family: 'aller';
+    font-family: Roboto;
     font-size: 20px;
     padding-left: 70px;
     padding-right: 70px;
