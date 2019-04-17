@@ -394,6 +394,19 @@ function obtener_cuenta_contable_reciente()
     return $result;
 }
 
+function obtener_usuario_reciente()
+{
+    $conn = conectDb();
+    $sql = "SELECT id_usuario FROM usuario ORDER BY id_usuario DESC LIMIT 1";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
 function obtenerCuentaPorID($id_cuentacontable)
 {
     $conn = conectDb();
@@ -447,6 +460,8 @@ function eliminarCuentaPorID($id_cuentacontable)
     }
     closeDB($conn);
 }
+
+
 
 
 function autentificarse($email, $password)

@@ -62,7 +62,7 @@ if (mysqli_num_rows($result) > 0) {
                         </div>
                       
                         
-                        <div id="modal_editar_cuenta_ajax">
+                        <div id="modal_editar_usuario_ajax">
                         
                         </div>
                         

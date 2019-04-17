@@ -11,17 +11,16 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
     //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
     //-----------------------------------------------------------------------------------------------------------
     
-        if (eliminarCuentaPorID($_GET['id'])) {
+        if (eliminarUsuarioPorID($_GET['id'])) {
             header_html();
             sidenav_html();
-            cuentacontable_html();
-            form_cuentacontable_html();
-            controller_tabla_cuentas_php();
-            controller_modal_informacion_cuentacontable();
+            usuarios_html();
+            form_usuario_html();
+            controller_tabla_usuario_php();
             
             echo
             "<script type='text/javascript'>
-                                alert(\"¡La cuenta contable se ha borrado de manera exitosa!\");
+                                alert(\"¡El usuario ha sido eliminado exitosamente!\");
                     </script>";
             footer_html();
             echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
