@@ -3,26 +3,28 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
 require_once("../basesdedatos/_conection_queries_db.php");
 
-$result = obtenerCuentas();
+$result = obtenerUsuario();
 $query_table = "";
 
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
         $query_table .= "<tr>";
-        $query_table .= '<td style="display:none;">' . $row["id_cuentacontable"] . '</td>';
+        $query_table .= '<td style="display:none;">' . $row["id_usuario"] . '</td>';
         $query_table .= "<td>" . $row["nombre"] . "</td>";
-        $query_table .= "<td>" . $row["descripcion"] . "</td>";
-        $query_table .= '<td><a class="modal-trigger" href="javascript:void(0);" onclick="mostrar_informacion_cuenta('.$row['id_cuentacontable'].')">Mas información</a></td>';
+        $query_table .= "<td>" . $row["apellido"] . "</td>";
+        $query_table .= "<td>" . $row["id_rol"] . "</td>";
+        $query_table .= "<td>" . $row["email"] . "</td>";
+        $query_table .= "<td>" . $row["fecha_creacion"] . "</td>";
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_cuenta('.$row['id_cuentacontable'].')">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_usuario('.$row['id_usuario'].')">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usaurio.php?id='.$row['id_cuentacontable'].'">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usaurio.php?id='.$row['id_usuario'].'">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
@@ -38,8 +40,10 @@ if (mysqli_num_rows($result) > 0) {
                             <tr class="my_table_headers">
                                 <th style="display:none;">ID Cuenta Contable</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
-                                <th>Más Información</th>
+                                <th>Apellido</th>
+                                <th>ID ROL</th>
+                                <th>Email</th>
+                                <th>Fecha creacion</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>
@@ -56,10 +60,7 @@ if (mysqli_num_rows($result) > 0) {
                             <br>
                     	    <span class="left" id="total_reg"></span>
                         </div>
-                        
-                        <div id="modal_informacion_cuenta_ajax">
-                        
-                        </div>
+                      
                         
                         <div id="modal_editar_cuenta_ajax">
                         
