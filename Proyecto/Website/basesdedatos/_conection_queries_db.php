@@ -25,6 +25,25 @@ function closeDb($mysql)
     $mysql->close();
 }
 
+function eliminarUsuarioPorID($id_usuario)
+{
+
+    $conn = conectDb();
+    $sql = "DELETE FROM usuario WHERE id_usuario = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        return false;
+    }
+    closeDB($conn);
+}
+
 //obtiene todas las tuplas con todos sus datos
 function obtenerEventos()
 {

@@ -1,3 +1,13 @@
+.error_javascript{
+    align-items: center;
+}
+.body_error_java{
+    background: aliceblue;
+    align-items: center;
+    padding-left: 30%;
+    padding-top: 10%;
+
+}
 .apoyanos{
     font-family: Ubuntu;
     color: #0d3d63;
