@@ -6,7 +6,7 @@ require_once("../../basesdedatos/_conection_queries_db.php"); //Accedo a mi arch
 session_start();
 $_SESSION['id'] = $_POST['id'];
 $_POST['id'] = htmlentities($_POST['id']);
-$result = obtenerCuentaPorID($_POST['id']);
+$result = obtenerUsuariosPorID($_POST['id']);
 $edit_form = '';
 
 if (mysqli_num_rows($result) > 0) {
@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
                                 
                             <div class="my_modal_header1">
                                 <div class="col s11 my_form_title">
-                                   Editar Cuenta Contable
+                                   Editar Usuario
                                    <i class=" material-icons my_title_icon_middle">calendar_today</i>
                                  </div>
                              
