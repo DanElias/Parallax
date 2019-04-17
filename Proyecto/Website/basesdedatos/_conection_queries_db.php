@@ -534,7 +534,7 @@ function obtenerProveedor()
 
     return $result;*/
     $conn = conectDb();
-    $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
+    $sql = "SELECT rfc, alias, razon_social, nombre_contacto, telefono_contacto, cuenta_bancaria, banco FROM proveedor";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
@@ -557,7 +557,7 @@ function obtenerEgresos()
 
     return $result;*/
     $conn = conectDb();
-    $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
+    $sql = "SELECT folio_factura, concepto, importe, fecha ,cuenta_bancaria, observaciones, rfc, id_cuentacontable FROM egreso";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();

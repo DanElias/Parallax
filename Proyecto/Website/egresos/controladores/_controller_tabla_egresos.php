@@ -12,8 +12,13 @@ if (mysqli_num_rows($result) > 0) {
         $row_date = explode('-', $row["fecha"]);
         $query_table .= "<tr>";
         $query_table .= '<td>' . $row["folio_factura"] . '</td>';
-        $query_table .= "<td>" . $row_date[2] . "/" . $row_date[1] . "/" . $row_date[0] . "</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
         $query_table .= "<td>" . $row["importe"] . "</td>";
+        $query_table .= "<td>" . $row_date[2] . "/" . $row_date[1] . "/" . $row_date[0] . "</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
+        $query_table .= '<td style="display:none;">' . $row["concepto"] . '</td>';
+        $query_table .= '<td style="display:none;">' . $row["cuenta_bancaria"] . '</td>';
+        $query_table .= '<td style="display:none;">' . $row["observaciones"] . '</td>';
+        $query_table .= '<td style="display:none;">' . $row["rfc"] . '</td>';
+        $query_table .= '<td style="display:none;">' . $row["id_cuentacontable"] . '</td>';
         $query_table .= '<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id=' . $row['folio_factura'] . '">Mas información</a></td>';
         $query_table .= '<td>
                         <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id=' . $row['folio_factura'] . '">
@@ -37,8 +42,13 @@ if (mysqli_num_rows($result) > 0) {
                             <thead>
                             <tr class="my_table_headers">
                                 <th>Folio Factura</th>
+                                <th>Importe</th>
                                 <th>Fecha</th>
-                                <th>importe</th>
+                                <th style="display:none;">Concepto</th>
+                                <th style="display:none;">Cuenta Bancaria</th>
+                                <th style="display:none;">Observaciones</th>
+                                <th style="display:none;">RFC Proveedor</th>
+                                <th style="display:none;">ID Cuenta Contable</th>
                                 <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>

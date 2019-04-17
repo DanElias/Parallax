@@ -24,7 +24,7 @@
     });
     
     //Este es el jquery de la paginacion de las tablas
-    $(document).ready(function(){
+    /*$(document).ready(function(){
       $('#my_pagination_table').pageMe({
         pagerSelector:'#myPager',
         activeColor: 'blue',
@@ -34,9 +34,17 @@
         hidePageNumbers:false,
         perPage:5
       });
-    });
+    });*/
     
-    
+    $(document).ready(function() {
+        $('#my_pagination_table').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+               'excel', 'pdf', 'print', 'csv' 
+            ]
+        } );
+    } );
+   
 </script>
 <noscript>
     <META HTTP-EQUIV="Refresh" CONTENT="0;URL=../views/redireccionarPagina.html">

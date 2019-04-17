@@ -15,6 +15,7 @@ if (mysqli_num_rows($result) > 0) {
         $query_table .= "<td>" . $row["email"] . "</td>";
         $query_table .= "<td>" . $row["id_rol"] . "</td>";
         $query_table .= "<td>" . $row_date[2] . "/" . $row_date[1] . "/" . $row_date[0] . "</td>"; //le da formato dd/mm/YYYY a la fecha -> UX
+        $query_table .= '<td style="display:none;">' . $row["fecha_nacimiento"] . '</td>';
         $query_table .= '<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id=' . $row['id_usuario'] . '">Mas información</a></td>';
         $query_table .=
 
@@ -36,6 +37,7 @@ if (mysqli_num_rows($result) > 0) {
         <div class="wrapper">
              <div class="section white  my_section">
                     <div class="table-wrapper responsive-table new_data_table">
+                    
                         <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
                             <thead>
                             <tr class="my_table_headers">
@@ -43,6 +45,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <th>Email</th>
                                 <th>Rol</th>
                                 <th>Fecha de creacion</th>
+                                <th style="display:none;">Fecha de nacimiento</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>

@@ -12,8 +12,11 @@ if (mysqli_num_rows($result) > 0) {
 
         $query_table .= '<td>' . $row["rfc"] . '</td>';
         $query_table .= "<td>" . $row["alias"] . "</td>";
+        $query_table .= '<td style="display:none;">' . $row["razon_social"] . '</td>';
+        $query_table .= '<td style="display:none;">' . $row["nombre_contacto"] . '</td>';
         $query_table .= "<td>" . $row["telefono_contacto"] . "</td>";
         $query_table .= "<td>" . $row["cuenta_bancaria"] . "</td>";
+        $query_table .= '<td style="display:none;">' . $row["banco"] . '</td>';
         $query_table .= '<td><a class="modal-trigger" href="_controller_modal_mas_informacion_evento.php?id=' . $row['rfc'] . '">Mas información</a></td>';
         $query_table .=
             '<td>
@@ -39,8 +42,11 @@ if (mysqli_num_rows($result) > 0) {
                             <tr class="my_table_headers">
                                 <th>RFC</th>
                                 <th>Alias</th>
+                                <th style="display:none;">Razon Social</th>
+                                <th style="display:none;">Contacto</th>
                                 <th>Telefono</th>
                                 <th>Cuenta bancaria</th>
+                                <th style="display:none;">Banco</th>
                                 <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>

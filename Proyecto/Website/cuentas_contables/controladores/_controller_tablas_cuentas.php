@@ -10,6 +10,7 @@ if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
         $query_table .= "<tr>";
+        $query_table .= '<td style="display:none;">' . $row["id_cuentacontable"] . '</td>';
         $query_table .= "<td>" . $row["nombre"] . "</td>";
         $query_table .= "<td>" . $row["descripcion"] . "</td>";
         $query_table .= '<td><a class="modal-trigger" href="javascript:void(0);" onclick="mostrar_informacion_cuenta('.$row['id_cuentacontable'].')">Mas información</a></td>';
@@ -35,6 +36,7 @@ if (mysqli_num_rows($result) > 0) {
                         <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
                             <thead>
                             <tr class="my_table_headers">
+                                <th style="display:none;">ID Cuenta Contable</th>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Más Información</th>
