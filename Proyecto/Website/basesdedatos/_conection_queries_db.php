@@ -378,7 +378,7 @@ function obtener_cuenta_contable_reciente()
 function obtenerCuentaPorID($id_cuentacontable)
 {
     $conn = conectDb();
-    $sql = "SELECT nombre,descripcion FROM cuenta_contable WHERE id_cuentacontable = ?";
+    $sql = "SELECT id_cuentacontable,nombre,descripcion FROM cuenta_contable WHERE id_cuentacontable = ?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$id_cuentacontable);
       $stmt->execute();

@@ -7,8 +7,8 @@
         });
     }
     
-    function mostrar_editar_evento(id_evento){
-         $.post('controladores/_cuenta_contable_editar_form.php', { id : id_cuenta } )
+    function mostrar_editar_cuenta(id_cuenta){
+         $.post('controladores/_controller_form_editar_cuenta_contable.php', { id : id_cuenta } )
         .done(function(data){
             $('#modal_editar_cuenta_ajax').html(data);
             M.AutoInit();

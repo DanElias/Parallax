@@ -18,13 +18,13 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
                                 <div class="card horizontal" >
                                         <div class="card-stacked">
                                             <div class="card-content">
-                                                <p style="font-family: Staatliches; color: #0d3d63; font-size: 1.2em;">
+                                                <p style="font-family: Staatliches; color: #0d3d63; font-size:1.7em;">
                                                     <i class="material-icons prefix">event</i>
                                                     ' . $row["nombre"] . '
                                                     <hr>
                                                 </p>
                                           
-                                            <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1em; text-align:left;">
+                                            <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1.5em; text-align:left;">
                                                 <div class="col s12">
                                                     <div>
                                                         <i class="material-icons prefix">description</i>

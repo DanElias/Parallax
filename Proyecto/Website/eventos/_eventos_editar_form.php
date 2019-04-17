@@ -21,7 +21,7 @@ if (mysqli_num_rows($result) > 0) {
                                 
                             <div class="my_modal_header1">
                                 <div class="col s11 my_form_title">
-                                   Agregar Evento
+                                   Editar Evento
                                    <i class=" material-icons my_title_icon_middle">calendar_today</i>
                                  </div>
                              
@@ -38,7 +38,7 @@ if (mysqli_num_rows($result) > 0) {
                         <br><br><br>
                         
                         <div class="modal-content my_modal_content">
-                            <p>Aquí puede agregar un evento</p>
+                            <p>Aquí puede editar un evento</p>
             
                             <form class="col s12" action="_registro_editar_evento.php" method="post" enctype="multipart/form-data">
                                 

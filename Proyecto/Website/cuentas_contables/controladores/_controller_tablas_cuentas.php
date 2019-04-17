@@ -10,13 +10,12 @@ if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
         $query_table .= "<tr>";
-        $query_table .= '<td>' . $row["id_cuentacontable"] . '</td>';
         $query_table .= "<td>" . $row["nombre"] . "</td>";
         $query_table .= "<td>" . $row["descripcion"] . "</td>";
         $query_table .= '<td><a class="modal-trigger" href="javascript:void(0);" onclick="mostrar_informacion_cuenta('.$row['id_cuentacontable'].')">Mas información</a></td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="_eventos_editar_form.php?id=' . $row['id_cuentacontable'] . '">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_cuenta('.$row['id_cuentacontable'].')">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
@@ -36,7 +35,6 @@ if (mysqli_num_rows($result) > 0) {
                         <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
                             <thead>
                             <tr class="my_table_headers">
-                                <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Más Información</th>
@@ -58,6 +56,11 @@ if (mysqli_num_rows($result) > 0) {
                         </div>
                         
                         <div id="modal_informacion_cuenta_ajax">
+                        
+                        </div>
+                        
+                        <div id="modal_editar_cuenta_ajax">
+                        
                         </div>
                         
                     </div>
