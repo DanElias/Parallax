@@ -26,6 +26,17 @@ function closeDb($mysql)
     $mysql->close();
 }
 
+function obtenerRoles(){
+    $con = conectDb();
+    $query="SELECT * FROM rol ORDER BY descripcion ASC";
+    $result=$con->query($query);
+    $salida='<option value="0">Elige un rol</option>';
+    //PARA PODER GUARDAR SE OCUPA UN VALOR QUE EN ESTE CASO SERÍA EL ID DEL INCIDENTE
+    while($row=  mysqli_fetch_array($result,MYSQLI_BOTH)){
+        $salida.="<option value='$row[id_rol]'>$row[descripcion]</option>";
+    }
+    return  $salida;
+}
 function eliminarUsuarioPorID($id_usuario)
 {
 

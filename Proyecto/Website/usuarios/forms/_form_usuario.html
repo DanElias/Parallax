@@ -11,7 +11,7 @@
         <p>Aquí puede agregar un nuevo Usuario</p>
 
         <!-- Inicio del form de beneficiarios-->
-        <form class="col s12" action="_agregar_usuario.php" method="POST">
+        <form class="col s12" action="_agregar_usuario.php" id="agregar_usuario" method="POST">
 
             <div class="row">
                 <div class="input-field col s6">
@@ -53,10 +53,10 @@
                     <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
                     <label for="fecha_nacimiento">Fecha de nacimiento ddmmAAAA</label>
                 </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">cake</i>
-                    <input type="text" name="rol" id="rol">
-                    <label for="rol">ROL</label>
+                <div class="input-field col s6" >
+                    <select id="rol" name="rol" >
+                    </select>
+                    <label>Selecciona un rol</label>
                 </div>
 
 
