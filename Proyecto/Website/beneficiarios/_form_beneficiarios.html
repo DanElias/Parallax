@@ -31,10 +31,15 @@
             <!-- el ID del Beneficiario se genera solito-->
 
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s3">
                     <i class="material-icons prefix">face</i>
                     <input type="text" class="validate" id="nombre" name="nombre" required>
                     <label for="nombre">Nombre</label>
+                </div>
+
+                <div class="input-field col s3">
+                    <input type="text" class="validate" id="apellido" name="apellido" required>
+                    <label for="apellido">Apellido</label>
                 </div>
 
                 <div class="input-field col s3">
@@ -163,39 +168,13 @@
                             <thead>
                             <tr class="my_table_headers">
                                 <th>Nombre Tutor</th>
-                                <th>Mas informacion</th>
+                                <th>Más información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>
                             </thead>
 
                             <tbody id="tablaExternaTutor">
-                            <!--tr>
-                                <td>Carlos Sánchez</td>
-                                <td><a class="modal-trigger" href="#_modal_informacion_tutor">Mas informacion</a></td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-                                       href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-                                       href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Karla Suárez</td>
-                                <td><a class="modal-trigger" href="#_modal_informacion_tutor">Mas informacion</a></td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-                                       href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-                                       href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-                                </td>
-                            </tr-->
-
 
                             </tbody>
                         </table>

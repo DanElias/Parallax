@@ -16,6 +16,7 @@ function conectDb()
       //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
 
     }
+    $con->set_charset("utf8");
     return $con;
 }
 
@@ -668,7 +669,7 @@ function obtenerCuentas()
 
   function getNombreTutor(){
     $conn = conectDb();
-    $sql = "SELECT id_tutor,nombre FROM tutor";
+    $sql = "SELECT id_tutor,nombre,apellido FROM tutor";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
@@ -680,7 +681,19 @@ function obtenerCuentas()
 
   function getNombreBeneficiarios(){
     $conn = conectDb();
-    $sql = "SELECT id_tutor,nombre FROM beneficiario";
+    $sql = "SELECT id_beneficiario,nombre,apellido,fecha_nacimiento,grupo,estado FROM beneficiario";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function getInfoBeneficiarios(){
+    $conn = conectDb();
+    $sql = "SELECT * FROM beneficiario";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();

@@ -1,7 +1,5 @@
 $(document).ready(imprimeTutorExterno());
 
-$(document).ready(console.log("Holaaaaa"));
-
 function imprimeTutorExterno(){
   $.post('tutorController.php', { opcion : 1 } )
   .done(function(data){
@@ -11,10 +9,19 @@ function imprimeTutorExterno(){
 }
 
 function imprimeNombreBeneficiario(){
-  $.post('tutorController.php', { opcion : 1 } )
+  $.post('beneficiarioController.php', { opcion : 1 } )
   .done(function(data){
     console.log("Funciono");
-    $('#tablaExternaTutor').html(data);
+    $('#tablaBen').html(data);
+    $('#tablaComBen').pageMe({
+      pagerSelector:'#myPager',
+      activeColor: 'blue',
+      prevText:'Anterior',
+      nextText:'Siguiente',
+      showPrevNext:true,
+      hidePageNumbers:false,
+      perPage:10
+    });
   });
 }
 
@@ -25,3 +32,5 @@ function infoTutor(){
     $('#tablaExternaTutor').html(data);
   });
 }
+
+$(document).ready(imprimeNombreBeneficiario());

@@ -40,22 +40,22 @@
         </div>
 
         <div class='table-wrapper responsive-table new_data_table'>
-            <table class="stripped highlight responsive-table data_table fixed_header">
+            <table class="stripped highlight responsive-table data_table fixed_header" id="tablaComBen">
                 <thead>
                 <tr class="my_table_headers">
                     <th class="first_col_data_table">ID</th>
                     <th>Nombre</th>
                     <th>Edad</th>
                     <th>Grupo</th>
-                    <th>Mas informacion</th>
+                    <th>Más información</th>
                     <th>Estado</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
                 </thead>
 
-                <tbody>
-                <tr>
+                <tbody id="tablaBen">
+                <!--tr>
                     <td class="first_col_data_table">1</td>
                     <td>Carlos Sánchez</td>
                     <td>17</td>
@@ -114,10 +114,11 @@
                         <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
                            href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
                     </td>
-                </tr>
+                </tr-->
 
                 </tbody>
             </table>
+            <ul class="pagination pager" id="myPager"></ul>
         </div>
 
     </div>
