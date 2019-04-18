@@ -299,32 +299,38 @@ function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacim
 
 function registrar_Rol($nombre)
 {
-    /*$conn = conectDb();
+    /*
+    $conn = conectDb();
 
     //Query de SQl para insertar en la tabla de usaurios
-    $sql = "INSERT INTO rol(descripcion) VALUES (\"" . $nombre . "\")";
+    $sql = "INSERT INTO rol (descripcion) VALUES ($nombre)";
 
     if (mysqli_query($conn, $sql)) {
         closeDb($conn);
         return true;
     } else {
         closeDb($conn);
+        echo 'Error: '. mysqli_error($conn);
         return false;
-    }*/
+    }
+    */
+
     $conn = conectDb();
-    $sql = "INSERT INTO rol(descripcion) VALUES (?)";
+    $sql = "INSERT INTO rol (descripcion) VALUES (?)";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$nombre);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-      closeDB($conn);
-      return true;
+        $stmt->bind_param('s',$nombre);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
     } else{
-      closeDB($conn);
-      return false;
+        closeDB($conn);
+        echo mysqli_error($sql);
+        return false;
     }
     closeDB($conn);
+
 }
 
 
@@ -579,7 +585,7 @@ function obtenerUsuario()
 
     return $result;*/
     $conn = conectDb();
-    $sql = "SELECT id_usuario, nombre,apellido, email, fecha_creacion,descripcion FROM usuario,rol WHERE descripcion = rol.id_rol";
+    $sql = "SELECT id_usuario, nombre,apellido, email, fecha_creacion,id_rol FROM usuario";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();

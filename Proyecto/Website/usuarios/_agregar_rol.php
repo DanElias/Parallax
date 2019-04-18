@@ -7,7 +7,7 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 if (isset($_POST["submit"])){
     $_POST["nombre"] = htmlentities($_POST["nombre"]);
 
-
+    var_dump(registrar_Rol($_POST["nombre"]));
 
     if (isset($_POST["nombre"]) && $_POST["nombre"] != "" ){
 

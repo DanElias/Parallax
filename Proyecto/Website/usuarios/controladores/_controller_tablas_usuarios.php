@@ -7,13 +7,14 @@ $result = obtenerUsuario();
 $query_table = "";
 
 if (mysqli_num_rows($result) > 0) {
+
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
         $query_table .= "<tr>";
         $query_table .= '<td style="display:none;">' . $row["id_usuario"] . '</td>';
         $query_table .= "<td>" . $row["nombre"] . "</td>";
         $query_table .= "<td>" . $row["apellido"] . "</td>";
-        $query_table .= "<td>" . $row["descripcion"] . "</td>";
+        $query_table .= "<td>" . $row["id_rol"] . "</td>";
         $query_table .= "<td>" . $row["email"] . "</td>";
         $query_table .= "<td>" . $row["fecha_creacion"] . "</td>";
         $query_table .=
