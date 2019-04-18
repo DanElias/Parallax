@@ -24,6 +24,10 @@ function form_usuario_html()
 {
     include("forms/_form_usuario.html");
 }
+function form_rol_html()
+{
+    include("forms/_form_rol.html");
+}
 
 function controller_tabla_usuario_php()
 {

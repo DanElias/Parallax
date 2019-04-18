@@ -12,7 +12,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
     //-----------------------------------------------------------------------------------------------------------
     
         if (eliminarUsuarioPorID($_GET['id'])) {
-            include("_usuarios_vista.php");
+            header("location:_usuarios_vista.php");
             
             echo
             "<script type='text/javascript'>
