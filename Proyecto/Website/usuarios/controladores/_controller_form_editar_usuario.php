@@ -48,6 +48,7 @@ if (mysqli_num_rows($result) > 0) {
                                         <i class="material-icons prefix">description</i>
                                         <input type="text" class="validate" name="nombre" id="nombre" value = "' . $row['nombre'] . '"> 
                                         <label for="nombre">Nombre</label>
+                                        <input  type="hidden" name="id_usuario" id="id_usuario" value=' . $row['id_usuario'] . '>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">description</i>

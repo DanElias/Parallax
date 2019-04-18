@@ -482,12 +482,20 @@ function editarCuenta($id_cuentacontable, $nombre, $descripcion)
     closeDB($conn);
 
 }
-function editarUsuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $id_rol)
+function editarUsuario($id_usuario, $nombre,$apellido,$email,$password,$fecha_nacimiento,$rol)
 {
+
     $conn = conectDb();
-    $sql = "UPDATE usuario SET  email=? ,nombre=?, apellido=? , password=?,fecha_nacimiento=?,id_rol=?   WHERE id_usuario=?";
+    $sql = "UPDATE `usuario` SET `email` = '".$email."', `nombre` = '".$nombre."', `apellido` = '".$apellido."', `passwd` = '".$password."', `fecha_nacimiento` = '".$fecha_nacimiento."', `id_rol` = '".$rol."' WHERE `usuario`.`id_usuario` = '".$id_usuario."'";
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+    return $result;
+    /*
+    $conn = conectDb();
+    $sql = "UPDATE usuario SET id_usuario=?, nombre=? ,apellido=?,email=?,passw=?,fecha_nacimeint=?,id_rol=? WHERE id_usuario=?";
     if($stmt = $conn->prepare($sql)){
-        $stmt->bind_param('sssssi',$usuario,$nombre, $apellido, $password, $fecha_nacimiento, $id_rol);
+        $stmt->bind_param('isssssi', $id_ususario, $nombre,$apellido,$email,$password,$fecha_nacimiento,$rol);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
@@ -497,7 +505,8 @@ function editarUsuario($usuario, $nombre, $apellido, $password, $fecha_nacimient
         closeDB($conn);
         return false;
     }
-
+    closeDB($conn);
+*/
 }
 
 
