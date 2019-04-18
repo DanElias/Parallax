@@ -350,7 +350,7 @@ input {
     font-family: Staatliches;
     color: #0d3d63;
     font-size: 4em;
-    padding: 0.2em;
+    vertical-align: text-bottom !important;
 }
 
 .my_heading_text_medium {
@@ -477,7 +477,7 @@ input {
 }
 
 .wrapper {
-    padding-left: 300px;
+    padding-left: 22em;
 }
 
 @media only screen and (max-width: 992px) {
@@ -575,7 +575,8 @@ input {
 }
 
 .sections_header {
-    padding-left: 5em;
+    padding-left: 2.5em;
+    padding-top: 2em;
 }
 
 .my_search {
@@ -665,7 +666,8 @@ input {
 }
 
 .my_add_button_container {
-    margin: 4em;
+    padding-top: 1.5em;
+    padding-left: 4em;
 }
 
 .my_header_admin {
@@ -679,11 +681,10 @@ input {
 }
 
 .html_admin, .body_admin {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden;
 }
 
 my_search_button {
