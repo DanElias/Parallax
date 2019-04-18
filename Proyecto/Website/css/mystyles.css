@@ -437,6 +437,11 @@ input {
     vertical-align: text-top;
 }
 
+.my_title_icon_user{
+    font-size: 1.7em;
+    vertical-align: text-bottom;
+}
+
 .myButtonIcon {
 
     font-size: 1.5em;
@@ -576,7 +581,7 @@ input {
 
 .sections_header {
     padding-left: 2.5em;
-    padding-top: 2em;
+    padding-top: 0em !important;
 }
 
 .my_search {
