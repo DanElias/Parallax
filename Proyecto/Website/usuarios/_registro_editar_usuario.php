@@ -5,32 +5,15 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 
 session_start();
 
-if (isset($_POST["submit"])){
+if (isset($_POST["submit_editar"])){
     $_POST["nombre"] = htmlentities($_POST["nombre"]);
     $_POST["apellido"] = htmlentities($_POST["apellido"]);
     $_POST["email"] = htmlentities($_POST["email"]);
     $_POST["password"] = htmlentities($_POST["password"]);
     $_POST["fecha_nacimiento"] = htmlentities($_POST["fecha_nacimiento"]);
     $_POST["rol"] = htmlentities($_POST["rol"]);
-
-
-    if (isset($_POST["nombre"])
-        && isset($_POST["apellido"])
-        && isset($_POST["email"])
-        && isset($_POST["password"])
-        && isset($_POST["fecha_nacimiento"])
-        && isset($_POST["rol"])
-        && $_POST["nombre"] != ""
-        && $_POST["apellido"] != ""
-        && $_POST["email"] != ""
-        && $_POST["password"] != ""
-        && $_POST["rol"] != ""
-        && $_POST["fecha_nacimiento"] != ""){
-
-        //EN ESTA PARTE A CONTINUACION HARÉ EL REGISTRO EN LA BASE DE DATOS
-        //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
-        //------------------------------------------------------------------------------------------------------------
-        if (editarUsuario($_POST["email"], $_POST["nombre"],$_POST["apellido"], password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"],$_POST["fecha_nacimiento"],$_POST["rol"])) {
+    var_dump(editarUsuario($_POST["email"], $_POST["nombre"],$_POST["apellido"], password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"],$_POST["rol"]));
+        if (editarUsuario($_POST["email"], $_POST["nombre"],$_POST["apellido"], password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"],$_POST["rol"])) {
 
             header_html();
             sidenav_html();
@@ -59,9 +42,10 @@ if (isset($_POST["submit"])){
                     </script>";
             footer_html();
             echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
-            /*----------------------------------------------------------------------------------------------------------------------------------*/
+
         }
-    }
+        echo 'Entro pero ahi se quedo';
+
 }
 
 ?>

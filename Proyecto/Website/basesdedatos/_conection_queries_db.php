@@ -465,12 +465,12 @@ function editarCuenta($id_cuentacontable, $nombre, $descripcion)
     closeDB($conn);
 
 }
-function editarUsuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $fecha_creacion, $id_rol)
+function editarUsuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $id_rol)
 {
     $conn = conectDb();
-    $sql = "UPDATE usuario SET  nombre=?, apellido=? , password=?,fecha_nacimiento=?,id_rol=?   WHERE id_usuario=?";
+    $sql = "UPDATE usuario SET  email=? ,nombre=?, apellido=? , password=?,fecha_nacimiento=?,id_rol=?   WHERE id_usuario=?";
     if($stmt = $conn->prepare($sql)){
-        $stmt->bind_param('ssssssi',$usuario, $nombre, $apellido, $password, $fecha_nacimiento, $id_rol);
+        $stmt->bind_param('sssssi',$usuario,$nombre, $apellido, $password, $fecha_nacimiento, $id_rol);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
@@ -480,7 +480,6 @@ function editarUsuario($usuario, $nombre, $apellido, $password, $fecha_nacimient
         closeDB($conn);
         return false;
     }
-    closeDB($conn);
 
 }
 

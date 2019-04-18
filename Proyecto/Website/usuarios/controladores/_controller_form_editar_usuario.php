@@ -96,7 +96,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <div class="my_modal_buttons">
                                     <div class="row">
                                         <div class="col s6">
-                                            <button class="btn waves-effect waves-light" type="submit" name="submit">Guardar
+                                            <button class="btn waves-effect waves-light" type="submit" name="submit_editar" id="submit_editar">Guardar
                                                 <i class="material-icons right">check_circle_outline</i>
                                             </button>
                                         </div>
