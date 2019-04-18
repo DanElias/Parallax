@@ -4,8 +4,6 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 
 //Funcion que va a ir en queries
 
-$_SESSION['id_usuario'];
-
 if (isset($_POST["submit"])){
     $_POST["nombre"] = htmlentities($_POST["nombre"]);
     $_POST["apellido"] = htmlentities($_POST["apellido"]);
@@ -34,9 +32,7 @@ if (isset($_POST["submit"])){
         if (registrar_usuario($_POST["email"], $_POST["nombre"],$_POST["apellido"], password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"],$_POST["fecha_nacimiento"],$_POST["rol"])) {
             
             /*------------------------------------------------EN ESTA PARTE YA VOY A MOSTRAR LA INFORMACION DEL EVENTO GUARDADO EN LA PÁGINA*/
-            header_html();
-            sidenav_html();
-            usuarios_html();
+            include("_usuarios_vista.php");
 
             //Esta sección es para obtener id del usario y mostrarlo en el modal/form
             $result = obtener_usuario_reciente();
@@ -47,8 +43,6 @@ if (isset($_POST["submit"])){
                 $_SESSION['id_usuario'] = $row['id_usuario'];
             }
 
-            form_usuario_html();
-            controller_tabla_usuario_php();
 
  
             echo

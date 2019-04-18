@@ -13,7 +13,7 @@ if (mysqli_num_rows($result) > 0) {
         $query_table .= '<td style="display:none;">' . $row["id_usuario"] . '</td>';
         $query_table .= "<td>" . $row["nombre"] . "</td>";
         $query_table .= "<td>" . $row["apellido"] . "</td>";
-        $query_table .= "<td>" . $row["id_rol"] . "</td>";
+        $query_table .= "<td>" . $row["descripcion"] . "</td>";
         $query_table .= "<td>" . $row["email"] . "</td>";
         $query_table .= "<td>" . $row["fecha_creacion"] . "</td>";
         $query_table .=
@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <th style="display:none;">ID Cuenta Contable</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
-                                <th>ID ROL</th>
+                                <th>ROL</th>
                                 <th>Email</th>
                                 <th>Fecha creacion</th>
                                 <th>Editar</th>
@@ -71,7 +71,7 @@ if (mysqli_num_rows($result) > 0) {
             </div><!--div del wrapper que empieza después del sidenav-->';
 
 } else { // si no hay eventos registrados en la tabla
-    echo "No encontramos eventos registrados";
+    echo "No encontramos usuarios registrados";
 }
 
 ?>

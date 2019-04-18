@@ -12,11 +12,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
     //-----------------------------------------------------------------------------------------------------------
     
         if (eliminarUsuarioPorID($_GET['id'])) {
-            header_html();
-            sidenav_html();
-            usuarios_html();
-            form_usuario_html();
-            controller_tabla_usuario_php();
+            include("_usuarios_vista.php");
             
             echo
             "<script type='text/javascript'>
