@@ -1,19 +1,31 @@
 <?php
 
-require_once("_util_eventos.php");
+/*
+    Autor: Daniel Elias
+    
+        Este archivo php revisa que los campos del form de editar se hayan llenado de manera correcta
+        También revisa la imagen
+        Si se llenó de manera correcta entonces se hace un UPDATE en la base de datos
+        Obviamente se utiliza el $_SESSION['id_evento'] que se guardó en el archivo que mandó llamar a este php
+        El archivo que mandó llamar a este php es _eventos_editar_form.php al momento de que el usuario diera click en submit del form de editar
+        Este archivo difiere de registro_evento.php porque este archivo hace un UPDATE en vez de un insert, utiliza el query obtenerEventosPorID en vez de obtener_evento_reciente
+*/
+
+
+require_once("_util_eventos.php"); //se utiliza porque se vuelve a recargar la página
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 
-session_start();
+session_start(); //para poder utilizar session
 
-$_SESSION['link_imagen'] = " ";
-$_SESSION['error_evento'] = " ";
-$_SESSION['id_evento'] = " ";
+$_SESSION['link_imagen'] = " "; //se va a guardar el link de la imagen
+$_SESSION['error_evento'] = " "; //se va a guardar algo en caso de que ellas errores
+$_SESSION['id_evento'] = " "; //se va a guardar el id del evento
 
 
 if (isset($_POST["submit"])) {
     //Aquí guardo lo que está en los campos del form en variables
-    $_POST["id_evento"] = htmlentities($_POST["id_evento"]);
-    $_POST["nombre_evento"] = htmlentities($_POST["nombre_evento"]);
+    $_POST["id_evento"] = htmlentities($_POST["id_evento"]); //en el form de editar se mando el id de ese evento a editar de manera escondida
+    $_POST["nombre_evento"] = htmlentities($_POST["nombre_evento"]); //htmlentities evitar hackers
     $_POST["fecha_evento"] = htmlentities($_POST["fecha_evento"]);
     $_POST["hora_evento"] = htmlentities($_POST["hora_evento"]);
     $_POST["lugar_evento"] = htmlentities($_POST["lugar_evento"]);
@@ -32,19 +44,16 @@ if (isset($_POST["submit"])) {
         && $_POST["descripcion_evento"] != "") {
 
         // si no hay errores entonces mostrar pantalla de éxito
-        if ( !is_numeric($_POST["nombre_evento"])
-            && !is_numeric($_POST["descripcion_evento"])
-            && !is_numeric($_POST["lugar_evento"])) {
+        if (validar_nombre_evento() && validar_lugar_evento() && validar_descripcion_evento()) {
 
             //Validar que la imagen insertada sea valida
-            if (validar_imagen()) {
-
-                //EN ESTA PARTE A CONTINUACION HARÉ EL REGISTRO EN LA BASE DE DATOS
-                //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
-                //------------------------------------------------------------------------------------------------------------
-                if (editarEvento($_POST["id_evento"], $_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])) {
-                    /*------------------------------------------------EN ESTA PARTE YA VOY A MOSTRAR LA INFORMACION DEL EVENTO GUARDADO EN LA PÁGINA*/
-                    header_html();
+            if (validar_imagen()){
+                
+                //editarEvento es una funcion de connection queries que hace un UPDATE en la tabla
+                //también checo que si haya un elemento con ese id haha
+                if (editarEvento($_POST["id_evento"], $_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])){
+                    
+                    header_html();//recargo la pagina
                     sidenav_html();
                     evento_html();
 
@@ -57,54 +66,37 @@ if (isset($_POST["submit"])) {
                         $_SESSION['id_evento'] = $row['id_evento'];
                     }
 
-                    controller_modal_informacion_evento_php();
                     form_evento_html();
-                    form_eliminar_evento_html();
                     controller_tabla_eventos_php();
-
-                    echo
-                    "<script type='text/javascript'>
-                                    alert(\"¡El evento se ha registrado de manera exitosa!\");
-                                    jQuery(document).ready(function(){
-                                          jQuery('#_modal_informacion_evento').modal();
-                                          jQuery(document).ready(function(){
-                                              jQuery('#_modal_informacion_evento').modal('open');
-                                          });
-                                    });
-                            </script>";
+                    controller_modal_informacion_evento_php();
                     footer_html();
                     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
-                    /*----------------------------------------------------------------------------------------------------------------------------------*/
+                
                 } else {
+                    //Caso de Prueba: no se pudo editar el evento en la tabla de eventos porque
+                    //ya no existe ese evento, o no hay conexion con la base de datos
                     $_SESSION['error_evento'] = "No logramos registrar la edición de tu evento. Inténtalo más tarde";
                     mostrar_alerta_error_registro_editar();
-                   
                 }
-            } else {
+                
+            }else{
+                //Caso de Prueba: no se pudo editar el evento en la tabla de eventos porque
+                //la imagen no es válida, excede el tamaño o no es un formato aceptado
                  $_SESSION['error_evento'] = "No logramos registrar la edición de tu evento. Inténtalo más tarde";
                 mostrar_alerta_error_registro_editar();
-               
-                
             }
 
-        } // si hay errores revisar cuáles son y mostrarlos
+        }
         else {
-            $_SESSION['error_evento'] = "<br><br> El evento no se ha podido registrar.";
-
-            if (is_numeric($_POST["nombre_evento"])) {
-                $_SESSION['error_evento'] .= "<br><br> El nombre del evento no debe incluir sólo números";
-            }
-            if (is_numeric($_POST["descripcion_evento"])) {
-                $_SESSION['error_evento'] .= "<br><br> La descripción del evento no debe incluir sólo números";
-            }
-            if (is_numeric($_POST["lugar_evento"])) {
-                $_SESSION['error_evento'] .= "<br><br> El lugar del evento no debe incluir sólo números";
-            }
+            //Caso de Prueba: no se pudo editar el evento porque el campo de nombre, lugar o descripcion o están en blanco
+            //o tienen sólo espacios, o son sólo números o tienen caracteres especiales
+            $_SESSION['error_evento'].= "<br><br> El evento no se ha podido registrar.";
             mostrar_alerta_error_registro_editar();
-            
         }
 
     } else {
+        //Caso de Prueba: no se pudo editar el evento porque el campo de nombre, lugar o descripcion o están en blanco
+        //o tienen sólo espacios
         $_SESSION['error_evento'] .= "<br><br> Olvidaste llenar todos los campos del formulario <br> El evento no se ha podido registrar.";
         mostrar_alerta_error_registro_editar();
        
@@ -115,45 +107,18 @@ if (isset($_POST["submit"])) {
        
 }
 
-function checkmydate()
-{
-    $input_date = $_POST["fecha_evento"];//Las fechas se guardan como 1998-03-28
-    $test_date = explode('-', $input_date);
-    $current_date = date("Y-m-d");
-    $test_current = explode('-', $current_date);
 
-    // se valida que no se registre un evento que tiene una fecha que ya pasó -> hay error
-    if ($test_date[0] < $test_current[0]) {
-        $_SESSION['error_evento'] .= "<br><br> Hay errores en la fecha: El año seleccionado ya pasó.";
-        return true;
-    }
-    // si se escoge un mes que ya paso de este mismo año -> hay error
-    if ($test_date[0] == $test_current[0] && $test_date[1] < $test_current[1]) {
-        $_SESSION['error_evento'] .= "<br><br>  Hay errores en la fecha: El mes seleccionado ya pasó.";
-        return true;
-    }
-    //si se escoge un día que ya paso de este mismo mes y año -> hay error
-    if ($test_date[0] == $test_current[0] && $test_date[1] == $test_current[1] && $test_date[2] < $test_current[2]) {
-        $_SESSION['error_evento'] .= "<br><br> Hay errores en la fecha: El día seleccionado ya pasó.";
-        return true;
-    }
-
-    return false;
-}
-
-
-/*EN ESTA PARTE VOY A SUBIR LA IMAGEN A MI CARPETA DE UPLOADS Y CHECO QUE TODO ESTÉ EN ORDEN CON LA IMAGEN*/
+//Aquí se valida la imagen que se subió
 function validar_imagen()
 {
-    $target_dir = "uploads/";
-    //var_dump($_FILES);
-    //die();
-
-    //var_dump($_FILES["fileToUpload"]["tmp_name"]);
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-
+    $timestampimagen=time();//con esto el nombre de la imagen nunca se repite wuuu
+     
+    $target_dir = "uploads/". $timestampimagen;
+   
+    $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
+    
     //-------------------------------------------------------------------------------------------------------------------//
-    $_SESSION['link_imagen'] = "../eventos/" . $target_file; //Guardo el link de la imagen para mandarlo a la base de datos
+    $_SESSION['link_imagen'] = "../eventos/".$target_file; //Guardo el link de la imagen para mandarlo a la base de datos
     //------------------------------------------------------------------------------------------------------------------//
 
     $uploadOk = 1;
@@ -226,6 +191,69 @@ function validar_imagen()
 
 }
 
+function validar_nombre_evento(){
+    if(ctype_space($_POST['nombre_evento']) || $_POST['nombre_evento']==""){
+        $_SESSION['error_evento'].= "El nombre contiene solo espacios o está vacío";
+        return false;
+    }
+    
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['nombre_evento']))){
+         $_SESSION['error_evento'].= "El nombre no puede contener caracteres especiales (*&_/-%#)";
+         return false;
+    }
+     
+    else if(is_numeric($_POST['nombre_evento'])){
+        $_SESSION['error_evento'].= "El nombre no puede contener solo números";
+        return false;
+    }
+   
+    else{
+        return true;
+    }  
+}
+
+function validar_lugar_evento(){
+    if(ctype_space($_POST['lugar_evento']) || $_POST['lugar_evento']==""){
+        $_SESSION['error_evento'].= "El lugar contiene solo espacios o está vacío";
+        return false;
+    }
+    
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['lugar_evento']))){
+         $_SESSION['error_evento'].= "El lugar no puede contener caracteres especiales (*&_/-%#)";
+         return false;
+    }
+     
+    else if(is_numeric($_POST['lugar_evento'])){
+         $_SESSION['error_evento'].= "El lugar no puede contener solo números";
+         return false;
+    }
+   
+    else{
+        return true;
+    }  
+}
+
+function validar_descripcion_evento(){
+    if(ctype_space($_POST['descripcion_evento']) || $_POST['descripcion_evento']==""){
+         $_SESSION['error_evento'].= "La descripción contiene solo espacios o está vacío";
+         return false;
+    }
+    
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['descripcion_evento']))){
+         $_SESSION['error_evento'].= "La descripción no puede contener caracteres especiales (*&_/-%#)";
+         return false;
+    }
+     
+    else if(is_numeric($_POST['descripcion_evento'])){
+        $_SESSION['error_evento'].= "La descripción no puede contener solo números";
+        return false;
+    }
+   
+    else{
+        return true;
+    }  
+}
+
 function mostrar_alerta_error_registro_editar()
 {
     header_html();
@@ -233,10 +261,7 @@ function mostrar_alerta_error_registro_editar()
     evento_html();
     form_evento_html();
     controller_tabla_eventos_php();
-    form_eliminar_evento_html();
     alerta_error($_SESSION['error_evento']);
-    modal_informacion_evento_html();
-
     echo
     "<script type='text/javascript'>
             jQuery(document).ready(function(){
@@ -249,5 +274,31 @@ function mostrar_alerta_error_registro_editar()
     footer_html();
      echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
 }
+
+/*function checkmydate() //sirve para checar si se quiere registrar un evento con una fecha que ya pasó
+{
+    $input_date = $_POST["fecha_evento"];//Las fechas se guardan como 1998-03-28
+    $test_date = explode('-', $input_date);
+    $current_date = date("Y-m-d");
+    $test_current = explode('-', $current_date);
+
+    // se valida que no se registre un evento que tiene una fecha que ya pasó -> hay error
+    if ($test_date[0] < $test_current[0]) {
+        $_SESSION['error_evento'] .= "<br><br> Hay errores en la fecha: El año seleccionado ya pasó.";
+        return true;
+    }
+    // si se escoge un mes que ya paso de este mismo año -> hay error
+    if ($test_date[0] == $test_current[0] && $test_date[1] < $test_current[1]) {
+        $_SESSION['error_evento'] .= "<br><br>  Hay errores en la fecha: El mes seleccionado ya pasó.";
+        return true;
+    }
+    //si se escoge un día que ya paso de este mismo mes y año -> hay error
+    if ($test_date[0] == $test_current[0] && $test_date[1] == $test_current[1] && $test_date[2] < $test_current[2]) {
+        $_SESSION['error_evento'] .= "<br><br> Hay errores en la fecha: El día seleccionado ya pasó.";
+        return true;
+    }
+
+    return false;
+}*/
 
 ?>
