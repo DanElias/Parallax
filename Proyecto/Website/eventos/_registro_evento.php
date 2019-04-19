@@ -79,7 +79,7 @@ if (isset($_POST["submit"])) {
             }else{
                 //Caso de Prueba: no se pudo editar el evento en la tabla de eventos porque
                 //la imagen no es válida, excede el tamaño o no es un formato aceptado
-                 $_SESSION['error_evento'] = "No logramos registrar el evento. Inténtalo más tarde";
+                 $_SESSION['error_evento'] .= "No logramos registrar el evento. Inténtalo más tarde";
                 mostrar_alerta_error_registro_editar();
             }
 
