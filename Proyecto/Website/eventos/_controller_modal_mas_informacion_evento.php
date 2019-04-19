@@ -1,5 +1,16 @@
 <?php
 
+/*
+    Autor: Daniel Elias
+    
+        Este controlador genera el modal de más información del evento, se utiliza cuando el usuario da click en el botón de mas información de cada evento
+        Puede confundirse, pero este archivo es diferente a _controller_modal_informacion_evento.php
+        La diferencia es que este archivo usa $_POST para mandar el id del evento al query
+        El ID esta guadado secretamente en el form de editar y se manda con el click de mas informacion a este controller.
+        
+        Archivos relacionados: _conection_queries_db.php | _controller_tabla_eventos.php | _registro_editar_evento.php | _registro_evento.php | _util_eventos.php (en caso de error)
+*/
+
 require_once("../basesdedatos/_conection_queries_db.php");
 require_once("_util_eventos.php");
 
@@ -127,7 +138,6 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
             </script>
             
             ';
-    //footer_html();
 
 }
 
@@ -140,7 +150,6 @@ function mostrar_alerta_error_modal_mas_informacion()
     controller_tabla_eventos_php();
     form_eliminar_evento_html();
     alerta_error($_SESSION['error_evento']);
-    modal_informacion_evento_html();
     echo
     "<script type='text/javascript'>
             $(document).ready(function(){
