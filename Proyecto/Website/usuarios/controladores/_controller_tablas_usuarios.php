@@ -14,7 +14,7 @@ if (mysqli_num_rows($result) > 0) {
         $query_table .= '<td style="display:none;">' . $row["id_usuario"] . '</td>';
         $query_table .= "<td>" . $row["nombre"] . "</td>";
         $query_table .= "<td>" . $row["apellido"] . "</td>";
-        $query_table .= "<td>" . $row["id_rol"] . "</td>";
+        $query_table .= "<td>" . $row["descripcion"] . "</td>";
         $query_table .= "<td>" . $row["email"] . "</td>";
         $query_table .= "<td>" . $row["fecha_creacion"] . "</td>";
         $query_table .=

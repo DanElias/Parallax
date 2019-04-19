@@ -594,7 +594,7 @@ function obtenerUsuario()
 
     return $result;*/
     $conn = conectDb();
-    $sql = "SELECT id_usuario, nombre,apellido, email, fecha_creacion,id_rol FROM usuario";
+    $sql = "SELECT id_usuario, nombre,apellido, email, fecha_creacion,descripcion FROM usuario,rol WHERE rol.id_rol = usuario.id_rol";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
