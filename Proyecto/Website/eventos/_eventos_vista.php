@@ -16,7 +16,7 @@ if (isset($_SESSION["usuario"])) {
     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
     
 } else {
-    header("location:../login/_login.php");
+    header("location:../login/_login_vista.php");
 
 }
 //Caso de Prueba: La sesión expiró o el usuario quiere acceder a la página de eventos sin haber iniciado sesión 
