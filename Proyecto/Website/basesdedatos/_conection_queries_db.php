@@ -267,7 +267,7 @@ function eliminarEventoPorID($id_evento)
 }
 
 
-function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $fecha_creacion, $id_rol)
+function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacimiento, $id_rol)
 {
     /*$conn = conectDb();
 
@@ -282,9 +282,9 @@ function registrar_usuario($usuario, $nombre, $apellido, $password, $fecha_nacim
         return false;
     }*/
     $conn = conectDb();
-    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, fecha_creacion, id_rol) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO usuario(email, nombre, apellido, passwd, fecha_nacimiento, id_rol) VALUES (?,?,?,?,?,?)";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssssssi',$usuario, $nombre, $apellido, $password, $fecha_nacimiento, $fecha_creacion, $id_rol);
+      $stmt->bind_param('sssssi',$usuario, $nombre, $apellido, $password, $fecha_nacimiento, $id_rol);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();

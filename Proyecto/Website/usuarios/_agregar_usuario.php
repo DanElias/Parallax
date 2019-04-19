@@ -29,7 +29,7 @@ if (isset($_POST["submit"])){
         //EN ESTA PARTE A CONTINUACION HARÉ EL REGISTRO EN LA BASE DE DATOS
         //PODEMOS VER QUE LO DEMÁS DEL CÓDIGO ES LA PARTE QUE VALIDA QUE EL FORM SE LLENÓ DE MANERA CORRECTA.
         //------------------------------------------------------------------------------------------------------------
-        if (registrar_usuario($_POST["email"], $_POST["nombre"],$_POST["apellido"], password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"],$_POST["fecha_nacimiento"],$_POST["rol"])) {
+        if (registrar_usuario($_POST["email"], $_POST["nombre"],$_POST["apellido"], password_hash($_POST["password"], PASSWORD_DEFAULT), $_POST["fecha_nacimiento"],$_POST["rol"])) {
             
             /*------------------------------------------------EN ESTA PARTE YA VOY A MOSTRAR LA INFORMACION DEL EVENTO GUARDADO EN LA PÁGINA*/
             header("location:_usuarios_vista.php");
