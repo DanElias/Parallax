@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
     $.ajax({type: 'POST',url: 'controladores/_tabla_roles.php', data:{'peticion': 'cargar_roles'}})

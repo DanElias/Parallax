@@ -624,6 +624,15 @@ input {
     margin: 10px;
     overflow-y: hidden
 }
+.my_big_modal_rol {
+    width: 70% !important;
+    max-height: 97% !important;
+    height: 98% !important;
+    top: 0 !important;
+    margin-left: 15%;
+    align-self: center !important;
+    overflow-y: hidden
+}
 
 .my_big_modal_proveedor {
     width: 60% !important;
