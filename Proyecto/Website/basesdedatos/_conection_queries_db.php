@@ -249,7 +249,7 @@ function eliminarEventoPorID($id_evento)
         closeDb($conn);
         return false;
     }*/
-    
+
     $conn = conectDb();
     $sql = "DELETE FROM evento WHERE id_evento = ?";
     if($stmt = $conn->prepare($sql)){
@@ -512,7 +512,7 @@ function editarUsuario($id_usuario, $nombre,$apellido,$email,$password,$fecha_na
 
 function eliminarCuentaPorID($id_cuentacontable)
 {
-    
+
     $conn = conectDb();
     $sql = "DELETE FROM cuenta_contable WHERE id_cuentacontable = ?";
     if($stmt = $conn->prepare($sql)){
@@ -707,6 +707,18 @@ function obtenerCuentas()
   function getNombreBeneficiarios(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario,nombre,apellido,fecha_nacimiento,grupo,estado FROM beneficiario";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function getBeneficiariosActivos(){
+    $conn = conectDb();
+    $sql = "SELECT * FROM beneficiario WHERE estado=1";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();

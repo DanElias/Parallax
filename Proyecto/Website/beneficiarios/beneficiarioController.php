@@ -4,8 +4,7 @@
   require_once('_util_beneficiarios.php');
   $opcion = $_POST['opcion'];
   if($opcion == 1){
-      modalesBeneficiario(getInfoBeneficiarios());
-      imprimirnombreBeneficiario(getNombreBeneficiarios());
+      tablaBeneficiario();
   }
 
 

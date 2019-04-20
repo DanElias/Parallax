@@ -61,31 +61,8 @@ function imprimirnombreTutor($result){
   }
 }
 
-function imprimirnombreBeneficiario($result){
-  $today = new Datetime(date('y.m.d'));
-  while($row = mysqli_fetch_assoc($result)){
-    $fecha = new Datetime($row['fecha_nacimiento']);
-    $diff = $today->diff($fecha);
-    echo '<tr>
-        <td class="first_col_data_table">'.$row['id_beneficiario'].'</td>
-        <td>'.$row['nombre'].' '.$row['apellido'].'</td>
-        <td>'.$diff->y.' años</td>
-        <td>'.$row['grupo'].'</td>
-        <td><a class="modal-trigger" href="#_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'">Más información</a></td>
-        <td>
-            <a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"
-               href="#_form_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>
-        </td>
-        <td>
-            <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"
-               href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-        </td>
-        <td>
-            <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
-               href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-        </td>
-    </tr>';
-  }
+function tablaBeneficiario(){
+  include('controladores/_tabla_beneficiario.php');
 }
 
 function modalesBeneficiario($result){
