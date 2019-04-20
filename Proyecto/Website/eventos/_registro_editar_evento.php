@@ -22,26 +22,26 @@ $_SESSION['error_evento'] = " "; //se va a guardar algo en caso de que ellas err
 $_SESSION['id_evento'] = " "; //se va a guardar el id del evento
 
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["esubmit"])) {
     //Aquí guardo lo que está en los campos del form en variables
     $_POST["id_evento"] = htmlentities($_POST["id_evento"]); //en el form de editar se mando el id de ese evento a editar de manera escondida
-    $_POST["nombre_evento"] = htmlentities($_POST["nombre_evento"]); //htmlentities evitar hackers
+    $_POST["enombre_evento"] = htmlentities($_POST["enombre_evento"]); //htmlentities evitar hackers
     $_POST["fecha_evento"] = htmlentities($_POST["fecha_evento"]);
     $_POST["hora_evento"] = htmlentities($_POST["hora_evento"]);
-    $_POST["lugar_evento"] = htmlentities($_POST["lugar_evento"]);
-    $_POST["descripcion_evento"] = htmlentities($_POST["descripcion_evento"]);
+    $_POST["elugar_evento"] = htmlentities($_POST["elugar_evento"]);
+    $_POST["edescripcion_evento"] = htmlentities($_POST["edescripcion_evento"]);
 
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
-    if (isset($_POST["nombre_evento"])
+    if (isset($_POST["enombre_evento"])
         && isset($_POST["hora_evento"])
         && isset($_POST["fecha_evento"])
-        && isset($_POST["lugar_evento"])
-        && isset($_POST["descripcion_evento"])
-        && $_POST["nombre_evento"] != ""
+        && isset($_POST["elugar_evento"])
+        && isset($_POST["edescripcion_evento"])
+        && $_POST["enombre_evento"] != ""
         && $_POST["fecha_evento"] != ""
         && $_POST["hora_evento"] != ""
-        && $_POST["lugar_evento"] != ""
-        && $_POST["descripcion_evento"] != "") {
+        && $_POST["elugar_evento"] != ""
+        && $_POST["edescripcion_evento"] != "") {
 
         // si no hay errores entonces mostrar pantalla de éxito
         if (validar_nombre_evento() && validar_lugar_evento() && validar_descripcion_evento()) {
@@ -51,7 +51,7 @@ if (isset($_POST["submit"])) {
                 
                 //editarEvento es una funcion de connection queries que hace un UPDATE en la tabla
                 //también checo que si haya un elemento con ese id haha
-                if (editarEvento($_POST["id_evento"], $_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])){
+                if (editarEvento($_POST["id_evento"], $_POST["enombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["elugar_evento"], $_POST["edescripcion_evento"], $_SESSION['link_imagen'])){
                     
                     header_html();//recargo la pagina
                     sidenav_html();
@@ -192,17 +192,17 @@ function validar_imagen()
 }
 
 function validar_nombre_evento(){
-    if(ctype_space($_POST['nombre_evento']) || $_POST['nombre_evento']==""){
+    if(ctype_space($_POST['enombre_evento']) || $_POST['enombre_evento']==""){
         $_SESSION['error_evento'].= "El nombre contiene solo espacios o está vacío";
         return false;
     }
     
-    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['nombre_evento']))){
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['enombre_evento'])) && preg_match("/^\pL+(?>[- ']\pL+)*$/u",$_POST['enombre_evento'])){
          $_SESSION['error_evento'].= "El nombre no puede contener caracteres especiales (*&_/-%#)";
          return false;
     }
      
-    else if(is_numeric($_POST['nombre_evento'])){
+    else if(is_numeric($_POST['enombre_evento'])){
         $_SESSION['error_evento'].= "El nombre no puede contener solo números";
         return false;
     }
@@ -213,17 +213,17 @@ function validar_nombre_evento(){
 }
 
 function validar_lugar_evento(){
-    if(ctype_space($_POST['lugar_evento']) || $_POST['lugar_evento']==""){
+    if(ctype_space($_POST['elugar_evento']) || $_POST['elugar_evento']==""){
         $_SESSION['error_evento'].= "El lugar contiene solo espacios o está vacío";
         return false;
     }
     
-    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['lugar_evento']))){
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['elugar_evento'])) && preg_match("/^\pL+(?>[- ']\pL+)*$/u",$_POST['elugar_evento'])){
          $_SESSION['error_evento'].= "El lugar no puede contener caracteres especiales (*&_/-%#)";
          return false;
     }
      
-    else if(is_numeric($_POST['lugar_evento'])){
+    else if(is_numeric($_POST['elugar_evento'])){
          $_SESSION['error_evento'].= "El lugar no puede contener solo números";
          return false;
     }
@@ -234,17 +234,17 @@ function validar_lugar_evento(){
 }
 
 function validar_descripcion_evento(){
-    if(ctype_space($_POST['descripcion_evento']) || $_POST['descripcion_evento']==""){
+    if(ctype_space($_POST['edescripcion_evento']) || $_POST['edescripcion_evento']==""){
          $_SESSION['error_evento'].= "La descripción contiene solo espacios o está vacío";
          return false;
     }
     
-    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['descripcion_evento']))){
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['edescripcion_evento'])) && preg_match("/^\pL+(?>[- ']\pL+)*$/u",$_POST['edescripcion_evento'])){
          $_SESSION['error_evento'].= "La descripción no puede contener caracteres especiales (*&_/-%#)";
          return false;
     }
      
-    else if(is_numeric($_POST['descripcion_evento'])){
+    else if(is_numeric($_POST['edescripcion_evento'])){
         $_SESSION['error_evento'].= "La descripción no puede contener solo números";
         return false;
     }

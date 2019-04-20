@@ -16,7 +16,7 @@ require_once("_util_eventos.php");
 
 $_POST['id'] = htmlentities($_POST['id']);
 if (isset($_POST['id']) && $_POST['id'] != "") {
-    $result = obtenerEventosPorID($_POST['id']);
+    $result = obtenerEventosPorID($_POST['id']);//$_POST['id']
     $cards = "";
 
     if (mysqli_num_rows($result) > 0) {
@@ -81,22 +81,10 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
                             </div>
                         </div>
                         <br><br>';
-        }
-    } else { // si no hay eventos registrados en la tabla
-        $_SESSION['error_evento']="No encontramos el evento solcitado. Inténtalo más tarde.";
-        mostrar_alerta_error_modal_mas_informacion();
-    }
-
-    //Aqui habría que separar la vista del controladores
-    
-    //header_html();
-    //sidenav_html();
-    //evento_html();
-    //form_evento_html();
-    //form_eliminar_evento_html();
-    //controller_tabla_eventos_php();
-
-    echo '
+                        
+        }//fin del while
+        
+        echo '
             <!-- Modal Structure -->
             <div id="_modal_mas_informacion_evento" class="modal modal-fixed-footer my_modal  my_big_modal">
                 <div class="row my_modal_header_row">
@@ -138,20 +126,50 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
             </script>
             
             ';
-
+            
+    } else { // si no hay eventos registrados en la tabla
+        $_SESSION['error_evento']="No logramos mostrar información del evento solicitado. Inténtalo más tarde.";
+        mostrar_alerta_error_modal_mas_informacion();
+    }
 }
 
 function mostrar_alerta_error_modal_mas_informacion()
 {
-    header_html();
-    sidenav_html();
-    evento_html();
-    form_evento_html();
-    controller_tabla_eventos_php();
-    form_eliminar_evento_html();
-    alerta_error($_SESSION['error_evento']);
-    echo
-    "<script type='text/javascript'>
+    $error=$_SESSION['error_evento'];
+   
+    $alerta='
+    <div id="_form_alerta_error" class="modal  my_modal">
+        <div class="row my_modal_header_row">
+            <div class="my_modal_header_eliminar z-depth-2 col s12">
+                <h4 class="my_modal_header">Lo sentimos...</h4>
+            </div>
+        </div>
+        <br><br>
+        <div class="modal-content my_modal_content">
+            <br><br>
+            <h5 class="my_modal_description2"></h5>
+            <div class="row">
+                <div class="col s12">
+                        <h5>' . $error . '<h5>
+                </div>
+            <div>
+            <br>
+            <br>
+
+            <div class="my_modal_buttons">
+                <div class="row">
+
+                    <div class="col s12 m12">
+                        <button class="modal-close btn waves-effect waves-light modal-close">Ok, estoy enterado.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>';
+    
+   
+    $alerta.= "<script type='text/javascript'>
             $(document).ready(function(){
                   $('#_form_alerta_error').modal();
                   $(document).ready(function(){
@@ -159,8 +177,8 @@ function mostrar_alerta_error_modal_mas_informacion()
                   });
             });
     </script>";
-    footer_html();
-     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
+    
+    echo $alerta;
 }
 
 

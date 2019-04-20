@@ -1,3 +1,11 @@
+<!--
+
+Autor: Daniel Elias
+Este archivo es el el modal que tiene el form de agregar cuenta contable, lo incluyo en el _util_cuentas_contables.php
+
+-->
+
+
 <!-- Modal Structure -->
 <div id="_form_cuentacontable" class="modal my_modal modal1">
     <div class="row my_modal_header_row">
@@ -16,16 +24,18 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">description</i>
-                    <input type="text" class="validate" name="nombre_cuenta" id="nombre_cuenta">
+                    <input type="text" class="validate" name="nombre_cuenta" id="nombre_cuenta"  required onkeyup="validar_campo_cuenta('nombre_cuenta','#validar_nombre_cuenta')">
                     <label for="nombre_cuenta">Nombre de la cuenta contable</label>
+                    <div class="red-text text-accent-3" id="validar_nombre_cuenta">*Campo obligatorio</div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">list</i>
-                    <input type="text" class="validate" name="descripcion_cuenta" id="descripcion_cuenta">
+                    <input type="text" class="validate" name="descripcion_cuenta" id="descripcion_cuenta" required onkeyup="validar_campo_cuenta('descripcion_cuenta','#validar_descripcion_cuenta')">
                     <label for="descripcion_cuenta">Descripcion</label>
+                    <div class="red-text text-accent-3" id="validar_descripcion_cuenta">*Campo obligatorio</div>
                 </div>
             </div>
 
@@ -33,12 +43,12 @@
             <div class="my_modal_buttons">
                 <div class="row">
                     <div class="col s6">
-                        <button class="btn waves-effect waves-light" type="submit" name="submit">Guardar
+                        <button class="btn waves-effect waves-light" type="submit" name="submit" id="submit" style="display:none;">Guardar
                             <i class="material-icons right">check_circle_outline</i>
                         </button>
                     </div>
                     <div class="col s6">
-                        <button class="btn waves-effect waves-light red modal-close" type="button">Cancelar
+                        <button class="btn waves-effect waves-light red modal-close" type="button" >Cancelar
                             <i class="material-icons right">highlight_off</i>
                         </button>
                     </div>
