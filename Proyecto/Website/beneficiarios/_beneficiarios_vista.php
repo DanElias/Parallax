@@ -17,7 +17,6 @@ if (isset($_SESSION["usuario"])) {
     //modal_informacion_tutor_html();
     beneficiarios_html();
     footer_html();
-    echo '<script src="js/pagination.js"></script>';
     echo '<script src="js/ajax.js"></script>';
 } else {
     header("location:../login/_login_vista.php");
