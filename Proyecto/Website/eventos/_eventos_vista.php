@@ -1,4 +1,9 @@
 <?php
+/*
+    Autor: Daniel Elias
+        Este archivo php muestra los htmls y utiliza el controlador de la tabla, digamos que es el front end de la sección de eventos
+*/
+
 
 //util de admin para que el nombre del header sea correcto
 require_once("_util_eventos.php");

@@ -59,7 +59,7 @@ function mostrar_alerta_error_eliminar()
     evento_html();
     form_evento_html();
     controller_tabla_eventos_php();
-    alerta_error($_SESSION['error_evento']);
+    alerta_error($_SESSION['error_evento']); //Recordar que esta funcion se manda llamar en util_cuentas_contables.php
     echo
     "<script type='text/javascript'>
             jQuery(document).ready(function(){
