@@ -173,7 +173,6 @@ function mostrar_alerta_error_modal_informacion()
     
    
     $alerta.= "<script type='text/javascript'>
-            alert(\"¡El evento se ha registrado de manera exitosa!\");
             $(document).ready(function(){
                   $('#_form_alerta_error').modal();
                   $(document).ready(function(){

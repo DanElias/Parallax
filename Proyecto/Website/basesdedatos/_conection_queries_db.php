@@ -3,7 +3,7 @@
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-    $servername = "airua";
+    $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "proyecto";
@@ -12,9 +12,11 @@ function conectDb()
 
     if($con->connect_error){
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
-        include("error_server_card.html");
+      //include("error_server_card.html");
       //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
-
+      alertaNoHayConexion();
+      include("../views/_footer_admin.html");
+      die();
     }
     $con->set_charset("utf8");
     return $con;
@@ -738,6 +740,57 @@ function obtenerCuentas()
     }
     closeDB($conn);
     return $result;
+  }
+  
+  
+  function alertaNoHayConexion(){
+    $alerta='
+    <script>M.AutoInit();</script>
+    <div id="_form_alerta_error" class="modal  my_modal">
+        <div class="row my_modal_header_row">
+            <div class="my_modal_header_eliminar z-depth-2 col s12">
+                <h4 class="my_modal_header">Lo sentimos</h4>
+            </div>
+        </div>
+        <br><br>
+        <div class="modal-content my_modal_content">
+            <br><br>
+            <h5 class="my_modal_description2"></h5>
+            <div class="row">
+                <div class="col s12">
+                        <h5> 
+                          Lo sentimos, no hay conexión con la base de datos. Asegúrate de estar conectado a internet o contacta al administrador.
+                          <br><br> (Error 505)
+                        <h5>
+                </div>
+            <div>
+            <br>
+            <br>
+
+            <div class="my_modal_buttons">
+                <div class="row">
+
+                    <div class="col s12 m12">
+                        <button class="modal-close btn waves-effect waves-light modal-close">Ok, estoy enterado.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>';
+    
+   
+    $alerta.= "<script type='text/javascript'>
+            $(document).ready(function(){
+                  $('#_form_alerta_error').modal();
+                  $(document).ready(function(){
+                      $('#_form_alerta_error').modal('open');
+                  });
+            });
+    </script>";
+    
+    echo $alerta;
+  
   }
 
 ?>
