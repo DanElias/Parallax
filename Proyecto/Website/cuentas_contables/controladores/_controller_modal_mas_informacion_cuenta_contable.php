@@ -12,8 +12,6 @@
 require_once("../../basesdedatos/_conection_queries_db.php");
 require_once("../_util_cuentas_contables.php");
 
-$session_start();
-
 $_POST['id'] = htmlentities($_POST['id']);
 if (isset($_POST['id']) && $_POST['id'] != "") {
     $result = obtenerCuentaPorID($_POST['id']);//$_POST['id']

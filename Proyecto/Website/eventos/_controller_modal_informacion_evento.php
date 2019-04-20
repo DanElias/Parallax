@@ -13,8 +13,6 @@
 require_once("../basesdedatos/_conection_queries_db.php"); //uso el archivo de queries de bases de datos sql
 require_once("_util_eventos.php");//uso el archivo de las aprtes htmls y que llama a algunos controladores
 
-$session_start();
-
 $result = obtenerEventosPorID($_SESSION["id_evento"]); // Obtengo el evento por su id $_SESSION["id_evento"]
 $cards = ""; //donde voy a guardar el card con la informacion del evento
 

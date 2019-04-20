@@ -10,8 +10,6 @@
 require_once("../basesdedatos/_conection_queries_db.php");
 require_once("./_util_eventos.php");//utilizó el util de eventos
 
-$session_start();
-
 $result = obtenerEventos(); // se hace el query que obtiene todos los eventos registrados
 $query_table = "";//aquí iré guardando la tabla generada
 

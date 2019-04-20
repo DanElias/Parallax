@@ -47,7 +47,7 @@ if (isset($_POST["submit"])){
  
             echo
             "<script type='text/javascript'>
-                            alert(\"¡El usaurio se ha registrado exitosamente!\");
+                            alert(\"¡El usuario se ha registrado exitosamente!\");
                             jQuery(document).ready(function(){
                                   jQuery('#_modal_informacion_cuenta_contable').modal();
                                   jQuery(document).ready(function(){

@@ -9,8 +9,6 @@
 require_once("../basesdedatos/_conection_queries_db.php"); //utiliza el archivo de queries de la base de datos
 require_once("_util_eventos.php");// utiliza el util de eventos para recargar la página
 
-$session_start();
-
 $_GET['id'] = htmlentities($_GET['id']);  //Recibe el id del row a eliminar desde el archivo _controller_eliminar_evento.php
 
 if (isset($_GET['id']) && $_GET['id'] != ""){
@@ -25,14 +23,13 @@ if (isset($_GET['id']) && $_GET['id'] != ""){
              if (file_exists($filename)) { //si existe en la base de datos una imagen con ese nombre, la elimino del folder de uploads
                 unlink($filename); //en teoría esta función siempre debería de funcionar porque es de PHP
             }
-
+            header("location:_eventos_vista.php");
             //recargo la página
-            header_html();
-            sidenav_html();
-            evento_html();
-            form_evento_html();
-            controller_tabla_eventos_php();
-            
+            //header_html();
+            //sidenav_html();
+            //evento_html();
+            //form_evento_html();
+            //controller_tabla_eventos_php();
             echo
             "<script type='text/javascript'>
                             alert(\"¡El evento se ha borrado de manera exitosa!\");
