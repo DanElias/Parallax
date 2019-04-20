@@ -14,6 +14,8 @@
 require_once("../basesdedatos/_conection_queries_db.php");
 require_once("_util_eventos.php");
 
+$session_start();
+
 $_POST['id'] = htmlentities($_POST['id']);
 if (isset($_POST['id']) && $_POST['id'] != "") {
     $result = obtenerEventosPorID($_POST['id']);//$_POST['id']

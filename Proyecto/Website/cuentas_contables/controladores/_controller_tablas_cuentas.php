@@ -9,6 +9,8 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
 require_once("../basesdedatos/_conection_queries_db.php");
 
+$session_start();
+
 $result = obtenerCuentas();// se hace el query que obtiene todas las cuentas registradas
 $query_table = "";//aquí iré guardando la tabla generada
 

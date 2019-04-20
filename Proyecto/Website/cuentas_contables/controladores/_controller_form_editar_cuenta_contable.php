@@ -17,7 +17,6 @@
 require_once("../_util_cuentas_contables.php");
 require_once("../../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 
-
 session_start();//para poder usar $_SESSION
 
 $_SESSION['id'] = $_POST['id'];//guardo el id del row a editar

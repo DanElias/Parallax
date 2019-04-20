@@ -11,6 +11,8 @@
 require_once("../basesdedatos/_conection_queries_db.php");//uso el archivo de queries de bases de datos sql
 require_once("_util_cuentas_contables.php");//uso el archivo de las aprtes htmls y que llama a algunos controladores
 
+$session_start();
+
 $result = obtenerCuentaPorID($_SESSION['id_cuentacontable']);// Obtengo la cuenta por su id $_SESSION['id_cuentacontable']
 $cards = "";//donde voy a guardar el card con la informacion del evento
 
