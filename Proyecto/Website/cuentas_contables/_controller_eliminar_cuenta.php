@@ -11,8 +11,9 @@
 require_once("../basesdedatos/_conection_queries_db.php"); //utiliza el archivo de queries de la base de datos
 require_once("_util_cuentas_contables.php");// utiliza el util de eventos para recargar la página
 
-$_GET['id'] = htmlentities($_GET['id']);
+session_start(); //para poder utilizar session
 
+$_GET['id'] = htmlentities($_GET['id']);
 
 $result = obtenerIdCuentaDelEgreso($_GET['id']);
 

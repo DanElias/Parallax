@@ -11,6 +11,8 @@
 require_once("../basesdedatos/_conection_queries_db.php"); //utiliza el archivo de queries de la base de datos
 require_once("_util_eventos.php");// utiliza el util de eventos para recargar la página
 
+session_start(); //para poder utilizar session
+
 $_GET['id'] = htmlentities($_GET['id']);
 
 header_html(); //vuelvo a cargar todo porque pues no estoy usando ajax
