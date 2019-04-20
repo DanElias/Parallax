@@ -13,6 +13,9 @@ require_once("_util_cuentas_contables.php");// utiliza el util de eventos para r
 
 $_GET['id'] = htmlentities($_GET['id']);
 
+
+$result = obtenerIdCuentaDelEgreso($_GET['id']);
+
 header_html(); //vuelvo a cargar todo porque pues no estoy usando ajax
 sidenav_html();
 cuentacontable_html();
@@ -26,7 +29,55 @@ controller_tabla_cuentas_php();
 
 //genero mi modal de confirmar si de verdad quiero eliminar ese row de la tabla y lo despliego, mando el id que recibí en caso de
 //que el usuario si de click en que de verdad si quiere eliminar el elemento.
-echo '
+
+if (mysqli_num_rows($result) > 0){ //si el query dio resultado es porque un egreso está usando el id de la cuenta contable
+//por lo tanto no se puede eliminar la cuenta o se estaría violando la integridad referencial de las tablas.
+    echo '
+    <!-- Modal Structure -->
+        <div id="_form_eliminar_cuenta" class="modal  my_modal">
+            <div class="row my_modal_header_row">
+                <div class="my_modal_header_eliminar z-depth-2 col s12">
+                    <h4 class="my_modal_header">Atención</h4>
+                </div>
+            </div>
+            <br><br>
+            <div class="modal-content my_modal_content">
+                <br><br>
+                    <h5 class="my_modal_description2">
+                        Esta cuenta contable no se puede eliminar ya que está enlazada con un egreso registrado.
+                        <br> <br>Sólo puede editar esta cuenta contable.
+                    
+                    </h5>
+                <br>
+                <br>
+        
+                <div class="my_modal_buttons">
+                    <div class="row">
+        
+                        <div class="col s12 m12">
+                            <button class="modal-close btn waves-effect waves-light modal-close">Ok, estoy enterado
+                                <i class="material-icons right">highlight_off</i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>';
+        
+    echo
+    "<script type='text/javascript'>
+            jQuery(document).ready(function(){
+                  jQuery('#_form_eliminar_cuenta').modal();
+                  jQuery(document).ready(function(){
+                      jQuery('#_form_eliminar_cuenta').modal('open');
+                  });
+            });
+    </script>";
+    
+    
+} else {
+    echo '
     <!-- Modal Structure -->
         <div id="_form_eliminar_cuenta" class="modal  my_modal">
             <div class="row my_modal_header_row">
@@ -69,6 +120,12 @@ echo '
                   });
             });
     </script>";
+    
+}
+
+
+
+
     
 footer_html();
 echo '<script type="text/javascript" src="ajax_cuentas_contables.js"></script>';

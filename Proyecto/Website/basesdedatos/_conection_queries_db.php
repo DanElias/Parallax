@@ -440,6 +440,23 @@ function obtenerCuentaPorID($id_cuentacontable)
     closeDB($conn);
     return $result;
 }
+
+
+function obtenerIdCuentaDelEgreso($id_cuentacontable)
+{
+    $conn = conectDb();
+    $sql = "SELECT id_cuentacontable FROM egreso WHERE id_cuentacontable = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
 function obtenerUsuariosPorID($id_usuario){
 
     /*$conn = conectDb();
