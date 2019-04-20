@@ -740,6 +740,32 @@ function obtenerCuentas()
     return $result;
   }
 
+  function getEstadoById($id){
+    $conn = conectDb();
+    $sql = "SELECT estado FROM beneficiario WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function modificarEstado($id,$estado){
+    $conn = conectDb();
+    $sql = "UPDATE beneficiario SET estado=? WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ii',$estado,$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
   function getInfoTutores(){
     $conn = conectDb();
     $sql = "SELECT * FROM tutor";

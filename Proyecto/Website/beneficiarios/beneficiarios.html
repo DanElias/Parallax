@@ -18,11 +18,15 @@
                                 class="material-icons right">person_add</i></a>
                     </div>
                 </div>
+                <label for="botonActivos">
+                  <input type="checkbox" class="filled-in" checked="checked" id="botonActivos" name="botonActivos" />
+                  <span>Mostrar sólo beneficiarios activos</span>
+                </label>
             </div>
 
             <div class="row">
                 <form class="my_search">
-                    <div class="row my_search valign">
+                    <!--div class="row my_search valign">
                         <div class="input-field col s4 my_search tooltipped" data-position="bottom"
                              data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra introducida y a las casillas de los filtros de búsqueda seleccionados">
                             <i class="material-icons prefix my_search">search</i>
@@ -33,91 +37,46 @@
                         <div class="input-field col s2">
                             <a class="btn btn-medium waves-effect waves-light deep-purple hoverable">Buscar</a>
                         </div>
-                    </div>
+                    </div-->
                 </form>
             </div>
 
-    
-
-        <!--div class='table-wrapper responsive-table new_data_table'>
-            <table class="stripped highlight responsive-table data_table fixed_header" id="tablaComBen">
-                <thead>
-                <tr class="my_table_headers">
-                    <th class="first_col_data_table">ID</th>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>Grupo</th>
-                    <th>Más información</th>
-                    <th>Estado</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-                </thead>
-
-                <tbody id="tablaBen">
-                <!--tr>
-                    <td class="first_col_data_table">1</td>
-                    <td>Carlos Sánchez</td>
-                    <td>17</td>
-                    <td>Osos</td>
-                    <td><a class="modal-trigger" href="#_modal_informacion_beneficiarios">Mas información</a></td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"
-                           href="#_form_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>
-                    </td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"
-                           href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-                    </td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
-                           href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="first_col_data_table">1</td>
-                    <td>Carlos Sánchez</td>
-                    <td>17</td>
-                    <td>Osos</td>
-                    <td><a class="modal-trigger" href="#_modal_informacion_beneficiarios">Mas información</a></td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"
-                           href="#_form_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>
-                    </td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"
-                           href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-                    </td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
-                           href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-                    </td>
-                </tr>
 
 
-                <tr>
-                    <td class="first_col_data_table">1</td>
-                    <td>Carlos Sánchez</td>
-                    <td>17</td>
-                    <td>Osos</td>
-                    <td><a class="modal-trigger" href="#_modal_informacion_beneficiarios">Mas información</a></td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"
-                           href="#_form_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>
-                    </td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"
-                           href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-                    </td>
-                    <td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"
-                           href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-                    </td>
-                </tr>
+            <div class="table-wrapper responsive-table new_data_table">
+                <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
+                    <thead>
+                    <tr class="my_table_headers">
+                      <th class="first_col_data_table">ID</th>
+                      <th>Nombre</th>
+                      <th>Edad</th>
+                      <th style="display:none;">Fecha Nacimiento</th>
+                      <th style="display:none;">Sexo</th>
+                      <th style="display:none;">Grado Escolar</th>
+                      <th style="display:none;">Domicilio</th>
+                      <th style="display:none;">Nivel Socioeconómico</th>
+                      <th style="display:none;">Escuela</th>
+                      <th style="display:none;">Enfermedades y alergias</th>
+                      <th style="display:none;">Cuota</th>
+                      <th>Grupo</th>
+                      <th>Más Información</th>
+                      <th>Estado</th>
+                      <th>Editar</th>
+                      <th>Eliminar</th>
+                    </tr>
+                    </thead>
 
-                </tbody>
-            </table>
-        </div-->
+                    <tbody id="cuerpoTablaBeneficiarios">
+                    </tbody>
+                </table>
+
+                 <div class="col-md-12 center text-center" id="paginator">
+                    <!--br>
+                    <ul class="pagination pager" id="myPager"></ul>
+                    <br>
+                  <span class="left" id="total_reg"></span-->
+                </div>
+
+            </div>
     </div>
 </div><!--div del wrapper que empieza después del sidenav-->

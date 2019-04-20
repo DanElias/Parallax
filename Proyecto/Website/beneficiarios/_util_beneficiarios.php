@@ -61,7 +61,7 @@ function imprimirnombreTutor($result){
   }
 }
 
-function tablaBeneficiario(){
+function tablaBeneficiario($script){
   include('controladores/_tabla_beneficiario.php');
 }
 
