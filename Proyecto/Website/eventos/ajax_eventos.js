@@ -8,6 +8,8 @@
     
     //Esta función abre el modal de más información con ajax cuando el usuario da click en mas informacion en la tabla de eventos registrados
     function mostrar_informacion_evento(id_evento){
+         console.log("el valor de id: ");
+         console.log(id_evento);
          $.post('_controller_modal_mas_informacion_evento.php', { id : id_evento } )
         .done(function(data){
             $('#modal_informacion_evento_ajax').html(data);
@@ -17,6 +19,7 @@
     
     //Esta función abre el modal con el form de editar evento cuando el usuario da click en editar en la tabla de eventos registrados
     function mostrar_editar_evento(id_evento){
+		
          $.post('_eventos_editar_form.php', { id : id_evento } )
         .done(function(data){
             $('#modal_editar_evento_ajax').html(data);
