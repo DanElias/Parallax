@@ -334,6 +334,46 @@ function registrar_Rol($nombre)
 }
 
 
+/******    CONSULTAS PROVEEDOR       *****/
+function obtenerProveedor()
+{
+
+    /*$conn = conectDb();
+
+    $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT rfc, alias, razon_social, nombre_contacto, telefono_contacto, cuenta_bancaria, banco  FROM proveedor";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
+function obtener_proveedor_id($rfc){
+
+    $conn = conectDb();
+    $sql = "SELECT rfc, alias, razon_social, nombre_contacto, telefono_contacto, cuenta_bancaria, banco FROM proveedor WHERE rfc = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s', $rfc);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
 function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco)
 {
     /*$conn = conectDb();
@@ -368,6 +408,49 @@ function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, 
     closeDB($conn);
 
 }
+
+
+
+function editar_proveedor($rfc_actual,$rfc_anterior, $alias, $razon, $nombre, $telefono, $cuenta, $banco){
+	$conn = conectDb();
+    $sql = "UPDATE proveedor SET rfc=?, alias=?, razon_social=?, nombre_contacto=?, telefono_contacto=?, cuenta_bancaria=?, banco=? WHERE rfc=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssssssss',$rfc_actual, $alias, $razon, $nombre, $telefono, $cuenta, $banco, $rfc_anterior);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+function eliminar_proveedor_id($rfc)
+{
+   
+    $conn = conectDb();
+
+    $sql = "DELETE FROM proveedor WHERE rfc = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$rfc);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    }else{
+      
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+/**************************/
+
 
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {
@@ -604,28 +687,6 @@ function obtenerUsuario()
     return $result;
 }
 
-function obtenerProveedor()
-{
-
-    /*$conn = conectDb();
-
-    $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
-    return $result;*/
-    $conn = conectDb();
-    $sql = "SELECT rfc, alias, razon_social, nombre_contacto, telefono_contacto, cuenta_bancaria, banco FROM proveedor";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-}
 
 function obtenerEgresos()
 {
