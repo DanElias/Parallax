@@ -1,8 +1,8 @@
 
 
     function mostrar_informacion_proveedor(rfc){
-        console.log("el valor de id: ");
-        console.log(rfc);
+        //console.log("el valor de id: ");
+        //console.log(rfc);
         
         $.post('_controller_modal_mas_informacion_proveedor.php', { id : rfc })
         .done(function(data){
