@@ -23,14 +23,13 @@ if (isset($_GET['id']) && $_GET['id'] != ""){
              if (file_exists($filename)) { //si existe en la base de datos una imagen con ese nombre, la elimino del folder de uploads
                 unlink($filename); //en teoría esta función siempre debería de funcionar porque es de PHP
             }
-
+            header("location:_eventos_vista.php");
             //recargo la página
-            header_html();
-            sidenav_html();
-            evento_html();
-            form_evento_html();
-            controller_tabla_eventos_php();
-            
+            //header_html();
+            //sidenav_html();
+            //evento_html();
+            //form_evento_html();
+            //controller_tabla_eventos_php();
             echo
             "<script type='text/javascript'>
                             alert(\"¡El evento se ha borrado de manera exitosa!\");
@@ -59,7 +58,7 @@ function mostrar_alerta_error_eliminar()
     evento_html();
     form_evento_html();
     controller_tabla_eventos_php();
-    alerta_error($_SESSION['error_evento']);
+    alerta_error($_SESSION['error_evento']); //Recordar que esta funcion se manda llamar en util_cuentas_contables.php
     echo
     "<script type='text/javascript'>
             jQuery(document).ready(function(){

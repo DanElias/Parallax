@@ -11,7 +11,7 @@
             <div class="col s1">
                 <br>
                 <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center"
-                   style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
+                   style="font-size:2em;font-family: Roboto;" href="">
                     ×
                 </a>
             </div>
@@ -25,38 +25,44 @@
         <p>Aquí puede agregar un nuevo Proveedor</p>
 
 
-        <form class="col s12" action="registrar_proveedor.php" method="POST">
 
-            <div class="row">
+        <!-- VOY A QUITAR EL REQUIREDS-->
+        <form class="col s12" action="registrar_proveedor.php" method="POST" id="proveedor_form">
+           <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">face</i>
-                    <input type="text" class="validate" name="rfc" id="rfc" required>
+                    <input  maxlength="13" type="text" class="validate" name="rfc" id="rfc" required >
                     <label for="rfc">RFC</label>
+                    <p id="error_rfc"></p>
                 </div>
 
                 <div class="input-field col s4">
                     <i class="material-icons prefix">attach_money</i>
-                    <input type="text" class="validate" id="alias" name="alias" required>
+                    <input maxlength="20" type="text" class="validate" id="alias" name="alias" required>
                     <label for="alias">Alias</label>
+                    <p id="error_alias"></p>
                 </div>
 
                 <div class="input-field col s4">
                     <i class="material-icons prefix">home</i>
-                    <input type="text" class="validate" name="razon_social" id="razon_social" required>
+                    <input maxlength="30" type="text" class="validate" name="razon_social" id="razon_social" required>
                     <label for="razon_social">Razon social</label>
+                    <p id="error_razon"></p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">domain</i>
-                    <input type="text" class="validate" name="nombre_contacto" id="contacto" required>
+                    <input maxlength="40" type="text" class="validate" name="nombre_contacto" id="nombre_contacto" required >
                     <label for="contacto">Nombre contacto</label>
+                    <p id="error_nombre"></p>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">perm_phone_msg</i>
-                    <input type="text" class="validate" name="telefono_proveedor" id="telefono_proveedor" required>
+                    <input maxlength="20" type="text" class="validate" name="telefono_proveedor" id="telefono_proveedor" required >
                     <label for="telefono_proveedor">Telefono</label>
+                    <p id="error_telefono"></p>
                 </div>
             </div>
 
@@ -65,13 +71,15 @@
 
                 <div class="input-field col s6">
                     <i class="material-icons prefix">account_balance</i>
-                    <input type="text" class="validate" id="banco" name="banco" required>
+                    <input maxlength="40" type="text" class="validate" id="banco" name="banco" required>
                     <label for="banco">Banco</label>
+                    <p id="error_banco"></p>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">attach_money</i>
-                    <input type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required>
+                    <input maxlength="18" type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required>
                     <label for="cuenta_bancaria">Cuenta bancaria</label>
+                    <p id="error_cuenta"></p>
                 </div>
 
 

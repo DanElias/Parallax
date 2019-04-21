@@ -68,9 +68,9 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                                 <div class="row">
                                     <div class="input-field col s6">
                                       <i class="material-icons prefix">event</i>
-                                      <input  type="text" class="validate" name="nombre_evento" id="nombre_evento" required value="' . $row['nombre'] . '" required onkeyup="validar_campo_evento(\'nombre_evento\',\'#validar_nombre_evento\')">
+                                      <input  type="text" class="validate" name="enombre_evento" id="enombre_evento" required value="' . $row['nombre'] . '" required onkeyup="validar_campo_evento(\'enombre_evento\',\'#evalidar_nombre_evento\')">
                                       <label for="nombre_evento">Nombre del evento</label>
-                                      <div class="red-text text-accent-3" id="validar_nombre_evento"></div>
+                                      <div class="red-text text-accent-3" id="evalidar_nombre_evento"></div>
                                       <input  type="hidden" name="id_evento" id="id_evento" value=' . $row['id_evento'] . '>
                                     </div>
                                     <div class="input-field col s2">
@@ -87,15 +87,15 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                                 <div class="row">
                                     <div class="input-field col s2">
                                       <i class="material-icons prefix">place</i>
-                                      <input  type="text" class="validate" name="lugar_evento" required id="lugar_evento" value="' . $row['lugar'] . '" required onkeyup="validar_campo_evento(\'lugar_evento\',\'#validar_lugar_evento\')">
+                                      <input  type="text" class="validate" name="elugar_evento" required id="elugar_evento" value="' . $row['lugar'] . '" required onkeyup="validar_campo_evento(\'elugar_evento\',\'#evalidar_lugar_evento\')">
                                       <label for="lugar_evento">Lugar</label>
-                                      <div class="red-text text-accent-3" id="validar_lugar_evento"></div>
+                                      <div class="red-text text-accent-3" id="evalidar_lugar_evento"></div>
                                     </div>
                                     <div class="input-field col s10">
                                       <i class="material-icons prefix">description</i>
-                                      <input  type="text" class="validate" name="descripcion_evento" required id="descripcion_evento" value="' . $row['descripcion'] . '" required onkeyup="validar_campo_evento(\'descripcion_evento\',\'#validar_descripcion_evento\')">
+                                      <input  type="text" class="validate" name="edescripcion_evento" required id="edescripcion_evento" value="' . $row['descripcion'] . '" required onkeyup="validar_campo_evento(\'edescripcion_evento\',\'#evalidar_descripcion_evento\')">
                                       <label for="descripcion_evento">Descripción</label>
-                                      <div class="red-text text-accent-3" id="validar_descripcion_evento"></div>
+                                      <div class="red-text text-accent-3" id="evalidar_descripcion_evento"></div>
                                     </div>
                                 </div>
                                 
@@ -125,7 +125,7 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                                 <div class="my_modal_buttons">
                                     <div class="row">
                                         <div class="col s6">
-                                            <button class="btn waves-effect waves-light" type="submit" name="submit" id="submit">Guardar
+                                            <button class="btn waves-effect waves-light" type="submit" name="esubmit" id="esubmit">Guardar
                                                 <i class="material-icons right">check_circle_outline</i>
                                             </button>
                                         </div>

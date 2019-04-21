@@ -1,10 +1,9 @@
-
 <?php
 
 /*
     Autor: Daniel Elias
-        Este archivo php se encarga de realizar validaciones de campos del form de registrar evento y de editar evento
-        Se manda llamar a gtravés del ajax_eventos.js 
+        Este archivo php se encarga de realizar validaciones de campos del form de registrar cuenta contable  y de editar cuenta contable
+        Se manda llamar a gtravés del ajax_cuentas_contables.js 
         utiliza echoes porque es mandado llamar a través de ajax con llamadas asíncronas
 */
 
@@ -14,37 +13,29 @@
     if(isset($_POST['id_respuesta'])){ 
         switch ($_POST['id_respuesta']) { // con este switch veo a que funciones llamar dependiendo de donde el usuario esta escribiendo
             
-            case '#validar_nombre_evento':
-                echo validar_nombre_evento();
+            case '#validar_nombre_cuenta':
+                echo validar_nombre_cuenta();
             break;
             
-            case '#evalidar_nombre_evento':
-                echo validar_nombre_evento();
+            case '#evalidar_nombre_cuenta':
+                echo validar_nombre_cuenta();
             break;
             
-            case '#validar_lugar_evento':
-                echo validar_lugar_evento();
+            case '#validar_descripcion_cuenta':
+                echo validar_descripcion_cuenta();
             break;
             
-            case '#evalidar_lugar_evento':
-                echo validar_lugar_evento();
-            break;
-            
-            case '#validar_descripcion_evento':
-                echo validar_descripcion_evento();
-            break;
-            
-            case '#evalidar_descripcion_evento':
-                echo validar_descripcion_evento();
+            case '#evalidar_descripcion_cuenta':
+                echo validar_descripcion_cuenta();
             break;
         }
     }
     
-    //Casos de Prueba Nombre Evento: 
+    //Casos de Prueba Nombre Cuenta: 
     //1) Validar que no esté vacío o que tenga puros espacios
     //2) Validar que no tenga caracteres especiales
     //3) Validar que no tenga sólo números
-    function validar_nombre_evento(){
+    function validar_nombre_cuenta(){
          if(isset($_POST['input'])){
              
             if(ctype_space($_POST['input']) || $_POST['input']==""){
@@ -65,41 +56,12 @@
          }
     }
     
-    //Casos de Prueba Fecha Evento: Validados por Materialize: no se pueden introducir fechas que no existan, se cambian a la más cercana válida
     
-    //Casos de Prueba Hora Evento: Validados por Materialize: no se pueden introducir horasque no existan, se cambian a la más cercana válida
-     
-    //Casos de Prueba Lugar Evento: 
+    //Casos de Prueba Descripcion Cuenta: 
     //1) Validar que no esté vacío o que tenga puros espacios
     //2) Validar que no tenga caracteres especiales
     //3) Validar que no tenga sólo números
-    function validar_lugar_evento(){
-         if(isset($_POST['input'])){
-             
-            if(ctype_space($_POST['input']) || $_POST['input']==""){
-                echo "*Campo obligatorio";
-            }
-            
-            else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['input']))){
-                 echo "*El lugar no puede contener caracteres especiales (*&_/-%#)";
-            }
-             
-            else if(is_numeric($_POST['input'])){
-                echo "*El lugar no puede contener solo números";
-            }
-           
-            else{
-                echo "";
-            }  
-         }
-    }
-    
-    
-    //Casos de Prueba Descripcion Evento: 
-    //1) Validar que no esté vacío o que tenga puros espacios
-    //2) Validar que no tenga caracteres especiales
-    //3) Validar que no tenga sólo números
-    function validar_descripcion_evento(){
+    function validar_descripcion_cuenta(){
          if(isset($_POST['input'])){
              
             if(ctype_space($_POST['input']) || $_POST['input']==""){

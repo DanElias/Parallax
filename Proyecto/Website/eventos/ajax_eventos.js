@@ -8,6 +8,8 @@
     
     //Esta función abre el modal de más información con ajax cuando el usuario da click en mas informacion en la tabla de eventos registrados
     function mostrar_informacion_evento(id_evento){
+         console.log("el valor de id: ");
+         console.log(id_evento);
          $.post('_controller_modal_mas_informacion_evento.php', { id : id_evento } )
         .done(function(data){
             $('#modal_informacion_evento_ajax').html(data);
@@ -17,6 +19,7 @@
     
     //Esta función abre el modal con el form de editar evento cuando el usuario da click en editar en la tabla de eventos registrados
     function mostrar_editar_evento(id_evento){
+		
          $.post('_eventos_editar_form.php', { id : id_evento } )
         .done(function(data){
             $('#modal_editar_evento_ajax').html(data);
@@ -36,11 +39,17 @@
         .done(function(data){ //Descubrí que html(data) literalmente inserta un archivo json en el html
             
             json=JSON.stringify(data); //por eso hay que cambiar ese json a un string
-            json = json.replace('\\',''); //el string se guarda con un /n y comillas ""
-            json = json.replace('"','');//por eso con .replace quito estos caracteres que no me sirven
-            json = json.replace('"','');
-            json = json.replace('n','');
-            $(id_respuesta).html(json);//ahora si en vez de solo insertar el json en el html, inserto un string :)
+            
+            if(json=='"\\n"'){ //solo cuando sea esto porque si no me borra las n's de las respuestas en rojo
+                json = json.replace('\\',''); //el string se guarda con un /n y comillas ""
+                json = json.replace('"','');//por eso con .replace quito estos caracteres que no me sirven
+                json = json.replace('"','');
+                json = json.replace('n','');
+                $(id_respuesta).html(json);//ahora si en vez de solo insertar el json en el html, inserto un string :)
+            }
+            else{
+                $(id_respuesta).html(data);
+            }
             
             //como se insertó un string puedo usar .text() y comparar con string
             //lo que estoy haciendo aqui es ver si no hay errores desplegados en rojo debajo de los text inputs
@@ -49,6 +58,12 @@
                 $('#submit').show();
             }else{
                  $('#submit').hide();
+            }
+            
+            if($('#evalidar_nombre_evento').text()=="" && $('#evalidar_lugar_evento').text()=="" && $('#evalidar_descripcion_evento').text()==""){
+                $('#esubmit').show();
+            }else{
+                 $('#esubmit').hide();
             }
 
         });

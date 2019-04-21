@@ -4,7 +4,17 @@
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 
 //Funcion que va a ir en queries
+
+
 session_start();
+/*
+if(isset($_POST["submit"])){
+    echo "RFC DEL FORM EDITADO:". $_POST["rfc"];
+
+    echo "<br>RFC ANTERIOR : ". $_SESSION['rfc'];
+
+}*/
+
 
 if (isset($_POST["submit"])) {
 
@@ -35,6 +45,9 @@ if (isset($_POST["submit"])) {
 
     ){
         $flag = true;
+        //echo $_POST["rfc"]."<br>".$_POST["alias"]."<br>".$_POST["razon_social"]."<br>".$_POST["nombre_contacto"]."<br>".$_POST["telefono_proveedor"]."<br>".$_POST["banco"]."<br>".$_POST["cuenta_bancaria"];
+
+        
 
         //RFC DEBE SER EXACTAMENTE 13, SOLO NUMEROS Y LETRAS
 
@@ -78,57 +91,29 @@ if (isset($_POST["submit"])) {
         //CUENTA DE 20, SOLO NUMEROS
         if(strlen($_POST["cuenta_bancaria"])<18){
             $flag = false;
-            echo "<br>CUENTA MALA";
-            //echo "No tiene 18";
-            //mensaje de que no lo tiene
+            echo "<br>CUENTA MALA";          //echo "No tiene 18";         //mensaje de que no lo tiene
 
         }
 
-        if(!$flag){
-            echo "<br>NO SE MANDARA EL REGISTRO";
+        if($flag){
+            echo "mandara el edit con ".$_SESSION['rfc'];
+            if(editar_proveedor($_POST['rfc'], $_SESSION['rfc'], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"])){
+  
+                header("location:./_proveedor_vista.php");
+                echo  "<script type='text/javascript'>
+                                    alert('¡El proveedor se ha actualizado de manera exitosa!');
+                            </script>";
+            }else{
+                echo "LA CONSULTA FALLO";
+            }  
             //mostrar errores
         }else{
-            echo "SI SE MANDARA ";   
-            if(registrar_proveedor($_POST["rfc"], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"])){
-                 echo  "<script type='text/javascript'>
-                                    alert('¡El proveedor se ha registrado de manera exitosa!');
-                            </script>";
-                 header("location:./_proveedor_vista.php");
-
-            }
-            //$rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco
-            /*
-            $registrar = registrar_proveedor($_POST["rfc"], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"]);
-            //echo "<h1>".$registrar."</h1>";
+            echo "NO SE MANDARA  ";   
             
-            if($registrar==1){
-
-                echo  "<script type='text/javascript'>
-                                    alert('¡El proveedor se ha registrado de manera exitosa!');
-                            </script>";
-                 //header("location:./_proveedores_vista.php");
-            }else{
-                 echo "<h1>NO FUNCIONO</h1>";
-            }
-        }*/
-
-        /*
-        
-        //$rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco
-
-        
-       // $registrar = registrar_proveedor($_POST["rfc"], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"]);
-
-        
-        if($registrar){
-             echo "<h1>DEBE ESTAR EN LA BASE DE DATOS</h1>";
-        }else{
-             echo "<h1>NO FUNCIONO</h1>";
         }
-    }*/
-    
-    //header("location:./_proveedores_vista.php");
-        }
+  
     }
-}
+    
+}  //header("location:./_proveedores_vista.php");
+    
 ?>

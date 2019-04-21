@@ -46,10 +46,10 @@ if (isset($_POST["submit"])) {
             //Validar que la imagen insertada sea valida
             if (validar_imagen()){
                 
-                //editarEvento es una funcion de connection queries que hace un UPDATE en la tabla
-                //también checo que si haya un elemento con ese id haha
+                //insertarEvento es una funcion de connection queries que hace un INSERT en la tabla
                  if (insertarEvento($_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])){
                     
+                    //ya que se hizo bien el registro recargo la página y le muestro reto al usuario de que fue lo que se guardó
                     header_html();//recargo la pagina
                     sidenav_html();
                     evento_html();
@@ -194,7 +194,7 @@ function validar_nombre_evento(){
         return false;
     }
     
-    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['nombre_evento']))){
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['nombre_evento'])) && preg_match("/^\pL+(?>[- ']\pL+)*$/u",$_POST['nombre_evento'])){
          $_SESSION['error_evento'].= "El nombre no puede contener caracteres especiales (*&_/-%#)";
          return false;
     }
@@ -215,7 +215,7 @@ function validar_lugar_evento(){
         return false;
     }
     
-    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['lugar_evento']))){
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['lugar_evento'])) && preg_match("/^\pL+(?>[- ']\pL+)*$/u",$_POST['lugar_evento'])){
          $_SESSION['error_evento'].= "El lugar no puede contener caracteres especiales (*&_/-%#)";
          return false;
     }
@@ -236,7 +236,7 @@ function validar_descripcion_evento(){
          return false;
     }
     
-    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['descripcion_evento']))){
+    else if (!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['descripcion_evento'])) && preg_match("/^\pL+(?>[- ']\pL+)*$/u",$_POST['descripcion_evento'])){
          $_SESSION['error_evento'].= "La descripción no puede contener caracteres especiales (*&_/-%#)";
          return false;
     }

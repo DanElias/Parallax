@@ -12,9 +12,11 @@ function conectDb()
 
     if($con->connect_error){
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
-        include("error_server_card.html");
+      //include("error_server_card.html");
       //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
-
+      alertaNoHayConexion();
+      include("../views/_footer_admin.html");
+      die();
     }
     $con->set_charset("utf8");
     return $con;
@@ -334,6 +336,46 @@ function registrar_Rol($nombre)
 }
 
 
+/******    CONSULTAS PROVEEDOR       *****/
+function obtenerProveedor()
+{
+
+    /*$conn = conectDb();
+
+    $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT rfc, alias, razon_social, nombre_contacto, telefono_contacto, cuenta_bancaria, banco  FROM proveedor";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
+function obtener_proveedor_id($rfc){
+
+    $conn = conectDb();
+    $sql = "SELECT rfc, alias, razon_social, nombre_contacto, telefono_contacto, cuenta_bancaria, banco FROM proveedor WHERE rfc = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s', $rfc);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
 function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco)
 {
     /*$conn = conectDb();
@@ -368,6 +410,49 @@ function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, 
     closeDB($conn);
 
 }
+
+
+
+function editar_proveedor($rfc_actual,$rfc_anterior, $alias, $razon, $nombre, $telefono, $cuenta, $banco){
+	$conn = conectDb();
+    $sql = "UPDATE proveedor SET rfc=?, alias=?, razon_social=?, nombre_contacto=?, telefono_contacto=?, cuenta_bancaria=?, banco=? WHERE rfc=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssssssss',$rfc_actual, $alias, $razon, $nombre, $telefono, $cuenta, $banco, $rfc_anterior);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+function eliminar_proveedor_id($rfc)
+{
+   
+    $conn = conectDb();
+
+    $sql = "DELETE FROM proveedor WHERE rfc = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$rfc);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    }else{
+      
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+/**************************/
+
 
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {
@@ -438,6 +523,23 @@ function obtenerCuentaPorID($id_cuentacontable)
     closeDB($conn);
     return $result;
 }
+
+
+function obtenerIdCuentaDelEgreso($id_cuentacontable)
+{
+    $conn = conectDb();
+    $sql = "SELECT id_cuentacontable FROM egreso WHERE id_cuentacontable = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
 function obtenerUsuariosPorID($id_usuario){
 
     /*$conn = conectDb();
@@ -604,28 +706,6 @@ function obtenerUsuario()
     return $result;
 }
 
-function obtenerProveedor()
-{
-
-    /*$conn = conectDb();
-
-    $sql = "SELECT rfc, alias, telefono_contacto, cuenta_bancaria FROM proveedor";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
-    return $result;*/
-    $conn = conectDb();
-    $sql = "SELECT rfc, alias, razon_social, nombre_contacto, telefono_contacto, cuenta_bancaria, banco FROM proveedor";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-}
 
 function obtenerEgresos()
 {
@@ -783,6 +863,57 @@ function obtenerCuentas()
     }
     closeDB($conn);
     return $result;
+  }
+  
+  
+  function alertaNoHayConexion(){
+    $alerta='
+    <script>M.AutoInit();</script>
+    <div id="_form_alerta_error" class="modal  my_modal">
+        <div class="row my_modal_header_row">
+            <div class="my_modal_header_eliminar z-depth-2 col s12">
+                <h4 class="my_modal_header">Lo sentimos</h4>
+            </div>
+        </div>
+        <br><br>
+        <div class="modal-content my_modal_content">
+            <br><br>
+            <h5 class="my_modal_description2"></h5>
+            <div class="row">
+                <div class="col s12">
+                        <h5> 
+                          Lo sentimos, no hay conexión con la base de datos. Asegúrate de estar conectado a internet o contacta al administrador.
+                          <br><br> (Error 505)
+                        <h5>
+                </div>
+            <div>
+            <br>
+            <br>
+
+            <div class="my_modal_buttons">
+                <div class="row">
+
+                    <div class="col s12 m12">
+                        <button class="modal-close btn waves-effect waves-light modal-close">Ok, estoy enterado.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>';
+    
+   
+    $alerta.= "<script type='text/javascript'>
+            $(document).ready(function(){
+                  $('#_form_alerta_error').modal();
+                  $(document).ready(function(){
+                      $('#_form_alerta_error').modal('open');
+                  });
+            });
+    </script>";
+    
+    echo $alerta;
+  
   }
 
 ?>
