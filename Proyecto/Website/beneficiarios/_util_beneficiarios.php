@@ -62,21 +62,136 @@ function imprimirnombreTutor($result){
 }
 
 function tablaBeneficiario($script){
-  include('controladores/_tabla_beneficiario.php');
+  $result = $script;
+  $query_table = "";
+  $today = new Datetime(date('y.m.d'));
+  if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)){
+      $fecha = new Datetime($row['fecha_nacimiento']);
+      $diff = $today->diff($fecha);
+      $query_table .= "<tr>";
+      $query_table .= '<td class="first_col_data_table">'.$row['id_beneficiario'].'</td>';
+      $query_table .= '<td>'.$row['nombre'].' '.$row['apellido'].'</td>';
+      $query_table .= '<td>'.$diff->y.' años</td>';
+      $query_table .= '<td style="display:none;">' . $row["fecha_nacimiento"] . '</td>';
+      $query_table .= '<td style="display:none;">' . $row["sexo"] . '</td>';
+      $query_table .= '<td style="display:none;">' . $row["grado_escolar"] . '</td>';
+      $query_table .= '<td style="display:none;">' . $row["domicilio"] . '</td>';
+      $query_table .= '<td style="display:none;">' . $row["nivel_socioeconomico"] . '</td>';
+      $query_table .= '<td style="display:none;">' . $row["nombre_escuela"] . '</td>';
+      $query_table .= '<td style="display:none;">' . $row["enfermedades_alergias"] . '</td>';
+      $query_table .= '<td style="display:none;">' . $row["cuota"] . '</td>';
+      $query_table .= '<td>'.$row['grupo'].'</td>';
+      $query_table .= '<td><a class="modal-trigger" href="#_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'">Más información</a></td>';
+      $query_table .= '<td>';
+      $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light green accent-3 hoverable" ';
+      $query_table .= 'href="#modal_estado_beneficiarios_'.$row['id_beneficiario'].'"><i class="material-icons">power_settings_new</i></a>';
+      $query_table .= '</td>';
+      $query_table .= '<td>';
+      $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"';
+      $query_table .= 'href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>';
+      $query_table .= '</td>';
+      $query_table .= '<td>';
+      $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"';
+      $query_table .= 'href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>';
+      $query_table .= '</td>';
+      $query_table .= '</tr>';
+    }
+    echo $query_table;
+
+  } else { // si no hay eventos registrados en la tabla
+      echo "<script>alert('No encontramos Beneficiarios registrados');</script>";
+  }
+}
+
+function modalEstado(){
+  $result = getInfoBeneficiarios();
+  if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)){
+      $estado = getEstadoById($row['id_beneficiario']);
+
+      echo '<!-- Modal Structure -->
+      <div id="modal_estado_beneficiarios_'.$row['id_beneficiario'].'" class="modal my_modal">
+      <div class="row my_modal_header_row">
+          <div class="my_modal_header_estado z-depth-2 col s12">
+              <h4 class="my_modal_header">Estado Beneficiario</h4>
+          </div>
+      </div>
+      <br><br>
+      <div class="modal-content my_modal_content">
+          <br><br><br>
+          <h5 class="my_modal_description2">Cambiar el estado del beneficiario</h5>
+          <br>
+          <br>
+          <br>
+          <form id="formaEditarEstado">
+          <div>
+              <!-- Switch -->
+              <div class="switch col s6 center vertical-align">
+                  <label>
+                      Beneficiario Inactivo';
+      if($estado == 0){
+        echo '<input type="checkbox">';
+      } else{
+        echo '<input type="checkbox" checked>';
+      }
+
+      echo '<span class="lever"></span>
+                      Beneficiario Activo!
+                  </label>
+              </div>
+          </div>
+          <br><br>
+
+          <div class="my_modal_buttons">
+              <div class="row">
+                  <div class="col s6">
+                      <button class="modal-close btn waves-effect waves-light" type="submit" name="action">Cambiar
+                          Estado<i class="material-icons right">check_circle_outline</i>
+                      </button>
+                  </div>
+                  <div class="col s6">
+                      <button class="modal-close btn waves-effect waves-light red" modal-close>NO Cambiar Estado
+                          <i class="material-icons right">highlight_off</i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          </form>
+          </div>
+      </div>';
+    }
+  } else{
+    echo '<script>alert("No se encontró el estado")</script>';
+  }
 }
 
 function modalesBeneficiario($result){
+  $today = new Datetime(date('y.m.d'));
   while($row = mysqli_fetch_assoc($result)){
+    $fecha = new Datetime($row['fecha_nacimiento']);
+    $diff = $today->diff($fecha);
+    $estado = getEstadoById($row['id_beneficiario']);
     echo '<!-- Modal Structure -->
     <div id="_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'" class="modal modal-fixed-footer my_big_modal ">
-        <div class="row my_modal_header_row">
-
-            <div class="my_modal_header1 z-depth-2 col s12">
-                <h4 class="my_modal_header">Información Beneficiario</h4>
-
+    <div class="row my_modal_header_row">
+        <div class="my_modal_header1">
+            <div class="col s11 my_form_title">
+                información beneficiario
+                <i class="material-icons my_title_icon">accessibility_new</i>
             </div>
 
+            <div class="col s1">
+                <br>
+                <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center"
+                   style="font-size:2em;font-family: Roboto;">
+                    ×
+                </a>
+            </div>
         </div>
+
+
+    </div>
         <br><br><br>
 
         <div class="modal-content my_modal_content">
@@ -84,22 +199,22 @@ function modalesBeneficiario($result){
             <div class="row">
                 <div class="col s3">
                     <p class="mi_titulo s6">ID Beneficiario:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">319</p>
+                    <p class="mi_parrafo s6">'.$row['id_beneficiario'].'</p>
                 </div>
 
                 <div class="col s3">
                     <p class="mi_titulo s6">Nombre:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Carlos Sánchez</p>
+                    <p class="mi_parrafo s6">'.$row['nombre'].' '.$row['apellido'].'</p>
                 </div>
 
                 <div class="col s3">
                     <p class="mi_titulo s6">Fecha de Nacimiento</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">31/09/2002</p>
+                    <p class="mi_parrafo s6">'.$row['fecha_nacimiento'].'</p>
                 </div>
 
                 <div class="col s3">
                     <p class="mi_titulo s6">Edad:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">17</p>
+                    <p class="mi_parrafo s6">'.$diff->y.' años</p>
                 </div>
             </div>
 
@@ -107,17 +222,32 @@ function modalesBeneficiario($result){
 
                 <div class="col s3">
                     <p class="mi_titulo s6">Sexo:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Hombre</p>
+                    <p class="mi_parrafo s6">';
+
+      if($row['sexo'] == 'H'){
+        echo 'Hombre';
+      } else{
+        echo 'Mujer';
+      }
+                  echo  '</p>
                 </div>
 
                 <div class="col s3">
                     <p class="mi_titulo s6">Estado:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Activo</p>
+                    <p class="mi_parrafo s6">';
+        if($estado == 1){
+          echo 'Activo';
+        } else{
+          echo 'Inactivo';
+        }
+
+
+                echo '</p>
                 </div>
 
                 <div class="col s3">
                     <p class="mi_titulo s6">Status Economico:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Medio Bajo</p>
+                    <p class="mi_parrafo s6">'.$row['nivel_socioeconomico'].'</p>
                 </div>
 
             </div>
@@ -125,17 +255,17 @@ function modalesBeneficiario($result){
             <div class="row">
                 <div class="col s4">
                     <p class="mi_titulo s6">Grado Escolar:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">1ro de secundaria</p>
+                    <p class="mi_parrafo s6">'.$row['grado_escolar'].'</p>
                 </div>
 
                 <div class="col s4">
                     <p class="mi_titulo s6">Grupo:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Osos</p>
+                    <p class="mi_parrafo s6">'.$row['grupo'].'</p>
                 </div>
 
                 <div class="col s4">
                     <p class="mi_titulo s6">Domicilio:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Calle Escondida #31 Col. Bolaños</p>
+                    <p class="mi_parrafo s6">'.$row['domicilio'].'</p>
                 </div>
             </div>
 
@@ -143,17 +273,17 @@ function modalesBeneficiario($result){
             <div class="row">
                 <div class="col s4">
                     <p class="mi_titulo s6">Nombre Escuela:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Secundaria Técnica No.21</p>
+                    <p class="mi_parrafo s6">'.$row['nombre_escuela'].'</p>
                 </div>
 
                 <div class="col s5">
                     <p class="mi_titulo s6">Enfermedades y Alergias:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">Alergia al paracetamol</p>
+                    <p class="mi_parrafo s6">'.$row['enfermedades_alergias'].'</p>
                 </div>
 
                 <div class="col s2">
                     <p class="mi_titulo s6">Cuota:</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">$150</p>
+                    <p class="mi_parrafo s6">'.$row['cuota'].'</p>
                 </div>
             </div>
 

@@ -1,5 +1,6 @@
 <?php
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
+//session_start();
   require_once("../basesdedatos/_conection_queries_db.php");
   //$script =
   $result = $script;
@@ -38,8 +39,8 @@ cuota*/
       $query_table .= '<td>'.$row['grupo'].'</td>';
       $query_table .= '<td><a class="modal-trigger" href="#_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'">Más información</a></td>';
       $query_table .= '<td>';
-      $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger green accent-3 hoverable"';
-      $query_table .= 'href="#_form_estado_beneficiarios_.'$row['id_beneficiario'].'"><i class="material-icons">power_settings_new</i></a>';
+      $query_table .= '<a class="btn btn-medium waves-effect waves-light green accent-3 hoverable" ';
+      $query_table .= 'href="#modal_estado_beneficiarios_'.$row['id_beneficiario'].'"><i class="material-icons">power_settings_new</i></a>';
       $query_table .= '</td>';
       $query_table .= '<td>';
       $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"';
@@ -52,7 +53,8 @@ cuota*/
       $query_table .= '</tr>';
     }
     echo $query_table;
-  /*echo '
+    //include('estadoController.php');
+  /*echo 'modal-trigger
 
       <div class="sections_header">
 

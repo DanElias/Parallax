@@ -1,10 +1,12 @@
 <?php
-session_start();
 require_once('../../basesdedatos/_conection_queries_db.php');
-$estado = $_POST['estado'];
-$opcion = $_POST['opcion'];
-$id = $_POST['id'];
-<div id="_form_estado_beneficiarios" class="modal  my_modal">
+$result = getInfoBeneficiarios();
+if (mysqli_num_rows($result) > 0) {
+  while($row = mysqli_fetch_assoc($result)){
+    $estado = getEstadoById($row['id_beneficiario']);
+
+    echo '<!-- Modal Structure -->
+    <div id="modal_estado_beneficiarios_'.$row['id_beneficiario'].'" class="modal my_modal">
     <div class="row my_modal_header_row">
         <div class="my_modal_header_estado z-depth-2 col s12">
             <h4 class="my_modal_header">Estado Beneficiario</h4>
@@ -22,9 +24,14 @@ $id = $_POST['id'];
             <!-- Switch -->
             <div class="switch col s6 center vertical-align">
                 <label>
-                    Beneficiario Inactivo
-                    <input type="checkbox" checked>
-                    <span class="lever"></span>
+                    Beneficiario Inactivo';
+    if($estado == 0){
+      echo '<input type="checkbox">';
+    } else{
+      echo '<input type="checkbox" checked>';
+    }
+
+    echo '<span class="lever"></span>
                     Beneficiario Activo!
                 </label>
             </div>
@@ -46,7 +53,11 @@ $id = $_POST['id'];
             </div>
         </div>
         </form>
-    </div>
-</div>
+        </div>
+    </div>';
+  }
+} else{
+  echo '<script>alert("No se encontró el estado")</script>';
+}
 
 ?>

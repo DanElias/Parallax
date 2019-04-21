@@ -750,7 +750,14 @@ function obtenerCuentas()
       $stmt->close();
     }
     closeDB($conn);
-    return $result;
+    if ($result->num_rows > 0){
+      while($row = $result->fetch_assoc()) {
+          $estado = $row['estado'];
+      }
+    } else{
+      $estado = -1;
+    }
+    return $estado;
   }
 
   function modificarEstado($id,$estado){
