@@ -96,7 +96,7 @@ $(document).ready(function(){
      var empresa= $('#empresa').val();
      var grado= $('#grado_estudios_tutor').val();
      var titulo= $('#titulo').val();
-     $.post('controladores/registrarTutor.php', { nombre : nombre, apellido : apellido, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
+     $.post('controladores/registrarTutor.php', { nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
      .done(function(data){
        console.log('Insercion de tutor correcta');
        alert('Tutor registrado con éxito!');

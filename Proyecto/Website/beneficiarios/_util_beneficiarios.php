@@ -139,9 +139,9 @@ function modalEstado($result){
                   <label>
                       Beneficiario Inactivo';
       if($estado == 0){
-        echo '<input type="checkbox" >';//id="palancaEstado_'.$row['id_beneficiario'].'">';
+        echo '<input type="checkbox" name="palanca" id="palancaEstado_'.$row['id_beneficiario'].'">';//id="palancaEstado_'.$row['id_beneficiario'].'">';
       } else{
-        echo '<input type="checkbox" checked > ';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
+        echo '<input type="checkbox" checked name="palanca" id="palancaEstado_'.$row['id_beneficiario'].'" > ';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
       }
 
       echo '<span class="lever"></span>
@@ -159,18 +159,19 @@ function modalEstado($result){
                       </button>
                   </div>
                   <div class="col s6">
-                      <button class="modal-close btn waves-effect waves-light red" modal-close>NO Cambiar Estado
+                      <button class="modal-close btn waves-effect waves-light red" type="cancel">NO Cambiar Estado
                           <i class="material-icons right">highlight_off</i>
                       </button>
                   </div>
               </div>
           </div>
           </form>';
-          /*echo '<script>
-                $(document).ready(function(){
-                  $("#formaEditarEstado_'.$row['id_beneficiario'].'").submit(function (ev){
+          echo '<script>
+          $(document).ready(funtion(){
+                $("#formaEditarEstado_'.$row['id_beneficiario'].'").submit(function (ev){
                     ev.preventDefault();
                     var est=-1;
+
                     if($("#palancaEstado_'.$row['id_beneficiario'].'").prop("checked")){
                       est = 1;
                     } else{
@@ -188,8 +189,8 @@ function modalEstado($result){
                         console.log("Error");
                       })
                     });
-                });
-                </script>';*/
+                  });
+                </script>';
 
       echo '    </div>
       </div>';
