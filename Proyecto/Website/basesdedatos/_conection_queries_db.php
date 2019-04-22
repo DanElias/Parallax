@@ -432,7 +432,7 @@ function editar_proveedor($rfc_actual,$rfc_anterior, $alias, $razon, $nombre, $t
 
 function eliminar_proveedor_id($rfc)
 {
-   
+
     $conn = conectDb();
 
     $sql = "DELETE FROM proveedor WHERE rfc = ?";
@@ -444,7 +444,7 @@ function eliminar_proveedor_id($rfc)
       closeDB($conn);
       return true;
     }else{
-      
+
       closeDB($conn);
       return false;
     }
@@ -755,11 +755,11 @@ function obtenerCuentas()
 }
 
 
-  function registrarTutor($nombre, $telefono, $fecha, $ocupacion, $empresa, $grado, $titulo){
+  function insertarTutor($nombre, $apellido, $telefono, $fecha, $ocupacion, $empresa, $grado, $titulo){
     $conn = conectDb();
-    $sql = "INSERT INTO tutor(nombre, telefono, fecha_nacimiento, ocupacion, nombre_empresa, grado_estudio, titulo_obtenido) VALUES (?,?,'".$fecha."',?,?,?,?)";
+    $sql = "INSERT INTO tutor(nombre, apellido, telefono, fecha_nacimiento, ocupacion, nombre_empresa, grado_estudio, titulo_obtenido) VALUES (?,?,?,?,?,?,?,?)";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssssss',$nombre,$telefono,$ocupacion,$empresa,$grado,$titulo);
+      $stmt->bind_param('ssssssss',$nombre,$apellido,$telefono,$fecha,$ocupacion,$empresa,$grado,$titulo);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
@@ -864,8 +864,8 @@ function obtenerCuentas()
     closeDB($conn);
     return $result;
   }
-  
-  
+
+
   function alertaNoHayConexion(){
     $alerta='
     <script>M.AutoInit();</script>
@@ -881,7 +881,7 @@ function obtenerCuentas()
             <h5 class="my_modal_description2"></h5>
             <div class="row">
                 <div class="col s12">
-                        <h5> 
+                        <h5>
                           Lo sentimos, no hay conexión con la base de datos. Asegúrate de estar conectado a internet o contacta al administrador.
                           <br><br> (Error 505)
                         <h5>
@@ -901,8 +901,8 @@ function obtenerCuentas()
             </div>
         </div>
     </div>';
-    
-   
+
+
     $alerta.= "<script type='text/javascript'>
             $(document).ready(function(){
                   $('#_form_alerta_error').modal();
@@ -911,9 +911,9 @@ function obtenerCuentas()
                   });
             });
     </script>";
-    
+
     echo $alerta;
-  
+
   }
 
 ?>

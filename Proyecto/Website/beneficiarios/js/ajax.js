@@ -25,6 +25,7 @@ function imprimeTutorExterno(){
   .done(function(data){
     console.log("Funciono");
     $('#tablaExternaTutor').html(data);
+    M.AutoInit();
   });
 }
 
@@ -79,6 +80,39 @@ $(document).ready(function(){
         $('#qFruit').val(" ");
         $('#pFruit').val(" ");
         $('#cFruit').val(" ");
+        console.log('Error');
+      })
+    });
+});
+
+$(document).ready(function(){
+  $("#registroTutor").submit(function (ev){
+    ev.preventDefault();
+     var nombre= $('#nombre_tutor').val();
+     var apellido= $('#apellido_tutor').val();
+     var fecha= $('#fecha_nacimiento_tutor').val();
+     var telefono= $('#telefono').val();
+     var ocupacion= $('#ocupacion').val();
+     var empresa= $('#empresa').val();
+     var grado= $('#grado_estudios_tutor').val();
+     var titulo= $('#titulo').val();
+     $.post('controladores/registrarTutor.php', { nombre : nombre, apellido : apellido, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
+     .done(function(data){
+       console.log('Insercion de tutor correcta');
+       alert('Tutor registrado con éxito!');
+       $('#nombre_tutor').val("");
+       $('#apellido_tutor').val("");
+       $('#fecha_nacimiento_tutor').val("");
+       $('#telefono').val("");
+       $('#ocupacion').val("");
+       $('#empresa').val("");
+       $('#grado_estudios_tutor').val("");
+       $('#titulo').val("");
+       imprimeTutorExterno();
+      })
+      .fail(function(){
+        alert('Error en registro, verifique datos de entrada');
+
         console.log('Error');
       })
     });

@@ -1,4 +1,5 @@
 <?php
+require_once('../basesdedatos/_conection_queries_db.php');
 
 function header_html($titulo = "Beneficiarios")
 {
@@ -44,9 +45,17 @@ function imprimirnombreTutor($result){
   while($row = mysqli_fetch_assoc($result)){
 
     echo '<tr>
-      <td>';
-    echo $row['nombre'].' '.$row['apellido'];
-    echo '</td>
+      <td><label>
+        <input type="checkbox" class="filled-in center-align" id="benTut_'.$row['id_tutor'].'" />
+        <span></span>
+      </label></td>
+      <td><select id="parentesco" name="parentesco" required>
+          <option value="" disabled selected></option>
+          <option value="Padre">Padre</option>
+          <option value="Madre">Madre</option>
+          <option value="Tutor">Tutor</option>
+      </select></td>';
+    echo '<td>'.$row['nombre'].' '.$row['apellido'].'</td>
       <td><a class="modal-trigger" href="#_modal_informacion_tutor_'.$row['id_tutor'].'">Más información</a></td>
       <td>
           <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
@@ -61,8 +70,7 @@ function imprimirnombreTutor($result){
   }
 }
 
-function tablaBeneficiario($script){
-  $result = $script;
+function tablaBeneficiario($result){
   $query_table = "";
   $today = new Datetime(date('y.m.d'));
   if (mysqli_num_rows($result) > 0) {
@@ -104,8 +112,7 @@ function tablaBeneficiario($script){
   }
 }
 
-function modalEstado(){
-  $result = getInfoBeneficiarios();
+function modalEstado($result){
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)){
       $estado = getEstadoById($row['id_beneficiario']);
@@ -124,16 +131,17 @@ function modalEstado(){
           <br>
           <br>
           <br>
-          <form id="formaEditarEstado">
-          <div>
+          <form id="formaEditarEstado_'.$row['id_beneficiario'].'">';
+
+    echo '<div>
               <!-- Switch -->
               <div class="switch col s6 center vertical-align">
                   <label>
                       Beneficiario Inactivo';
       if($estado == 0){
-        echo '<input type="checkbox">';
+        echo '<input type="checkbox" >';//id="palancaEstado_'.$row['id_beneficiario'].'">';
       } else{
-        echo '<input type="checkbox" checked>';
+        echo '<input type="checkbox" checked > ';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
       }
 
       echo '<span class="lever"></span>
@@ -146,7 +154,7 @@ function modalEstado(){
           <div class="my_modal_buttons">
               <div class="row">
                   <div class="col s6">
-                      <button class="modal-close btn waves-effect waves-light" type="submit" name="action">Cambiar
+                      <button class="modal-close btn waves-effect waves-light" type="submit" name="cambiarEstado">Cambiar
                           Estado<i class="material-icons right">check_circle_outline</i>
                       </button>
                   </div>
@@ -157,8 +165,33 @@ function modalEstado(){
                   </div>
               </div>
           </div>
-          </form>
-          </div>
+          </form>';
+          /*echo '<script>
+                $(document).ready(function(){
+                  $("#formaEditarEstado_'.$row['id_beneficiario'].'").submit(function (ev){
+                    ev.preventDefault();
+                    var est=-1;
+                    if($("#palancaEstado_'.$row['id_beneficiario'].'").prop("checked")){
+                      est = 1;
+                    } else{
+                      est = 0;
+                    }
+                    $.post("controladores/estadoController.php", { id : '.$row['id_beneficiario'].', estado : est } )
+                     .done(function(data){
+                       console.log("Estado modificado");
+                       alert("Estado del beneficiario modificado!");
+
+                      })
+                      .fail(function(){
+                        alert("No se pudo modificar el estado");
+
+                        console.log("Error");
+                      })
+                    });
+                });
+                </script>';*/
+
+      echo '    </div>
       </div>';
     }
   } else{
@@ -171,6 +204,7 @@ function modalesBeneficiario($result){
   while($row = mysqli_fetch_assoc($result)){
     $fecha = new Datetime($row['fecha_nacimiento']);
     $diff = $today->diff($fecha);
+    $row_date = explode('-', $row['fecha_nacimiento']);
     $estado = getEstadoById($row['id_beneficiario']);
     echo '<!-- Modal Structure -->
     <div id="_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'" class="modal modal-fixed-footer my_big_modal ">
@@ -209,7 +243,7 @@ function modalesBeneficiario($result){
 
                 <div class="col s3">
                     <p class="mi_titulo s6">Fecha de Nacimiento</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">'.$row['fecha_nacimiento'].'</p>
+                    <p class="mi_parrafo s6">'.$row_date[2].'/'.$row_date[1].'/'.$row_date[0].'</p>
                 </div>
 
                 <div class="col s3">
