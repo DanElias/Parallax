@@ -132,7 +132,7 @@ if (mysqli_num_rows($result) > 0) {
                                   });
                             });
                     </script>";
-    echo '<script type="text/javascript" src="../js/validation_proveedor.js"></script>';
+   // echo '<script type="text/javascript" src="../js/validation_proveedor.js"></script>';
 
                     
     //M.updateTextFields() sirve para que se actualizen los text fields y se mueven los labels de los campos que ya estan llenos.}
