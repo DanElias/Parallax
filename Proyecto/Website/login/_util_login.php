@@ -16,7 +16,6 @@ function footer_hml()
 {
     include("../views/_footer_login.html");
 }
-
 ?>
 
 
