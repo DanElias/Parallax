@@ -98,7 +98,7 @@ if (isset($_POST["submit"])) {
         if($flag){
             echo "mandara el edit con:  ".$_SESSION['rfc2'];
             echo "mandara el edit con : ".$_POST['rfc2'];
-            /*
+            
             if(editar_proveedor($_POST['rfc2'], $_SESSION['rfc2'], $_POST["alias2"], $_POST["razon_social2"], $_POST["nombre_contacto2"], $_POST["telefono_proveedor2"], $_POST["cuenta_bancaria2"], $_POST["banco2"])){
   
                 header("location:./_proveedor_vista.php");
@@ -107,7 +107,7 @@ if (isset($_POST["submit"])) {
                             </script>";
             }else{
                 echo "LA CONSULTA FALLO";
-            }  */
+            }  
             //mostrar errores
         }else{
             echo "NO SE MANDARA  ";   
