@@ -11,6 +11,14 @@ $(document).ready(function(){
   	$("#error_banco").hide();
   	$("#error_cuenta").hide();
 
+    $("#error_rfc2").hide();
+    $("#error_alias2").hide();
+    $("#error_razon2").hide();
+    $("#error_nombre2").hide();
+    $("#error_telefono2").hide();
+    $("#error_banco2").hide();
+    $("#error_cuenta2").hide();
+
 
   	var error_rfc = false;
   	var error_alias = false;
@@ -19,6 +27,14 @@ $(document).ready(function(){
   	var error_telefono = false;
   	var error_banco = false;
   	var error_cuenta = false;
+
+    var error_rfc2 = false;
+    var error_alias2 = false;
+    var error_razon2 = false;
+    var error_nombre2 = false;
+    var error_telefono2 = false;
+    var error_banco2 = false;
+    var error_cuenta2 = false;
 	
   	$("#rfc").focusout(function() {
 		  check_rfc();
@@ -54,6 +70,42 @@ $(document).ready(function(){
   		check_cuenta();
 
   	});
+
+    /**********FORM DE EDITAR*******/
+    $("#rfc2").focusout(function() {
+      check_rfc2();
+
+    });
+
+    $("#alias2").focusout(function() {
+      check_alias2();
+
+    });
+
+    $("#razon_social2").focusout(function() {
+      check_razon2(); //llamo alias porque son las mismas condiciones
+
+    });
+
+    $("#nombre_contacto2").focusout(function() {
+      check_nombre2();
+
+    });
+
+    $("#telefono_proveedor2").focusout(function() {
+      check_telefono2();
+
+    });
+
+    $("#banco2").focusout(function() {
+      check_banco2(); //mismo que alias
+
+    });
+
+    $("#cuenta_bancaria2").focusout(function() {
+      check_cuenta2();
+
+    });
   	
 	/*******	PARA EVITAR QUE SE ENVÍE CON ERRORES			*******/
   
@@ -87,23 +139,73 @@ $(document).ready(function(){
 
   	});
 
+    $("#proveedor_form2").submit(function() {
+      error_rfc2 = false;
+      error_alias2 = false;
+      error_razon2 = false;
+      error_nombre2 = false;
+      error_telefono2 = false;
+      error_banco2 = false;
+      error_cuenta2 = false;
+    
+      check_rfc2();
+      check_alias2();
+      check_razon2();
+      check_nombre2();
+      check_telefono2();
+      check_banco2();
+      check_cuenta2();
+      if(error_rfc2 == false 
+        && error_alias2 == false 
+        && error_razon2 == false
+        && error_nombre2 == false
+        && error_telefono2 == false
+        && error_banco2 == false
+        && error_cuenta2 == false){
+        return true;
+      } else {
+        return false; 
+      }
+
+    });
+
+
 	/**********/
   	function check_rfc(){
   		var tamano = $("#rfc").val().length;
-
+      
       if(tamano==0){
-        console.log("hola");
+        //console.log("hola");
           $("#error_rfc").html('*No olvides este campo').css("color","red");
           $("#error_rfc").css('padding-left','10%');
           $("#error_rfc").show();
+          error_rfc = true;
       }else{
-          if(tamano<13 || !(/^[A-Za-z0-9]+$/i.test($('#rfc').val()))){
-            $("#error_rfc").html('*El RFC debe contener 13 caracteres, no caracteres especiales').css("color","red");
+
+          $("#error_rfc").hide();
+          if(tamano<13){
+            $("#error_rfc").html('*ES MENOR A 13').css("color","red");
             $("#error_rfc").css('padding-left','10%');
             $("#error_rfc").show();
-          error_rfc = true;
+            error_rfc = true;
           }else{
-            $("#error_rfc").hide();
+              $("#error_rfc").hide();
+              var cadena = $('#rfc').val();
+              var result = /[0-9]+/g.test(cadena);
+              //console.log(result);
+
+              var result_letras = /[A-Za-z]+/g.test(cadena);
+              //console.log(result_letras);
+
+              if(result==false||result_letras==false){
+                 $("#error_rfc").html('*Debe tener numeros y letras').css("color","red");
+                  $("#error_rfc").css('padding-left','10%');
+                  $("#error_rfc").show();
+                  error_rfc = true;
+              }else{
+                   $("#error_rfc").hide();
+              }
+
           }
       }
   		
@@ -112,7 +214,7 @@ $(document).ready(function(){
 
   	function check_alias(){
   		if(!(/^[\d\w\s]+$/i.test($('#alias').val()))){
-  			console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
+  			//console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
   			$("#error_alias").html('*No caracteres especiales').css("color","red");
          $("#error_alias").css('padding-left','10%');
   			$("#error_alias").show();
@@ -125,7 +227,7 @@ $(document).ready(function(){
 
   	function check_razon(){
   		if(!(/^[\d\w\s]+$/i.test($('#razon_social').val()))){
-  			console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
+  			//console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
   			$("#error_razon").html('*No caracteres especiales').css("color","red");
          $("#error_razon").css('padding-left','10%');
   			$("#error_razon").show();
@@ -160,7 +262,7 @@ $(document).ready(function(){
 
   	function check_banco(){
   		if(!(/^[\d\w\s]+$/i.test($('#banco').val()))){
-  			console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
+  			//console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
   			$("#error_banco").html('*No caracteres especiales').css("color","red");
          $("#error_banco").css('padding-left','10%');
   			$("#error_banco").show();
@@ -180,6 +282,122 @@ $(document).ready(function(){
   			$("#error_cuenta").hide();
   		}
   	}
+
+    /***********EDITAR**********/
+      function check_rfc2(){
+      var tamano = $("#rfc2").val().length;
+      
+      if(tamano==0){
+        //console.log("hola");
+          $("#error_rfc2").html('*No olvides este campo').css("color","red");
+          $("#error_rfc2").css('padding-left','10%');
+          $("#error_rfc2").show();
+          error_rfc2 = true;
+      }else{
+
+          $("#error_rfc2").hide();
+          if(tamano<13){
+            $("#error_rfc2").html('*ES MENOR A 13').css("color","red");
+            $("#error_rfc2").css('padding-left','10%');
+            $("#error_rfc2").show();
+            error_rfc2 = true;
+          }else{
+              $("#error_rfc2").hide();
+              var cadena = $('#rfc2').val();
+              var result = /[0-9]+/g.test(cadena);
+              //console.log(result);
+
+              var result_letras = /[A-Za-z]+/g.test(cadena);
+              //console.log(result_letras);
+
+              if(result==false||result_letras==false){
+                 $("#error_rfc2").html('*Debe tener numeros y letras').css("color","red");
+                  $("#error_rfc2").css('padding-left','10%');
+                  $("#error_rfc2").show();
+                  error_rfc2 = true;
+              }else{
+                   $("#error_rfc2").hide();
+              }
+
+          }
+      }
+      
+    }
+
+
+    function check_alias2(){
+      if(!(/^[\d\w\s]+$/i.test($('#alias2').val()))){
+        //console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");  
+        $("#error_alias2").html('*No caracteres especiales').css("color","red");
+         $("#error_alias2").css('padding-left','10%');
+        $("#error_alias2").show();
+        error_alias2 = true;
+      }else{
+        $("#error_alias2").hide();
+      }
+      //console.log("LA EXPRESION REGULAR ESTA FUNCIONANDO");
+    }
+
+    function check_razon2(){
+      if(!(/^[\d\w\s]+$/i.test($('#razon_social2').val()))){
+        //console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");  
+        $("#error_razon2").html('*No caracteres especiales').css("color","red");
+         $("#error_razon2").css('padding-left','10%');
+        $("#error_razon2").show();
+        error_razon2 = true;
+      }else{
+        $("#error_razon2").hide();
+      }
+      //console.log("LA EXPRESION REGULAR ESTA FUNCIONANDO");
+    }
+    function check_nombre2(){
+      if(!(/^[a-z\s]+$/i.test($('#nombre_contacto2').val()))){
+        $("#error_nombre2").html('*Sólo letras').css("color","red");
+         $("#error_nombre2").css('padding-left','10%');
+        $("#error_nombre2").show();  
+        error_nombre2 = true;
+      }else{
+        $("#error_nombre2").hide();
+      }
+    }
+
+    function check_telefono2(){
+      if(!(/^[\d\s]+$/i.test($('#telefono_proveedor2').val()))){
+        $("#error_telefono2").html('*Sólo números').css("color","red");
+         $("#error_telefono2").css('padding-left','10%');
+        $("#error_telefono2").show();  
+        error_telefono2 = true;
+      }else{
+        $("#error_telefono2").hide();
+      }
+    }  
+
+
+    function check_banco2(){
+      if(!(/^[\d\w\s]+$/i.test($('#banco2').val()))){
+        //console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");  
+        $("#error_banco2").html('*No caracteres especiales').css("color","red");
+         $("#error_banco2").css('padding-left','10%');
+        $("#error_banco2").show();
+      }else{
+        $("#error_banco2").hide();
+      }
+      //console.log("LA EXPRESION REGULAR ESTA FUNCIONANDO");
+    }
+
+    function check_cuenta2(){
+      var tamano = $("#cuenta_bancaria2").val().length;
+      if(tamano<18 || !(/^[\d]+$/i.test($('#cuenta_bancaria2').val()))){
+        $("#error_cuenta2").html('*Deben ser exactamente 18 dígitos').css("color","red");
+         $("#error_cuenta2").css('padding-left','10%');
+        $("#error_cuenta2").show();    
+      }else{
+        $("#error_cuenta2").hide();
+      }
+    }
+
+
+
   	/*
   //PARA EL RFC: 13, SOLO NUMEROS Y LETRAS
   $.validator.addMethod('rfc_size', function(value, element) {

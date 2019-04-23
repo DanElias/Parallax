@@ -2,7 +2,7 @@
 
 require_once("../basesdedatos/_conection_queries_db.php");
 //require_once("_util_eventos.php");
-echo "LLEGO AL OTRO DOCUMENTO";
+//echo "LLEGO AL OTRO DOCUMENTO";
 $_POST['id'] = htmlentities($_POST['id']);
 if (isset($_POST['id']) && $_POST['id'] != "") {
     $result = obtener_proveedor_id($_POST['id']);
