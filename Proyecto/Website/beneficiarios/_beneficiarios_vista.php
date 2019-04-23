@@ -19,7 +19,9 @@ if (isset($_SESSION["usuario"])) {
     beneficiarios_html();
     footer_html();
     //scriptsEdicion();
+
     echo '<script src="js/ajax.js"></script>';
+    editarEstado();
 } else {
     header("location:../login/_login_vista.php");
 

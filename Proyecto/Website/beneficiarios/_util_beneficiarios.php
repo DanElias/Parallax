@@ -139,9 +139,9 @@ function modalEstado($result){
                   <label>
                       Beneficiario Inactivo';
       if($estado == 0){
-        echo '<input type="checkbox" >';//id="palancaEstado_'.$row['id_beneficiario'].'">';
+        echo '<input type="checkbox" name="palanca" id="palancaEstado_'.$row['id_beneficiario'].'">';//id="palancaEstado_'.$row['id_beneficiario'].'">';
       } else{
-        echo '<input type="checkbox" checked > ';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
+        echo '<input type="checkbox" checked name="palanca" id="palancaEstado_'.$row['id_beneficiario'].'" > ';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
       }
 
       echo '<span class="lever"></span>
@@ -159,37 +159,14 @@ function modalEstado($result){
                       </button>
                   </div>
                   <div class="col s6">
-                      <button class="modal-close btn waves-effect waves-light red" modal-close>NO Cambiar Estado
+                      <button class="modal-close btn waves-effect waves-light red" type="cancel">NO Cambiar Estado
                           <i class="material-icons right">highlight_off</i>
                       </button>
                   </div>
               </div>
           </div>
           </form>';
-          /*echo '<script>
-                $(document).ready(function(){
-                  $("#formaEditarEstado_'.$row['id_beneficiario'].'").submit(function (ev){
-                    ev.preventDefault();
-                    var est=-1;
-                    if($("#palancaEstado_'.$row['id_beneficiario'].'").prop("checked")){
-                      est = 1;
-                    } else{
-                      est = 0;
-                    }
-                    $.post("controladores/estadoController.php", { id : '.$row['id_beneficiario'].', estado : est } )
-                     .done(function(data){
-                       console.log("Estado modificado");
-                       alert("Estado del beneficiario modificado!");
 
-                      })
-                      .fail(function(){
-                        alert("No se pudo modificar el estado");
-
-                        console.log("Error");
-                      })
-                    });
-                });
-                </script>';*/
 
       echo '    </div>
       </div>';
@@ -345,6 +322,39 @@ function modalesBeneficiario($result){
     </div>
     </div>';
   }
+}
+
+function editarEstado(){
+  $result = getIDsBen();
+  $script = "<script type='text/javascript'>";
+  while($row = mysqli_fetch_assoc($result)){
+    $script .= '$(document).ready(function(){
+          $("#formaEditarEstado_'.$row['id_beneficiario'].'").submit(function (ev){
+              ev.preventDefault();
+              var est=-1;
+
+              if($("#palancaEstado_'.$row['id_beneficiario'].'").prop("checked")){
+                est = 1;
+              } else{
+                est = 0;
+              }
+              console.log("estado = " + est);
+              $.post("controladores/estadoController.php", { id : '.$row['id_beneficiario'].', estado : est } )
+               .done(function(data){
+                 console.log("Estado modificado");
+                 alert("Estado del beneficiario modificado!");
+
+                })
+                .fail(function(){
+                  alert("No se pudo modificar el estado");
+
+                  console.log("Error");
+                })
+              });
+            });';
+        }
+      $script .= '</script>';
+      echo $script;
 }
 
 function modalesTutores($result){
