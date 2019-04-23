@@ -1,129 +1,174 @@
------------------- PROVEEDOR --------------------------
-CREATE TABLE Proveedor(
-	rfc char(13) NOT NULL,
-	alias varchar(20),
-	razon_social varchar(30),
-	nombre_contacto varchar(40),
-	telefono_contacto varchar(20),
-	cuenta_bancaria char(18), --se supone que son 18
-	banco varchar(40),
-	CONSTRAINT [pk_proveedor] PRIMARY KEY (rfc)
-)
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "-06:00";
 
-------------------- Cuenta Contable-----------------
-CREATE TABLE Cuenta_Contable(
-	id_cuentacontable int IDENTITY(1,1) NOT NULL,
-	nombre varchar(20),
-	descripcion varchar(40),
-	CONSTRAINT [pk_cuentacontable] PRIMARY KEY (id_cuentacontable)
-)
+CREATE TABLE `beneficiario` (
+  `id_beneficiario` int(11) NOT NULL,
+  `nombre` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apellido` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `estado` tinyint(1) NOT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `sexo` char(1) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `grado_escolar` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `grupo` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `domicilio` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `nivel_socioeconomico` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `nombre_escuela` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `enfermedades_alergias` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cuota` decimal(4,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-------------------Egreso ----------------------------------
-CREATE TABLE Egreso(
-	folio_factura varchar(30) NOT NULL,
-	concepto varchar(30),
-	importe numeric(9,2), --nueve digitos con 2 decimales
-	fecha date, 
-	observaciones varchar(100),
-	cuenta_bancaria varchar(20),
-	rfc char(13),
-	id_cuentacontable int,
-	CONSTRAINT [pk_egreso] PRIMARY KEY (folio_factura),
-	CONSTRAINT [fk_rfc] FOREIGN KEY (rfc) REFERENCES Proveedor(rfc),
-	CONSTRAINT [fk_cuentacontable] FOREIGN KEY (id_cuentacontable) REFERENCES Cuenta_Contable(id_cuentacontable)
-)
+CREATE TABLE `beneficiario_tutor` (
+  `id_beneficiario` int(11) NOT NULL,
+  `id_tutor` int(11) NOT NULL,
+  `parentesco` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--------------------- BENEFICIARIO --------------------------
-CREATE TABLE Beneficiario(
-	id_beneficiario int IDENTITY(1,1) NOT NULL,
-	nombre varchar(40),
-	estado varchar(10),
-	fecha_nacimiento date,
-	sexo char(1),
-	grado_escolar varchar(30),
-	grupo varchar(20),
-	domicilio varchar(40),
-	nivel_socioeconomico varchar(30),
-	nombre_escuela varchar(40),
-	enfermedades_alergias varchar(50),
-	cuota numeric(4,2),
-	CONSTRAINT [pk_beneficiario] PRIMARY KEY (id_beneficiario)
-)
 
---------------------------- TUTOR ---------------------------------
-CREATE TABLE Tutor(
-	id_tutor int IDENTITY(1,1) NOT NULL,
-	nombre varchar(40),
-	telefono varchar(20),
-	fecha_nacimiento date,
-	ocupacion varchar(30),
-	nombre_empresa varchar(30),
-	grado_estudio varchar(20),
-	titulo_obtenido varchar(20)
-	CONSTRAINT [pk_tutor] PRIMARY KEY (id_tutor)
-)
--------------------------------------------------------------------
+CREATE TABLE `cuenta_contable` (
+  `id_cuentacontable` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
------------------------ TIENE TUTOR ---------------------------------
-CREATE TABLE Beneficiario_Tutor(
-	id_beneficiario int NOT NULL, 
-	id_tutor int NOT NULL, 
-	parentesco varchar(30),
-	CONSTRAINT [pk_beneficiariotutor] PRIMARY KEY (id_beneficiario,id_tutor),
-	CONSTRAINT [fk_idbeneficiario] FOREIGN KEY (id_beneficiario) REFERENCES Beneficiario(id_beneficiario),
-	CONSTRAINT [fk_idtutor] FOREIGN KEY (id_tutor) REFERENCES Tutor(id_tutor)
-)
----------------------------------------------------------------------
+CREATE TABLE `egreso` (
+  `folio_factura` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `concepto` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `importe` decimal(9,2) DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `observaciones` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cuenta_bancaria` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `rfc` varchar(13) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id_cuentacontable` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
----------------------- EVENTO ----------------------------------------
-CREATE TABLE evento(
-	id_evento int IDENTITY(1,1) NOT NULL,
-	nombre varchar(30),
-	fecha date,
-	lugar varchar(40),
-	descripcion varchar(50),
-	--imagen FALTA 
-	CONSTRAINT [pk_evento] PRIMARY KEY (id_evento)
-)
-------------------------------------------------------------------------
+CREATE TABLE `evento` (
+  `id_evento` int(11) NOT NULL,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `hora` time DEFAULT NULL,
+  `lugar` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `imagen` varchar(500) COLLATE utf8_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
------------------------------- ROL ------------------------------------------
-CREATE TABLE rol(
-	id_rol numeric(2) NOT NULL,
-	descripcion varchar(50),
-	CONSTRAINT [pk_rol] PRIMARY KEY (id_rol)
-)
--------------------------------------------------
+CREATE TABLE `privilegio` (
+  `id_privilegio` decimal(2,0) NOT NULL,
+  `permiso` decimal(1,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
------------------------- PRIVELEGIO --------------------------
-CREATE TABLE privilegio(
-	id_privilegio numeric(2) NOT NULL,
-	permiso numeric(1),
-	CONSTRAINT [pk_privilegio] PRIMARY KEY (id_privilegio)
-)
----------------------------------------------------------------
 
--------------------------- USUARIO -------------------------------
-CREATE TABLE usuario(
-	id_usuario int IDENTITY(1,1) NOT NULL,
-	correo varchar(30),
-	nombre varchar(30),
-	apellido varchar(30),
-	contrasena varchar(40), 
-	fecha_nacimiento date, 
-	fecha_creacion date,
-	id_rol numeric(2),
-	CONSTRAINT [pk_usuario] PRIMARY KEY (id_usuario),
-	CONSTRAINT [fk_idrol] FOREIGN KEY (id_rol) REFERENCES rol
-)
---------------------------------------------------------------
+CREATE TABLE `proveedor` (
+  `rfc` varchar(13) COLLATE utf8_spanish_ci NOT NULL,
+  `alias` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `razon_social` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `nombre_contacto` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `telefono_contacto` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cuenta_bancaria` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `banco` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---------------------- Rol Privilegio ------------------------
-CREATE TABLE rol_privilegio(
-	id_rol numeric(2) NOT NULL,
-	id_privilegio numeric(2) NOT NULL,
-	CONSTRAINT [pk_rolprivilegio] PRIMARY KEY (id_rol,id_privilegio),
-	CONSTRAINT [fk_idrolpri] FOREIGN KEY (id_rol) REFERENCES Rol(id_rol),
-	CONSTRAINT [fk_idprivilegio] FOREIGN KEY (id_privilegio) REFERENCES Privilegio(id_privilegio)
-)	
--------------------------------------------------------------------
+CREATE TABLE `rol` (
+  `id_rol` decimal(2,0) NOT NULL,
+  `descripcion` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+INSERT INTO `rol` (`id_rol`, `descripcion`) VALUES
+('1', 'Administrador');
+
+CREATE TABLE `rol_privilegio` (
+  `id_rol` decimal(2,0) NOT NULL,
+  `id_privilegio` decimal(2,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+CREATE TABLE `tutor` (
+  `id_tutor` int(11) NOT NULL,
+  `nombre` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apellido` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `telefono` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `ocupacion` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `nombre_empresa` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `grado_estudio` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `titulo_obtenido` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL,
+  `email` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apellido` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `passwd` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `fecha_creacion` date DEFAULT NULL,
+  `id_rol` decimal(2,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+ALTER TABLE `beneficiario`
+  ADD PRIMARY KEY (`id_beneficiario`);
+
+ALTER TABLE `beneficiario_tutor`
+  ADD PRIMARY KEY (`id_beneficiario`,`id_tutor`),
+  ADD KEY `fk_idtutor` (`id_tutor`);
+
+ALTER TABLE `cuenta_contable`
+  ADD PRIMARY KEY (`id_cuentacontable`);
+
+ALTER TABLE `egreso`
+  ADD PRIMARY KEY (`folio_factura`),
+  ADD KEY `fk_rfc` (`rfc`),
+  ADD KEY `fk_cuentacontable` (`id_cuentacontable`);
+
+ALTER TABLE `evento`
+  ADD PRIMARY KEY (`id_evento`);
+
+ALTER TABLE `privilegio`
+  ADD PRIMARY KEY (`id_privilegio`);
+
+ALTER TABLE `proveedor`
+  ADD PRIMARY KEY (`rfc`);
+
+ALTER TABLE `rol`
+  ADD PRIMARY KEY (`id_rol`),
+  ADD UNIQUE KEY `id_rol` (`id_rol`),
+  ADD KEY `id_rol_2` (`id_rol`);
+
+ALTER TABLE `rol_privilegio`
+  ADD PRIMARY KEY (`id_rol`,`id_privilegio`),
+  ADD KEY `id_privilegio` (`id_privilegio`);
+
+ALTER TABLE `tutor`
+  ADD PRIMARY KEY (`id_tutor`);
+
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD KEY `id_rol` (`id_rol`);
+
+ALTER TABLE `beneficiario`
+  MODIFY `id_beneficiario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+ALTER TABLE `cuenta_contable`
+  MODIFY `id_cuentacontable` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+ALTER TABLE `evento`
+  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+ALTER TABLE `tutor`
+  MODIFY `id_tutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+ALTER TABLE `beneficiario_tutor`
+  ADD CONSTRAINT `fk_idbeneficiario` FOREIGN KEY (`id_beneficiario`) REFERENCES `beneficiario` (`id_beneficiario`),
+  ADD CONSTRAINT `fk_idtutor` FOREIGN KEY (`id_tutor`) REFERENCES `tutor` (`id_tutor`);
+
+ALTER TABLE `egreso`
+  ADD CONSTRAINT `fk_cuentacontable` FOREIGN KEY (`id_cuentacontable`) REFERENCES `cuenta_contable` (`id_cuentacontable`),
+  ADD CONSTRAINT `fk_rfc` FOREIGN KEY (`rfc`) REFERENCES `proveedor` (`rfc`);
+
+ALTER TABLE `rol_privilegio`
+  ADD CONSTRAINT `rol_privilegio_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`),
+  ADD CONSTRAINT `rol_privilegio_ibfk_2` FOREIGN KEY (`id_privilegio`) REFERENCES `privilegio` (`id_privilegio`);
+
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`);
