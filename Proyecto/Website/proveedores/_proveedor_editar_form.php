@@ -12,7 +12,7 @@
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
-        $_SESSION['rfc'] = $row['rfc'];
+        $_SESSION['rfc2'] = $row['rfc'];
         $edit_form = '
                  <!-- Modal Structure -->
                     <div id="_form_editar_proveedor" class="modal my_modal modal1  my_big_modal" name="modal1">
@@ -20,7 +20,7 @@ if (mysqli_num_rows($result) > 0) {
 
                             <div class="my_modal_header1">
                                 <div class="col s11 my_form_title">
-                                    Agregar Proveedor
+                                    Editar Proveedor
                                     <i class="material-icons my_title_icon">supervisor_account</i>
                                 </div>
 
@@ -38,44 +38,44 @@ if (mysqli_num_rows($result) > 0) {
                         <br><br><br>
 
                         <div class="modal-content my_modal_content">
-                            <p>Aquí puede agregar un nuevo Proveedor</p>
+                            <p>Aquí puede editar un nuevo Proveedor</p>
 
-                            <form class="col s12" action="_registro_editar_proveedor.php" method="POST" id="proveedor_form">
+                            <form class="col s12" action="_registro_editar_proveedor.php" method="POST" id="proveedor_form2">
                                <div class="row">
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">face</i>
-                                        <input  maxlength="13" type="text" class="validate" name="rfc" id="rfc" required value="'.$row['rfc'].'" >
+                                        <input  maxlength="13" type="text" class="validate" name="rfc2" id="rfc2" required value="'.$row['rfc'].'" >
                                         <label for="rfc">RFC</label>
-                                        <p id="error_rfc"></p>
+                                       <span id="error_rfc2"></span>
                                     </div>
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">attach_money</i>
-                                        <input maxlength="20" type="text" class="validate" id="alias" name="alias" required value="'.$row['alias'].'">
+                                        <input maxlength="20" type="text" class="validate" id="alias2" name="alias2" required value="'.$row['alias'].'">
                                         <label for="alias">Alias</label>
-                                        <p id="error_alias"></p>
+                                        <span id="error_alias2"></span>
                                     </div>
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">home</i>
-                                        <input maxlength="30" type="text" class="validate" name="razon_social" id="razon_social" required value="'.$row['razon_social'].'">
+                                        <input maxlength="30" type="text" class="validate" name="razon_social2" id="razon_social2" required value="'.$row['razon_social'].'">
                                         <label for="razon_social">Razon social</label>
-                                        <p id="error_razon"></p>
+                                        <span id="error_razon2"></span>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">domain</i>
-                                        <input maxlength="40" type="text" class="validate" name="nombre_contacto" id="nombre_contacto" required value="'.$row['nombre_contacto'].'" >
+                                        <input maxlength="40" type="text" class="validate" name="nombre_contacto2" id="nombre_contacto2" required value="'.$row['nombre_contacto'].'" >
                                         <label for="contacto">Nombre contacto</label>
-                                        <p id="error_nombre"></p>
+                                        <span id="error_nombre2"></span>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">perm_phone_msg</i>
-                                        <input maxlength="20" type="text" class="validate" name="telefono_proveedor" id="telefono_proveedor" required value="'.$row['telefono_contacto'].'" >
+                                        <input maxlength="20" type="text" class="validate" name="telefono_proveedor2" id="telefono_proveedor2" required value="'.$row['telefono_contacto'].'" >
                                         <label for="telefono_proveedor">Telefono</label>
-                                        <p id="error_telefono"></p>
+                                        <span id="error_telefono2"></span>
                                     </div>
                                 </div>
 
@@ -84,15 +84,15 @@ if (mysqli_num_rows($result) > 0) {
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">account_balance</i>
-                                        <input maxlength="40" type="text" class="validate" id="banco" name="banco" required value="'.$row['banco'].'">
+                                        <input maxlength="40" type="text" class="validate" id="banco2" name="banco2" required value="'.$row['banco'].'">
                                         <label for="banco">Banco</label>
-                                        <p id="error_banco"></p>
+                                        <span id="error_banco2"></span>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">attach_money</i>
-                                        <input maxlength="18" type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required value="'.$row['cuenta_bancaria'].'">
+                                        <input maxlength="18" type="text" class="validate" id="cuenta_bancaria2" name="cuenta_bancaria2" required value="'.$row['cuenta_bancaria'].'">
                                         <label for="cuenta_bancaria">Cuenta bancaria</label>
-                                        <p id="error_cuenta"></p>
+                                        <span id="error_cuenta2"></span>
                                     </div>
 
 

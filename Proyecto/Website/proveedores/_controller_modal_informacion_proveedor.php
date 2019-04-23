@@ -2,7 +2,7 @@
 
 require_once("../basesdedatos/_conection_queries_db.php");
 
-$result = obtener_proveedor_id($_SESSION['rfc']);
+$result = obtener_proveedor_id($_SESSION['rfc2']);
 $cards = "";
 
 

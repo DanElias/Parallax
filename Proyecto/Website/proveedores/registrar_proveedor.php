@@ -88,12 +88,13 @@ if (isset($_POST["submit"])) {
             echo "<br>NO SE MANDARA EL REGISTRO";
             //mostrar errores
         }else{
-            echo "SI SE MANDARA ";   
+            //echo "SI SE MANDARA ";   
             if(registrar_proveedor($_POST["rfc"], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"])){
+                header("location:./_proveedor_vista.php");
                  echo  "<script type='text/javascript'>
                                     alert('¡El proveedor se ha registrado de manera exitosa!');
                             </script>";
-                 header("location:./_proveedor_vista.php");
+                
 
             }
             //$rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco

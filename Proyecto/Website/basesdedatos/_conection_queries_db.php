@@ -395,7 +395,7 @@ function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, 
         return false;
     }*/
     $conn = conectDb();
-    $sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (?,?,?,?,?,?,?)";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('sssssss',$rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco);
       $stmt->execute();
