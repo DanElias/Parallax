@@ -706,6 +706,7 @@ function obtenerUsuario()
     return $result;
 }
 
+/**********  CONSULTAS EGRESOS   ************/
 
 function obtenerEgresos()
 {
@@ -729,6 +730,27 @@ function obtenerEgresos()
     closeDB($conn);
     return $result;
 }
+
+function registrar_egreso($folio_factura,$concepto,$importe,$fecha,$observaciones,$cuenta_bancaria,$rfc,$id_cuentacontable){
+    $conn = conectDb();
+    $sql = "INSERT INTO egreso(folio_factura,concepto,importe,fecha,observaciones,cuenta_bancaria,rfc,id_cuentacontable) VALUES (?,?,?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssdssisi',$folio_factura,$concepto,$importe,$fecha,$observaciones,$cuenta_bancaria,$rfc,$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+
+
+}
+
+/**************/
 
 
 function obtenerCuentas()
