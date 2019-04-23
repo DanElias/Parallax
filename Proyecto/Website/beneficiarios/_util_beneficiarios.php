@@ -166,31 +166,7 @@ function modalEstado($result){
               </div>
           </div>
           </form>';
-          echo '<script>
-          $(document).ready(funtion(){
-                $("#formaEditarEstado_'.$row['id_beneficiario'].'").submit(function (ev){
-                    ev.preventDefault();
-                    var est=-1;
 
-                    if($("#palancaEstado_'.$row['id_beneficiario'].'").prop("checked")){
-                      est = 1;
-                    } else{
-                      est = 0;
-                    }
-                    $.post("controladores/estadoController.php", { id : '.$row['id_beneficiario'].', estado : est } )
-                     .done(function(data){
-                       console.log("Estado modificado");
-                       alert("Estado del beneficiario modificado!");
-
-                      })
-                      .fail(function(){
-                        alert("No se pudo modificar el estado");
-
-                        console.log("Error");
-                      })
-                    });
-                  });
-                </script>';
 
       echo '    </div>
       </div>';
@@ -346,6 +322,39 @@ function modalesBeneficiario($result){
     </div>
     </div>';
   }
+}
+
+function editarEstado(){
+  $result = getIDsBen();
+  $script = "<script type='text/javascript'>";
+  while($row = mysqli_fetch_assoc($result)){
+    $script .= '$(document).ready(function(){
+          $("#formaEditarEstado_'.$row['id_beneficiario'].'").submit(function (ev){
+              ev.preventDefault();
+              var est=-1;
+
+              if($("#palancaEstado_'.$row['id_beneficiario'].'").prop("checked")){
+                est = 1;
+              } else{
+                est = 0;
+              }
+              console.log("estado = " + est);
+              $.post("controladores/estadoController.php", { id : '.$row['id_beneficiario'].', estado : est } )
+               .done(function(data){
+                 console.log("Estado modificado");
+                 alert("Estado del beneficiario modificado!");
+
+                })
+                .fail(function(){
+                  alert("No se pudo modificar el estado");
+
+                  console.log("Error");
+                })
+              });
+            });';
+        }
+      $script .= '</script>';
+      echo $script;
 }
 
 function modalesTutores($result){
