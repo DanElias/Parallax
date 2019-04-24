@@ -876,6 +876,25 @@ function obtenerCuentas()
     closeDB($conn);
     return $result;
   }
+  
+  function reporteCuenta(){
+    
+    $conn = conectDb();
+    $sql = "
+        SELECT nombre, count(*) as number FROM egreso E, cuenta_contable C
+        WHERE E.id_cuentacontable=C.id_cuentacontable
+        GROUP BY C.nombre
+    ";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+    
+    
+  }
 
 
   function alertaNoHayConexion(){
@@ -927,5 +946,7 @@ function obtenerCuentas()
     echo $alerta;
 
   }
+  
+  
 
 ?>

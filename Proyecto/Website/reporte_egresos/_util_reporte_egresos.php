@@ -27,7 +27,7 @@ function form_proveedor()
 
 function form_cuenta()
 {
-    include("graficas/_grafica_cuenta.html");
+    include("graficas/_grafica_cuenta.php");
 }
 
 function form_monto()
