@@ -28,6 +28,35 @@ function closeDb($mysql)
     $mysql->close();
 }
 
+function registrar_rol_privilegio($id_rol,$id_privilegio){
+    $conn = conectDb();
+    $sql = "INSERT INTO rol_privilegio (id_rol,id_privilegio) VALUES (?,?)";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('ii',$id_rol,$id_privilegio);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        echo mysqli_error($sql);
+        return false;
+    }
+    closeDB($conn);
+}
+function obtener_rol_reciente()
+{
+    $conn = conectDb();
+    $sql = "SELECT id_rol FROM rol ORDER BY id_rol DESC LIMIT 1";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
 function obtenerRoles(){
     $con = conectDb();
     $query="SELECT * FROM rol ORDER BY descripcion ASC";
