@@ -27,7 +27,7 @@ if (isset($_POST["esubmit"])){
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
     if (isset($_POST["enombre_cuenta"]) && isset($_POST["edescripcion_cuenta"]) 
         && $_POST["enombre_cuenta"] != "" && $_POST["edescripcion_cuenta"] != ""){
-        
+    
         if (validar_nombre_cuenta() && validar_descripcion_cuenta()){//se valida espacios, vacío, carac especiales y sólo números
         
             //registrar_cuenta_contable es una funcion de connection queries que hace un INSERT en la tabla

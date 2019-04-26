@@ -879,7 +879,6 @@ function obtenerCuentas()
   }
   
   function reporteCuenta(){
-    
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
@@ -896,10 +895,28 @@ function obtenerCuentas()
     }
     closeDB($conn);
     return $result;
-    
-    
   }
-
+  
+  function reporteProveedores(){
+    $conn = conectDb();
+    $conn->set_charset("utf8");
+    mysqli_query($conn,"SET CHARACTER SET 'utf8'");
+    mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
+    $sql = "
+        SELECT razon_social, count(*) as number FROM egreso E, proveedor P
+        WHERE E.rfc=P.rfc
+        GROUP BY razon_social
+    ";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+  
+  
 
   function alertaNoHayConexion(){
     $alerta='

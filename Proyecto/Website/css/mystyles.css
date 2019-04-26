@@ -1036,4 +1036,12 @@ my_search {
     text-decoration: none !important;
 }
 
+.generar_reporte{
+    font-family:Staatliches; 
+    font-size:2em;
+}
+
+.form_fecha_inicial_final{
+    padding-left:3em;
+}
 

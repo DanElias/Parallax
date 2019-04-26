@@ -22,7 +22,7 @@ function body_reporte_egresos()
 
 function form_proveedor()
 {
-    include("graficas/_grafica_proveedor.html");
+    include("graficas/_grafica_proveedor.php");
 }
 
 function form_cuenta()
