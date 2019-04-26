@@ -64,7 +64,7 @@ if (mysqli_num_rows($result) > 0) {
                             <br>
                             <ul class="pagination pager" id="myPager"></ul>
                             <br>
-                    	    <span class="left" id="total_reg"></span>
+                            <span class="left" id="total_reg"></span>
                         </div>
                         
                     </div>
