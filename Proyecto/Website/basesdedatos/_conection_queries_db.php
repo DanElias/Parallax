@@ -14,7 +14,7 @@ function conectDb()
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
       //include("error_server_card.html");
       //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
-      alertaNoHayConexion();
+        alertaNoHayConexion();
       include("../views/_footer_admin.html");
       die();
     }
