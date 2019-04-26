@@ -9,6 +9,7 @@ function conectDb()
     $dbname = "proyecto";
 
     @$con = new mysqli($servername, $username, $password, $dbname);
+    
 
     if($con->connect_error){
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
@@ -18,7 +19,7 @@ function conectDb()
       include("../views/_footer_admin.html");
       die();
     }
-    $con->set_charset("utf8");
+  
     return $con;
 }
 
@@ -880,6 +881,9 @@ function obtenerCuentas()
   function reporteCuenta(){
     
     $conn = conectDb();
+    $conn->set_charset("utf8");
+    mysqli_query($conn,"SET CHARACTER SET 'utf8'");
+    mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
     $sql = "
         SELECT nombre, count(*) as number FROM egreso E, cuenta_contable C
         WHERE E.id_cuentacontable=C.id_cuentacontable
