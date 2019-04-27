@@ -1,6 +1,6 @@
 <?php
 
-function header_html($titulo = "Proveedores")
+function header_html($titulo = "Egresos")
 {
     include("../views/_header_admin.html");
 }
@@ -17,11 +17,11 @@ function footer_html()
 
 function body_egreso()
 {
-    include("egreso.html");
+    include("_egreso.html");
 }
 
 function controller_tabla_egreso_php(){
-	include('_controller_tabla_egreso.php');
+    include('_controller_tabla_egreso.php');
 }
 
 
@@ -42,25 +42,19 @@ function modal_informacion_egreso_html()
     include("_modal_informacion_egreso.html");
 }
 
-/*
-function form_editar_proveedor()
+
+function form_editar_egreso()
 {
-    include("forms/_form_editar_proveedor.html");
+    include("forms/_form_editar_egreso.html");
 }
 
-function form_eliminar_proveedor()
+function form_eliminar_egreso()
 {
-    include("forms/_form_eliminar_proveedor.html");
+    include("forms/_form_eliminar_egreso.html");
 }
 
-function modal_informacion_proveedores()
-{
-    include("_modal_informacion_proveedores.html");
+function modal_informacion_egreso(){
+    include("_modal_informacion_egreso.html");
 }
-
-function controller_tabla_proveedores_php()
-{
-    include("controladores/_controller_tabla_proveedores.php");
-}*/
 
 ?>
