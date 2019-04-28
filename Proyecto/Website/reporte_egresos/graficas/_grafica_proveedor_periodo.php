@@ -31,6 +31,8 @@ while($row = mysqli_fetch_array($result)){
     $str=str_replace('&Uacute;', 'Ú', $str);
     $str=str_replace('&Ntilde;', 'Ñ', $str);
     $str=str_replace('&ntilde;', 'ñ', $str);
+    $str=str_replace('&Uuml;', 'Ü', $str);
+    $str=str_replace('&uuml;', 'ü', $str);
     $valores.="['".$str."',".$row["number"]."],";  
 }  
 
@@ -70,7 +72,7 @@ echo '
                           [\'Razon Social\', \'Numero\'],'.$valores.'
                      ]);  
                 var options = {
-                    \'legend\':\'left\',
+                    \'legend\':\'right\',
                     \'pieSliceText\':\'left\',
                     \'title\':\'Proveedores presentes en los Egresos | Periodo: '.$fecha_i.' - '.$fecha_f.'\',
                     \'titleTextStyle\': {

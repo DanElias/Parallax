@@ -4,21 +4,13 @@
 Autor: Daniel Elias
 */
 
-require_once("../../basesdedatos/_conection_queries_db.php"); 
-
-$_POST['fecha_inicial']=htmlentities($_POST['fecha_inicial']);
-$_POST['fecha_final']=htmlentities($_POST['fecha_final']);
-
-$tempfecha_i = explode('-', $_POST['fecha_inicial']);
-$tempfecha_f = explode('-', $_POST['fecha_final']);
-$fecha_i = "".$tempfecha_i[2]."/".$tempfecha_i[1]."/".$tempfecha_i[0].""; //le da formato dd/mm/YYYY a la fecha -> UX
-$fecha_f = "".$tempfecha_f[2]."/".$tempfecha_f[1]."/".$tempfecha_f[0]."";
+require_once("../basesdedatos/_conection_queries_db.php"); 
 
 $valores="";
-$result=reporteCuenta($_POST['fecha_inicial'],$_POST['fecha_final']);
+$result=reporteEmpresa();
 
 while($row = mysqli_fetch_array($result)){ 
-    $str=mb_convert_encoding($row["nombre"], "EUC-JP", "auto");
+    $str=mb_convert_encoding($row["nombre_empresa"], "EUC-JP", "auto");
     $str=str_replace('&aacute;', 'á', $str);
     $str=str_replace('&eacute;', 'é', $str);
     $str=str_replace('&iacute;', 'í', $str);
@@ -41,18 +33,18 @@ $fecha=date('d/m/Y h:i a', time());
 
 echo '
  
-<div id="_grafica_cuenta_periodo" class="modal my_modal modal1  my_big_modal" name="modal1">
+<div id="_grafica_empresa" class="modal my_modal modal1  my_big_modal" name="modal1">
     <div class="row my_modal_header_row">
 
         <div class="my_modal_header1">
             <div class="col s11 my_form_title">
-                Reporte de Egresos - Cuentas Contables
+                Reporte de Tutores - Empresas
             </div>
 
             <div class="col s1">
                 <br>
                 <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center"
-                   style="font-size:2em;font-family: Roboto;" href="#_grafica_cuenta">
+                   style="font-size:2em;font-family: Roboto;" href="#_grafica_empresa">
                     ×
                 </a>
             </div>
@@ -69,19 +61,19 @@ echo '
             {  
                 
                 var data = google.visualization.arrayToDataTable([  
-                          [\'Nombre\', \'Numero\'],'.$valores.'
+                          [\'Empresa\', \'Numero\'],'.$valores.'
                      ]);  
                 var options = {
-                    \'legend\':\'left\',
+                    \'legend\':\'right\',
                     \'pieSliceText\':\'left\',
-                    \'title\':\'Cuentas Contables presentes en los Egresos | Periodo: '.$fecha_i.' - '.$fecha_f.'\',
+                    \'title\':\'Empresas empleadoras de los Tutores\',
                     \'titleTextStyle\': {
                     \'fontSize\': \'16\' },
                     \'width\':800,
                     \'height\':700,
                     pieHole: 0.4  
                      };  
-                var chart = new google.visualization.PieChart(document.getElementById(\'_grafica_cuenta_periodo_div\'));  
+                var chart = new google.visualization.PieChart(document.getElementById(\'_grafica_empresa_div\'));  
                 chart.draw(data, options);  
                 
                
@@ -94,7 +86,7 @@ echo '
                     <img class="responsive-img" src="../images/logocolor.png">
                 </div>    
                 <div class="col s8">
-                    <div id="_grafica_cuenta_periodo_div" style="margin: 0 auto;"></div> 
+                    <div id="_grafica_empresa_div" style="margin: 0 auto;"></div> 
                 </div>
                 <div class="col s2" style="padding-right:4em;">
                         <br><br><br><br>
@@ -104,7 +96,6 @@ echo '
                 </div>
             </div>
             
-           
             
     </div>
 </div>';
