@@ -492,9 +492,21 @@ function registrar_egreso($folio_factura, $concepto, $importe, $fecha, $observac
 
 }
 
+function obtener_egreso_folio($folio_factura){
 
+    $conn = conectDb();
+    $sql = "SELECT folio_factura,concepto,importe,fecha,observaciones,cuenta_bancaria,rfc,id_cuentacontable FROM egreso WHERE folio_factura = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s', $folio_factura);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
 
-
+/********************/
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {
     /*$conn = conectDb();

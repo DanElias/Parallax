@@ -22,17 +22,17 @@ if (mysqli_num_rows($result) > 0) {
         //$query_table .= '<td style="display:none;">' . $row["id_cuentacontable"] . '</td>'; 
         $query_table .= '<td>
                             <a class="modal-trigger" href="javascript:void(0);"                       
-                                onclick="mostrar_informacion_proveedor(\''.$row['folio_factura'].'\')">Mas información
+                                onclick="mostrar_informacion_egreso(\''.$row['folio_factura'].'\')">Mas información
                             </a>
                         </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_proveedor(\''.$row['folio_factura'].'\')">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['folio_factura'].'\')">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
         $query_table .= '<td>
-                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_eliminar_proveedor.php?id=' . $row['folio_factura'] . '">
+                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_eliminar_egreso.php?id=' . $row['folio_factura'] . '">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
@@ -74,11 +74,11 @@ if (mysqli_num_rows($result) > 0) {
                             <span class="left" id="total_reg"></span>
                         </div>
                         
-                        <div id="modal_informacion_proveedor_ajax">
+                        <div id="modal_informacion_egreso_ajax">
                         
                         </div>
                         
-                        <div id="modal_editar_proveedor_ajax">
+                        <div id="modal_editar_egreso_ajax">
                         
                         </div>
                           
