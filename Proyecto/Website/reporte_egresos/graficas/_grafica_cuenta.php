@@ -7,7 +7,7 @@ Autor: Daniel Elias
 require_once("../basesdedatos/_conection_queries_db.php"); 
 
 $valores="";
-$result=reporteCuenta();
+$result=reporteCuenta("","");
 
 while($row = mysqli_fetch_array($result)){ 
     $str=mb_convert_encoding($row["nombre"], "EUC-JP", "auto");

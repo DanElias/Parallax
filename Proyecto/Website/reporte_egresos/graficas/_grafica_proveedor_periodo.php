@@ -4,10 +4,18 @@
 Autor: Daniel Elias
 */
 
-require_once("../basesdedatos/_conection_queries_db.php"); 
+require_once("../../basesdedatos/_conection_queries_db.php"); 
+
+$_POST['fecha_inicial']=htmlentities($_POST['fecha_inicial']);
+$_POST['fecha_final']=htmlentities($_POST['fecha_final']);
+
+$tempfecha_i = explode('-', $_POST['fecha_inicial']);
+$tempfecha_f = explode('-', $_POST['fecha_final']);
+$fecha_i = "".$tempfecha_i[2]."/".$tempfecha_i[1]."/".$tempfecha_i[0].""; //le da formato dd/mm/YYYY a la fecha -> UX
+$fecha_f = "".$tempfecha_f[2]."/".$tempfecha_f[1]."/".$tempfecha_f[0]."";
 
 $valores="";
-$result=reporteProveedores("","");
+$result=reporteProveedores($_POST['fecha_inicial'],$_POST['fecha_final']);
 
 while($row = mysqli_fetch_array($result)){ 
     $str=mb_convert_encoding($row["razon_social"], "EUC-JP", "auto");
@@ -31,7 +39,7 @@ $fecha=date('d/m/Y h:i a', time());
 
 echo '
  
-<div id="_grafica_proveedor" class="modal my_modal modal1  my_big_modal" name="modal1">
+<div id="_grafica_proveedor_periodo" class="modal my_modal modal1  my_big_modal" name="modal1">
     <div class="row my_modal_header_row">
 
         <div class="my_modal_header1">
@@ -64,14 +72,14 @@ echo '
                 var options = {
                     \'legend\':\'left\',
                     \'pieSliceText\':\'left\',
-                    \'title\':\'Proveedores presentes en los Egresos\',
+                    \'title\':\'Proveedores presentes en los Egresos | Periodo: '.$fecha_i.' - '.$fecha_f.'\',
                     \'titleTextStyle\': {
                     \'fontSize\': \'16\' },
                     \'width\':800,
                     \'height\':700,
                     pieHole: 0.4  
                      };  
-                var chart = new google.visualization.PieChart(document.getElementById(\'_grafica_proveedor_div\'));  
+                var chart = new google.visualization.PieChart(document.getElementById(\'_grafica_proveedor_periodo_div\'));  
                 chart.draw(data, options);  
                 
                
@@ -84,7 +92,7 @@ echo '
                     <img class="responsive-img" src="../images/logocolor.png">
                 </div>    
                 <div class="col s8">
-                    <div id="_grafica_proveedor_div" style="margin: 0 auto;"></div> 
+                    <div id="_grafica_proveedor_periodo_div" style="margin: 0 auto;"></div> 
                 </div>
                 <div class="col s2" style="padding-right:4em;">
                         <br><br><br><br>

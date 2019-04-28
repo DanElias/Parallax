@@ -1,74 +1,71 @@
 <div class="wrapper">
-    
-    <meta charset="UTF-8">
-
-    <div class="section white  my_section">
         <div class="sections_header">
 
             <!--Seccion de titulo-->
             <div class="row">
-                <div class="col s12 m12">
-                    <div class="header my_heading_text">Reporte de Egresos<i class="material-icons my_title_icon">
+                <div class="col s12 m8">
+                    <div class="header my_heading_text_medium">Reporte de Egresos<i class="material-icons my_title_icon">
                         attach_money</i><i class="material-icons my_title_icon">assessment</i></div>
                 </div>
-            </div>
-
-            <!--Seccion de priemros 3 botones-->
-            <div class="row">
                 <div class="col s12 m4 left">
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn-large modal-trigger deep-purple darken-1"
-                    data-position="bottom" href="#_grafica_proveedor">
-                        Gráfica de Proveedores
+                    <a class="waves-effect waves-light btn modal-trigger deep-purple darken-1  tooltipped"
+                    data-position="left" data-tooltip="Gráfica de todos los proveedores presentes en los egresos ->" href="#_grafica_proveedor">
+                        &nbsp; Gráfica de Proveedores &nbsp; &nbsp;
                         <i class="material-icons right large">group</i>
                     </a>
-                </div>
-
-                <div class="col s12 m6 left">
+                    <br><br>
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn-large modal-trigger deep-purple darken-1"
-                       data-position="bottom" href="#_grafica_cuenta">
-                        Gráfica de Cuenta contables
+                    <a class="waves-effect waves-light btn modal-trigger deep-purple darken-1 tooltipped"
+                       data-position="left" data-tooltip="Gráfica de todas las cuentas presentes en los egresos ->" href="#_grafica_cuenta">
+                        Gráfica Cuentas contables
                         <i class="material-icons right center">receipt</i>
                     </a>
                 </div>
             </div>
-
         </div>
         
-        <br>
-        
-         <form class="col s12 form_fecha_inicial_final" action="" method="POST">
+        <div style="padding-left:3em;">
              
             <div class="row">
                 <div class="col s12 m12">
-                    <div class="header blue-grey-text text-darken-1 generar_reporte">
-                        Generar Reporte de Egresos:
-                    </div>
-                    <div class="grey-text tex-darken-1">
-                        Aquí puede generar una tabla de egresos de acuerdo al periodo de tiempo que usted necesite.
+                    <div class="grey-text text-darken-2" style="font-size:1.35em;">
+                        Seleccione un periodo de tiempo para generar un reporte:
                     </div>
                 </div>
             </div>
-             <br>
+             
              <div class="row" >
                 <div class="input-field col s4">
-                    <i class="material-icons prefix blue-text">date_range</i>
-                    <input type="date" class="validate" name="fecha_inicio" id="fecha_inicio" required>
+                    <i class="material-icons prefix amber-text text-darken-1 tooltipped">date_range</i>
+                    <input type="date" class="validate" name="fecha_inicial" id="fecha_inicial" required>
                     <label for="fecha_inicio">Fecha Inicial</label>
                 </div>
-                
-                
-        
+            
                 <div class="input-field col s4">
-                    <i class="material-icons prefix blue-text">date_range</i>
+                    <i class="material-icons prefix amber-text text-darken-1">date_range</i>
                     <input type="date" class="validate" name="fecha_final" id="fecha_final" required>
                     <label for="fecha_final">Fecha Final</label>
                 </div>
+                
+                <div class="col s4">
+                    <button class="btn waves-effect waves-light amber darken-1 tooltipped" 
+                            data-tooltip="Genera una tabla, documentos y gráficas de los egresos" 
+                            data-position="top"
+                            onclick="mostrar_tabla_egreso_por_periodo()">Generar Reporte
+                        <i class="material-icons right">check_circle_outline</i>
+                    </button>
+                </div><br><br>
+                <div id="fechas_validar" class="red-text"> </div>
             </div>
             
-        </form>
-        
-    </div>
-
+            
+        </div>
+    
 </div><!--div del wrapper que empieza después del sidenav-->
+
+<div id="grafica_proveedores_periodo_ajax"> </div>
+
+<div id="grafica_cuenta_periodo_ajax"> </div>
+
+<div id="tabla_egreso_ajax"> </div>

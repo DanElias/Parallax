@@ -30,9 +30,5 @@ function form_cuenta()
     include("graficas/_grafica_cuenta.php");
 }
 
-function form_monto()
-{
-    include("graficas/_grafica_monto.html");
-}
 
 ?>

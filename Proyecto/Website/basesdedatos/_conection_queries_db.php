@@ -731,6 +731,18 @@ function obtenerEgresos()
     return $result;
 }
 
+function obtenerEgresosPeriodo($fecha_inicial, $fecha_final)
+{
+    $conn = conectDb();
+    $sql = "
+            SELECT folio_factura, concepto, importe, fecha ,cuenta_bancaria, observaciones, rfc, id_cuentacontable 
+            FROM egreso
+            WHERE fecha>='".$fecha_inicial."' AND fecha<='".$fecha_final."'";
+    $result = mysqli_query($conn, $sql);
+    closeDb($conn);
+    return $result;
+}
+
 
 function obtenerCuentas()
 {
@@ -878,7 +890,7 @@ function obtenerCuentas()
     return $result;
   }
   
-  function reporteCuenta(){
+  /*function reporteCuenta(){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
@@ -895,9 +907,58 @@ function obtenerCuentas()
     }
     closeDB($conn);
     return $result;
-  }
+  }*/
   
-  function reporteProveedores(){
+function reporteCuenta($fecha_inicial, $fecha_final){
+    $conn = conectDb();
+    $conn->set_charset("utf8");
+    mysqli_query($conn,"SET CHARACTER SET 'utf8'");
+    mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
+    
+    if($fecha_inicial!="" && $fecha_final!=""){
+       $sql = "
+            SELECT nombre, count(*) as number FROM egreso E, cuenta_contable C
+            WHERE E.id_cuentacontable=C.id_cuentacontable AND fecha>='".$fecha_inicial."' AND fecha<='".$fecha_final."'
+            GROUP BY C.nombre";
+    }
+    else{
+        $sql = "
+            SELECT nombre, count(*) as number FROM egreso E, cuenta_contable C
+            WHERE E.id_cuentacontable=C.id_cuentacontable
+            GROUP BY C.nombre";
+  }
+        
+  $result = mysqli_query($conn, $sql);
+  closeDb($conn);
+  return $result;
+}
+  
+function reporteProveedores($fecha_inicial, $fecha_final){
+    $conn = conectDb();
+    $conn->set_charset("utf8");
+    mysqli_query($conn,"SET CHARACTER SET 'utf8'");
+    mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
+    
+    if($fecha_inicial!="" && $fecha_final!=""){
+       $sql = "
+            SELECT razon_social, count(*) as number FROM egreso E, proveedor P
+            WHERE E.rfc=P.rfc AND fecha>='".$fecha_inicial."' AND fecha<='".$fecha_final."'
+            GROUP BY razon_social";
+    }
+    else{
+        $sql = "
+          SELECT razon_social, count(*) as number FROM egreso E, proveedor P
+          WHERE E.rfc=P.rfc
+          GROUP BY razon_social
+       ";
+  }
+        
+  $result = mysqli_query($conn, $sql);
+  closeDb($conn);
+  return $result;
+}
+  
+  /*function reporteProveedores(){ //con prepared statement
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
@@ -914,7 +975,7 @@ function obtenerCuentas()
     }
     closeDB($conn);
     return $result;
-  }
+  }*/
   
   
 
