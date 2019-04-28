@@ -2,7 +2,10 @@
 
     //require_once("_util_usuarios.php");
     require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
-    $folio = $_POST['folio_factura'];
+   
+
+    /*
+    $folio_factura = $_POST['folio_factura'];
     $concepto = $_POST['concepto'];
     $importe = $_POST['importe'];
     $fecha = $_POST['fecha_egreso'];
@@ -11,64 +14,61 @@
     $id_cuentacontable = $_POST['selected_cuenta']; 
     $observaciones = $_POST['observaciones'];
     
-
-    registrar_egreso($folio,$concepto,$importe,$fecha,$cuenta_bancaria,$rfc,$id_cuentacontable,$observaciones);
-   /*
-
-    require_once("util.php");
     
-    $fecha_hora = date("Y-m-d H:i:s");
-    $id_lugar = $_POST['selected_lugar']; 
-    $id_tipo = $_POST['selected_tipo']; 
-    registrar_incidente($id_lugar,$id_tipo);
-
-   */
-
-
-
-    /*
+    echo "<h1>ENTRO AL REGISTRAR</h1>";
+    echo "Folio:".$folio_factura."<br>".
+    "Cocenpto: ".$concepto."<br>". 
+    "Importe: ".$importe."<br>". 
+    "Fehca: ".$fecha."<br>".  
+    "Cuenta bancaria: ".$cuenta_bancaria."<br>". 
+    "RFC: ".$rfc."<br>". 
+    "id cuenta: ".$id_cuentacontable."<br>".
+    "observaciones:".$observaciones."<br>"; */
+    
+    
+ 
     if (isset($_POST["submit"])){
 
 
-        $_POST["rfc"] = htmlentities($_POST["rfc"]);
-        $_POST["alias"] = htmlentities($_POST["alias"]);
-        $_POST["razon_social"] = htmlentities($_POST["razon_social"]);
-        $_POST["nombre_contacto"] = htmlentities($_POST["nombre_contacto"]);
-        $_POST["telefono_proveedor"] = htmlentities($_POST["telefono_proveedor"]);
-        $_POST["banco"] = htmlentities($_POST["banco"]);
+        $_POST["folio_factura"] = htmlentities($_POST["folio_factura"]);
+        $_POST["concepto"] = htmlentities($_POST["concepto"]);
+        $_POST["importe"] = htmlentities($_POST["importe"]);
+        $_POST["fecha_egreso"] = htmlentities($_POST["fecha_egreso"]);
         $_POST["cuenta_bancaria"] = htmlentities($_POST["cuenta_bancaria"]);
+        $_POST["rfc"] = htmlentities($_POST["rfc"]);
+        $_POST["id_cuentacontable"] = htmlentities($_POST["id_cuentacontable"]);
+        $_POST["observaciones"] = htmlentities($_POST["observaciones"]);
 
-
-        if(isset($_POST["rfc"])
-            && isset($_POST["alias"]) 
-            && isset($_POST["razon_social"]) 
-            && isset($_POST["nombre_contacto"]) 
-            && isset($_POST["telefono_proveedor"]) 
-            && isset($_POST["banco"]) 
-            && isset($_POST["cuenta_bancaria"])
-            && $_POST["rfc"] != ""
-            && $_POST["alias"] != ""
-            && $_POST["razon_social"] != "" 
-            && $_POST["nombre_contacto"] != "" 
-            && $_POST["telefono_proveedor"] != "" 
-            && $_POST["banco"] != "" 
-            && $_POST["cuenta_bancaria"] != ""
+        if(isset($_POST["folio_factura"])
+            && isset($_POST["concepto"]) 
+            && isset($_POST["importe"]) 
+            && isset($_POST["fecha_egreso"]) 
+            && isset($_POST["cuenta_bancaria"]) 
+            && isset($_POST["rfc"]) 
+            && isset($_POST["id_cuentacontable"])
+            && isset($_POST["observaciones"])
+            && $_POST["folio_factura"] != ""
+            && $_POST["concepto"] != ""
+            && $_POST["importe"] != "" 
+            && $_POST["fecha_egreso"] != "" 
+            && $_POST["cuenta_bancaria"] != "" 
+            && $_POST["rfc"] != "" 
+            && $_POST["id_cuentacontable"] != ""
+            && $_POST["observaciones"] != ""
        
 
         ){
-            //$rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco
-
-            echo "<h1>TODOS LOS CAMPOS ESTAN LLENOS</h1>";
-            $registrar = registrar_proveedor($_POST["rfc"],$_POST["alias"], $_POST["razon_social"],$_POST["nombre_contacto"],$_POST["telefono_proveedor"],$_POST["cuenta_bancaria"],$_POST["banco"]);
-
            
+            $registrar = registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"]);
+
            if($registrar){
                 echo "<h1>DEBE ESTAR EN LA BASE DE DATOS</h1>";
+               // header("location:./_egreso_vista.php");
            }else{
                 echo "<h1>NO FUNCIONO</h1>";
            }
         }
-    	header("location:./_proveedores_vista.php");
-    }*/
+    	
+    }
 
 ?>

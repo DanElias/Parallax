@@ -13,26 +13,26 @@ if (mysqli_num_rows($result) > 0) {
 
         $query_table .= "<tr>";
         $query_table .= '<td>' . $row["folio_factura"] . '</td>';
-         $query_table .= '<td>' . $row["importe"] . '</td>';
-        $query_table .= '<td >' . $row["fecha"] . '</td>';
-        $query_table .= '<td style="display:none;">' . $row["concepto"] . '</td>';
+        $query_table .= '<td>' . $row["concepto"] . '</td>';
+        $query_table .= '<td>' . $row["importe"] . '</td>';
+        $query_table .= '<td>' . $row["fecha"] . '</td>';
         $query_table .= '<td style="display:none;">' . $row["observaciones"] . '</td>';
         $query_table .= '<td style="display:none;">' . $row["cuenta_bancaria"] . '</td>';
-        $query_table .= '<td style="display:none;">' . $row["rfc"] . '</td>';
-        $query_table .= '<td style="display:none;">' . $row["id_cuentacontable"] . '</td>'; 
+        $query_table .= '<td style="display:none;">' . $row["rfc"] . '</td>'; 
+        //$query_table .= '<td style="display:none;">' . $row["id_cuentacontable"] . '</td>'; 
         $query_table .= '<td>
                             <a class="modal-trigger" href="javascript:void(0);"                       
-                                onclick="mostrar_informacion_egreso(\''.$row['folio_factura'].'\')">Mas información
+                                onclick="mostrar_informacion_proveedor(\''.$row['folio_factura'].'\')">Mas información
                             </a>
                         </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['folio_factura'].'\')">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_proveedor(\''.$row['folio_factura'].'\')">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
         $query_table .= '<td>
-                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_eliminar_egreso.php?id=' . $row['folio_factura'] . '">
+                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_eliminar_proveedor.php?id=' . $row['folio_factura'] . '">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
@@ -48,14 +48,13 @@ if (mysqli_num_rows($result) > 0) {
                             <thead>
 
                             <tr class="my_table_headers">
-                                <th>Folio factura</th>
+                                <th>Folio</th>
+                                <th>Concepto</th>
                                 <th>Importe</th>
                                 <th>Fecha</th>
-                                <th style="display:none;>Concepto</th>
-                                <th style="display:none;">observaciones</th>
-                                <th style="display:none;">Cuenta bancaria</th>
-                                <th style="display:none;">RFC</th>
-                                <th style="display:none;">ID cuenta contable</th>
+                                <th style="display:none;"></th>
+                                <th style="display:none;"></th>
+                                <th style="display:none;"></th>
                                 <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
@@ -72,7 +71,7 @@ if (mysqli_num_rows($result) > 0) {
                             <br>
                             <ul class="pagination pager" id="myPager"></ul>
                             <br>
-                    	    <span class="left" id="total_reg"></span>
+                            <span class="left" id="total_reg"></span>
                         </div>
                         
                         <div id="modal_informacion_proveedor_ajax">
@@ -97,7 +96,7 @@ if (mysqli_num_rows($result) > 0) {
                         <table class="stripped highlight responsive-table data_table fixed_header" >
                             <thead>
                             <tr class="my_table_headers">
-                                <th> &nbsp; &nbsp; Lo sentimos, no encontramos egreso.</th>
+                                <th> &nbsp; &nbsp; Lo sentimos, no encontramos eventos.</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -23,8 +23,7 @@ function conectDb()
 }
 
 //cierra la conexión con la base de datos
-function closeDb($mysql)
-{
+function closeDb($mysql){
     $mysql->close();
 }
 
@@ -376,8 +375,7 @@ function obtener_proveedor_id($rfc){
 }
 
 
-function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco)
-{
+function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco){
     /*$conn = conectDb();
     //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
     //Query de SQl para insertar en la tabla de proveedores
@@ -452,6 +450,49 @@ function eliminar_proveedor_id($rfc)
 }
 
 /**************************/
+
+/************CONSULTAS EGRESOS**************/
+function obtenerEgresos(){
+
+    /*$conn = conectDb();
+
+    $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT folio_factura, concepto, importe, fecha , observaciones, cuenta_bancaria, rfc, id_cuentacontable FROM egreso";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function registrar_egreso($folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
+    $conn = conectDb();
+    $sql = "INSERT INTO egreso(folio_factura,concepto,importe,fecha,observaciones,cuenta_bancaria,rfc,id_cuentacontable) VALUES (?,?,?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssdssssi',$folio_factura,$concepto,$importe,$fecha,$observaciones,$cuenta_bancaria,$rfc,$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+
+}
+
+
 
 
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
@@ -707,32 +748,8 @@ function obtenerUsuario()
 }
 
 
-function obtenerEgresos()
-{
 
-    /*$conn = conectDb();
-
-    $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
-    return $result;*/
-    $conn = conectDb();
-    $sql = "SELECT folio_factura, concepto, importe, fecha ,cuenta_bancaria, observaciones, rfc, id_cuentacontable FROM egreso";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-}
-
-
-function obtenerCuentas()
-{
+function obtenerCuentas(){
 
     /*$conn = conectDb();
 

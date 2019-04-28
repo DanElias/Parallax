@@ -27,7 +27,7 @@
                         <p>Aquí puede agregar egresos</p>
                         
                          <!-- Inicio del form de beneficiarios-->
-                        <form class="col s12" action="registrar_egreso.php" method="POST" id="form_egreso">
+                        <form class="col s12" action="registrar_egreso.php" method="post" id="form_egreso">
                             
 
                             <div class="row">
@@ -58,34 +58,24 @@
                                     <input  type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required>
                                     <label for="cuenta_bancaria">Cuenta Bancaria</label>
                                 </div>
-
-                                 <div class="input-field col s3">
-                                    <select id="drop_proveedor"></select>
+                               	<div class="input-field col s3" id="drop_proveedor">                                
+                                </div>
+                                <div class="input-field col s3" id="drop_cuenta">                                
+                                </div>
                                     
-                                    <!-- Modal Trigger 
-                                    <p>Agregar Proveedor</p>
-                                    <a class="center waves-effect waves-light btn-floating modal-trigger blue darken-2 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes agregar un proveedor" href="#_form_agregar_proveedor"><i class="material-icons right">add</i></a>-->
-                                </div>
-                                
                             </div>
-                            
                             <div></div>
-                            
+                       
                             <div class="row center-align">
-                            	 <div class="input-field col s3">
-                                    <select id="drop_cuenta"></select>
-                                    <!-- Modal Trigger
-                                    <p>Agregar Cuenta Contable</p>
-                                    <a class="center waves-effect waves-light btn-floating modal-trigger blue darken-2 hoverable tooltipped" data-position="bottom" data-tooltip="Aquí puedes agregar una nueva cuenta contable" href="#_form_cuentacontable"><i class="material-icons right">add</i></a>-->
-                                </div>
+                            	
+                            
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">description</i>
-                                    <input  type="text" class="validate" id="descripcion_egreso" name="descripcion_egreso" required>
-                                    <label for="descripcion_egreso">Observaciones</label>
+                                    <input  type="text" class="validate" id="observaciones" name="observaciones" required>
+                                    <label for="observaciones">Observaciones</label>
                                 </div>
                             </div>
-                            
-                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+
                             <div class="my_modal_buttons">
                                 <div class="row">
                                     <div class="col s6">
