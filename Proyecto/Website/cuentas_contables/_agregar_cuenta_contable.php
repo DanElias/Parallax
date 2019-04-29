@@ -26,6 +26,7 @@ if (isset($_POST["submit"])){
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
     if (isset($_POST["nombre_cuenta"]) && isset($_POST["descripcion_cuenta"]) 
         && $_POST["nombre_cuenta"] != "" && $_POST["descripcion_cuenta"] != ""){
+            
         
         if (validar_nombre_cuenta() && validar_descripcion_cuenta()){//se valida espacios, vacío, carac especiales y sólo números
         
@@ -33,9 +34,11 @@ if (isset($_POST["submit"])){
             if (registrar_cuenta_contable($_POST["nombre_cuenta"], $_POST["descripcion_cuenta"])) {
                 
                 //ya que se hizo bien el registro recargo la página y le muestro reto al usuario de que fue lo que se guardó
-                header_html();
-                sidenav_html();
-                cuentacontable_html();
+                
+                //header("location:_cuentas_contables_vista.php");
+               header_html();
+               sidenav_html();
+               cuentacontable_html();
     
                 //Esta sección es para obtener el id de la cuenta que acabo de subir y poder mostrarla en mi modal//
                 $result = obtener_cuenta_contable_reciente();

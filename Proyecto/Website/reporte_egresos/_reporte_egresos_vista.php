@@ -10,10 +10,10 @@ if (isset($_SESSION["usuario"])) {
     header_html();
     sidenav_html();
     body_reporte_egresos();
-    form_monto();
     form_cuenta();
     form_proveedor();
     footer_html();
+     echo '<script type="text/javascript" src="ajax_reporte_egresos.js"></script>';
 
 } else {
     header("location:../login/_login_vista.php");
