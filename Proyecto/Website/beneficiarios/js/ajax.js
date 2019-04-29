@@ -3,15 +3,33 @@ $(document).ready(imprimeTutorExterno());
 $(document).ready(imprimeNombreBeneficiarioActivo());
 
 $(document).ready(function() {
+    $('#tablaB').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+           'excel', 'pdf', 'print', 'csv'
+        ]
+
+    } );
+    $('.dt-buttons').append('<br><br><br><div class="row tooltipped" data-position="bottom" data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra, cantidad, fecha o frase introducida"><div class="col s12 m12" style="color: #757575">  <i class="material-icons prefix my_search">search</i> Introduce una palabra clave: </div></div>')
+    $('#tablaB_filter').append('<br><br>')
+    $('.dataTables_filter').css("color", "#673ab7")
+
+    M.AutoInit();
+
+} );
+
+$(document).ready(function() {
     //set initial state.
     $('#botonActivos').val(this.checked);
 
     $('#botonActivos').change(function() {
         if(this.checked) {
-          imprimeNombreBeneficiarioActivo();
+          //renderizaTabla(1);
           //actualizaPagina();
+          imprimeNombreBeneficiarioActivo();
           $(this).prop("checked");
         } else{
+          //renderizaTabla(2);
           imprimeNombreBeneficiario();
           $(this).prop("checked");
         }
@@ -31,6 +49,7 @@ function imprimeTutorExterno(){
 
 function imprimeNombreBeneficiario(){
   //modalEstado();
+  //renderizaTabla();
   $.post('beneficiarioController.php', { opcion : 1 } )
   .done(function(data){
     console.log("Todos");
@@ -42,6 +61,7 @@ function imprimeNombreBeneficiario(){
 
 function imprimeNombreBeneficiarioActivo(){
   //modalEstado();
+  //renderizaTabla();
   $.post('beneficiarioController.php', { opcion : 2 } )
   .done(function(data){
     console.log("Solo activos");

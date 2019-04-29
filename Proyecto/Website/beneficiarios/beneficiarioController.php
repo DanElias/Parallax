@@ -4,13 +4,13 @@
   require_once('_util_beneficiarios.php');
   $opcion = $_POST['opcion'];
   if($opcion == 1){
-      modalEstado(getInfoBeneficiarios());
-      modalesBeneficiario(getInfoBeneficiarios());
+      //modalEstado(getInfoBeneficiarios());
+      //modalesBeneficiario(getInfoBeneficiarios());
       tablaBeneficiario(getInfoBeneficiarios());
 
   } else if($opcion == 2){
-      modalEstado(getInfoBeneficiarios());
-      modalesBeneficiario(getInfoBeneficiarios());
+      //modalEstado(getInfoBeneficiarios());
+      //modalesBeneficiario(getInfoBeneficiarios());
       tablaBeneficiario(getBeneficiariosActivos());
 
   }

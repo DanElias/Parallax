@@ -21,7 +21,7 @@ if (isset($_SESSION["usuario"])) {
     //scriptsEdicion();
 
     echo '<script src="js/ajax.js"></script>';
-    editarEstado();
+    //editarEstado();
 } else {
     header("location:../login/_login_vista.php");
 
