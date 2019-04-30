@@ -44,21 +44,21 @@ if (mysqli_num_rows($result) > 0) {
                                <div class="row">
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">face</i>
-                                        <input  maxlength="13" type="text" class="validate" name="rfc2" id="rfc2" required value="'.$row['rfc'].'" >
+                                        <input  maxlength="13" type="text" class="validate ubuntu-text" name="rfc2" id="rfc2" required value="'.$row['rfc'].'" >
                                         <label for="rfc">RFC</label>
                                        <span id="error_rfc2"></span>
                                     </div>
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">attach_money</i>
-                                        <input maxlength="20" type="text" class="validate" id="alias2" name="alias2" required value="'.$row['alias'].'">
+                                        <input maxlength="20" type="text" class="validate ubuntu-text" id="alias2" name="alias2" required value="'.$row['alias'].'">
                                         <label for="alias">Alias</label>
                                         <span id="error_alias2"></span>
                                     </div>
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">home</i>
-                                        <input maxlength="30" type="text" class="validate" name="razon_social2" id="razon_social2" required value="'.$row['razon_social'].'">
+                                        <input maxlength="30" type="text" class="validate ubuntu-text" name="razon_social2" id="razon_social2" required value="'.$row['razon_social'].'">
                                         <label for="razon_social">Razon social</label>
                                         <span id="error_razon2"></span>
                                     </div>
@@ -67,13 +67,13 @@ if (mysqli_num_rows($result) > 0) {
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">domain</i>
-                                        <input maxlength="40" type="text" class="validate" name="nombre_contacto2" id="nombre_contacto2" required value="'.$row['nombre_contacto'].'" >
+                                        <input maxlength="40" type="text" class="validate ubuntu-text" name="nombre_contacto2" id="nombre_contacto2" required value="'.$row['nombre_contacto'].'" >
                                         <label for="contacto">Nombre contacto</label>
                                         <span id="error_nombre2"></span>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">perm_phone_msg</i>
-                                        <input maxlength="20" type="text" class="validate" name="telefono_proveedor2" id="telefono_proveedor2" required value="'.$row['telefono_contacto'].'" >
+                                        <input maxlength="20" type="text" class="validate ubuntu-text" name="telefono_proveedor2" id="telefono_proveedor2" required value="'.$row['telefono_contacto'].'" >
                                         <label for="telefono_proveedor">Telefono</label>
                                         <span id="error_telefono2"></span>
                                     </div>
@@ -84,13 +84,13 @@ if (mysqli_num_rows($result) > 0) {
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">account_balance</i>
-                                        <input maxlength="40" type="text" class="validate" id="banco2" name="banco2" required value="'.$row['banco'].'">
+                                        <input maxlength="40" type="text" class="validate ubuntu-text" id="banco2" name="banco2" required value="'.$row['banco'].'">
                                         <label for="banco">Banco</label>
                                         <span id="error_banco2"></span>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">attach_money</i>
-                                        <input maxlength="18" type="text" class="validate" id="cuenta_bancaria2" name="cuenta_bancaria2" required value="'.$row['cuenta_bancaria'].'">
+                                        <input maxlength="18" type="text" class="validate ubuntu-text" id="cuenta_bancaria2" name="cuenta_bancaria2" required value="'.$row['cuenta_bancaria'].'">
                                         <label for="cuenta_bancaria">Cuenta bancaria</label>
                                         <span id="error_cuenta2"></span>
                                     </div>

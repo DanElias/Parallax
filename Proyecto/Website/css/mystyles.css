@@ -1,3 +1,5 @@
+
+
 .error_javascript{
     align-items: center;
 }
@@ -1050,3 +1052,6 @@ my_search {
     overflow-y: auto !important;
 }
 
+.ubuntu-text{
+    font-family: Ubuntu;
+}

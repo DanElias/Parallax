@@ -38,7 +38,7 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
         //es por esto que ocupo este php
         $edit_form = '
                  <!-- Modal Structure -->
-                    <div id="_form_editar_evento" class="modal my_modal modal1  my_big_modal" name="modal1">
+                    <div id="_form_editar_evento" class="modal my_modal modal1  my_big_modal ubuntu-text" name="modal1">
                         <div class="row my_modal_header_row">
                                 <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                                 
@@ -68,18 +68,18 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                                 <div class="row">
                                     <div class="input-field col s6">
                                       <i class="material-icons prefix">event</i>
-                                      <input  type="text" class="validate" name="enombre_evento" id="enombre_evento" required value="' . $row['nombre'] . '" required onkeyup="validar_campo_evento(\'enombre_evento\',\'#evalidar_nombre_evento\')">
+                                      <input  type="text" class="validate ubuntu-text" name="enombre_evento" id="enombre_evento" required value="' . $row['nombre'] . '" required onkeyup="validar_campo_evento(\'enombre_evento\',\'#evalidar_nombre_evento\')">
                                       <label for="nombre_evento">Nombre del evento</label>
                                       <div class="red-text text-accent-3" id="evalidar_nombre_evento"></div>
-                                      <input  type="hidden" name="id_evento" id="id_evento" value=' . $row['id_evento'] . '>
+                                      <input  type="hidden" name="id_evento" id="id_evento" value=' . $row['id_evento'] . ' class="ubuntu-text">
                                     </div>
                                     <div class="input-field col s2">
                                       <i class="material-icons prefix">calendar_today</i>
-                                    <input type="date" name="fecha_evento" id="fecha_evento" value="' . $row['fecha'] . '" required>
+                                    <input type="date" name="fecha_evento" id="fecha_evento" value="' . $row['fecha'] . '" required  class="ubuntu-text">
                                     </div>
                                      <div class="input-field col s2">
                                       <i class="material-icons prefix">access_time</i>
-                                    <input type="time" name="hora_evento" id="hora_evento" value="' . $row['hora'] . '" required>
+                                    <input type="time" name="hora_evento" id="hora_evento" value="' . $row['hora'] . '" required  class="ubuntu-text">
                                     </div>
                                 </div>
                             
@@ -87,13 +87,13 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                                 <div class="row">
                                     <div class="input-field col s2">
                                       <i class="material-icons prefix">place</i>
-                                      <input  type="text" class="validate" name="elugar_evento" required id="elugar_evento" value="' . $row['lugar'] . '" required onkeyup="validar_campo_evento(\'elugar_evento\',\'#evalidar_lugar_evento\')">
+                                      <input  type="text" class="validate ubuntu-text" name="elugar_evento" required id="elugar_evento" value="' . $row['lugar'] . '" required onkeyup="validar_campo_evento(\'elugar_evento\',\'#evalidar_lugar_evento\')">
                                       <label for="lugar_evento">Lugar</label>
                                       <div class="red-text text-accent-3" id="evalidar_lugar_evento"></div>
                                     </div>
                                     <div class="input-field col s10">
                                       <i class="material-icons prefix">description</i>
-                                      <input  type="text" class="validate" name="edescripcion_evento" required id="edescripcion_evento" value="' . $row['descripcion'] . '" required onkeyup="validar_campo_evento(\'edescripcion_evento\',\'#evalidar_descripcion_evento\')">
+                                      <input  type="text" class="validate ubuntu-text" name="edescripcion_evento" required id="edescripcion_evento" value="' . $row['descripcion'] . '" required onkeyup="validar_campo_evento(\'edescripcion_evento\',\'#evalidar_descripcion_evento\')">
                                       <label for="descripcion_evento">Descripción</label>
                                       <div class="red-text text-accent-3" id="evalidar_descripcion_evento"></div>
                                     </div>
@@ -105,7 +105,7 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                                         <div> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Agrega de nuevo una imagen para el evento:</div>
                                         <div class="input-field col s4">
                                           <i class="material-icons prefix">icon</i>
-                                          <input  type="file" name="fileToUpload" id="fileToUpload" required value="' .$row['imagen']. '">
+                                          <input  type="file" name="fileToUpload" id="fileToUpload" required value="' .$row['imagen']. '" class="ubuntu-text">
                                         </div>
                                         
                                         <!--<div class="col s1">

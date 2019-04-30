@@ -7,7 +7,7 @@ Este archivo es el el modal que tiene el form de agregar cuenta contable, lo inc
 
 
 <!-- Modal Structure -->
-<div id="_form_cuentacontable" class="modal my_modal modal1">
+<div id="_form_cuentacontable" class="modal my_modal modal1 ubuntu-text">
     <div class="row my_modal_header_row">
         <div class="my_modal_header1 z-depth-2 col s12">
             <h4 class="my_modal_header ">Agregar Cuenta Contable</h4>
@@ -15,7 +15,7 @@ Este archivo es el el modal que tiene el form de agregar cuenta contable, lo inc
     </div>
     <br><br><br>
 
-    <div class="modal-content my_modal_content">
+    <div class="modal-content my_modal_content" >
         <p>Aquí puede agregar una cuenta contable</p>
 
         <!-- Inicio del form de beneficiarios-->
@@ -24,7 +24,7 @@ Este archivo es el el modal que tiene el form de agregar cuenta contable, lo inc
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">description</i>
-                    <input type="text" class="validate" name="nombre_cuenta" id="nombre_cuenta"  required onkeyup="validar_campo_cuenta('nombre_cuenta','#validar_nombre_cuenta')">
+                    <input  type="text" class="validate ubuntu-text" name="nombre_cuenta" id="nombre_cuenta"  required onkeyup="validar_campo_cuenta('nombre_cuenta','#validar_nombre_cuenta')">
                     <label for="nombre_cuenta">Nombre de la cuenta contable</label>
                     <div class="red-text text-accent-3" id="validar_nombre_cuenta">*Campo obligatorio</div>
                 </div>
@@ -33,7 +33,7 @@ Este archivo es el el modal que tiene el form de agregar cuenta contable, lo inc
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">list</i>
-                    <input type="text" class="validate" name="descripcion_cuenta" id="descripcion_cuenta" required onkeyup="validar_campo_cuenta('descripcion_cuenta','#validar_descripcion_cuenta')">
+                    <input type="text" class="validate ubuntu-text" name="descripcion_cuenta" id="descripcion_cuenta" required onkeyup="validar_campo_cuenta('descripcion_cuenta','#validar_descripcion_cuenta')">
                     <label for="descripcion_cuenta">Descripcion</label>
                     <div class="red-text text-accent-3" id="validar_descripcion_cuenta">*Campo obligatorio</div>
                 </div>

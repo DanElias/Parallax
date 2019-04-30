@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) > 0) {//reviso que el query me haya dado un resulta
         
         $edit_form = '
                  <!-- Modal Structure -->
-                    <div id="_form_editar_cuenta_contable" class="modal my_modal modal1" name="modal1">
+                    <div id="_form_editar_cuenta_contable" class="modal my_modal modal1 ubuntu-text" name="modal1">
                         <div class="row my_modal_header_row">
                                 <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                                 
@@ -65,7 +65,7 @@ if (mysqli_num_rows($result) > 0) {//reviso que el query me haya dado un resulta
                                 <div class="row">
                                     <div class="input-field col s12 m12">
                                       <i class="material-icons prefix">event</i>
-                                      <input  type="text" class="validate" name="enombre_cuenta" id="enombre_cuenta" value="'.$row['nombre'].'" required onkeyup="validar_campo_cuenta(\'enombre_cuenta\',\'#evalidar_nombre_cuenta\')" >
+                                      <input  type="text" class="validate ubuntu-text" name="enombre_cuenta" id="enombre_cuenta" value="'.$row['nombre'].'" required onkeyup="validar_campo_cuenta(\'enombre_cuenta\',\'#evalidar_nombre_cuenta\')" >
                                       <label for="nombre_evento">Nombre de la cuenta contable</label>
                                       <div class="red-text text-accent-3" id="evalidar_nombre_cuenta"></div>
                                       <input  type="hidden" name="id_cuentacontable" id="id_cuentacontable" value='.$row['id_cuentacontable'].' >
@@ -76,7 +76,7 @@ if (mysqli_num_rows($result) > 0) {//reviso que el query me haya dado un resulta
                                 <div class="row">
                                     <div class="input-field col s12 m12">
                                       <i class="material-icons prefix">description</i>
-                                      <input  type="text" class="validate" name="edescripcion_cuenta" id="edescripcion_cuenta" value="'.$row['descripcion'].'" required onkeyup="validar_campo_cuenta(\'edescripcion_cuenta\',\'#evalidar_descripcion_cuenta\')" >
+                                      <input  type="text" class="validate ubuntu-text" name="edescripcion_cuenta" id="edescripcion_cuenta" value="'.$row['descripcion'].'" required onkeyup="validar_campo_cuenta(\'edescripcion_cuenta\',\'#evalidar_descripcion_cuenta\')" >
                                       <label for="descripcion_evento">Descripción</label>
                                       <div class="red-text text-accent-3" id="evalidar_descripcion_cuenta"></div>
                                     </div>

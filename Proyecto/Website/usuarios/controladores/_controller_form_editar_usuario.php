@@ -46,13 +46,13 @@ if (mysqli_num_rows($result) > 0) {
                                                       <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">description</i>
-                                        <input type="text" class="validate" name="nombre" id="nombre" value = "' . $row['nombre'] . '"> 
+                                        <input type="text" class="validate ubuntu-text" name="nombre" id="nombre" value = "' . $row['nombre'] . '"> 
                                         <label for="nombre">Nombre</label>
                                         <input  type="hidden" name="id_usuario" id="id_usuario" value=' . $row['id_usuario'] . '>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">description</i>
-                                        <input type="text" class="validate" name="apellido" id="apellido" value = "' . $row['apellido'] . '">
+                                        <input type="text" class="validate ubuntu-text" name="apellido" id="apellido" value = "' . $row['apellido'] . '">
                                         <label for="apellido">Apellido</label>
                                     </div>
                     
@@ -61,19 +61,19 @@ if (mysqli_num_rows($result) > 0) {
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">email</i>
-                                        <input type="email" class="validate" name="email" id="email" value = "' . $row['email'] . '">
+                                        <input type="email" class="validate ubuntu-text" name="email" id="email" value = "' . $row['email'] . '">
                                         <label for="email">Correo Electronico</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">lock</i>
-                                        <input type="password" class="validate" name="password" id="password" >
+                                        <input type="password" class="validate ubuntu-text" name="password" id="password" >
                                         <label for="password">Contraseña</label>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">lock</i>
-                                        <input type="password" class="validate" name="password2" id="password2">
+                                        <input type="password" class="validate ubuntu-text" name="password2" id="password2">
                                         <label for="password">Confirmar contraseña</label>
                                     </div>
                     
@@ -81,12 +81,12 @@ if (mysqli_num_rows($result) > 0) {
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">cake</i>
-                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required value = "' . $row['fecha_nacimiento'] . '">
+                                        <input type="date" name="fecha_nacimiento" class="ubuntu-text" id="fecha_nacimiento" required value = "' . $row['fecha_nacimiento'] . '">
                                         <label for="fecha_nacimiento">Fecha de nacimiento ddmmAAAA</label>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">cake</i>
-                                        <input type="text" name="rol" id="rol" value = "' . $row['id_rol'] . '">
+                                        <input type="text" class="ubuntu-text" name="rol" id="rol" value = "' . $row['id_rol'] . '">
                                         <label for="rol">ROL</label>
                                     </div>
                     
