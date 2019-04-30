@@ -1,5 +1,6 @@
-
-
+<?php
+include("controller_roles.php");
+?>
 <ul id="slide-out" class="sidenav sidenav-fixed z-depth-3">
     <li>
         <div class="user-view my_side_nav ">
@@ -19,55 +20,74 @@
     <li><a class="waves-effect hoverable" href="../admin/_admin_vista.php"><i class="material-icons">home</i>Inicio</a>
     </li>
 
-    
+    <?php if($_SESSION['uno'] == 1): ?>
+
     <!--Area de beneficiarios-->
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../beneficiarios/_beneficiarios_vista.php"><i class="material-icons">accessibility_new</i>Beneficiarios</a>
     </li>
-
+    <?php endif ?>
 
     <!--Area de Reportes beneficiarios-->
+
+    <?php if($_SESSION['dos'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../reporte_beneficiarios/_reporte_beneficiarios_vista.php"><i
             class="material-icons">assessment</i>Reportes de Beneficiarios</a></li>
+    <?php endif ?>
 
     <!--Area de Egresos-->
+    <?php if($_SESSION['tres'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../egresos/_egresos_vista.php"><i
             class="material-icons">monetization_on</i>Egresos</a></li>
+
+    <?php endif ?>
+
     <!--Area de Reporte egresos-->
+    <?php if($_SESSION['cuatro'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../reporte_egresos/_reporte_egresos_vista.php"><i
             class="material-icons">description</i>Reportes de Egresos</a></li>
+    <?php endif ?>
 
     <!--Area de Proveedores-->
+    <?php if($_SESSION['cinco'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../proveedores/_proveedor_vista.php"><i
             class="material-icons">group</i>Proveedores</a></li>
+    <?php endif ?>
+
     <!--Area de Cuentas contables-->
+    <?php if($_SESSION['seis'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../cuentas_contables/_cuentas_contables_vista.php"><i
             class="material-icons">receipt</i>Cuentas Contables</a></li>
+    <?php endif ?>
+
     <!--Area de Eventos-->
+    <?php if($_SESSION['siete'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
     <li><a class="waves-effect hoverable" href="../eventos/_eventos_vista.php"><i
             class="material-icons">calendar_today</i>Eventos</a></li>
+    <?php endif ?>
+
     <!--Area de Usuarios-->
-    <?php if($_SESSION['id_rol'] == 1): ?>
+    <?php if($_SESSION['ocho'] == 1): ?>
     <li>
         <div class="divider"></div>
     </li>
@@ -77,6 +97,7 @@
         <div class="divider"></div>
     </li>
     <?php endif ?>
+
 </ul>
 
 <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large" style="">Abrir navegación<br><i class="material-icons">menu</i></a>

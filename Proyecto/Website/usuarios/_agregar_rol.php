@@ -30,6 +30,9 @@ if (isset($_POST["submit"])){
             if(isset($_POST["Cuentas_contables"])){
                 registrar_rol_privilegio($Rol,$_POST["Cuentas_contables"]);
             }
+            if(isset($_POST["Proveedores"])){
+                registrar_rol_privilegio($Rol,$_POST["Proveedores"]);
+            }
             if(isset($_POST["Eventos"])){
                 registrar_rol_privilegio($Rol,$_POST["Eventos"]);
             }

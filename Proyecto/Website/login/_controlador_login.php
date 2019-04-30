@@ -22,6 +22,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                 //asigna a sesion el nombre de la personas
                 $_SESSION['usuario'] = $row['nombre'];
                 $_SESSION['id_rol'] = $row['id_rol'];
+
             }
         }
     } else {

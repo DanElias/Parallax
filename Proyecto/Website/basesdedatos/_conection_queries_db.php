@@ -69,6 +69,13 @@ function obtenerRoles(){
     }
     return  $salida;
 }
+
+function obtenerPrivilegios($rol){
+    $con = conectDb();
+    $query="SELECT * FROM rol_privilegio WHERE id_rol = $rol";
+    $result=$con->query($query);
+    return  $result;
+}
 function eliminarUsuarioPorID($id_usuario)
 {
 
