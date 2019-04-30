@@ -17,6 +17,17 @@ $(document).ready(function() {
 
 } );
 
+$(document).ready(function(){
+  var id = 1;
+  $.post('controladores/_modales_beneficiarios.php', { id : id } )
+  .done(function(data){
+    console.log(data);
+    $('#modBen').html(data);
+    M.AutoInit();
+  });
+} );
+
+
 $(document).ready(function() {
     //set initial state.
     imprimeNombreBeneficiarioActivo();

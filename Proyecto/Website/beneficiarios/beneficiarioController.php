@@ -14,6 +14,6 @@
       tablaBeneficiario(getBeneficiariosActivos());
 
   }
-
+modalesBeneficiario(getInfoBeneficiarios());
 
 ?>

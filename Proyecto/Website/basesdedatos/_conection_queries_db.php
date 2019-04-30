@@ -865,6 +865,19 @@ function obtenerCuentas()
     return $result;
   }
 
+  function getInfoById($id){
+    $conn = conectDb();
+    $sql = "SELECT * FROM beneficiario WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
   function getIDsBen(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario FROM beneficiario";

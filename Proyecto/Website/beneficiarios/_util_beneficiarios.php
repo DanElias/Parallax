@@ -90,7 +90,7 @@ function tablaBeneficiario($result){
       $query_table .= '<td style="display:none;">' . $row["enfermedades_alergias"] . '</td>';
       $query_table .= '<td style="display:none;">' . $row["cuota"] . '</td>';
       $query_table .= '<td>'.$row['grupo'].'</td>';
-      $query_table .= '<td><a class="modal-trigger" href="#_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'">Más información</a></td>';
+      $query_table .= '<td><a class="modal-trigger" href="#modal_informacion_beneficiarios" >Más información</a></td>';
       $query_table .= '<td>';
       $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light green accent-3 hoverable" ';
       $query_table .= 'href="#modal_estado_beneficiarios_'.$row['id_beneficiario'].'"><i class="material-icons">power_settings_new</i></a>';
