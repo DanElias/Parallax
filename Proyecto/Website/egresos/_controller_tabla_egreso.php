@@ -74,13 +74,9 @@ if (mysqli_num_rows($result) > 0) {
                             <span class="left" id="total_reg"></span>
                         </div>
                         
-                        <div id="modal_informacion_egreso_ajax">
+                        <div id="modal_informacion_egreso_ajax"></div>  
                         
-                        </div>
-                        
-                        <div id="modal_editar_egreso_ajax">
-                        
-                        </div>
+                        <div id="modal_editar_egreso_ajax"></div>
                           
                     </div>
             

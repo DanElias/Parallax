@@ -506,6 +506,42 @@ function obtener_egreso_folio($folio_factura){
     return $result;
 }
 
+function editar_egreso($folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
+  $conn = conectDb();
+    $sql = "UPDATE egreso SET folio_factura=?, concepto=?, importe=?, fecha=?, observaciones=?, cuenta_bancaria=?, rfc=?, id_cuentacontable=? WHERE folio_factura=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+function eliminar_egreso_folio($folio_factura){
+
+    $conn = conectDb();
+    $sql = "DELETE FROM egreso WHERE folio_factura = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$folio_factura);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+
 /********************/
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {

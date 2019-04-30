@@ -24,6 +24,8 @@ if (isset($_SESSION["usuario"])) {
     body_egreso();
     controller_tabla_egreso_php();
     form_egreso_html();
+    //form_eliminar_egreso_html();
+    modal_informacion_egreso_html();//
     /*
     form_egresos();
     form_eliminar_egresos();
