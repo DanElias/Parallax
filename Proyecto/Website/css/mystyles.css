@@ -1045,3 +1045,8 @@ my_search {
     padding-left:3em;
 }
 
+#grafica_empresa{
+    overflow-x: scroll !important;
+    overflow-y: auto !important;
+}
+

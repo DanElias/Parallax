@@ -69,8 +69,8 @@ echo '
                     \'title\':\'Títulos obtenidos por los Tutores\',
                     \'titleTextStyle\': {
                     \'fontSize\': \'16\' },
-                    \'width\':800,
-                    \'height\':700,
+                    \'width\':\'700\',
+                    \'height\':\'600\',
                     pieHole: 0.4  
                      };  
                 var chart = new google.visualization.PieChart(document.getElementById(\'_grafica_titulo_div\'));  
