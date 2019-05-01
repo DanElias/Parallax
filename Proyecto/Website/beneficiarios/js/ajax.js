@@ -1,6 +1,8 @@
 $(document).ready(imprimeTutorExterno());
 
-//$(document).ready();
+$(document).ready(moreInfo());
+
+$(document).ready(mEst());
 
 $(document).ready(function() {
     $('#tablaB').DataTable( {
@@ -17,15 +19,23 @@ $(document).ready(function() {
 
 } );
 
-$(document).ready(function(){
-  var id = 1;
-  $.post('controladores/_modales_beneficiarios.php', { id : id } )
+function moreInfo(){
+  $.post('controladores/_modales_beneficiarios.php', { id : 1 } )
   .done(function(data){
     console.log(data);
     $('#modBen').html(data);
     M.AutoInit();
   });
-} );
+}
+
+function mEst(){
+  $.post('controladores/modalEstado.php', { id : 1 } )
+  .done(function(data){
+    console.log(data);
+    $('#modEst').html(data);
+    M.AutoInit();
+  });
+}
 
 
 $(document).ready(function() {
@@ -105,23 +115,24 @@ function infoTutor(){
 $(document).ready(function(){
   $("#formaEditarEstado").submit(function (ev){
     ev.preventDefault();
-     var nombre= $('#nFruit').val();
-     var unidades= $('#uFruit').val();
-     var cantidad= $('#qFruit').val();
-     var precio= $('#pFruit').val();
-     var pais= $('#cFruit').val();
-     $.post('fruit.php', { nameFruit : nombre, unitsFruit : unidades, quantityFruit : cantidad, priceFruit : precio, countryFruit : pais } )
+     var id = $("#id_ben").val();
+     var estado = -1;
+     if($("#palancaEstado").prop("checked")){
+       estado = 1;
+     } else{
+       estado = 0;
+     }
+     $.post('estadoController.php', { id : id, estado : estado } )
      .done(function(data){
-       console.log(nombre);
-       imprimir();
+       alert('Estado modificado!');
+       if($("#botonActivos").prop("checked")){
+         imprimeNombreBeneficiarioActivo();
+       } else{
+         imprimeNombreBeneficiario();
+       }
       })
       .fail(function(){
-        imprimir();
-        $('#nFruit').val(" ");
-        $('#uFruit').val(" ");
-        $('#qFruit').val(" ");
-        $('#pFruit').val(" ");
-        $('#cFruit').val(" ");
+        alert('Error: no se pudo cambiar el estado');
         console.log('Error');
       })
     });
@@ -173,14 +184,5 @@ function imprimeModal(){
   .done(function(data){
     console.log("Funciono");
     $('#tablaExternaTutor').html(data);
-  });
-}
-
-function modalEstado(){
-  $.post('beneficiarioController.php', { opcion : 1 } )
-  .done(function(data){
-    console.log("Modalees");
-    $('#cuerpoTablaBeneficiarios').append(data);
-    //M.AutoInit();
   });
 }
