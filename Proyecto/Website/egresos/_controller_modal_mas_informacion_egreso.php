@@ -3,6 +3,10 @@
 require_once("../basesdedatos/_conection_queries_db.php");
 //require_once("_util_eventos.php");
 //echo "LLEGO AL OTRO DOCUMENTO";
+
+//obtener razon con rfc
+//obtener cuenta con id
+
 $_POST['id'] = htmlentities($_POST['id']);
 if (isset($_POST['id']) && $_POST['id'] != "") {
     $result = obtener_egreso_folio($_POST['id']);
@@ -37,18 +41,11 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
                                 <p class="mi_parrafo s6">'. $row["cuenta_bancaria"] .'</p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col s4">
-                                <p class="mi_titulo s6">RFC del proveedor</p>&nbsp;&nbsp;
-                                <p class="mi_parrafo s6">'. $row["rfc"] .'</p>
-                            </div>
+                        <div class="row">';
 
-                            <div class="col s4">
-                                <p class="mi_titulo s6">ID de la cuenta contable</p>&nbsp;&nbsp;
-                                <p class="mi_parrafo s6">'. $row["id_cuentacontable"] .'</p>
-                            </div>
-
-                            <div class="col s4">
+                        //$cards.=                     .variable de razon con base a rfc y cuenta con su id.';
+                           
+                        $cards.='<div class="col s4">
                                 <p class="mi_titulo s6">Observaciones</p>&nbsp;&nbsp;
                                 <p class="mi_parrafo s6">'. $row["observaciones"] .'</p>
                             </div>

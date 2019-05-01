@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
                         </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['folio_factura'].'\')">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['folio_factura'].'\',\''.$row['rfc'].'\',\''.$row['id_cuentacontable'].'\')">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
