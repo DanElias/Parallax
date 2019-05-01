@@ -359,6 +359,23 @@ function obtenerProveedor()
     return $result;
 }
 
+function obtener_razon($rfc){
+  $conn = conectDb();
+    $sql = "SELECT razon_social FROM proveedor WHERE rfc=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$rfc);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return $result;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+
+}
 
 function obtener_proveedor_id($rfc){
 
@@ -543,6 +560,24 @@ function eliminar_egreso_folio($folio_factura){
 
 
 /********************/
+
+function obtener_nombre_cuenta($id_cuenta){
+    $conn = conectDb();
+    $sql = "SELECT nombre FROM cuenta_contable WHERE id_cuentacontable=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id_cuenta);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return $result;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {
     /*$conn = conectDb();

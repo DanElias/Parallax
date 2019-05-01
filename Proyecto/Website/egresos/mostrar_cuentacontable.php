@@ -8,7 +8,7 @@
     if(mysqli_num_rows($cuenta)>0){
         //echo "<h1>SI ENTRO</h1>";
         while($row = mysqli_fetch_assoc($cuenta)){
-            $drop_cuenta.="<option value='".$row['id_cuentacontable']."'>".$row['descripcion']."</option>" ;
+            $drop_cuenta.="<option value='".$row['id_cuentacontable']."'>".$row['nombre']."</option>" ;
            // $drop_cuenta.="<option value='".$row['id_cuentacontable']."'>".$row['descripcion']."</option>";
              // $drop_proveedores.="<option value='".$row['rfc']."'>".$row['razon_social']."</option>";
             //echo "hola: ".$row["id_tipo"];
