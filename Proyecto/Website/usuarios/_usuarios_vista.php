@@ -12,6 +12,7 @@ if (isset($_SESSION["usuario"])) {
     usuarios_html();
     form_usuario_html();
     form_rol_html();
+    form_editar_rol_html();
     controller_tabla_usuario_php();
     footer_html();
     echo '<script type="text/javascript" src="ajax_usuario.js"></script>';

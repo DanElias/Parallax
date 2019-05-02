@@ -28,6 +28,10 @@ function form_rol_html()
 {
     include("forms/_form_rol.html");
 }
+function form_editar_rol_html()
+{
+    include("forms/_form_editar_rol.html");
+}
 
 function controller_tabla_usuario_php()
 {
