@@ -4,7 +4,7 @@
 require_once("_util_egresos.php");
 session_start(); //Inicio de sesion
 
-if (isset($_SESSION["usuario"])) {
+if (isset($_SESSION["usuario"]) && $_SESSION['tres'] == 1) {
 
     //Htmls a llamar
     header_html();

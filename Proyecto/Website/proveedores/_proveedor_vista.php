@@ -8,7 +8,7 @@ session_start(); //Inicio de sesion
 
 //Condicionales para el caso de hacer logout
 
-if (isset($_SESSION["usuario"])) {
+if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
     header_html();
     sidenav_html();
     body_proveedores();//evento_html();

@@ -11,7 +11,7 @@ session_start(); //Inicio de sesion
 
 //Condicionales para el caso de hacer logout
 
-if (isset($_SESSION["usuario"])) {
+if (isset($_SESSION["usuario"]) && $_SESSION['seis'] == 1) {
     header_html();
     sidenav_html();
     cuentacontable_html();
