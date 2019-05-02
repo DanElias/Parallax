@@ -84,10 +84,10 @@ if (mysqli_num_rows($result) > 0) {
                                         <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required value = "' . $row['fecha_nacimiento'] . '">
                                         <label for="fecha_nacimiento">Fecha de nacimiento ddmmAAAA</label>
                                     </div>
-                                    <div class="input-field col s6">
-                                        <i class="material-icons prefix">cake</i>
-                                        <input type="text" name="rol" id="rol" value = "' . $row['id_rol'] . '">
-                                        <label for="rol">ROL</label>
+                                    
+                                     <div class="input-field col s6" >
+                                        <select id="editar_rol" name="editar_rol"></select>
+                                        <label>Selecciona un rol</label>
                                     </div>
                     
                     
@@ -115,6 +115,7 @@ if (mysqli_num_rows($result) > 0) {
 
     }
 
+
     echo $edit_form;
     echo
     "<script type='text/javascript'>
@@ -125,7 +126,9 @@ if (mysqli_num_rows($result) > 0) {
                                       M.updateTextFields(); 
                                   });
                             });
+                            
                     </script>";
+
 
     //M.updateTextFields() sirve para que se actualizen los text fields y se mueven los labels de los campos que ya estan llenos.
 
