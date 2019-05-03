@@ -77,7 +77,7 @@ if (mysqli_num_rows($result) > 0) {
         
         ' . $cards . '
             </div>
-            <div class="parallax"><img src="../images/f4.jpg" width="100%">
+            <div class="parallax"><img src="../images/wall.jpg" style="object-fit: cover;"></div>
             </div>
             </div>
         ';

@@ -412,12 +412,6 @@ input {
     height: 100%;
 }
 
-.my_card_title {
-    font-family: Staatliches;
-    font-size: 200%;
-    text-shadow: 3px 3px rgba(19, 28, 43, 0.8);
-
-}
 
 .my_table_title {
     font-family: Staatliches;
@@ -473,14 +467,6 @@ input {
     padding: 50px;
     text-align: justify;
     text-justify: inter-word;
-}
-
-.logo_principal {
-    padding: 5%;
-    width: 60%;
-    position: absolute;
-    z-index: 99;
-    margin-left: 20%;
 }
 
 .wrapper {
@@ -776,20 +762,15 @@ my_search {
     color: blue !important;
   }
   
-  .nav-row{
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 5em;
-    padding-right: 3em;
-    padding-top: 1.5em;
-}
     
 .nav-logo {
     display: inline-block;
+    
 }
     
 .nav-controls {
     float: right;
+    padding-top: 0.5em;
 }
 
 .my_nav_option{
@@ -824,24 +805,10 @@ my_search {
 .mision_header{
     color: #ffb300; 
     font-size:2em;
+    font-family:Fredoka One;
 }
 
-.values{
-    background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
-    height: auto;
-    height: 100%;
-    font-family: Ubuntu;
-    color: white;
-    font-size: 1.5em;
-    padding-left: 11em;
-    padding-right: 4.5em;
-    
-}
 
-.values_text{
-    font-family: Staatliches; 
-    font-size: 2em;
-}
 
 .fa {
   padding: 20px;
@@ -862,12 +829,6 @@ my_search {
 .fa-twitter {
   background: #00aced;
   color: white;
-}
-
-.my_card_title2 {
-    font-family: Staatliches;
-    font-size: 200%;
-    color: #00bfa5;
 }
 
 .footer-distributed{
@@ -1032,8 +993,8 @@ my_search {
 }
 
 .my_footer_title {
-    font-family: Staatliches;
-    font-size: 3em;
+    font-family: Fredoka One;
+    font-size: 2.7em;
     letter-spacing: 0.05em;
     text-decoration: none !important;
 }
@@ -1055,3 +1016,221 @@ my_search {
 .ubuntu-text{
     font-family: Ubuntu;
 }
+
+@media all and (min-width:0px) and (max-width: 480px){
+  .mariana_title
+  {
+    font-size: 3em;
+    font-family: Fredoka One;
+    color: rgba(34, 167, 171, 1) !important;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    letter-spacing: 0.035em;
+  }
+  
+  .logo_principal {
+    width: 75%;
+    position: absolute;
+    z-index: 99;
+    display: block;
+    margin-left: 13%;
+    margin-top: 20%;
+    }
+    
+    .my_carousel_parallax{
+        max-height: 75% !important;
+    }
+
+    .my_carousel_image{
+        max-height: 75% !important;
+    }
+    
+    .my_carousel_item{
+        max-height: 75% !important;
+    }
+    
+    .my_image_device{
+        object-fit: cover; 
+       max-width: 100% !important;
+       max-height: 75% !important;
+    }
+    
+    .watermark_mobile{
+        width: 70px;
+    }
+    
+    .nav-row{
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 1em;
+        padding-right: 3em;
+        padding-top: 1em;
+    }
+    
+    .values{
+        background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
+        height: auto;
+        height: 90%;
+        font-family: Ubuntu;
+        color: white;
+        font-size: 1.6em;
+        margin: 0 auto;
+    
+    }
+
+    .values_text{
+        font-family: Fredoka One; 
+        font-size: 1.5em;
+    }
+    
+    .values_row{
+        padding-left: 1.2em;
+        padding-right: 0em !important;
+        padding-top: 1.5em;
+        padding-bottom: 1em;
+    }
+    
+    .my_space_values{
+        padding-top: 0em; 
+        padding-bottom: 0em
+    }
+    
+     .my_space_cards{
+        padding-top: 0em; 
+        padding-bottom: 0em;
+        font-size: 0.001em;
+        color: grey;
+    }
+    
+    .my_card_title {
+        font-family: Fredoka One;
+        font-size: 130% !important;
+        text-shadow: 5px 5px rgba(19, 28, 43, 0.8);
+        letter-spacing: 2px;
+    }
+    
+    .my_card_title2 {
+        color: #00bfa5;
+        font-family: Fredoka One;
+        font-size: 100% !important;
+        letter-spacing: 2px;
+    }
+    
+     .my_parallax_title{
+        font-family: Fredoka One;
+        padding-top: 0.5em;
+        font-size: 0.8em;
+    }
+    
+    .container_small{
+        max-height: 375px;
+    }
+    
+    .my_image_device2{
+        object-fit: cover;
+    }
+    
+    .first-container{
+         max-height: 20em;
+    }
+
+  
+}
+
+@media all and (min-width:481px) and (max-width: 10000px) {
+    .mariana_title
+  {
+    font-size: 3em;
+    font-family:Fredoka One;
+    color: rgba(34, 167, 171, 1) !important;
+    padding: 0.2em;
+    letter-spacing: 0.035em;
+  }
+  
+.logo_principal {
+    width: 50%;
+    position: absolute;
+    z-index: 99;
+    display: block;
+    margin-left: 25%;
+    margin-top: 5%;
+    }
+    
+    .my_carousel_parallax{
+        height: 455px;
+    }
+    
+     .my_image_device{
+        object-fit: cover; 
+        max-width: 50% !important;
+    }
+    
+    .watermark_mobile{
+        width: 90px;
+    }
+    
+    .nav-row{
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 5em;
+        padding-right: 3em;
+        padding-top: 1em;
+    }
+    
+    .values{
+        background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
+        height: auto;
+        height: 100%;
+        font-family: Ubuntu;
+        color: white;
+        font-size: 1.5em;
+        padding-right: 4.5em;
+    
+    }
+
+    .values_text{
+        font-family: Fredoka One; 
+        font-size: 1.5em;
+    }
+    
+    .values_row{
+        padding-left: 10em;
+        padding-right: 0em !important;
+        padding-top: 4em;
+        padding-bottom: 3em;
+    }
+    
+    .my_space_values{
+        padding-top: 1em; 
+        padding-bottom: 1em
+    }
+    
+     .my_space_cards{
+        padding-top: 1em; 
+        padding-bottom: 1em;
+        font-size: 0.001em;
+        color: grey;
+    }
+    
+    .my_card_title {
+        font-family: Fredoka One;
+        font-size: 150% !important;
+        text-shadow: 5px 5px rgba(19, 28, 43, 0.8);
+        letter-spacing: 2px;
+    }
+    
+    .my_card_title2 {
+        color: #00bfa5;
+        font-family: Fredoka One;
+        font-size: 150% !important;
+        letter-spacing: 2px;
+    }
+    
+    .my_parallax_title{
+        font-family: Fredoka One;
+        padding-top: 1.5em;
+        font-size: 1.3em;
+    }
+
+}
+

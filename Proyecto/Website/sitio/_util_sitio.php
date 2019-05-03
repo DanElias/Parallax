@@ -18,23 +18,15 @@ function home_sitio_html()
 function _parallax($image_url, $titulo)
 {
     $parallax_container =
-        '<div class="parallax-container first-container z-depth-4">
-            <header id="home_header"> 
-            <section>
-                <h3 class="my_header_text">' . $titulo . '</h3>
-            </section>
+        '<div class="parallax-container first-container">
+            <header id="home_header" class="container_small"> 
+                <h3 class="my_parallax_title container_small">' . $titulo . '</h3>
             </header>
-            <div class="parallax ">';
-
-    $parallax_container .= '<img src="' . $image_url . '"width="100%" >
+            <div class="parallax my_image_device2 container_small">';
+                $parallax_container .= '<img src="' . $image_url . '" class="my_image_device2 container_small" >
             </div>
         </div>';
     echo $parallax_container;
-}
-
-function cards_eventos_html()
-{
-    include("_cards_eventos.html");
 }
 
 function controller_cards_eventos_php()
@@ -43,7 +35,7 @@ function controller_cards_eventos_php()
 }
 
 function apoyanos_html(){
-    include("_apoyanos.html");
+    include("apoyanos.html");
 }
 
 
