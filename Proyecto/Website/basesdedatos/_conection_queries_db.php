@@ -546,6 +546,18 @@ function obtener_usuario_reciente()
     closeDB($conn);
     return $result;
 }
+function obtenerCorreos()
+{
+    $conn = conectDb();
+    $sql = "SELECT email FROM usuario";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
 
 function obtenerCuentaPorID($id_cuentacontable)
 {
@@ -599,6 +611,7 @@ function obtenerUsuariosPorID($id_usuario){
     closeDB($conn);
     return $result;
 }
+
 
 
 
