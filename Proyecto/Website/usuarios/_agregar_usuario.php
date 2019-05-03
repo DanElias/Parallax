@@ -7,9 +7,6 @@ session_start();
 $result = obtenerCorreos();
 $bandera = 0;
 
-$_SESSION['registro'] = 0;
-$_SESSION['error'] = 0;
-
 if (isset($_POST["submit"])){
     $_POST["nombre"] = htmlentities($_POST["nombre"]);
     $_POST["apellido"] = htmlentities($_POST["apellido"]);
@@ -35,7 +32,7 @@ if (isset($_POST["submit"])){
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 if($_POST["email"] == $row['email']){
-                    $_SESSION['error'] = 1;
+                    $_SESSION['error1'] = 1;
                     $bandera = 1;
                     header("location:_usuarios_vista.php");
 
@@ -69,9 +66,11 @@ if (isset($_POST["submit"])){
             }
         }
 
-        echo 'No entro al registro';
-
+    }else{
+        $_SESSION['error2'] = 1;
     }
+
+
 
 }
 

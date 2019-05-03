@@ -26,10 +26,16 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
 
     }
 
-    if($_SESSION['error'] == 1){
+    if($_SESSION['error1'] == 1){
         echo
         "<script type='text/javascript'> alert('!!!!!El usuario No se puede registrar debido a que el correo ya esta en uso¡¡¡¡¡');</script>";
-        $_SESSION['error'] = 0;
+        $_SESSION['error1'] = 0;
+
+    }
+    if($_SESSION['error2'] == 1){
+        echo
+        "<script type='text/javascript'> alert('!!!!!Los datos no se ingresaron correctamente¡¡¡¡¡');</script>";
+        $_SESSION['error2'] = 0;
 
     }
 
