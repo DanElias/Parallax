@@ -264,8 +264,9 @@ $(document).ready(function(){
   		if(!(/^[\d\w\s]+$/i.test($('#banco').val()))){
   			//console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
   			$("#error_banco").html('*No caracteres especiales').css("color","red");
-         $("#error_banco").css('padding-left','10%');
+        	$("#error_banco").css('padding-left','10%');
   			$("#error_banco").show();
+  			error_banco = true;
   		}else{
   			$("#error_banco").hide();
   		}
@@ -276,8 +277,9 @@ $(document).ready(function(){
   		var tamano = $("#cuenta_bancaria").val().length;
   		if(tamano<18 || !(/^[\d]+$/i.test($('#cuenta_bancaria').val()))){
   			$("#error_cuenta").html('*Deben ser exactamente 18 dígitos').css("color","red");
-         $("#error_cuenta").css('padding-left','10%');
-  			$("#error_cuenta").show();		
+         	$("#error_cuenta").css('padding-left','10%');
+  			$("#error_cuenta").show();	
+  			error_cuenta = true;	
   		}else{
   			$("#error_cuenta").hide();
   		}
@@ -342,7 +344,7 @@ $(document).ready(function(){
       if(!(/^[\d\w\s]+$/i.test($('#razon_social2').val()))){
         //console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");  
         $("#error_razon2").html('*No caracteres especiales').css("color","red");
-         $("#error_razon2").css('padding-left','10%');
+        $("#error_razon2").css('padding-left','10%');
         $("#error_razon2").show();
         error_razon2 = true;
       }else{
@@ -377,8 +379,9 @@ $(document).ready(function(){
       if(!(/^[\d\w\s]+$/i.test($('#banco2').val()))){
         //console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");  
         $("#error_banco2").html('*No caracteres especiales').css("color","red");
-         $("#error_banco2").css('padding-left','10%');
+        $("#error_banco2").css('padding-left','10%');
         $("#error_banco2").show();
+        error_banco2 = true;
       }else{
         $("#error_banco2").hide();
       }
@@ -389,8 +392,9 @@ $(document).ready(function(){
       var tamano = $("#cuenta_bancaria2").val().length;
       if(tamano<18 || !(/^[\d]+$/i.test($('#cuenta_bancaria2').val()))){
         $("#error_cuenta2").html('*Deben ser exactamente 18 dígitos').css("color","red");
-         $("#error_cuenta2").css('padding-left','10%');
+        $("#error_cuenta2").css('padding-left','10%');
         $("#error_cuenta2").show();    
+        error_cuenta2 = true;
       }else{
         $("#error_cuenta2").hide();
       }
