@@ -1,7 +1,10 @@
 <?php
 require_once("../basesdedatos/_conection_queries_db.php");
 
+session_start();
+
 echo  $_SESSION['id_rol'] . '<br>';
+
 $result = obtenerPrivilegios($_SESSION['id_rol']);
 $query_table = "";
 $_SESSION['uno'] = 0;
@@ -12,7 +15,8 @@ $_SESSION['cinco'] = 0;
 $_SESSION['seis'] = 0;
 $_SESSION['siete'] = 0;
 $_SESSION['ocho'] = 0;
-if (mysqli_num_rows($result) > 0) {
+
+if(mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         if($row["id_privilegio"] == 1){
             $_SESSION['uno'] = 1;

@@ -4,7 +4,7 @@
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
     $servername = "localhost";
-    $username = "root";
+    $username = "danelias";
     $password = "";
     $dbname = "proyecto";
 
@@ -872,8 +872,7 @@ function autentificarse($email, $password)
 */
 function login($email, $password)
 {
-
-
+  
     /*// SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
     $con = conectDb();
     $sql = "SELECT nombre,id_rol FROM usuario WHERE email = '$email'";

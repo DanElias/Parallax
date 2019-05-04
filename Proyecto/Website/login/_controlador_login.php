@@ -1,16 +1,28 @@
 <?php
 require_once("../basesdedatos/_conection_queries_db.php");
+require_once("_util_login.php");
 
+session_start();
+
+ if (isset($_POST["submit"])){
+     
+    $_POST['email'] = htmlentities($_POST['email']);
+    $_POST['password'] = htmlentities($_POST['password']);
+    
+  
 if (isset($_POST["email"]) && isset($_POST["password"])) {
+    
 
     //Datos que va a tomar, validar con htmltiteies
     $_POST['email'] = htmlentities($_POST['email']);
     $_POST['password'] = htmlentities($_POST['password']);
-
-
+    
     $usuario = login($_POST["email"], $_POST["password"]);
+    
 
     if (autentificarse(($_POST["email"]), ($_POST["password"]))) {
+        
+        echo '<script>alert("fuck");</script>';
         //Te manda a location de admin
         header("location:../admin/_admin_vista.php");
 
@@ -33,8 +45,15 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         include("../views/_footer_login.html");
     }
 
-    //Si es la priemra vez , solo mostrara los datos
+    //Si es la primera vez , solo mostrara los datos
 } else {
+     
+    header_html();
+    include("_login.html");
+    include("../views/_footer_login.html");
+}
+} else {
+     
     header_html();
     include("_login.html");
     include("../views/_footer_login.html");
