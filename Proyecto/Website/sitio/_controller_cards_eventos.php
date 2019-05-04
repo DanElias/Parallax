@@ -13,58 +13,51 @@ if (mysqli_num_rows($result) > 0) {
         $cards .= '
                 <div class="row" style="width: 80%;">
                     <div class="col s12 m12">
-                        <div class="card horizontal" >
-                            <div class="card-image">
-                                <img src="' . $row["imagen"] . '" class="" style="object-fit:cover">
-                            </div>
-                                <div class="card-stacked">
-                                    <div class="card-content">
-                                        <p style="font-family: Staatliches; color: #0d3d63; font-size: 1.2em;">
-                                            <i class="material-icons prefix">event</i>
-                                            ' . $row["nombre"] . '
-                                            <hr>
-                                        </p>
-        
-                                    <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1em; text-align:left;">
-                                        <div class="col m12 s12">
-                                            <div>
-                                                <i class="material-icons prefix">calendar_today</i>
-                                                Fecha: ' . $row_date[2] . '/' . $row_date[1] . '/' . $row_date[0] . '
-                                            </div>
-                                        </div>
-                                    </div>
+                    
+                    <div class="card horizontal z-depth-5" style="padding-top:1em; ">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                
+                                
+                                <p style="font-family: Fredoka One; color: #00bfa5; font-size: 1.5em;">
+                                    <i class="material-icons prefix">event</i>
+                                    ' . $row["nombre"] . '
+                                </p>
+                                <hr>
+                                
+                                <div class ="row apoyanos blue-grey-text center" style="text-align:justify">
                                     
+                                    <div class="col s12 m8">
+                                        <br>
+                                        <i class="material-icons prefix">calendar_today</i>
+                                        Fecha: ' . $row_date[2] . '/' . $row_date[1] . '/' . $row_date[0] . '
+                                        &nbsp; &nbsp; &nbsp;
+                                   
+                                        <i class="material-icons prefix">access_time</i>
+                                        Hora: ' . $row["hora"] . ' hrs.
+                                        <br><br>
                                     
-                                    <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1em; text-align:left;">
-                                        <div class="col m12 s12">
-                                            <div>
-                                                <i class="material-icons prefix">access_time</i>
-                                                Hora: ' . $row["hora"] . '
-                                            </div>
-                                        </div>
+                                        <i class="material-icons prefix">place</i>
+                                        Lugar: ' . $row["lugar"] . '
+                                        <br><br>
+                                    
+                                         <i class="material-icons prefix">description</i>
+                                        Descripción: ' . $row["descripcion"] . '
+                                        <br> <br>   
+                                     </div>
+                                    <br> 
+                                
+                                    <div class="col s12 m4">
+                                   
+                                        <img src="' . $row["imagen"] . '" class="z-depth-4 materialboxed" style="object-fit:cover" width=80%>
                                     </div>
-                                  
-                                  
-                                    <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1em; text-align:left;">
-                                        <div class="col s12">
-                                            <div>
-                                                <i class="material-icons prefix">place</i>
-                                                Lugar: ' . $row["lugar"] . '
-                                            </div>
-                                        </div>
-                                    </div>
-                                  
-                                    <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1em; text-align:left;">
-                                        <div class="col s12">
-                                            <div>
-                                                <i class="material-icons prefix">description</i>
-                                                Descripcion: ' . $row["descripcion"] . '
-                                            </div>
-                                        </div>
-                                    </div>
+                            
                                 </div>
+
                             </div>
                         </div>
+                    </div>
+                        
                     </div>
                 </div>
                 <br><br>';
