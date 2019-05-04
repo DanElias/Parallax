@@ -1,30 +1,42 @@
 <?php
 
+$GLOBALS['local_servidor'] = 0;
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-    $servername = "localhost";
-    $username = "danelias";
-    $password = "";
-    $dbname = "proyecto";
+    if($GLOBALS['local_servidor'] == 1){
+        $servername = "";
+        $username = "marianas";
+        $password = "1Ky4L05bly";
+        $dbname = "marianas_salaMariana";
+    }else{
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "Proyecto";
+    }
 
-    $con = new mysqli($servername, $username, $password, $dbname);
-    
+
+     $con = new mysqli($servername, $username, $password, $dbname);
+ 
 
     if($con->connect_error){
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
       //include("error_server_card.html");
-      //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
-        alertaNoHayConexion();
+      //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a 
+       //intentarlo más tarde');</script>";
+      alertaNoHayConexion();
       include("../views/_footer_admin.html");
       die();
     }
   
     return $con;
+  
 }
 
 //cierra la conexión con la base de datos
-function closeDb($mysql){
+function closeDb($mysql)
+{
     $mysql->close();
 }
 
@@ -107,41 +119,6 @@ function obtenerEventos()
     closeDB($conn);
     return $result;
 }
-
-function obtenerEventosSiguientes($fecha){
-    $conn = conectDb();
-    
-     $sql = "
-          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
-          WHERE fecha>= ? ";
-          
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$fecha);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-}
-
-function obtenerEventosPasados($fecha){
-    $conn = conectDb();
-    
-     $sql = "
-          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
-          WHERE fecha< ? ";
-          
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('s',$fecha);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-}
-
 
 // regresa todos los datos de una tupla cuyo nombre sea igual al especificado
 function obtenerEventosPorNombre($nombre_evento)
@@ -872,13 +849,14 @@ function autentificarse($email, $password)
 */
 function login($email, $password)
 {
-  
+
+
     /*// SELECT nombre FROM login WHERE email = 'josecarlos@gmail.com' And password = '123'
     $con = conectDb();
     $sql = "SELECT nombre,id_rol FROM usuario WHERE email = '$email'";
     $result = mysqli_query($con, $sql);
-
     return $result;*/
+
     $conn = conectDb();
     $sql = "SELECT nombre,id_rol FROM usuario WHERE email = ?";
     if($stmt = $conn->prepare($sql)){
@@ -887,7 +865,8 @@ function login($email, $password)
       $result = $stmt->get_result();
       $stmt->close();
     }
-    closeDB($conn);
+    
+   closeDB($conn);
     return $result;
 }
 
@@ -903,6 +882,7 @@ function obtenerUsuario()
     closeDb($conn);
 
     return $result;*/
+
     $conn = conectDb();
     $sql = "SELECT id_usuario, nombre,apellido, email, fecha_creacion,descripcion FROM usuario,rol WHERE rol.id_rol = usuario.id_rol";
     if($stmt = $conn->prepare($sql)){

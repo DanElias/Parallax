@@ -1,7 +1,7 @@
 <?php
 require_once("../basesdedatos/_conection_queries_db.php");
 
-session_start();
+
 
 echo  $_SESSION['id_rol'] . '<br>';
 
