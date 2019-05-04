@@ -15,7 +15,6 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 
 session_start(); //para poder utilizar session
 
-$_SESSION['id_cuentacontable'];//se va a guardar el id del evento
 $_SESSION['error_cuenta'] = " "; //se va a guardar algo en caso de que ellas errores
 
 if (isset($_POST["submit"])){
@@ -48,7 +47,7 @@ if (isset($_POST["submit"])){
                 } else {
                     $_SESSION['id_cuentacontable'] = $row['id_cuentacontable'];
                 }
-    
+
                 form_cuentacontable_html();
                 controller_tabla_cuentas_php();
                 controller_modal_informacion_cuentacontable();

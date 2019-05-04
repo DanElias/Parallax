@@ -7,6 +7,9 @@ session_start(); //Inicio de sesion
 //Condicionales para el caso de hacer logout
 
 if (isset($_SESSION['usuario'])) {
+    $_SESSION['registro'] = 0;
+    $_SESSION['error1'] = 0;
+    $_SESSION['error2'] = 0;
     //Llamada de funciones (util.php) de lo que se nesecite en el form
     header_html();
     body_admin_main();

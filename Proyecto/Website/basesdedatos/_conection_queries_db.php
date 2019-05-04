@@ -15,7 +15,7 @@ function conectDb()
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
       //include("error_server_card.html");
       //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a intentarlo más tarde');</script>";
-      alertaNoHayConexion();
+        alertaNoHayConexion();
       include("../views/_footer_admin.html");
       die();
     }
@@ -24,11 +24,39 @@ function conectDb()
 }
 
 //cierra la conexión con la base de datos
-function closeDb($mysql)
-{
+function closeDb($mysql){
     $mysql->close();
 }
 
+function registrar_rol_privilegio($id_rol,$id_privilegio){
+    $conn = conectDb();
+    $sql = "INSERT INTO rol_privilegio (id_rol,id_privilegio) VALUES (?,?)";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('ii',$id_rol,$id_privilegio);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        echo mysqli_error($sql);
+        return false;
+    }
+    closeDB($conn);
+}
+function obtener_rol_reciente()
+{
+    $conn = conectDb();
+    $sql = "SELECT id_rol FROM rol ORDER BY id_rol DESC LIMIT 1";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
 function obtenerRoles(){
     $con = conectDb();
     $query="SELECT * FROM rol ORDER BY descripcion ASC";
@@ -39,6 +67,13 @@ function obtenerRoles(){
         $salida.="<option value='$row[id_rol]'>$row[descripcion]</option>";
     }
     return  $salida;
+}
+
+function obtenerPrivilegios($rol){
+    $con = conectDb();
+    $query="SELECT * FROM rol_privilegio WHERE id_rol = $rol";
+    $result=$con->query($query);
+    return  $result;
 }
 function eliminarUsuarioPorID($id_usuario)
 {
@@ -396,6 +431,23 @@ function obtenerProveedor()
     return $result;
 }
 
+function obtener_razon($rfc){
+  $conn = conectDb();
+    $sql = "SELECT razon_social FROM proveedor WHERE rfc=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$rfc);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return $result;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+
+}
 
 function obtener_proveedor_id($rfc){
 
@@ -412,8 +464,7 @@ function obtener_proveedor_id($rfc){
 }
 
 
-function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco)
-{
+function registrar_proveedor($rfc, $alias, $razon, $nombre, $telefono, $cuenta, $banco){
     /*$conn = conectDb();
     //$sql = "INSERT INTO Proveedor(rfc,alias,razon_social,nombre_contacto,telefono_contacto,cuenta_bancaria, banco) VALUES (\"".$rfc."\",\"".$alias."\",\"".$razon."\",\"".$nombre."\",\"".$telefono."\",\"".$cuenta."\",\"".$banco."\")";
     //Query de SQl para insertar en la tabla de proveedores
@@ -489,6 +540,115 @@ function eliminar_proveedor_id($rfc)
 
 /**************************/
 
+/************CONSULTAS EGRESOS**************/
+function obtenerEgresos(){
+
+    /*$conn = conectDb();
+
+    $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
+
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+
+    return $result;*/
+    $conn = conectDb();
+    $sql = "SELECT folio_factura, concepto, importe, fecha , observaciones, cuenta_bancaria, rfc, id_cuentacontable FROM egreso";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function registrar_egreso($folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
+    $conn = conectDb();
+    $sql = "INSERT INTO egreso(folio_factura,concepto,importe,fecha,observaciones,cuenta_bancaria,rfc,id_cuentacontable) VALUES (?,?,?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssdssssi',$folio_factura,$concepto,$importe,$fecha,$observaciones,$cuenta_bancaria,$rfc,$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+
+}
+
+function obtener_egreso_folio($folio_factura){
+
+    $conn = conectDb();
+    $sql = "SELECT folio_factura,concepto,importe,fecha,observaciones,cuenta_bancaria,rfc,id_cuentacontable FROM egreso WHERE folio_factura = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s', $folio_factura);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function editar_egreso($folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
+  $conn = conectDb();
+    $sql = "UPDATE egreso SET folio_factura=?, concepto=?, importe=?, fecha=?, observaciones=?, cuenta_bancaria=?, rfc=?, id_cuentacontable=? WHERE folio_factura=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+function eliminar_egreso_folio($folio_factura){
+
+    $conn = conectDb();
+    $sql = "DELETE FROM egreso WHERE folio_factura = ?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$folio_factura);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
+
+
+/********************/
+
+function obtener_nombre_cuenta($id_cuenta){
+    $conn = conectDb();
+    $sql = "SELECT nombre FROM cuenta_contable WHERE id_cuentacontable=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id_cuenta);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return $result;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+}
 
 function registrar_cuenta_contable($nombre_cuenta, $descripcion_cuenta)
 {
@@ -537,6 +697,18 @@ function obtener_usuario_reciente()
 {
     $conn = conectDb();
     $sql = "SELECT id_usuario FROM usuario ORDER BY id_usuario DESC LIMIT 1";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+function obtenerCorreos()
+{
+    $conn = conectDb();
+    $sql = "SELECT email FROM usuario";
     if($stmt = $conn->prepare($sql)){
         $stmt->execute();
         $result = $stmt->get_result();
@@ -598,6 +770,7 @@ function obtenerUsuariosPorID($id_usuario){
     closeDB($conn);
     return $result;
 }
+
 
 
 
@@ -743,28 +916,8 @@ function obtenerUsuario()
 }
 
 
-function obtenerEgresos()
-{
 
-    /*$conn = conectDb();
 
-    $sql = "SELECT folio_factura, fecha,importe,cuenta_bancaria FROM egreso";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
-    return $result;*/
-    $conn = conectDb();
-    $sql = "SELECT folio_factura, concepto, importe, fecha ,cuenta_bancaria, observaciones, rfc, id_cuentacontable FROM egreso";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-    }
-    closeDB($conn);
-    return $result;
-}
 
 function obtenerEgresosPeriodo($fecha_inicial, $fecha_final)
 {
@@ -779,18 +932,8 @@ function obtenerEgresosPeriodo($fecha_inicial, $fecha_final)
 }
 
 
-function obtenerCuentas()
-{
+function obtenerCuentas(){
 
-    /*$conn = conectDb();
-
-    $sql = "SELECT id_cuentacontable, nombre,descripcion FROM cuenta_contable";
-
-    $result = mysqli_query($conn, $sql);
-
-    closeDb($conn);
-
-    return $result;*/
     $conn = conectDb();
     $sql = "SELECT id_cuentacontable, nombre,descripcion FROM cuenta_contable";
     if($stmt = $conn->prepare($sql)){
