@@ -20,7 +20,7 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
     echo '<script type="text/javascript" src="ajax_proveedor.js"></script>';
     
 } else {
-    //header("location:../login/_login.php");
+    header("location:../login/_login_vista.php");
 
 }
 ?>

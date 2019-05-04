@@ -24,6 +24,9 @@ if (isset($_GET['id']) && $_GET['id'] != ""){
                 unlink($filename); //en teoría esta función siempre debería de funcionar porque es de PHP
             }
             header("location:_eventos_vista.php");
+            echo '<script type="text/javascript">
+	    window.location="https://www.marianasala.org/Website/eventos/_eventos_vista.php";
+	    </script>';
             //recargo la página
             //header_html();
             //sidenav_html();

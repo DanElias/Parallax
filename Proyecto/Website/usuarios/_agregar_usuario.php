@@ -35,6 +35,9 @@ if (isset($_POST["submit"])){
                     $_SESSION['error1'] = 1;
                     $bandera = 1;
                     header("location:_usuarios_vista.php");
+                    echo '<script type="text/javascript">
+                    window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
+                    </script>';
 
                 }
             }
@@ -60,6 +63,9 @@ if (isset($_POST["submit"])){
                 }
 
                 header("location:_usuarios_vista.php");
+                echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
+                </script>';
                 echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
                 /*-----------------------------------------------------------------------------------------------------------------*/
 

@@ -25,6 +25,9 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         echo '<script>alert("fuck");</script>';
         //Te manda a location de admin
         header("location:../admin/_admin_vista.php");
+        echo '<script type="text/javascript">
+	    window.location="https://www.marianasala.org/Website/admin/_admin_vista.php";
+	    </script>';
 
 
         //Si si existe , saca el nombre de la sesion (correo y contraseñas)
