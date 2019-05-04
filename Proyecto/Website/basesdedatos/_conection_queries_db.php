@@ -73,6 +73,41 @@ function obtenerEventos()
     return $result;
 }
 
+function obtenerEventosSiguientes($fecha){
+    $conn = conectDb();
+    
+     $sql = "
+          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
+          WHERE fecha>= ? ";
+          
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$fecha);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function obtenerEventosPasados($fecha){
+    $conn = conectDb();
+    
+     $sql = "
+          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
+          WHERE fecha< ? ";
+          
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$fecha);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
 // regresa todos los datos de una tupla cuyo nombre sea igual al especificado
 function obtenerEventosPorNombre($nombre_evento)
 {
