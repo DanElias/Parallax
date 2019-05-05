@@ -564,7 +564,7 @@ function editar_egreso($folio_factura, $concepto, $importe, $fecha, $observacion
   $conn = conectDb();
     $sql = "UPDATE egreso SET folio_factura=?, concepto=?, importe=?, fecha=?, observaciones=?, cuenta_bancaria=?, rfc=?, id_cuentacontable=? WHERE folio_factura=?";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable);
+      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable,$folio_factura);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();

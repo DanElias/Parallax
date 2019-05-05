@@ -93,7 +93,7 @@
         //SELECT PROVEEDOR 
         if($_POST['rfc']=='0'){    
             $flag = false;
-            echo "<br>PROVEEDOR MALO";
+            echo "<br>RFC MALO";
 
         }
 
@@ -107,10 +107,11 @@
         if(!$flag){
             echo "<br>NO SE MANDARA EL REGISTRO";
         }else{
-            $registrar = registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"]);
+            $editar = editar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"]);
 
-           if($registrar){
-               header("location:./_egreso_vista.php");
+           if($editar){
+            echo "DEBIO ACTUALIZARSE LA COSA";
+               //header("location:./_egreso_vista.php");
            }else{
                 echo "<h1>NO FUNCIONO</h1>";
            }
