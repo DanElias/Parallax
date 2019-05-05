@@ -3,7 +3,7 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
 require_once("../basesdedatos/_conection_queries_db.php");
 
-$result = obtenerUsuario();
+$result = obtenerTablaRoles();
 $query_table = "";
 
 if (mysqli_num_rows($result) > 0) {
@@ -11,21 +11,18 @@ if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
         $query_table .= "<tr>";
-        $query_table .= '<td style="display:none;">' . $row["id_usuario"] . '</td>';
-        $query_table .= "<td>" . $row["nombre"] . "</td>";
-        $query_table .= "<td>" . $row["apellido"] . "</td>";
+        $query_table .= '<td style="display:none;">' . $row["id_rol"] . '</td>';
         $query_table .= "<td>" . $row["descripcion"] . "</td>";
-        $query_table .= "<td>" . $row["email"] . "</td>";
-        $query_table .= "<td>" . $row["fecha_creacion"] . "</td>";
+
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_usuario('.$row['id_usuario'].')">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_rol('.$row['id_rol'].')">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usuario.php?id='.$row['id_usuario'].'">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_rol.php?id='.$row['id_rol'].'">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
@@ -39,12 +36,8 @@ if (mysqli_num_rows($result) > 0) {
                         <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
                             <thead>
                             <tr class="my_table_headers">
-                                <th style="display:none;">ID Cuenta Contable</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>ROL</th>
-                                <th>Email</th>
-                                <th>Fecha creacion</th>
+                                <th style="display:none;">ID Rol</th>
+                                <th>Descripcion</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>
@@ -63,7 +56,7 @@ if (mysqli_num_rows($result) > 0) {
                         </div>
                       
                         
-                        <div id="modal_editar_usuario_ajax">
+                        <div id="modal_editar_rol_ajax">
                         
                         </div>
                         
@@ -72,7 +65,7 @@ if (mysqli_num_rows($result) > 0) {
             </div><!--div del wrapper que empieza después del sidenav-->';
 
 } else { // si no hay eventos registrados en la tabla
-    echo "No encontramos usuarios registrados";
+    echo "No encontramos Roles registrados";
 }
 
 ?>

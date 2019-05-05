@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 
     function mostrar_editar_usuario(id_usuario){
+
          $.post('controladores/_controller_form_editar_usuario.php', { id : id_usuario } )
         .done(function(data){
             $('#modal_editar_usuario_ajax').html(data);
@@ -34,4 +35,14 @@ $(document).ready(function(){
 
         });
     }
+
+function mostrar_editar_rol(id_rol){
+    console.log("Editar usuarios");
+    $.post('controladores/_controller_form_editar_rol.php', { id : id_rol } )
+        .done(function(data){
+            $('#modal_editar_rol_ajax').html(data);
+            M.AutoInit();
+        });
+
+}
 

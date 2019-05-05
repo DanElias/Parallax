@@ -40,6 +40,38 @@ function closeDb($mysql)
     $mysql->close();
 }
 
+
+function obtenerTablaRoles()
+{
+    $conn = conectDb();
+    $sql = "SELECT id_rol, descripcion  FROM rol";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function eliminarRolPorId($id_usuario)
+{
+
+    $conn = conectDb();
+    $sql = "DELETE FROM rol WHERE id_usuario = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        return false;
+    }
+    closeDB($conn);
+}
 function registrar_rol_privilegio($id_rol,$id_privilegio){
     $conn = conectDb();
     $sql = "INSERT INTO rol_privilegio (id_rol,id_privilegio) VALUES (?,?)";
