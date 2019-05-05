@@ -92,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
                         <table class="stripped highlight responsive-table data_table fixed_header" >
                             <thead>
                             <tr class="my_table_headers">
-                                <th> &nbsp; &nbsp; Lo sentimos, no encontramos eventos.</th>
+                                <th> &nbsp; &nbsp; Lo sentimos, no encontramos egresos.</th>
                             </tr>
                             </thead>
                             <tbody>

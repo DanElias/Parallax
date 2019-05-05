@@ -6,7 +6,7 @@
   session_start();
   //$_SESSION['id_proveedor'] = $_POST['id'];
   $_POST['id'] = htmlentities($_POST['id']);
-  echo $_POST['id'];
+  //echo $_POST['id'];
   $result = obtener_egreso_folio($_POST['id']);
   $edit_form = '';
 
@@ -109,7 +109,6 @@
                                   </div>
                               </div>
                           </form>
-                      <!-- Final del form de beneficiarios-->
                   </div>
               </div>';
 
