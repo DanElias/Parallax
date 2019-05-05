@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
 
     echo '
         <div class="wrapper">
-             <div class="section white  my_section">
+             
                     <div class="table-wrapper responsive-table new_data_table">
                         
                         <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
@@ -52,12 +52,12 @@ if (mysqli_num_rows($result) > 0) {
                                 <th>Concepto</th>
                                 <th>Importe</th>
                                 <th>Fecha</th>
-                                <th style="display:none;"></th>
-                                <th style="display:none;"></th>
-                                <th style="display:none;"></th>
-                                <th>Más Información</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
+                                <th style="display:none;">Observaciones</th>
+                                <th style="display:none;">Cuenta Bancaria</th>
+                                <th style="display:none;">RFC</th>
+                                <th class="no_mostrar">Más Información</th>
+                                <th class="no_mostrar">Editar</th>
+                                <th class="no_mostrar">Eliminar</th>
                             </tr>
                             </thead>
     
@@ -80,7 +80,7 @@ if (mysqli_num_rows($result) > 0) {
                           
                     </div>
             
-                </div>
+                
             
             </div><!--div del wrapper que empieza después del sidenav-->';
 

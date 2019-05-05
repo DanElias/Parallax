@@ -469,8 +469,15 @@ input {
     text-justify: inter-word;
 }
 
-.wrapper {
+.wrapper{
     padding-left: 22em;
+    /*font-family: Ubuntu;*/
+}
+
+.body_admin{
+    background-image: url("../images/generalwall.jpg");
+    object-fit: cover;
+    
 }
 
 @media only screen and (max-width: 992px) {
@@ -644,7 +651,7 @@ input {
 
 .my_side_nav {
     font-family: Staatliches;
-    background-color: #0d3d63;
+    background-image: url("../images/navwall.jpg");
     font-size: 1.5em;
 }
 
@@ -994,7 +1001,7 @@ my_search {
 
 .my_footer_title {
     font-family: Fredoka One;
-    font-size: 2.7em;
+    font-size: 2.8em;
     letter-spacing: 0.05em;
     text-decoration: none !important;
 }
@@ -1018,6 +1025,9 @@ my_search {
 }
 
 @media all and (min-width:0px) and (max-width: 480px){
+    
+   
+    
   .mariana_title
   {
     font-size: 3em;
@@ -1045,6 +1055,7 @@ my_search {
         max-height: 75% !important;
     }
     
+    
     .my_carousel_item{
         max-height: 75% !important;
     }
@@ -1053,6 +1064,21 @@ my_search {
         object-fit: cover; 
        max-width: 100% !important;
        max-height: 75% !important;
+    }
+    
+    .my_carousel_parallax2{
+         max-height: 80% !important;
+    }
+    
+    .my_carousel_image2{
+        max-height: 80% !important;
+    }
+    
+    
+     .my_image_device2{
+        object-fit: cover; 
+       max-width: 100% !important;
+       max-height: 80% !important;
     }
     
     .watermark_mobile{
@@ -1138,12 +1164,14 @@ my_search {
 }
 
 @media all and (min-width:481px) and (max-width: 10000px) {
+    
     .mariana_title
   {
-    font-size: 3em;
+    font-size: 3.5em;
     font-family:Fredoka One;
     color: rgba(34, 167, 171, 1) !important;
-    padding: 0.2em;
+    padding: 0.7em;
+    padding-top: 1em;
     letter-spacing: 0.035em;
   }
   
@@ -1163,6 +1191,24 @@ my_search {
      .my_image_device{
         object-fit: cover; 
         max-width: 50% !important;
+    }
+    
+    .my_carousel_parallax2{
+        height: 500px;
+    }
+    
+    .footer-distributed{
+        height:600px;
+    }
+    
+     .my_image_device2{
+        object-fit: cover; 
+        max-width: 80% !important;
+    }
+    
+     .my_image_device3{
+        object-fit: cover; 
+        max-width: 100% !important;
     }
     
     .watermark_mobile{

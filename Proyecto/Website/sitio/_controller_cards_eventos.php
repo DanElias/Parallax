@@ -14,7 +14,7 @@ $cards2 = "";
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     
-     $cards.=' <br><div style="font-family: Fredoka One; color: white; font-size: 1.5em;">
+     $cards.=' <br><div style="font-family: Fredoka One; color: white; font-size: 1.4em;">
                         Eventos Próximos :
                     </div>';
                     
@@ -78,7 +78,7 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="row" style="width: 80%;">
                     <div class="col s12 m12">
                     
-                    <p style="font-family: Fredoka One; color: white; font-size: 1.5em;">
+                    <p style="font-family: Fredoka One; color: white; font-size: 1.4em;">
                         Eventos Próximos :
                     </p>
         
@@ -102,7 +102,7 @@ if (mysqli_num_rows($result) > 0) {
 if (mysqli_num_rows($result2) > 0) {
     //output data of each row;
     
-    $cards2.=' <br><div style="font-family: Fredoka One; color: white; font-size: 1.5em;">
+    $cards2.=' <br><div style="font-family: Fredoka One; color: white; font-size: 1.4em;">
                         Eventos Pasados :
                     </div><br>' ;
                     
@@ -168,7 +168,7 @@ if (mysqli_num_rows($result2) > 0) {
                 <div class="row" style="width: 80%;">
                     <div class="col s12 m12">
                     
-                    <p style="font-family: Fredoka One; color: white; font-size: 1.5em;">
+                    <p style="font-family: Fredoka One; color: white; font-size: 1.4em;">
                         Eventos Pasados :
                     </p>
                     

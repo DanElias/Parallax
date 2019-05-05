@@ -1,13 +1,12 @@
 <?php
 include("controller_roles.php");
 ?>
+
 <ul id="slide-out" class="sidenav sidenav-fixed z-depth-3">
     <li>
         <div class="user-view my_side_nav ">
-            <div class="background z-depth-1">
-                <img src="../images/f1.jpg">
-            </div>
-            <a href="#user"><img class="circle z-depth-3" src="../images/adminpic.jpg"></a>
+            
+            <a href="#user"><img class="circle z-depth-3 materialboxed" src="../images/adminpic.jpg"></a>
             <a href="#name"><span class="white-text"><i
                             class="small material-icons my_title_icon_user">account_circle</i> &nbsp;<?=$_SESSION["usuario"]?></span></a>
             <a href="#email"><span class="white-text email"></span></a>
@@ -100,4 +99,4 @@ include("controller_roles.php");
 
 </ul>
 
-<a href="#" data-target="slide-out" class="sidenav-trigger show-on-large" style="">Abrir navegación<br><i class="material-icons">menu</i></a>
+<a href="#" data-target="slide-out" class="sidenav-trigger my_sidenav_button" style="display:none;">Abrir navegación<br><i class="material-icons">menu</i></a>

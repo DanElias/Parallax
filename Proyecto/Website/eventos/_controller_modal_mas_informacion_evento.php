@@ -92,7 +92,7 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
             
                     <div class="my_modal_header1">
                         <div class="col s11 my_form_title">
-                            Informacion Evento
+                            Información del Evento
                         </div>
             
                         <div class="col s1">

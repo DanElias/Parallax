@@ -74,7 +74,7 @@ echo '
                 var options = {
                     \'legend\':\'left\',
                     \'pieSliceText\':\'left\',
-                    \'title\':\'Cuentas Contables presentes en los Egresos | Periodo: '.$fecha_i.' - '.$fecha_f.'\',
+                    \'title\':\'Cuentas presentes en los Egresos | Periodo: '.$fecha_i.' - '.$fecha_f.'\',
                     \'titleTextStyle\': {
                     \'fontSize\': \'16\' },
                     \'width\':700,

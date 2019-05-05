@@ -3,8 +3,6 @@ require_once("../basesdedatos/_conection_queries_db.php");
 
 
 
-echo  $_SESSION['id_rol'] . '<br>';
-
 $result = obtenerPrivilegios($_SESSION['id_rol']);
 $query_table = "";
 $_SESSION['uno'] = 0;

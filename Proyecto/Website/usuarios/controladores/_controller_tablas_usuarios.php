@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
 
     echo '
         <div class="wrapper">
-             <div class="section white  my_section">
+             
                     <div class="table-wrapper responsive-table new_data_table">
                         <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
                             <thead>
@@ -68,7 +68,7 @@ if (mysqli_num_rows($result) > 0) {
                         </div>
                         
                     </div>
-                </div>
+                
             </div><!--div del wrapper que empieza después del sidenav-->';
 
 } else { // si no hay eventos registrados en la tabla

@@ -32,7 +32,7 @@ if (isset($_POST["submit_editar"])) {
         && $_POST["password"] != ""
         && $_POST["rol"] != ""
         && $_POST["fecha_nacimiento"] != ""){
-            var_dump(editarUsuario( $_POST["id_usuario"],$_POST["nombre"],$_POST["apellido"],$_POST["email"] ,password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["rol"]));
+            //var_dump(editarUsuario( $_POST["id_usuario"],$_POST["nombre"],$_POST["apellido"],$_POST["email"] ,password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["rol"]));
         if (editarUsuario( $_POST["id_usuario"],$_POST["nombre"],$_POST["apellido"],$_POST["email"] ,password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["rol"])) {
             header("location:_usuarios_vista.php");
             $result = obtenerUsuariosPorID($_POST["id_usuario"]);

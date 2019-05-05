@@ -43,13 +43,30 @@
         $('#my_pagination_table').DataTable( {
             dom: 'Bfrtip',
             buttons: [
-               'excel', 'pdf', 'print', 'csv' 
+                'excel',
+                {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                
+                },
+            
+                {
+                extend: 'print',
+                text: 'Imprimir',
+                orientation: 'landscape',
+               
+                }
+               , 'csv' 
             ]
             
         } );
         $('.dt-buttons').append('<br><br><br><div class="row tooltipped" data-position="bottom" data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra, cantidad, fecha o frase introducida"><div class="col s12 m12" style="color: #757575">  <i class="material-icons prefix my_search">search</i> Introduce una palabra clave: </div></div>')
         $('#my_pagination_table_filter').append('<br><br>')
         $('.dataTables_filter').css("color", "#673ab7")
+        
+        
+
         M.AutoInit();
         
     } );
@@ -58,7 +75,21 @@
         $('#my_pagination_table').DataTable( {
             dom: 'Bfrtip',
             buttons: [
-               'excel', 'pdf', 'print', 'csv' 
+                 'excel',
+                {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL'
+                },
+            
+                {
+                extend: 'print',
+                text: 'Imprimir',
+                orientation: 'landscape',
+               
+                }
+               , 'csv' 
+               
             ]
             
         } );
@@ -67,6 +98,14 @@
         $('.dataTables_filter').css("color", "#673ab7")
         M.AutoInit();
     }
+    
+     $(document).ready(function () {
+       // $('#nav-mobile').append($('<li><a href="#" data-target="slide-out" class="sidenav-trigger show-on-large my_sidenav_button nav_text hoverable my_header_admin" id="nav-close">Nav</a></li>'));
+       // $('#nav_close').sideNav({closeOnClick: true});
+    });
+    
+    M.AutoInit();
+    
    
 </script>
 <noscript>

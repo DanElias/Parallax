@@ -52,7 +52,7 @@ if (isset($_POST["submit"])){
                 /*------------------------------------------------EN ESTA PARTE YA VOY A MOSTRAR LA INFORMACION DEL EVENTO GUARDADO EN LA PÁGINA*/
 
                 $_SESSION['registro'] = 1;
-                echo $_SESSION['registro'];
+                //echo $_SESSION['registro'];
                 //Esta sección es para obtener id del usario y mostrarlo en el modal/form
                 $result = obtener_usuario_reciente();
                 $row = mysqli_fetch_assoc($result);

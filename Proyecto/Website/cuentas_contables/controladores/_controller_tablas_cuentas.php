@@ -51,14 +51,14 @@ if (mysqli_num_rows($result) > 0) {//reviso que el query fue exitoso si me dió 
     //las columnas que no quiero que aparezcan en el front end les pongo display: none, si se verán en el pdf y excel
     echo '
         <div class="wrapper">
-             <div class="section white  my_section">
+            
                     <div class="table-wrapper responsive-table new_data_table">
                         <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
                             <thead>
                             <tr class="my_table_headers">
                                 <th style="display:none;">ID Cuenta Contable</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
@@ -86,7 +86,7 @@ if (mysqli_num_rows($result) > 0) {//reviso que el query fue exitoso si me dió 
                         </div>
                         
                     </div>
-                </div>
+                
             </div><!--div del wrapper que empieza después del sidenav-->';
 
 } else {
