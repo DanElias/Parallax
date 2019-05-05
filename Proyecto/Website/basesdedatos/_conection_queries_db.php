@@ -13,7 +13,7 @@ function conectDb()
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "Proyecto";
+        $dbname = "proyecto";
     }
 
 
@@ -210,6 +210,40 @@ function obtenerEventoReciente()
     $conn = conectDb();
     $sql = "SELECT id_evento FROM evento ORDER BY id_evento DESC LIMIT 1";
     if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function obtenerEventosSiguientes($fecha){
+    $conn = conectDb();
+    
+     $sql = "
+          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
+          WHERE fecha>= ? ";
+          
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$fecha);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function obtenerEventosPasados($fecha){
+    $conn = conectDb();
+    
+     $sql = "
+          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
+          WHERE fecha< ? ";
+          
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('s',$fecha);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
