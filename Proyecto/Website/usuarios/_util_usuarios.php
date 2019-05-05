@@ -37,5 +37,12 @@ function controller_tabla_usuario_php()
 {
     include("controladores/_controller_tablas_usuarios.php");
 }
+function controller_tabla_rol_php()
+{
+    include("controladores/_controller_tablas_roles.php");
+}
+function rol_html(){
+    include("rol.html");
+}
 
 ?>
