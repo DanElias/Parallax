@@ -1206,11 +1206,6 @@ my_search {
         max-width: 80% !important;
     }
     
-     .my_image_device3{
-        object-fit: cover; 
-        max-width: 100% !important;
-    }
-    
     .watermark_mobile{
         width: 90px;
     }
