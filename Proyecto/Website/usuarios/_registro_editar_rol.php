@@ -10,34 +10,35 @@ if (isset($_POST["submit"])){
     $_POST['id_rol'] = htmlentities($_POST['id_rol']);
 
     if (isset($_POST["nombre_rol"]) && $_POST["nombre_rol"] != "" ){
-            var_dump(editarRol($_POST["nombre_rol"],$_POST['id_rol']));
-        if (editarRol($_POST["nombre_rol"],$_POST['id_rol'])) {
-            eliminarRolPorId($_GET['id']);
-            $Rol = $_POST['id'] ;
 
-            if(isset($_POST["Beneficiarios"])){
-                registrar_rol_privilegio($Rol,$_POST["Beneficiarios"]);
+        if (editarRol($_POST["nombre_rol"],$_POST['id_rol'])) {
+            eliminarPrivilegioPorId($_POST['id_rol']);
+            $Rol = $_POST['id_rol'] ;
+
+
+            if(isset($_POST["eBeneficiarios"])){
+                registrar_rol_privilegio($Rol,$_POST["eBeneficiarios"]);
             }
-            if(isset($_POST["Reporte_Beneficiarios"])){
-                registrar_rol_privilegio($Rol,$_POST["Reporte_Beneficiarios"]);
+            if(isset($_POST["eReporte_Beneficiarios"])){
+                registrar_rol_privilegio($Rol,$_POST["eReporte_Beneficiarios"]);
             }
-            if(isset($_POST["Egresos"])){
-                registrar_rol_privilegio($Rol,$_POST["Egresos"]);
+            if(isset($_POST["eEgresos"])){
+                registrar_rol_privilegio($Rol,$_POST["eEgresos"]);
             }
-            if(isset($_POST["Reporte_Egresos"])){
-                registrar_rol_privilegio($Rol,$_POST["Reporte_Egresos"]);
+            if(isset($_POST["eReporte_Egresos"])){
+                registrar_rol_privilegio($Rol,$_POST["eReporte_Egresos"]);
             }
-            if(isset($_POST["Cuentas_contables"])){
-                registrar_rol_privilegio($Rol,$_POST["Cuentas_contables"]);
+            if(isset($_POST["eCuentas_contables"])){
+                registrar_rol_privilegio($Rol,$_POST["eCuentas_contables"]);
             }
-            if(isset($_POST["Proveedores"])){
-                registrar_rol_privilegio($Rol,$_POST["Proveedores"]);
+            if(isset($_POST["eProveedores"])){
+                registrar_rol_privilegio($Rol,$_POST["eProveedores"]);
             }
-            if(isset($_POST["Eventos"])){
-                registrar_rol_privilegio($Rol,$_POST["Eventos"]);
+            if(isset($_POST["eEventos"])){
+                registrar_rol_privilegio($Rol,$_POST["eEventos"]);
             }
-            if(isset($_POST["Usuarios"])){
-                registrar_rol_privilegio($Rol,$_POST["Usuarios"]);
+            if(isset($_POST["eUsuarios"])){
+                registrar_rol_privilegio($Rol,$_POST["eUsuarios"]);
             }
             $_SESSION['editar_rol'] = 1;
             header("location:_rol_vista.php");
@@ -46,6 +47,7 @@ if (isset($_POST["submit"])){
 		window.location="https://www.marianasala.org/Website/usuarios/_rol_vista.php";
 		</script>';
             }
+
 
 
         }

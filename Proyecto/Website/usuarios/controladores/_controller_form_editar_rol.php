@@ -41,57 +41,57 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 
             <div class="row">
-                <label for="Beneficiarios">
-                    <input type="checkbox" id="Beneficiarios" name = "Beneficiarios"/>
-                    <span>Beneficiarios</span>
+                <label for="eBeneficiarios">
+                    <input type="checkbox" id="eBeneficiarios" name = "eBeneficiarios"/>
+                    <span>Beneficiarioz</span>
                 </label>
             </div>
 
             <div class="row">
-                <label for="Reporte_Beneficiarios">
-                    <input type="checkbox" id="Reporte_Beneficiarios" name= "Reporte_Beneficiarios" value="2" />
+                <label for="eReporte_Beneficiarios">
+                    <input type="checkbox" id="eReporte_Beneficiarios" name= "eReporte_Beneficiarios" value="2" />
                     <span>Reporte Beneficiarios</span>
                 </label>
             </div>
 
             <div class="row">
-                <label for ="Egresos">
-                    <input type="checkbox" id="Egresos" name= "Egresos" value ="3" />
+                <label for ="eEgresos">
+                    <input type="checkbox" id="eEgresos" name= "eEgresos" value ="3" />
                     <span>Egresos</span>
                 </label>
             </div>
 
             <div class="row">
-                <label for="Reporte_Egresos">
-                    <input type="checkbox" id="Reporte_Egresos" name = "Reporte_Egresos" value ="4" />
+                <label for="eReporte_Egresos">
+                    <input type="checkbox" id="eReporte_Egresos" name = "eReporte_Egresos" value ="4" />
                     <span>Reporte Egresos</span>
                 </label>
             </div>
 
             <div class="row">
-                <label for="Proveedores">
-                    <input type="checkbox" id="Proveedores" name = "Proveedores" value ="5" />
+                <label for="eProveedores">
+                    <input type="checkbox" id="eProveedores" name = "eProveedores" value ="5" />
                     <span>Proveedores</span>
                 </label>
             </div>
 
             <div class="row">
-                <label for ="Cuentas_contables">
-                    <input type="checkbox" id="Cuentas_contables" name= "Cuentas_contables" value = "6"/>
+                <label for ="eCuentas_contables">
+                    <input type="checkbox" id="eCuentas_contables" name= "eCuentas_contables" value = "6"/>
                     <span>Cuentas contables</span>
                 </label>
             </div>
 
             <div class="row">
-                <label for="Eventos">
-                    <input type="checkbox" id="Eventos" name = "Eventos" value = "7"/>
+                <label for="eEventos">
+                    <input type="checkbox" id="eEventos" name = "eEventos" value = "7"/>
                     <span>Eventos</span>
                 </label>
             </div>
 
             <div class="row">
-                <label for="Usuarios">
-                    <input type="checkbox" id="Usuarios" name = "Usuarios" value = "8"/>
+                <label for="eUsuarios">
+                    <input type="checkbox" id="eUsuarios" name = "eUsuarios" value = "8"/>
                     <span>Usuarios</span>
                 </label>
             </div>
