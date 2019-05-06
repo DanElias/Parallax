@@ -2,7 +2,16 @@ $(document).ready(imprimeTutorExterno());
 
 $(document).ready(moreInfo());
 
-$(document).ready(mEst());
+$(document).ready(genEstado(41));
+
+function genEstado(numero){
+  $.post('controladores/modalEstado.php', { id : numero } )
+  .done(function(data){
+    console.log(data);
+    $('#modEst').html(data);
+    M.AutoInit();
+  });
+}
 
 $(document).ready(function() {
     $('#tablaB').DataTable( {
@@ -22,7 +31,7 @@ $(document).ready(function() {
 function moreInfo(){
   $.post('controladores/_modales_beneficiarios.php', { id : 1 } )
   .done(function(data){
-    console.log(data);
+    //console.log(data);
     $('#modBen').html(data);
     M.AutoInit();
   });
@@ -31,7 +40,7 @@ function moreInfo(){
 function mEst(){
   $.post('controladores/modalEstado.php', { id : 1 } )
   .done(function(data){
-    console.log(data);
+    //console.log(data);
     $('#modEst').html(data);
     M.AutoInit();
   });
@@ -51,6 +60,27 @@ $(document).ready(function() {
         } else{
           //renderizaTabla(2);
           imprimeNombreBeneficiario();
+          $(this).prop("checked");
+        }
+
+    });
+});
+
+$(document).ready(function() {
+    //set initial state.
+    //imprimeNombreBeneficiarioActivo();
+
+    $('#palancaEstado').change(function() {
+        if(this.checked) {
+          //renderizaTabla(1);
+          //actualizaPagina();
+          //imprimeNombreBeneficiarioActivo();
+          console.log(1);
+          $(this).prop("checked");
+        } else{
+          console.log(0);
+          //renderizaTabla(2);
+          //imprimeNombreBeneficiario();
           $(this).prop("checked");
         }
 
@@ -110,22 +140,54 @@ function infoTutor(){
     console.log("Funciono");
     $('#tablaExternaTutor').html(data);
   });
+  M.AutoInit();
 }
 
 $(document).ready(function(){
-  $("#formaEditarEstado").submit(function (ev){
+  $('#tutor1').change(function() {
+    var ide = this.value;
+    var num = 1;
+    $.post('controladores/_modales_tutor.php', { id : ide, numero : num } )
+    .done(function(data){
+      console.log("Funciono Tutor Modal");
+      console.log(data);
+      $('#modTut1').html(data);
+      M.AutoInit();
+    });
+  });
+});
+
+$(document).ready(function(){
+  $('#tutor2').change(function() {
+    var ide = this.value;
+    var num = 2;
+    $.post('controladores/_modales_tutor.php', { id : ide, numero : num } )
+    .done(function(data){
+      console.log("Funciono Tutor Modal 2");
+      console.log(data);
+      $('#modTut2').html(data);
+      M.AutoInit();
+    });
+  });
+});
+
+$(document).ready(function(){
+  $('#formaEstado').submit(function (ev){
     ev.preventDefault();
      var id = $("#id_ben").val();
      var estado = -1;
-     if($("#palancaEstado").prop("checked")){
+     if($('#palancaEstado').prop("checked")){
        estado = 1;
      } else{
        estado = 0;
      }
-     $.post('estadoController.php', { id : id, estado : estado } )
+     alert(estado);
+     console.log("id = " + id);
+     console.log("estado = " + estado);
+     $.post('controladores/estadoController.php', { id : id, estado : estado } )
      .done(function(data){
        alert('Estado modificado!');
-       if($("#botonActivos").prop("checked")){
+       if($('#botonActivos').prop("checked")){
          imprimeNombreBeneficiarioActivo();
        } else{
          imprimeNombreBeneficiario();
