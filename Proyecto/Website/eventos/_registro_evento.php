@@ -45,8 +45,6 @@ if (isset($_POST["submit"])) {
 
             //Validar que la imagen insertada sea valida
             if (validar_imagen()){
-                
-                //insertarEvento es una funcion de connection queries que hace un INSERT en la tabla
                  if (insertarEvento($_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])){
                     
                     //ya que se hizo bien el registro recargo la página y le muestro reto al usuario de que fue lo que se guardó
