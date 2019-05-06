@@ -4,6 +4,7 @@
 require_once("../_util_usuarios.php");
 require_once("../../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 session_start();
+$_SESSION['editar_usuario'] = 0;
 $_SESSION['id'] = $_POST['id'];
 $_POST['id'] = htmlentities($_POST['id']);
 $result = obtenerUsuariosPorID($_POST['id']);

@@ -41,6 +41,7 @@ function controller_tabla_rol_php()
 {
     include("controladores/_controller_tablas_roles.php");
 }
+
 function rol_html(){
     include("rol.html");
 }

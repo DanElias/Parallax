@@ -38,6 +38,27 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
         $_SESSION['error2'] = 0;
 
     }
+    if($_SESSION['error3'] == 1){
+        echo
+        "<script type='text/javascript'> alert('!!!!!No puedes eliminar tu propio usuario¡¡¡¡¡');</script>";
+        $_SESSION['error3'] = 0;
+
+    }
+    if($_SESSION['editar_usuario'] == 1){
+        echo
+        "<script type='text/javascript'> alert('!El usaurio se edito correctamente¡');</script>";
+        $_SESSION['editar_usuario'] = 0;
+
+    }
+    if($_SESSION['error5'] == 1){
+        echo
+        "<script type='text/javascript'> alert('!!!!!No se pudo editar el usuario, asrgurese de llenar todos los campos¡¡¡¡¡');</script>";
+        $_SESSION['error5'] = 0;
+
+    }
+
+
+
 
     echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
 

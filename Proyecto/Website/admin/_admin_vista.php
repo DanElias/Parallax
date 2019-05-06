@@ -10,6 +10,13 @@ if (isset($_SESSION['usuario'])) {
     $_SESSION['registro'] = 0;
     $_SESSION['error1'] = 0;
     $_SESSION['error2'] = 0;
+    $_SESSION['error3'] = 0;
+    $_SESSION['error4'] = 0;
+    $_SESSION['error5'] = 0;
+    $_SESSION['registro_rol'] = 0;
+    $_SESSION['editar_usuario'] = 0;
+    $_SESSION['eliminar_usuario'] = 0;
+    $_SESSION['eliminar_rol'] = 0;
     //Llamada de funciones (util.php) de lo que se nesecite en el form
     header_html();
     body_admin_main();
