@@ -14,6 +14,7 @@ if (isset($_SESSION['usuario'])) {
     $_SESSION['error4'] = 0;
     $_SESSION['error5'] = 0;
     $_SESSION['registro_rol'] = 0;
+    $_SESSION['editar_rol'] = 0;
     $_SESSION['editar_usuario'] = 0;
     $_SESSION['eliminar_usuario'] = 0;
     $_SESSION['eliminar_rol'] = 0;

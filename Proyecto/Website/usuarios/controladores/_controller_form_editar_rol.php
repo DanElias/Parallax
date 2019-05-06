@@ -6,7 +6,8 @@ require_once("../../basesdedatos/_conection_queries_db.php"); //Accedo a mi arch
 session_start();
 $_SESSION['id'] = $_POST['id'];
 $_POST['id'] = htmlentities($_POST['id']);
-$result = obtenerUsuariosPorID($_POST['id']);
+$result = obtenerRolPorId($_POST['id']);
+
 $edit_form = '';
 
 if (mysqli_num_rows($result) > 0) {
@@ -27,6 +28,89 @@ if (mysqli_num_rows($result) > 0) {
                 <p>Aquí puedes Editar los roles existentes</p>
         
                 <!-- Inicio del form de Rol-->
+                <form class="col s12" action="_registro_editar_rol.php" id="editar_rol" method="POST">
+
+            <div class="row">
+                <div class="input-field col s8">
+                    <i class="material-icons prefix">account_box</i>
+                    <input type="text" class="validate" name="nombre_rol" id="nombre_rol" value = "' . $row['descripcion'] . '" >
+                    <label for="nombre_rol">Nombre del ROL</label>
+                    <input id="id_rol" name ="id_rol" style="display:none;" value = "' . $row['id_rol'] . '">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <label for="Beneficiarios">
+                    <input type="checkbox" id="Beneficiarios" name = "Beneficiarios" value="1"/>
+                    <span>Beneficiarios</span>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="Reporte_Beneficiarios">
+                    <input type="checkbox" id="Reporte_Beneficiarios" name= "Reporte_Beneficiarios" value="2" />
+                    <span>Reporte Beneficiarios</span>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for ="Egresos">
+                    <input type="checkbox" id="Egresos" name= "Egresos" value ="3" />
+                    <span>Egresos</span>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="Reporte_Egresos">
+                    <input type="checkbox" id="Reporte_Egresos" name = "Reporte_Egresos" value ="4" />
+                    <span>Reporte Egresos</span>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="Proveedores">
+                    <input type="checkbox" id="Proveedores" name = "Proveedores" value ="5" />
+                    <span>Proveedores</span>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for ="Cuentas_contables">
+                    <input type="checkbox" id="Cuentas_contables" name= "Cuentas_contables" value = "6"/>
+                    <span>Cuentas contables</span>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="Eventos">
+                    <input type="checkbox" id="Eventos" name = "Eventos" value = "7"/>
+                    <span>Eventos</span>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="Usuarios">
+                    <input type="checkbox" id="Usuarios" name = "Usuarios" value = "8"/>
+                    <span>Usuarios</span>
+                </label>
+            </div>
+
+            <div class="my_modal_buttons">
+                <div class="row">
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light" type="submit" name="submit">Guardar
+                            <i class="material-icons right">check_circle_outline</i>
+                        </button>
+                    </div>
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light red modal-close" type="button">Cancelar
+                            <i class="material-icons right">highlight_off</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
                 <!-- Final del form de ROles-->
         
             </div>

@@ -40,7 +40,17 @@ function closeDb($mysql)
     $mysql->close();
 }
 
+function editarRol($descripcion,$id_rol)
+{
 
+    $conn = conectDb();
+    $sql = "UPDATE `rol` SET `descripcion` = '".$descripcion."' WHERE `rol`.`id_rol` = '".$id_rol."'";
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+    return $result;
+
+}
 function obtenerTablaRoles()
 {
     $conn = conectDb();
@@ -130,6 +140,21 @@ function obtenerRoles(){
     }
     return  $salida;
 }
+
+function obtenerRolPorId($id_rol){
+
+    $conn = conectDb();
+    $sql = "SELECT id_rol,descripcion FROM rol WHERE id_rol= ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_rol);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
 
 function obtenerPrivilegios($rol){
     $con = conectDb();

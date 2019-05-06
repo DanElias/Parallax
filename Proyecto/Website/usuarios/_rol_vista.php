@@ -15,7 +15,6 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
     rol_html();
     form_usuario_html();
     form_rol_html();
-    form_editar_rol_html();
     controller_tabla_rol_php();
     footer_html();
     if($_SESSION['registro_rol'] == 1){
@@ -34,6 +33,12 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
         echo
         "<script type='text/javascript'> alert('El Rol no se pudo registrar exitosamente');</script>";
         $_SESSION['error4'] = 0;
+
+    }
+    if($_SESSION['editar_rol'] == 1){
+        echo
+        "<script type='text/javascript'> alert('El Rol se edito correctamnete');</script>";
+        $_SESSION['editar_rol'] = 0;
 
     }
 
