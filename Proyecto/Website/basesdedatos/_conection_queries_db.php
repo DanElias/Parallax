@@ -942,7 +942,7 @@ function login($email, $password)
     return $result;*/
 
     $conn = conectDb();
-    $sql = "SELECT nombre,id_rol FROM usuario WHERE email = ?";
+    $sql = "SELECT id_usuario,nombre,id_rol FROM usuario WHERE email = ?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$email);
       $stmt->execute();

@@ -1,7 +1,8 @@
 <?php
 require_once("_util_usuarios.php");
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
-
+session_start();
+$_SESSION['registro_rol'] = 0;
 //Funcion que va a ir en queries
 if (isset($_POST["submit"])){
     $_POST["nombre_rol"] = htmlentities($_POST["nombre_rol"]);
@@ -39,7 +40,7 @@ if (isset($_POST["submit"])){
             if(isset($_POST["Usuarios"])){
                 registrar_rol_privilegio($Rol,$_POST["Usuarios"]);
             }
-
+            $_SESSION['registro_rol'] = 1;
             header("location:_rol_vista.php");
 
         }
