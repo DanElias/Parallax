@@ -26,7 +26,7 @@
         <p>Aquí puede agregar un nuevo beneficiario</p>
 
         <!-- Inicio del form de beneficiarios-->
-        <form class="col s12">
+        <form class="col s12" id="registrarBeneficiario">
 
             <!-- el ID del Beneficiario se genera solito-->
 
@@ -67,20 +67,20 @@
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">home</i>
-                    <input type="text" class="validate ubuntu-text" id="colonia" name="colonia" required>
-                    <label for="colonia">Colonia</label>
-                </div>
+                    <input type="text" class="validate ubuntu-text" id="numero_domicilio" name="numero_domicilio" required>
+                    <label for="numero_domicilio">Numero</label>
+                  </div>
                 <div class="input-field col s4">
-                    <i class="material-icons prefix"></i>
+                    <!--i class="material-icons prefix"></i-->
                     <input type="text" class="validate ubuntu-text" id="calle" name="calle" required>
                     <label for="calle">Calle</label>
                 </div>
-                <div class="input-field col s4">
-                    <i class="material-icons prefix"></i>
-                    <input type="text" class="validate ubuntu-text" id="numero_domicilio" name="numero_domicilio" required>
-                    <label for="numero_domicilio">Numero</label>
-                </div>
 
+                <div class="input-field col s4">
+
+                    <input type="text" class="validate ubuntu-text" id="colonia" name="colonia" required>
+                    <label for="colonia">Colonia</label>
+                </div>
             </div>
 
             <div class="row">
