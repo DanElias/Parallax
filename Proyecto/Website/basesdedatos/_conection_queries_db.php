@@ -1,10 +1,13 @@
 <?php
 session_start();
 $GLOBALS['local_servidor'] = 1;
+$_SESSION['error_bd_login'] = 0;
+
+
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-    if($GLOBALS['local_servidor'] == 1){
+    if($GLOBALS['local_servidor'] == 0){
         $servername = "";
         $username = "marianas";
         $password = "1Ky4L05bly";
@@ -16,7 +19,6 @@ function conectDb()
         $dbname = "proyecto";
     }
 
-
      $con = new mysqli($servername, $username, $password, $dbname);
  
 
@@ -25,8 +27,16 @@ function conectDb()
       //include("error_server_card.html");
       //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a 
        //intentarlo más tarde');</script>";
-      alertaNoHayConexion();
-      include("../views/_footer_admin.html");
+      if($_SESSION['error_bd_login']==1){
+          include("../views/_header_login.html");
+          include("../login/_login.html");
+          echo alertaNoHayConexion();
+          include("../views/_footer_admin.html");
+      }
+      else{
+        alertaNoHayConexion();
+        include("../views/_footer_admin.html");
+      }
       die();
     }
   
@@ -1522,7 +1532,7 @@ function reporteProveedores($fecha_inicial, $fecha_final){
   
   function alertaNoHayConexion(){
     $alerta='
-    <script>M.AutoInit();</script>
+    
     <div id="_form_alerta_error" class="modal  my_modal">
         <div class="row my_modal_header_row">
             <div class="my_modal_header_eliminar z-depth-2 col s12">
