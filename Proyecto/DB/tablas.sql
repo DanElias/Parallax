@@ -17,7 +17,7 @@ CREATE TABLE `beneficiario` (
   `cuota` decimal(4,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-INSERT INTO `beneficiario` (`id_beneficiario`, `nombre`, `estado`, `fecha_nacimiento`, `sexo`, `grado_escolar`, `grupo`, `domicilio`, `nivel_socioeconomico`, `nombre_escuela`, `enfermedades_alergias`, `cuota`) VALUES
+INSERT INTO `beneficiario` (`id_beneficiario`, `nombre`, `apellido`, `estado`, `fecha_nacimiento`, `sexo`, `grado_escolar`, `grupo`, `domicilio`, `nivel_socioeconomico`, `nombre_escuela`, `enfermedades_alergias`, `cuota`) VALUES
 (21, 'Gerianne', 'Howis', 0, '2007-12-30', 'H', '1 de primaria', 'Toros', '14009 4th Drive', 'pobreza extrema', 'Spring Arbor College', 'alergia al aguacate', '58.64'),
 (22, 'Malvin', 'Gretton', 1, '2010-06-17', 'M', '2 de secundaria', 'Toros', '47 Roth Avenue', 'pobreza extrema', 'Lulea University of Technology', 'alergia al aguacate', '87.49'),
 (23, 'Giorgio', 'Kleinert', 1, '2008-12-05', 'H', '2 de primaria', 'Toros', '71609 Merchant Junction', 'pobreza extrema', 'Fachhochschulstudiengänge Steyr', 'alergia al aguacate', '36.98'),
@@ -224,6 +224,7 @@ CREATE TABLE `tutor` (
   `titulo_obtenido` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellido`, `telefono`, `fecha_nacimiento`, `ocupacion`, `nombre_empresa`, `grado_estudio`, `titulo_obtenido`) VALUES
 (1, 'Travus', 'Whithorn', '572 8379603', '1978-10-28', 'Quality Engineer', 'Bogan, Pacocha and Bechtelar', 'Secundaria', 'Licenciatura'),
 (2, 'Nikoletta', 'Winsiowiecki', '225 9756775', '1980-04-20', 'Staff Accountant III', 'Kautzer, Deckow and Cartwright', 'Secundaria', 'Licenciatura'),
 (3, 'Richie', 'Galsworthy', '569 9942924', '1978-09-22', 'Statistician I', 'Mayer-Reichel', 'Preparatoria', 'Licenciatura'),
@@ -293,14 +294,16 @@ ALTER TABLE `rol`
   ADD KEY `id_rol_2` (`id_rol`);
 
 ALTER TABLE `rol_privilegio`
-  ADD PRIMARY KEY (`id_rol`,`id_privilegio`),
+  ADD PRIMARY KEY (`id_privilegio_rol`),
+  ADD KEY `id_rol` (`id_rol`),
   ADD KEY `id_privilegio` (`id_privilegio`);
 
 ALTER TABLE `tutor`
   ADD PRIMARY KEY (`id_tutor`);
 
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD KEY `id_rol` (`id_rol`);
 
 ALTER TABLE `beneficiario`
   MODIFY `id_beneficiario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
