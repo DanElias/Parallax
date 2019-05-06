@@ -26,7 +26,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         
         //echo '<script>alert("fuck");</script>';
         //Te manda a location de admin
-        //header("location:../admin/_admin_vista.php");
+        header("location:../admin/_admin_vista.php");
        
 	  
         //Si si existe , saca el nombre de la sesion (correo y contraseñas)
@@ -42,10 +42,12 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                 }
                 $_SESSION['id_rol'] = $row['id_rol'];
                 $_SESSION['id_usuario'] = $row['id_usuario'];
-   
-                echo'<script type="text/javascript">
+                if($GLOBALS['local_servidor'] == 1){
+                    echo'<script type="text/javascript">
 		window.location="https://www.marianasala.org/Website/admin/_admin_vista.php";
 		</script>';
+                }
+
 
             }
         }

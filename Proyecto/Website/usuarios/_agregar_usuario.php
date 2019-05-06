@@ -63,9 +63,12 @@ if (isset($_POST["submit"])){
                 }
 
                 header("location:_usuarios_vista.php");
-                echo '<script type="text/javascript">
+                if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
                 window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
                 </script>';
+                }
+
                 echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
                 /*-----------------------------------------------------------------------------------------------------------------*/
 

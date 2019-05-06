@@ -16,16 +16,21 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
             $_SESSION['eliminar_usuario'] = 1;
 
             header("location:_usuarios_vista.php");
-            echo'<script type="text/javascript">
+            if($GLOBALS['local_servidor'] == 1){
+                echo'<script type="text/javascript">
 		window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
 		</script>';
+            }
+
         }
     }else{
         $_SESSION['error3'] = 1;
         header("location:_usuarios_vista.php");
-        echo'<script type="text/javascript">
+        if($GLOBALS['local_servidor'] == 1){
+            echo'<script type="text/javascript">
 		window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
 		</script>';
+        }
     }
 
 

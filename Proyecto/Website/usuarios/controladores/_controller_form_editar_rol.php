@@ -42,7 +42,7 @@ if (mysqli_num_rows($result) > 0) {
 
             <div class="row">
                 <label for="Beneficiarios">
-                    <input type="checkbox" id="Beneficiarios" name = "Beneficiarios" value="1"/>
+                    <input type="checkbox" id="Beneficiarios" name = "Beneficiarios"/>
                     <span>Beneficiarios</span>
                 </label>
             </div>
