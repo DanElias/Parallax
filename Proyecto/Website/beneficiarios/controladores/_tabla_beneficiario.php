@@ -40,7 +40,7 @@ cuota*/
       $query_table .= '<td><a class="modal-trigger" href="#_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'">Más información</a></td>';
       $query_table .= '<td>';
       $query_table .= '<a class="btn btn-medium waves-effect waves-light green accent-3 hoverable" ';
-      $query_table .= 'href="#modal_estado_beneficiarios_'.$row['id_beneficiario'].'"><i class="material-icons">power_settings_new</i></a>';
+      $query_table .= 'href="#modal_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>';
       $query_table .= '</td>';
       $query_table .= '<td>';
       $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"';
