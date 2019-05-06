@@ -1198,8 +1198,38 @@ function obtenerCuentas(){
     return $result;
   }
 
-  function insertarBeneficiario(){
-    
+  function insertarBeneficiario($nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota){
+    $conn = conectDb();
+    $sql = "INSERT INTO beneficiario(nombre, apellido, estado, fecha_nacimiento, sexo, grado_escolar, grupo, domicilio, nivel_socioeconomico, nombre_escuela, enfermedades_alergias, cuota) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssissssssssd',$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+  function insertarBenTut(){
+    $conn = conectDb();
+    $sql = "INSERT INTO beneficiario_tutor(id_beneficiario, id_tutor, parentesco) VALUES (?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('iis',$id_ben,$id_tutor,$parentesco);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
   }
 
 

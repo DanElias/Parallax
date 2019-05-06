@@ -49,7 +49,7 @@ function imprimirnombreTutor($result){
         <input type="checkbox" class="filled-in center-align" id="benTut1" checked disabled/>
         <span></span>
       </label></td>
-      <td><select id="parentesco" name="parentesco" required>
+      <td><select id="parentesco1" name="parentesco" required>
           <option value="" disabled selected></option>
           <option value="Padre">Padre</option>
           <option value="Madre">Madre</option>

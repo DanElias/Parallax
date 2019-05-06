@@ -266,6 +266,61 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+  $("#registrarBeneficiario").submit(function (ev){
+    ev.preventDefault();
+     var nombre= $('#nombre').val();
+     var apellido= $('#apellido_paterno').val() + " " + $('#apellido_materno').val();
+     var fecha= $('#fecha_nacimiento').val();
+     var sexo= $('#sexo').val();
+     var domicilio= $('#numero_domicilio').val() + " " + $('#calle').val() + ", Col. " + $('#colonia').val();
+     var escuela= $('#escuela').val();
+     var grado= $('#grado').val();
+     var grupo= $('#grupo').val();
+     var cuota= $('#cuota').val();
+     var status = $('#status').val();
+     var enfermedades= $('#enfermedades').val();
+     var estado= -1;
+     if($('#estado').prop("checked")){
+       estado = 1;
+     } else {
+       estado = 0;
+     }
+     var parentesco1 = $('#parentesco1').val();
+     var tut1 = $('#tutor1').val();
+     var parentesco2 = $('#parentesco2').val();
+     var tut2 = $('#tutor2').val();
+     if(!$('#benTut2').prop("checked")){
+       parentesco2 = "";
+       tut2 = "";
+     }
+     $.post('controladores/registrarBeneficiario.php', { nombre : nombre, apellido : apellido, sexo : sexo, fecha : fecha, domicilio : domicilio, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
+     .done(function(data){
+       $('#nombre').val("");
+       $('#apellido_paterno').val("");
+       $('#apellido_materno').val("");
+       $('#fecha_nacimiento').val("");
+       $('#sexo').val("");
+       $('#numero_domicilio').val("");
+       $('#calle').val("");
+       $('#colonia').val("");
+       $('#escuela').val("");
+       $('#grado').val("");
+       $('#grupo').val("");
+       $('#cuota').val("");
+       $('#status').val("");
+       $('#enfermedades').val("");
+       imprimeNombreBeneficiarioActivo();
+       moreInfo();
+      })
+      .fail(function(){
+        alert('Error en registro, verifique datos de entrada');
+
+        console.log('Error');
+      })
+    });
+});
+
 function actualizaPagina(){
   $.post('controladores/paginaController.php', { opcion : 2 } )
   .done(function(data){
