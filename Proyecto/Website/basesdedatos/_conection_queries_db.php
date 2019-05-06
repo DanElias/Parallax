@@ -1028,7 +1028,7 @@ function obtenerCuentas(){
 
   function getNombreTutor(){
     $conn = conectDb();
-    $sql = "SELECT id_tutor,nombre,apellido FROM tutor";
+    $sql = "SELECT id_tutor,nombre,apellido FROM tutor ORDER BY apellido";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
@@ -1119,6 +1119,32 @@ function obtenerCuentas(){
     return $result;
   }
 
+  function getInfoById($id){
+    $conn = conectDb();
+    $sql = "SELECT * FROM beneficiario WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function getInfoTutorById($id){
+    $conn = conectDb();
+    $sql = "SELECT * FROM tutor WHERE id_tutor=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
   function getIDsBen(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario FROM beneficiario";
@@ -1131,7 +1157,6 @@ function obtenerCuentas(){
     return $result;
   }
   
-  
   function reporteEstado(){
     $conn = conectDb();
     
@@ -1139,13 +1164,24 @@ function obtenerCuentas(){
         SELECT estado, count(*) as number FROM beneficiario
         GROUP BY estado
     ";
-    
+	if($stmt = $conn->prepare($sql)){
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$stmt->close();
+	}
+	closeDB($conn);
+    return $result;
+  }
+  
+  function benTutor($idben){
+    $conn = conectDb();
+    $sql = "SELECT t.nombre, t.apellido, bt.parentesco FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$idben);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
-    }
-    
+    }    
     closeDB($conn);
     return $result;
   }
@@ -1459,7 +1495,6 @@ function reporteProveedores($fecha_inicial, $fecha_final){
   }*/
   
   
-
   function alertaNoHayConexion(){
     $alerta='
     <script>M.AutoInit();</script>
