@@ -40,7 +40,7 @@ if (isset($_POST["submit"])){
                 registrar_rol_privilegio($Rol,$_POST["Usuarios"]);
             }
 
-            header("location:_usuarios_vista.php");
+            header("location:_rol_vista.php");
 
         }
 

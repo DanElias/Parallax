@@ -54,11 +54,29 @@ function obtenerTablaRoles()
     return $result;
 }
 
+function eliminarPrivilegioPorId($id_usuario)
+{
+
+    $conn = conectDb();
+    $sql = "DELETE FROM rol_privilegio WHERE id_rol = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        return false;
+    }
+    closeDB($conn);
+}
 function eliminarRolPorId($id_usuario)
 {
 
     $conn = conectDb();
-    $sql = "DELETE FROM rol WHERE id_usuario = ?";
+    $sql = "DELETE FROM rol WHERE id_rol = ?";
     if($stmt = $conn->prepare($sql)){
         $stmt->bind_param('i', $id_usuario);
         $stmt->execute();

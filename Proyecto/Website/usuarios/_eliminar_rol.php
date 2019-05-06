@@ -7,15 +7,19 @@ $_GET['id'] = htmlentities($_GET['id']);
 
 //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
 if (isset($_GET['id']) && $_GET['id'] != "") {
+    echo'Si entra el id';
+    var_dump(eliminarPrivilegioPorId($_GET['id']));
 
 
     //-----------------------------------------------------------------------------------------------------------
 
-    if (eliminarRolPorId($_GET['id'])) {
-        header("location:_usuarios_vista.php");
+    if (eliminarPrivilegioPorId($_GET['id'])) {
+        eliminarRolPorId($_GET['id']);
+        header("location:_rol_vista.php");
     }
 
     //--------------------------------------------------------------------------------------------------------------
 }
+echo 'Ya no hizo nada';
 
 ?>
