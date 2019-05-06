@@ -125,7 +125,7 @@ function tablaBeneficiario($result){
       $query_table .= '<td style="display:none;">' . $row["enfermedades_alergias"] . '</td>';
       $query_table .= '<td style="display:none;">' . $row["cuota"] . '</td>';
       $query_table .= '<td>'.$row['grupo'].'</td>';
-      $query_table .= '<td><a class="modal-trigger" href="#modal_informacion_beneficiarios" >Más información</a></td>';
+      $query_table .= '<td><a class="modal-trigger" href="#modal_informacion_beneficiarios_'.$row['id_beneficiario'].'" >Más información</a></td>';
       $query_table .= '<td>';
       $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light green accent-3 hoverable modal-trigger" onmouseover="genEstado('.$row['id_beneficiario'].')" ';
       $query_table .= 'href="#modal_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>';
@@ -155,7 +155,7 @@ function modalesBeneficiario($result){
     $row_date = explode('-', $row['fecha_nacimiento']);
     $estado = getEstadoById($row['id_beneficiario']);
     echo '<!-- Modal Structure -->
-    <div id="_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'" class="modal modal-fixed-footer my_big_modal ">
+    <div id="modal_informacion_beneficiarios_'.$row['id_beneficiario'].'" class="modal modal-fixed-footer my_big_modal ">
     <div class="row my_modal_header_row">
         <div class="my_modal_header1">
             <div class="col s11 my_form_title">
@@ -332,7 +332,7 @@ function modalesTutores($result){
   while($row = mysqli_fetch_assoc($result)){
     $row_date = explode('-', $row['fecha_nacimiento']);
     echo '<!-- Modal Structure -->
-    <div id="_modal_informacion_tutor_'.$row['id_tutor'].'" class="modal modal-fixed-footer my_modal ">
+    <div id="modal_informacion_tutor_'.$row['id_tutor'].'" class="modal modal-fixed-footer my_modal ">
         <div class="row my_modal_header_row">
             <div class="my_modal_header_tutor z-depth-2 col s12">
                 <h4 class="my_modal_header ">Informacion Tutor</h4>

@@ -1175,7 +1175,7 @@ function obtenerCuentas(){
 
   function benTutor($idben){
     $conn = conectDb();
-    $sql = "SELECT t.nombre, t.apellido, bt.parentesco FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND id_beneficiario=?";
+    $sql = "SELECT t.nombre as name, t.apellido as lastname, bt.parentesco as rel, t.id_tutor as id FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND b.id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$idben);
       $stmt->execute();
@@ -1215,7 +1215,7 @@ function obtenerCuentas(){
     closeDB($conn);
   }
 
-  function insertarBenTut(){
+  function insertarBenTut($id_ben,$id_tutor,$parentesco){
     $conn = conectDb();
     $sql = "INSERT INTO beneficiario_tutor(id_beneficiario, id_tutor, parentesco) VALUES (?,?,?)";
     if($stmt = $conn->prepare($sql)){

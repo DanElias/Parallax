@@ -2,6 +2,8 @@ $(document).ready(imprimeTutorExterno());
 
 $(document).ready(moreInfo());
 
+$(document).ready(infoTutor());
+
 $(document).ready(genEstado(41));
 
 function genEstado(numero){
@@ -138,10 +140,11 @@ function infoTutor(){
   $.post('tutorController.php', { opcion : 2 } )
   .done(function(data){
     console.log("Funciono");
-    $('#tablaExternaTutor').html(data);
+    $('#todosTutores').html(data);
   });
   M.AutoInit();
 }
+
 
 $(document).ready(function(){
   $('#tutor1').change(function() {
@@ -294,6 +297,12 @@ $(document).ready(function(){
        parentesco2 = "";
        tut2 = "";
      }
+     console.log(tut1);
+     console.log(parentesco1);
+     console.log(tut2);
+     console.log(parentesco2);
+
+
      $.post('controladores/registrarBeneficiario.php', { nombre : nombre, apellido : apellido, sexo : sexo, fecha : fecha, domicilio : domicilio, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
      .done(function(data){
        $('#nombre').val("");
