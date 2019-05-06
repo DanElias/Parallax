@@ -1,4 +1,5 @@
 <?php
+
 require_once("../basesdedatos/_conection_queries_db.php");
 require_once("_util_login.php");
 
@@ -19,25 +20,32 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     
     $usuario = login($_POST["email"], $_POST["password"]);
     
+    
 
     if (autentificarse(($_POST["email"]), ($_POST["password"]))) {
         
-        echo '<script>alert("fuck");</script>';
+        //echo '<script>alert("fuck");</script>';
         //Te manda a location de admin
-        header("location:../admin/_admin_vista.php");
-        echo '<script type="text/javascript">
-	    window.location="https://www.marianasala.org/Website/admin/_admin_vista.php";
-	    </script>';
-
-
+        //header("location:../admin/_admin_vista.php");
+       
+	  
         //Si si existe , saca el nombre de la sesion (correo y contraseñas)
         if (mysqli_num_rows($usuario)) {
             while ($row = mysqli_fetch_assoc($usuario)) {
-
+ 	
                 //asigna a sesion el nombre de la personas
-                $_SESSION['usuario'] = $row['nombre'];
+                if(!isset($_SESSION['usuario'])){
+                	$_SESSION['usuario'] = $row['nombre'];
+                }
+                else{
+                	$_SESSION['usuario'] = $row['nombre'];
+                }
                 $_SESSION['id_rol'] = $row['id_rol'];
                 $_SESSION['id_usuario'] = $row['id_usuario'];
+   
+                echo'<script type="text/javascript">
+		window.location="https://www.marianasala.org/Website/admin/_admin_vista.php";
+		</script>';
 
             }
         }

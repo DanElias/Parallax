@@ -63,6 +63,9 @@ if (isset($_POST["submit_editar"])) {
     }else{
         $_SESSION['error5'] = 1;
         header("location:_usuarios_vista.php");
+        echo'<script type="text/javascript">
+		window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
+		</script>';
 
 
 }

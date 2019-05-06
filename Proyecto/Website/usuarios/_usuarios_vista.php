@@ -43,6 +43,12 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
         $_SESSION['error3'] = 0;
 
     }
+    if($_SESSION['eliminar_usuario'] == 1){
+        echo
+        "<script type='text/javascript'> alert('!El usuario ha sido eliminado¡');</script>";
+        $_SESSION['eliminar_usuario'] = 0;
+
+    }
     if($_SESSION['editar_usuario'] == 1){
         echo
         "<script type='text/javascript'> alert('!El usaurio se edito correctamente¡');</script>";

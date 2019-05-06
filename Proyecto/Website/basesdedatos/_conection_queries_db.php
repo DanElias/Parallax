@@ -1,6 +1,6 @@
 <?php
-
-$GLOBALS['local_servidor'] = 0;
+session_start();
+$GLOBALS['local_servidor'] = 1;
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
