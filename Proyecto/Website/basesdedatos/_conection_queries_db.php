@@ -1,9 +1,7 @@
 <?php
-
+session_start();
 $GLOBALS['local_servidor'] = 1;
 $_SESSION['error_bd_login'] = 0;
-
-
 
 //se conecta con la base de datos indicada
 function conectDb()
