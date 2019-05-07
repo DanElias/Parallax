@@ -1160,6 +1160,9 @@ my_search {
          max-height: 20em;
     }
 
+    .row_galeria{
+        padding-left:0;
+    }
   
 }
 
@@ -1272,6 +1275,11 @@ my_search {
         padding-top: 1.5em;
         font-size: 1.3em;
     }
+    
+    .row_galeria{
+        padding-left:2.5em;
+    }
+  
 
 }
 
