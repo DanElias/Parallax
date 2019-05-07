@@ -41,6 +41,12 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
         $_SESSION['editar_rol'] = 0;
 
     }
+    if($_SESSION['error6'] == 1){
+        echo
+        "<script type='text/javascript'> alert('El Rol Administrador no se puede eliminar o cambiar');</script>";
+        $_SESSION['error6'] = 0;
+
+    }
 
     echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
 

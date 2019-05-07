@@ -4,11 +4,11 @@ require_once("../basesdedatos/_conection_queries_db.php");
 require_once("_util_usuarios.php");
 session_start();
 $_GET['id'] = htmlentities($_GET['id']);
-$_SESSION['error4'] = 0;
+$_SESSION['error6'] = 0;
 $_SESSION['eliminar_rol'] = 0;
 
 //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
-if (isset($_GET['id']) && $_GET['id'] != "") {
+if (isset($_GET['id']) && $_GET['id'] != "" && $_GET['id'] != 1) {
     //-----------------------------------------------------------------------------------------------------------
 
     if (eliminarPrivilegioPorId($_GET['id'])) {
@@ -26,7 +26,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
 
     //--------------------------------------------------------------------------------------------------------------
 }else{
-    $_SESSION['error4'] = 1;
+    $_SESSION['error6'] = 1;
     header("location:_rol_vista.php");
     if($GLOBALS['local_servidor'] == 1){
         echo'<script type="text/javascript">

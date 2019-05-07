@@ -3,6 +3,7 @@ require_once("_util_usuarios.php");
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 session_start();
 $_SESSION['registro_rol'] = 0;
+$_SESSION['error4'] = 0;
 //Funcion que va a ir en queries
 if (isset($_POST["submit"])){
     $_POST["nombre_rol"] = htmlentities($_POST["nombre_rol"]);
@@ -51,6 +52,8 @@ if (isset($_POST["submit"])){
 
         }
 
+    }else{
+        $_SESSION['error4'] = 1;
     }
 
 
