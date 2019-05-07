@@ -56,11 +56,6 @@ if (isset($_POST["submit"])){
                 //Esta sección es para obtener id del usario y mostrarlo en el modal/form
                 $result = obtener_usuario_reciente();
                 $row = mysqli_fetch_assoc($result);
-                if (!isset($_SESSION['id_usuario'])) {
-                    $_SESSION['id_usuario'] = $row['id_usuario'];
-                } else {
-                    $_SESSION['id_usuario'] = $row['id_usuario'];
-                }
 
                 header("location:_usuarios_vista.php");
                 if($GLOBALS['local_servidor'] == 1){

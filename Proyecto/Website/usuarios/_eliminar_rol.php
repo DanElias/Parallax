@@ -13,6 +13,7 @@ if (isset($_GET['id']) && $_GET['id'] != "" && $_GET['id'] != 1) {
 
     if (eliminarPrivilegioPorId($_GET['id'])) {
         eliminarRolPorId($_GET['id']);
+        eliminarUsuarioPorRol($_GET['id']);
         $_SESSION['eliminar_rol'] = 1;
 
         header("location:_rol_vista.php");

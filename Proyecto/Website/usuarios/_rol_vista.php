@@ -31,7 +31,7 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
     }
     if($_SESSION['error4'] == 1){
         echo
-        "<script type='text/javascript'> alert('El Rol no se pudo registrar exitosamente');</script>";
+        "<script type='text/javascript'> alert('El Rol no se pudo registrar');</script>";
         $_SESSION['error4'] = 0;
 
     }
@@ -45,6 +45,18 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
         echo
         "<script type='text/javascript'> alert('El Rol Administrador no se puede eliminar o cambiar');</script>";
         $_SESSION['error6'] = 0;
+
+    }
+    if($_SESSION['error7'] == 1){
+        echo
+        "<script type='text/javascript'> alert('!!No se ha podido registrar, No ha puesto ningun nombre de rol¡¡');</script>";
+        $_SESSION['error7'] = 0;
+
+    }
+    if($_SESSION['error8'] == 1){
+        echo
+        "<script type='text/javascript'> alert('!!No se pueden tener roles con el mismo nombre¡¡');</script>";
+        $_SESSION['error8'] = 0;
 
     }
 

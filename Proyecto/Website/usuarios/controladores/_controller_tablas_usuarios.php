@@ -25,7 +25,21 @@ if (mysqli_num_rows($result) > 0) {
                     </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href="_eliminar_usuario.php?id='.$row['id_usuario'].'">
+                        <script language="JavaScript1.2" type="text/javascript"> 
+                                                    function eliminar () 
+                                                    { 
+                                                        var statusConfirm = confirm("¿Realmente desea eliminar esto?"); 
+                                                        if (statusConfirm == true) 
+                                                        { 
+                                                            window.location="_eliminar_usuario.php?id='.$row['id_usuario'].'";
+                                                        } 
+                                                        else 
+                                                        { 
+                                                         
+                                                        } 
+                            } 
+                        </script> 
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable" href = "javascript:eliminar()" href="_eliminar_usuario.php?id='.$row['id_usuario'].'">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';

@@ -4,12 +4,24 @@ require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo
 session_start();
 $_SESSION['registro_rol'] = 0;
 $_SESSION['error4'] = 0;
+$_SESSION['error7'] = 0;
+$_SESSION['error8'] = 0;
+$bandera = 0;
+$rol = obtenerTablaRoles();
+if (mysqli_num_rows($rol) > 0) {
+    while ($row = mysqli_fetch_assoc($rol)) {
+        if($row['descripcion'] == $_POST["nombre_rol"]){
+            $bandera = 1;
+        }
+    }
+}
+
 //Funcion que va a ir en queries
 if (isset($_POST["submit"])){
     $_POST["nombre_rol"] = htmlentities($_POST["nombre_rol"]);
 
 
-    if (isset($_POST["nombre_rol"]) && $_POST["nombre_rol"] != "" ){
+    if (isset($_POST["nombre_rol"]) && $_POST["nombre_rol"] != "" && $bandera == 0){
 
         if (registrar_Rol($_POST["nombre_rol"])) {
 
@@ -51,9 +63,22 @@ if (isset($_POST["submit"])){
 
 
         }
-
     }else{
-        $_SESSION['error4'] = 1;
+        if ($_POST["nombre_rol"] == ""){
+            $_SESSION['error7'] = 1;
+        }else if($bandera != 0){
+            $_SESSION['error8'] = 1;
+        }else{
+            $_SESSION['error4'] = 1;
+        }
+
+        header("location:_rol_vista.php");
+        if($GLOBALS['local_servidor'] == 1){
+            echo'<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/usuarios/_rol_vista.php";
+                </script>';
+    }
+
     }
 
 
