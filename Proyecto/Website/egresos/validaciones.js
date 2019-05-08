@@ -6,7 +6,7 @@ document.getElementById("drop_proveedor").onchange =  validar_drop_proveedor;
 document.getElementById("drop_cuenta").onchange =  validar_drop_cuenta;
 //LOS DROPS SE VALIDAN CUANDO LE DAS SUBMIT
 document.getElementById("observaciones").onkeyup =  validar_observaciones;
-//document.getElementById("guardar_egreso").onclick =  validar_form;
+document.getElementById("guardar_egreso").onclick =  validar_form;
 
 
 var flag_folio = true;
@@ -76,7 +76,7 @@ function validar_cuenta_bancaria(){
   			flag_cuenta = false;
   		}else{
   			$("#error_cuenta_bancaria_egreso").hide();
-  			flag_cuenta = false;
+  			flag_cuenta = true;
   		}
 }
 
@@ -125,16 +125,9 @@ function validar_observaciones(){
     }	
 }
 
-$(document).ready(function(){
-  //console.log("hola");
-  
-    $("#form_egreso").submit(function() {
-       console.log("hola hola hola");
-    });
-});
 
 
-/*
+
 function validar_form(){
 	var proveedor = $('#selected_proveedor').val();
 	//console.log($('#selected_proveedor').find('option:selected').css('color', 'red')); 
@@ -159,6 +152,7 @@ function validar_form(){
   		flag_drop_cuenta = true;
 	}
 
+  
 	if(flag_folio&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){
       console.log("deberia funcionar e ir al registro ");
       //return true;
@@ -167,6 +161,6 @@ function validar_form(){
       return false;
   }
   	
-}*/
+}
 
 //console.log("ESTA ES FLAG:");console.log(flag);	
