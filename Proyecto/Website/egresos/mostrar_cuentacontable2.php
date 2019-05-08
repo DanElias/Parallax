@@ -14,7 +14,7 @@
             //echo "hola: ".$row["id_tipo"];
         }
     }
-   $drop_cuenta.="</select><span id='error_cuenta_egreso'></span>";
+   $drop_cuenta.="</select>";
    echo $drop_cuenta;
     
 ?>

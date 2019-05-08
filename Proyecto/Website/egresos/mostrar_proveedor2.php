@@ -13,7 +13,7 @@
             //echo "hola: ".$row["id_tipo"];
         }
     }
-   $drop_proveedores.="</select><span id='error_proveedor_egreso'></span>";
+   $drop_proveedores.="</select>";
    echo $drop_proveedores;
     
 ?>

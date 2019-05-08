@@ -12,13 +12,13 @@
     
     function mostrar_editar_egreso(folio,rfc,cuenta){
         
-        console.log(folio);
-        console.log(rfc);
-        console.log(cuenta);
+        //console.log(folio);
+        //console.log(rfc);
+        //console.log(cuenta);
 
         $.post('_egreso_editar_form.php', { id : folio } )
         .done(function(data){
-            console.log(data);
+            //console.log(data);
             $.post('mostrar_cuentacontable.php', { id : folio } )
             .done(function(data){
                 $('#drop_cuenta2').html(data);

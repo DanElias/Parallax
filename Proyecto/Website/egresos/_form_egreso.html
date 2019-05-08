@@ -27,7 +27,8 @@
                         <p>Aquí puede agregar egresos</p>
                         
                          <!-- Inicio del form de beneficiarios-->
-                        <form class="col s12" action="registrar_egreso.php" method="post" id="form_egreso">
+                        <form class="col s12" action="registrar_egreso.php" method="post"
+                         id="form_egreso">
                             
 
                             <div class="row">
@@ -35,34 +36,40 @@
                                     <i class="material-icons prefix">clear_all</i>
                                     <input  type="text" class="validate" id="folio_factura" name="folio_factura" required maxlength="30">
                                     <label for="folio_factura">Folio Factura</label>
+                                    <span id="error_folio"></span>
                                 </div>
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix">library_books</i>
                                     <input  type="text" class="validate" id="concepto" name="concepto" required maxlength="30">
                                     <label for="icon_prefix">Concepto</label>
+                                    <span id="error_concepto"></span>
                                 </div>
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix">attach_money</i>
                                     <input  type="text" class="validate" id="importe" name="importe" required maxlength="10">
                                     <label for="importe">Importe</label>
+                                    <span id="error_importe"></span>
                                 </div>
                             </div>
                         
                             <div class="row">
                                 <div class="input-field col s3">
 					                <i class="material-icons prefix">calendar_today</i>
-					                <input type="date" name="fecha_egreso" id="fecha_egreso"  required >
+					                <input type="date" name="fecha_egreso" id="fecha_egreso" required >
                                 </div>
                                 <div class="input-field col s3">
                                     <i class="material-icons prefix">account_balance</i>
-                                    <input  type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required maxlength="20">
-                                    <label for="cuenta_bancaria">Cuenta Bancaria</label>
+                                    <input  type="text" class="validate" id="cuenta_bancaria_egreso" name="cuenta_bancaria_egreso" required maxlength="20">
+                                    <label for="cuenta_bancaria_egreso">Cuenta Bancaria</label>
+                                    <span id="error_cuenta_bancaria_egreso"></span>
                                 </div>
-                               	<div class="input-field col s3" id="drop_proveedor">                                
+
+                                
+                               	<div class="input-field col s3" id="drop_proveedor">
                                 </div>
-                                <div class="input-field col s3" id="drop_cuenta">                                
-                                </div>
-                                    
+                                
+                                <div class="input-field col s3" id="drop_cuenta"></div>
+                            
                             </div>
                             <div></div>
                        
@@ -71,15 +78,16 @@
                             
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">description</i>
-                                    <input  type="text" class="validate" id="observaciones" name="observaciones" required maxlength="100">
+                                    <input  type="text" class="validate" id="observaciones" name="observaciones" required maxlength="100" required>
                                     <label for="observaciones">Observaciones</label>
+                                    <span id="error_observaciones"></span>
                                 </div>
                             </div>
 
                             <div class="my_modal_buttons">
                                 <div class="row">
                                     <div class="col s6">
-                                    <button class="btn waves-effect waves-light" type="submit" name="submit">Guardar
+                                    <button id="guardar_egreso" class="btn waves-effect waves-light" type="submit" name="submit" >Guardar
                                         <i class="material-icons right">check_circle_outline</i>
                                     </button>
                                     </div>

@@ -8,7 +8,7 @@
     $concepto = $_POST['concepto'];
     $importe = $_POST['importe']; 
     $fecha = $_POST['fecha_egreso'];
-    $cuenta_bancaria =  $_POST['cuenta_bancaria']; 
+    $cuenta_bancaria_egreso =  $_POST['cuenta_bancaria_egreso']; 
     $rfc = $_POST['rfc'];  
     $id_cuentacontable = $_POST['id_cuentacontable'];  
     $observaciones = $_POST['observaciones'];
@@ -20,7 +20,7 @@
     "Cocenpto: ".$concepto."<br>". 
     "Importe: ".$importe."<br>". 
     "Fehca: ".$fecha."<br>".  
-    "Cuenta bancaria: ".$cuenta_bancaria."<br>". 
+    "Cuenta bancaria_egreso: ".$cuenta_bancaria_egreso."<br>". 
     "RFC: ".$rfc."<br>". 
     "id cuenta: ".$id_cuentacontable."<br>".
     "observaciones:".$observaciones."<br>"; 
@@ -34,7 +34,7 @@
         $_POST["concepto"] = htmlentities($_POST["concepto"]);
         $_POST["importe"] = htmlentities($_POST["importe"]);
         $_POST["fecha_egreso"] = htmlentities($_POST["fecha_egreso"]);
-        $_POST["cuenta_bancaria"] = htmlentities($_POST["cuenta_bancaria"]);
+        $_POST["cuenta_bancaria_egreso"] = htmlentities($_POST["cuenta_bancaria_egreso"]);
         $_POST["rfc"] = htmlentities($_POST["rfc"]);
         $_POST["id_cuentacontable"] = htmlentities($_POST["id_cuentacontable"]);
         $_POST["observaciones"] = htmlentities($_POST["observaciones"]);
@@ -43,7 +43,7 @@
             && isset($_POST["concepto"]) 
             && isset($_POST["importe"]) 
             && isset($_POST["fecha_egreso"]) 
-            && isset($_POST["cuenta_bancaria"]) 
+            && isset($_POST["cuenta_bancaria_egreso"]) 
             && isset($_POST["rfc"]) 
             && isset($_POST["id_cuentacontable"])
             && isset($_POST["observaciones"])
@@ -51,7 +51,7 @@
             && $_POST["concepto"] != ""
             && $_POST["importe"] != "" 
             && $_POST["fecha_egreso"] != "" 
-            && $_POST["cuenta_bancaria"] != "" 
+            && $_POST["cuenta_bancaria_egreso"] != "" 
             && $_POST["rfc"] != "" 
             && $_POST["id_cuentacontable"] != ""
             && $_POST["observaciones"] != ""
@@ -82,7 +82,7 @@
         //FECHA SE VALIDA CON MATERIALIZE
 
         //CUENTA DE 20, SOLO NUMEROS
-        if(strlen($_POST["cuenta_bancaria"])<18){
+        if(strlen($_POST["cuenta_bancaria_egreso"])<18){
             $flag = false;
             echo "<br>CUENTA MALA";
             //echo "No tiene 18";
@@ -107,7 +107,7 @@
         if(!$flag){
             echo "<br>NO SE MANDARA EL REGISTRO";
         }else{
-            $registrar = registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"]);
+            $registrar = registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria_egreso"], $_POST["rfc"], $_POST["id_cuentacontable"]);
 
            if($registrar){
                header("location:./_egreso_vista.php");
