@@ -4,17 +4,20 @@ SET time_zone = "-06:00";
 CREATE TABLE `beneficiario` (
   `id_beneficiario` int(11) NOT NULL,
   `nombre` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `apellido` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apellido_paterno` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apellido_materno` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
   `estado` tinyint(1) NOT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
   `sexo` char(1) COLLATE utf8_spanish_ci DEFAULT NULL,
   `grado_escolar` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
   `grupo` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `domicilio` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `numero_calle` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `calle` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `colonia` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
   `nivel_socioeconomico` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
   `nombre_escuela` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
   `enfermedades_alergias` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `cuota` decimal(4,2) DEFAULT NULL
+  `cuota` decimal(6,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 INSERT INTO `beneficiario` (`id_beneficiario`, `nombre`, `apellido`, `estado`, `fecha_nacimiento`, `sexo`, `grado_escolar`, `grupo`, `domicilio`, `nivel_socioeconomico`, `nombre_escuela`, `enfermedades_alergias`, `cuota`) VALUES
@@ -92,7 +95,7 @@ INSERT INTO `cuenta_contable` (`id_cuentacontable`, `nombre`, `descripcion`) VAL
 CREATE TABLE `egreso` (
   `folio_factura` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `concepto` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `importe` decimal(9,2) DEFAULT NULL,
+  `importe` decimal(11,2) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `observaciones` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `cuenta_bancaria` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -218,10 +221,10 @@ CREATE TABLE `tutor` (
   `apellido` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
   `telefono` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
-  `ocupacion` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `nombre_empresa` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `ocupacion` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `nombre_empresa` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `grado_estudio` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `titulo_obtenido` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL
+  `titulo_obtenido` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 INSERT INTO `tutor` (`id_tutor`, `nombre`, `apellido`, `telefono`, `fecha_nacimiento`, `ocupacion`, `nombre_empresa`, `grado_estudio`, `titulo_obtenido`) VALUES

@@ -25,6 +25,12 @@ if (isset($_SESSION['usuario'])) {
     $_SESSION['error_eliminar_egreso'] = 0;
     $_SESSION['exito_agregar_egreso'] = 0;
     $_SESSION['error_agregar_egreso'] = 0;
+    $_SESSION['proveedor_eliminado'] = 0;
+    $_SESSION['registro_proveedor'] = 0;
+    
+    $_SESSION['editar_proveedor_exito'] = 0;
+    $_SESSION['error_eliminar_proveedor'] = 0;
+    $_SESSION['editar_proveedor_error'] = 0;
     //Llamada de funciones (util.php) de lo que se nesecite en el form
     header_html();
     body_admin_main();

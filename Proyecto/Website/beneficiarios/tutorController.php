@@ -5,10 +5,9 @@
 
   $opcion = $_POST['opcion'];
   if($opcion == 1){
-      //modalesTutores(getInfoTutores());
-      imprimirnombreTutor(getNombreTutor());
+      modalesTutores(getInfoTutores());
   } else if($opcion == 2){
-      //Do nothing
+    //Do nothing
   }
 
 

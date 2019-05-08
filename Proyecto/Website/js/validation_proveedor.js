@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
     
@@ -183,8 +182,8 @@ $(document).ready(function(){
       }else{
 
           $("#error_rfc").hide();
-          if(tamano<13){
-            $("#error_rfc").html('*ES MENOR A 13').css("color","red");
+          if(tamano<10){
+            $("#error_rfc").html('*ES MENOR A 10 o mayor a ').css("color","red");
             $("#error_rfc").css('padding-left','10%');
             $("#error_rfc").show();
             error_rfc = true;
@@ -298,8 +297,8 @@ $(document).ready(function(){
       }else{
 
           $("#error_rfc2").hide();
-          if(tamano<13){
-            $("#error_rfc2").html('*ES MENOR A 13').css("color","red");
+          if(tamano<10){
+            $("#error_rfc2").html('*ES MENOR A 10').css("color","red");
             $("#error_rfc2").css('padding-left','10%');
             $("#error_rfc2").show();
             error_rfc2 = true;
@@ -406,10 +405,10 @@ $(document).ready(function(){
   //PARA EL RFC: 13, SOLO NUMEROS Y LETRAS
   $.validator.addMethod('rfc_size', function(value, element) {
     return this.optional(element) 
-      || value.length == 13
+      || value.length > 10
 
         
-  }, '<p style="color:red;display:inline;">*El rfc debe ser exactamente 13 caracteres</p>');
+  }, '<p style="color:red;display:inline;">*El rfc debe mayor a 10 caracteres</p>');
 
 
   //ALIAS: ALFANUMERICO, MAXIMO 20
