@@ -12,16 +12,16 @@
     
     function mostrar_editar_egreso(folio,rfc,cuenta){
         
-        console.log(folio);
-        console.log(rfc);
-        console.log(cuenta);
+        //console.log(folio);
+        //console.log(rfc);
+        //console.log(cuenta);
 
         $.post('_egreso_editar_form.php', { id : folio } )
         .done(function(data){
+            //console.log(data);
             $.post('mostrar_cuentacontable.php', { id : folio } )
             .done(function(data){
                 $('#drop_cuenta2').html(data);
-                //alert($('#drop_cuenta2 :selected').text());
                 $('#drop_cuenta2 option[value='+cuenta+']').attr('selected',true);
                 M.AutoInit();
                
@@ -30,7 +30,6 @@
             $.post('mostrar_proveedor.php', { id : folio } )
             .done(function(data){
                 $('#drop_proveedor2').html(data);
-                //alert($('#drop_proveedor2 :selected').text());
                 $('#drop_proveedor2 option[value='+rfc+']').attr('selected',true);
                 M.AutoInit();
             });

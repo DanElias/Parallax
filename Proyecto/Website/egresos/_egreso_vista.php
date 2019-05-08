@@ -38,7 +38,9 @@ if (isset($_SESSION["usuario"])) {
     form_eliminar_cuentacontable_lista_html();
     modal_informacion_cuentacontable_html();*/
     footer_html();
-    echo '<script type="text/javascript" src="ajax_egreso.js"></script>';
+    echo '<script type="text/javascript" src="ajax_egreso.js"></script>
+    <script type="text/javascript" src="../egresos/ajax.js"></script>
+    <script type="text/javascript" src="../egresos/validaciones.js"></script>';
 } else {
     header("location:../login/_login_vista.php");
 

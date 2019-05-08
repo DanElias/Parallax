@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
                         </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['folio_factura'].'\',\''.$row['rfc'].'\',\''.$row['id_cuentacontable'].'\')">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['folio_factura'].'\',\''.$row['rfc'].'\',\''.$row['id_cuentacontable'].'\')" id="edit_button">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
@@ -92,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
                         <table class="stripped highlight responsive-table data_table fixed_header" >
                             <thead>
                             <tr class="my_table_headers">
-                                <th> &nbsp; &nbsp; Lo sentimos, no encontramos eventos.</th>
+                                <th> &nbsp; &nbsp; Lo sentimos, no encontramos egresos.</th>
                             </tr>
                             </thead>
                             <tbody>

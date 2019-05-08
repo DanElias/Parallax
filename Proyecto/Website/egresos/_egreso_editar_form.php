@@ -6,7 +6,7 @@
   session_start();
   //$_SESSION['id_proveedor'] = $_POST['id'];
   $_POST['id'] = htmlentities($_POST['id']);
-  echo $_POST['id'];
+  //echo $_POST['id'];
   $result = obtener_egreso_folio($_POST['id']);
   $edit_form = '';
 
@@ -42,23 +42,23 @@
                           <p>Aquí puede editar un egreso</p>
                           
                            <!-- Inicio del form de beneficiarios-->
-                          <form class="col s12" action="registrar_egreso.php" method="post" id="form_egreso">
+                          <form class="col s12" action="_registro_editar_egreso.php" method="post" id="form_egreso">
                               
 
                               <div class="row">
                                   <div class="input-field col s4">
                                       <i class="material-icons prefix">clear_all</i>
-                                      <input  type="text" class="validate" id="folio_factura" name="folio_factura" required value="'.$row['folio_factura'].'">
+                                      <input  type="text" class="validate" id="folio_factura" name="folio_factura" required value="'.$row['folio_factura'].'" maxlength="30">
                                       <label for="folio_factura">Folio Factura</label>
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">library_books</i>
-                                      <input  type="text" class="validate" id="concepto" name="concepto" required value="'.$row['concepto'].'">
+                                      <input  type="text" class="validate" id="concepto" name="concepto" required value="'.$row['concepto'].'" maxlength="30">
                                       <label for="icon_prefix">Concepto</label>
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">attach_money</i>
-                                      <input  type="text" class="validate" id="importe" name="importe" required value="'.$row['importe'].'">
+                                      <input  type="text" class="validate" id="importe" name="importe" required value="'.$row['importe'].'" maxlength="10">
                                       <label for="importe">Importe</label>
                                   </div>
                               </div>
@@ -70,7 +70,7 @@
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">account_balance</i>
-                                        <input  type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required value="'.$row['cuenta_bancaria'].'">
+                                        <input  type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required value="'.$row['cuenta_bancaria'].'" maxlength="20">
                                         <label for="cuenta_bancaria">Cuenta Bancaria</label>
                                   </div>
 
@@ -89,7 +89,7 @@
                               
                                   <div class="input-field col s6">
                                       <i class="material-icons prefix">description</i>
-                                      <input  type="text" class="validate" id="observaciones" name="observaciones" required value="'.$row['observaciones'].'">
+                                      <input  type="text" class="validate" id="observaciones" name="observaciones" required value="'.$row['observaciones'].'" maxlength="100">
                                       <label for="observaciones">Observaciones</label>
                                   </div>
                               </div>
@@ -109,7 +109,6 @@
                                   </div>
                               </div>
                           </form>
-                      <!-- Final del form de beneficiarios-->
                   </div>
               </div>';
 

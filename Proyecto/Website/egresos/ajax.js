@@ -14,7 +14,7 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('error');
+        console.log('EN EL PRIMERO error');
     })
 
     $.ajax({
@@ -28,10 +28,11 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('error');
+        console.log('EN EL PRIMERO TAMBIEN error');
     })
 
     /************PARA EL FORM DE EDITAR ***/
+    
     
     $.ajax({
         type: 'POST',
@@ -64,39 +65,76 @@ $(document).ready(function(){
     .fail(function(){
         console.log('error');
     })
-    
+
+/*
+$('#edit_button').on('click', function () {
+       	let flag = 1;
+		$.ajax({
+	        type: 'POST',
+	        url: 'mostrar_proveedor2.php',
+	        data:{flag:flag}
+	    })
+	    .done(function(data){
+	        //console.log("ENTRO ");
+	        $('#drop_proveedor2').html(data);
+	        //console.log(data);
+	        M.AutoInit();
+
+	       
+	    })
+	    .fail(function(){
+	        console.log('error');
+	    })
+
+	    $.ajax({
+	        type: 'POST',
+	        url: 'mostrar_cuentacontable2.php',
+	        data:{flag:flag}
+	    })
+	    .done(function(data){
+	        $('#drop_cuenta2').html(data);
+	        M.AutoInit();
+	       
+	    })
+	    .fail(function(){
+	        console.log('error');
+	    })
+	    });*/
+
 });
 
 /*
 $(document).ready(function(){
-    $('#form_egreso').submit(function(ev){
-        ev.preventDefault();
-        let a = 1;
-        //console.log(a);
-        //console.log($("#selected_proveedor").val());
-        let selected_proveedor = $("#selected_proveedor").val(); ///PENDIENTE
-        let selected_cuenta = $("#selected_cuenta").val();
-        console.log(selected_proveedor);
-        console.log(selected_cuenta);
+	let flag = 1;
+	$.ajax({
+        type: 'POST',
+        url: 'mostrar_proveedor2.php',
+        data:{flag:flag}
     })
-        /*
-        $.ajax({
-            type: 'POST',
-            url: 'registrar_incidente.php',
-            data:{selected_lugar:selected_lugar,selected_tipo:selected_tipo}
-        })
-        .done(function(data){
-            //$('#selected_tipo').val("0");
-            //$('#selected_lugar').val("0");
-            //$('#tabla').html("");
-            //$('#tabla').html(data);
-        })
-        .fail(function(){
-            console.log('error');
-        })*/
-        
-/*   
-});*/
+    .done(function(data){
+        //console.log("ENTRO ");
+        $('#drop_proveedor2').html(data);
+        //console.log(data);
+        M.AutoInit();
 
+       
+    })
+    .fail(function(){
+        console.log('error');
+    })
 
-
+    $.ajax({
+        type: 'POST',
+        url: 'mostrar_cuentacontable2.php',
+        data:{flag:flag}
+    })
+    .done(function(data){
+        $('#drop_cuenta2').html(data);
+        M.AutoInit();
+       
+    })
+    .fail(function(){
+        console.log('error');
+    })
+});
+*/
