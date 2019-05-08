@@ -2,7 +2,7 @@ $(document).ready(moreInfo());
 
 $(document).ready(infoTutor());
 
-$(document).ready(genEstado(41));
+//$(document).ready(genEstado(41));
 
 $(document).ready(listaTutor());
 
@@ -26,6 +26,16 @@ function genBorrarBen(numero){
   });
 }
 
+function genBorrarTut(numero){
+  var n = numero;
+  $.post('controladores/genDelTut.php', { id : n } )
+  .done(function(data){
+    //console.log("genEstado");
+    $('#eliminarTut').html(data);
+    //M.AutoInit();
+  });
+}
+
 function llenarEdit(number){
   $.post('controladores/genEdit.php', { id : number } )
   .done(function(data){
@@ -36,6 +46,16 @@ function llenarEdit(number){
   });
 }
 
+function llenarEditTutor(number){
+  $.post('controladores/genEditTutor.php', { id : number } )
+  .done(function(data){
+    //console.log(data);
+    $('#editarTutor').html(data);
+    //M.AutoInit();
+    M.updateTextFields();
+    $('select').formSelect();
+  });
+}
 
 function listaTutor(){
   $.post('controladores/listaTutor.php', { opcion : 1 } )
@@ -84,6 +104,8 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
+    $('#botonEditarTutor1').onmouseover = llenarEditTutor(ide);
+    $('#botonBorrarTutor1').onmouseover = genBorrarTut(ide);
     $('#info1').attr("href", newURL);
   });
 });
@@ -93,6 +115,8 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
+    $('#botonEditarTutor2').onmouseover = llenarEditTutor(ide);
+    $('#botonBorrarTutor2').onmouseover = genBorrarTut(ide);
     $('#info2').attr("href", newURL);
   });
 })
@@ -158,6 +182,33 @@ $(document).ready(function(){
        $('#empresa').val("");
        $('#grado_estudios_tutor').val("");
        $('#titulo').val("");
+       infoTutor();
+       listaTutor();
+      })
+      .fail(function(){
+        alert('Error en registro, verifique datos de entrada');
+
+        console.log('Error');
+      })
+    });
+});
+
+$(document).ready(function(){
+  $("#editarTutor").submit(function (ev){
+    ev.preventDefault();
+    var id = $('#eid_t').val();
+     var nombre= $('#enombre_tutor').val();
+     var apellido= $('#eapellido_tutor').val();
+     var fecha= $('#efecha_nacimiento_tutor').val();
+     var telefono= $('#etelefono').val();
+     var ocupacion= $('#eocupacion').val();
+     var empresa= $('#eempresa').val();
+     var grado= $('#egrado_estudios_tutor').val();
+     var titulo= $('#etitulo').val();
+     $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
+     .done(function(data){
+       console.log('Tutor modificado correctmente');
+       alert('Tutor editado con éxito!');
        infoTutor();
        listaTutor();
       })
@@ -271,7 +322,7 @@ $(document).ready(function(){
        location.reload(true);
       })
       .fail(function(){
-        alert('Error en registro, verifique datos de entrada');
+        alert('Error en edición, verifique datos de entrada');
 
         console.log('Error');
       })

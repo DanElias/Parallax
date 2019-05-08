@@ -45,6 +45,16 @@ function form_tutor_html()
     include("_form_tutor.html");
 }
 
+function form_editar_tutor_html()
+{
+    include("_form_editar_tutor.html");
+}
+
+function form_eliminar_tutor_html()
+{
+    include("_form_eliminar_tutor.html");
+}
+
 function imprimirnombreTutor($result){
 
     //_'.$row['id_tutor'].'
@@ -68,8 +78,7 @@ function imprimirnombreTutor($result){
       echo '</select></td>';
       echo '<td><a class="modal-trigger" href="#modal_informacion_tutor_1" id="info1">Más información</a></td>
       <td>
-          <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-             href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+          <a href="#_form_editar_tutor" class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small" id="botonEditarTutor1"><i class="material-icons">edit</i></a>
       </td>
       <td>
           <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
@@ -97,175 +106,14 @@ function imprimirnombreTutor($result){
       echo '</select></td>';
       echo '<td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="info2">Más información</a></td>
       <td>
-          <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-             href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+          <a href="#_form_editar_tutor" class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small" id="botonEditarTutor2"><i class="material-icons">edit</i></a>
       </td>
       <td>
-          <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-             href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
+          <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small" href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
       </td>
     </tr>';
 
 
-}
-
-function generarEdit(){
-  echo '
-  <form class="col s12" id="editarBeneficiario">
-
-      <!-- el ID del Beneficiario se genera solito-->
-      <input type="hidden" value="" id="eid_b" />
-      <div class="row">
-          <div class="input-field col s3">
-              <i class="material-icons prefix">face</i>
-              <input type="text" class="validate ubuntu-text" id="enombre" name="nombre" required>
-              <label for="nombre">Nombre(s)</label>
-          </div>
-
-          <div class="input-field col s2">
-              <input type="text" class="validate ubuntu-text" id="eapellido_paterno" name="apellido_paterno" required>
-              <label for="apellido_paterno">Apellido Paterno</label>
-          </div>
-
-          <div class="input-field col s2">
-              <input type="text" class="validate ubuntu-text" id="eapellido_materno" name="apellido_materno" required>
-              <label for="apellido_materno">Apellido Materno</label>
-          </div>
-
-          <div class="input-field col s3">
-              <i class="material-icons prefix">cake</i>
-              <input type="date" class="ubuntu-text" name="efecha_nacimiento" id="fecha_nacimiento" required>
-              <label for="fecha_nacimiento">Fecha de nacimiento</label>
-          </div>
-
-          <div class="input-field col s2">
-              <i class="material-icons prefix">group</i>
-              <select id="esexo" name="sexo" required class="ubuntu-text">
-                  <option value="" disabled selected></option>
-                  <option value="H">Hombre</option>
-                  <option value="M">Mujer</option>
-              </select>
-              <label for="sexo">Sexo</label>
-          </div>
-      </div>
-
-      <div class="row">
-          <div class="input-field col s4">
-              <i class="material-icons prefix">home</i>
-              <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" required>
-              <label for="numero_domicilio">Numero</label>
-            </div>
-          <div class="input-field col s4">
-              <!--i class="material-icons prefix"></i-->
-              <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" required>
-              <label for="calle">Calle</label>
-          </div>
-
-          <div class="input-field col s4">
-
-              <input type="text" class="validate ubuntu-text" id="ecolonia" name="colonia" required>
-              <label for="colonia">Colonia</label>
-          </div>
-      </div>
-
-      <div class="row">
-          <div class="input-field col s3" class="ubuntu-text">
-              <i class="material-icons prefix">school</i>
-              <select id="egrado" name="grado" required class="ubuntu-text">
-                  <option value="" disabled selected></option>
-                  <option value="1ro Preescolar">1ro Preescolar</option>
-                  <option value="2do Preescolar">2do Preescolar</option>
-                  <option value="3ro Preescolar">3ro Preescolar</option>
-                  <option value="4to Preescolar">4to Preescolar</option>
-                  <option value="1ro Primaria">1ro Primaria</option>
-                  <option value="2do Primaria">2do Primaria</option>
-                  <option value="3ro Primaria">3ro Primaria</option>
-                  <option value="4to Primaria">4to Primaria</option>
-                  <option value="5to Primaria">5to Primaria</option>
-                  <option value="6to Primaria">6to Primaria</option>
-                  <option value="1ro Secundaria">1ro Secundaria</option>
-                  <option value="2do Secundaria">2do Secundaria</option>
-                  <option value="3ro Secundaria">3ro Secundaria</option>
-              </select>
-              <label for="grado">Grado Escolar</label>
-          </div>
-          <div class="input-field col s3">
-              <i class="material-icons prefix">domain</i>
-              <input type="text" class="validate ubuntu-text" id="eescuela" name="escuela" required>
-              <label for="escuela">Nombre Escuela</label>
-          </div>
-          <div class="input-field col s3">
-              <i class="material-icons prefix">business</i>
-              <select class="ubuntu-text" id="egrupo" name="grupo" required>
-                  <option value="" disabled selected></option>
-                  <option value="Preescolar">Preescolar</option>
-                  <option value="Primaria Baja">Primaria Baja</option>
-                  <option value="Primaria Alta">Primaria Alta</option>
-                  <option value="Secundaria">Secundaria</option>
-              </select>
-              <label for="grupo">Grupo (Mariana Sala)</label>
-          </div>
-          <div class="input-field col s3">
-              <i class="material-icons prefix" required>attach_money</i>
-              <input type="number" step="0.01" id="ecuota" name="cuota" class="validate ubuntu-text">
-              <label for="cuota">Cuota</label>
-          </div>
-          <div class="input-field col s6">
-              <i class="material-icons prefix">local_hospital</i>
-              <input type="text" class="validate ubuntu-text" id="eenfermedades" name="enfermedades" required>
-              <label for="enfermedades">Enfermedades y Alergias</label>
-          </div>
-          <div class="input-field col s3">
-              <i class="material-icons prefix" required>device_hub</i>
-              <select id=estatus name="status" required class="ubuntu-text">
-                  <option value="" disabled selected></option>
-                  <option value="Pobreza Extrema">Pobreza Extrema</option>
-                  <option value="Pobreza">Pobreza</option>
-                  <option value="Media Baja">Media Baja</option>
-                  <option value="Media Media">Media Media</option>
-                  <option value="Media Alta">Media Alta</option>
-              </select>
-              <label for="status">Estatus Socioeconómico</label>
-          </div>
-
-          <div class="switch col s3 center vertical-align">
-              <label>
-                  Beneficiario Inactivo
-                  <input type="checkbox" id="eestado" name="estado" checked>
-                  <span class="lever"></span>
-                  Beneficiario Activo!
-              </label>
-          </div>
-
-      </div>
-
-
-      <div class="row">
-          <!-- Switch -->
-
-      </div>
-      <br>
-
-      <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
-      <div class="my_modal_buttons">
-          <div class="row">
-              <div class="col s6">
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
-                      <i class="material-icons right">check_circle_outline</i>
-                  </button>
-              </div>
-              <div class="col s6">
-                  <button class="btn waves-effect waves-light red modal-close">Cancelar
-                      <i class="material-icons right">highlight_off</i>
-                  </button>
-              </div>
-          </div>
-      </div>
-
-
-  </form>
-
-  ';
 }
 
 function ben_html(){

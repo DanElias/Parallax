@@ -34,7 +34,6 @@
       insertarBenTut($row2['id_beneficiario'], $idtut2, $parentesco2);
     }
   } else{
-    die('No se pudo compa');
     echo '<script>alert("error")</script>';
   }
 
