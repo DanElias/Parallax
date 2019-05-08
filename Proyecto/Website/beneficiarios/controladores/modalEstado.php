@@ -5,25 +5,11 @@ require_once('../../basesdedatos/_conection_queries_db.php');
   if (mysqli_num_rows($result) > 0) {
       $row = mysqli_fetch_assoc($result);
       $estado = getEstadoById($row['id_beneficiario']);
-      echo '<!-- Modal Structure -->
-      <div id="modal_estado_beneficiarios" class="modal my_modal">
-      <!--<form id="formEstado" action="#"> -->
-        <div class="row my_modal_header_row">
-          <div class="my_modal_header_estado z-depth-2 col s12">
-              <h4 class="my_modal_header">Estado Beneficiario</h4>
-          </div>
-      </div>
-      <br><br>
-      <div class="modal-content my_modal_content">
-          <br><br><br>
-          <h5 class="my_modal_description2">Cambiar el estado del beneficiario</h5>
-          <br>
-          <br>
-          <br>';
 
-
-    echo '  <div>
+    echo '
+            <div>
               <!-- Switch -->
+
               <div class="switch col s6 center vertical-align">
                   <label>
                       Beneficiario Inactivo
@@ -56,13 +42,7 @@ require_once('../../basesdedatos/_conection_queries_db.php');
                       </a>
                   </div-->
                 </div>
-              </div>'
-            ;
-
-
-      echo '</div>
-            <!-- </form> -->
-          </div>';
+              </div>';
 
   } else{
     //echo '<script>alert("No se encontró el estado")</script>';
