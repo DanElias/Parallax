@@ -17,7 +17,8 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
     form_eliminar_proveedor_html();//form_eliminar_evento_html();
     modal_informacion_proveedor_html();//modal_informacion_evento_html();
     footer_html();
-    echo '<script type="text/javascript" src="ajax_proveedor.js"></script>';
+    echo '<script type="text/javascript" src="ajax_proveedor.js"></script>
+    <script type="text/javascript" src="../js/validation_proveedor.js"></script>';
     
 } else {
     header("location:../login/_login_vista.php");

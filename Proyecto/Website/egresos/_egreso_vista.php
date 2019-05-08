@@ -12,15 +12,33 @@ if (isset($_SESSION["usuario"])) {
     controller_tabla_egreso_php();
     form_egreso_html();
     modal_informacion_egreso_html();
-    footer_html();
-    echo '<script type="text/javascript" src="ajax_egreso.js"></script>
-    <script type="text/javascript" src="../js/validation_proveedor.js"></script>
-    <script type="text/javascript" src="ajax.js"></script>';
     
     if($_SESSION['exito_eliminar_egreso'] == 1){
-        "<script type='text/javascript'> alert('!El usuario ha sido eliminado¡');</script>";
+        echo "<script type='text/javascript'> alert('!El egreso ha sido eliminado¡');</script>";
         $_SESSION['exito_eliminar_egreso'] = 0;
     }
+    
+     
+    if($_SESSION['error_eliminar_egreso'] == 1){
+        echo "<script type='text/javascript'> alert('!El egreso no ha podido ser eliminado¡');</script>";
+        $_SESSION['error_eliminar_egreso'] = 0;
+    }
+    
+    if($_SESSION['exito_agregar_egreso'] == 1){
+        echo "<script type='text/javascript'> alert('!El egreso ha sido registrado con exito wtfff!');</script>";
+        $_SESSION['exito_agregar_egreso'] = 0;
+    }
+    
+    if($_SESSION['error_agregar_egreso'] == 1){
+        echo "<script type='text/javascript'> alert('!El egreso no ha podido ser agregado¡');</script>";
+        $_SESSION['error_agregar_egreso'] = 0;
+    }
+    
+    
+    footer_html();
+    echo '<script type="text/javascript" src="ajax_egreso.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>';
+    
     
 } else {
     header("location:../login/_login_vista.php");

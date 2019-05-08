@@ -25,11 +25,8 @@
     "id cuenta: ".$id_cuentacontable."<br>".
     "observaciones:".$observaciones."<br>"; */
     
-    
- 
     if (isset($_POST["submit"])){
-
-
+        
         $_POST["folio_factura"] = htmlentities($_POST["folio_factura"]);
         $_POST["concepto"] = htmlentities($_POST["concepto"]);
         $_POST["importe"] = htmlentities($_POST["importe"]);
@@ -55,17 +52,15 @@
             && $_POST["rfc"] != "" 
             && $_POST["id_cuentacontable"] != ""
             && $_POST["observaciones"] != ""
-       
-
         ){
-           
-            $registrar = registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"]);
+          
 
-           if($registrar){
-                echo "<h1>DEBE ESTAR EN LA BASE DE DATOS</h1>";
-               // header("location:./_egreso_vista.php");
+           if(registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"])){
+                $_SESSION['exito_agregar_egreso']=1; 
+               header("location:./_egreso_vista.php");
            }else{
-                echo "<h1>NO FUNCIONO</h1>";
+                $_SESSION['error_agregar_egreso']=1; 
+               header("location:./_egreso_vista.php");
            }
         }
     	
