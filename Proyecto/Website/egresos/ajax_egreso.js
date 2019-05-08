@@ -7,8 +7,6 @@
             M.AutoInit();
         });
     }
-
-
     
     function mostrar_editar_egreso(folio,rfc,cuenta){
         
@@ -38,25 +36,6 @@
             
             M.AutoInit();
         });
-        /*
-
-        $.post('_egreso_editar_form.php', { id : folio } )
-        .done(function(data){
-            $('#drop_proveedor2').text("<h1>SOME TEXT PROVEEDOR</h1>");
-            $('#drop_cuenta2').text("<h1>SOME TEXT EN CUENTA</h1>");
-            M.AutoInit();
-        });
-
-        $.post('_egreso_editar_form.php', { id : folio } )
-        .done(function(data){
-            $('#drop_proveedor2').text("<h1>SOME TEXT PROVEEDOR</h1>");
-            $('#drop_cuenta2').text("<h1>SOME TEXT EN CUENTA</h1>");
-            M.AutoInit();
-        });*/
-
-
-
-
 
         
     }

@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
                         </a>
                     </td>';
         $query_table .= '<td>
-                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_eliminar_egreso.php?id=' . $row['folio_factura'] . '">
+                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_vista_eliminar_egreso.php?id=' . $row['folio_factura'] . '">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';
