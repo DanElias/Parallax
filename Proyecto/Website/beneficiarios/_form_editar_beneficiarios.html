@@ -1,5 +1,5 @@
 <!-- Modal tructure -->
-<div id="_form_editar_beneficiario" class="modal modal-fixed-footer my_modal my_big_modal"
+<div id="_form_editar_beneficiarios" class="modal modal-fixed-footer my_modal my_big_modal"
      style="margin:10px; overflow-y:hidden">
 
     <div class="row my_modal_header_row">
@@ -23,13 +23,12 @@
     <br><br><br>
 
     <div class="modal-content my_modal_content">
-        <p>Aquí puede agregar un beneficiario</p>
+        <p>Aquí puede modificar un beneficiario</p>
 
-        <!-- Inicio del form de beneficiarios-->
+
         <form class="col s12" id="editarBeneficiario">
 
-            <!-- el ID del Beneficiario se genera solito-->
-
+            <!--input type="hidden" value="" id="eid_b" />
             <div class="row">
                 <div class="input-field col s3">
                     <i class="material-icons prefix">face</i>
@@ -49,13 +48,13 @@
 
                 <div class="input-field col s3">
                     <i class="material-icons prefix">cake</i>
-                    <input type="date" class="ubuntu-text" name="fecha_nacimiento" id="fecha_nacimiento" required>
+                    <input type="date" class="ubuntu-text" name="efecha_nacimiento" id="fecha_nacimiento" required>
                     <label for="fecha_nacimiento">Fecha de nacimiento</label>
                 </div>
 
                 <div class="input-field col s2">
                     <i class="material-icons prefix">group</i>
-                    <select id="sexo" name="sexo" required class="ubuntu-text">
+                    <select id="esexo" name="sexo" required class="ubuntu-text">
                         <option value="" disabled selected></option>
                         <option value="H">Hombre</option>
                         <option value="M">Mujer</option>
@@ -67,18 +66,17 @@
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">home</i>
-                    <input type="text" class="validate ubuntu-text" id="numero_domicilio" name="numero_domicilio" required>
+                    <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" required>
                     <label for="numero_domicilio">Numero</label>
                   </div>
                 <div class="input-field col s4">
-                    <!--i class="material-icons prefix"></i-->
-                    <input type="text" class="validate ubuntu-text" id="calle" name="calle" required>
+                    <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" required>
                     <label for="calle">Calle</label>
                 </div>
 
                 <div class="input-field col s4">
 
-                    <input type="text" class="validate ubuntu-text" id="colonia" name="colonia" required>
+                    <input type="text" class="validate ubuntu-text" id="ecolonia" name="colonia" required>
                     <label for="colonia">Colonia</label>
                 </div>
             </div>
@@ -86,7 +84,7 @@
             <div class="row">
                 <div class="input-field col s3" class="ubuntu-text">
                     <i class="material-icons prefix">school</i>
-                    <select id="grado" name="grado" required class="ubuntu-text">
+                    <select id="egrado" name="grado" required class="ubuntu-text">
                         <option value="" disabled selected></option>
                         <option value="1ro Preescolar">1ro Preescolar</option>
                         <option value="2do Preescolar">2do Preescolar</option>
@@ -106,12 +104,12 @@
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix">domain</i>
-                    <input type="text" class="validate ubuntu-text" id="escuela" name="escuela" required>
+                    <input type="text" class="validate ubuntu-text" id="eescuela" name="escuela" required>
                     <label for="escuela">Nombre Escuela</label>
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix">business</i>
-                    <select class="ubuntu-text" id="grupo" name="grupo" required>
+                    <select class="ubuntu-text" id="egrupo" name="grupo" required>
                         <option value="" disabled selected></option>
                         <option value="Preescolar">Preescolar</option>
                         <option value="Primaria Baja">Primaria Baja</option>
@@ -122,17 +120,17 @@
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix" required>attach_money</i>
-                    <input type="number" step="0.01" id="cuota" name="cuota" class="validate ubuntu-text">
+                    <input type="number" step="0.01" id="ecuota" name="cuota" class="validate ubuntu-text">
                     <label for="cuota">Cuota</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">local_hospital</i>
-                    <input type="text" class="validate ubuntu-text" id="enfermedades" name="enfermedades" required>
+                    <input type="text" class="validate ubuntu-text" id="eenfermedades" name="enfermedades" required>
                     <label for="enfermedades">Enfermedades y Alergias</label>
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix" required>device_hub</i>
-                    <select id=status name="status" required class="ubuntu-text">
+                    <select id=estatus name="status" required class="ubuntu-text">
                         <option value="" disabled selected></option>
                         <option value="Pobreza Extrema">Pobreza Extrema</option>
                         <option value="Pobreza">Pobreza</option>
@@ -146,7 +144,7 @@
                 <div class="switch col s3 center vertical-align">
                     <label>
                         Beneficiario Inactivo
-                        <input type="checkbox" id="estado" name="estado" checked>
+                        <input type="checkbox" id="eestado" name="estado" checked>
                         <span class="lever"></span>
                         Beneficiario Activo!
                     </label>
@@ -156,44 +154,10 @@
 
 
             <div class="row">
-                <!-- Switch -->
 
             </div>
             <br>
-            <!-- Aqui va un botoncito de agregar tutor-->
-            <div class="row">
-                <div class="col s3 m3 center">
-                    <!-- Modal Trigger -->
-                    <p>Agregar Tutor</p>
-                    <a class="center waves-effect waves-light btn-floating modal-trigger blue darken-2 hoverable tooltipped"
-                       data-position="bottom" data-tooltip="Aquí puedes agregar un tutor" href="#_form_tutor"><i
-                            class="material-icons right">add</i></a>
-                </div>
 
-                <div class="col s9 m9 center">
-                    <div class='table-wrapper responsive-table new_data_table'>
-                        <table class="stripped highlight responsive-table data_table fixed_header">
-                            <thead>
-                            <tr class="my_table_headers">
-                                <th>Selección</th>
-                                <th>Parentesco</th>
-                                <th>Nombre Tutor</th>
-                                <th>Más información</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
-                            </tr>
-                            </thead>
-
-                            <tbody id="tablaExternaTutor">
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
             <div class="my_modal_buttons">
                 <div class="row">
                     <div class="col s6">
@@ -207,7 +171,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </div-->
 
 
         </form>
