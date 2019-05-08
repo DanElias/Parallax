@@ -1198,11 +1198,28 @@ function obtenerCuentas(){
     return $result;
   }
 
-  function insertarBeneficiario($nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota){
+  function insertarBeneficiario($nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
     $conn = conectDb();
-    $sql = "INSERT INTO beneficiario(nombre, apellido, estado, fecha_nacimiento, sexo, grado_escolar, grupo, domicilio, nivel_socioeconomico, nombre_escuela, enfermedades_alergias, cuota) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO beneficiario(nombre, apellido_paterno, apellido_materno, estado, fecha_nacimiento, sexo, grado_escolar, grupo, numero_calle, calle, colonia, nivel_socioeconomico, nombre_escuela, enfermedades_alergias, cuota) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssissssssssd',$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota);
+      $stmt->bind_param('sssissssssssssd',$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+  function editarBeneficiario($id,$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota){
+    $conn = conectDb();
+    $sql = "UPDATE beneficiario SET nombre=?, apellido=?, estado=?, fecha_nacimiento=?, sexo=?, grado_escolar=?, grupo=?, domicilio=?, nivel_socioeconomico=?, nombre_escuela=?, enfermedades_alergias=?, cuota=? WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssissssssssdi',$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota,$id);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();

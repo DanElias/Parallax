@@ -1,11 +1,11 @@
 <!-- Modal tructure -->
-<div id="_form_beneficiarios" class="modal modal-fixed-footer my_modal my_big_modal"
+<div id="_form_editar_beneficiario" class="modal modal-fixed-footer my_modal my_big_modal"
      style="margin:10px; overflow-y:hidden">
 
     <div class="row my_modal_header_row">
         <div class="my_modal_header1">
             <div class="col s11 my_form_title">
-                Agregar Beneficiario
+                Editar Beneficiario
                 <i class="material-icons my_title_icon">accessibility_new</i>
             </div>
 
@@ -23,27 +23,27 @@
     <br><br><br>
 
     <div class="modal-content my_modal_content">
-        <p>Aquí puede agregar un nuevo beneficiario</p>
+        <p>Aquí puede agregar un beneficiario</p>
 
         <!-- Inicio del form de beneficiarios-->
-        <form class="col s12" id="registrarBeneficiario">
+        <form class="col s12" id="editarBeneficiario">
 
             <!-- el ID del Beneficiario se genera solito-->
 
             <div class="row">
                 <div class="input-field col s3">
                     <i class="material-icons prefix">face</i>
-                    <input type="text" class="validate ubuntu-text" id="nombre" name="nombre" required>
+                    <input type="text" class="validate ubuntu-text" id="enombre" name="nombre" required>
                     <label for="nombre">Nombre(s)</label>
                 </div>
 
                 <div class="input-field col s2">
-                    <input type="text" class="validate ubuntu-text" id="apellido_paterno" name="apellido_paterno" required>
+                    <input type="text" class="validate ubuntu-text" id="eapellido_paterno" name="apellido_paterno" required>
                     <label for="apellido_paterno">Apellido Paterno</label>
                 </div>
 
                 <div class="input-field col s2">
-                    <input type="text" class="validate ubuntu-text" id="apellido_materno" name="apellido_materno" required>
+                    <input type="text" class="validate ubuntu-text" id="eapellido_materno" name="apellido_materno" required>
                     <label for="apellido_materno">Apellido Materno</label>
                 </div>
 
@@ -185,62 +185,7 @@
                             </thead>
 
                             <tbody id="tablaExternaTutor">
-                              <tr>
-                                <td>
-                                  <label>
-                                    <input type="checkbox" class="filled-in center-align" id="benTut1" checked disabled/>
-                                    <span></span>
-                                  </label>
-                                </td>
-                                <td>
-                                  <select id="parentesco1" name="parentesco" required>
-                                    <option value="" disabled selected></option>
-                                    <option value="Padre">Padre</option>
-                                    <option value="Madre">Madre</option>
-                                    <option value="Tutor">Tutor</option>
-                                  </select>
-                                </td>
-                                <td>
-                                  <select id="tutor1" name="tutor1" required>
-                                  </select>
-                                </td>
-                                <td><a class="modal-trigger" href="#modal_informacion_tutor_1" id="info1">Más información</a></td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-                                       href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-                                       href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td><label>
-                                  <input type="checkbox" class="filled-in center-align" id="benTut2" />
-                                  <span></span>
-                                </label></td>
-                                <td>
-                                  <select id="parentesco2" name="parentesco" >
-                                    <option value="" disabled selected></option>
-                                    <option value="Padre">Padre</option>
-                                    <option value="Madre">Madre</option>
-                                    <option value="Tutor">Tutor</option>
-                                  </select>
-                                </td>
-                                <td>
-                                  <select id="tutor2" name="tutor2" >
-                                  </select>
-                                </td>
-                                <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="info2">Más información</a></td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-                                       href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-                                       href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
-                                </td>
-                              </tr>
+
                             </tbody>
                         </table>
                     </div>

@@ -60,7 +60,7 @@ cuota*/
 
                   <div class="col s5">
                       <p class="mi_titulo s6">Nombre:</p>&nbsp;&nbsp;
-                      <p class="mi_parrafo s6">'.$row['nombre'].' '.$row['apellido'].'</p>
+                      <p class="mi_parrafo s6">'.$row['nombre'].' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'</p>
                   </div>
 
                   <div class="col s3">
@@ -121,7 +121,7 @@ cuota*/
 
                   <div class="col s7">
                       <p class="mi_titulo s6">Domicilio:</p>&nbsp;&nbsp;
-                      <p class="mi_parrafo s6">'.$row['domicilio'].'</p>
+                      <p class="mi_parrafo s6">'.$row['calle'].' '.$row['numero_calle'].', Col. '.$row['colonia'].'</p>
                   </div>
               </div>
 
@@ -144,7 +144,6 @@ cuota*/
               </div>
 
               <div class="row">';
-              $i = 1;
               while($row2 = mysqli_fetch_assoc($padres)){
                   echo '<div class="col s12">
                       <p class="mi_titulo s6">'.$row2['rel'].'</p>&nbsp;&nbsp;
@@ -152,7 +151,6 @@ cuota*/
                       <p class="mi_parrafo s6"><a class="modal-trigger" href="#modal_informacion_tutor_'.$row2['id'].'">Mas información</a>
                       </p>
                   </div>';
-                  $i++;
               }
 
 
