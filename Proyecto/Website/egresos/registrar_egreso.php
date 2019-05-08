@@ -104,7 +104,12 @@
         }else{
            if(registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"])){
                 $_SESSION['exito_agregar_egreso']=1; 
-               header("location:./_egreso_vista.php");
+               header("location:_egreso_vista.php");
+                if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                </script>';
+                }
            }else{
                 $_SESSION['error_agregar_egreso']=1; 
                header("location:./_egreso_vista.php");

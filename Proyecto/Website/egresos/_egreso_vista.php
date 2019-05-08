@@ -25,7 +25,7 @@ if (isset($_SESSION["usuario"])) {
     }
     
     if($_SESSION['exito_agregar_egreso'] == 1){
-        echo "<script type='text/javascript'> alert('!El egreso ha sido registrado con exito wtfff!');</script>";
+        echo "<script type='text/javascript'> alert('!El egreso ha sido registrado con exito!');</script>";
         $_SESSION['exito_agregar_egreso'] = 0;
     }
     

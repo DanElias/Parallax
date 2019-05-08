@@ -6,7 +6,7 @@ $_SESSION['error_bd_login'] = 0;
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-    if($GLOBALS['local_servidor'] == 0){
+    if($GLOBALS['local_servidor'] == 1){
         $servername = "";
         $username = "marianas";
         $password = "1Ky4L05bly";
