@@ -7,7 +7,8 @@ require_once('../../basesdedatos/_conection_queries_db.php');
       $estado = getEstadoById($row['id_beneficiario']);
       echo '<!-- Modal Structure -->
       <div id="modal_estado_beneficiarios" class="modal my_modal">
-      <div class="row my_modal_header_row">
+      <!--<form id="formEstado" action="#"> -->
+        <div class="row my_modal_header_row">
           <div class="my_modal_header_estado z-depth-2 col s12">
               <h4 class="my_modal_header">Estado Beneficiario</h4>
           </div>
@@ -18,34 +19,34 @@ require_once('../../basesdedatos/_conection_queries_db.php');
           <h5 class="my_modal_description2">Cambiar el estado del beneficiario</h5>
           <br>
           <br>
-          <br>
-          <form id="formaEstado" action="controladores/estadoController.php">';
+          <br>';
 
-    echo '<div>
+
+    echo '  <div>
               <!-- Switch -->
               <div class="switch col s6 center vertical-align">
                   <label>
                       Beneficiario Inactivo
                       <input type="hidden" value='.$row['id_beneficiario'].' name="id_ben" id="id_ben">';
       if($estado == 0){
-        echo '<input type="checkbox" name="palancaEstado" id="palancaEstado">';
+                echo '<input type="checkbox" name="palancaEstado" id="palancaEstado">';
       } else{
-        echo '<input type="checkbox" checked name="palancaEstado" id="palancaEstado" >';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
+                echo '<input type="checkbox" checked name="palancaEstado" id="palancaEstado" >';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
       }
 
-      echo '<span class="lever"></span>
-                      Beneficiario Activo!
+      echo '          <span class="lever"></span>
+                        Beneficiario Activo!
                   </label>
               </div>
-          </div>
-          <br><br>
+            </div>
+            <br><br>
 
-          <div class="my_modal_buttons">
+            <div class="my_modal_buttons">
               <div class="row">
                   <div class="col s3">
                   </div>
                   <div class="col s6">
-                      <button class="btn waves-effect waves-light" type="submit">Cambiar
+                      <button class="btn waves-effect waves-light modal-close" id="botonCambiarEstado">Cambiar
                           Estado<i class="material-icons right">check_circle_outline</i>
                       </button>
                   </div>
@@ -54,13 +55,14 @@ require_once('../../basesdedatos/_conection_queries_db.php');
                           <i class="material-icons right">highlight_off</i>
                       </a>
                   </div-->
-              </div>
-          </div>
-          </form>';
+                </div>
+              </div>'
+            ;
 
 
-      echo '    </div>
-      </div>';
+      echo '</div>
+            <!-- </form> -->
+          </div>';
 
   } else{
     //echo '<script>alert("No se encontró el estado")</script>';

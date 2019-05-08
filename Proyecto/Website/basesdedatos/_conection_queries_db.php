@@ -19,12 +19,12 @@ function conectDb()
     }
 
      $con = new mysqli($servername, $username, $password, $dbname);
- 
+
 
     if($con->connect_error){
       //die("No se ha podido establecer una conexión con la base de datos. " . $con->connection_error);
       //include("error_server_card.html");
-      //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a 
+      //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a
        //intentarlo más tarde');</script>";
       if($_SESSION['error_bd_login']==1){
           include("../views/_header_login.html");
@@ -38,9 +38,9 @@ function conectDb()
       }
       die();
     }
-  
+
     return $con;
-  
+
 }
 
 //cierra la conexión con la base de datos
@@ -323,11 +323,11 @@ function obtenerEventoReciente()
 
 function obtenerEventosSiguientes($fecha){
     $conn = conectDb();
-    
+
      $sql = "
           SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
           WHERE fecha>= ? ";
-          
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$fecha);
       $stmt->execute();
@@ -340,11 +340,11 @@ function obtenerEventosSiguientes($fecha){
 
 function obtenerEventosPasados($fecha){
     $conn = conectDb();
-    
+
      $sql = "
           SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
           WHERE fecha< ? ";
-          
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$fecha);
       $stmt->execute();
@@ -1002,7 +1002,7 @@ function login($email, $password)
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
    closeDB($conn);
     return $result;
 }
@@ -1039,7 +1039,7 @@ function obtenerEgresosPeriodo($fecha_inicial, $fecha_final)
 {
     $conn = conectDb();
     $sql = "
-            SELECT folio_factura, concepto, importe, fecha ,cuenta_bancaria, observaciones, rfc, id_cuentacontable 
+            SELECT folio_factura, concepto, importe, fecha ,cuenta_bancaria, observaciones, rfc, id_cuentacontable
             FROM egreso
             WHERE fecha>='".$fecha_inicial."' AND fecha<='".$fecha_final."'";
     $result = mysqli_query($conn, $sql);
@@ -1209,10 +1209,10 @@ function obtenerCuentas(){
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEstado(){
     $conn = conectDb();
-    
+
     $sql = "
         SELECT estado, count(*) as number FROM beneficiario
         GROUP BY estado
@@ -1225,266 +1225,330 @@ function obtenerCuentas(){
 	closeDB($conn);
     return $result;
   }
-  
+
   function benTutor($idben){
     $conn = conectDb();
-    $sql = "SELECT t.nombre, t.apellido, bt.parentesco FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND id_beneficiario=?";
+    $sql = "SELECT t.nombre as name, t.apellido as lastname, bt.parentesco as rel, t.id_tutor as id FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND b.id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$idben);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
-    }    
+    }
     closeDB($conn);
     return $result;
   }
-  
+
+  function getLastBen(){
+    $conn = conectDb();
+    $sql = "SELECT id_beneficiario FROM beneficiario ORDER BY id_beneficiario DESC LIMIT 1";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function insertarBeneficiario($nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
+    $conn = conectDb();
+    $sql = "INSERT INTO beneficiario(nombre, apellido_paterno, apellido_materno, estado, fecha_nacimiento, sexo, grado_escolar, grupo, numero_calle, calle, colonia, nivel_socioeconomico, nombre_escuela, enfermedades_alergias, cuota) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('sssissssssssssd',$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+  function editarBeneficiario($id,$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota){
+    $conn = conectDb();
+    $sql = "UPDATE beneficiario SET nombre=?, apellido=?, estado=?, fecha_nacimiento=?, sexo=?, grado_escolar=?, grupo=?, domicilio=?, nivel_socioeconomico=?, nombre_escuela=?, enfermedades_alergias=?, cuota=? WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssissssssssdi',$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota,$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+  function insertarBenTut($id_ben,$id_tutor,$parentesco){
+    $conn = conectDb();
+    $sql = "INSERT INTO beneficiario_tutor(id_beneficiario, id_tutor, parentesco) VALUES (?,?,?)";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('iis',$id_ben,$id_tutor,$parentesco);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+
   function reporteSexo($estado){
     $conn = conectDb();
-    
+
     $sql = "
         SELECT sexo, count(*) as number FROM beneficiario
         WHERE estado = ?
         GROUP BY sexo
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$estado);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteGradoEscolar($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT grado_escolar, count(*) as number FROM beneficiario
         WHERE estado = ?
         GROUP BY grado_escolar
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$estado);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteGrupo($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT grupo, count(*) as number FROM beneficiario
         WHERE estado = ?
         GROUP BY grupo
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$estado);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteNivel($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT nivel_socioeconomico, count(*) as number FROM beneficiario
         WHERE estado = ?
         GROUP BY nivel_socioeconomico
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$estado);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEscuela($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT nombre_escuela, count(*) as number FROM beneficiario
         WHERE estado = ?
         GROUP BY nombre_escuela
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$estado);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEnfermedades($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT enfermedades_alergias, count(*) as number FROM beneficiario
         WHERE estado = ?
         GROUP BY enfermedades_alergias
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$estado);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteCuota($estado){
     $conn = conectDb();
-    
+
     $sql = "
         SELECT cuota, count(*) as number FROM beneficiario
         WHERE estado = ?
         GROUP BY cuota
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$estado);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteOcupacion(){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT ocupacion, count(*) as number FROM tutor
         GROUP BY ocupacion
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEmpresa(){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT nombre_empresa, count(*) as number FROM tutor
         GROUP BY nombre_empresa
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEstudio(){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT grado_estudio, count(*) as number FROM tutor
         GROUP BY grado_estudio
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteTitulo(){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     $sql = "
         SELECT titulo_obtenido, count(*) as number FROM tutor
         GROUP BY titulo_obtenido
     ";
-    
+
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
     }
-    
+
     closeDB($conn);
     return $result;
   }
-  
-  
+
+
 function reporteCuenta($fecha_inicial, $fecha_final){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     if($fecha_inicial!="" && $fecha_final!=""){
        $sql = "
             SELECT nombre, count(*) as number FROM egreso E, cuenta_contable C
@@ -1497,18 +1561,18 @@ function reporteCuenta($fecha_inicial, $fecha_final){
             WHERE E.id_cuentacontable=C.id_cuentacontable
             GROUP BY C.nombre";
   }
-        
+
   $result = mysqli_query($conn, $sql);
   closeDb($conn);
   return $result;
 }
-  
+
 function reporteProveedores($fecha_inicial, $fecha_final){
     $conn = conectDb();
     $conn->set_charset("utf8");
     mysqli_query($conn,"SET CHARACTER SET 'utf8'");
     mysqli_query($conn,"SET SESSION collation_connection ='utf8_unicode_ci'");
-    
+
     if($fecha_inicial!="" && $fecha_final!=""){
        $sql = "
             SELECT razon_social, count(*) as number FROM egreso E, proveedor P
@@ -1522,12 +1586,12 @@ function reporteProveedores($fecha_inicial, $fecha_final){
           GROUP BY razon_social
        ";
   }
-        
+
   $result = mysqli_query($conn, $sql);
   closeDb($conn);
   return $result;
 }
-  
+
   /*function reporteProveedores(){ //con prepared statement
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1546,8 +1610,8 @@ function reporteProveedores($fecha_inicial, $fecha_final){
     closeDB($conn);
     return $result;
   }*/
-  
-  
+
+
   function alertaNoHayConexion(){
     $alerta='
     
@@ -1597,7 +1661,7 @@ function reporteProveedores($fecha_inicial, $fecha_final){
     echo $alerta;
 
   }
-  
-  
+
+
 
 ?>

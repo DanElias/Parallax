@@ -16,7 +16,8 @@ if (isset($_SESSION["usuario"]) && $_SESSION['uno'] == 1) {
     //form_estado_beneficiarios_html();
     //modal_informacion_beneficiarios_html();
     //modal_informacion_tutor_html();
-    beneficiarios_html();
+    //beneficiarios_html();
+    ben_html();
     footer_html();
     //scriptsEdicion();
 
