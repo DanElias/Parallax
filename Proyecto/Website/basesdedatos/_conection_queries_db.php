@@ -6,7 +6,7 @@ $_SESSION['error_bd_login'] = 0;
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-    if($GLOBALS['local_servidor'] == 1){
+    if($GLOBALS['local_servidor'] == 0){
         $servername = "";
         $username = "marianas";
         $password = "1Ky4L05bly";
@@ -1079,6 +1079,23 @@ function obtenerCuentas(){
     closeDB($conn);
   }
 
+  function editarTutor($id,$nombre, $apellido,$telefono,$fecha, $ocupacion, $empresa, $grado, $titulo){
+    $conn = conectDb();
+    $sql = "UPDATE tutor SET nombre=?, apellido=?, telefono=?, fecha_nacimiento=?, ocupacion=?, nombre_empresa=?, grado_estudio=?, titulo_obtenido=? WHERE id_tutor=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('ssssssssi',$nombre,$apellido,$telefono,$fecha,$ocupacion,$empresa,$grado,$titulo,$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
   function getNombreTutor(){
     $conn = conectDb();
     $sql = "SELECT id_tutor,nombre,apellido FROM tutor ORDER BY apellido";
@@ -1288,6 +1305,23 @@ function obtenerCuentas(){
   function deleteBeneficiario($id){
     $conn = conectDb();
     $sql = "DELETE FROM beneficiario WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql) ){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+  function deleteTutor($id){
+    $conn = conectDb();
+    $sql = "DELETE FROM tutor WHERE id_tutor=?";
     if($stmt = $conn->prepare($sql) ){
       $stmt->bind_param('i',$id);
       $stmt->execute();
