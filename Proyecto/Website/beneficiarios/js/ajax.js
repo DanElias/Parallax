@@ -7,10 +7,21 @@ $(document).ready(genEstado(41));
 $(document).ready(listaTutor());
 
 function genEstado(numero){
-  $.post('controladores/modalEstado.php', { id : numero } )
+  var n = numero;
+  $.post('controladores/modalEstado.php', { id : n} )
   .done(function(data){
-    console.log("genEstado");
-    $('#modEst').html(data);
+    //console.log("genEstado");
+    $('#formEstado').html(data);
+    M.AutoInit();
+  });
+}
+
+function genBorrarBen(numero){
+  var n = numero;
+  $.post('controladores/genDelBen.php', { id : n } )
+  .done(function(data){
+    //console.log("genEstado");
+    $('#eliminarBen').html(data);
     M.AutoInit();
   });
 }
@@ -87,7 +98,8 @@ $(document).ready(function(){
 })
 
 $(document).ready(function(){
-  $('#botonCambiarEstado').click(function (){
+  $('#formEstado').submit(function (ev){
+    ev.preventDefault();
      var id = $("#id_ben").val();
      var estado = -1;
      if($('#palancaEstado').prop("checked")){
@@ -95,15 +107,29 @@ $(document).ready(function(){
      } else{
        estado = 0;
      }
-     //alert(estado);
-     //console.log("id = " + id);
-     //console.log("estado = " + estado);
      $.post('controladores/estadoController.php', { id : id, estado : estado } )
      .done(function(data){
        alert('Estado modificado!');
+       location.reload(true);
       })
       .fail(function(){
         alert('Error: no se pudo cambiar el estado');
+        console.log('Error');
+      })
+    });
+});
+
+$(document).ready(function(){
+  $('#eliminarBen').submit(function (ev){
+    ev.preventDefault();
+     var id = $("#borrar_id").val();
+     $.post('controladores/deleteBen.php', { id : id } )
+     .done(function(data){
+       alert('Beneficiario eliminado!');
+       location.reload(true);
+      })
+      .fail(function(){
+        alert('Error: no se pudo eliminar el beneficiario');
         console.log('Error');
       })
     });
@@ -191,6 +217,57 @@ $(document).ready(function(){
        $('#status').val("");
        $('#enfermedades').val("");
        alert('Beneficiario registrado!');
+       location.reload(true);
+      })
+      .fail(function(){
+        alert('Error en registro, verifique datos de entrada');
+
+        console.log('Error');
+      })
+    });
+});
+
+$(document).ready(function(){
+  $("#_form_editar_beneficiarios").submit(function (ev){
+    ev.preventDefault();
+     var id = $('#eid_b').val();
+     var nombre= $('#enombre').val();
+     var apellido_pat= $('#eapellido_paterno').val();
+     var apellido_mat = $('#eapellido_materno').val();
+     var fecha= $('#efecha_nacimiento').val();
+     var sexo= $('#esexo').val();
+     var numero= $('#enumero_domicilio').val();
+     var calle = $('#ecalle').val();
+     var colonia = $('#ecolonia').val();
+     var escuela= $('#eescuela').val();
+     var grado= $('#egrado').val();
+     var grupo= $('#egrupo').val();
+     var cuota= $('#ecuota').val();
+     var status = $('#estatus').val();
+     var enfermedades= $('#eenfermedades').val();
+     var estado= -1;
+     if($('#eestado').prop("checked")){
+       estado = 1;
+     } else {
+       estado = 0;
+     }
+     $.post('controladores/editBen.php', { id : id, nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades } )
+     .done(function(data){
+       $('#nombre').val("");
+       $('#apellido_paterno').val("");
+       $('#apellido_materno').val("");
+       $('#fecha_nacimiento').val("");
+       $('#sexo').val("");
+       $('#numero_domicilio').val("");
+       $('#calle').val("");
+       $('#colonia').val("");
+       $('#escuela').val("");
+       $('#grado').val("");
+       $('#grupo').val("");
+       $('#cuota').val("");
+       $('#status').val("");
+       $('#enfermedades').val("");
+       alert('Beneficiario editado!');
        location.reload(true);
       })
       .fail(function(){

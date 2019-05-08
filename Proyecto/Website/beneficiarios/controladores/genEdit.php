@@ -40,8 +40,7 @@
             <option value="M" selected>Mujer</option>';
           }
 
-              echo '<option value="H">Hombre</option>
-              <option value="M">Mujer</option>
+              echo '
           </select>
           <label for="sexo">Sexo</label>
       </div>
@@ -252,6 +251,20 @@
             <option value="1ro Secundaria">1ro Secundaria</option>
             <option value="2do Secundaria" >2do Secundaria</option>
             <option value="3ro Secundaria" selected>3ro Secundaria</option>';
+          } else {
+            echo '<option value="1ro Preescolar" >1ro Preescolar</option>
+            <option value="2do Preescolar" >2do Preescolar</option>
+            <option value="3ro Preescolar" >3ro Preescolar</option>
+            <option value="4to Preescolar">4to Preescolar</option>
+            <option value="1ro Primaria">1ro Primaria</option>
+            <option value="2do Primaria" >2do Primaria</option>
+            <option value="3ro Primaria">3ro Primaria</option>
+            <option value="4to Primaria">4to Primaria</option>
+            <option value="5to Primaria" >5to Primaria</option>
+            <option value="6to Primaria" >6to Primaria</option>
+            <option value="1ro Secundaria">1ro Secundaria</option>
+            <option value="2do Secundaria" >2do Secundaria</option>
+            <option value="3ro Secundaria">3ro Secundaria</option>';
           }
  echo'
           </select>
@@ -286,6 +299,11 @@
             <option value="Primaria Baja" >Primaria Baja</option>
             <option value="Primaria Alta" >Primaria Alta</option>
             <option value="Secundaria" selected>Secundaria</option>';
+          } else {
+            echo'<option value="Preescolar">Preescolar</option>
+            <option value="Primaria Baja" >Primaria Baja</option>
+            <option value="Primaria Alta" >Primaria Alta</option>
+            <option value="Secundaria">Secundaria</option>';
           }
       echo '
           </select>
@@ -303,7 +321,7 @@
       </div>
       <div class="input-field col s3">
           <i class="material-icons prefix" required>device_hub</i>
-          <select id=estatus name="status" required class="ubuntu-text">
+          <select id="estatus" name="status" required class="ubuntu-text">
               <option value="" disabled ></option>';
 
           if($row['nivel_socioeconomico'] == 'Pobreza Extrema'){
@@ -336,6 +354,12 @@
             <option value="Media Baja" >Media Baja</option>
             <option value="Media Media">Media Media</option>
             <option value="Media Alta" selected>Media Alta</option>';
+          } else {
+            echo'<option value="Pobreza Extrema" >Pobreza Extrema</option>
+            <option value="Pobreza">Pobreza</option>
+            <option value="Media Baja" >Media Baja</option>
+            <option value="Media Media">Media Media</option>
+            <option value="Media Alta" >Media Alta</option>';
           }
           echo '
           </select>

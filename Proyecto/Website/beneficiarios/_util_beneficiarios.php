@@ -395,7 +395,7 @@ function tablaBeneficiario($result){
       $query_table .= '</td>';
       $query_table .= '<td>';
       $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"';
-      $query_table .= 'href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>';
+      $query_table .= 'href="#_form_eliminar_beneficiarios" onmouseover=genBorrarBen('.$row['id_beneficiario'].')><i class="material-icons">delete</i></a>';
       $query_table .= '</td>';
       $query_table .= '</tr>';
     }
@@ -404,6 +404,10 @@ function tablaBeneficiario($result){
   } else { // si no hay eventos registrados en la tabla
       echo "<script>alert('No encontramos Beneficiarios registrados');</script>";
   }
+}
+
+function estado(){
+    include('modales_estado_beneficiario.html');
 }
 
 function modalesTutores($result){
