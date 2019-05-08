@@ -1,10 +1,12 @@
 <?php
+session_start();
+$GLOBALS['local_servidor'] = 1;
+$_SESSION['error_bd_login'] = 0;
 
-$GLOBALS['local_servidor'] = 0;
 //se conecta con la base de datos indicada
 function conectDb()
 {//¿Estos parámetros deben de cambiar cuando la págn se suba a otro servidor que no sea tu propia pc?
-    if($GLOBALS['local_servidor'] == 1){
+    if($GLOBALS['local_servidor'] == 0){
         $servername = "";
         $username = "marianas";
         $password = "1Ky4L05bly";
@@ -16,7 +18,6 @@ function conectDb()
         $dbname = "proyecto";
     }
 
-
      $con = new mysqli($servername, $username, $password, $dbname);
  
 
@@ -25,8 +26,16 @@ function conectDb()
       //include("error_server_card.html");
       //echo "<script>alert('No hemos podido establecer una conexión con la base de datos. Asegúrate de estar conectado a Internet o vuelve a 
        //intentarlo más tarde');</script>";
-      alertaNoHayConexion();
-      include("../views/_footer_admin.html");
+      if($_SESSION['error_bd_login']==1){
+          include("../views/_header_login.html");
+          include("../login/_login.html");
+          echo alertaNoHayConexion();
+          include("../views/_footer_admin.html");
+      }
+      else{
+        alertaNoHayConexion();
+        include("../views/_footer_admin.html");
+      }
       die();
     }
   
@@ -40,6 +49,66 @@ function closeDb($mysql)
     $mysql->close();
 }
 
+function editarRol($descripcion,$id_rol)
+{
+
+    $conn = conectDb();
+    $sql = "UPDATE `rol` SET `descripcion` = '".$descripcion."' WHERE `rol`.`id_rol` = '".$id_rol."'";
+    $result = mysqli_query($conn, $sql);
+
+    closeDb($conn);
+    return $result;
+
+}
+function obtenerTablaRoles()
+{
+    $conn = conectDb();
+    $sql = "SELECT id_rol, descripcion  FROM rol";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+function eliminarPrivilegioPorId($id_usuario)
+{
+
+    $conn = conectDb();
+    $sql = "DELETE FROM rol_privilegio WHERE id_rol = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        return false;
+    }
+    closeDB($conn);
+}
+function eliminarRolPorId($id_usuario)
+{
+
+    $conn = conectDb();
+    $sql = "DELETE FROM rol WHERE id_rol = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        return false;
+    }
+    closeDB($conn);
+}
 function registrar_rol_privilegio($id_rol,$id_privilegio){
     $conn = conectDb();
     $sql = "INSERT INTO rol_privilegio (id_rol,id_privilegio) VALUES (?,?)";
@@ -81,6 +150,21 @@ function obtenerRoles(){
     return  $salida;
 }
 
+function obtenerRolPorId($id_rol){
+
+    $conn = conectDb();
+    $sql = "SELECT id_rol,descripcion FROM rol WHERE id_rol= ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_rol);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+}
+
+
 function obtenerPrivilegios($rol){
     $con = conectDb();
     $query="SELECT * FROM rol_privilegio WHERE id_rol = $rol";
@@ -94,6 +178,25 @@ function eliminarUsuarioPorID($id_usuario)
     $sql = "DELETE FROM usuario WHERE id_usuario = ?";
     if($stmt = $conn->prepare($sql)){
         $stmt->bind_param('i', $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+        return true;
+    } else{
+        closeDB($conn);
+        return false;
+    }
+    closeDB($conn);
+}
+
+function eliminarUsuarioPorRol($id_rol)
+{
+
+    $conn = conectDb();
+    $sql = "DELETE FROM usuario WHERE id_rol = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('i', $id_rol);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
@@ -892,7 +995,7 @@ function login($email, $password)
     return $result;*/
 
     $conn = conectDb();
-    $sql = "SELECT nombre,id_rol FROM usuario WHERE email = ?";
+    $sql = "SELECT id_usuario,nombre,id_rol FROM usuario WHERE email = ?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$email);
       $stmt->execute();
@@ -978,7 +1081,7 @@ function obtenerCuentas(){
 
   function getNombreTutor(){
     $conn = conectDb();
-    $sql = "SELECT id_tutor,nombre,apellido FROM tutor";
+    $sql = "SELECT id_tutor,nombre,apellido FROM tutor ORDER BY apellido";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
@@ -1069,6 +1172,32 @@ function obtenerCuentas(){
     return $result;
   }
 
+  function getInfoById($id){
+    $conn = conectDb();
+    $sql = "SELECT * FROM beneficiario WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function getInfoTutorById($id){
+    $conn = conectDb();
+    $sql = "SELECT * FROM tutor WHERE id_tutor=?";
+    if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
   function getIDsBen(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario FROM beneficiario";
@@ -1081,7 +1210,6 @@ function obtenerCuentas(){
     return $result;
   }
   
-  
   function reporteEstado(){
     $conn = conectDb();
     
@@ -1089,13 +1217,24 @@ function obtenerCuentas(){
         SELECT estado, count(*) as number FROM beneficiario
         GROUP BY estado
     ";
-    
+	if($stmt = $conn->prepare($sql)){
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$stmt->close();
+	}
+	closeDB($conn);
+    return $result;
+  }
+  
+  function benTutor($idben){
+    $conn = conectDb();
+    $sql = "SELECT t.nombre, t.apellido, bt.parentesco FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){
+      $stmt->bind_param('i',$idben);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
-    }
-    
+    }    
     closeDB($conn);
     return $result;
   }
@@ -1409,10 +1548,9 @@ function reporteProveedores($fecha_inicial, $fecha_final){
   }*/
   
   
-
   function alertaNoHayConexion(){
     $alerta='
-    <script>M.AutoInit();</script>
+    
     <div id="_form_alerta_error" class="modal  my_modal">
         <div class="row my_modal_header_row">
             <div class="my_modal_header_eliminar z-depth-2 col s12">

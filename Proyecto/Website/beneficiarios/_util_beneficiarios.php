@@ -42,11 +42,11 @@ function form_tutor_html()
 }
 
 function imprimirnombreTutor($result){
-  while($row = mysqli_fetch_assoc($result)){
 
+    //_'.$row['id_tutor'].'
     echo '<tr>
       <td><label>
-        <input type="checkbox" class="filled-in center-align" id="benTut_'.$row['id_tutor'].'" />
+        <input type="checkbox" class="filled-in center-align" id="benTut1" checked disabled/>
         <span></span>
       </label></td>
       <td><select id="parentesco" name="parentesco" required>
@@ -54,9 +54,44 @@ function imprimirnombreTutor($result){
           <option value="Padre">Padre</option>
           <option value="Madre">Madre</option>
           <option value="Tutor">Tutor</option>
-      </select></td>';
-    echo '<td>'.$row['nombre'].' '.$row['apellido'].'</td>
-      <td><a class="modal-trigger" href="#_modal_informacion_tutor_'.$row['id_tutor'].'">Más información</a></td>
+      </select></td>;
+      <td><select id="tutor1" name="tutor" required>
+          <option value="" disabled selected></option>';
+      while($row = mysqli_fetch_assoc($result)){
+        echo '
+          <option value="'.$row['id_tutor'].'">'.$row['nombre'].' '.$row['apellido'].'</option>';
+      }
+      echo '</select></td>';
+      echo '<td><a class="modal-trigger" href="#modal_informacion_tutor_1" id="info1">Más información</a></td>
+      <td>
+          <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
+             href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
+      </td>
+      <td>
+          <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
+             href="#_form_eliminar_beneficiarios"><i class="material-icons">delete</i></a>
+      </td>
+    </tr>';
+    echo '<tr>
+      <td><label>
+        <input type="checkbox" class="filled-in center-align" id="benTut2" />
+        <span></span>
+      </label></td>
+      <td><select id="parentesco2" name="parentesco" >
+          <option value="" disabled selected></option>
+          <option value="Padre">Padre</option>
+          <option value="Madre">Madre</option>
+          <option value="Tutor">Tutor</option>
+      </select></td>;
+      <td><select id="tutor2" name="tutor">
+          <option value="" disabled selected></option>';
+      $result2 = getNombreTutor();
+      while($row2 = mysqli_fetch_assoc($result2)){
+        echo '
+          <option value="'.$row2['id_tutor'].'">'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+      }
+      echo '</select></td>';
+      echo '<td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="info2">Más información</a></td>
       <td>
           <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
              href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>
@@ -67,7 +102,7 @@ function imprimirnombreTutor($result){
       </td>
     </tr>';
 
-  }
+
 }
 
 function tablaBeneficiario($result){
@@ -90,10 +125,10 @@ function tablaBeneficiario($result){
       $query_table .= '<td style="display:none;">' . $row["enfermedades_alergias"] . '</td>';
       $query_table .= '<td style="display:none;">' . $row["cuota"] . '</td>';
       $query_table .= '<td>'.$row['grupo'].'</td>';
-      $query_table .= '<td><a class="modal-trigger" href="#_modal_informacion_beneficiarios_'.$row['id_beneficiario'].'">Más información</a></td>';
+      $query_table .= '<td><a class="modal-trigger" href="#modal_informacion_beneficiarios" >Más información</a></td>';
       $query_table .= '<td>';
-      $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light green accent-3 hoverable" ';
-      $query_table .= 'href="#modal_estado_beneficiarios_'.$row['id_beneficiario'].'"><i class="material-icons">power_settings_new</i></a>';
+      $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light green accent-3 hoverable modal-trigger" onmouseover="genEstado('.$row['id_beneficiario'].')" ';
+      $query_table .= 'href="#modal_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>';
       $query_table .= '</td>';
       $query_table .= '<td>';
       $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"';
@@ -109,70 +144,6 @@ function tablaBeneficiario($result){
 
   } else { // si no hay eventos registrados en la tabla
       echo "<script>alert('No encontramos Beneficiarios registrados');</script>";
-  }
-}
-
-function modalEstado($result){
-  if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)){
-      $estado = getEstadoById($row['id_beneficiario']);
-
-      echo '<!-- Modal Structure -->
-      <div id="modal_estado_beneficiarios_'.$row['id_beneficiario'].'" class="modal my_modal">
-      <div class="row my_modal_header_row">
-          <div class="my_modal_header_estado z-depth-2 col s12">
-              <h4 class="my_modal_header">Estado Beneficiario</h4>
-          </div>
-      </div>
-      <br><br>
-      <div class="modal-content my_modal_content">
-          <br><br><br>
-          <h5 class="my_modal_description2">Cambiar el estado del beneficiario</h5>
-          <br>
-          <br>
-          <br>
-          <form id="formaEditarEstado_'.$row['id_beneficiario'].'">';
-
-    echo '<div>
-              <!-- Switch -->
-              <div class="switch col s6 center vertical-align">
-                  <label>
-                      Beneficiario Inactivo';
-      if($estado == 0){
-        echo '<input type="checkbox" name="palanca" id="palancaEstado_'.$row['id_beneficiario'].'">';//id="palancaEstado_'.$row['id_beneficiario'].'">';
-      } else{
-        echo '<input type="checkbox" checked name="palanca" id="palancaEstado_'.$row['id_beneficiario'].'" > ';//id="palancaEstado_'.$row['id_beneficiario'].' checked >';
-      }
-
-      echo '<span class="lever"></span>
-                      Beneficiario Activo!
-                  </label>
-              </div>
-          </div>
-          <br><br>
-
-          <div class="my_modal_buttons">
-              <div class="row">
-                  <div class="col s6">
-                      <button class="modal-close btn waves-effect waves-light" type="submit" name="cambiarEstado">Cambiar
-                          Estado<i class="material-icons right">check_circle_outline</i>
-                      </button>
-                  </div>
-                  <div class="col s6">
-                      <button class="modal-close btn waves-effect waves-light red" type="cancel">NO Cambiar Estado
-                          <i class="material-icons right">highlight_off</i>
-                      </button>
-                  </div>
-              </div>
-          </div>
-          </form>';
-
-
-      echo '    </div>
-      </div>';
-    }
-  } else{
-    echo '<script>alert("No se encontró el estado")</script>';
   }
 }
 
@@ -324,7 +295,7 @@ function modalesBeneficiario($result){
   }
 }
 
-function editarEstado(){
+/*function editarEstado(){
   $result = getIDsBen();
   $script = "<script type='text/javascript'>";
   while($row = mysqli_fetch_assoc($result)){
@@ -355,10 +326,11 @@ function editarEstado(){
         }
       $script .= '</script>';
       echo $script;
-}
+}*/
 
 function modalesTutores($result){
   while($row = mysqli_fetch_assoc($result)){
+    $row_date = explode('-', $row['fecha_nacimiento']);
     echo '<!-- Modal Structure -->
     <div id="_modal_informacion_tutor_'.$row['id_tutor'].'" class="modal modal-fixed-footer my_modal ">
         <div class="row my_modal_header_row">
@@ -379,7 +351,7 @@ function modalesTutores($result){
 
                 <div class="col s12">
                     <p class="mi_titulo s6">Fecha de Nacimiento</p>&nbsp;&nbsp;
-                    <p class="mi_parrafo s6">'.$row['fecha_nacimiento'].'</p>
+                    <p class="mi_parrafo s6">'.$row_date[2].'/'.$row_date[1].'/'.$row_date[0].'</p>
                 </div>
 
                 <div class="col s12">

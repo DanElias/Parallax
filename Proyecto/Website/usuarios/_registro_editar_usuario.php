@@ -4,7 +4,8 @@ require_once("_util_usuarios.php");
 require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
 
 session_start();
-
+$_SESSION['editar_usuario'] = 0;
+$_SESSION['error5'] = 0;
 
 if (isset($_POST["submit_editar"])) {
     //Aquí guardo lo que está en los campos del form en variables
@@ -14,7 +15,7 @@ if (isset($_POST["submit_editar"])) {
     $_POST["email"] = htmlentities($_POST["email"]);
     $_POST["password"] = htmlentities($_POST["password"]);
     $_POST["fecha_nacimiento"] = htmlentities($_POST["fecha_nacimiento"]);
-    $_POST["rol"] = htmlentities($_POST["rol"]);
+    $_POST["editar_rol"] = htmlentities($_POST["editar_rol"]);
 
 
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
@@ -24,16 +25,17 @@ if (isset($_POST["submit_editar"])) {
         && isset($_POST["email"])
         && isset($_POST["password"])
         && isset($_POST["fecha_nacimiento"])
-        && isset($_POST["rol"])
+        && isset($_POST["editar_rol"])
         && $_POST["id_usuario"] != ""
         && $_POST["nombre"] != ""
         && $_POST["apellido"] != ""
         && $_POST["email"] != ""
         && $_POST["password"] != ""
-        && $_POST["rol"] != ""
+        && $_POST["editar_rol"] != ""
         && $_POST["fecha_nacimiento"] != ""){
-            //var_dump(editarUsuario( $_POST["id_usuario"],$_POST["nombre"],$_POST["apellido"],$_POST["email"] ,password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["rol"]));
-        if (editarUsuario( $_POST["id_usuario"],$_POST["nombre"],$_POST["apellido"],$_POST["email"] ,password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["rol"])) {
+            var_dump(editarUsuario( $_POST["id_usuario"],$_POST["nombre"],$_POST["apellido"],$_POST["email"] ,password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["editar_rol"]));
+        if (editarUsuario( $_POST["id_usuario"],$_POST["nombre"],$_POST["apellido"],$_POST["email"] ,password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["fecha_nacimiento"],$_POST["editar_rol"])) {
+            $_SESSION['editar_usuario'] = 1;
             header("location:_usuarios_vista.php");
             $result = obtenerUsuariosPorID($_POST["id_usuario"]);
             $row = mysqli_fetch_assoc($result);
@@ -57,7 +59,19 @@ if (isset($_POST["submit_editar"])) {
             echo '<script type="text/javascript" src="ajax_cuentas_contables.js"></script>';
             /*----------------------------------------------------------------------------------------------------------------------------------*/
         }
-    }
+
+    }else{
+        $_SESSION['error5'] = 1;
+        header("location:_usuarios_vista.php");
+        if($GLOBALS['local_servidor'] == 1){
+            echo'<script type="text/javascript">
+		window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
+		</script>';
+        }
+
+
+
+}
 }
 
 ?>
