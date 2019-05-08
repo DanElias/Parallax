@@ -27,7 +27,8 @@ if (isset($_SESSION['usuario'])) {
     $_SESSION['error_agregar_egreso'] = 0;
     $_SESSION['proveedor_eliminado'] = 0;
     $_SESSION['registro_proveedor'] = 0;
-    
+    $_SESSION['editar_egreso_exito'] = 0;
+    $_SESSION['editar_egreso_erroir'] = 0;
     $_SESSION['editar_proveedor_exito'] = 0;
     $_SESSION['error_eliminar_proveedor'] = 0;
     $_SESSION['editar_proveedor_error'] = 0;

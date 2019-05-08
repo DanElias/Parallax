@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
 
         
         //ALIAS DEBE SER A LO MUCHO 20, LETRAS Y NUMEROS, SIN CARACTERES ESPECIALES
-        if(!(preg_match('/[A-Za-z0-9\s]/', $_POST["alias"]))){
+        if(!(preg_match('/[\d\w\sáéíóúüñÑÁÉÍÓÚü\s]/', $_POST["alias"]))){
             echo "<br>ALIAS NO";
             $flag = false;
         }

@@ -212,14 +212,16 @@ $(document).ready(function(){
 
 
   	function check_alias(){
-  		if(!(/^[\d\w\s]+$/i.test($('#alias').val()))){
+  		if((/^[\d\w\sáéíóúüñÑÁÉÍÓÚü]+$/i.test($('#alias').val()))){
   			//console.log("HUBO UN ERROR, QUIERE DECIR QUE LEYO UNA COSA COMO UN PUNTO ");	
+  			$("#error_alias").hide();
+  		}else{
   			$("#error_alias").html('*No caracteres especiales').css("color","red");
          $("#error_alias").css('padding-left','10%');
   			$("#error_alias").show();
   			error_alias = true;
-  		}else{
-  			$("#error_alias").hide();
+  			
+  			
   		}
   		//console.log("LA EXPRESION REGULAR ESTA FUNCIONANDO");
   	}

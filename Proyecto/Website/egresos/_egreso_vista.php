@@ -33,6 +33,14 @@ if (isset($_SESSION["usuario"])) {
         echo "<script type='text/javascript'> alert('!El egreso no ha podido ser agregado¡');</script>";
         $_SESSION['error_agregar_egreso'] = 0;
     }
+    if($_SESSION['editar_egreso_error'] == 1){
+        echo "<script type='text/javascript'> alert('!El egreso no se pudo editar¡');</script>";
+        $_SESSION['editar_egreso_error'] = 0;
+    }
+     if($_SESSION['editar_egreso_exito'] == 1){
+        echo "<script type='text/javascript'> alert('!El egreso se edito con exito¡');</script>";
+        $_SESSION['editar_egreso_error'] = 0;
+    }
     
     
     footer_html();

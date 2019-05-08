@@ -3,6 +3,10 @@
     //require_once("_util_usuarios.php");
     require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y 
 
+    session_start();
+    
+    $_SESSION['editar_egreso_exito'] = 0;
+    $_SESSION['editar_egreso_erroir'] = 0;
     
     $folio_factura = $_POST['folio_factura']; 
     $concepto = $_POST['concepto'];
@@ -13,19 +17,6 @@
     $id_cuentacontable = $_POST['id_cuentacontable'];  
     $observaciones = $_POST['observaciones'];
 
-    
-    
-    echo "<h1>ENTRO AL REGISTRAR</h1>";
-    echo "Folio:".$folio_factura."<br>".
-    "Cocenpto: ".$concepto."<br>". 
-    "Importe: ".$importe."<br>". 
-    "Fehca: ".$fecha."<br>".  
-    "Cuenta bancaria: ".$cuenta_bancaria."<br>". 
-    "RFC: ".$rfc."<br>". 
-    "id cuenta: ".$id_cuentacontable."<br>".
-    "observaciones:".$observaciones."<br>"; 
-    
-    
     
     if (isset($_POST["submit"])){
 
@@ -110,10 +101,21 @@
             $editar = editar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"]);
 
            if($editar){
-            echo "DEBIO ACTUALIZARSE LA COSA";
-               //header("location:./_egreso_vista.php");
+            $_SESSION['editar_egreso_exito'] = 1;
+            header("location:./_egreso_vista.php");
+             if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                </script>';
+                }
            }else{
-                echo "<h1>NO FUNCIONO</h1>";
+                $_SESSION['editar_egreso_error'] = 1;
+            header("location:./_egreso_vista.php");
+             if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                </script>';
+                }
            }
 
         }
