@@ -53,12 +53,12 @@ cuota*/
           <div class="modal-content my_modal_content">
 
               <div class="row">
-                  <div class="col s3">
+                  <div class="col s2">
                       <p class="mi_titulo s6">ID Beneficiario:</p>&nbsp;&nbsp;
                       <p class="mi_parrafo s6">'.$row['id_beneficiario'].'</p>
                   </div>
 
-                  <div class="col s3">
+                  <div class="col s5">
                       <p class="mi_titulo s6">Nombre:</p>&nbsp;&nbsp;
                       <p class="mi_parrafo s6">'.$row['nombre'].' '.$row['apellido'].'</p>
                   </div>
@@ -68,7 +68,7 @@ cuota*/
                       <p class="mi_parrafo s6">'.$row_date[2].'/'.$row_date[1].'/'.$row_date[0].'</p>
                   </div>
 
-                  <div class="col s3">
+                  <div class="col s2">
                       <p class="mi_titulo s6">Edad:</p>&nbsp;&nbsp;
                       <p class="mi_parrafo s6">'.$diff->y.' años</p>
                   </div>

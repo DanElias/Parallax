@@ -14,7 +14,7 @@ CREATE TABLE `beneficiario` (
   `nivel_socioeconomico` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
   `nombre_escuela` varchar(40) COLLATE utf8_spanish_ci DEFAULT NULL,
   `enfermedades_alergias` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `cuota` decimal(4,2) DEFAULT NULL
+  `cuota` decimal(6,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 CREATE TABLE `beneficiario_tutor` (
@@ -33,7 +33,7 @@ CREATE TABLE `cuenta_contable` (
 CREATE TABLE `egreso` (
   `folio_factura` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `concepto` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `importe` decimal(9,2) DEFAULT NULL,
+  `importe` decimal(11,2) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `observaciones` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `cuenta_bancaria` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,

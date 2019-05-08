@@ -105,6 +105,97 @@ function imprimirnombreTutor($result){
 
 }
 
+function ben_html(){
+  echo '<div class="wrapper"><br><br><br>
+
+      <div class="" id="beneficiarioshtml">
+
+              <div class="row">
+                  <div class="col s12 m6">
+                      <div class="header my_heading_text" style="padding-left:0.5em;">Beneficiarios<i class="material-icons my_title_icon">accessibility_new</i>
+                      </div>
+                  </div>
+
+                  <div class="col s12 m6">
+                      <!-- Modal Trigger -->
+                      <div class="my_add_button_container responsive">
+                          <a class="waves-effect waves-light btn modal-trigger blue darken-2 hoverable tooltipped"
+                             data-position="bottom" data-tooltip="Aquí puedes agregar un beneficiario"
+                             href="#_form_beneficiarios">Agregar Beneficiario<i
+                                  class="material-icons right">person_add</i></a>
+                      </div>
+                  </div>
+              </div>
+
+
+              <!--div style="padding-left:3em;">
+                  <label for="botonActivos">
+                    <input type="checkbox" class="filled-in" checked="checked" id="botonActivos" name="botonActivos" />
+                    <span>Mostrar sólo beneficiarios activos</span>
+                  </label>
+              </div-->
+
+
+              <div class="row">
+                  <form class="my_search">
+                      <!--div class="row my_search valign">
+                          <div class="input-field col s4 my_search tooltipped" data-position="bottom"
+                               data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra introducida y a las casillas de los filtros de búsqueda seleccionados">
+                              <i class="material-icons prefix my_search">search</i>
+                              <input id="icon_prefix" type="text" class="validate my_search">
+                              <label for="icon_prefix" class="my_search">Introduce una palabra clave</label>
+                          </div>
+
+                          <div class="input-field col s2">
+                              <a class="btn btn-medium waves-effect waves-light deep-purple hoverable">Buscar</a>
+                          </div>
+                      </div-->
+                  </form>
+              </div>
+
+
+
+              <div class="table-wrapper responsive-table new_data_table">
+                  <table class="stripped highlight responsive-table data_table fixed_header" id="my_pagination_table">
+                      <thead>
+                      <tr class="my_table_headers">
+                        <th class="first_col_data_table">ID</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th style="display:none;">Fecha Nacimiento</th>
+                        <th style="display:none;">Sexo</th>
+                        <th style="display:none;">Grado Escolar</th>
+                        <th style="display:none;">Domicilio</th>
+                        <th style="display:none;">Nivel Socioeconómico</th>
+                        <th style="display:none;">Escuela</th>
+                        <th style="display:none;">Enfermedades y alergias</th>
+                        <th style="display:none;">Cuota</th>
+                        <th>Grupo</th>
+                        <th>Más Información</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                      </tr>
+                      </thead>
+                      <tbody id="cuerpoTablaBeneficiarios">';
+                      tablaBeneficiario(getInfoBeneficiarios());
+            echo'
+                      </tbody>
+                  </table>
+
+                   <div class="col-md-12 center text-center" id="paginator">
+                      <br>
+                      <ul class="pagination pager" id="myPager"></ul>
+                      <br>
+                    <span class="left" id="total_reg"></span>
+                  </div>
+                  <span id="modBen"></span><span id="modEst"></span><span id="todosTutores"></span>
+              </div>
+  </div><!--div del wrapper que empieza después del sidenav-->';
+
+}
+
+
 function tablaBeneficiario($result){
   $query_table = "";
   $today = new Datetime(date('y.m.d'));
@@ -127,7 +218,12 @@ function tablaBeneficiario($result){
       $query_table .= '<td>'.$row['grupo'].'</td>';
       $query_table .= '<td><a class="modal-trigger" href="#modal_informacion_beneficiarios_'.$row['id_beneficiario'].'" >Más información</a></td>';
       $query_table .= '<td>';
-      $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light green accent-3 hoverable modal-trigger" onmouseover="genEstado('.$row['id_beneficiario'].')" ';
+      if($row['estado'] == 1){
+          $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light green accent-3 hoverable modal-trigger" onmouseover="genEstado('.$row['id_beneficiario'].')" ';
+      } else{
+          $query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light gray accent-3 hoverable modal-trigger" onmouseover="genEstado('.$row['id_beneficiario'].')" ';
+      }
+      //$query_table .= '<a class="modal-trigger btn btn-medium waves-effect waves-light gray accent-3 hoverable modal-trigger" onmouseover="genEstado('.$row['id_beneficiario'].')" ';
       $query_table .= 'href="#modal_estado_beneficiarios"><i class="material-icons">power_settings_new</i></a>';
       $query_table .= '</td>';
       $query_table .= '<td>';

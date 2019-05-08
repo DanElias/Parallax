@@ -9,13 +9,13 @@ $(document).ready(genEstado(41));
 function genEstado(numero){
   $.post('controladores/modalEstado.php', { id : numero } )
   .done(function(data){
-    console.log(data);
+    console.log("genEstado");
     $('#modEst').html(data);
     M.AutoInit();
   });
 }
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     $('#tablaB').DataTable( {
         dom: 'Bfrtip',
         buttons: [
@@ -28,7 +28,7 @@ $(document).ready(function() {
     $('.dataTables_filter').css("color", "#673ab7")
     M.AutoInit();
 
-} );
+} );*/
 
 function moreInfo(){
   $.post('controladores/_modales_beneficiarios.php', { id : 1 } )
@@ -49,45 +49,11 @@ function mEst(){
 }
 
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     //set initial state.
-    imprimeNombreBeneficiarioActivo();
+    imprimeNombreBeneficiario();
 
-    $('#botonActivos').change(function() {
-        if(this.checked) {
-          //renderizaTabla(1);
-          //actualizaPagina();
-          imprimeNombreBeneficiarioActivo();
-          $(this).prop("checked");
-        } else{
-          //renderizaTabla(2);
-          imprimeNombreBeneficiario();
-          $(this).prop("checked");
-        }
-
-    });
-});
-
-$(document).ready(function() {
-    //set initial state.
-    //imprimeNombreBeneficiarioActivo();
-
-    $('#palancaEstado').change(function() {
-        if(this.checked) {
-          //renderizaTabla(1);
-          //actualizaPagina();
-          //imprimeNombreBeneficiarioActivo();
-          console.log(1);
-          $(this).prop("checked");
-        } else{
-          console.log(0);
-          //renderizaTabla(2);
-          //imprimeNombreBeneficiario();
-          $(this).prop("checked");
-        }
-
-    });
-});
+} );*/
 
 function imprimeTutorExterno(){
   //modalEstado();
@@ -107,17 +73,20 @@ function imprimeNombreBeneficiario(){
     console.log("Todos");
     $('#cuerpoTablaBeneficiarios').html(data);
     //actualizaPagina();
-    $.post('controladores/paginaController.php', { opcion : 2 } )
+    /*$.post('controladores/paginaController.php', { opcion : 2 } )
     .done(function(data){
       console.log("Funciono");
       $('#paginator').html(data);
     });
     M.AutoInit();
-  });
+  });*/
+    M.AutoInit();
+  } );
+
 
 }
 
-function imprimeNombreBeneficiarioActivo(){
+/*function imprimeNombreBeneficiarioActivo(){
   //modalEstado();
   //renderizaTabla();
   $.post('beneficiarioController.php', { opcion : 2 } )
@@ -134,7 +103,7 @@ function imprimeNombreBeneficiarioActivo(){
     M.AutoInit();
   });
 
-}
+}*/
 
 function infoTutor(){
   $.post('tutorController.php', { opcion : 2 } )
@@ -150,33 +119,42 @@ $(document).ready(function(){
   $('#tutor1').change(function() {
     var ide = this.value;
     var num = 1;
-    $.post('controladores/_modales_tutor.php', { id : ide, numero : num } )
-    .done(function(data){
-      console.log("Funciono Tutor Modal");
-      console.log(data);
-      $('#modTut1').html(data);
-      M.AutoInit();
-    });
+    var newURL = "#modal_informacion_tutor_" + ide;
+    $('#info1').attr("href", newURL);
+    /*$.post('controladores/_modales_tutor.php', { id : ide, numero : num } )
+      .done(function(data){
+        //console.log("Funciono Tutor Modal");
+        //console.log(data);
+        $('#modTut1').modal();
+        $('#modTut1').html(data);
+        //M.AutoInit();
+        //$('select').formSelect();
+
+      });*/
   });
 });
 
 $(document).ready(function(){
   $('#tutor2').change(function() {
     var ide = this.value;
-    var num = 2;
-    $.post('controladores/_modales_tutor.php', { id : ide, numero : num } )
-    .done(function(data){
-      console.log("Funciono Tutor Modal 2");
-      console.log(data);
-      $('#modTut2').html(data);
-      M.AutoInit();
-    });
+    var num = 1;
+    var newURL = "#modal_informacion_tutor_" + ide;
+    $('#info2').attr("href", newURL);
+    /*$.post('controladores/_modales_tutor.php', { id : ide, numero : num } )
+      .done(function(data){
+        //console.log("Funciono Tutor Modal");
+        //console.log(data);
+        $('#modTut1').modal();
+        $('#modTut1').html(data);
+        //M.AutoInit();
+        //$('select').formSelect();
+
+      });*/
   });
-});
+})
 
 $(document).ready(function(){
-  $('#formaEstado').submit(function (ev){
-    ev.preventDefault();
+  $('#botonCambiarEstado').click(function (){
      var id = $("#id_ben").val();
      var estado = -1;
      if($('#palancaEstado').prop("checked")){
@@ -184,9 +162,9 @@ $(document).ready(function(){
      } else{
        estado = 0;
      }
-     alert(estado);
-     console.log("id = " + id);
-     console.log("estado = " + estado);
+     //alert(estado);
+     //console.log("id = " + id);
+     //console.log("estado = " + estado);
      $.post('controladores/estadoController.php', { id : id, estado : estado } )
      .done(function(data){
        alert('Estado modificado!');
@@ -226,6 +204,7 @@ $(document).ready(function(){
        $('#empresa').val("");
        $('#grado_estudios_tutor').val("");
        $('#titulo').val("");
+       infoTutor();
        imprimeTutorExterno();
       })
       .fail(function(){
@@ -250,7 +229,6 @@ $(document).ready(function(){
      $.post('controladores/registrarTutor.php', { nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
      .done(function(data){
        console.log('Insercion de tutor correcta');
-       alert('Tutor registrado con éxito!');
        $('#nombre_tutor').val("");
        $('#apellido_tutor').val("");
        $('#fecha_nacimiento_tutor').val("");
@@ -260,6 +238,8 @@ $(document).ready(function(){
        $('#grado_estudios_tutor').val("");
        $('#titulo').val("");
        imprimeTutorExterno();
+       alert('Tutor registrado con éxito!');
+
       })
       .fail(function(){
         alert('Error en registro, verifique datos de entrada');
@@ -297,12 +277,6 @@ $(document).ready(function(){
        parentesco2 = "";
        tut2 = "";
      }
-     console.log(tut1);
-     console.log(parentesco1);
-     console.log(tut2);
-     console.log(parentesco2);
-
-
      $.post('controladores/registrarBeneficiario.php', { nombre : nombre, apellido : apellido, sexo : sexo, fecha : fecha, domicilio : domicilio, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
      .done(function(data){
        $('#nombre').val("");
@@ -321,6 +295,7 @@ $(document).ready(function(){
        $('#enfermedades').val("");
        imprimeNombreBeneficiarioActivo();
        moreInfo();
+       alert('Beneficiario registrado!');
       })
       .fail(function(){
         alert('Error en registro, verifique datos de entrada');
@@ -330,13 +305,13 @@ $(document).ready(function(){
     });
 });
 
-function actualizaPagina(){
+/*function actualizaPagina(){
   $.post('controladores/paginaController.php', { opcion : 2 } )
   .done(function(data){
     console.log("Funciono");
     $('#paginator').html(data);
   });
-}
+}*/
 
 function imprimeModal(){
   $.post('tutorController.php', { opcion : 2 } )
