@@ -51,7 +51,7 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
     }
     if($_SESSION['editar_usuario'] == 1){
         echo
-        "<script type='text/javascript'> alert('!El usaurio se edito correctamente¡');</script>";
+        "<script type='text/javascript'> alert('!El usuario se edito correctamente¡');</script>";
         $_SESSION['editar_usuario'] = 0;
 
     }
@@ -62,11 +62,8 @@ if (isset($_SESSION["usuario"]) && $_SESSION['ocho'] == 1) {
 
     }
 
-
-
-
-    echo '<script type="text/javascript" src="ajax_usuario.js"></script>';
-
+    echo '<script type="text/javascript" src="ajax_usuario.js"></script>
+    <script type="text/javascript" src="../js/validacion_ususarios.js"></script>';
 
 
     

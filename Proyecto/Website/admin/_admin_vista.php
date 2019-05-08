@@ -21,6 +21,7 @@ if (isset($_SESSION['usuario'])) {
     $_SESSION['editar_usuario'] = 0;
     $_SESSION['eliminar_usuario'] = 0;
     $_SESSION['eliminar_rol'] = 0;
+    $_SESSION['exito_eliminar_egreso'] = 0;
     //Llamada de funciones (util.php) de lo que se nesecite en el form
     header_html();
     body_admin_main();

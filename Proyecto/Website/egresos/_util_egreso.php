@@ -59,4 +59,6 @@ function modal_informacion_egreso(){
     include("_modal_informacion_egreso.html");
 }
 
+
+
 ?>

@@ -12,7 +12,7 @@ sidenav_html();
 body_egreso();
 controller_tabla_egreso_php();
 form_egreso_html();
-modal_informacion_egreso_html();//
+modal_informacion_egreso_html();
 
     echo '
     <!-- Modal Structure -->
@@ -56,9 +56,14 @@ modal_informacion_egreso_html();//
                       jQuery('#_form_eliminar_egreso').modal('open');
                   });
             });
+            
+           
     </script>";
+  
     
 footer_html();
+    
 echo '<script type="text/javascript" src="ajax_egreso.js"></script>';
+
 
 ?>
