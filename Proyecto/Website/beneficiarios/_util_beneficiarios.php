@@ -391,7 +391,7 @@ function tablaBeneficiario($result){
       $query_table .= '</td>';
       $query_table .= '<td>';
       $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable"';
-      $query_table .= 'href="#_form_editar_beneficiarios"><i class="material-icons">edit</i></a>';
+      $query_table .= 'href="#_form_editar_beneficiarios" onmouseover=llenarEdit('.$row['id_beneficiario'].')><i class="material-icons">edit</i></a>';
       $query_table .= '</td>';
       $query_table .= '<td>';
       $query_table .= '<a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable"';

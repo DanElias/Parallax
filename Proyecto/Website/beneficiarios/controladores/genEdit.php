@@ -1,9 +1,8 @@
 <?php
   require_once('../../basesdedatos/_conection_queries_db.php');
   $id = htmlentities($_POST['id']);
-  $row = mysqli_fetch_assoc(getInfoById());
+  $row = mysqli_fetch_assoc(getInfoById($id));
   echo '
-  $row
   <input type="hidden" value="'.$row['id_beneficiario'].'" id="eid_b" />
   <div class="row">
       <div class="input-field col s3">
@@ -294,7 +293,7 @@
       </div>
       <div class="input-field col s3">
           <i class="material-icons prefix" required>attach_money</i>
-          <input type="number" step="0.01" id="ecuota" name="cuota" class="validate value="'.$row['cuota'].'" ubuntu-text">
+          <input type="number" step="0.01" id="ecuota" name="cuota" class="validate ubuntu-text" value="'.$row['cuota'].'">
           <label for="cuota">Cuota</label>
       </div>
       <div class="input-field col s6">
@@ -325,20 +324,34 @@
             <option value="Media Baja" selected>Media Baja</option>
             <option value="Media Media">Media Media</option>
             <option value="Media Alta">Media Alta</option>';
+          } else if($row['nivel_socioeconomico'] == 'Media Media'){
+            echo'<option value="Pobreza Extrema" >Pobreza Extrema</option>
+            <option value="Pobreza">Pobreza</option>
+            <option value="Media Baja" selected>Media Baja</option>
+            <option value="Media Media" selected>Media Media</option>
+            <option value="Media Alta">Media Alta</option>';
+          } else if($row['nivel_socioeconomico'] == 'Media Alta'){
+            echo'<option value="Pobreza Extrema" >Pobreza Extrema</option>
+            <option value="Pobreza">Pobreza</option>
+            <option value="Media Baja" >Media Baja</option>
+            <option value="Media Media">Media Media</option>
+            <option value="Media Alta" selected>Media Alta</option>';
           }
-              <option value="Pobreza Extrema">Pobreza Extrema</option>
-              <option value="Pobreza">Pobreza</option>
-              <option value="Media Baja">Media Baja</option>
-              <option value="Media Media">Media Media</option>
-              <option value="Media Alta">Media Alta</option>
+          echo '
           </select>
           <label for="status">Estatus Socioeconómico</label>
       </div>
 
       <div class="switch col s3 center vertical-align">
           <label>
-              Beneficiario Inactivo
-              <input type="checkbox" id="eestado" name="estado" checked>
+              Beneficiario Inactivo';
+        if($row['estado'] == 0){
+            echo '<input type="checkbox" id="eestado" name="estado" >';
+        } else{
+          echo '<input type="checkbox" id="eestado" name="estado" checked>';
+        }
+
+              echo'
               <span class="lever"></span>
               Beneficiario Activo!
           </label>
@@ -368,5 +381,5 @@
   </div>
 
 
-  '
+  ';
 ?>

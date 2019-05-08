@@ -16,8 +16,15 @@ function genEstado(numero){
 }
 
 function llenarEdit(number){
-  
+  $.post('controladores/genEdit.php', { id : number } )
+  .done(function(data){
+    console.log(data);
+    $('#editarBeneficiario').html(data);
+    M.AutoInit();
+    M.updateTextFields();
+  });
 }
+
 
 function listaTutor(){
   $.post('controladores/listaTutor.php', { opcion : 1 } )
