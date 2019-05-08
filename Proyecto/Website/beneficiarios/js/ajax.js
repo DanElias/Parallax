@@ -15,6 +15,10 @@ function genEstado(numero){
   });
 }
 
+function llenarEdit(number){
+  
+}
+
 function listaTutor(){
   $.post('controladores/listaTutor.php', { opcion : 1 } )
   .done(function(data){
