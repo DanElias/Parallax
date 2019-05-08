@@ -36,6 +36,16 @@ function genBorrarTut(numero){
   });
 }
 
+function genBorrarTut2(numero){
+  var n = numero;
+  $.post('controladores/genDelTut2.php', { id : n } )
+  .done(function(data){
+    //console.log("genEstado");
+    $('#eliminarTut2').html(data);
+    //M.AutoInit();
+  });
+}
+
 function llenarEdit(number){
   $.post('controladores/genEdit.php', { id : number } )
   .done(function(data){
@@ -52,6 +62,19 @@ function llenarEditTutor(number){
     //console.log(data);
     $('#editarTutor').html(data);
     //M.AutoInit();
+    $('#_form_editar_tutor').modal();
+    M.updateTextFields();
+    $('select').formSelect();
+  });
+}
+
+function llenarEditTutor2(number){
+  $.post('controladores/genEditTutor2.php', { id : number } )
+  .done(function(data){
+    //console.log(data);
+    $('#editarTutor2').html(data);
+    //M.AutoInit();
+    $('#_form_editar_tutor_2').modal();
     M.updateTextFields();
     $('select').formSelect();
   });
@@ -104,8 +127,8 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
-    $('#botonEditarTutor1').onmouseover = llenarEditTutor(ide);
-    $('#botonBorrarTutor1').onmouseover = genBorrarTut(ide);
+    llenarEditTutor(ide);
+    genBorrarTut(ide);
     $('#info1').attr("href", newURL);
   });
 });
@@ -115,8 +138,8 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
-    $('#botonEditarTutor2').onmouseover = llenarEditTutor(ide);
-    $('#botonBorrarTutor2').onmouseover = genBorrarTut(ide);
+    llenarEditTutor2(ide);
+    genBorrarTut2(ide);
     $('#info2').attr("href", newURL);
   });
 })
@@ -154,6 +177,42 @@ $(document).ready(function(){
       })
       .fail(function(){
         alert('Error: no se pudo eliminar el beneficiario');
+        console.log('Error');
+      })
+    });
+});
+
+$(document).ready(function(){
+  $('#eliminarTut').submit(function (ev){
+    ev.preventDefault();
+     var id = $("#borrarTut_id").val();
+     $.post('controladores/deleteTutor.php', { id : id } )
+     .done(function(data){
+       alert('Tutor eliminado!');
+       infoTutor();
+       listaTutor();
+       location.reload(true);
+      })
+      .fail(function(){
+        alert('Error: no se pudo eliminar el tutor');
+        console.log('Error');
+      })
+    });
+});
+
+$(document).ready(function(){
+  $('#eliminarTut2').submit(function (ev){
+    ev.preventDefault();
+     var id = $("#borrarTut2_id").val();
+     $.post('controladores/deleteTutor.php', { id : id } )
+     .done(function(data){
+       alert('Tutor eliminado!');
+       infoTutor();
+       listaTutor();
+       location.reload(true);
+      })
+      .fail(function(){
+        alert('Error: no se pudo eliminar el tutor');
         console.log('Error');
       })
     });
@@ -213,7 +272,33 @@ $(document).ready(function(){
        listaTutor();
       })
       .fail(function(){
-        alert('Error en registro, verifique datos de entrada');
+        alert('Error en edición, verifique datos de entrada');
+
+        console.log('Error');
+      })
+    });
+});
+$(document).ready(function(){
+  $("#editarTutor2").submit(function (ev){
+    ev.preventDefault();
+    var id = $('#eeid_t').val();
+     var nombre= $('#eenombre_tutor').val();
+     var apellido= $('#eeapellido_tutor').val();
+     var fecha= $('#eefecha_nacimiento_tutor').val();
+     var telefono= $('#eetelefono').val();
+     var ocupacion= $('#eeocupacion').val();
+     var empresa= $('#eeempresa').val();
+     var grado= $('#eegrado_estudios_tutor').val();
+     var titulo= $('#eetitulo').val();
+     $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
+     .done(function(data){
+       console.log('Tutor modificado correctmente');
+       alert('Tutor editado con éxito!');
+       infoTutor();
+       listaTutor();
+      })
+      .fail(function(){
+        alert('Error en edición, verifique datos de entrada');
 
         console.log('Error');
       })

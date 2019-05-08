@@ -9,7 +9,7 @@
     echo '
       <div class="my_modal_buttons">
           <div class="row">
-              <input type="hidden" value="'.$id.'" id="borrarTut_id">
+              <input type="hidden" value="'.$id.'" id="borrarTut2_id">
               <div class="col s3 m3">
                   <!--button class="modal-close btn waves-effect waves-light modal-close">Cancelar
                       <i class="material-icons right">highlight_off</i>

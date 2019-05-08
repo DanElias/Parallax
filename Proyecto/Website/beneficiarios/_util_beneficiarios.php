@@ -50,9 +50,19 @@ function form_editar_tutor_html()
     include("_form_editar_tutor.html");
 }
 
+function form_editar_tutor_html2()
+{
+    include("_form_editar_tutor_2.html");
+}
+
 function form_eliminar_tutor_html()
 {
     include("_form_eliminar_tutor.html");
+}
+
+function form_eliminar_tutor_html2()
+{
+    include("_form_eliminar_tutor_2.html");
 }
 
 function imprimirnombreTutor($result){

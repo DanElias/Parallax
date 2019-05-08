@@ -1319,6 +1319,23 @@ function obtenerCuentas(){
     closeDB($conn);
   }
 
+  function deleteTutor($id){
+    $conn = conectDb();
+    $sql = "DELETE FROM tutor WHERE id_tutor=?";
+    if($stmt = $conn->prepare($sql) ){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
   function insertarBenTut($id_ben,$id_tutor,$parentesco){
     $conn = conectDb();
     $sql = "INSERT INTO beneficiario_tutor(id_beneficiario, id_tutor, parentesco) VALUES (?,?,?)";
