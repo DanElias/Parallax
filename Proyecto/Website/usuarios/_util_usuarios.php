@@ -15,40 +15,31 @@ function footer_html()
     include("../views/_footer_admin.html");
 }
 
-function body_usuarios()
+function usuarios_html()
 {
     include("_usuarios.html");
 }
 
-function form_agregar_usuario()
+function form_usuario_html()
 {
-    include("forms/_form_agregar_usuario.html");
+    include("forms/_form_usuario.html");
+}
+function form_rol_html()
+{
+    include("forms/_form_rol.html");
 }
 
-function form_editar_usuario()
+function controller_tabla_usuario_php()
 {
-    include("forms/_form_editar_usuario.html");
+    include("controladores/_controller_tablas_usuarios.php");
+}
+function controller_tabla_rol_php()
+{
+    include("controladores/_controller_tablas_roles.php");
 }
 
-function form_eliminar_usuario()
-{
-    include("forms/_form_eliminar_usuario.html");
-}
-
-
-function form_agregar_rol()
-{
-    include("forms/_form_agregar_rol.html");
-}
-
-function controller_modal_informacion_usuarios_php()
-{
-    include("controladores/_controller_modal_informacion_usuarios.php");
-}
-
-function controller_tabla_usuarios_php()
-{
-    include("controladores/_controller_tabla_usuarios.php");
+function rol_html(){
+    include("rol.html");
 }
 
 ?>

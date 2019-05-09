@@ -1,0 +1,90 @@
+<!-- Modal Structure -->
+<div id="_form_usuario" class="modal my_modal modal1">
+    <div class="row my_modal_header_row">
+        <div class="my_modal_header1 z-depth-2 col s12">
+            <h4 class="my_modal_header ">Agregar Usuario</h4>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="modal-content my_modal_content">
+        <p>Aquí puede agregar un nuevo Usuario</p>
+
+        <!-- Inicio del form de beneficiarios-->
+        <form class="col s12" action="_agregar_usuario.php" id="agregar_usuario" method="POST">
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">description</i>
+                    <input type="text" class="validate ubuntu-text" name="nombre" id="nombre">
+                    <label for="nombre">Nombre</label>
+                    <p id="error_nombre"></p>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">description</i>
+                    <input type="text" class="validate ubuntu-text" name="apellido" id="apellido">
+                    <label for="apellido">Apellido</label>
+                    <p id="error_apellido"></p>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" class="validate ubuntu-text" name="email" id="email">
+                    <label for="email">Correo Electronico</label>
+                    <p id="error_email"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" class="validate ubuntu-text" name="password" id="password">
+                    <label for="password">Contraseña</label>
+                    <p id="error_password"></p>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" class="validate ubuntu-text" name="password2" id="password2">
+                    <label for="password2">Confirmar contraseña</label>
+                    <p id="error_password2"></p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">cake</i>
+                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required class="ubuntu-text">
+                    <label for="fecha_nacimiento">Fecha de nacimiento ddmmAAAA</label>
+                </div>
+
+                <div class="input-field col s6" >
+                    <select id="rol" name="rol" class="ubuntu-text">
+                    </select>
+                    <label>Selecciona un rol</label>
+                </div>
+
+
+            </div>
+
+            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+            <div class="my_modal_buttons">
+                <div class="row">
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light" type="submit" name="submit">Guardar
+                            <i class="material-icons right">check_circle_outline</i>
+                        </button>
+                    </div>
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light red modal-close" type="button">Cancelar
+                            <i class="material-icons right">highlight_off</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Final del form de beneficiarios-->
+
+    </div>
+</div>

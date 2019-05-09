@@ -6,18 +6,23 @@ session_start(); //Inicio de sesion
 
 //Condicionales para el caso de hacer logout
 
-if (isset($_SESSION["usuario"])) {
+if (isset($_SESSION["usuario"])  && $_SESSION['dos'] == 1) {
     header_html();
     sidenav_html();
     body_beneficiarios();
-    form_cuotas();
-    form_edades();
-    form_estatus();
-    form_genero();
-    form_grado();
-    form_grupos();
+    grafica_cuota();
+    grafica_enfermedades();
+    grafica_escuela();
+    grafica_estado();
+    grafica_grado();
+    grafica_grupo();
+    grafica_nivel();
+    grafica_sexo();
+    grafica_ocupacion();
+    grafica_empresa();
+    grafica_estudio();
+    grafica_titulo();
     footer_html();
-
 
 } else {
     header("location:../login/_login_vista.php");

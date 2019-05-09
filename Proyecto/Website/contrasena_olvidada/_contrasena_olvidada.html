@@ -1,0 +1,48 @@
+<body ng-app="mainModule" ng-controller="mainController">
+
+<h2 style="font-family: Staatliches">Ingrese el correo con el que se Registro</h2>
+
+<!--Imagen superior -->
+<div align="center"><img class="logo-login" src="../images/watermark.png"></div>
+
+<!--Division de columnas -->
+<div id="login-page" class="row">
+    <div class="col s12 z-depth-6 card-panel">
+
+        <!--Inicio de formulario-->
+        <form class="login-form" action="_controller_contransena_olvidada.php" method="POST">
+            <div class="row"></div>
+
+
+            <?php if(isset($error)): ?>
+            <div class="colores">
+                <?=$error ?>
+            </div>
+            <?php endif ?>
+
+            <!--Campo para mail -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mail_outline</i>
+                    <input class="validate" id="email" type="email" name="email">
+                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                </div>
+
+            </div>
+            <!--Campo para entrar una vez llenado los campos -->
+            <div class="row">
+
+                <div class="input-field col s12">
+                    <button type="submit" class="btn waves-effect waves-light col s12" id="submit" name="submit">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+        <!--Fin de formulario -->
+    </div>
+</div>
+
+</body>

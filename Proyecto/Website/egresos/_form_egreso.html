@@ -1,0 +1,107 @@
+ <!-- Modal Structure -->
+
+                <div id="_form_agregar_egreso" class="modal modal-fixed-footer my_modal  my_big_modal ubuntu-text">
+                    <div class="row my_modal_header_row">
+                            <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
+                            
+                        <div class="my_modal_header1">
+                            <div class="col s11 my_form_title">
+                               Agregar Egreso
+                               <i class="material-icons my_title_icon ">attach_money</i>
+                             </div>
+                         
+                            <div class="col s1">
+                                 <br> 
+                                <a class="my_modal_buttons btn btn-medium waves-effect waves-light modal-close red accent-3 hoverable center" style="font-size:2em;font-family: Roboto;" href="#_form_eliminar_beneficiarios">
+                                   ×
+                                </a>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                    <br><br><br>
+
+               
+                    <div class="modal-content my_modal_content">
+                        <p>Aquí puede agregar egresos</p>
+                        
+                         <!-- Inicio del form de beneficiarios-->
+                        <form class="col s12" action="registrar_egreso.php" method="post"
+                         id="form_egreso">
+                            
+
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <i class="material-icons prefix">clear_all</i>
+                                    <input  type="text" class="validate ubuntu-text" id="folio_factura" name="folio_factura" required maxlength="30">
+                                    <label for="folio_factura">Folio Factura</label>
+                                    <span id="error_folio"></span>
+                                </div>
+                                <div class="input-field col s3">
+                                    <i class="material-icons prefix">library_books</i>
+                                    <input  type="text" class="validate ubuntu-text" id="concepto" name="concepto" required maxlength="30">                                    
+                                    <label for="icon_prefix">Concepto</label>
+                                    <span id="error_concepto"></span>
+                                </div>
+                                <div class="input-field col s3">
+                                    <i class="material-icons prefix">attach_money</i>
+                                    <input  type="text" class="validate ubuntu-text" id="importe" name="importe" required maxlength="10">
+                                    <label for="importe">Importe</label>
+                                    <span id="error_importe"></span>
+                                </div>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="input-field col s3">
+					                <i class="material-icons prefix">calendar_today</i>
+					                <input type="date" name="fecha_egreso" id="fecha_egreso" required class="ubuntu-text">
+                                </div>
+                                <div class="input-field col s3">
+                                    <i class="material-icons prefix">account_balance</i>
+                                    <input  type="text" class="validate ubuntu-text" id="cuenta_bancaria_egreso" name="cuenta_bancaria_egreso" maxlength="20" required>
+                                    <label for="cuenta_bancaria">Cuenta Bancaria</label>
+                                    <span id="error_cuenta_bancaria_egreso"></span>
+					             
+                                </div>
+                                
+
+                                
+                               	<div class="input-field col s3" id="drop_proveedor">
+                                </div>
+                                
+                                <div class="input-field col s3" id="drop_cuenta"></div>
+                            
+                            </div>
+                            <div></div>
+                       
+                            <div class="row center-align">
+                            	
+                            
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">description</i>
+                                    <input  type="text" class="validate ubuntu-text" id="observaciones" name="observaciones" maxlength="100" required >
+                                    <label for="observaciones">Observaciones</label>
+                                    <span id="error_observaciones"></span>
+                                </div>
+                            </div>
+
+                            <div class="my_modal_buttons">
+                                <div class="row">
+                                    <div class="col s6">
+                                    <button id="guardar_egreso" class="btn waves-effect waves-light" type="submit" name="submit" >Guardar
+                                        <i class="material-icons right">check_circle_outline</i>
+                                    </button>
+                                    </div>
+                                    <div class="col s6">
+                                        <button class="btn waves-effect waves-light red modal-close">Cancelar
+                                            <i class="material-icons right">highlight_off</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    <!-- Final del form de beneficiarios-->
+    </div>
+</div>
+                

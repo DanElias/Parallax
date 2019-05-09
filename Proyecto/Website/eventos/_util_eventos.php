@@ -1,5 +1,12 @@
 <?php
 
+/*
+    Autor: Daniel Elias
+        Este archivo php se utiliza para mandar llamar secciones de html
+        Tambien se utiliza para mandar llamar otros archivos php de manera más rápida
+        Al final incluye una función de alerta que es usada por los archivos registro_evento.php y registro_editar_evento.php
+*/
+
 function header_html($titulo = "Eventos")
 {
     include("../views/_header_admin.html");
@@ -25,32 +32,22 @@ function form_evento_html()
     include("_form_evento.html");
 }
 
-function modal_informacion_evento_html()
-{
-    include("_modal_informacion_evento.html");
-}
-
-function form_eliminar_evento_html()
-{
-    include("_form_eliminar_evento.html");
-}
-
 function controller_modal_informacion_evento_php()
 {
-    include("controladores/_controller_modal_informacion_evento.php");
+    include("_controller_modal_informacion_evento.php");
 }
 
 function controller_modal_mas_informacion_evento_php()
 {
-    include("controladores/_controller_modal_mas_informacion_evento.php");
+    include("c_controller_modal_mas_informacion_evento.php");
 }
 
 function controller_tabla_eventos_php()
 {
-    include("controladores/_controller_tabla_eventos.php");
+    include("_controller_tabla_eventos.php");
 }
 
-function alerta_error($error)
+function alerta_error($error) //alerta de error que se utiliza en caso de error
 {
     $alerta = '
     <div id="_form_alerta_error" class="modal  my_modal">
@@ -70,10 +67,10 @@ function alerta_error($error)
             <div>
             <br>
             <br>
-    
+
             <div class="my_modal_buttons">
                 <div class="row">
-    
+
                     <div class="col s12 m12">
                         <button class="modal-close btn waves-effect waves-light modal-close">Ok, estoy enterado.
                         </button>
@@ -86,5 +83,6 @@ function alerta_error($error)
     echo $alerta;
 
 }
+
 
 ?>

@@ -1,24 +1,8 @@
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 <script type="text/javascript" src="../js/materialize.js"></script>
+<script type="text/javascript" src="../js/pagination.js"></script>
 
 <script>
-    $(document).ready(function () {
-        $('.parallax').parallax();
-    });
-    $(document).ready(function () {
-        $('.carousel').carousel({
-            fullWidth: true,
-            autoplay: true,
-            indicators: false
-        }).css('height', $(window).height() * 0.8);
-    });
-    $('.carousel.carousel-slider').carousel({fullWidth: true, autoplay: true, indicators: false});
-    autoplay();
-
-    function autoplay() {
-        $('.carousel').carousel('next');
-        setTimeout(autoplay, 4500);
-    }
 
     $(document).ready(function () {
         $('.materialboxed').materialbox();
@@ -38,6 +22,83 @@
     $(document).ready(function () {
         $('select').formSelect();
     });
-</script>
+    
+    //Este es el jquery de la paginacion de las tablas
+    /*$(document).ready(function(){
+      $('#my_pagination_table').pageMe({
+        pagerSelector:'#myPager',
+        activeColor: 'blue',
+        prevText:'Anterior',
+        nextText:'Siguiente',
+        showPrevNext:true,
+        hidePageNumbers:false,
+        perPage:5
+      });
+    });*/
+    
+    $(document).ready(function() {
+        $('#my_pagination_table').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel',
+                {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                
+                },
+            
+                {
+                extend: 'print',
+                text: 'Imprimir',
+                orientation: 'landscape',
+               
+                }
+               , 'csv' 
+            ]
+            
+        } );
+        $('.dt-buttons').append('<br><br><br><div class="row tooltipped" data-position="bottom" data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra, cantidad, fecha o frase introducida"><div class="col s12 m12" style="color: #757575">  <i class="material-icons prefix my_search">search</i> Introduce una palabra clave: </div></div>')
+        $('#my_pagination_table_filter').append('<br><br>')
+        $('.dataTables_filter').css("color", "#673ab7")
+        
+        
 
+        M.AutoInit();
+        
+    } );
+    
+    function datatables(){
+        $('#my_pagination_table').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                 'excel',
+                {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL'
+                },
+            
+                {
+                extend: 'print',
+                text: 'Imprimir',
+                orientation: 'landscape',
+               
+                }
+               , 'csv' 
+               
+            ]
+            
+        } );
+        $('.dt-buttons').append('<br><br><br><div class="row tooltipped" data-position="bottom" data-tooltip="Aquí puedes realizar una búsqueda de acuerdo a la palabra, cantidad, fecha o frase introducida"><div class="col s12 m12" style="color: #757575">  <i class="material-icons prefix my_search">search</i> Introduce una palabra clave: </div></div>')
+        $('#my_pagination_table_filter').append('<br><br>')
+        $('.dataTables_filter').css("color", "#673ab7")
+        M.AutoInit();
+    }
+
+</script>
+<noscript>
+    <META HTTP-EQUIV="Refresh" CONTENT="0;URL=../views/redireccionarPagina.html">
+</noscript>
+<script>M.AutoInit()</script>
 </html>

@@ -1,12 +1,12 @@
-DROP TABLE Egreso
-DROP TABLE Beneficiario_Tutor
-DROP TABLE Usuario
-DROP TABLE Rol_Privilegio
-DROP TABLE Proveedor
-DROP TABLE Cuenta_Contable
-DROP TABLE Beneficiario
-DROP TABLE Tutor
-DROP TABLE Evento
-DROP TABLE Rol
-DROP TABLE Privilegio
+DROP TABLE egreso;
+DROP TABLE beneficiario_tutor;
+DROP TABLE rol_privilegio;
+DROP TABLE usuario;
+DROP TABLE proveedor;
+DROP TABLE cuenta_contable;
+DROP TABLE beneficiario;
+DROP TABLE tutor;
+DROP TABLE evento;
+DROP TABLE rol;
+DROP TABLE privilegio
 

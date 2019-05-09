@@ -1,32 +1,162 @@
-<footer class="page-footer my_footer" id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Mariana Sala I.A.P.
-                    <hr>
-                </h5>
-                <p class="grey-text text-lighten-4">¡Gracias por visitar nuestra página! <img
-                        class="responsive-img logo_foot" src="../images/watermark.png"></p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text"> &nbsp; &nbsp;Links con más información:
-                    <hr>
-                </h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                    <li><a class="grey-text text-lighten-3 amber darken-4" href="#!">.</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="my_copyright">
-        <hr>
-        Copyright Parallax Web Solutions 2019 ©
-    </div>
-</footer>
+
+
+<footer class="footer-distributed" id="footer" style="font-family:Ubuntu">
+    <br><br>
+
+			<div class="footer-left">
+				<div class="my_footer_title">Mariana Sala I.A.P.</div> <br>
+				<div class="mapouter"><div class="gmap_canvas"><iframe width="285" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=Mariana%20Sala&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:239px;width:285px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:285px;}</style></div>
+			    <br>
+			</div>
+			
+			
+
+			<div class="footer-center">
+
+				<div>
+					<a target="_blank" href="https://www.google.com/maps/place/Educational+Center+Mariana+Sala+I.A.P./@20.6182497,-100.3733119,15z/data=!4m2!3m1!1s0x0:0xcba36e8ecbfad194?sa=X&ved=2ahUKEwiCr7vgrdHhAhVJQ6wKHRxbCgAQ_BIwEXoECAoQCA">
+					    <i class="fa fa-map-marker hoverable"></i>
+					</a>
+					<a target="_blank" href="https://www.google.com/maps/place/Educational+Center+Mariana+Sala+I.A.P./@20.6182497,-100.3733119,15z/data=!4m2!3m1!1s0x0:0xcba36e8ecbfad194?sa=X&ved=2ahUKEwiCr7vgrdHhAhVJQ6wKHRxbCgAQ_BIwEXoECAoQCA">
+					   <p><span href>Calle Francisco I. Madero n. 138</span> 
+					   <span href>Colonia Puerta del Cielo C.P. 76144</span>
+					   Santiago de Querétaro, Qro., México</p>
+					</a>
+				</div>
+                    
+                    <br>
+                    
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>01 442 245 2537</p>
+				</div>
+				
+				    <br>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:marianasala@gmail.com">procuracion.marianasala@gmail.com</a></p>
+				</div>
+				
+		        	
+
+			</div>
+
+			<div class="footer-right">
+                <br>
+				<p class="footer-company-about">
+					<span>Redes Sociales</span>
+					
+				</p>
+
+				<div class="footer-icons">
+					<a href="https://www.facebook.com/MarianaSalasIap/" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.facebook.com/MarianaSalasIap/" target="_blank"><i class="fa fa-twitter"></i></a>
+				</div>
+				
+				
+
+			</div>
+			<br><br><br><br><br>
+			<p class="footer-company-name center">Parallax Web Solutions © 2019 - parallaxwebsol@gmail.com</p>
+			
+			
+
+		</footer>
 
 <script>
+
+    document.getElementById("boton_inicio").onmouseover=poner_shadow1;
+    document.getElementById("boton_inicio").onmouseout=quitar_shadow1;
+    document.getElementById("boton_eventos").onmouseover=poner_shadow2;
+    document.getElementById("boton_eventos").onmouseout=quitar_shadow2;
+    document.getElementById("boton_apoyo").onmouseover=poner_shadow4;
+    document.getElementById("boton_apoyo").onmouseout=quitar_shadow4;
+
+    $(document).ready(function() {
+    
+        $('#logo_principal').fadeIn(1500)
+        $('#boton_inicio').fadeToggle(1000)
+        $('#boton_eventos').fadeToggle(1500)
+       
+        $('#boton_apoyo').fadeToggle(2500)
+        
+        $(window).scroll(function() {
+            var height = $('.first-container').height();
+            var scrollTop = $(window).scrollTop();
+            
+            
+    
+            if (scrollTop >= height - 50) {
+                $('.nav-container').addClass('solid-nav')
+                $('.nav_text').css('color', '#1565c0')
+                $('#nav-logo').fadeIn('slow')
+            } else {
+                $('.nav-container').removeClass('solid-nav')
+                $('.nav_text').css('color', 'white')
+                $('#nav-logo').fadeOut('fastver')
+            }
+            
+            if (scrollTop >= height - 450) {
+                $('.mision').fadeIn(2000)
+                $('.vision').fadeIn(2000)
+            }
+           
+            
+            
+    
+        });
+    });
+    
+   
+    
+    function poner_shadow1(){
+        var element = document.getElementById("boton_inicio");
+        element.classList.remove("my_text_noshadow");
+        element.classList.add("my_text_shadow");
+    }
+    
+    function quitar_shadow1(){
+        var element = document.getElementById("boton_inicio");
+        element.classList.add("my_text_noshadow");
+        element.classList.remove("my_text_shadow");
+    }
+    
+     function poner_shadow2(){
+        var element = document.getElementById("boton_eventos");
+        element.classList.remove("my_text_noshadow");
+        element.classList.add("my_text_shadow");
+    }
+    
+    function quitar_shadow2(){
+        var element = document.getElementById("boton_eventos");
+        element.classList.add("my_text_noshadow");
+        element.classList.remove("my_text_shadow");
+    }
+    
+     function poner_shadow3(){
+        var element = document.getElementById("boton_login");
+        element.classList.remove("my_text_noshadow");
+        element.classList.add("my_text_shadow");
+    }
+    
+    function quitar_shadow3(){
+        var element = document.getElementById("boton_login");
+        element.classList.add("my_text_noshadow");
+        element.classList.remove("my_text_shadow");
+    }
+    
+     function poner_shadow4(){
+        var element = document.getElementById("boton_apoyo");
+        element.classList.remove("my_text_noshadow");
+        element.classList.add("my_text_shadow");
+    }
+    
+    function quitar_shadow4(){
+        var element = document.getElementById("boton_apoyo");
+        element.classList.add("my_text_noshadow");
+        element.classList.remove("my_text_shadow");
+    }
 
 </script>
 

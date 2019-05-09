@@ -1,4 +1,21 @@
 
+
+.error_javascript{
+    align-items: center;
+}
+.body_error_java{
+    background: aliceblue;
+    align-items: center;
+    padding-left: 30%;
+    padding-top: 10%;
+
+}
+.apoyanos{
+    font-family: Ubuntu;
+    color: #0d3d63;
+    font-size: 1em;
+    text-align:left;
+}
 .my_small_modal {
     width: 60% !important;
     max-height: 70% !important;
@@ -32,7 +49,8 @@
 .nav_text {
     font-family: Staatliches;
     font-size: 1.3em;
-    color: white;
+    letter-spacing: 0.05em;
+    color:white;
 }
 
 
@@ -94,7 +112,7 @@ h6 {
 
 .textfield {
     font-size: 30px;
-    font-family: aller;
+    font-family: Roboto;
     margin: auto;
     text-align: center;
     align-content: center;
@@ -149,7 +167,7 @@ h6 {
 
 
 .mybuttons {
-    font-family: aller;
+    font-family: Roboto;
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -163,7 +181,7 @@ h6 {
 }
 
 .myBigButton {
-    font-family: aller;
+    font-family: Roboto;
     font-size: 30px;
     margin: auto;
     text-align: center;
@@ -208,7 +226,7 @@ h6 {
 }
 
 .table_text {
-    font-family: 'aller';
+    font-family: Roboto;
     font-size: 20px;
     padding-left: 70px;
     padding-right: 70px;
@@ -266,14 +284,13 @@ video {
 }
 
 footer {
-    height: 350px;
     background-color: #16181c;
-    padding: 50px;
     font-family: 'bebas_neueregular';
     font-weight: normal;
     font-style: normal;
     font-size: 30px;
     color: white;
+    margin: 0 auto;
 }
 
 section {
@@ -335,7 +352,7 @@ input {
     font-family: Staatliches;
     color: #0d3d63;
     font-size: 4em;
-    padding: 0.2em;
+    vertical-align: text-bottom !important;
 }
 
 .my_heading_text_medium {
@@ -346,7 +363,7 @@ input {
 }
 
 .my_table {
-    background-color: rgba(19, 28, 43, 0.7);
+    background-color: rgba(41, 80, 152, 0.7);
     height: auto;
     height: 100%;
     font-family: Ubuntu;
@@ -381,7 +398,9 @@ input {
 }
 
 .card_text {
-    color: rgba(19, 28, 43, 1);
+    color: #455a64;
+    font-size: 0.8em !important;
+    text-align: justify;
 }
 
 .my_card {
@@ -393,12 +412,6 @@ input {
     height: 100%;
 }
 
-.my_card_title {
-    font-family: Staatliches;
-    font-size: 200%;
-    text-shadow: 3px 3px rgba(19, 28, 43, 0.8);
-
-}
 
 .my_table_title {
     font-family: Staatliches;
@@ -418,6 +431,11 @@ input {
 .my_title_icon_middle {
     font-size: 1.5em;
     vertical-align: text-top;
+}
+
+.my_title_icon_user{
+    font-size: 1.7em;
+    vertical-align: text-bottom;
 }
 
 .myButtonIcon {
@@ -451,16 +469,15 @@ input {
     text-justify: inter-word;
 }
 
-.logo_principal {
-    padding: 5%;
-    width: 60%;
-    position: absolute;
-    z-index: 99;
-    margin-left: 20%;
+.wrapper{
+    padding-left: 22em;
+    /*font-family: Ubuntu;*/
 }
 
-.wrapper {
-    padding-left: 300px;
+.body_admin{
+    background-image: url("../images/generalwall.jpg");
+    object-fit: cover;
+    
 }
 
 @media only screen and (max-width: 992px) {
@@ -558,7 +575,8 @@ input {
 }
 
 .sections_header {
-    padding-left: 5em;
+    padding-left: 2.5em;
+    padding-top: 0em !important;
 }
 
 .my_search {
@@ -601,6 +619,15 @@ input {
     margin: 10px;
     overflow-y: hidden
 }
+.my_big_modal_rol {
+    width: 70% !important;
+    max-height: 97% !important;
+    height: 98% !important;
+    top: 0 !important;
+    margin-left: 15%;
+    align-self: center !important;
+    overflow-y: hidden
+}
 
 .my_big_modal_proveedor {
     width: 60% !important;
@@ -624,7 +651,7 @@ input {
 
 .my_side_nav {
     font-family: Staatliches;
-    background-color: #0d3d63;
+    background-image: url("../images/navwall.jpg");
     font-size: 1.5em;
 }
 
@@ -648,7 +675,8 @@ input {
 }
 
 .my_add_button_container {
-    margin: 4em;
+    padding-top: 1.5em;
+    padding-left: 4em;
 }
 
 .my_header_admin {
@@ -662,11 +690,10 @@ input {
 }
 
 .html_admin, .body_admin {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden;
 }
 
 my_search_button {
@@ -725,3 +752,534 @@ my_search {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.nav-container {
+  height: 5em;
+  width: 100%;
+  position: fixed;
+  color: white;
+  letter-spacing: 0.025em;
+  transition: background-color 0.2s linear;
+  z-index: 999999;
+}
+  
+.solid-nav {
+    background-color: white;
+    transition: background-color 0.2s linear;
+    color: blue !important;
+  }
+  
+    
+.nav-logo {
+    display: inline-block;
+    
+}
+    
+.nav-controls {
+    float: right;
+    padding-top: 0.5em;
+}
+
+.my_nav_option{
+    padding-left: 1em;
+}
+
+.my_logo{
+    padding-top: 0 !important;
+    margin:0 auto;
+}
+
+.my_text_shadow{
+  
+  text-decoration: underline;
+  transition: all 0.2s linear;
+}
+
+.my_text_noshadow{
+  text-shadow: rgba(255,0,0,0);
+  transition:  text-shadow 0.2s linear;
+}
+
+.my_heading_text_one{
+    color: rgba(34, 167, 171, 1) !important;
+    font-family: Staatliches;
+    font-size: 4em;
+    padding: 0.2em;
+    letter-spacing: 0.035em;
+}
+
+
+.mision_header{
+    color: #ffb300; 
+    font-size:2em;
+    font-family:Fredoka One;
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height:50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #00aced;
+  color: white;
+}
+
+.footer-distributed{
+	background-color: #01579b;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	padding: 55px 50px;
+	font-size: 1em !important;
+	color: white;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color: white;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  white;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  white;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  white;
+}
+
+.footer-distributed .footer-company-name{
+	color:  white;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color: #ff9800;
+	color: white;
+	font-size: 30px;
+	width: 58px;
+	height: 58px;
+	text-align: margin-top;
+	line-height: 15px;
+	margin: 10px 15px;
+	vertical-align: margin-top;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 14px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: white;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  white;
+	text-decoration: none;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  white;
+	font-size: 20px;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background-color:  white;
+	border-radius: 50px;
+
+	font-size: 25px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 1px;
+
+	margin-right: 1em;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+.my_footer_title {
+    font-family: Fredoka One;
+    font-size: 2.8em;
+    letter-spacing: 0.05em;
+    text-decoration: none !important;
+}
+
+.generar_reporte{
+    font-family:Staatliches; 
+    font-size:2em;
+}
+
+.form_fecha_inicial_final{
+    padding-left:3em;
+}
+
+#grafica_empresa{
+    overflow-x: scroll !important;
+    overflow-y: auto !important;
+}
+
+.ubuntu-text{
+    font-family: Ubuntu;
+}
+
+@media all and (min-width:0px) and (max-width: 480px){
+    
+   
+    
+  .mariana_title
+  {
+    font-size: 3em;
+    font-family: Fredoka One;
+    color: rgba(34, 167, 171, 1) !important;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    letter-spacing: 0.035em;
+  }
+  
+  .logo_principal {
+    width: 75%;
+    position: absolute;
+    z-index: 99;
+    display: block;
+    margin-left: 13%;
+    margin-top: 20%;
+    }
+    
+    .my_carousel_parallax{
+        max-height: 75% !important;
+    }
+
+    .my_carousel_image{
+        max-height: 75% !important;
+    }
+    
+   
+    .my_carousel_item{
+        max-height: 75% !important;
+    }
+    
+    .my_image_device{
+        object-fit: cover; 
+       max-width: 100% !important;
+       max-height: 75% !important;
+    }
+    
+    .my_carousel_parallax2{
+         max-height: 80% !important;
+    }
+    
+    .my_carousel_image2{
+        max-height: 80% !important;
+    }
+    
+    
+     .my_image_device2{
+        object-fit: cover; 
+       max-width: 100% !important;
+       max-height: 80% !important;
+    }
+    
+    .watermark_mobile{
+        width: 70px;
+    }
+    
+    .nav-row{
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 1em;
+        padding-right: 3em;
+        padding-top: 1em;
+    }
+    
+    .values{
+        background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
+        height: auto;
+        height: 90%;
+        font-family: Ubuntu;
+        color: white;
+        font-size: 1.6em;
+        margin: 0 auto;
+    
+    }
+
+    .values_text{
+        font-family: Fredoka One; 
+        font-size: 1.5em;
+    }
+    
+    .values_row{
+        padding-left: 1.2em;
+        padding-right: 0em !important;
+        padding-top: 1.5em;
+        padding-bottom: 1em;
+    }
+    
+    .my_space_values{
+        padding-top: 0em; 
+        padding-bottom: 0em
+    }
+    
+     .my_space_cards{
+        padding-top: 0em; 
+        padding-bottom: 0em;
+        font-size: 0.001em;
+        color: grey;
+    }
+    
+    .my_card_title {
+        font-family: Fredoka One;
+        font-size: 130% !important;
+        text-shadow: 5px 5px rgba(19, 28, 43, 0.8);
+        letter-spacing: 2px;
+    }
+    
+    .my_card_title2 {
+        color: #00bfa5;
+        font-family: Fredoka One;
+        font-size: 100% !important;
+        letter-spacing: 2px;
+    }
+    
+     .my_parallax_title{
+        font-family: Fredoka One;
+        padding-top: 0.5em;
+        font-size: 0.8em;
+    }
+    
+    .container_small{
+        max-height: 375px;
+    }
+    
+    .my_image_device2{
+        object-fit: cover;
+    }
+    
+    .first-container{
+         max-height: 20em;
+    }
+
+    .row_galeria{
+        padding-left:0;
+    }
+  
+}
+
+@media all and (min-width:481px) and (max-width: 10000px) {
+    
+    .mariana_title
+  {
+    font-size: 3.5em;
+    font-family:Fredoka One;
+    color: rgba(34, 167, 171, 1) !important;
+    padding: 0.7em;
+    padding-top: 1em;
+    letter-spacing: 0.035em;
+  }
+  
+.logo_principal {
+    width: 50%;
+    position: absolute;
+    z-index: 99;
+    display: block;
+    margin-left: 25%;
+    margin-top: 5%;
+    }
+    
+    .my_carousel_parallax{
+        height: 455px;
+    }
+    
+     .my_image_device{
+        object-fit: cover; 
+        max-width: 50% !important;
+    }
+    
+    .my_carousel_parallax2{
+        height: 500px;
+    }
+    
+    .footer-distributed{
+        height:600px;
+    }
+    
+     .my_image_device2{
+        object-fit: cover; 
+        max-width: 80% !important;
+    }
+    
+    .watermark_mobile{
+        width: 90px;
+    }
+    
+    .nav-row{
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 5em;
+        padding-right: 3em;
+        padding-top: 1em;
+    }
+    
+    .values{
+        background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
+        height: auto;
+        height: 100%;
+        font-family: Ubuntu;
+        color: white;
+        font-size: 1.5em;
+        padding-right: 4.5em;
+    
+    }
+
+    .values_text{
+        font-family: Fredoka One; 
+        font-size: 1.5em;
+    }
+    
+    .values_row{
+        padding-left: 10em;
+        padding-right: 0em !important;
+        padding-top: 4em;
+        padding-bottom: 3em;
+    }
+    
+    .my_space_values{
+        padding-top: 1em; 
+        padding-bottom: 1em
+    }
+    
+     .my_space_cards{
+        padding-top: 1em; 
+        padding-bottom: 1em;
+        font-size: 0.001em;
+        color: grey;
+    }
+    
+    .my_card_title {
+        font-family: Fredoka One;
+        font-size: 150% !important;
+        text-shadow: 5px 5px rgba(19, 28, 43, 0.8);
+        letter-spacing: 2px;
+    }
+    
+    .my_card_title2 {
+        color: #00bfa5;
+        font-family: Fredoka One;
+        font-size: 150% !important;
+        letter-spacing: 2px;
+    }
+    
+    .my_parallax_title{
+        font-family: Fredoka One;
+        padding-top: 1.5em;
+        font-size: 1.3em;
+    }
+    
+    .row_galeria{
+        padding-left:2.5em;
+    }
+  
+
+}
+
