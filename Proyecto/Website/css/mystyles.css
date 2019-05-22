@@ -1032,7 +1032,7 @@ my_search {
   {
     font-size: 3em;
     font-family: Fredoka One;
-    color: rgba(34, 167, 171, 1) !important;
+    color: #1FAC9E !important;
     padding-top: 1em;
     padding-bottom: 1.5em;
     letter-spacing: 0.035em;
@@ -1093,11 +1093,15 @@ my_search {
         padding-top: 1em;
     }
     
+    .values_header{
+        padding-left: 1em; 
+        margin: 0 auto;
+    }
+    
     .values{
         background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
         height: auto;
         height: 90%;
-        font-family: Ubuntu;
         color: white;
         font-size: 1.6em;
         margin: 0 auto;
@@ -1108,9 +1112,9 @@ my_search {
         font-family: Fredoka One; 
         font-size: 1.5em;
     }
-    
+   
     .values_row{
-        padding-left: 1.2em;
+        padding-left: 0em !important;
         padding-right: 0em !important;
         padding-top: 1.5em;
         padding-bottom: 1em;
@@ -1172,7 +1176,7 @@ my_search {
   {
     font-size: 3.5em;
     font-family:Fredoka One;
-    color: rgba(34, 167, 171, 1) !important;
+    color: #1FAC9E !important;
     padding: 0.7em;
     padding-top: 1em;
     letter-spacing: 0.035em;
@@ -1221,27 +1225,21 @@ my_search {
         padding-top: 1em;
     }
     
+    .values_header{
+        padding-left: 5em; 
+        margin: 0 auto
+    }
+    
     .values{
         background: linear-gradient(135deg, #1a2674 0%, #3d6da8 22%, #2e8ac7 53%, #3d2c81 100%);
-        height: auto;
-        height: 100%;
         font-family: Ubuntu;
         color: white;
         font-size: 1.5em;
-        padding-right: 4.5em;
-    
     }
 
     .values_text{
         font-family: Fredoka One; 
         font-size: 1.5em;
-    }
-    
-    .values_row{
-        padding-left: 10em;
-        padding-right: 0em !important;
-        padding-top: 4em;
-        padding-bottom: 3em;
     }
     
     .my_space_values{
