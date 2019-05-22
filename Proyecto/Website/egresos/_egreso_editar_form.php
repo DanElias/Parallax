@@ -48,7 +48,7 @@
                               <div class="row">
                                   <div class="input-field col s4">
                                       <i class="material-icons prefix">clear_all</i>
-                                      <input  type="text" class="validate" id="folio_factura" name="folio_factura" required value="'.$row['folio_factura'].'" maxlength="30">
+                                      <input  type="text" class="validate" id="folio_factura2" name="folio_factura" required value="'.$row['folio_factura'].'" maxlength="30">
                                       <label for="folio_factura">Folio Factura</label>
                                   </div>
                                   <div class="input-field col s3">
