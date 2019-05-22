@@ -3,13 +3,12 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
   require_once("../proveedores/_util_proveedor.php");
   require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
-  session_start();
+  //session_start();
   //$_SESSION['id_proveedor'] = $_POST['id'];
   $_POST['id'] = htmlentities($_POST['id']);
   //echo $_POST['id'];
   $result = obtener_egreso_folio($_POST['id']);
   $edit_form = '';
-
 
   if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) {
