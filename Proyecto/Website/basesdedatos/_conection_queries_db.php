@@ -1079,23 +1079,6 @@ function obtenerCuentas(){
     closeDB($conn);
   }
 
-  function editarTutor($id,$nombre, $apellido,$telefono,$fecha, $ocupacion, $empresa, $grado, $titulo){
-    $conn = conectDb();
-    $sql = "UPDATE tutor SET nombre=?, apellido=?, telefono=?, fecha_nacimiento=?, ocupacion=?, nombre_empresa=?, grado_estudio=?, titulo_obtenido=? WHERE id_tutor=?";
-    if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssssssssi',$nombre,$apellido,$telefono,$fecha,$ocupacion,$empresa,$grado,$titulo,$id);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-      closeDB($conn);
-      return true;
-    } else{
-      closeDB($conn);
-      return false;
-    }
-    closeDB($conn);
-  }
-
   function getNombreTutor(){
     $conn = conectDb();
     $sql = "SELECT id_tutor,nombre,apellido FROM tutor ORDER BY apellido";
@@ -1285,45 +1268,11 @@ function obtenerCuentas(){
     closeDB($conn);
   }
 
-  function editarBeneficiario($id,$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
+  function editarBeneficiario($id,$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota){
     $conn = conectDb();
-    $sql = "UPDATE beneficiario SET nombre=?, apellido_paterno=?, apellido_materno=?, estado=?, fecha_nacimiento=?, sexo=?, grado_escolar=?, grupo=?, numero_calle=?, calle=?, colonia=?, nivel_socioeconomico=?, nombre_escuela=?, enfermedades_alergias=?, cuota=? WHERE id_beneficiario=?";
+    $sql = "UPDATE beneficiario SET nombre=?, apellido=?, estado=?, fecha_nacimiento=?, sexo=?, grado_escolar=?, grupo=?, domicilio=?, nivel_socioeconomico=?, nombre_escuela=?, enfermedades_alergias=?, cuota=? WHERE id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('sssissssssssssdi',$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota,$id);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-      closeDB($conn);
-      return true;
-    } else{
-      closeDB($conn);
-      return false;
-    }
-    closeDB($conn);
-  }
-
-  function deleteBeneficiario($id){
-    $conn = conectDb();
-    $sql = "DELETE FROM beneficiario WHERE id_beneficiario=?";
-    if($stmt = $conn->prepare($sql) ){
-      $stmt->bind_param('i',$id);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      $stmt->close();
-      closeDB($conn);
-      return true;
-    } else{
-      closeDB($conn);
-      return false;
-    }
-    closeDB($conn);
-  }
-
-  function deleteTutor($id){
-    $conn = conectDb();
-    $sql = "DELETE FROM tutor WHERE id_tutor=?";
-    if($stmt = $conn->prepare($sql) ){
-      $stmt->bind_param('i',$id);
+      $stmt->bind_param('ssissssssssdi',$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota,$id);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
@@ -1665,7 +1614,7 @@ function reporteProveedores($fecha_inicial, $fecha_final){
 
   function alertaNoHayConexion(){
     $alerta='
-
+    
     <div id="_form_alerta_error" class="modal  my_modal">
         <div class="row my_modal_header_row">
             <div class="my_modal_header_eliminar z-depth-2 col s12">
