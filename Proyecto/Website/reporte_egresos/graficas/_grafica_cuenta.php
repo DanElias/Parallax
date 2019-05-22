@@ -4,6 +4,7 @@
 Autor: Daniel Elias
 */
 
+
 require_once("../basesdedatos/_conection_queries_db.php"); 
 
 $valores="";

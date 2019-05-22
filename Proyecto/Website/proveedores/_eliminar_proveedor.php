@@ -3,24 +3,27 @@
 require_once("../basesdedatos/_conection_queries_db.php");
 require_once("_util_proveedor.php");
 
-
+session_start();
+$_SESSION['proveedor_eliminado'] = 0;
 $_GET['id'] = htmlentities($_GET['id']);
 
 if (eliminar_proveedor_id($_GET['id'])){
+	$_SESSION['proveedor_eliminado'] = 1;
         header("location:_proveedor_vista.php");
-        //recargo la página
-        //header_html();
-        //sidenav_html();
-        //evento_html();
-        //form_evento_html();
-        //controller_tabla_eventos_php();
-        echo "<script type='text/javascript'>
-                            alert(\"¡El evento se ha borrado de manera exitosa!\");
-            </script>"; //mando la alerta de que si se logró eliminar el evento
-            
-        footer_html();
-        echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
+        if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
+                </script>';
+                }
+  
 }else{
+	header("location:_proveedor_vista.php");
+        if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/usuarios/_usuarios_vista.php";
+                </script>';
+                }
+	$_SESSION['error_eliminar_proveedor'] = 1;
     echo "No funciono";
 }
 

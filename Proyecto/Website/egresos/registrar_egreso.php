@@ -3,7 +3,7 @@
     //require_once("_util_usuarios.php");
     require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y 
 
-    
+    session_start();
     $folio_factura = $_POST['folio_factura']; 
     $concepto = $_POST['concepto'];
     $importe = $_POST['importe']; 
@@ -13,18 +13,7 @@
     $id_cuentacontable = $_POST['id_cuentacontable'];  
     $observaciones = $_POST['observaciones'];
 
-    
-    
-    echo "<h1>ENTRO AL REGISTRAR</h1>";
-    echo "Folio:".$folio_factura."<br>".
-    "Cocenpto: ".$concepto."<br>". 
-    "Importe: ".$importe."<br>". 
-    "Fehca: ".$fecha."<br>".  
-    "Cuenta bancaria_egreso: ".$cuenta_bancaria_egreso."<br>". 
-    "RFC: ".$rfc."<br>". 
-    "id cuenta: ".$id_cuentacontable."<br>".
-    "observaciones:".$observaciones."<br>"; 
- 
+   
     if (isset($_POST["submit"])){
         
         $_POST["folio_factura"] = htmlentities($_POST["folio_factura"]);
@@ -104,10 +93,20 @@
         }else{
            if(registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"])){
                 $_SESSION['exito_agregar_egreso']=1; 
-               header("location:./_egreso_vista.php");
+               header("location:_egreso_vista.php");
+                if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                </script>';
+                }
            }else{
                 $_SESSION['error_agregar_egreso']=1; 
                header("location:./_egreso_vista.php");
+               if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                </script>';
+                }
            }
 
         }

@@ -15,7 +15,8 @@ if(isset($_POST["submit"])){
 
 }*/
 
-
+$_SESSION['editar_proveedor_exito'] = 0;
+$_SESSION['editar_proveedor_error'] = 0;
 if (isset($_POST["submit"])) {
 
     $_POST["rfc2"] = htmlentities($_POST["rfc2"]);
@@ -96,16 +97,21 @@ if (isset($_POST["submit"])) {
         }
 
         if($flag){
-            echo "mandara el edit con:  ".$_SESSION['rfc2'];
-            echo "mandara el edit con : ".$_POST['rfc2'];
             
             if(editar_proveedor($_POST['rfc2'], $_SESSION['rfc2'], $_POST["alias2"], $_POST["razon_social2"], $_POST["nombre_contacto2"], $_POST["telefono_proveedor2"], $_POST["cuenta_bancaria2"], $_POST["banco2"])){
   
                 header("location:./_proveedor_vista.php");
+		$_SESSION['editar_proveedor_exito'] = 1;
+                if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
+                </script>';
+                }
                 echo  "<script type='text/javascript'>
                                     alert('¡El proveedor se ha actualizado de manera exitosa!');
                             </script>";
             }else{
+            $_SESSION['editar_proveedor_error'] = 1;
                 echo "LA CONSULTA FALLO";
             }  
             //mostrar errores
