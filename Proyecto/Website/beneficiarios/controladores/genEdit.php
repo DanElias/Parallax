@@ -50,7 +50,7 @@
       <div class="input-field col s4">
           <i class="material-icons prefix">home</i>
           <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" value="'.$row['numero_calle'].'" required>
-          <label for="numero_domicilio">Numero</label>
+          <label for="numero_domicilio">Número de casa/dpto</label>
         </div>
       <div class="input-field col s4">
           <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" value="'.$row['calle'].'" required>
