@@ -148,9 +148,9 @@ $(document).ready(function(){
   });
 })
 
-$(document).on('click', '#etutor1', function(){
+$(document).on('click', '.dybody', function(){
   $('#etutor1').change(function() {
-      console.log("Cambio de valor etutor1");
+      //console.log("Cambio de valor etutor1");
       var ide = this.value;
       var num = 1;
       var newURL = "#modal_informacion_tutor_" + ide;
@@ -161,16 +161,16 @@ $(document).on('click', '#etutor1', function(){
   });
 });
 
-$(document).on('click', '#etutor2', function(){
-  $('#etutor1').change(function() {
-      console.log("Cambio de valor etutor1");
+$(document).on('click', '.dybody', function(){
+  $('#etutor2').change(function() {
+      //console.log("Cambio de valor etutor1");
       var ide = this.value;
       var num = 1;
       var newURL = "#modal_informacion_tutor_" + ide;
-      $('#eidtutor1').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
+      $('#eidtutor2').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
       llenarEditTutor(ide);
       genBorrarTut(ide);
-      $('#einfo1').attr("href", newURL);
+      $('#einfo2').attr("href", newURL);
   });
 });
 
@@ -334,6 +334,32 @@ $(document).ready(function(){
       })
     });
 });
+
+$(document).ready(function(){
+  $('#fecha_nacimiento').focusout(function(){
+    var today = new Date();
+    var fecha= $('#fecha_nacimiento').val();
+    var f = fecha.split("-");
+    if(f[0] > today.getFullYear()){
+      $('#errorFecha').html("Fecha no válida");
+    } else if(f[0] == today.getFullYear()){
+      if(f[1] > today.getMonth() + 1){
+        $('#errorFecha').html("Fecha no válida");
+      } else if(f[1] == today.getMonth() + 1){
+        if(f[1] > today.getDate()){
+          $('#errorFecha').html("Fecha no válida");
+        } else{
+          $('#errorFecha').html("");
+        }
+      } else{
+        $('#errorFecha').html("");
+      }
+    } else{
+      $('#errorFecha').html("");
+    }
+  });
+});
+
 
 $(document).ready(function(){
   $("#registrarBeneficiario").submit(function (ev){

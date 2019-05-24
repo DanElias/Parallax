@@ -413,7 +413,7 @@
                   </tr>
                   </thead>
 
-                  <tbody id="etablaExternaTutor">';
+                  <tbody id="etablaExternaTutor" class="dybody">';
                   $res = benTutor($id);
                   $data = mysqli_fetch_assoc($res);
                   if(mysqli_num_rows($res) > 1) {
@@ -530,7 +530,7 @@
 
             </div>
           </div>';
-        } else {
+        } else if(mysqli_num_rows($res) == 1) {
           echo '
           <tr>
             <td>
@@ -629,6 +629,89 @@
 
       </div>
       </div>';
+    } else {
+      echo '
+      <tr>
+        <td>
+          <label>
+            <input type="checkbox" class="filled-in center-align" id="ebenTut1" checked disabled/>
+            <span></span>
+          </label>
+        </td>
+        <td>
+          <p id="eidtutor1">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </td>
+        <td>
+          <select id="eparentesco1" name="parentesco" required>
+              <option value="" disabled selected></option>
+              <option value="Padre" >Padre</option>
+              <option value="Madre">Madre</option>
+              <option value="Tutor">Tutor</option>';
+      echo '</select>
+        </td>
+        <td>
+          <select id="etutor1" name="tutor1" required>';
+            $result2 = getNombreTutor();
+          echo '<option value="" disabled selected></option>';
+          while($row2 = mysqli_fetch_assoc($result2)){
+              echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+            }
+
+      echo '    </select>
+        </td>
+        <td><a class="modal-trigger" href="#modal_informacion_tutor_" id="einfo1">Más información</a></td>
+        <!--td>
+            <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
+               href="#_form_editar_tutor" id="ebotonEditarTutor1" ><i class="material-icons">edit</i></a>
+        </td>
+        <td>
+            <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
+               href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" ><i class="material-icons">delete</i></a>
+        </td-->
+      </tr>
+    <tr>
+      <td><label>
+        <input type="checkbox" class="filled-in center-align" id="ebenTut2" />
+        <span></span>
+      </label></td>
+      <td>
+        <p id="eidtutor2"></p>
+      </td>
+      <td>
+        <select id="eparentesco2" name="parentesco" >
+          <option value="" disabled selected></option>
+          <option value="Padre">Padre</option>
+          <option value="Madre">Madre</option>
+          <option value="Tutor">Tutor</option>
+        </select>
+      </td>
+      <td>
+        <select id="etutor2" name="tutor2" >';
+        $result2 = getNombreTutor();
+            echo '<option value="" disabled selected></option>';
+            while($row2 = mysqli_fetch_assoc($result2)){
+              echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+
+            }
+
+      echo '  </select>
+      </td>
+      <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="einfo2">Más información</a></td>
+      <!--td>
+          <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
+             href="#_form_editar_tutor_2" id="ebotonEditarTutor2"><i class="material-icons">edit</i></a>
+      </td>
+      <td>
+          <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
+             href="#_form_eliminar_tutor_2" id="ebotonBorrarTutor2"><i class="material-icons">delete</i></a>
+      </td-->
+    </tr>
+  </tbody>
+  </table>
+  </div>
+
+  </div>
+  </div>';
     }
     echo' <div class="my_modal_buttons">
       <div class="row">
