@@ -46,9 +46,10 @@ if (isset($_SESSION["usuario"])) {
     footer_html();
     
     echo '<script type="text/javascript" src="ajax_egreso.js"></script>
-    <script type="text/javascript" src="ajax.js"></script>
+        <script type="text/javascript" src="ajax.js"></script>
+        <script type="text/javascript" src="validaciones.js"></script>
    ';
-    // <script type="text/javascript" src="validaciones.js"></script>
+    
 } else {
     header("location:../login/_login_vista.php");
 
