@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
   require_once("../proveedores/_util_proveedor.php");
@@ -47,33 +47,38 @@
                               <div class="row">
                                   <div class="input-field col s4">
                                       <i class="material-icons prefix">clear_all</i>
-                                      <input  type="text" class="validate" id="folio_factura" name="folio_factura" required value="'.$row['folio_factura'].'" maxlength="30">
-                                      <label for="folio_factura">Folio Factura</label>
+                                      <input  type="text" class="validate" id="folio_factura2" name="folio_factura2" required value="'.$row['folio_factura'].'" maxlength="30" onkeyup="validar_folio()">
+                                      <label for="folio_factura2">Folio Factura</label>
+                                      <span id="error_folio2"></span> 
+                                      
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">library_books</i>
-                                      <input  type="text" class="validate" id="concepto" name="concepto" required value="'.$row['concepto'].'" maxlength="30">
+                                      <input  type="text" class="validate" id="concepto2" name="concepto2" required value="'.$row['concepto'].'" maxlength="30" onkeyup="validar_concepto()">
                                       <label for="icon_prefix">Concepto</label>
+                                      <span id="error_concepto2"></span> 
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">attach_money</i>
-                                      <input  type="text" class="validate" id="importe" name="importe" required value="'.$row['importe'].'" maxlength="10">
+                                      <input  type="text" class="validate" id="importe2" name="importe2" required value="'.$row['importe'].'" maxlength="10" onkeyup="validar_importe()">
                                       <label for="importe">Importe</label>
+                                      <span id="error_importe2"></span> 
                                   </div>
                               </div>
                           
                               <div class="row">
                                   <div class="input-field col s3">
-                            <i class="material-icons prefix">calendar_today</i>
-                            <input type="date" name="fecha_egreso" id="fecha_egreso" required value="'.$row['fecha'].'">
+                                    <i class="material-icons prefix">calendar_today</i>
+                                    <input type="date" name="fecha_egreso2" id="fecha_egreso2" required value="'.$row['fecha'].'">
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">account_balance</i>
-                                        <input  type="text" class="validate" id="cuenta_bancaria" name="cuenta_bancaria" required value="'.$row['cuenta_bancaria'].'" maxlength="20">
-                                        <label for="cuenta_bancaria">Cuenta Bancaria</label>
+                                        <input  type="text" class="validate" id="cuenta_bancaria_egreso2" name="cuenta_bancaria_egreso2" required value="'.$row['cuenta_bancaria'].'" maxlength="20" onkeyup="validar_cuenta_bancaria()">
+                                        <label for="cuenta_bancaria_egreso2">Cuenta Bancaria</label>
+                                        <span id="error_cuenta_bancaria_egreso2"></span> 
                                   </div>
 
-                                  <div class="input-field col s3" id="drop_proveedor2">
+                                  <div class="input-field col s3" id="drop_proveedor2" >
                                   </div>
                                   
                                   
@@ -88,8 +93,10 @@
                               
                                   <div class="input-field col s6">
                                       <i class="material-icons prefix">description</i>
-                                      <input  type="text" class="validate" id="observaciones" name="observaciones" required value="'.$row['observaciones'].'" maxlength="100">
+                                      <input  type="text" class="validate" id="observaciones2" name="observaciones2" required value="'.$row['observaciones'].'" maxlength="100" onkeyup="validar_observaciones()">
                                       <label for="observaciones">Observaciones</label>
+                                      <span id="error_observaciones2"></span> 
+
                                   </div>
                               </div>
 

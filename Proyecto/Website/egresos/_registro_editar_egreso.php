@@ -6,13 +6,13 @@
     session_start();
     
     $_SESSION['editar_egreso_exito'] = 0;
-    $_SESSION['editar_egreso_erroir'] = 0;
+    $_SESSION['editar_egreso_error'] = 0;
     
-    $folio_factura = $_POST['folio_factura']; 
-    $concepto = $_POST['concepto'];
-    $importe = $_POST['importe']; 
-    $fecha = $_POST['fecha_egreso'];
-    $cuenta_bancaria =  $_POST['cuenta_bancaria']; 
+    $folio_factura = $_POST['folio_factura2']; 
+    $concepto = $_POST['concepto2'];
+    $importe = $_POST['importe2']; 
+    $fecha = $_POST['fecha_egreso2'];
+    $cuenta_bancaria =  $_POST['cuenta_bancaria_egreso2']; 
     $rfc = $_POST['rfc'];  
     $id_cuentacontable = $_POST['id_cuentacontable'];  
     $observaciones = $_POST['observaciones'];
@@ -96,7 +96,16 @@
         }
 
         if(!$flag){
-            echo "<br>NO SE MANDARA EL REGISTRO";
+            $_SESSION['editar_egreso_error'] = 1;
+                header("location:./_egreso_vista.php");
+                 if($GLOBALS['local_servidor'] == 1){
+                        echo '<script type="text/javascript">
+                    window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                    </script>';
+                }
+               
+
+           // echo "<br>NO SE MANDARA EL REGISTRO";
         }else{
             $editar = editar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"]);
 
@@ -112,13 +121,13 @@
                 }
            }else{
                 $_SESSION['editar_egreso_error'] = 1;
-            header("location:./_egreso_vista.php");
-             if($GLOBALS['local_servidor'] == 1){
-                    echo '<script type="text/javascript">
-                window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
-                </script>';
-                }
-           }
+                header("location:./_egreso_vista.php");
+                 if($GLOBALS['local_servidor'] == 1){
+                        echo '<script type="text/javascript">
+                    window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                    </script>';
+                    }
+               }
 
         }
            

@@ -33,10 +33,9 @@ $(document).ready(function(){
 
     /************PARA EL FORM DE EDITAR ***/
     
-    
     $.ajax({
         type: 'POST',
-        url: 'mostrar_proveedor.php',
+        url: 'mostrar_proveedor2.php',
         data:{flag:flag}
     })
     .done(function(data){
@@ -54,7 +53,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: 'POST',
-        url: 'mostrar_cuentacontable.php',
+        url: 'mostrar_cuentacontable2.php',
         data:{flag:flag}
     })
     .done(function(data){
@@ -102,6 +101,15 @@ $('#edit_button').on('click', function () {
 	    });*/
 
 });
+
+
+
+
+
+
+
+
+
 
 /*
 $(document).ready(function(){

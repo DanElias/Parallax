@@ -30,7 +30,7 @@ function validar_concepto(){
   var cadena = $('#concepto2').val();
   //console.log(cadena);
 
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]+$/g.test(cadena)
+    var special = /[\`|\~|\-|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]+$/g.test(cadena)
     var size = cadena.length;
 
     //záéíóúüñÑÁÉÍÓÚü
@@ -52,7 +52,7 @@ function validar_importe(){
       $("#error_importe2").show(); 
       flag_importe = false;
   }else{
-    $("#error_importe").hide();
+    $("#error_importe2").hide();
       flag_importe = true;
   }
 }
@@ -70,6 +70,7 @@ function validar_cuenta_bancaria(){
 }
 
 function validar_drop_proveedor(){
+    console.log("CAMBIA LOS CLICKS");
     var proveedor = $('#selected_proveedor2').val();
     if(proveedor=='0'){
           $("#error_proveedor_egreso2").html('*Debes seleccionar un proveedor').css("color","red");
