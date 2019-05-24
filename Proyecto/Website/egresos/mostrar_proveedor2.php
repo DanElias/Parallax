@@ -2,7 +2,7 @@
     require_once("../basesdedatos/_conection_queries_db.php");
     
     $proveedores = obtenerProveedor();
-    $drop_proveedores = "<select required name='rfc2' id='selected_proveedor2'onchange='validar_drop_proveedor()'>
+    $drop_proveedores = "<select required name='rfc2' id='selected_proveedor2' onchange='validar_drop_proveedor()'>
         <option value='0' '>Selecciona el proveedor</option>";
     
     if(mysqli_num_rows($proveedores)>0){

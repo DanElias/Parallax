@@ -119,9 +119,12 @@ function validar_observaciones(){
 
 
 function validar_form(){
+  console.log("funciona como deberia, entra a validar form");
   var proveedor = $('#selected_proveedor2').val();
   //console.log($('#selected_proveedor').find('option:selected').css('color', 'red')); 
   var cuenta = $('#selected_cuenta2').val();
+  console.log(proveedor);
+  console.log(cuenta);
   //console.log(proveedor);
   //console.log(cuenta);
   if(proveedor=='0'){
@@ -143,11 +146,11 @@ function validar_form(){
   }
 
   
-  if(flag_folio&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){
-      console.log("deberia funcionar e ir al registro ");
+  if(flag_folio == false&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){
+      //console.log("deberia funcionar e ir al registro ");
       //return true;
   }else{
-      console.log("Una bandera es falsa ");
+      //console.log("Una bandera es falsa ");
       return false;
   }
     
