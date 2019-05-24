@@ -20,7 +20,7 @@ if (isset($_SESSION["usuario"])) {
     
      
     if($_SESSION['error_eliminar_egreso'] == 1){
-        echo "<script type='text/javascript'> alert('!El egreso no ha podido ser eliminado¡');</script>";
+        echo "<script type='text/javascript'> alert('!El egreso no ha podido ser eliminado!');</script>";
         $_SESSION['error_eliminar_egreso'] = 0;
     }
     
@@ -37,18 +37,18 @@ if (isset($_SESSION["usuario"])) {
         echo "<script type='text/javascript'> alert('!El egreso no se pudo editar¡');</script>";
         $_SESSION['editar_egreso_error'] = 0;
     }
-     if($_SESSION['editar_egreso_exito'] == 1){
+    if($_SESSION['editar_egreso_exito'] == 1){
         echo "<script type='text/javascript'> alert('!El egreso se edito con exito¡');</script>";
-        $_SESSION['editar_egreso_error'] = 0;
+        $_SESSION['editar_egreso_exito'] = 0;
     }
-    
+        
     
     footer_html();
     
     echo '<script type="text/javascript" src="ajax_egreso.js"></script>
     <script type="text/javascript" src="ajax.js"></script>
-    <script type="text/javascript" src="validaciones.js"></script>';
-
+   ';
+    // <script type="text/javascript" src="validaciones.js"></script>
 } else {
     header("location:../login/_login_vista.php");
 

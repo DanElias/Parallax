@@ -48,19 +48,19 @@
         //FOLIO, NUMEROS Y LETRAS
         if(!(preg_match('/[A-Za-z]/', $_POST["folio_factura"]))|| !(preg_match('/[0-9]/', $_POST["folio_factura"]))){
             $flag = false;
-            echo "<br>FOLIO MALO";
+            //echo "<br>FOLIO MALO";
         }
 
 
         //CONCEPTO, NUMEROS Y LETRAS
         if(is_numeric($_POST['concepto']) || !(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['concepto']))){
             $flag = false;
-            echo "<br>CONCEPTO MALO";        
+            //echo "<br>CONCEPTO MALO";        
         }
 
         if(!(is_numeric($_POST['importe']))){
             $flag = false;
-            echo "<br>IMPORTE MALO";
+            //echo "<br>IMPORTE MALO";
         }
 
         //FECHA SE VALIDA CON MATERIALIZE
@@ -68,8 +68,8 @@
         //CUENTA DE 20, SOLO NUMEROS
         if(strlen($_POST["cuenta_bancaria_egreso"])<18){
             $flag = false;
-            echo "<br>CUENTA MALA";
-            //echo "No tiene 18";
+            //echo "<br>CUENTA MALA";
+            ////echo "No tiene 18";
             //mensaje de que no lo tiene
 
         }
@@ -77,32 +77,41 @@
         //SELECT PROVEEDOR 
         if($_POST['rfc']=='0'){    
             $flag = false;
-            echo "<br>PROVEEDOR MALO";
+            //echo "<br>PROVEEDOR MALO";
 
         }
 
         //SELECT CUENTA CONTABLE
         if($_POST["id_cuentacontable"]==0){
             $flag = false;
-            echo "<br>ID MALO";
+            //echo "<br>ID MALO";
 
         }
 
         if(!$flag){
-            echo "<br>NO SE MANDARA EL REGISTRO";
-        }else{
-           if(registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria"], $_POST["rfc"], $_POST["id_cuentacontable"])){
-                $_SESSION['exito_agregar_egreso']=1; 
-               header("location:_egreso_vista.php");
-                if($GLOBALS['local_servidor'] == 1){
+
+            echo "No se mandara";
+            $_SESSION['error_agregar_egreso']=1; 
+            header("location:./_egreso_vista.php");
+            if($GLOBALS['local_servidor'] == 1){
                     echo '<script type="text/javascript">
                 window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
                 </script>';
+            }
+        }else{
+           if(registrar_egreso($_POST["folio_factura"], $_POST["concepto"],$_POST["importe"],$_POST["fecha_egreso"], $_POST["observaciones"], $_POST["cuenta_bancaria_egreso"], $_POST["rfc"], $_POST["id_cuentacontable"])){
+                
+                $_SESSION['exito_agregar_egreso']=1; 
+                header("location:_egreso_vista.php");
+                if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">
+                    window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
+                    </script>';
                 }
            }else{
                 $_SESSION['error_agregar_egreso']=1; 
-               header("location:./_egreso_vista.php");
-               if($GLOBALS['local_servidor'] == 1){
+                header("location:./_egreso_vista.php");
+                if($GLOBALS['local_servidor'] == 1){
                     echo '<script type="text/javascript">
                 window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
                 </script>';

@@ -183,7 +183,7 @@ $(document).ready(function(){
 
           $("#error_rfc").hide();
           if(tamano<10){
-            $("#error_rfc").html('*ES MENOR A 10 o mayor a ').css("color","red");
+            $("#error_rfc").html('*Debe tener mínimo 10 caracteres alfanuméricos').css("color","red");
             $("#error_rfc").css('padding-left','10%');
             $("#error_rfc").show();
             error_rfc = true;
@@ -300,7 +300,7 @@ $(document).ready(function(){
 
           $("#error_rfc2").hide();
           if(tamano<10){
-            $("#error_rfc2").html('*ES MENOR A 10').css("color","red");
+            $("#error_rfc2").html('*Debe tener mínimo 10 caracteres alfanuméricos').css("color","red");
             $("#error_rfc2").css('padding-left','10%');
             $("#error_rfc2").show();
             error_rfc2 = true;

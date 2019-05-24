@@ -102,8 +102,10 @@
 
            if($editar){
             $_SESSION['editar_egreso_exito'] = 1;
+            
             header("location:./_egreso_vista.php");
-             if($GLOBALS['local_servidor'] == 1){
+            
+            if($GLOBALS['local_servidor'] == 1){
                     echo '<script type="text/javascript">
                 window.location="https://www.marianasala.org/Website/egresos/_egreso_vista.php";
                 </script>';

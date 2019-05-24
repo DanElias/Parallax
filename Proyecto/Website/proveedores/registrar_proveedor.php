@@ -85,52 +85,44 @@ if (isset($_POST["submit"])) {
         }
 
         if(!$flag){
-            echo "<br>NO SE MANDARA EL REGISTRO";
-            //mostrar errores
+            /*
+            $_SESSION['registro_proveedor'] = 1;
+                    header("location:./_proveedor_vista.php");
+                    if($GLOBALS['local_servidor'] == 1){
+                        echo '<script type="text/javascript">
+                    window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
+                    </script>';
+                }*/
+
+            $_SESSION['error_registrar_proveedor'] = 1;
+            header("location:./_proveedor_vista.php");
+            if($GLOBALS['local_servidor'] == 1){
+                echo '<script type="text/javascript">
+                    window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
+                    </script>';
+            }
+           /*
+           $_SESSION['error_registrar_proveedor'] = 1;
+            header("location:./_proveedor_vista.php");
+            if($GLOBALS['local_servidor'] == 1){
+                    echo '<script type="text/javascript">   
+                    window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
+                    </script>';
+            }*/
+
         }else{
             //echo "SI SE MANDARA ";   
             if(registrar_proveedor($_POST["rfc"], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"])){
-            	$_SESSION['registro_proveedor'] = 1;
-                header("location:./_proveedor_vista.php");
-                 if($GLOBALS['local_servidor'] == 1){
-                    echo '<script type="text/javascript">
-                window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
-                </script>';
+                	$_SESSION['registro_proveedor'] = 1;
+                    header("location:./_proveedor_vista.php");
+                     if($GLOBALS['local_servidor'] == 1){
+                        echo '<script type="text/javascript">
+                    window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
+                    </script>';
                 }
              
             }
-            //$rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco
-            /*
-            $registrar = registrar_proveedor($_POST["rfc"], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"]);
-            //echo "<h1>".$registrar."</h1>";
-            
-            if($registrar==1){
-
-                echo  "<script type='text/javascript'>
-                                    alert('¡El proveedor se ha registrado de manera exitosa!');
-                            </script>";
-                 //header("location:./_proveedores_vista.php");
-            }else{
-                 echo "<h1>NO FUNCIONO</h1>";
-            }
-        }*/
-
-        /*
-        
-        //$rfc, $alias,$razon, $nombre, $telefono, $cuenta, $banco
-
-        
-       // $registrar = registrar_proveedor($_POST["rfc"], $_POST["alias"], $_POST["razon_social"], $_POST["nombre_contacto"], $_POST["telefono_proveedor"], $_POST["cuenta_bancaria"], $_POST["banco"]);
-
-        
-        if($registrar){
-             echo "<h1>DEBE ESTAR EN LA BASE DE DATOS</h1>";
-        }else{
-             echo "<h1>NO FUNCIONO</h1>";
-        }
-    }*/
-    
-    //header("location:./_proveedores_vista.php");
+                  
         }
     }
 }
