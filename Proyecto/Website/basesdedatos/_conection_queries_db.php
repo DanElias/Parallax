@@ -1303,6 +1303,7 @@ function obtenerCuentas(){
   }
 
   function deleteBeneficiario($id){
+    deleteBenTut1($id);
     $conn = conectDb();
     $sql = "DELETE FROM beneficiario WHERE id_beneficiario=?";
     if($stmt = $conn->prepare($sql) ){
@@ -1319,7 +1320,42 @@ function obtenerCuentas(){
     closeDB($conn);
   }
 
+  function deleteBenTut1($id){
+    $conn = conectDb();
+    $sql = "DELETE FROM beneficiario_tutor WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql) ){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
+  function deleteBenTut2($id){
+    $conn = conectDb();
+    $sql = "DELETE FROM beneficiario_tutor WHERE id_tutor=?";
+    if($stmt = $conn->prepare($sql) ){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+      closeDB($conn);
+      return true;
+    } else{
+      closeDB($conn);
+      return false;
+    }
+    closeDB($conn);
+  }
+
   function deleteTutor($id){
+    deleteBenTut2($id);
     $conn = conectDb();
     $sql = "DELETE FROM tutor WHERE id_tutor=?";
     if($stmt = $conn->prepare($sql) ){

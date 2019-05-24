@@ -49,7 +49,7 @@ function genBorrarTut2(numero){
 function llenarEdit(number){
   $.post('controladores/genEdit.php', { id : number } )
   .done(function(data){
-    console.log(data);
+    //console.log(data);
     $('#editarBeneficiario').html(data);
     M.AutoInit();
     M.updateTextFields();
@@ -86,6 +86,8 @@ function listaTutor(){
     //console.log(data);
     $('#tutor1').html(data);
     $('#tutor2').html(data);
+    //$('#etutor1').html(data);
+    //$('#etutor2').html(data);
     M.AutoInit();
   })
   .fail(function(){
@@ -115,7 +117,7 @@ function mEst(){
 function infoTutor(){
   $.post('tutorController.php', { opcion : 1 } )
   .done(function(data){
-    console.log("Funciono");
+    //console.log("Funciono");
     $('#todosTutores').html(data);
   });
   M.AutoInit();
@@ -127,6 +129,7 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
+    $('#idtutor1').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
     llenarEditTutor(ide);
     genBorrarTut(ide);
     $('#info1').attr("href", newURL);
@@ -138,11 +141,38 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
+    $('#idtutor2').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
     llenarEditTutor2(ide);
     genBorrarTut2(ide);
     $('#info2').attr("href", newURL);
   });
 })
+
+$(document).on('click', '#etutor1', function(){
+  $('#etutor1').change(function() {
+      console.log("Cambio de valor etutor1");
+      var ide = this.value;
+      var num = 1;
+      var newURL = "#modal_informacion_tutor_" + ide;
+      $('#eidtutor1').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
+      llenarEditTutor(ide);
+      genBorrarTut(ide);
+      $('#einfo1').attr("href", newURL);
+  });
+});
+
+$(document).on('click', '#etutor2', function(){
+  $('#etutor1').change(function() {
+      console.log("Cambio de valor etutor1");
+      var ide = this.value;
+      var num = 1;
+      var newURL = "#modal_informacion_tutor_" + ide;
+      $('#eidtutor1').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
+      llenarEditTutor(ide);
+      genBorrarTut(ide);
+      $('#einfo1').attr("href", newURL);
+  });
+});
 
 $(document).ready(function(){
   $('#formEstado').submit(function (ev){
@@ -266,7 +296,7 @@ $(document).ready(function(){
      var titulo= $('#etitulo').val();
      $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
      .done(function(data){
-       console.log('Tutor modificado correctmente');
+       //console.log('Tutor modificado correctmente');
        alert('Tutor editado con éxito!');
        infoTutor();
        listaTutor();
@@ -274,7 +304,7 @@ $(document).ready(function(){
       .fail(function(){
         alert('Error en edición, verifique datos de entrada');
 
-        console.log('Error');
+        //console.log('Error');
       })
     });
 });
@@ -292,7 +322,7 @@ $(document).ready(function(){
      var titulo= $('#eetitulo').val();
      $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
      .done(function(data){
-       console.log('Tutor modificado correctmente');
+       //console.log('Tutor modificado correctmente');
        alert('Tutor editado con éxito!');
        infoTutor();
        listaTutor();

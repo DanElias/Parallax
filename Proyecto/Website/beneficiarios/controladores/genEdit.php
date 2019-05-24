@@ -50,7 +50,7 @@
       <div class="input-field col s4">
           <i class="material-icons prefix">home</i>
           <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" value="'.$row['numero_calle'].'" required>
-          <label for="numero_domicilio">Número de casa/dpto</label>
+          <label for="numero_domicilio">Número de casa/departamento</label>
         </div>
       <div class="input-field col s4">
           <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" value="'.$row['calle'].'" required>
@@ -388,18 +388,260 @@
 
   </div>
   <br>
+  <!-- Check -->
+  <div class="row">
+      <div class="col s3 m3 center">
+          <!-- Modal Trigger -->
+          <p>Agregar Tutor</p>
+          <a class="center waves-effect waves-light btn-floating modal-trigger blue darken-2 hoverable tooltipped"
+             data-position="bottom" data-tooltip="Aquí puedes agregar un tutor" href="#_form_tutor"><i
+                  class="material-icons right">add</i></a>
+      </div>
 
-  <div class="my_modal_buttons">
+      <div class="col s9 m9 center">
+          <div class="table-wrapper responsive-table new_data_table">
+              <table class="stripped highlight responsive-table data_table fixed_header">
+                  <thead>
+                  <tr class="my_table_headers">
+                      <th>Selección</th>
+                      <th>&nbsp;&nbsp;ID&nbsp;&nbsp;</th>
+                      <th>Parentesco</th>
+                      <th>Nombre Tutor</th>
+                      <th>Más información</th>
+                      <!--th>Editar</th>
+                      <th>Eliminar</th-->
+                  </tr>
+                  </thead>
+
+                  <tbody id="etablaExternaTutor">';
+                  $res = benTutor($id);
+                  $data = mysqli_fetch_assoc($res);
+                  if(mysqli_num_rows($res) > 1) {
+                    echo '
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox" class="filled-in center-align" id="ebenTut1" checked disabled/>
+                          <span></span>
+                        </label>
+                      </td>
+                      <td>
+                        <p id="eidtutor1">&nbsp;&nbsp;'.$data['id'].'&nbsp;&nbsp;</p>
+                      </td>
+                      <td>
+                        <select id="eparentesco1" name="parentesco" required>';
+                    if($data['rel'] == 'Padre'){
+                      echo '<option value="" disabled ></option>
+                            <option value="Padre" selected>Padre</option>
+                            <option value="Madre">Madre</option>
+                            <option value="Tutor">Tutor</option>';
+                    } else if($data['rel'] == 'Madre'){
+                      echo '<option value="" disabled ></option>
+                            <option value="Padre" >Padre</option>
+                            <option value="Madre" selected>Madre</option>
+                            <option value="Tutor">Tutor</option>';
+                    } else if($data['rel'] == 'Tutor'){
+                      echo '<option value="" disabled ></option>
+                            <option value="Padre" selected>Padre</option>
+                            <option value="Madre">Madre</option>
+                            <option value="Tutor" selected>Tutor</option>';
+                    }
+                    echo '    </select>
+                      </td>
+                      <td>
+                        <select id="etutor1" name="tutor1" required>';
+                    $result2 = getNombreTutor();
+                        echo '<option value="" disabled></option>';
+                        while($row2 = mysqli_fetch_assoc($result2)){
+                          if($row2['id_tutor'] == $data['id']){
+                            echo '
+                              <option value="'.$row2['id_tutor'].'" selected>'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+                          } else{
+                            echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+                          }
+                        }
+                    echo '    </select>
+                      </td>
+                      <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo1">Más información</a></td>
+                      <!--td>
+                          <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
+                             href="#_form_editar_tutor" id="ebotonEditarTutor1" onmouseover="llenarEditTutor('.$data['id'].')"><i class="material-icons">edit</i></a>
+                      </td>
+                      <td>
+                          <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
+                             href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" onmouseover="genBorrarTut('.$data['id'].')"><i class="material-icons">delete</i></a>
+                      </td-->
+                    </tr>
+                    <tr>
+                      <td><label>
+                        <input type="checkbox" class="filled-in center-align" id="ebenTut2" checked />
+                        <span></span>
+                      </label></td>
+                      <td>
+                        <p id="eidtutor2">&nbsp;&nbsp;'.$data['id'].'&nbsp;&nbsp;</p>
+                      </td>
+                      <td>
+                        <select id="eparentesco2" name="parentesco" >';
+                        $data = mysqli_fetch_assoc($res);
+                        if($data['rel'] == 'Padre'){
+                          echo '<option value="" disabled ></option>
+                                <option value="Padre" selected>Padre</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Tutor">Tutor</option>';
+                        } else if($data['rel'] == 'Madre'){
+                          echo '<option value="" disabled ></option>
+                                <option value="Padre" >Padre</option>
+                                <option value="Madre" selected>Madre</option>
+                                <option value="Tutor">Tutor</option>';
+                        } else if($data['rel'] == 'Tutor'){
+                          echo '<option value="" disabled ></option>
+                                <option value="Padre" selected>Padre</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Tutor" selected>Tutor</option>';
+                        }
+                        echo '    </select>
+                          </td>
+                          <td>
+                            <select id="etutor2" name="tutor2" required>';
+                        $result2 = getNombreTutor();
+                            echo '<option value="" disabled></option>';
+                            while($row2 = mysqli_fetch_assoc($result2)){
+                              if($row2['id_tutor'] == $data['id']){
+                                echo '
+                                  <option value="'.$row2['id_tutor'].'" selected>'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+                              } else{
+                                echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+                              }
+                            }
+                      echo '  </select>
+                      </td>
+                      <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo2">Más información</a></td>
+                      <!--td>
+                          <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
+                             href="#_form_editar_tutor_2" id="ebotonEditarTutor2" onmouseover="llenarEditTutor2('.$data['id'].')"><i class="material-icons">edit</i></a>
+                      </td>
+                      <td>
+                          <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
+                             href="#_form_eliminar_tutor_2" id="ebotonBorrarTutor2" onmouseover="genBorrarTut2('.$data['id'].')"><i class="material-icons">delete</i></a>
+                      </td-->
+                    </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>';
+        } else {
+          echo '
+          <tr>
+            <td>
+              <label>
+                <input type="checkbox" class="filled-in center-align" id="ebenTut1" checked disabled/>
+                <span></span>
+              </label>
+            </td>
+            <td>
+              <p id="eidtutor1">&nbsp;&nbsp;'.$data['id'].'&nbsp;&nbsp;</p>
+            </td>
+            <td>
+              <select id="eparentesco1" name="parentesco" required>';
+          if($data['rel'] == 'Padre'){
+            echo '<option value="" disabled ></option>
+                  <option value="Padre" selected>Padre</option>
+                  <option value="Madre">Madre</option>
+                  <option value="Tutor">Tutor</option>';
+          } else if($data['rel'] == 'Madre'){
+            echo '<option value="" disabled ></option>
+                  <option value="Padre" >Padre</option>
+                  <option value="Madre" selected>Madre</option>
+                  <option value="Tutor">Tutor</option>';
+          } else if($data['rel'] == 'Tutor'){
+            echo '<option value="" disabled ></option>
+                  <option value="Padre" selected>Padre</option>
+                  <option value="Madre">Madre</option>
+                  <option value="Tutor" selected>Tutor</option>';
+          }
+          echo '    </select>
+            </td>
+            <td>
+              <select id="etutor1" name="tutor1" required>';
+          $result2 = getNombreTutor();
+              echo '<option value="" disabled></option>';
+              while($row2 = mysqli_fetch_assoc($result2)){
+                if($row2['id_tutor'] == $data['id']){
+                  echo '
+                    <option value="'.$row2['id_tutor'].'" selected>'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+                } else{
+                  echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+                }
+              }
+          echo '    </select>
+            </td>
+            <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo1">Más información</a></td>
+            <!--td>
+                <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
+                   href="#_form_editar_tutor" id="ebotonEditarTutor1" onmouseover="llenarEditTutor('.$data['id'].')"><i class="material-icons">edit</i></a>
+            </td>
+            <td>
+                <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
+                   href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" onmouseover="genBorrarTut('.$data['id'].')"><i class="material-icons">delete</i></a>
+            </td-->
+          </tr>
+        <tr>
+          <td><label>
+            <input type="checkbox" class="filled-in center-align" id="ebenTut2" />
+            <span></span>
+          </label></td>
+          <td>
+            <p id="eidtutor2"></p>
+          </td>
+          <td>
+            <select id="eparentesco2" name="parentesco" >
+              <option value="" disabled selected></option>
+              <option value="Padre">Padre</option>
+              <option value="Madre">Madre</option>
+              <option value="Tutor">Tutor</option>
+            </select>
+          </td>
+          <td>
+            <select id="etutor2" name="tutor2" >';
+            $result2 = getNombreTutor();
+                echo '<option value="" disabled selected></option>';
+                while($row2 = mysqli_fetch_assoc($result2)){
+                  echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
+
+                }
+
+          echo '  </select>
+          </td>
+          <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="einfo2">Más información</a></td>
+          <!--td>
+              <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
+                 href="#_form_editar_tutor_2" id="ebotonEditarTutor2"><i class="material-icons">edit</i></a>
+          </td>
+          <td>
+              <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
+                 href="#_form_eliminar_tutor_2" id="ebotonBorrarTutor2"><i class="material-icons">delete</i></a>
+          </td-->
+        </tr>
+      </tbody>
+      </table>
+      </div>
+
+      </div>
+      </div>';
+    }
+    echo' <div class="my_modal_buttons">
       <div class="row">
-          <div class="col s6">
-              <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
-                  <i class="material-icons right">check_circle_outline</i>
-              </button>
+          <div class="col s3">
+            <!--button class="btn waves-effect waves-light red modal-close">Cancelar
+                <i class="material-icons right">highlight_off</i>
+            </button-->
           </div>
           <div class="col s6">
-              <button class="btn waves-effect waves-light red modal-close">Cancelar
-                  <i class="material-icons right">highlight_off</i>
-              </button>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                <i class="material-icons right">check_circle_outline</i>
+            </button>
+
           </div>
       </div>
   </div>
