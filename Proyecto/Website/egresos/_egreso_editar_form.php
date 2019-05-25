@@ -12,6 +12,7 @@
 
   if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) {
+        $_SESSION['folio_anterior'] = $row['folio_factura'];
           $edit_form = 
 
                   '<div id="_form_editar_egreso" class="modal modal-fixed-footer my_modal  my_big_modal">

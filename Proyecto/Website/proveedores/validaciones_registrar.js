@@ -92,9 +92,9 @@ function validar_nombre(){
     var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
     var size = cadena.length;
 
-    if(special==true){
+    if(special==true||result_numeros==true){
 
-        $("#error_nombre").html('*No caracteres especiales').css("color","red");
+        $("#error_nombre").html('*No caracteres especiales. No números').css("color","red");
         $("#error_nombre").css('padding-left','7%');
         $("#error_nombre").show();  
         flag_nombre = false;

@@ -9,19 +9,11 @@
     $_SESSION['editar_egreso_error'] = 0;
     
 
-    $folio_factura = $_POST['folio_factura2']; 
-    $concepto = $_POST['concepto2'];
-    $importe = $_POST['importe2']; 
-    $fecha = $_POST['fecha_egreso2'];
-    $cuenta_bancaria =  $_POST['cuenta_bancaria_egreso2']; 
-    $rfc = $_POST['rfc2'];  
-    $id_cuentacontable = $_POST['id_cuentacontable2'];  
-    $observaciones = $_POST['observaciones2'];
 
     
     if (isset($_POST["submit2"])){
 
-
+        $_SESSION['folio_anterior'] = htmlentities($_SESSION['folio_anterior']);
         $_POST["folio_factura2"] = htmlentities($_POST["folio_factura2"]);
         $_POST["concepto2"] = htmlentities($_POST["concepto2"]);
         $_POST["importe2"] = htmlentities($_POST["importe2"]);
@@ -109,7 +101,7 @@
 
           // echo "<br>NO SE MANDARA EL REGISTRO";
         }else{
-            $editar = editar_egreso($_POST["folio_factura2"], $_POST["concepto2"],$_POST["importe2"],$_POST["fecha_egreso2"], $_POST["observaciones2"], $_POST["cuenta_bancaria_egreso2"], $_POST["rfc2"], $_POST["id_cuentacontable2"]);
+            $editar = editar_egreso($_POST["folio_factura2"],$_SESSION['folio_anterior'],$_POST["concepto2"],$_POST["importe2"],$_POST["fecha_egreso2"], $_POST["observaciones2"], $_POST["cuenta_bancaria_egreso2"], $_POST["rfc2"], $_POST["id_cuentacontable2"]);
 
            if($editar){
                 //echo "Se mando el registro";

@@ -77,14 +77,13 @@ function validar_razon(){
 function validar_nombre(){
   
     var cadena = $('#nombre_contacto_editar').val();
-
     var result_numeros = /[0-9]/g.test(cadena);
     var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
     var size = cadena.length;
 
-    if(special==true){
+    if(special==true||result_numeros==true){
 
-        $("#error_nombre_editar").html('*No caracteres especiales').css("color","red");
+        $("#error_nombre_editar").html('*No caracteres especiales. No números').css("color","red");
         $("#error_nombre_editar").css('padding-left','7%');
         $("#error_nombre_editar").show();  
         flag_nombre = false;
@@ -114,10 +113,8 @@ function validar_telefono(){
 function validar_banco(){
   
     var cadena = $('#banco_editar').val();
-
-    var result_numeros = /[0-9]/g.test(cadena);
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
+    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena);
+    
 
     if(special==true){
 
@@ -147,10 +144,9 @@ function validar_cuenta(){
 }
 
 function validar_form(){
+  console.log('entro');
 	
-  	if(flag_rfc && flag_alias && flag_razon && flag_nombre && flag_telefono && flag_banco && flag_cuenta){
-
-  	}else{
+  	if(!(flag_rfc && flag_alias && flag_razon && flag_nombre && flag_telefono && flag_banco && flag_cuenta)){
         return false;
-    }
+  	}
 }

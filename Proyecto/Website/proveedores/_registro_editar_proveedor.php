@@ -1,31 +1,11 @@
 <?php
 
-//require_once("_util_usuarios.php");
-require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
-
-//Funcion que va a ir en queries
-
+require_once("../basesdedatos/_conection_queries_db.php"); 
 
 session_start();
-/*
-if(isset($_POST["submit"])){
-    echo "RFC2 DEL FORM EDITADO:". $_POST["rfc"];
-
-    echo "<br>RFC ANTERIOR : ". $_SESSION['rfc'];
-
-}*/
 
 $_SESSION['editar_proveedor_exito'] = 0;
 $_SESSION['editar_proveedor_error'] = 0;
-
-	echo $_SESSION["rfc_anterior"]."<br>"; 
- 	echo $_POST["rfc_editar"]."<br>"; 
-    echo $_POST["alias_editar"]."<br>";
-    echo $_POST["razon_social_editar"]."<br>";
-    echo $_POST["nombre_contacto_editar"]."<br>";
-    echo $_POST["telefono_proveedor_editar"]."<br>";
-    echo $_POST["banco_editar"]."<br>";
-    echo $_POST["cuenta_bancaria_editar"]."<br>";
 
 
 if (isset($_POST["submit"])) {
@@ -57,13 +37,11 @@ if (isset($_POST["submit"])) {
 
     ){
         $flag = true;
-        //echo $_POST["rfc_editar"]."<br>".$_POST["alias"]."<br>".$_POST["razon_social"]."<br>".$_POST["nombre_contacto"]."<br>".$_POST["telefono_proveedor"]."<br>".$_POST["banco"]."<br>".$_POST["cuenta_bancaria"];
-
-        
+      
 
         //RFC_editar DEBE SER EXACTAMENTE 13, SOLO NUMEROS Y LETRAS
 
-        if(strlen($_POST["rfc_editar"])<13 || !(preg_match('/[A-Za-z]/', $_POST["rfc_editar"]))|| !(preg_match('/[0-9]/', $_POST["rfc_editar"]))){
+        if(strlen($_POST["rfc_editar"])<10 || !(preg_match('/[A-Za-z]/', $_POST["rfc_editar"]))|| !(preg_match('/[0-9]/', $_POST["rfc_editar"]))){
             $flag = false;
             echo "<br>rfc_editar malo";
         }
@@ -110,7 +88,7 @@ if (isset($_POST["submit"])) {
         if($flag){
             
             if(editar_proveedor($_POST['rfc_editar'], $_SESSION['rfc_anterior'], $_POST["alias_editar"], $_POST["razon_social_editar"], $_POST["nombre_contacto_editar"], $_POST["telefono_proveedor_editar"], $_POST["cuenta_bancaria_editar"], $_POST["banco_editar"])){
-  	
+  				echo "todo bien";
   				/*
                 header("location:./_proveedor_vista.php");
 				$_SESSION['editar_proveedor_exito'] = 1;
@@ -123,7 +101,7 @@ if (isset($_POST["submit"])) {
                                     alert('¡El proveedor se ha actualizado de manera exitosa!');
                             </script>";*/
             }else{
-
+            	echo "algo mal ";
             	//$_SESSION['editar_proveedor_error'] = 1;
                 //echo "LA CONSULTA FALLO";
             }  
@@ -135,6 +113,6 @@ if (isset($_POST["submit"])) {
   
     }
     
-}  //header("location:./_proveedores_vista.php");
+}  
     
 ?>

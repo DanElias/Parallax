@@ -709,11 +709,11 @@ function obtener_egreso_folio($folio_factura){
     return $result;
 }
 
-function editar_egreso($folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
+function editar_egreso($folio_factura,$folio_anterior, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
   $conn = conectDb();
     $sql = "UPDATE egreso SET folio_factura=?, concepto=?, importe=?, fecha=?, observaciones=?, cuenta_bancaria=?, rfc=?, id_cuentacontable=? WHERE folio_factura=?";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable,$folio_factura);
+      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable,$folio_anterior);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
