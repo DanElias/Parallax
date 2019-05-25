@@ -8,12 +8,13 @@ var flag_drop_cuenta = true;
 
 function validar_folio(){
   var cadena = $('#folio_factura2').val();
-    console.log("La cadena es :" + cadena);
-    var result_numeros = /[0-9]+/g.test(cadena);
-    var result_letras = /[A-Za-z]+/g.test(cadena);
-    var special = /^[!@#\/<>$%\^\&*\)\(+=._-]+$/g.test(cadena);
+    //console.log("La cadena es :" + cadena);
+    var result_numeros = /[0-9]/g.test(cadena);
+    var result_letras = /[A-Za-z]/g.test(cadena);
+    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
+   
     //áéíóúüñÑÁÉÍÓÚü
-    if(result_numeros==false||result_letras==false){
+    if(result_numeros==false||result_letras==false||special==true){
       //console.log("debe tener letras y numeros");
       $("#error_folio2").html('*Sólo numeros y letras').css("color","red");
       $("#error_folio2").show();
@@ -30,8 +31,9 @@ function validar_concepto(){
   var cadena = $('#concepto2').val();
   //console.log(cadena);
 
-    var special = /[\`|\~|\-|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]+$/g.test(cadena)
+    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
     var size = cadena.length;
+
 
     //záéíóúüñÑÁÉÍÓÚü
     if(special==true){
@@ -47,8 +49,9 @@ function validar_concepto(){
 
 function validar_importe(){
   var cadena = $('#importe2').val();
-  if(isNaN(cadena)){
-    $("#error_importe2").html('*Sólo números').css("color","red");
+  var special = /[^0-9,]/g.test(cadena);
+  if(special){
+      $("#error_importe2").html('*Sólo números').css("color","red");
       $("#error_importe2").show(); 
       flag_importe = false;
   }else{
@@ -70,7 +73,7 @@ function validar_cuenta_bancaria(){
 }
 
 function validar_drop_proveedor(){
-    console.log("CAMBIA LOS CLICKS");
+    //console.log("CAMBIA LOS CLICKS");
     var proveedor = $('#selected_proveedor2').val();
     if(proveedor=='0'){
           $("#error_proveedor_egreso2").html('*Debes seleccionar un proveedor').css("color","red");
@@ -100,7 +103,7 @@ function validar_observaciones(){
     var cadena = $('#observaciones2').val();
   //console.log(cadena);
 
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]+$/g.test(cadena)
+    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
     var size = cadena.length;
 
     //záéíóúüñÑÁÉÍÓÚü
@@ -116,17 +119,22 @@ function validar_observaciones(){
 }
 
 
-
-
 function validar_form(){
-  console.log("funciona como deberia, entra a validar form");
+  
+  
+  console.log("folio: " + flag_folio);
+  console.log("concepto: " +flag_concepto);
+  console.log("importe: "+flag_importe);
+  console.log("cuenta: " +flag_cuenta);
+  console.log("observaciones: " + flag_observaciones );
+  console.log("drop: " + flag_drop_proveedor);
+  console.log("drop: " + flag_drop_cuenta);
+  console.log("FIN");
+
+
   var proveedor = $('#selected_proveedor2').val();
-  //console.log($('#selected_proveedor').find('option:selected').css('color', 'red')); 
   var cuenta = $('#selected_cuenta2').val();
-  console.log(proveedor);
-  console.log(cuenta);
-  //console.log(proveedor);
-  //console.log(cuenta);
+
   if(proveedor=='0'){
     $("#error_proveedor_egreso2").html('*Debes seleccionar un proveedor').css("color","red");
     $("#error_proveedor_egreso2").show();
@@ -146,13 +154,15 @@ function validar_form(){
   }
 
   
-  if(flag_folio == false&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){
-      //console.log("deberia funcionar e ir al registro ");
+  if(flag_folio&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){
       //return true;
+           
   }else{
-      //console.log("Una bandera es falsa ");
       return false;
-  }
+      //console.log("Una bandera es falsa ");
     
+  }
+  // return (flag_folio && flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta)
+      //console.log("deberia funcionar e ir al registro ");
 }
 

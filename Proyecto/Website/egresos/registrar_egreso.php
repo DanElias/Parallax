@@ -90,7 +90,7 @@
 
         if(!$flag){
 
-            echo "No se mandara";
+            //echo "No se mandara";
             $_SESSION['error_agregar_egreso']=1; 
             header("location:./_egreso_vista.php");
             if($GLOBALS['local_servidor'] == 1){

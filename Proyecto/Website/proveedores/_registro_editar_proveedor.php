@@ -17,6 +17,7 @@ if(isset($_POST["submit"])){
 
 $_SESSION['editar_proveedor_exito'] = 0;
 $_SESSION['editar_proveedor_error'] = 0;
+
 if (isset($_POST["submit"])) {
 
     $_POST["rfc2"] = htmlentities($_POST["rfc2"]);

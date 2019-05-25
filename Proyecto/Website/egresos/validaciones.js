@@ -19,12 +19,13 @@ var flag_drop_cuenta = true;
 
 function validar_folio(){
 	var cadena = $('#folio_factura').val();
-	console.log(cadena);
-    var result_numeros = /[0-9]+/g.test(cadena);
-    var result_letras = /[A-Za-z]+/g.test(cadena);
-    var special = /^[!@#\/<>$%\^\&*\)\(+=._-]+$/g.test(cadena);
+	//console.log(cadena);
+    var result_numeros = /[0-9]/g.test(cadena);
+    var result_letras = /[A-Za-z]/g.test(cadena);
+    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
+   
     //áéíóúüñÑÁÉÍÓÚü
-    if(result_numeros==false||result_letras==false){
+    if(result_numeros==false||result_letras==false||special==true){
     	//console.log("debe tener letras y numeros");
     	$("#error_folio").html('*Sólo numeros y letras').css("color","red");
     	$("#error_folio").show();
@@ -41,7 +42,7 @@ function validar_concepto(){
 	var cadena = $('#concepto').val();
 	//console.log(cadena);
 
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]+$/g.test(cadena)
+    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
     var size = cadena.length;
 
     //záéíóúüñÑÁÉÍÓÚü
@@ -58,14 +59,17 @@ function validar_concepto(){
 
 function validar_importe(){
 	var cadena = $('#importe').val();
-	if(isNaN(cadena)){
-		$("#error_importe").html('*Sólo números').css("color","red");
-    	$("#error_importe").show();	
-    	flag_importe = false;
-	}else{
-		$("#error_importe").hide();
-    	flag_importe = true;
-	}
+  var special = /[^0-9,]/g.test(cadena);
+  //console.log(special);
+  if(special){
+      $("#error_importe").html('*Sólo números').css("color","red");
+      $("#error_importe").show(); 
+      flag_importe = false;
+  }else{
+      $("#error_importe").hide();
+      flag_importe = true;
+  }
+
 }
 
 function validar_cuenta_bancaria(){
@@ -110,7 +114,7 @@ function validar_observaciones(){
   	var cadena = $('#observaciones').val();
 	//console.log(cadena);
 
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]+$/g.test(cadena)
+    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
     var size = cadena.length;
 
     //záéíóúüñÑÁÉÍÓÚü
@@ -156,6 +160,7 @@ function validar_form(){
 	if(flag_folio&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){
       console.log("deberia funcionar e ir al registro ");
       //return true;
+
 	}else{
       console.log("Una bandera es falsa ");
       return false;
