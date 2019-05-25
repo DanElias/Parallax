@@ -18,80 +18,90 @@ if(isset($_POST["submit"])){
 $_SESSION['editar_proveedor_exito'] = 0;
 $_SESSION['editar_proveedor_error'] = 0;
 
+	echo $_SESSION["rfc_anterior"]."<br>"; 
+ 	echo $_POST["rfc_editar"]."<br>"; 
+    echo $_POST["alias_editar"]."<br>";
+    echo $_POST["razon_social_editar"]."<br>";
+    echo $_POST["nombre_contacto_editar"]."<br>";
+    echo $_POST["telefono_proveedor_editar"]."<br>";
+    echo $_POST["banco_editar"]."<br>";
+    echo $_POST["cuenta_bancaria_editar"]."<br>";
+
+
 if (isset($_POST["submit"])) {
 
-    $_POST["rfc2"] = htmlentities($_POST["rfc2"]);
-    $_POST["alias2"] = htmlentities($_POST["alias2"]);
-    $_POST["razon_social2"] = htmlentities($_POST["razon_social2"]);
-    $_POST["nombre_contacto2"] = htmlentities($_POST["nombre_contacto2"]);
-    $_POST["telefono_proveedor2"] = htmlentities($_POST["telefono_proveedor2"]);
-    $_POST["banco2"] = htmlentities($_POST["banco2"]);
-    $_POST["cuenta_bancaria2"] = htmlentities($_POST["cuenta_bancaria2"]);
+    $_POST["rfc_editar"] = htmlentities($_POST["rfc_editar"]);
+    $_POST["alias_editar"] = htmlentities($_POST["alias_editar"]);
+    $_POST["razon_social_editar"] = htmlentities($_POST["razon_social_editar"]);
+    $_POST["nombre_contacto_editar"] = htmlentities($_POST["nombre_contacto_editar"]);
+    $_POST["telefono_proveedor_editar"] = htmlentities($_POST["telefono_proveedor_editar"]);
+    $_POST["banco_editar"] = htmlentities($_POST["banco_editar"]);
+    $_POST["cuenta_bancaria_editar"] = htmlentities($_POST["cuenta_bancaria_editar"]);
 
 
-    if (isset($_POST["rfc2"])
-        && isset($_POST["alias2"])
-        && isset($_POST["razon_social2"])
-        && isset($_POST["nombre_contacto2"])
-        && isset($_POST["telefono_proveedor2"])
-        && isset($_POST["banco2"])
-        && isset($_POST["cuenta_bancaria2"])
-        && $_POST["rfc2"] != ""
-        && $_POST["alias2"] != ""
-        && $_POST["razon_social2"] != ""
-        && $_POST["nombre_contacto2"] != ""
-        && $_POST["telefono_proveedor2"] != ""
-        && $_POST["banco2"] != ""
-        && $_POST["cuenta_bancaria2"] != ""
+    if (isset($_POST["rfc_editar"])
+        && isset($_POST["alias_editar"])
+        && isset($_POST["razon_social_editar"])
+        && isset($_POST["nombre_contacto_editar"])
+        && isset($_POST["telefono_proveedor_editar"])
+        && isset($_POST["banco_editar"])
+        && isset($_POST["cuenta_bancaria_editar"])
+        && $_POST["rfc_editar"] != ""
+        && $_POST["alias_editar"] != ""
+        && $_POST["razon_social_editar"] != ""
+        && $_POST["nombre_contacto_editar"] != ""
+        && $_POST["telefono_proveedor_editar"] != ""
+        && $_POST["banco_editar"] != ""
+        && $_POST["cuenta_bancaria_editar"] != ""
 
 
     ){
         $flag = true;
-        //echo $_POST["rfc2"]."<br>".$_POST["alias"]."<br>".$_POST["razon_social"]."<br>".$_POST["nombre_contacto"]."<br>".$_POST["telefono_proveedor"]."<br>".$_POST["banco"]."<br>".$_POST["cuenta_bancaria"];
+        //echo $_POST["rfc_editar"]."<br>".$_POST["alias"]."<br>".$_POST["razon_social"]."<br>".$_POST["nombre_contacto"]."<br>".$_POST["telefono_proveedor"]."<br>".$_POST["banco"]."<br>".$_POST["cuenta_bancaria"];
 
         
 
-        //RFC2 DEBE SER EXACTAMENTE 13, SOLO NUMEROS Y LETRAS
+        //RFC_editar DEBE SER EXACTAMENTE 13, SOLO NUMEROS Y LETRAS
 
-        if(strlen($_POST["rfc2"])<13 || !(preg_match('/[A-Za-z]/', $_POST["rfc2"]))|| !(preg_match('/[0-9]/', $_POST["rfc2"]))){
+        if(strlen($_POST["rfc_editar"])<13 || !(preg_match('/[A-Za-z]/', $_POST["rfc_editar"]))|| !(preg_match('/[0-9]/', $_POST["rfc_editar"]))){
             $flag = false;
-            echo "<br>rfc2 malo";
+            echo "<br>rfc_editar malo";
         }
 
         
         //ALIAS DEBE SER A LO MUCHO 20, LETRAS Y NUMEROS, SIN CARACTERES ESPECIALES
-        if(!(preg_match('/[A-Za-z0-9\s]/', $_POST["alias2"]))){
+        if(!(preg_match('/[A-Za-z0-9\s]/', $_POST["alias_editar"]))){
             echo "<br>ALIAS NO";
             $flag = false;
         }
 
 
         //RAZON A LO MUCHO 30, MISMO QUE ALIAS
-        if(!(preg_match('/[A-Za-z0-9]/', $_POST["razon_social2"]))){
+        if(!(preg_match('/[A-Za-z0-9]/', $_POST["razon_social_editar"]))){
             echo "<br>RAZON MAL";
             $flag = false;
         }
 
         //NOMBRE CONTACTO DE 40, LETRAS
-        if(!(preg_match('/[A-Za-z\s]/', $_POST["nombre_contacto2"]))){
+        if(!(preg_match('/[A-Za-z\s]/', $_POST["nombre_contacto_editar"]))){
             $flag = false;
             echo "<br>NOMBRE MAL";
         }
 
         //TELEFONO A LO MUCHO 20, NUMEROS Y ESPACIOS
-        if(!(preg_match('/[0-9\s]/', $_POST["telefono_proveedor2"]))){
+        if(!(preg_match('/[0-9\s]/', $_POST["telefono_proveedor_editar"]))){
             $flag = false;
             echo "<br>TELEFONO MAL";
         }
 
         //BANCO A LO MUCHO 40, SOLO NO CARACTERES ESPECIALES, MISMO QUE ALIAS
-        if(!(preg_match('/[A-Za-z0-9]/', $_POST["banco2"]))){
+        if(!(preg_match('/[A-Za-z0-9]/', $_POST["banco_editar"]))){
             echo "<br>BANCO NO";
             $flag = false;
         }
 
         //CUENTA DE 20, SOLO NUMEROS
-        if(strlen($_POST["cuenta_bancaria2"])<18){
+        if(strlen($_POST["cuenta_bancaria_editar"])<18){
             $flag = false;
             echo "<br>CUENTA MALA";          //echo "No tiene 18";         //mensaje de que no lo tiene
 
@@ -99,10 +109,11 @@ if (isset($_POST["submit"])) {
 
         if($flag){
             
-            if(editar_proveedor($_POST['rfc2'], $_SESSION['rfc2'], $_POST["alias2"], $_POST["razon_social2"], $_POST["nombre_contacto2"], $_POST["telefono_proveedor2"], $_POST["cuenta_bancaria2"], $_POST["banco2"])){
-  
+            if(editar_proveedor($_POST['rfc_editar'], $_SESSION['rfc_anterior'], $_POST["alias_editar"], $_POST["razon_social_editar"], $_POST["nombre_contacto_editar"], $_POST["telefono_proveedor_editar"], $_POST["cuenta_bancaria_editar"], $_POST["banco_editar"])){
+  	
+  				/*
                 header("location:./_proveedor_vista.php");
-		$_SESSION['editar_proveedor_exito'] = 1;
+				$_SESSION['editar_proveedor_exito'] = 1;
                 if($GLOBALS['local_servidor'] == 1){
                     echo '<script type="text/javascript">
                 window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
@@ -110,10 +121,11 @@ if (isset($_POST["submit"])) {
                 }
                 echo  "<script type='text/javascript'>
                                     alert('¡El proveedor se ha actualizado de manera exitosa!');
-                            </script>";
+                            </script>";*/
             }else{
-            $_SESSION['editar_proveedor_error'] = 1;
-                echo "LA CONSULTA FALLO";
+
+            	//$_SESSION['editar_proveedor_error'] = 1;
+                //echo "LA CONSULTA FALLO";
             }  
             //mostrar errores
         }else{

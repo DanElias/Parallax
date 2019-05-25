@@ -16,7 +16,7 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
     form_proveedor_html(); //REVISAR ESTE
     form_eliminar_proveedor_html();//form_eliminar_evento_html();
     modal_informacion_proveedor_html();//modal_informacion_evento_html();
-    footer_html();
+    
     
      if($_SESSION['proveedor_eliminado'] == 1){
         echo
@@ -49,15 +49,18 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
 
     }
     
-
+    /*
     if($_SESSION['error_registrar_proveedor'] == 1){
         echo "<script type='text/javascript'> alert('Hubo un error, el registro no fue exitoso !');</script>";
         $_SESSION['error_registrar_proveedor'] = 0;
 
-    }
+    }*/
     
     echo '<script type="text/javascript" src="ajax_proveedor.js"></script>
-        <script type="text/javascript" src="../js/validation_proveedor.js"></script>';
+          <script type="text/javascript" src="validaciones_registrar.js"></script>
+          <script type="text/javascript" src="validaciones_editar.js"></script>  ';
+
+    footer_html();
     
 } else {
     header("location:../login/_login_vista.php");
