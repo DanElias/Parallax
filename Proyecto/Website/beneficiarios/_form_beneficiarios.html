@@ -33,18 +33,18 @@
             <div class="row">
                 <div class="input-field col s3">
                     <i class="material-icons prefix">face</i>
-                    <input type="text" class="validate ubuntu-text" id="nombre" name="nombre" required>
-                    <label for="nombre">Nombre(s)</label>
+                    <input type="text" class="validate ubuntu-text" id="nombre" name="nombre" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                    <label for="nombre">Nombre(s)</label><span id="errorNombre" class="red-text"></span>
                 </div>
 
                 <div class="input-field col s2">
-                    <input type="text" class="validate ubuntu-text" id="apellido_paterno" name="apellido_paterno" required>
-                    <label for="apellido_paterno">Apellido Paterno</label>
+                    <input type="text" class="validate ubuntu-text" id="apellido_paterno" name="apellido_paterno" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                    <label for="apellido_paterno">Apellido Paterno</label><span id="errorApPat" class="red-text"></span>
                 </div>
 
                 <div class="input-field col s2">
-                    <input type="text" class="validate ubuntu-text" id="apellido_materno" name="apellido_materno" required>
-                    <label for="apellido_materno">Apellido Materno</label>
+                    <input type="text" class="validate ubuntu-text" id="apellido_materno" name="apellido_materno" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                    <label for="apellido_materno">Apellido Materno</label><span id="errorApMat" class="red-text"></span>
                 </div>
 
                 <div class="input-field col s3">
@@ -60,26 +60,26 @@
                         <option value="H">Hombre</option>
                         <option value="M">Mujer</option>
                     </select>
-                    <label for="sexo">Sexo</label>
+                    <label for="sexo">Sexo</label><span id="errorSexo" class="red-text"></span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">home</i>
-                    <input type="text" class="validate ubuntu-text" id="numero_domicilio" name="numero_domicilio" required>
-                    <label for="numero_domicilio">Número de casa/departamento</label>
+                    <input type="text" class="validate ubuntu-text" id="numero_domicilio" name="numero_domicilio" required maxlength="20" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <label for="numero_domicilio">Número de casa/departamento</label><span id="errorNum" class="red-text"></span>
                   </div>
                 <div class="input-field col s4">
                     <!--i class="material-icons prefix"></i-->
-                    <input type="text" class="validate ubuntu-text" id="calle" name="calle" required>
-                    <label for="calle">Calle</label>
+                    <input type="text" class="validate ubuntu-text" id="calle" name="calle" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <label for="calle">Calle</label><span id="errorCalle" class="red-text"></span>
                 </div>
 
                 <div class="input-field col s4">
 
-                    <input type="text" class="validate ubuntu-text" id="colonia" name="colonia" required>
-                    <label for="colonia">Colonia</label>
+                    <input type="text" class="validate ubuntu-text" id="colonia" name="colonia" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <label for="colonia">Colonia</label><span id="errorCol" class="red-text"></span>
                 </div>
             </div>
 
@@ -102,12 +102,12 @@
                         <option value="2do Secundaria">2do Secundaria</option>
                         <option value="3ro Secundaria">3ro Secundaria</option>
                     </select>
-                    <label for="grado">Grado Escolar</label>
+                    <label for="grado">Grado Escolar</label><span id="errorGrado" class="red-text"></span>
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix">domain</i>
-                    <input type="text" class="validate ubuntu-text" id="escuela" name="escuela" required>
-                    <label for="escuela">Nombre Escuela</label>
+                    <input type="text" class="validate ubuntu-text" id="escuela" name="escuela" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <label for="escuela">Nombre Escuela</label><span id="errorEsc" class="red-text"></span>
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix">business</i>
@@ -118,17 +118,17 @@
                         <option value="Primaria Alta">Primaria Alta</option>
                         <option value="Secundaria">Secundaria</option>
                     </select>
-                    <label for="grupo">Grupo (Mariana Sala)</label>
+                    <label for="grupo">Grupo (Mariana Sala)</label><span id="errorGrupo" class="red-text"></span>
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix" required>attach_money</i>
                     <input type="number" step="0.01" id="cuota" name="cuota" class="validate ubuntu-text">
-                    <label for="cuota">Cuota</label>
+                    <label for="cuota">Cuota</label><span id="errorCuota" class="red-text"></span>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">local_hospital</i>
-                    <input type="text" class="validate ubuntu-text" id="enfermedades" name="enfermedades" required>
-                    <label for="enfermedades">Enfermedades y Alergias</label>
+                    <input type="text" class="validate ubuntu-text" id="enfermedades" name="enfermedades" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <label for="enfermedades">Enfermedades y Alergias</label><span id="errorEnf" class="red-text"></span>
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix" required>device_hub</i>
@@ -140,7 +140,7 @@
                         <option value="Media Media">Media Media</option>
                         <option value="Media Alta">Media Alta</option>
                     </select>
-                    <label for="status">Estatus Socioeconómico</label>
+                    <label for="status">Estatus Socioeconómico</label><span id="errorSta" class="red-text"></span>
                 </div>
 
                 <div class="switch col s3 center vertical-align">
@@ -203,12 +203,12 @@
                                     <option value="Padre">Padre</option>
                                     <option value="Madre">Madre</option>
                                     <option value="Tutor">Tutor</option>
-                                  </select>
+                                  </select><span id="errorPar1" class="red-text"></span>
                                 </td>
 
                                 <td>
                                   <select id="tutor1" name="tutor1" required>
-                                  </select>
+                                  </select><span id="errorTut1" class="red-text"></span>
                                 </td>
                                 <td><a class="modal-trigger" href="#modal_informacion_tutor_1" id="info1">Más información</a></td>
                                 <td>
@@ -234,12 +234,12 @@
                                     <option value="Padre">Padre</option>
                                     <option value="Madre">Madre</option>
                                     <option value="Tutor">Tutor</option>
-                                  </select>
+                                  </select><span id="errorPar2" class="red-text"></span>
                                 </td>
 
                                 <td>
                                   <select id="tutor2" name="tutor2" >
-                                  </select>
+                                  </select><span id="errorTut2" class="red-text"></span>
                                 </td>
                                 <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="info2">Más información</a></td>
                                 <td>

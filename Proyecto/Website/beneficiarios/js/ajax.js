@@ -336,32 +336,6 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('#fecha_nacimiento').focusout(function(){
-    var today = new Date();
-    var fecha= $('#fecha_nacimiento').val();
-    var f = fecha.split("-");
-    if(f[0] > today.getFullYear()){
-      $('#errorFecha').html("Fecha no válida");
-    } else if(f[0] == today.getFullYear()){
-      if(f[1] > today.getMonth() + 1){
-        $('#errorFecha').html("Fecha no válida");
-      } else if(f[1] == today.getMonth() + 1){
-        if(f[1] > today.getDate()){
-          $('#errorFecha').html("Fecha no válida");
-        } else{
-          $('#errorFecha').html("");
-        }
-      } else{
-        $('#errorFecha').html("");
-      }
-    } else{
-      $('#errorFecha').html("");
-    }
-  });
-});
-
-
-$(document).ready(function(){
   $("#registrarBeneficiario").submit(function (ev){
     ev.preventDefault();
      var nombre= $('#nombre').val();

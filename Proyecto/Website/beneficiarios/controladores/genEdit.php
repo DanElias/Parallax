@@ -24,7 +24,7 @@
       <div class="input-field col s3">
           <i class="material-icons prefix">cake</i>
           <input type="date" class="ubuntu-text" name="efecha_nacimiento" id="efecha_nacimiento" value="'.$row['fecha_nacimiento'].'" required>
-          <label for="fecha_nacimiento">Fecha de nacimiento</label>
+          <label for="efecha_nacimiento">Fecha de nacimiento</label><span id="eerrorFecha" class="red-text"></span>
       </div>
 
       <div class="input-field col s2">
@@ -310,8 +310,8 @@
           <label for="grupo">Grupo (Mariana Sala)</label>
       </div>
       <div class="input-field col s3">
-          <i class="material-icons prefix" required>attach_money</i>
-          <input type="number" step="0.01" id="ecuota" name="cuota" class="validate ubuntu-text" value="'.$row['cuota'].'">
+          <i class="material-icons prefix">attach_money</i>
+          <input type="number" step="0.01" id="ecuota" name="cuota" class="validate ubuntu-text" value="'.$row['cuota'].'" required>
           <label for="cuota">Cuota</label>
       </div>
       <div class="input-field col s6">
@@ -320,7 +320,7 @@
           <label for="enfermedades">Enfermedades y Alergias</label>
       </div>
       <div class="input-field col s3">
-          <i class="material-icons prefix" required>device_hub</i>
+          <i class="material-icons prefix">device_hub</i>
           <select id="estatus" name="status" required class="ubuntu-text">
               <option value="" disabled ></option>';
 
@@ -408,8 +408,8 @@
                       <th>Parentesco</th>
                       <th>Nombre Tutor</th>
                       <th>Más información</th>
-                      <!--th>Editar</th>
-                      <th>Eliminar</th-->
+                      <th>Editar</th>
+                      <th>Eliminar</th>
                   </tr>
                   </thead>
 
@@ -463,14 +463,14 @@
                     echo '    </select>
                       </td>
                       <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo1">Más información</a></td>
-                      <!--td>
+                      <td>
                           <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-                             href="#_form_editar_tutor" id="ebotonEditarTutor1" onmouseover="llenarEditTutor('.$data['id'].')"><i class="material-icons">edit</i></a>
+                             href="#_form_editar_tutor" id="ebotonEditarTutor1" ><i class="material-icons">edit</i></a>
                       </td>
                       <td>
                           <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-                             href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" onmouseover="genBorrarTut('.$data['id'].')"><i class="material-icons">delete</i></a>
-                      </td-->
+                             href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" ><i class="material-icons">delete</i></a>
+                      </td>
                     </tr>
                     <tr>
                       <td><label>
@@ -502,7 +502,7 @@
                         echo '    </select>
                           </td>
                           <td>
-                            <select id="etutor2" name="tutor2" required>';
+                            <select id="etutor2" name="tutor2" >';
                         $result2 = getNombreTutor();
                             echo '<option value="" disabled></option>';
                             while($row2 = mysqli_fetch_assoc($result2)){
@@ -516,14 +516,14 @@
                       echo '  </select>
                       </td>
                       <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo2">Más información</a></td>
-                      <!--td>
+                      <td>
                           <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-                             href="#_form_editar_tutor_2" id="ebotonEditarTutor2" onmouseover="llenarEditTutor2('.$data['id'].')"><i class="material-icons">edit</i></a>
+                             href="#_form_editar_tutor_2" id="ebotonEditarTutor2" ><i class="material-icons">edit</i></a>
                       </td>
                       <td>
                           <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-                             href="#_form_eliminar_tutor_2" id="ebotonBorrarTutor2" onmouseover="genBorrarTut2('.$data['id'].')"><i class="material-icons">delete</i></a>
-                      </td-->
+                             href="#_form_eliminar_tutor_2" id="ebotonBorrarTutor2" ><i class="material-icons">delete</i></a>
+                      </td>
                     </tr>
                 </table>
               </div>
@@ -577,14 +577,14 @@
           echo '    </select>
             </td>
             <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo1">Más información</a></td>
-            <!--td>
+            <td>
                 <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
-                   href="#_form_editar_tutor" id="ebotonEditarTutor1" onmouseover="llenarEditTutor('.$data['id'].')"><i class="material-icons">edit</i></a>
+                   href="#_form_editar_tutor" id="ebotonEditarTutor1" ><i class="material-icons">edit</i></a>
             </td>
             <td>
                 <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
-                   href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" onmouseover="genBorrarTut('.$data['id'].')"><i class="material-icons">delete</i></a>
-            </td-->
+                   href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" ><i class="material-icons">delete</i></a>
+            </td>
           </tr>
         <tr>
           <td><label>
@@ -614,14 +614,14 @@
           echo '  </select>
           </td>
           <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="einfo2">Más información</a></td>
-          <!--td>
+          <td>
               <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
                  href="#_form_editar_tutor_2" id="ebotonEditarTutor2"><i class="material-icons">edit</i></a>
           </td>
           <td>
               <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
                  href="#_form_eliminar_tutor_2" id="ebotonBorrarTutor2"><i class="material-icons">delete</i></a>
-          </td-->
+          </td>
         </tr>
       </tbody>
       </table>
@@ -660,14 +660,14 @@
       echo '    </select>
         </td>
         <td><a class="modal-trigger" href="#modal_informacion_tutor_" id="einfo1">Más información</a></td>
-        <!--td>
+        <td>
             <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
                href="#_form_editar_tutor" id="ebotonEditarTutor1" ><i class="material-icons">edit</i></a>
         </td>
         <td>
             <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
                href="#_form_eliminar_tutor" id="ebotonBorrarTutor1" ><i class="material-icons">delete</i></a>
-        </td-->
+        </td>
       </tr>
     <tr>
       <td><label>
@@ -697,14 +697,14 @@
       echo '  </select>
       </td>
       <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="einfo2">Más información</a></td>
-      <!--td>
+      <td>
           <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable small"
              href="#_form_editar_tutor_2" id="ebotonEditarTutor2"><i class="material-icons">edit</i></a>
       </td>
       <td>
           <a class="btn btn-medium waves-effect waves-light modal-trigger red accent-3 hoverable small"
              href="#_form_eliminar_tutor_2" id="ebotonBorrarTutor2"><i class="material-icons">delete</i></a>
-      </td-->
+      </td>
     </tr>
   </tbody>
   </table>
