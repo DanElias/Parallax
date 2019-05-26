@@ -38,7 +38,8 @@ function conectDb()
       }
       die();
     }
-
+    //mysqli_query("SET NAMES 'utf8'");
+    $con->set_charset("utf8");
     return $con;
 
 }
@@ -1248,6 +1249,19 @@ function obtenerCuentas(){
     $sql = "SELECT t.nombre as name, t.apellido as lastname, bt.parentesco as rel, t.id_tutor as id FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND b.id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$idben);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
+  function correctID_Tut($id){
+    $conn = conectDb();
+    $sql = "SELECT nombre, apellido FROM tutor WHERE id_tutor=?";
+    if($stmt = $conn->prepare($sql) ){
+      $stmt->bind_param('i',$id);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
