@@ -432,8 +432,8 @@ $(document).ready(function(){
        $.post('controladores/registrarBeneficiario.php', { nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
        .done(function(data){
          alert(data);
-         if(data == 'Hay campos que presentan errores'){
-           //
+         if(data == 'Error, no se insertó el beneficiario, revise los campos'){
+           $('#mensajeError').html('Si no encuentra el error, refresque la página');
          } else {
            location.reload(true);
          }
@@ -454,7 +454,8 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#_form_editar_beneficiarios").submit(function (ev){
     ev.preventDefault();
-     var id = $('#eid_b').val();
+    if(validate_editar_ben()){
+      var id = $('#eid_b').val();
      var nombre= $('#enombre').val();
      var apellido_pat= $('#eapellido_paterno').val();
      var apellido_mat = $('#eapellido_materno').val();
@@ -475,24 +476,62 @@ $(document).ready(function(){
      } else {
        estado = 0;
      }
-     var par1 = $('#eparentesco1').val();
-     var tutor1 = $('#etutor1').val();
-     var par2 = $('#eparentesco2').val();
-     var tutor2 = $('#etutor2').val();
-     if(!$('#ebenTut2').prop("checked")){
-       par2 = "";
-       tutor2 = "";
+     var parentesco1 = $('#eparentesco1').val();
+     var tut1 = $('#etutor1').val();
+     if(parentesco1 === null){
+       $('#eerrorPar1').html('*No puede dejarse vacío');
+       return;
+     } else {
+       $('#eerrorPar1').html('');
      }
-     $.post('controladores/editBen.php', { id : id, nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : par1, tutor1 : tutor1, par2 : par2, tutor2 : tutor2 } )
-     .done(function(data){
-
-       alert('Beneficiario editado!');
-       location.reload(true);
-      })
-      .fail(function(){
-        alert('Error en edición, verifique datos de entrada');
-
-        console.log('Error');
-      })
-    });
+     if(tut1 === null){
+       $('#eerrorTut1').html('*No puede dejarse vacío');
+       return;
+     } else {
+       $('#eerrorTut1').html('');
+     }
+     var parentesco2 = $('#eparentesco2').val();
+     var tut2 = $('#etutor2').val();
+     if(!$('#ebenTut2').prop("checked")){
+       parentesco2 = "";
+       tut2 = "";
+       $('#eerrorPar2').html('');
+       $('#eerrorTut2').html('');
+     } else {
+       if(parentesco2 === null){
+         $('#eerrorPar2').html('*No puede dejarse vacío');
+         return;
+       } else {
+         $('#eerrorPar2').html('');
+       }
+       if(tut2 === null){
+         $('#eerrorTut2').html('*No puede dejarse vacío');
+         return;
+       } else {
+         $('#eerrorTut2').html('');
+       }
+     }
+     if(validate_editar_ben()){
+       $.post('controladores/editBen.php', { id : id, nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
+       .done(function(data){
+         alert(data);
+         if(data == 'Error, no se editó el beneficiario, revise los campos'){
+           $('#emensajeError').html('Si no encuentra el error, refresque la página');
+         } else {
+           location.reload(true);
+         }
+         //location.reload(true);
+        })
+        .fail(function(){
+          alert('Error en edición, verifique datos de entrada');
+        })
+      } else {
+        alert('Corrija los errores antes de mandar la forma');
+        $('#emensajeError').html('Si no encuentra el error, refresque la página');
+      }
+    } else {
+      alert('Corrija los errores antes de mandar la forma');
+      $('#emensajeError').html('Si no encuentra el error, refresque la página');
+    }
+  });
 });

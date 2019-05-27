@@ -53,7 +53,16 @@ function val_telefono($telefono){
 }
 
 function val_empresa($nombre){
-  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&;#\.0-9 ]/", $nombre) && strlen($nombre) <= 100){
+  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&;#\.0-9\/ ]/", $nombre)){
+    return true;
+  } else {
+    //echo 'Empresa incorrecta';
+    return false;
+  }
+}
+
+function val_enfermedades($nombre){
+  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&;#\.0-9, ]/", $nombre)){
     return true;
   } else {
     //echo 'Empresa incorrecta';
@@ -62,13 +71,14 @@ function val_empresa($nombre){
 }
 
 function val_ocupacion($nombre){
-  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&;#\. ]/", $nombre) && strlen($nombre) <= 50){
+  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&;#\.\/ ]/", $nombre) && strlen($nombre) <= 50){
     return true;
   } else {
     //echo 'Ocupacion incorrecta';
     return false;
   }
 }
+
 function val_grado($grado){
   switch ($grado){
     case 'Ninguno':
@@ -91,6 +101,136 @@ function val_grado($grado){
 
     default:
       //echo 'Grado incorrecto';
+      return false;
+  }
+}
+
+function val_sexo($sexo){
+  switch ($sexo){
+    case 'H':
+      return true;
+
+    case 'M':
+      return true;
+
+    default:
+      //echo 'Grado incorrecto';
+      return false;
+  }
+}
+
+function val_gradoben($grado){
+  switch ($grado){
+    case '1ro Preescolar':
+      return true;
+
+    case '2do Preescolar':
+      return true;
+
+    case '3ro Preescolar':
+      return true;
+
+    case '4to Preescolar':
+      return true;
+
+    case '1ro Primaria':
+      return true;
+
+    case '2do Primaria':
+      return true;
+
+    case '3ro Primaria':
+      return true;
+
+    case '4to Primaria':
+      return true;
+
+    case '5to Primaria':
+      return true;
+
+    case '6to Primaria':
+      return true;
+
+    case '1ro Secundaria':
+      return true;
+
+    case '2do Secundaria':
+      return true;
+
+    case '3ro Secundaria':
+      return true;
+
+    default:
+      return false;
+  }
+}
+
+function val_grupo($grado){
+  switch ($grado){
+    case 'Preescolar':
+      return true;
+
+    case 'Primaria Baja':
+      return true;
+
+    case 'Primaria Alta':
+      return true;
+
+    case 'Secundaria':
+      return true;
+
+    default:
+      return false;
+  }
+}
+
+function val_status($grado){
+  switch ($grado){
+    case 'Pobreza':
+      return true;
+
+    case 'Pobreza Extrema':
+      return true;
+
+    case 'Media Baja':
+      return true;
+
+    case 'Media Media':
+      return true;
+
+    case 'Media Alta':
+      return true;
+
+    default:
+      return false;
+  }
+}
+
+function val_parentesco($grado){
+  switch ($grado){
+    case 'Padre':
+      return true;
+
+    case 'Madre':
+      return true;
+
+    case 'Tutor':
+      return true;
+
+    default:
+      return false;
+  }
+}
+
+function val_estado($estado){
+  switch ($estado){
+    case 0:
+      return true;
+
+    case 1:
+      return true;
+
+    default:
       return false;
   }
 }

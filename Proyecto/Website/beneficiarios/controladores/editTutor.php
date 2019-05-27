@@ -15,9 +15,9 @@
        val_date($fecha) &&
        val_ocupacion($ocupacion) &&
        val_grado($grado) &&
-       val_empresa($empresa) &&
+       val_empresa($empresa) && strlen($empresa) <= 100 &&
        val_telefono($telefono) &&
-       val_empresa($titulo)){
+       val_empresa($titulo) && strlen($titulo) <= 100){
          if(editarTutor($id, $nombre, $apellido, $telefono, $fecha, $ocupacion, $empresa, $grado, $titulo)){
            echo 'Tutor editado con éxito!';
          } else{

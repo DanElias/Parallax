@@ -415,8 +415,9 @@
 
                   <tbody id="etablaExternaTutor" class="dybody">';
                   $res = benTutor($id);
-                  $data = mysqli_fetch_assoc($res);
+
                   if(mysqli_num_rows($res) > 1) {
+                    $data = mysqli_fetch_assoc($res);
                     echo '
                     <tr>
                       <td>
@@ -429,7 +430,7 @@
                         <p id="eidtutor1">&nbsp;&nbsp;'.$data['id'].'&nbsp;&nbsp;</p>
                       </td>
                       <td>
-                        <select id="eparentesco1" name="parentesco" required>';
+                        <select id="eparentesco1" name="parentesco">';
                     if($data['rel'] == 'Padre'){
                       echo '<option value="" disabled ></option>
                             <option value="Padre" selected>Padre</option>
@@ -449,7 +450,7 @@
                     echo '    </select><span id="eerrorPar1" class="red-text"></span>
                       </td>
                       <td>
-                        <select id="etutor1" name="tutor1" required>';
+                        <select id="etutor1" name="tutor1" >';
                     $result2 = getNombreTutor();
                         echo '<option value="" disabled></option>';
                         while($row2 = mysqli_fetch_assoc($result2)){
@@ -476,13 +477,15 @@
                       <td><label>
                         <input type="checkbox" class="filled-in center-align" id="ebenTut2" checked />
                         <span></span>
-                      </label></td>
+                      </label></td>';
+                      $data = mysqli_fetch_assoc($res);
+                      echo '
                       <td>
                         <p id="eidtutor2">&nbsp;&nbsp;'.$data['id'].'&nbsp;&nbsp;</p>
                       </td>
                       <td>
                         <select id="eparentesco2" name="parentesco" >';
-                        $data = mysqli_fetch_assoc($res);
+
                         if($data['rel'] == 'Padre'){
                           echo '<option value="" disabled ></option>
                                 <option value="Padre" selected>Padre</option>
@@ -531,6 +534,7 @@
             </div>
           </div>';
         } else if(mysqli_num_rows($res) == 1) {
+          $data = mysqli_fetch_assoc($res);
           echo '
           <tr>
             <td>
@@ -543,7 +547,7 @@
               <p id="eidtutor1">&nbsp;&nbsp;'.$data['id'].'&nbsp;&nbsp;</p>
             </td>
             <td>
-              <select id="eparentesco1" name="parentesco" required>';
+              <select id="eparentesco1" name="parentesco" >';
           if($data['rel'] == 'Padre'){
             echo '<option value="" disabled ></option>
                   <option value="Padre" selected>Padre</option>
@@ -563,7 +567,7 @@
           echo '    </select><span id="eerrorPar1" class="red-text"></span>
             </td>
             <td>
-              <select id="etutor1" name="tutor1" required>';
+              <select id="etutor1" name="tutor1" >';
           $result2 = getNombreTutor();
               echo '<option value="" disabled></option>';
               while($row2 = mysqli_fetch_assoc($result2)){
@@ -642,15 +646,15 @@
           <p id="eidtutor1">&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </td>
         <td>
-          <select id="eparentesco1" name="parentesco" required>
+          <select id="eparentesco1" name="parentesco" >
               <option value="" disabled selected></option>
               <option value="Padre" >Padre</option>
               <option value="Madre">Madre</option>
               <option value="Tutor">Tutor</option>';
-      echo '</select><span id="eerrorPar1 class="red-text"></span>
+      echo '</select><span id="eerrorPar1" class="red-text"></span>
         </td>
         <td>
-          <select id="etutor1" name="tutor1" required>';
+          <select id="etutor1" name="tutor1" >';
             $result2 = getNombreTutor();
           echo '<option value="" disabled selected></option>';
           while($row2 = mysqli_fetch_assoc($result2)){

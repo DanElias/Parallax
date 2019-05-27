@@ -784,6 +784,33 @@ function validate_registrar_ben(){
 }
 //Termina
 
+//Validar input completo editar beneficiarios
+function validate_editar_ben(){
+  if($('#eerrorNombre').html() == ''
+  && $('#eerrorApPat').html() == ''
+  && $('#eerrorApMat').html() == ''
+  && $('#eerrorFecha').html() == ''
+  && $('#eerrorSexo').html() == ''
+  && $('#eerrorNum').html() == ''
+  && $('#eerrorCalle').html() == ''
+  && $('#eerrorCol').html() == ''
+  && $('#eerrorGrado').html() == ''
+  && $('#eerrorEsc').html() == ''
+  && $('#eerrorGrupo').html() == ''
+  && $('#eerrorCuota').html() == ''
+  && $('#eerrorEnf').html() == ''
+  && $('#eerrorSta').html() == ''
+  && $('#eerrorPar1').html() == ''
+  && $('#eerrorTut1').html() == ''
+  && $('#eerrorPar2').html() == ''
+  && $('#eerrorTut2').html() == ''){
+    return true;
+  } else {
+    return false;
+  }
+}
+//Termina
+
 //Validar input completo registrar tutor
 function validate_registrar_tutor(){
   if($('#errorNombreTut').html() == ''
@@ -860,7 +887,7 @@ function validar_sexo(sexo){
 }
 
 function validar_calle(calle){
-  return !/[^A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#,\' ]/.test(calle);
+  return !/[^A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#,\'\/ ]/.test(calle);
 }
 
 function validar_grado(grado){

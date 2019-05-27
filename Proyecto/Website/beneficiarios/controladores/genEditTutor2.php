@@ -30,12 +30,12 @@
       </div>
       <div class="input-field col s4">
           <i class="material-icons prefix">work</i>
-          <input  type="text" class="validate ubuntu-text" id="eeocupacion" value="'.$row['ocupacion'].'" name="ocupacion" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ\. ]+" title="Sólo se permiten letras, espacio, acentuación y el símbolo .">
+          <input  type="text" class="validate ubuntu-text" id="eeocupacion" value="'.$row['ocupacion'].'" name="ocupacion" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ\./ ]+" title="Sólo se permiten letras, espacio, acentuación y el símbolo .">
           <label for="ocupacion">Ocupacion </label><span id="eeerrorOcuTut" class="red-text"></span>
       </div>
       <div class="input-field col s4">
           <i class="material-icons prefix">domain</i>
-          <input  type="text" class="validate ubuntu-text" id="eeempresa" value="'.$row['nombre_empresa'].'" name="empresa" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#\' ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <input  type="text" class="validate ubuntu-text" id="eeempresa" value="'.$row['nombre_empresa'].'" name="empresa" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#\'/ ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
           <label for="empresa">Nombre de Empresa</label><span id="eeerrorEmpTut" class="red-text"></span>
       </div>
   </div>
@@ -96,7 +96,7 @@
 
       <div class="input-field col s4">
           <i class="material-icons prefix">school</i>
-          <input  type="text" class="validate ubuntu-text" id="eetitulo" name="titulo" value="'.$row['titulo_obtenido'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <input  type="text" class="validate ubuntu-text" id="eetitulo" name="titulo" value="'.$row['titulo_obtenido'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#/ ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
           <label for="titulo">Titulo Obtenido</label><span id="eeerrorTitTut" class="red-text"></span>
       </div>
   </div>
