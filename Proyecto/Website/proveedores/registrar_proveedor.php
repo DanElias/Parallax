@@ -60,19 +60,29 @@ if (isset($_POST["submit"])) {
 
         
         //ALIAS DEBE SER A LO MUCHO 20, LETRAS Y NUMEROS, SIN CARACTERES ESPECIALES
-        if(preg_match('/[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.]/',utf8_encode($_POST['alias']))){
+        if(preg_match('/[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.]/u',$_POST['alias'])){
             echo "<br><h1>AlIAS MAL</h1>";
             $flag = false;
         }
 
 
         //RAZON A LO MUCHO 30, MISMO QUE ALIAS
-        if(preg_match('/[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.]/',utf8_encode($_POST['razon_social']))){
+        /*
+        if(preg_match('/[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\u]/',utf8_encode($_POST['razon_social']))){
             echo "<br>RAZON MAL";
+            echo "Esta es la razon social : ".$_POST['razon_social'];
+            $flag = false;
+        }*/
+
+        if(!(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['razon_social']))){
+            echo "<br>RAZON MAL<br>La expresion de Dan no funciona";
             echo "Esta es la razon social : ".$_POST['razon_social'];
             $flag = false;
         }
 
+        
+
+        /*
         //NOMBRE CONTACTO DE 40, LETRAS
         if(preg_match('/[^A-Za-záéíóúüñÑÁÉÍÓÚü.\s]+$/i',$_POST['nombre_contacto'])){
             $flag = false;
@@ -97,7 +107,7 @@ if (isset($_POST["submit"])) {
             echo "<br>CUENTA MALA";
 
             
-        }
+        }*/
 
         /*
         if(!$flag){
