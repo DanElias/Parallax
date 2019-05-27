@@ -28,45 +28,45 @@
                             <div class="row">
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix">person</i>
-                                    <input  type="text" class="validate ubuntu-text" id="nombre_tutor" name="nombre_tutor" required>
-                                    <label for="nombre_tutor">Nombre(s)</label>
+                                    <input  type="text" class="validate ubuntu-text" id="nombre_tutor" name="nombre_tutor" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                                    <label for="nombre_tutor">Nombre(s)</label><span id="errorNombreTut" class="red-text"></span>
                                 </div>
                                 <div class="input-field col s4">
                                     <!--i class="material-icons prefix">person</i-->
-                                    <input  type="text" class="validate ubuntu-text" id="apellido_tutor" name="apellido_tutor" required>
-                                    <label for="apellido_tutor">Apellido(s)</label>
+                                    <input  type="text" class="validate ubuntu-text" id="apellido_tutor" name="apellido_tutor" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                                    <label for="apellido_tutor">Apellido(s)</label><span id="errorApellidoTut" class="red-text"></span>
                                 </div>
                             <!--/div-->
 
                             <!--div class="row"-->
                                 <div class="input-field col s4">
                                   <i class="material-icons prefix">cake</i>
-                                  <input  type="date"  id="fecha_nacimiento_tutor"  name="fecha_nacimiento_tutor"  required class="ubuntu-text">
-                                  <label for="fecha_nacimiento_tutor">Fecha de nacimiento</label>
+                                  <input  type="date"  id="fecha_nacimiento_tutor" name="fecha_nacimiento_tutor"  required class="ubuntu-text">
+                                  <label for="fecha_nacimiento_tutor">Fecha de nacimiento</label><span id="errorFechaTut" class="red-text"></span>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix">phone</i>
-                                    <input  type="text" class="validate ubuntu-text" id="telefono" name="telefono" required>
-                                    <label for="telefono">Telefono</label>
+                                    <input type="text" class="validate ubuntu-text" id="telefono" name="telefono" required minlength="8" maxlength="20" pattern="[0-9+()\- ]+" title="Sólo se permiten números, espacios y los símbolos (, ), +, -">
+                                    <label for="telefono">Teléfono</label><span id="errorTelTut" class="red-text"></span>
                                 </div>
                             <!--/div-->
 
                             <!--div class="row"-->
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix">work</i>
-                                    <input  type="text" class="validate ubuntu-text" id="ocupacion" name="ocupacion" required>
-                                    <label for="ocupacion">Ocupacion </label>
+                                    <input  type="text" class="validate ubuntu-text" id="ocupacion" name="ocupacion" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ\.\/ ]+" title="Sólo se permiten letras, espacio, acentuación y el símbolo .">
+                                    <label for="ocupacion">Ocupación</label><span id="errorOcuTut" class="red-text"></span>
                                 </div>
                             <!--/div-->
 
                             <!--div class="row"-->
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix">domain</i>
-                                    <input  type="text" class="validate ubuntu-text" id="empresa" name="empresa" required>
-                                    <label for="empresa">Nombre de Empresa</label>
+                                    <input  type="text" class="validate ubuntu-text" id="empresa" name="empresa" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#'\/ ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                                    <label for="empresa">Nombre de Empresa</label><span id="errorEmpTut" class="red-text"></span>
                                 </div>
                             </div>
 
@@ -88,7 +88,7 @@
                                            <option value="Licenciatura">Licenciatura</option>
                                            <option value="Posgrado">Posgrado</option>
                                        </select>
-                                       <label for="grado_estudios_tutor">Grado de Estudios</label>
+                                       <label for="grado_estudios_tutor">Grado de Estudios</label><span id="errorGraTut" class="red-text"></span>
                                </div>
 
                             <!--/div-->
@@ -96,8 +96,8 @@
                             <!--div class="row"-->
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix">school</i>
-                                    <input  type="text" class="validate ubuntu-text" id="titulo" name="titulo" required>
-                                    <label for="titulo">Titulo Obtenido</label>
+                                    <input  type="text" class="validate ubuntu-text" id="titulo" name="titulo" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#/ ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                                    <label for="titulo">Título Obtenido</label><span id="errorTitTut" class="red-text"></span>
                                 </div>
                             </div>
 
@@ -105,10 +105,10 @@
                             <!-- botones de guardar y eliminar del modal con el form de agregar beneficiarios-->
                             <div class="my_modal_buttons">
                                 <div class="row">
-                                    <div class="col s6">
-                                        <button class="btn waves-effect waves-light red modal-close">Cancelar
+                                    <div class="col s3">
+                                        <!--button class="btn waves-effect waves-light red modal-close">Cancelar
                                             <i class="material-icons right">highlight_off</i>
-                                        </button>
+                                        </button-->
                                     </div>
                                     <div class="col s6">
                                     <button class="btn waves-effect waves-light" type="submit" name="action">Guardar

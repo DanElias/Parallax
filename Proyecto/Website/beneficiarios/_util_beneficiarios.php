@@ -285,6 +285,10 @@ function modalesTutores($result){
             <div class="row">
 
                 <div class="col s12">
+                    <p class="mi_titulo s6">ID:</p>&nbsp;&nbsp;
+                    <p class="mi_parrafo s6">'.$row['id_tutor'].'</p>
+                </div>
+                <div class="col s12">
                     <p class="mi_titulo s6">Nombre:</p>&nbsp;&nbsp;
                     <p class="mi_parrafo s6">'.$row['nombre'].' '.$row['apellido'].'</p>
                 </div>
