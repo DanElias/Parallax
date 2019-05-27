@@ -10,6 +10,7 @@
       <div class="my_modal_buttons">
           <div class="row">
               <input type="hidden" value="'.$id.'" id="borrarTut_id">
+              <input type="hidden" value="'.$row['nombre'].' '.$row['apellido'].'" id="borrarTut_nombre">
               <h5>Tutor: '.$row['nombre'].' '.$row['apellido'].'</h5>
               <div class="col s3 m3">
                   <!--button class="modal-close btn waves-effect waves-light modal-close">Cancelar

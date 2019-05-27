@@ -7,18 +7,18 @@
   <div class="row">
       <div class="input-field col s3">
           <i class="material-icons prefix">face</i>
-          <input type="text" class="validate ubuntu-text" id="enombre" name="nombre" value="'.$row['nombre'].'" required>
-          <label for="nombre">Nombre(s)</label>
+          <input type="text" class="validate ubuntu-text" id="enombre" name="nombre" value="'.$row['nombre'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+          <label for="nombre">Nombre(s)</label><span id="eerrorNombre" class="red-text"></span>
       </div>
 
       <div class="input-field col s2">
-          <input type="text" class="validate ubuntu-text" id="eapellido_paterno" name="apellido_paterno" value="'.$row['apellido_paterno'].'" required>
-          <label for="apellido_paterno">Apellido Paterno</label>
+          <input type="text" class="validate ubuntu-text" id="eapellido_paterno" name="apellido_paterno" value="'.$row['apellido_paterno'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+          <label for="apellido_paterno">Apellido Paterno</label><span id="eerrorApPat" class="red-text"></span>
       </div>
 
       <div class="input-field col s2">
-          <input type="text" class="validate ubuntu-text" id="eapellido_materno" name="apellido_materno" value="'.$row['apellido_materno'].'" required>
-          <label for="apellido_materno">Apellido Materno</label>
+          <input type="text" class="validate ubuntu-text" id="eapellido_materno" name="apellido_materno" value="'.$row['apellido_materno'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+          <label for="apellido_materno">Apellido Materno</label><span id="eerrorApMat" class="red-text"></span>
       </div>
 
       <div class="input-field col s3">
@@ -42,25 +42,25 @@
 
               echo '
           </select>
-          <label for="sexo">Sexo</label>
+          <label for="sexo">Sexo</label><span id="eerrorSexo" class="red-text"></span>
       </div>
   </div>
 
   <div class="row">
       <div class="input-field col s4">
           <i class="material-icons prefix">home</i>
-          <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" value="'.$row['numero_calle'].'" required>
-          <label for="numero_domicilio">Número de casa/departamento</label>
+          <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" value="'.$row['numero_calle'].'" required maxlength="20" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <label for="numero_domicilio">Número de casa/departamento</label><span id="eerrorNum" class="red-text"></span>
         </div>
       <div class="input-field col s4">
-          <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" value="'.$row['calle'].'" required>
-          <label for="calle">Calle</label>
+          <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" value="'.$row['calle'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <label for="calle">Calle</label><span id="eerrorCalle" class="red-text"></span>
       </div>
 
       <div class="input-field col s4">
 
-          <input type="text" class="validate ubuntu-text" id="ecolonia" name="colonia" value="'.$row['colonia'].'" required>
-          <label for="colonia">Colonia</label>
+          <input type="text" class="validate ubuntu-text" id="ecolonia" name="colonia" value="'.$row['colonia'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <label for="colonia">Colonia</label><span id="eerrorCol" class="red-text"></span>
       </div>
   </div>
 
@@ -268,12 +268,12 @@
           }
  echo'
           </select>
-          <label for="grado">Grado Escolar</label>
+          <label for="grado">Grado Escolar</label><span id="eerrorGrado" class="red-text"></span>
       </div>
       <div class="input-field col s3">
           <i class="material-icons prefix">domain</i>
-          <input type="text" class="validate ubuntu-text" id="eescuela" name="escuela" value="'.$row['nombre_escuela'].'" required>
-          <label for="escuela">Nombre Escuela</label>
+          <input type="text" class="validate ubuntu-text" id="eescuela" name="escuela" value="'.$row['nombre_escuela'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <label for="escuela">Nombre Escuela</label><span id="eerrorEsc" class="red-text"></span>
       </div>
       <div class="input-field col s3">
           <i class="material-icons prefix">business</i>
@@ -307,17 +307,17 @@
           }
       echo '
           </select>
-          <label for="grupo">Grupo (Mariana Sala)</label>
+          <label for="grupo">Grupo (Mariana Sala)</label><span id="eerrorGrupo" class="red-text"></span>
       </div>
       <div class="input-field col s3">
           <i class="material-icons prefix">attach_money</i>
           <input type="number" step="0.01" id="ecuota" name="cuota" class="validate ubuntu-text" value="'.$row['cuota'].'" required>
-          <label for="cuota">Cuota</label>
+          <label for="cuota">Cuota</label><span id="eerrorCuota" class="red-text"></span>
       </div>
       <div class="input-field col s6">
           <i class="material-icons prefix">local_hospital</i>
-          <input type="text" class="validate ubuntu-text" id="eenfermedades" name="enfermedades" value="'.$row['enfermedades_alergias'].'" required>
-          <label for="enfermedades">Enfermedades y Alergias</label>
+          <input type="text" class="validate ubuntu-text" id="eenfermedades" name="enfermedades" value="'.$row['enfermedades_alergias'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#, ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <label for="enfermedades">Enfermedades y Alergias</label><span id="eerrorEnf" class="red-text"></span>
       </div>
       <div class="input-field col s3">
           <i class="material-icons prefix">device_hub</i>
@@ -363,7 +363,7 @@
           }
           echo '
           </select>
-          <label for="status">Estatus Socioeconómico</label>
+          <label for="status">Estatus Socioeconómico</label><span id="eerrorSta" class="red-text"></span>
       </div>
 
       <div class="switch col s3 center vertical-align">
@@ -446,7 +446,7 @@
                             <option value="Madre">Madre</option>
                             <option value="Tutor" selected>Tutor</option>';
                     }
-                    echo '    </select>
+                    echo '    </select><span id="eerrorPar1" class="red-text"></span>
                       </td>
                       <td>
                         <select id="etutor1" name="tutor1" required>';
@@ -460,7 +460,7 @@
                             echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
                           }
                         }
-                    echo '    </select>
+                    echo '    </select><span id="eerrorTut1" class="red-text"></span>
                       </td>
                       <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo1">Más información</a></td>
                       <td>
@@ -499,7 +499,7 @@
                                 <option value="Madre">Madre</option>
                                 <option value="Tutor" selected>Tutor</option>';
                         }
-                        echo '    </select>
+                        echo '    </select><span id="eerrorPar2" class="red-text"></span>
                           </td>
                           <td>
                             <select id="etutor2" name="tutor2" >';
@@ -513,7 +513,7 @@
                                 echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
                               }
                             }
-                      echo '  </select>
+                      echo '  </select><span id="eerrorTut2" class="red-text"></span>
                       </td>
                       <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo2">Más información</a></td>
                       <td>
@@ -560,7 +560,7 @@
                   <option value="Madre">Madre</option>
                   <option value="Tutor" selected>Tutor</option>';
           }
-          echo '    </select>
+          echo '    </select><span id="eerrorPar1" class="red-text"></span>
             </td>
             <td>
               <select id="etutor1" name="tutor1" required>';
@@ -574,7 +574,7 @@
                   echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
                 }
               }
-          echo '    </select>
+          echo '    </select><span id="eerrorTut1" class="red-text"></span>
             </td>
             <td><a class="modal-trigger" href="#modal_informacion_tutor_'.$data['id'].'" id="einfo1">Más información</a></td>
             <td>
@@ -600,7 +600,7 @@
               <option value="Padre">Padre</option>
               <option value="Madre">Madre</option>
               <option value="Tutor">Tutor</option>
-            </select>
+            </select><span id="eerrorPar2" class="red-text"></span>
           </td>
           <td>
             <select id="etutor2" name="tutor2" >';
@@ -611,7 +611,7 @@
 
                 }
 
-          echo '  </select>
+          echo '  </select><span id="eerrorTut2" class="red-text"></span>
           </td>
           <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="einfo2">Más información</a></td>
           <td>
@@ -647,7 +647,7 @@
               <option value="Padre" >Padre</option>
               <option value="Madre">Madre</option>
               <option value="Tutor">Tutor</option>';
-      echo '</select>
+      echo '</select><span id="eerrorPar1 class="red-text"></span>
         </td>
         <td>
           <select id="etutor1" name="tutor1" required>';
@@ -657,7 +657,7 @@
               echo '<option value="'.$row2['id_tutor'].'" >'.$row2['nombre'].' '.$row2['apellido'].'</option>';
             }
 
-      echo '    </select>
+      echo '    </select><span id="eerrorTut1" class="red-text"></span>
         </td>
         <td><a class="modal-trigger" href="#modal_informacion_tutor_" id="einfo1">Más información</a></td>
         <td>
@@ -683,7 +683,7 @@
           <option value="Padre">Padre</option>
           <option value="Madre">Madre</option>
           <option value="Tutor">Tutor</option>
-        </select>
+        </select><span id="eerrorPar2" class="red-text"></span>
       </td>
       <td>
         <select id="etutor2" name="tutor2" >';
@@ -694,7 +694,7 @@
 
             }
 
-      echo '  </select>
+      echo '  </select><span id="eerrorTut2" class="red-text"></span>
       </td>
       <td><a class="modal-trigger" href="#modal_informacion_tutor_2" id="einfo2">Más información</a></td>
       <td>

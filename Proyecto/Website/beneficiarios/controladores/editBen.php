@@ -18,7 +18,7 @@
   $alergias = htmlentities($_POST['alergias']);
   $cuota = htmlentities($_POST['cuota']);
   if(editarBeneficiario($id,$nombre,$apellido_paterno,$apellido_materno,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota)){
-
+    insertarBenTut
   } else{
 
   }

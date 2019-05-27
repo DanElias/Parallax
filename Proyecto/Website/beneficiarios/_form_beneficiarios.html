@@ -127,7 +127,7 @@
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">local_hospital</i>
-                    <input type="text" class="validate ubuntu-text" id="enfermedades" name="enfermedades" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <input type="text" class="validate ubuntu-text" id="enfermedades" name="enfermedades" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#, ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
                     <label for="enfermedades">Enfermedades y Alergias</label><span id="errorEnf" class="red-text"></span>
                 </div>
                 <div class="input-field col s3">
@@ -198,7 +198,7 @@
                                   <p id="idtutor1"></p>
                                 </td>
                                 <td>
-                                  <select id="parentesco1" name="parentesco" required>
+                                  <select id="parentesco1" name="parentesco">
                                     <option value="" disabled selected></option>
                                     <option value="Padre">Padre</option>
                                     <option value="Madre">Madre</option>
@@ -207,7 +207,7 @@
                                 </td>
 
                                 <td>
-                                  <select id="tutor1" name="tutor1" required>
+                                  <select id="tutor1" name="tutor1">
                                   </select><span id="errorTut1" class="red-text"></span>
                                 </td>
                                 <td><a class="modal-trigger" href="#modal_informacion_tutor_1" id="info1">Más información</a></td>

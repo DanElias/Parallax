@@ -39,7 +39,7 @@ function conectDb()
       die();
     }
     //mysqli_query("SET NAMES 'utf8'");
-    $con->set_charset("utf8");
+    //$con->set_charset("utf8");
     return $con;
 
 }
@@ -1270,6 +1270,19 @@ function obtenerCuentas(){
     return $result;
   }
 
+  function correctID_Ben($id){
+    $conn = conectDb();
+    $sql = "SELECT nombre, apellido_paterno, apellido_materno FROM beneficiario WHERE id_beneficiario=?";
+    if($stmt = $conn->prepare($sql) ){
+      $stmt->bind_param('i',$id);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $stmt->close();
+    }
+    closeDB($conn);
+    return $result;
+  }
+
   function getLastBen(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario FROM beneficiario ORDER BY id_beneficiario DESC LIMIT 1";
@@ -1300,6 +1313,7 @@ function obtenerCuentas(){
   }
 
   function editarBeneficiario($id,$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
+    deleteBenTut1($id);
     $conn = conectDb();
     $sql = "UPDATE beneficiario SET nombre=?, apellido_paterno=?, apellido_materno=?, estado=?, fecha_nacimiento=?, sexo=?, grado_escolar=?, grupo=?, numero_calle=?, calle=?, colonia=?, nivel_socioeconomico=?, nombre_escuela=?, enfermedades_alergias=?, cuota=? WHERE id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){

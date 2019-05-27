@@ -10,6 +10,7 @@ require_once('../../basesdedatos/_conection_queries_db.php');
       <div class="my_modal_buttons">
           <div class="row">
               <input type="hidden" value="'.$id.'" id="borrar_id">
+              <input type="hidden" value="'.$row['nombre'].' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'" id="borrar_nomben">
               <h5>Beneficiario: '.$row['nombre'].' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'</h5>
               <div class="col s3 m3">
                   <!--button class="modal-close btn waves-effect waves-light modal-close">Cancelar

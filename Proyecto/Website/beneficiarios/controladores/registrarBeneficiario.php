@@ -34,7 +34,7 @@
       insertarBenTut($row2['id_beneficiario'], $idtut2, $parentesco2);
     }
   } else{
-    echo '<script>alert("error")</script>';
+    echo 'Error en conexión con Base de Datos, inténtelo más tarde';
   }
 
 
