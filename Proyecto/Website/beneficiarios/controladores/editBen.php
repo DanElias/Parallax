@@ -26,7 +26,7 @@
     $parentesco2 = htmlentities($_POST['par2']);
     if(is_numeric($idtut1) && is_numeric($idtut2)){
       if($idtut1 == $idtut2){
-        echo 'Error, no se insertó el beneficiario, revise los campos';
+        echo 'Error, no se editó el beneficiario, revise los campos';
       } else{
         if(val_n($nombre)
           && val_n($apellido_materno)
