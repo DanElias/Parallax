@@ -15,7 +15,7 @@ if (mysqli_num_rows($result) > 0) {
         $_SESSION['rfc_anterior'] = $row['rfc'];
         $edit_form = '
                  <!-- Modal Structure -->
-                    <div id="_form_editar_proveedor" class="modal my_modal modal1  my_big_modal" name="modal1">
+                    <div id="_form_editar_proveedor" class="modal my_modal modal1  my_big_modal ubuntu-text" name="modal1">
                         <div class="row my_modal_header_row">
 
                             <div class="my_modal_header1">
@@ -40,7 +40,7 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="modal-content my_modal_content">
                             <p>Aquí puede editar un nuevo Proveedor</p>
 
-                            <form class="col s12" action="_registro_editar_proveedor.php" method="POST" id="proveedor_form2" onsubmit=" return validar_form();">
+                            <form class="col s12" action="_registro_editar_proveedor.php" method="post" enctype="multipart/form-data" onsubmit=" return validar_form();">
                                <div class="row">
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">face</i>
@@ -107,7 +107,7 @@ if (mysqli_num_rows($result) > 0) {
                                             </button>
                                         </div>
                                         <div class="col s6 center">
-                                            <button class="btn waves-effect waves-light red modal-close">Cancelar
+                                            <button class="btn waves-effect waves-light red modal-close" type="button">Cancelar
                                                 <i class="material-icons right">highlight_off</i>
                                             </button>
                                         </div>

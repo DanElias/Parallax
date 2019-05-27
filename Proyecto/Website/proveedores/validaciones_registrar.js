@@ -31,7 +31,17 @@ function validar_rfc(){
           var result_numeros = /[0-9]/g.test(cadena);
           var result_letras = /[A-Za-z]/g.test(cadena);
           var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-         
+          var una = /[^A-Za-z0-9]+/g.test(cadena);
+          if(una || result_numeros==false || result_letras==false){
+            //console.log("No es numero ni letra");
+            $("#error_rfc").html('*Sólo numeros y letras').css("color","red");
+              $("#error_rfc").show();
+              flag_rfc = false;
+          }else{
+              $("#error_rfc").hide();
+              flag_rfc = true;
+          }
+         /*
           if(result_numeros==false||result_letras==false||special==true){
 
               $("#error_rfc").html('*Sólo numeros y letras').css("color","red");
@@ -41,7 +51,7 @@ function validar_rfc(){
           }else{
               $("#error_rfc").hide();
               flag_rfc = true;
-          }
+          }*/
     }
  
 }

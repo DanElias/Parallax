@@ -42,52 +42,53 @@ if (isset($_POST["submit"])) {
 
         //RFC DEBE SER EXACTAMENTE 13, SOLO NUMEROS Y LETRAS
 
-        if(strlen($_POST["rfc"])<13 || !(preg_match('/[A-Za-z]/', $_POST["rfc"]))|| !(preg_match('/[0-9]/', $_POST["rfc"]))){
+        if(strlen($_POST["rfc"])<10 || (preg_match('/[^A-Za-z0-9]/', $_POST["rfc"])) || 
+            !(preg_match('/[A-Za-z]/', $_POST["rfc"])) || !(preg_match('/[0-9]/', $_POST["rfc"]))){
             $flag = false;
-            echo "<br>rfc malo";
+            echo "<br>RFC MALO";
         }
 
         
         //ALIAS DEBE SER A LO MUCHO 20, LETRAS Y NUMEROS, SIN CARACTERES ESPECIALES
-        if(!(preg_match('/[\d\w\sáéíóúüñÑÁÉÍÓÚü\s]/', $_POST["alias"]))){
+        if(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9.]+$/i',$_POST['alias'])){
             echo "<br>ALIAS NO";
             $flag = false;
         }
 
 
         //RAZON A LO MUCHO 30, MISMO QUE ALIAS
-        if(!(preg_match('/[A-Za-z0-9]/', $_POST["razon_social"]))){
+        if(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü0-9.]+$/i',$_POST['razon_social'])){
             echo "<br>RAZON MAL";
             $flag = false;
         }
 
         //NOMBRE CONTACTO DE 40, LETRAS
-        if(!(preg_match('/[A-Za-z\s]/', $_POST["nombre_contacto"]))){
+        if(preg_match('/^[a-záéíóúüñÑÁÉÍÓÚü.]+$/i',$_POST['razon_social'])){
             $flag = false;
             echo "<br>NOMBRE MAL";
         }
 
-        //TELEFONO A LO MUCHO 20, NUMEROS Y ESPACIOS
-        if(!(preg_match('/[0-9\s]/', $_POST["telefono_proveedor"]))){
+        //TELEFONO A LO MUCHO 20, NUMEROS, GUIONES Y ESPACIOS
+        if(preg_match('/[^0-9-\s]/', $_POST["telefono_proveedor"])){
             $flag = false;
             echo "<br>TELEFONO MAL";
         }
 
         //BANCO A LO MUCHO 40, SOLO NO CARACTERES ESPECIALES, MISMO QUE ALIAS
-        if(!(preg_match('/[A-Za-z0-9]/', $_POST["alias"]))){
+        if(!(preg_match('/^[A-Za-záéíóúüñÑÁÉÍÓÚü0-9 .\-]+$/i',$_POST['banco']))){
             echo "<br>BANCO NO";
             $flag = false;
         }
 
         //CUENTA DE 20, SOLO NUMEROS
-        if(strlen($_POST["cuenta_bancaria"])<18){
+        if(strlen($_POST["cuenta_bancaria"])<18|| !(is_numeric($_POST['input']))){
             $flag = false;
             echo "<br>CUENTA MALA";
-            //echo "No tiene 18";
-            //mensaje de que no lo tiene
 
+            
         }
 
+        /*
         if(!$flag){
         
 
@@ -112,7 +113,7 @@ if (isset($_POST["submit"])) {
              
             }
                   
-        }
+        }*/
     }
 }
 ?>

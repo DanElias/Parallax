@@ -108,8 +108,8 @@
                                             </button>
                                       </div>
                                       <div class="col s6">
-                                          <button class="btn waves-effect waves-light red modal-close">Cancelar
-                                              <i class="material-icons right">highlight_off</i>
+                                          <button class="btn waves-effect waves-light red modal-close" type="button">Cancelar
+                                                <i class="material-icons right">highlight_off</i>
                                           </button>
                                       </div>
                                   </div>

@@ -57,8 +57,7 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
     }*/
     
     echo '<script type="text/javascript" src="ajax_proveedor.js"></script>
-        <script type="text/javascript" src="validaciones_registrar.js"></script>
-          <script type="text/javascript" src="validaciones_editar.js"></script>
+       
                 ';
             //<script type="text/javascript" src="validaciones_registrar.js"></script>
           //<script type="text/javascript" src="validaciones_editar.js"></script>
