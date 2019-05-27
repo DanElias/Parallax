@@ -18,7 +18,7 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
     modal_informacion_proveedor_html();//modal_informacion_evento_html();
     
     
-     if($_SESSION['proveedor_eliminado'] == 1){
+    if($_SESSION['proveedor_eliminado'] == 1){
         echo
         "<script type='text/javascript'> alert('El proveedor se ha eliminado exitosamente');</script>";
         $_SESSION['proveedor_eliminado'] = 0;
@@ -26,19 +26,19 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
     }
     if($_SESSION['error_eliminar_proveedor'] == 1){
         echo
-        "<script type='text/javascript'> alert('El proveedor No se ha podido eliminar, asegurese de que no haya ningun egreso con este proveedor');</script>";
+        "<script type='text/javascript'> alert('El proveedor no se ha podido eliminar, asegurese de que no haya ningun egreso con este proveedor');</script>";
         $_SESSION['error_eliminar_proveedor'] = 0;
 
     }
     if($_SESSION['editar_proveedor_exito'] == 1){
         echo
-        "<script type='text/javascript'> alert('El proveedor se edito correctamente');</script>";
+        "<script type='text/javascript'> alert('El proveedor se editó correctamente!');</script>";
         $_SESSION['editar_proveedor_exito'] = 0;
 
     }
     if($_SESSION['editar_proveedor_error'] == 1){
         echo
-        "<script type='text/javascript'> alert('El proveedor no se pudo editar, asegures de que no haya ningun egreso con ese proveedor');</script>";
+        "<script type='text/javascript'> alert('El proveedor no se pudo editar, asegurese de que no haya ningun egreso con ese proveedor');</script>";
         $_SESSION['editar_proveedor_error'] = 0;
 
     }
@@ -49,12 +49,11 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
 
     }
     
-    /*
     if($_SESSION['error_registrar_proveedor'] == 1){
         echo "<script type='text/javascript'> alert('Hubo un error, el registro no fue exitoso !');</script>";
         $_SESSION['error_registrar_proveedor'] = 0;
 
-    }*/
+    }
     
     echo '<script type="text/javascript" src="ajax_proveedor.js"></script>
        
