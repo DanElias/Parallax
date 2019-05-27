@@ -1295,18 +1295,11 @@ function obtenerCuentas(){
     closeDB($conn);
   }
 
-<<<<<<< HEAD
-  function editarBeneficiario($id,$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota){
-=======
-  function editarBeneficiario($id,$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
+function editarBeneficiario($id,$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
     deleteBenTut1($id);
->>>>>>> hugo/validaciones
     $conn = conectDb();
     $sql = "UPDATE beneficiario SET nombre=?, apellido=?, estado=?, fecha_nacimiento=?, sexo=?, grado_escolar=?, grupo=?, domicilio=?, nivel_socioeconomico=?, nombre_escuela=?, enfermedades_alergias=?, cuota=? WHERE id_beneficiario=?";
     if($stmt = $conn->prepare($sql)){
-<<<<<<< HEAD
-      $stmt->bind_param('ssissssssssdi',$nombre,$apellido,$estado,$fecha,$sexo,$grado,$grupo,$domicilio,$nivel,$escuela,$alergias,$cuota,$id);
-=======
       $stmt->bind_param('sssissssssssssdi',$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota,$id);
       $stmt->execute();
       $result = $stmt->get_result();
@@ -1378,7 +1371,6 @@ function obtenerCuentas(){
     $sql = "DELETE FROM tutor WHERE id_tutor=?";
     if($stmt = $conn->prepare($sql) ){
       $stmt->bind_param('i',$id);
->>>>>>> hugo/validaciones
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
