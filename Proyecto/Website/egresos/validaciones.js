@@ -50,7 +50,7 @@ function validar_concepto(){
 
 function validar_importe(){
 	var cadena = $('#importe').val();
-  var special = /[^0-9.]/g.test(cadena);
+  var special = /[^0-9,.]/g.test(cadena);
   if(special){
       $("#error_importe").html('*Sólo números').css("color","red");
       $("#error_importe").show(); 
