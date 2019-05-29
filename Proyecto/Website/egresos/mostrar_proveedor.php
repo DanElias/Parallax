@@ -8,12 +8,10 @@
         //echo "<h1>SI ENTRO</h1>";
         while($row = mysqli_fetch_assoc($proveedores)){
         	$drop_proveedores.="<option value='".$row['rfc']."'>".$row['razon_social']."</option>" ;
-            //$drop_proveedores.='<option value=\"'.$row['rfc'].'\">'.$row['razon_social']."</option>";
-
-            //echo "hola: ".$row["id_tipo"];
+           
         }
     }
-   $drop_proveedores.="</select><span id='error_proveedor_egreso'></span>";
+   $drop_proveedores.="</select><label for='selected_proveedor' style='font-size:0.8em'>Proveedor</label><span id='error_proveedor_egreso'></span>";
    echo $drop_proveedores;
     
 ?>

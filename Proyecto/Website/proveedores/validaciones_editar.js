@@ -20,11 +20,11 @@ function validar_rfc(){
 
           var result_numeros = /[0-9]/g.test(cadena);
           var result_letras = /[A-Za-z]/g.test(cadena);
-          var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
+          var special = /[^A-Za-z0-9]+/g.test(cadena);
          
-          if(result_numeros==false||result_letras==false||special==true){
+          if(special || !result_numeros || !result_letras){
 
-              $("#error_rfc_editar").html('*Sólo numeros y letras').css("color","red");
+              $("#error_rfc_editar").html('*Debe tener numeros y letras.Otro caracter no está permitido').css("color","red");
               $("#error_rfc_editar").show();
               flag_rfc = false;
 
@@ -39,10 +39,9 @@ function validar_rfc(){
 
 function validar_alias(){
     var cadena = $('#alias_editar').val();
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
+    var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
 
-    if(special==true){
+    if(special){
         $("#error_alias_editar").html('*No caracteres especiales').css("color","red");
         $("#error_alias_editar").css('padding-left','10%');
         $("#error_alias_editar").show();  
@@ -57,10 +56,8 @@ function validar_alias(){
 
 function validar_razon(){
     var cadena = $('#razon_social_editar').val();
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
-
-    if(special==true){
+    var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
+    if(special){
 
         $("#error_razon_editar").html('*No caracteres especiales').css("color","red");
         $("#error_razon_editar").css('padding-left','10%');
@@ -77,11 +74,9 @@ function validar_razon(){
 function validar_nombre(){
   
     var cadena = $('#nombre_contacto_editar').val();
-    var result_numeros = /[0-9]/g.test(cadena);
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
+      var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z.\s]/g.test(cadena);
 
-    if(special==true||result_numeros==true){
+    if(special){
 
         $("#error_nombre_editar").html('*No caracteres especiales. No números').css("color","red");
         $("#error_nombre_editar").css('padding-left','7%');
@@ -101,7 +96,7 @@ function validar_telefono(){
     var special = /[^0-9-\s]/g.test(cadena);
     if(special){
         $("#error_telefono_editar").html('*Sólo números').css("color","red");
-       // $("#error_nombre").css('padding-left','10%');
+       
         $("#error_telefono_editar").show(); 
         flag_telefono = false;
     }else{
@@ -113,10 +108,10 @@ function validar_telefono(){
 function validar_banco(){
   
     var cadena = $('#banco_editar').val();
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena);
+    var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
     
 
-    if(special==true){
+    if(special){
 
         $("#error_banco_editar").html('*No caracteres especiales').css("color","red");
         $("#error_banco_editar").css('padding-left','5%');
@@ -144,7 +139,6 @@ function validar_cuenta(){
 }
 
 function validar_form(){
-  console.log('entro');
 	
   	if(!(flag_rfc && flag_alias && flag_razon && flag_nombre && flag_telefono && flag_banco && flag_cuenta)){
         return false;

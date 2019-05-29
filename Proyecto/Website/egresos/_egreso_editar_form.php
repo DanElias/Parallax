@@ -74,7 +74,7 @@
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">account_balance</i>
                                         <input  type="text" class="validate" id="cuenta_bancaria_egreso2" name="cuenta_bancaria_egreso2" required value="'.$row['cuenta_bancaria'].'" maxlength="20" onkeyup="validar_cuenta_bancaria()">
-                                        <label for="cuenta_bancaria_egreso2">Cuenta Bancaria</label>
+                                        <label for="cuenta_bancaria_egreso2">Cuenta/Tarjeta</label>
                                         <span id="error_cuenta_bancaria_egreso2"></span> 
                                   </div>
 
@@ -134,37 +134,13 @@
                             });
                     </script>";
   
-    //echo '<script type="text/javascript" src="../js/validation_proveedor.js"></script>';
-
-                    
-    //M.updateTextFields() sirve para que se actualizen los text fields y se mueven los labels de los campos que ya estan llenos.}
+   
     
-} else { // si no hay eventos registrados en la tabla
-    $_SESSION['error_proveedor']="No encontramos el evento especificado, inténtalo más tarde";
-   // mostrar_alerta_error_modal_editar();
+} else {
+    //$_SESSION['error_proveedor']="No encontramos el evento especificado, inténtalo más tarde";
+   
 }
 
-  /*
-  function mostrar_alerta_error_modal_editar()
-      header_html();
-      sidenav_html();
-      evento_html();
-      form_evento_html();
-      controller_tabla_eventos_php();
-      form_eliminar_evento_html();
-      alerta_error($_SESSION['error_evento']);
-      modal_informacion_evento_html();
-      echo
-      "<script type='text/javascript'>
-              jQuery(document).ready(function(){
-                    jQuery('#_form_alerta_error').modal();
-                    jQuery(document).ready(function(){
-                        jQuery('#_form_alerta_error').modal('open');
-                    });
-              });
-      </script>";
-      footer_html();
-      echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
-  }*/
+  
 
 ?>

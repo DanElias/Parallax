@@ -31,10 +31,10 @@ if (mysqli_num_rows($result) > 0) {
                         </a>
                     </td>';
         $query_table .= '<td>
-                            <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_eliminar_proveedor.php?id='.$row['rfc'].'">
-                                <i class="material-icons">delete</i>
-                            </a>
-                        </td>';
+                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_controller_eliminar_proveedor.php?id=' . $row['rfc'] . '">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </td>';
         $query_table .= "</tr>";
     }
 

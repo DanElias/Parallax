@@ -30,28 +30,17 @@ function validar_rfc(){
 
           var result_numeros = /[0-9]/g.test(cadena);
           var result_letras = /[A-Za-z]/g.test(cadena);
-          var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-          var una = /[^A-Za-z0-9]+/g.test(cadena);
-          if(una || result_numeros==false || result_letras==false){
-            //console.log("No es numero ni letra");
-            $("#error_rfc").html('*Sólo numeros y letras').css("color","red");
+          var special = /[^A-Za-z0-9]+/g.test(cadena);
+          if(special || !result_numeros || !result_letras){
+            
+              $("#error_rfc").html('*Debe tener numeros y letras').css("color","red");
               $("#error_rfc").show();
               flag_rfc = false;
           }else{
               $("#error_rfc").hide();
               flag_rfc = true;
           }
-         /*
-          if(result_numeros==false||result_letras==false||special==true){
-
-              $("#error_rfc").html('*Sólo numeros y letras').css("color","red");
-              $("#error_rfc").show();
-              flag_rfc = false;
-
-          }else{
-              $("#error_rfc").hide();
-              flag_rfc = true;
-          }*/
+       
     }
  
 }
@@ -59,10 +48,8 @@ function validar_rfc(){
 
 function validar_alias(){
     var cadena = $('#alias').val();
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
-
-    if(special==true){
+    var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
+    if(special){
         $("#error_alias").html('*No caracteres especiales').css("color","red");
         $("#error_alias").css('padding-left','10%');
         $("#error_alias").show();  
@@ -77,10 +64,10 @@ function validar_alias(){
 
 function validar_razon(){
     var cadena = $('#razon_social').val();
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
+    var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
+    
 
-    if(special==true){
+    if(special){
 
         $("#error_razon").html('*No caracteres especiales').css("color","red");
         $("#error_razon").css('padding-left','10%');
@@ -97,12 +84,9 @@ function validar_razon(){
 function validar_nombre(){
   
     var cadena = $('#nombre_contacto').val();
+   	var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z.\s]/g.test(cadena);
 
-    var result_numeros = /[0-9]/g.test(cadena);
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
-
-    if(special==true||result_numeros==true){
+    if(special){
 
         $("#error_nombre").html('*No caracteres especiales. No números').css("color","red");
         $("#error_nombre").css('padding-left','7%');
@@ -134,12 +118,9 @@ function validar_telefono(){
 function validar_banco(){
   
     var cadena = $('#banco').val();
+   	var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
 
-    var result_numeros = /[0-9]/g.test(cadena);
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/|-]/g.test(cadena)
-    var size = cadena.length;
-
-    if(special==true){
+    if(special){
 
         $("#error_banco").html('*No caracteres especiales').css("color","red");
         $("#error_banco").css('padding-left','5%');
@@ -168,9 +149,7 @@ function validar_cuenta(){
 
 function validar_form(){
 	
-  	if(flag_rfc && flag_alias && flag_razon && flag_nombre && flag_telefono && flag_banco && flag_cuenta){
-
-  	}else{
-        return false;
-    }
+  	if(!(flag_rfc && flag_alias && flag_razon && flag_nombre && flag_telefono && flag_banco && flag_cuenta)){
+  		return false;
+  	}
 }

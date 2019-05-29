@@ -34,7 +34,7 @@ modal_informacion_egreso_html();
                     <div class="row">
         
                         <div class="col s12 m6">
-                            <button class="modal-close btn waves-effect waves-light modal-close">Cancelar
+                            <button type="button" class="modal-close btn waves-effect waves-light modal-close">Cancelar
                                 <i class="material-icons right">highlight_off</i>
                             </button>
                         </div>

@@ -635,7 +635,6 @@ function eliminar_proveedor_id($rfc)
 {
 
     $conn = conectDb();
-
     $sql = "DELETE FROM proveedor WHERE rfc = ?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$rfc);
@@ -649,6 +648,23 @@ function eliminar_proveedor_id($rfc)
       closeDB($conn);
       return false;
     }
+    closeDB($conn);
+}
+
+function verificar_proveedor_en_egreso($rfc){
+    $conn = conectDb();
+    $sql = "SELECT folio_factura FROM egreso WHERE rfc = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('s',$rfc);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+    }else{
+        closeDB($conn);
+  
+    }
+    return $result;
     closeDB($conn);
 }
 

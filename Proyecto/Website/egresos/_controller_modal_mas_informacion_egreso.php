@@ -1,11 +1,7 @@
 <?php
 
 require_once("../basesdedatos/_conection_queries_db.php");
-//require_once("_util_eventos.php");
-//echo "LLEGO AL OTRO DOCUMENTO";
 
-//obtener razon con rfc
-//obtener nombre de la cuenta cuenta con id
 $rfc;
 $id_cuenta;
 $observaciones;
@@ -18,42 +14,54 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
         //output data of each row;
         while ($row = mysqli_fetch_assoc($result)) {
             $cards .= '
-                        <div class="modal-content my_modal_content">
+                        <div class="row" style="width: 80%;">
+                            <div class="col s12 m12">
+                                <div class="card horizontal" >
+                                    <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1em; text-align:left;">
+                                            <div class="col m12 s12">
+                                                <div>
+                                                    <i class="material-icons prefix">clear_all</i>
+                                                    <p class="mi_titulo s6">Folio Factura:</p>&nbsp;&nbsp;
+                                                    <p class="mi_parrafo s6">'. $row["folio_factura"] .'</p>
+                                                    <br><br>
+                                                </div>
+                                                <div>
+                                                    <i class="material-icons prefix">library_books</i>
+                                                    <p class="mi_titulo s6">Concepto:</p>&nbsp;&nbsp;
+                                                    <p class="mi_parrafo s6">'. $row["concepto"] .'</p>
+                                                    <br><br>
+                                                </div>
+                                                <div>
+                                                    <i class="material-icons prefix">attach_money</i>
+                                                    <p class="mi_titulo s6">Importe:</p>&nbsp;&nbsp;
+                                                    <p class="mi_parrafo s6">'. $row["importe"] .'</p>
+                                                    <br><br>
+                                                </div>
+                                                <div>
+                                                    <i class="material-icons prefix">calendar_today</i>
+                                                    <p class="mi_titulo s6">Fecha:</p>&nbsp;&nbsp;
+                                                    <p class="mi_parrafo s6">'. $row["fecha"] .'</p>
 
-                        <div class="row">
-                            <div class="col s4">
-                                <p class="mi_titulo s6">Folio de factura:</p>&nbsp;&nbsp;
-                                <p class="mi_parrafo s6">'. $row["folio_factura"] .'</p>
-                            </div>
+                                                    <br><br>
+                                                </div>
+                                                <div>
+                                                     <i class="material-icons prefix">account_balance</i>
+                                                    <p class="mi_titulo s6">Cuenta Bancaria:</p>&nbsp;&nbsp;
+                                                    <p class="mi_parrafo s6">'. $row["cuenta_bancaria"] .'</p>
+                                                    <br><br>
+                                                </div>
+                                             
 
-                            <div class="col s4">
-                                <p class="mi_titulo s6">Concepto:</p>&nbsp;&nbsp;
-                                <p class="mi_parrafo s6">'. $row["concepto"] .'</p>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col s4">
-                                <p class="mi_titulo s6">Fecha:</p>&nbsp;&nbsp;
-                                <p class="mi_parrafo s6">'. $row["fecha"] .'</p>
-                            </div>
 
-                            <div class="col s4">
-                                <p class="mi_titulo s6">Cuenta bancaria:</p>&nbsp;&nbsp;
-                                <p class="mi_parrafo s6">'. $row["cuenta_bancaria"] .'</p>
-                            </div>
-                        </div>
-                        <div class="row">';
+                      ';
 
                         //$cards.=                     .variable de razon con base a rfc y cuenta con su id.';
             $rfc = $row['rfc'];
             $id_cuenta = $row['id_cuentacontable'];
             $observaciones = $row['observaciones'];
             
-            /*
-            echo "RFC:".$rfc;
-            echo "<br>Cuenta: ".$id_cuenta."<br>";
-            echo $observaciones;*/
+          
         }
         
 
@@ -63,9 +71,11 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
         
         if (mysqli_num_rows($result_razon) > 0){
             while ($row = mysqli_fetch_assoc($result_razon)){
-                $cards.=  '<div class="col s4">
+                $cards.=    '<div>
+                                <i class="material-icons prefix">face</i>
                                 <p class="mi_titulo s6">Razon Social del proveedor:</p>&nbsp;&nbsp;
                                 <p class="mi_parrafo s6">'. $row["razon_social"] .'</p>
+                                <br><br>
                             </div>';
             }
         }
@@ -73,36 +83,36 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
         
         if (mysqli_num_rows($result_cuenta) > 0) {
             while ($row = mysqli_fetch_assoc($result_cuenta)) {
-                $cards.=  '<div class="col s4">
+                $cards.=    '<div>
+                                <i class="material-icons">receipt</i>
                                 <p class="mi_titulo s6">Cuenta contable:</p>&nbsp;&nbsp;
                                 <p class="mi_parrafo s6">'. $row["nombre"] .'</p>
-                            </div></div>';
+                                <br><br>
+                            </div>';
             }
         }
 
 
-        $cards.='<div class="col s4">
+        $cards.=            '<div>
+                                <i class="material-icons prefix">description</i>
                                 <p class="mi_titulo s6">Observaciones</p>&nbsp;&nbsp;
                                 <p class="mi_parrafo s6">'. $observaciones .'</p>
+                                <br><br>
                             </div>
 
-                        </div>
-
-                    </div>                
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>                
                     ';
     } else { // si no hay eventos registrados en la tabla
         $_SESSION['error_proveedor']="No encontramos el proveedor solcitado. Inténtalo más tarde.";
         //mostrar_alerta_error_modal_mas_informacion();
     }
 
-    //Aqui habría que separar la vista del controladores
-    
-    //header_html();
-    //sidenav_html();
-    //evento_html();
-    //form_evento_html();
-    //form_eliminar_evento_html();
-    //controller_tabla_eventos_php();
+   
     
     echo '
             <!-- Modal Structure -->
@@ -112,7 +122,7 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
             
                     <div class="my_modal_header1">
                         <div class="col s11 my_form_title">
-                            Informacion Egreso
+                            Informacion del Egreso
                         </div>
             
                         <div class="col s1">
@@ -149,30 +159,7 @@ if (isset($_POST['id']) && $_POST['id'] != "") {
     //footer_html();
 
 }
-/*
 
-function mostrar_alerta_error_modal_mas_informacion()
-{
-    header_html();
-    sidenav_html();
-    evento_html();
-    form_evento_html();
-    controller_tabla_eventos_php();
-    form_eliminar_evento_html();
-    alerta_error($_SESSION['error_proveedor']);
-    modal_informacion_evento_html();
-    echo
-    "<script type='text/javascript'>
-            $(document).ready(function(){
-                  $('#_form_alerta_error').modal();
-                  $(document).ready(function(){
-                      $('#_form_alerta_error').modal('open');
-                  });
-            });
-    </script>";
-    footer_html();
-     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
-}*/
 
 
 ?>
