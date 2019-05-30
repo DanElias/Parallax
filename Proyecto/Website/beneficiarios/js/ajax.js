@@ -372,6 +372,12 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#registrarBeneficiario").submit(function (ev){
     ev.preventDefault();
+    if(!$('#benTut2').prop("checked")){
+      parentesco2 = "";
+      tut2 = "";
+      $('#errorPar2').html('');
+      $('#errorTut2').html('');
+    }
     if(validate_registrar_ben()){
      var nombre= $('#nombre').val();
      var apellido_pat= $('#apellido_paterno').val();
@@ -454,6 +460,12 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#_form_editar_beneficiarios").submit(function (ev){
     ev.preventDefault();
+    if(!$('#ebenTut2').prop("checked")){
+      parentesco2 = "";
+      tut2 = "";
+      $('#eerrorPar2').html('');
+      $('#eerrorTut2').html('');
+    }
     if(validate_editar_ben()){
       var id = $('#eid_b').val();
      var nombre= $('#enombre').val();
