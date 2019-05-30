@@ -60,7 +60,7 @@
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">attach_money</i>
-                                      <input  type="text" class="validate" id="importe2" name="importe2" required value="'.$row['importe'].'" maxlength="10" onkeyup="validar_importe()">
+                                      <input  type="text" class="validate" id="importe2" name="importe2" required value="'.$row['importe'].'" maxlength="30" onkeyup="validar_importe()">
                                       <label for="importe2">Importe</label>
                                       <span id="error_importe2"></span> 
                                   </div>

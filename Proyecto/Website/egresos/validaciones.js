@@ -1,3 +1,5 @@
+
+/*
 document.getElementById("folio_factura").onkeyup =  validar_folio;
 document.getElementById("concepto").onkeyup =  validar_concepto;
 document.getElementById("importe").onkeyup =  validar_importe;
@@ -6,7 +8,7 @@ document.getElementById("drop_proveedor").onchange =  validar_drop_proveedor;
 document.getElementById("drop_cuenta").onchange =  validar_drop_cuenta;
 //LOS DROPS SE VALIDAN CUANDO LE DAS SUBMIT
 document.getElementById("observaciones").onkeyup =  validar_observaciones;
-document.getElementById("guardar_egreso").onclick =  validar_form;
+document.getElementById("guardar_egreso").onclick =  validar_form;*/
 
 
 var flag_folio = true;
@@ -17,8 +19,9 @@ var flag_observaciones = true;
 var flag_drop_proveedor = true;
 var flag_drop_cuenta = true;
 
-function validar_folio(){
-	  var cadena = $('#folio_factura').val(); 
+function validar_folioR(){
+	//console.log("entra");
+	var cadena = $('#folio_factura').val(); 
     var special = /[^0-9a-zA-Z]/g.test(cadena);
    
     if(special){
@@ -34,7 +37,7 @@ function validar_folio(){
     }	
 }
 
-function validar_concepto(){
+function validar_conceptoR(){
 	  var cadena = $('#concepto').val();
     var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
 
@@ -48,9 +51,9 @@ function validar_concepto(){
     }	
 }
 
-function validar_importe(){
+function validar_importeR(){
 	var cadena = $('#importe').val();
-  var special = /[^0-9,.]/g.test(cadena);
+  var special = /[^0-9.]/g.test(cadena);
   if(special){
       $("#error_importe").html('*Sólo números').css("color","red");
       $("#error_importe").show(); 
@@ -62,7 +65,7 @@ function validar_importe(){
 
 }
 
-function validar_cuenta_bancaria(){
+function validar_cuenta_bancariaR(){
 	var tamano = $("#cuenta_bancaria_egreso").val().length;
   		if(!(/^[\d]+$/i.test($('#cuenta_bancaria_egreso').val()))){
     			$("#error_cuenta_bancaria_egreso").html('*Sólo dígitos').css("color","red");
@@ -74,7 +77,7 @@ function validar_cuenta_bancaria(){
   		}
 }
 
-function validar_drop_proveedor(){
+function validar_drop_proveedorR(){
     var proveedor = $('#selected_proveedor').val();
     if(proveedor=='0'){
           $("#error_proveedor_egreso").html('*Debes seleccionar un proveedor').css("color","red");
@@ -99,7 +102,7 @@ function validar_drop_cuenta(){
     }
 }
 
-function validar_observaciones(){
+function validar_observacionesR(){
 	
   	var cadena = $('#observaciones').val();
     var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);	
@@ -116,7 +119,9 @@ function validar_observaciones(){
 
 
 
-function validar_form(){
+function validar_formE(){
+
+
 	var proveedor = $('#selected_proveedor').val();
 	var cuenta = $('#selected_cuenta').val();
 	
@@ -139,11 +144,9 @@ function validar_form(){
 	}
 
   
-	if(flag_folio&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){      
-
-	}else{
+	if(!(flag_folio && flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta)){      
       return false;
-  }
+	}
   	
 }
 

@@ -12806,6 +12806,7 @@ var $jscomp$this = this;
 
     Range.init($('input[type=range]'));
 })(cash, M.anime);
+let options = {};
 
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.parallax');

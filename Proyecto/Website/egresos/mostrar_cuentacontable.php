@@ -3,7 +3,7 @@
    
     $cuenta = obtenerCuentas();
 
-    $drop_cuenta ="<select required name='id_cuentacontable' id='selected_cuenta'><option value='0'>Selecciona la cuenta contable</option>";
+    $drop_cuenta ="<select required name='id_cuentacontable' id='selected_cuenta' onchange='validar_drop_cuenta()'><option value='0'>Selecciona la cuenta contable</option>";
     
     if(mysqli_num_rows($cuenta)>0){
         //echo "<h1>SI ENTRO</h1>";

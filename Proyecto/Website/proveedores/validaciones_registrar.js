@@ -1,3 +1,4 @@
+/*
 document.getElementById("rfc").onkeyup =  validar_rfc;
 document.getElementById("alias").onkeyup =  validar_alias;
 document.getElementById("razon_social").onkeyup =  validar_razon;
@@ -6,7 +7,7 @@ document.getElementById("telefono_proveedor").onkeyup =  validar_telefono;
 document.getElementById("banco").onkeyup =  validar_banco;
 document.getElementById("cuenta_bancaria").onkeyup =  validar_cuenta;
 document.getElementById("guardar_proveedor").onclick =  validar_form;
-
+*/
 
 var flag_rfc = true;
 var flag_alias = true;
@@ -16,7 +17,7 @@ var flag_telefono = true;
 var flag_banco = true;
 var flag_cuenta = true;
 
-function validar_rfc(){
+function validar_rfcR(){
     var tamano = $("#rfc").val().length;
 
     if(tamano<10){
@@ -46,7 +47,7 @@ function validar_rfc(){
 }
 
 
-function validar_alias(){
+function validar_aliasR(){
     var cadena = $('#alias').val();
     var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
     if(special){
@@ -62,7 +63,7 @@ function validar_alias(){
     } 
 }
 
-function validar_razon(){
+function validar_razonR(){
     var cadena = $('#razon_social').val();
     var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
     
@@ -81,7 +82,7 @@ function validar_razon(){
     } 
 }
 
-function validar_nombre(){
+function validar_nombreR(){
   
     var cadena = $('#nombre_contacto').val();
    	var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z.\s]/g.test(cadena);
@@ -101,7 +102,7 @@ function validar_nombre(){
 }
 
 
-function validar_telefono(){
+function validar_telefonoR(){
     var cadena = $('#telefono_proveedor').val();
     var special = /[^0-9-\s]/g.test(cadena);
     if(special){
@@ -115,7 +116,7 @@ function validar_telefono(){
     }
 }
 
-function validar_banco(){
+function validar_bancoR(){
   
     var cadena = $('#banco').val();
    	var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
@@ -134,7 +135,7 @@ function validar_banco(){
     } 
 }
 
-function validar_cuenta(){
+function validar_cuentaR(){
     var tamano = $("#cuenta_bancaria").val().length;
     if(tamano<18 || !(/^[\d]+$/i.test($('#cuenta_bancaria').val()))){
           $("#error_cuenta").html('*Deben ser exactamente 18 dígitos').css("color","red");
@@ -147,7 +148,7 @@ function validar_cuenta(){
     }
 }
 
-function validar_form(){
+function validar_formR(){
 	
   	if(!(flag_rfc && flag_alias && flag_razon && flag_nombre && flag_telefono && flag_banco && flag_cuenta)){
   		return false;
