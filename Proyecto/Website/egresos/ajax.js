@@ -16,7 +16,7 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('EN EL PRIMERO error');
+        //console.log('EN EL PRIMERO error');
     })
 
     $.ajax({
@@ -30,7 +30,7 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('EN EL PRIMERO TAMBIEN error');
+        //console.log('EN EL PRIMERO TAMBIEN error');
     })
 
     /************PARA EL FORM DE EDITAR ***/
@@ -41,15 +41,15 @@ $(document).ready(function(){
         data:{flag:flag}
     })
     .done(function(data){
-        //console.log("ENTRO ");
+        ////console.log("ENTRO ");
         $('#drop_proveedor2').html(data);
-        //console.log(data);
+        ////console.log(data);
         M.AutoInit();
 
        
     })
     .fail(function(){
-        console.log('error');
+        //console.log('error');
     })
 
 
@@ -64,7 +64,7 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('error');
+        //console.log('error');
     })
 
 

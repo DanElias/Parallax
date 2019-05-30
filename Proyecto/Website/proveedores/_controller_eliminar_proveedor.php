@@ -15,7 +15,7 @@
     controller_tabla_proveedor_php();
     form_proveedor_html(); 
     modal_informacion_proveedor_html();
-
+    
     if(mysqli_num_rows($result) > 0){
         echo '
         <!-- Modal Structure -->
@@ -108,9 +108,12 @@
     }
     
   
-    
     footer_html();
-    echo '<script type="text/javascript" src="ajax_proveedor.js"></script>';
-
+    echo    '<script type="text/javascript" src="ajax_proveedor.js"></script>
+            ';
+            /*
+                <script type="text/javascript" src="validaciones_registrar.js"></script>
+            <script type="text/javascript" src="validaciones_editar.js"></script>
+            */
 
 ?>

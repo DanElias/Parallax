@@ -61,9 +61,13 @@ modal_informacion_egreso_html();
     </script>";
   
     
-footer_html();
+    footer_html();
     
-echo '<script type="text/javascript" src="ajax_egreso.js"></script>';
+    echo'<script type="text/javascript" src="ajax_egreso.js"></script> 
+        ';
+    //<script type="text/javascript" src="ajax.js"></script>
+         //<script type="text/javascript" src="validaciones.js"></script>
+         //<script type="text/javascript" src="validaciones_editar.js"></script>
 
 
 ?>
