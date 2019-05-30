@@ -3416,8 +3416,10 @@ var $jscomp$this = this;
              */
 
         }, {
+
             key: "_handleTriggerClick",
             value: function _handleTriggerClick(e) {
+            	
                 var $trigger = $(e.target).closest('.modal-trigger');
                 if ($trigger.length) {
                     var modalId = M.getIdFromTrigger($trigger[0]);
