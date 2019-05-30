@@ -7,17 +7,17 @@
   <div class="row">
       <div class="input-field col s3">
           <i class="material-icons prefix">face</i>
-          <input type="text" class="validate ubuntu-text" id="enombre" name="nombre" value="'.$row['nombre'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+          <input type="text" class="validate ubuntu-text" id="enombre" name="nombre" value="'.$row['nombre'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
           <label for="nombre">Nombre(s)</label><span id="eerrorNombre" class="red-text"></span>
       </div>
 
       <div class="input-field col s2">
-          <input type="text" class="validate ubuntu-text" id="eapellido_paterno" name="apellido_paterno" value="'.$row['apellido_paterno'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+          <input type="text" class="validate ubuntu-text" id="eapellido_paterno" name="apellido_paterno" value="'.$row['apellido_paterno'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
           <label for="apellido_paterno">Apellido Paterno</label><span id="eerrorApPat" class="red-text"></span>
       </div>
 
       <div class="input-field col s2">
-          <input type="text" class="validate ubuntu-text" id="eapellido_materno" name="apellido_materno" value="'.$row['apellido_materno'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+          <input type="text" class="validate ubuntu-text" id="eapellido_materno" name="apellido_materno" value="'.$row['apellido_materno'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
           <label for="apellido_materno">Apellido Materno</label><span id="eerrorApMat" class="red-text"></span>
       </div>
 
@@ -49,17 +49,17 @@
   <div class="row">
       <div class="input-field col s4">
           <i class="material-icons prefix">home</i>
-          <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" value="'.$row['numero_calle'].'" required maxlength="20" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <input type="text" class="validate ubuntu-text" id="enumero_domicilio" name="numero_domicilio" value="'.$row['numero_calle'].'" required maxlength="50" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
           <label for="numero_domicilio">Número de casa/departamento</label><span id="eerrorNum" class="red-text"></span>
         </div>
       <div class="input-field col s4">
-          <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" value="'.$row['calle'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <input type="text" class="validate ubuntu-text" id="ecalle" name="calle" value="'.$row['calle'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
           <label for="calle">Calle</label><span id="eerrorCalle" class="red-text"></span>
       </div>
 
       <div class="input-field col s4">
 
-          <input type="text" class="validate ubuntu-text" id="ecolonia" name="colonia" value="'.$row['colonia'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <input type="text" class="validate ubuntu-text" id="ecolonia" name="colonia" value="'.$row['colonia'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
           <label for="colonia">Colonia</label><span id="eerrorCol" class="red-text"></span>
       </div>
   </div>
@@ -272,7 +272,7 @@
       </div>
       <div class="input-field col s3">
           <i class="material-icons prefix">domain</i>
-          <input type="text" class="validate ubuntu-text" id="eescuela" name="escuela" value="'.$row['nombre_escuela'].'" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <input type="text" class="validate ubuntu-text" id="eescuela" name="escuela" value="'.$row['nombre_escuela'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
           <label for="escuela">Nombre Escuela</label><span id="eerrorEsc" class="red-text"></span>
       </div>
       <div class="input-field col s3">
@@ -316,7 +316,7 @@
       </div>
       <div class="input-field col s6">
           <i class="material-icons prefix">local_hospital</i>
-          <input type="text" class="validate ubuntu-text" id="eenfermedades" name="enfermedades" value="'.$row['enfermedades_alergias'].'" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#, ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+          <input type="text" class="validate ubuntu-text" id="eenfermedades" name="enfermedades" value="'.$row['enfermedades_alergias'].'" required maxlength="256" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#, ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
           <label for="enfermedades">Enfermedades y Alergias</label><span id="eerrorEnf" class="red-text"></span>
       </div>
       <div class="input-field col s3">

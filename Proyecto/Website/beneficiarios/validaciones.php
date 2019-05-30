@@ -1,6 +1,6 @@
 <?php
 function val_n($nombre){
-  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&; ]/", $nombre) && strlen($nombre) <= 40){
+  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&; ]/", $nombre) && strlen($nombre) <= 100){
 
     return true;
   } else {
@@ -71,7 +71,7 @@ function val_enfermedades($nombre){
 }
 
 function val_ocupacion($nombre){
-  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&;#\.\/ ]/", $nombre) && strlen($nombre) <= 50){
+  if(!preg_match("/[^A-Za-záéíóúüñÑÁÉÍÓÚ&;#\.\/ ]/", $nombre) && strlen($nombre) <= 256){
     return true;
   } else {
     //echo 'Ocupacion incorrecta';

@@ -93,7 +93,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#numero_domicilio').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 20){
+    if(validar_calle(this.value) && this.value.length <= 50){
       $('#errorNum').html("");
     } else {
       $('#errorNum').html('*Caracter inválido en el número');
@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#calle').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 40){
+    if(validar_calle(this.value) && this.value.length <= 100){
       $('#errorCalle').html("");
     } else {
       $('#errorCalle').html('*Caracter inválido en la calle');
@@ -113,7 +113,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#colonia').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 40){
+    if(validar_calle(this.value) && this.value.length <= 100){
       $('#errorCol').html("");
     } else {
       $('#errorCol').html('*Caracter inválido en la colonia');
@@ -135,7 +135,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#escuela').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 40){
+    if(validar_calle(this.value) && this.value.length <= 100){
       $('#errorEsc').html("");
     } else {
       $('#errorEsc').html('*Caracter inválido en la escuela');
@@ -167,7 +167,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#enfermedades').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#errorEnf').html("");
     } else {
       $('#errorEnf').html('*Caracter inválido en las alergias');
@@ -286,7 +286,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#ocupacion').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 50){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#errorOcuTut').html("");
     } else {
       $('#errorOcuTut').html('*Caracter inválido en la ocupación');
@@ -296,7 +296,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#empresa').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#errorEmpTut').html("");
     } else {
       $('#errorEmpTut').html('*Caracter inválido en la empresa');
@@ -306,7 +306,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#titulo').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#errorTitTut').html("");
     } else {
       $('#errorTitTut').html('*Caracter inválido en el título');
@@ -398,7 +398,7 @@ $(document).on('click', '.editarBen', function(){
 
 $(document).on('click', '.editarBen', function(){
   $('#enumero_domicilio').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 20){
+    if(validar_calle(this.value) && this.value.length <= 50){
       $('#eerrorNum').html("");
     } else {
       $('#eerrorNum').html('*Caracter inválido en el número');
@@ -408,7 +408,7 @@ $(document).on('click', '.editarBen', function(){
 
 $(document).on('click', '.editarBen', function(){
   $('#ecalle').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 40){
+    if(validar_calle(this.value) && this.value.length <= 100){
       $('#eerrorCalle').html("");
     } else {
       $('#eerrorCalle').html('*Caracter inválido en la calle');
@@ -418,7 +418,7 @@ $(document).on('click', '.editarBen', function(){
 
 $(document).on('click', '.editarBen', function(){
   $('#ecolonia').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 40){
+    if(validar_calle(this.value) && this.value.length <= 100){
       $('#eerrorCol').html("");
     } else {
       $('#eerrorCol').html('*Caracter inválido en la colonia');
@@ -440,7 +440,7 @@ $(document).on('click', '.editarBen', function(){
 
 $(document).on('click', '.editarBen', function(){
   $('#eescuela').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 40){
+    if(validar_calle(this.value) && this.value.length <= 100){
       $('#eerrorEsc').html("");
     } else {
       $('#eerrorEsc').html('*Caracter inválido en la escuela');
@@ -472,7 +472,7 @@ $(document).on('click', '.editarBen', function(){
 
 $(document).on('click', '.editarBen', function(){
   $('#eenfermedades').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#eerrorEnf').html("");
     } else {
       $('#eerrorEnf').html('*Caracter inválido en las alergias');
@@ -617,7 +617,7 @@ $(document).on('click', '.editarTut1', function(){
 
 $(document).on('click', '.editarTut1', function(){
   $('#eocupacion').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 50){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#eerrorOcuTut').html("");
     } else {
       $('#eerrorOcuTut').html('*Caracter inválido en la ocupación');
@@ -627,7 +627,7 @@ $(document).on('click', '.editarTut1', function(){
 
 $(document).on('click', '.editarTut1', function(){
   $('#eempresa').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#eerrorEmpTut').html("");
     } else {
       $('#eerrorEmpTut').html('*Caracter inválido en la empresa');
@@ -637,7 +637,7 @@ $(document).on('click', '.editarTut1', function(){
 
 $(document).on('click', '.editarTut1', function(){
   $('#etitulo').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#eerrorTitTut').html("");
     } else {
       $('#eerrorTitTut').html('*Caracter inválido en el título');
@@ -716,7 +716,7 @@ $(document).on('click', '.editarTut2', function(){
 
 $(document).on('click', '.editarTut2', function(){
   $('#eeocupacion').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 50){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#eeerrorOcuTut').html("");
     } else {
       $('#eeerrorOcuTut').html('*Caracter inválido en la ocupación');
@@ -726,7 +726,7 @@ $(document).on('click', '.editarTut2', function(){
 
 $(document).on('click', '.editarTut2', function(){
   $('#eeempresa').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#eeerrorEmpTut').html("");
     } else {
       $('#eeerrorEmpTut').html('*Caracter inválido en la empresa');
@@ -736,7 +736,7 @@ $(document).on('click', '.editarTut2', function(){
 
 $(document).on('click', '.editarTut2', function(){
   $('#eetitulo').keyup(function(){
-    if(validar_calle(this.value) && this.value.length <= 100){
+    if(validar_calle(this.value) && this.value.length <= 256){
       $('#eeerrorTitTut').html("");
     } else {
       $('#eeerrorTitTut').html('*Caracter inválido en el título');
@@ -866,7 +866,7 @@ function validate_editar_tutor2(){
 
 function validar_nom(nombre){
   //var regex = new RegExp("/[^A-Za-záéíóúüñÑÁÉÍÓÚ ]/");
-  if(nombre.length <= 40){
+  if(nombre.length <= 100){
     return !/[^A-Za-záéíóúüñÑÁÉÍÓÚ ]/.test(nombre);
   }
   return false;

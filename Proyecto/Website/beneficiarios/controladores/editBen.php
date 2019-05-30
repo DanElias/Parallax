@@ -35,12 +35,12 @@
           && val_date($fecha)
           && val_sexo($sexo)
           && val_gradoben($grado)
-          && val_empresa($numero) && strlen($numero) <= 20
-          && val_empresa($calle) && strlen($calle) <= 40
-          && val_empresa($colonia) && strlen($colonia) <= 40
+          && val_empresa($numero) && strlen($numero) <= 50
+          && val_empresa($calle) && strlen($calle) <= 100
+          && val_empresa($colonia) && strlen($colonia) <= 100
           && val_status($nivel)
-          && val_empresa($escuela) && strlen($escuela) <= 40
-          && val_enfermedades($alergias) && strlen($alergias) <= 100
+          && val_empresa($escuela) && strlen($escuela) <= 100
+          && val_enfermedades($alergias) && strlen($alergias) <= 256
           && is_numeric($cuota)
           && val_parentesco($parentesco1)
           && val_parentesco($parentesco2)
@@ -68,12 +68,12 @@
       && val_date($fecha)
       && val_sexo($sexo)
       && val_gradoben($grado)
-      && val_empresa($numero) && strlen($numero) <= 20
-      && val_empresa($calle) && strlen($calle) <= 40
-      && val_empresa($colonia) && strlen($colonia) <= 40
+      && val_empresa($numero) && strlen($numero) <= 50
+      && val_empresa($calle) && strlen($calle) <= 100
+      && val_empresa($colonia) && strlen($colonia) <= 100
       && val_status($nivel)
-      && val_empresa($escuela) && strlen($escuela) <= 40
-      && val_enfermedades($alergias) && strlen($alergias) <= 100
+      && val_empresa($escuela) && strlen($escuela) <= 100
+      && val_enfermedades($alergias) && strlen($alergias) <= 256
       && is_numeric($cuota)
       && val_parentesco($parentesco1)
       && is_numeric($id)){

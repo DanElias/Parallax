@@ -33,17 +33,17 @@
             <div class="row">
                 <div class="input-field col s3">
                     <i class="material-icons prefix">face</i>
-                    <input type="text" class="validate ubuntu-text" id="nombre" name="nombre" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                    <input type="text" class="validate ubuntu-text" id="nombre" name="nombre" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
                     <label for="nombre">Nombre(s)</label><span id="errorNombre" class="red-text"></span>
                 </div>
 
                 <div class="input-field col s2">
-                    <input type="text" class="validate ubuntu-text" id="apellido_paterno" name="apellido_paterno" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                    <input type="text" class="validate ubuntu-text" id="apellido_paterno" name="apellido_paterno" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
                     <label for="apellido_paterno">Apellido Paterno</label><span id="errorApPat" class="red-text"></span>
                 </div>
 
                 <div class="input-field col s2">
-                    <input type="text" class="validate ubuntu-text" id="apellido_materno" name="apellido_materno" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
+                    <input type="text" class="validate ubuntu-text" id="apellido_materno" name="apellido_materno" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ ]+" title="Sólo se permiten letras, espacios y acentuación">
                     <label for="apellido_materno">Apellido Materno</label><span id="errorApMat" class="red-text"></span>
                 </div>
 
@@ -67,18 +67,18 @@
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">home</i>
-                    <input type="text" class="validate ubuntu-text" id="numero_domicilio" name="numero_domicilio" required maxlength="20" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <input type="text" class="validate ubuntu-text" id="numero_domicilio" name="numero_domicilio" required maxlength="50" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
                     <label for="numero_domicilio">Número de casa/departamento</label><span id="errorNum" class="red-text"></span>
                   </div>
                 <div class="input-field col s4">
                     <!--i class="material-icons prefix"></i-->
-                    <input type="text" class="validate ubuntu-text" id="calle" name="calle" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <input type="text" class="validate ubuntu-text" id="calle" name="calle" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
                     <label for="calle">Calle</label><span id="errorCalle" class="red-text"></span>
                 </div>
 
                 <div class="input-field col s4">
 
-                    <input type="text" class="validate ubuntu-text" id="colonia" name="colonia" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <input type="text" class="validate ubuntu-text" id="colonia" name="colonia" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
                     <label for="colonia">Colonia</label><span id="errorCol" class="red-text"></span>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="input-field col s3">
                     <i class="material-icons prefix">domain</i>
-                    <input type="text" class="validate ubuntu-text" id="escuela" name="escuela" required maxlength="40" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <input type="text" class="validate ubuntu-text" id="escuela" name="escuela" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.# ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
                     <label for="escuela">Nombre Escuela</label><span id="errorEsc" class="red-text"></span>
                 </div>
                 <div class="input-field col s3">
@@ -127,7 +127,7 @@
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">local_hospital</i>
-                    <input type="text" class="validate ubuntu-text" id="enfermedades" name="enfermedades" required maxlength="100" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#, ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
+                    <input type="text" class="validate ubuntu-text" id="enfermedades" name="enfermedades" required maxlength="256" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ0-9\.#, ]+" title="Se permiten letras, números, espacios y los simbolos . y #">
                     <label for="enfermedades">Enfermedades y Alergias</label><span id="errorEnf" class="red-text"></span>
                 </div>
                 <div class="input-field col s3">
