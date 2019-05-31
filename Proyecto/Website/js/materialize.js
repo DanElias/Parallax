@@ -3416,8 +3416,10 @@ var $jscomp$this = this;
              */
 
         }, {
+
             key: "_handleTriggerClick",
             value: function _handleTriggerClick(e) {
+            	
                 var $trigger = $(e.target).closest('.modal-trigger');
                 if ($trigger.length) {
                     var modalId = M.getIdFromTrigger($trigger[0]);
@@ -12806,6 +12808,7 @@ var $jscomp$this = this;
 
     Range.init($('input[type=range]'));
 })(cash, M.anime);
+let options = {};
 
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.parallax');

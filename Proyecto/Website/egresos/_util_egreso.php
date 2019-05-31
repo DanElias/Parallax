@@ -31,12 +31,6 @@ function form_egreso_html()
 }
 
 
-/*
-function form_eliminar_egreso_html()
-{
-    include("_form_eliminar_egreso.html");
-}*/
-
 
 function modal_informacion_egreso_html()
 {
@@ -49,11 +43,7 @@ function form_editar_egreso()
     include("egreso_editar_form.html");
 }
 
-/*
-function form_eliminar_egreso()
-{
-    include("_form_eliminar_egreso.html");
-}*/
+
 
 function modal_informacion_egreso(){
     include("_modal_informacion_egreso.html");

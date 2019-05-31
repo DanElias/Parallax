@@ -555,7 +555,25 @@ function eliminar_proveedor_id($rfc)
     }
     closeDB($conn);
 }
-/**************************/
+
+function verificar_proveedor_en_egreso($rfc){
+    $conn = conectDb();
+    $sql = "SELECT folio_factura FROM egreso WHERE rfc = ?";
+    if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param('s',$rfc);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        closeDB($conn);
+    }else{
+        closeDB($conn);
+  
+    }
+    return $result;
+    closeDB($conn);
+}
+
+
 /************CONSULTAS EGRESOS**************/
 function obtenerEgresos(){
     /*$conn = conectDb();
@@ -601,11 +619,13 @@ function obtener_egreso_folio($folio_factura){
     closeDB($conn);
     return $result;
 }
-function editar_egreso($folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
-  $conn = conectDb();
+
+
+function editar_egreso($folio_factura,$folio_anterior, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable){
+  	$conn = conectDb();
     $sql = "UPDATE egreso SET folio_factura=?, concepto=?, importe=?, fecha=?, observaciones=?, cuenta_bancaria=?, rfc=?, id_cuentacontable=? WHERE folio_factura=?";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable,$folio_factura);
+      $stmt->bind_param('ssdssssis',$folio_factura, $concepto, $importe, $fecha, $observaciones, $cuenta_bancaria, $rfc,$id_cuentacontable,$folio_anterior);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
@@ -617,6 +637,7 @@ function editar_egreso($folio_factura, $concepto, $importe, $fecha, $observacion
     }
     closeDB($conn);
 }
+
 function eliminar_egreso_folio($folio_factura){
     $conn = conectDb();
     $sql = "DELETE FROM egreso WHERE folio_factura = ?";

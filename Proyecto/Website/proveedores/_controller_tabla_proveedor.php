@@ -31,22 +31,7 @@ if (mysqli_num_rows($result) > 0) {
                         </a>
                     </td>';
         $query_table .= '<td>
-        
-        		<script language="JavaScript1.2" type="text/javascript"> 
-                                                    function eliminar () 
-                                                    { 
-                                                        var statusConfirm = confirm("¿Realmente desea eliminar esto?"); 
-                                                        if (statusConfirm == true) 
-                                                        { 
-                                                            window.location="_eliminar_proveedor.php?id='.$row['rfc'].'";
-                                                        } 
-                                                        else 
-                                                        { 
-                                                         
-                                                        } 
-                            } 
-                        </script> 
-                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable"  href = "javascript:eliminar()" href="_eliminar_proveedor.php?id=' . $row['rfc'] . '">
+                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_controller_eliminar_proveedor.php?id=' . $row['rfc'] . '">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';

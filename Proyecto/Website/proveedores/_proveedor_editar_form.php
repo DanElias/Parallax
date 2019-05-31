@@ -1,4 +1,4 @@
-<?php
+F<?php
 
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
   require_once("_util_proveedor.php");
@@ -12,10 +12,10 @@
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;
     while ($row = mysqli_fetch_assoc($result)) {
-        $_SESSION['rfc2'] = $row['rfc'];
+        $_SESSION['rfc_anterior'] = $row['rfc'];
         $edit_form = '
                  <!-- Modal Structure -->
-                    <div id="_form_editar_proveedor" class="modal my_modal modal1  my_big_modal" name="modal1">
+                    <div id="_form_editar_proveedor" class="modal my_modal modal1  my_big_modal ubuntu-text" name="modal1">
                         <div class="row my_modal_header_row">
 
                             <div class="my_modal_header1">
@@ -40,42 +40,42 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="modal-content my_modal_content">
                             <p>Aquí puede editar un nuevo Proveedor</p>
 
-                            <form class="col s12" action="_registro_editar_proveedor.php" method="POST" id="proveedor_form2">
+                            <form class="col s12" action="_registro_editar_proveedor.php" method="post" enctype="multipart/form-data" onsubmit=" return validar_form();">
                                <div class="row">
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">face</i>
-                                        <input  maxlength="13" type="text" class="validate ubuntu-text" name="rfc2" id="rfc2" required value="'.$row['rfc'].'" >
-                                        <label for="rfc">RFC</label>
-                                       <span id="error_rfc2"></span>
+                                        <input  maxlength="13" type="text" class="validate ubuntu-text" name="rfc_editar" id="rfc_editar" required value="'.$row['rfc'].'" onkeyup="validar_rfc()">
+                                        <label for="rfc_editar">RFC</label>
+                                       <span id="error_rfc_editar"></span>
                                     </div>
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">attach_money</i>
-                                        <input maxlength="20" type="text" class="validate ubuntu-text" id="alias2" name="alias2" required value="'.$row['alias'].'">
-                                        <label for="alias">Alias</label>
-                                        <span id="error_alias2"></span>
+                                        <input maxlength="20" type="text" class="validate ubuntu-text" id="alias_editar" name="alias_editar" required value="'.$row['alias'].'" onkeyup="validar_alias()">
+                                        <label for="alias_editar">Alias</label>
+                                        <span id="error_alias_editar"></span>
                                     </div>
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">home</i>
-                                        <input maxlength="30" type="text" class="validate ubuntu-text" name="razon_social2" id="razon_social2" required value="'.$row['razon_social'].'">
-                                        <label for="razon_social">Razon social</label>
-                                        <span id="error_razon2"></span>
+                                        <input maxlength="30" type="text" class="validate ubuntu-text" name="razon_social_editar" id="razon_social_editar" required value="'.$row['razon_social'].'" onkeyup="validar_razon()">
+                                        <label for="razon_social_editar">Razon social</label>
+                                        <span id="error_razon_editar"></span>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">domain</i>
-                                        <input maxlength="40" type="text" class="validate ubuntu-text" name="nombre_contacto2" id="nombre_contacto2" required value="'.$row['nombre_contacto'].'" >
-                                        <label for="contacto">Nombre contacto</label>
-                                        <span id="error_nombre2"></span>
+                                        <input maxlength="40" type="text" class="validate ubuntu-text" name="nombre_contacto_editar" id="nombre_contacto_editar" required value="'.$row['nombre_contacto'].'" onkeyup="validar_nombre()">
+                                        <label for="nombre_contacto_editar">Nombre contacto</label>
+                                        <span id="error_nombre_editar"></span>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">perm_phone_msg</i>
-                                        <input maxlength="20" type="text" class="validate ubuntu-text" name="telefono_proveedor2" id="telefono_proveedor2" required value="'.$row['telefono_contacto'].'" >
-                                        <label for="telefono_proveedor">Telefono</label>
-                                        <span id="error_telefono2"></span>
+                                        <input maxlength="20" type="text" class="validate ubuntu-text" name="telefono_proveedor_editar" id="telefono_proveedor_editar" required value="'.$row['telefono_contacto'].'" onkeyup="validar_telefono()">
+                                        <label for="telefono_proveedor_editar">Telefono</label>
+                                        <span id="error_telefono_editar"></span>
                                     </div>
                                 </div>
 
@@ -84,15 +84,15 @@ if (mysqli_num_rows($result) > 0) {
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">account_balance</i>
-                                        <input maxlength="40" type="text" class="validate ubuntu-text" id="banco2" name="banco2" required value="'.$row['banco'].'">
-                                        <label for="banco">Banco</label>
-                                        <span id="error_banco2"></span>
+                                        <input maxlength="40" type="text" class="validate ubuntu-text" id="banco_editar" name="banco_editar" required value="'.$row['banco'].'" onkeyup="validar_banco()">
+                                        <label for="banco_editar">Banco</label>
+                                        <span id="error_banco_editar"></span>
                                     </div>
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">attach_money</i>
-                                        <input maxlength="18" type="text" class="validate ubuntu-text" id="cuenta_bancaria2" name="cuenta_bancaria2" required value="'.$row['cuenta_bancaria'].'">
-                                        <label for="cuenta_bancaria">Cuenta bancaria</label>
-                                        <span id="error_cuenta2"></span>
+                                        <input maxlength="18" type="text" class="validate ubuntu-text" id="cuenta_bancaria_editar" name="cuenta_bancaria_editar" required value="'.$row['cuenta_bancaria'].'" onkeyup="validar_cuenta()">
+                                        <label for="cuenta_bancaria_editar">Cuenta bancaria</label>
+                                        <span id="error_cuenta_editar"></span>
                                     </div>
 
 
@@ -107,7 +107,7 @@ if (mysqli_num_rows($result) > 0) {
                                             </button>
                                         </div>
                                         <div class="col s6 center">
-                                            <button class="btn waves-effect waves-light red modal-close">Cancelar
+                                            <button class="btn waves-effect waves-light red modal-close" type="button">Cancelar
                                                 <i class="material-icons right">highlight_off</i>
                                             </button>
                                         </div>
@@ -132,37 +132,15 @@ if (mysqli_num_rows($result) > 0) {
                                   });
                             });
                     </script>";
-    echo '<script type="text/javascript" src="../js/validation_proveedor.js"></script>';
 
                     
-    //M.updateTextFields() sirve para que se actualizen los text fields y se mueven los labels de los campos que ya estan llenos.}
+   
     
-} else { // si no hay eventos registrados en la tabla
-    $_SESSION['error_proveedor']="No encontramos el evento especificado, inténtalo más tarde";
-   // mostrar_alerta_error_modal_editar();
+} else { 
+    $_SESSION['error_proveedor']="No encontramos el proveedor especificado, inténtalo más tarde";
+   
 }
 
-  /*
-  function mostrar_alerta_error_modal_editar()
-      header_html();
-      sidenav_html();
-      evento_html();
-      form_evento_html();
-      controller_tabla_eventos_php();
-      form_eliminar_evento_html();
-      alerta_error($_SESSION['error_evento']);
-      modal_informacion_evento_html();
-      echo
-      "<script type='text/javascript'>
-              jQuery(document).ready(function(){
-                    jQuery('#_form_alerta_error').modal();
-                    jQuery(document).ready(function(){
-                        jQuery('#_form_alerta_error').modal('open');
-                    });
-              });
-      </script>";
-      footer_html();
-      echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
-  }*/
+  
 
 ?>

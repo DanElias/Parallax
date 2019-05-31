@@ -7,15 +7,12 @@ var flag_drop_proveedor = true;
 var flag_drop_cuenta = true;
 
 function validar_folio(){
-  var cadena = $('#folio_factura2').val();
-    //console.log("La cadena es :" + cadena);
-    var result_numeros = /[0-9]/g.test(cadena);
-    var result_letras = /[A-Za-z]/g.test(cadena);
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
+    var cadena = $('#folio_factura2').val();
    
-    //áéíóúüñÑÁÉÍÓÚü
-    if(result_numeros==false||result_letras==false||special==true){
-      //console.log("debe tener letras y numeros");
+    var special = /[^0-9a-zA-Z]/g.test(cadena);
+   
+    if(special){
+    
       $("#error_folio2").html('*Sólo numeros y letras').css("color","red");
       $("#error_folio2").show();
       flag_folio = false;
@@ -23,33 +20,28 @@ function validar_folio(){
     }else{
       $("#error_folio2").hide();
       flag_folio = true;
-      //console.log("ya cumple con las dos");
+      
     } 
 }
 
 function validar_concepto(){
-  var cadena = $('#concepto2').val();
-  //console.log(cadena);
+    var cadena = $('#concepto2').val();
+    var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);
 
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
-    var size = cadena.length;
-
-
-    //záéíóúüñÑÁÉÍÓÚü
     if(special==true){
-      console.log(cadena);
-      $("#error_concepto2").html('*No caracteres especiales').css("color","red");
-      $("#error_concepto2").show();  
-      flag_concepto = false;
+        
+        $("#error_concepto2").html('*No caracteres especiales').css("color","red");
+        $("#error_concepto2").show();  
+        flag_concepto = false;
     }else{
-      $("#error_concepto2").hide();
-      flag_concepto = true;
+        $("#error_concepto2").hide();
+        flag_concepto = true;
     } 
 }
 
 function validar_importe(){
   var cadena = $('#importe2').val();
-  var special = /[^0-9,]/g.test(cadena);
+  var special = /[^0-9.]/g.test(cadena);
   if(special){
       $("#error_importe2").html('*Sólo números').css("color","red");
       $("#error_importe2").show(); 
@@ -62,18 +54,17 @@ function validar_importe(){
 
 function validar_cuenta_bancaria(){
   var tamano = $("#cuenta_bancaria_egreso2").val().length;
-      if(tamano<18 || !(/^[\d]+$/i.test($('#cuenta_bancaria_egreso2').val()))){
-        $("#error_cuenta_bancaria_egreso2").html('*Deben ser exactamente 18 dígitos').css("color","red");
-        $("#error_cuenta_bancaria_egreso2").show();  
-        flag_cuenta = false;
+      if(!(/^[\d]+$/i.test($('#cuenta_bancaria_egreso2').val()))){
+          $("#error_cuenta_bancaria_egreso2").html('*Sólo dígitos').css("color","red");
+          $("#error_cuenta_bancaria_egreso2").show();  
+          flag_cuenta = false;
       }else{
-        $("#error_cuenta_bancaria_egreso2").hide();
-        flag_cuenta = true;
+          $("#error_cuenta_bancaria_egreso2").hide();
+          flag_cuenta = true;
       }
 }
 
 function validar_drop_proveedor(){
-    //console.log("CAMBIA LOS CLICKS");
     var proveedor = $('#selected_proveedor2').val();
     if(proveedor=='0'){
           $("#error_proveedor_egreso2").html('*Debes seleccionar un proveedor').css("color","red");
@@ -101,36 +92,21 @@ function validar_drop_cuenta(){
 function validar_observaciones(){
   
     var cadena = $('#observaciones2').val();
-  //console.log(cadena);
-
-    var special = /[\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:/]/g.test(cadena)
-    var size = cadena.length;
-
-    //záéíóúüñÑÁÉÍÓÚü
+    var special = /[^áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/g.test(cadena);  
+   
     if(special==true){
-      console.log(cadena);
-      $("#error_observaciones2").html('*No caracteres especiales').css("color","red");
-      $("#error_observaciones2").show(); 
-      flag_observaciones = false;
+      
+        $("#error_observaciones2").html('*No caracteres especiales').css("color","red");
+        $("#error_observaciones2").show(); 
+        flag_observaciones = false;
     }else{
-      $("#error_observaciones2").hide();
-      flag_observaciones = true;
+        $("#error_observaciones2").hide();
+        flag_observaciones = true;
     } 
 }
 
 
 function validar_form(){
-  
-  
-  console.log("folio: " + flag_folio);
-  console.log("concepto: " +flag_concepto);
-  console.log("importe: "+flag_importe);
-  console.log("cuenta: " +flag_cuenta);
-  console.log("observaciones: " + flag_observaciones );
-  console.log("drop: " + flag_drop_proveedor);
-  console.log("drop: " + flag_drop_cuenta);
-  console.log("FIN");
-
 
   var proveedor = $('#selected_proveedor2').val();
   var cuenta = $('#selected_cuenta2').val();
@@ -155,14 +131,12 @@ function validar_form(){
 
   
   if(flag_folio&& flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta){
-      //return true;
+      
            
   }else{
       return false;
-      //console.log("Una bandera es falsa ");
     
   }
-  // return (flag_folio && flag_concepto && flag_importe && flag_cuenta && flag_observaciones && flag_drop_proveedor && flag_drop_cuenta)
-      //console.log("deberia funcionar e ir al registro ");
+ 
 }
 

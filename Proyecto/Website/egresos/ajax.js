@@ -1,3 +1,5 @@
+//MUESTRA LOS DROPS DE CUENTA CONTABLE Y PROVEEDOR, TANTO EN REGISTRAR COMO EN EDITAR
+
 $(document).ready(function(){
    
     let flag = 1;
@@ -14,7 +16,7 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('EN EL PRIMERO error');
+        //console.log('EN EL PRIMERO error');
     })
 
     $.ajax({
@@ -28,7 +30,7 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('EN EL PRIMERO TAMBIEN error');
+        //console.log('EN EL PRIMERO TAMBIEN error');
     })
 
     /************PARA EL FORM DE EDITAR ***/
@@ -39,15 +41,15 @@ $(document).ready(function(){
         data:{flag:flag}
     })
     .done(function(data){
-        //console.log("ENTRO ");
+        ////console.log("ENTRO ");
         $('#drop_proveedor2').html(data);
-        //console.log(data);
+        ////console.log(data);
         M.AutoInit();
 
        
     })
     .fail(function(){
-        console.log('error');
+        //console.log('error');
     })
 
 
@@ -62,43 +64,10 @@ $(document).ready(function(){
        
     })
     .fail(function(){
-        console.log('error');
+        //console.log('error');
     })
 
-/*
-$('#edit_button').on('click', function () {
-       	let flag = 1;
-		$.ajax({
-	        type: 'POST',
-	        url: 'mostrar_proveedor2.php',
-	        data:{flag:flag}
-	    })
-	    .done(function(data){
-	        //console.log("ENTRO ");
-	        $('#drop_proveedor2').html(data);
-	        //console.log(data);
-	        M.AutoInit();
 
-	       
-	    })
-	    .fail(function(){
-	        console.log('error');
-	    })
-
-	    $.ajax({
-	        type: 'POST',
-	        url: 'mostrar_cuentacontable2.php',
-	        data:{flag:flag}
-	    })
-	    .done(function(data){
-	        $('#drop_cuenta2').html(data);
-	        M.AutoInit();
-	       
-	    })
-	    .fail(function(){
-	        console.log('error');
-	    })
-	    });*/
 
 });
 
@@ -111,38 +80,3 @@ $('#edit_button').on('click', function () {
 
 
 
-/*
-$(document).ready(function(){
-	let flag = 1;
-	$.ajax({
-        type: 'POST',
-        url: 'mostrar_proveedor2.php',
-        data:{flag:flag}
-    })
-    .done(function(data){
-        //console.log("ENTRO ");
-        $('#drop_proveedor2').html(data);
-        //console.log(data);
-        M.AutoInit();
-
-       
-    })
-    .fail(function(){
-        console.log('error');
-    })
-
-    $.ajax({
-        type: 'POST',
-        url: 'mostrar_cuentacontable2.php',
-        data:{flag:flag}
-    })
-    .done(function(data){
-        $('#drop_cuenta2').html(data);
-        M.AutoInit();
-       
-    })
-    .fail(function(){
-        console.log('error');
-    })
-});
-*/

@@ -1,128 +1,125 @@
 <?php
 
-//require_once("_util_usuarios.php");
-require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
-
-//Funcion que va a ir en queries
-
+require_once("../basesdedatos/_conection_queries_db.php"); 
 
 session_start();
-/*
-if(isset($_POST["submit"])){
-    echo "RFC2 DEL FORM EDITADO:". $_POST["rfc"];
-
-    echo "<br>RFC ANTERIOR : ". $_SESSION['rfc'];
-
-}*/
 
 $_SESSION['editar_proveedor_exito'] = 0;
 $_SESSION['editar_proveedor_error'] = 0;
 
+
 if (isset($_POST["submit"])) {
 
-    $_POST["rfc2"] = htmlentities($_POST["rfc2"]);
-    $_POST["alias2"] = htmlentities($_POST["alias2"]);
-    $_POST["razon_social2"] = htmlentities($_POST["razon_social2"]);
-    $_POST["nombre_contacto2"] = htmlentities($_POST["nombre_contacto2"]);
-    $_POST["telefono_proveedor2"] = htmlentities($_POST["telefono_proveedor2"]);
-    $_POST["banco2"] = htmlentities($_POST["banco2"]);
-    $_POST["cuenta_bancaria2"] = htmlentities($_POST["cuenta_bancaria2"]);
+    $_POST["rfc_editar"] = htmlentities($_POST["rfc_editar"]);
+    $_POST["alias_editar"] = htmlentities($_POST["alias_editar"]);
+    $_POST["razon_social_editar"] = htmlentities($_POST["razon_social_editar"]);
+    $_POST["nombre_contacto_editar"] = htmlentities($_POST["nombre_contacto_editar"]);
+    $_POST["telefono_proveedor_editar"] = htmlentities($_POST["telefono_proveedor_editar"]);
+    $_POST["banco_editar"] = htmlentities($_POST["banco_editar"]);
+    $_POST["cuenta_bancaria_editar"] = htmlentities($_POST["cuenta_bancaria_editar"]);
 
 
-    if (isset($_POST["rfc2"])
-        && isset($_POST["alias2"])
-        && isset($_POST["razon_social2"])
-        && isset($_POST["nombre_contacto2"])
-        && isset($_POST["telefono_proveedor2"])
-        && isset($_POST["banco2"])
-        && isset($_POST["cuenta_bancaria2"])
-        && $_POST["rfc2"] != ""
-        && $_POST["alias2"] != ""
-        && $_POST["razon_social2"] != ""
-        && $_POST["nombre_contacto2"] != ""
-        && $_POST["telefono_proveedor2"] != ""
-        && $_POST["banco2"] != ""
-        && $_POST["cuenta_bancaria2"] != ""
+    if (isset($_POST["rfc_editar"])
+        && isset($_POST["alias_editar"])
+        && isset($_POST["razon_social_editar"])
+        && isset($_POST["nombre_contacto_editar"])
+        && isset($_POST["telefono_proveedor_editar"])
+        && isset($_POST["banco_editar"])
+        && isset($_POST["cuenta_bancaria_editar"])
+        && $_POST["rfc_editar"] != ""
+        && $_POST["alias_editar"] != ""
+        && $_POST["razon_social_editar"] != ""
+        && $_POST["nombre_contacto_editar"] != ""
+        && $_POST["telefono_proveedor_editar"] != ""
+        && $_POST["banco_editar"] != ""
+        && $_POST["cuenta_bancaria_editar"] != ""
 
 
     ){
         $flag = true;
-        //echo $_POST["rfc2"]."<br>".$_POST["alias"]."<br>".$_POST["razon_social"]."<br>".$_POST["nombre_contacto"]."<br>".$_POST["telefono_proveedor"]."<br>".$_POST["banco"]."<br>".$_POST["cuenta_bancaria"];
+      
 
-        
+         //RFC DEBE SER EXACTAMENTE 13, SOLO NUMEROS Y LETRAS
 
-        //RFC2 DEBE SER EXACTAMENTE 13, SOLO NUMEROS Y LETRAS
-
-        if(strlen($_POST["rfc2"])<13 || !(preg_match('/[A-Za-z]/', $_POST["rfc2"]))|| !(preg_match('/[0-9]/', $_POST["rfc2"]))){
+        if(strlen($_POST["rfc_editar"])<10 || (preg_match('/[^A-Za-z0-9]/', $_POST["rfc_editar"])) || 
+            !(preg_match('/[A-Za-z]/', $_POST["rfc_editar"])) || !(preg_match('/[0-9]/', $_POST["rfc_editar"]))){
             $flag = false;
-            echo "<br>rfc2 malo";
+            echo "rfc invalido";
         }
-
         
         //ALIAS DEBE SER A LO MUCHO 20, LETRAS Y NUMEROS, SIN CARACTERES ESPECIALES
-        if(!(preg_match('/[A-Za-z0-9\s]/', $_POST["alias2"]))){
-            echo "<br>ALIAS NO";
+        if(!(preg_match('/[áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/',$_POST['alias_editar']))){
+            echo "<h1>Todo bien, hasta con acentos</h1>";
             $flag = false;
         }
-
 
         //RAZON A LO MUCHO 30, MISMO QUE ALIAS
-        if(!(preg_match('/[A-Za-z0-9]/', $_POST["razon_social2"]))){
-            echo "<br>RAZON MAL";
+     
+        if(!(preg_match('/[áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/',$_POST['razon_social_editar']))){
+            echo "<h1>Todo bien, hasta con acentos</h1>";
             $flag = false;
         }
-
+       
         //NOMBRE CONTACTO DE 40, LETRAS
-        if(!(preg_match('/[A-Za-z\s]/', $_POST["nombre_contacto2"]))){
+        if(!(preg_match('/[A-Za-záéíóúüñÑÁÉÍÓÚü.\s]/',$_POST['nombre_contacto_editar']))){
             $flag = false;
-            echo "<br>NOMBRE MAL";
+            echo "nombre invalido";
         }
 
-        //TELEFONO A LO MUCHO 20, NUMEROS Y ESPACIOS
-        if(!(preg_match('/[0-9\s]/', $_POST["telefono_proveedor2"]))){
+        //TELEFONO A LO MUCHO 20, NUMEROS, GUIONES Y ESPACIOS
+        if(preg_match('/[^0-9-\s]/', $_POST["telefono_proveedor_editar"])){
             $flag = false;
-            echo "<br>TELEFONO MAL";
+            echo "telefono malo";
         }
 
         //BANCO A LO MUCHO 40, SOLO NO CARACTERES ESPECIALES, MISMO QUE ALIAS
-        if(!(preg_match('/[A-Za-z0-9]/', $_POST["banco2"]))){
-            echo "<br>BANCO NO";
+        if(!(preg_match('/[áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/',$_POST['banco_editar']))){
+            echo "banco invalido";
             $flag = false;
         }
 
         //CUENTA DE 20, SOLO NUMEROS
-        if(strlen($_POST["cuenta_bancaria2"])<18){
+        if(strlen($_POST["cuenta_bancaria_editar"])<18|| !(is_numeric($_POST['cuenta_bancaria_editar']))){
             $flag = false;
-            echo "<br>CUENTA MALA";          //echo "No tiene 18";         //mensaje de que no lo tiene
+            echo "cuenta invalido";
 
+            
         }
 
+    
         if($flag){
             
-            if(editar_proveedor($_POST['rfc2'], $_SESSION['rfc2'], $_POST["alias2"], $_POST["razon_social2"], $_POST["nombre_contacto2"], $_POST["telefono_proveedor2"], $_POST["cuenta_bancaria2"], $_POST["banco2"])){
-  
-                header("location:./_proveedor_vista.php");
-		$_SESSION['editar_proveedor_exito'] = 1;
-                if($GLOBALS['local_servidor'] == 1){
-                    echo '<script type="text/javascript">
-                window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
-                </script>';
-                }
-                echo  "<script type='text/javascript'>
-                                    alert('¡El proveedor se ha actualizado de manera exitosa!');
-                            </script>";
+            if(editar_proveedor($_POST['rfc_editar'], $_SESSION['rfc_anterior'], $_POST["alias_editar"], $_POST["razon_social_editar"], $_POST["nombre_contacto_editar"], $_POST["telefono_proveedor_editar"], $_POST["cuenta_bancaria_editar"], $_POST["banco_editar"])){
+  				
+                    header("location:./_proveedor_vista.php");
+    				$_SESSION['editar_proveedor_exito'] = 1;
+                    if($GLOBALS['local_servidor'] == 1){
+                          echo '<script type="text/javascript">                     window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";</script>';
+                    }
+                    
             }else{
-            $_SESSION['editar_proveedor_error'] = 1;
-                echo "LA CONSULTA FALLO";
+                    $_SESSION['editar_proveedor_error'] = 1;
+                    header("location:./_proveedor_vista.php");
+                    if($GLOBALS['local_servidor'] == 1){
+                        echo '<script type="text/javascript">
+                            window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
+                            </script>';
+                    }
             }  
-            //mostrar errores
+           
         }else{
-            echo "NO SE MANDARA  ";   
+                    $_SESSION['editar_proveedor_error'] = 1;
+                    header("location:./_proveedor_vista.php");
+                    if($GLOBALS['local_servidor'] == 1){
+                        echo '<script type="text/javascript">
+                            window.location="https://www.marianasala.org/Website/proveedores/_proveedor_vista.php";
+                            </script>';
+                    }
             
         }
   
     }
     
-}  //header("location:./_proveedores_vista.php");
+}  
     
 ?>

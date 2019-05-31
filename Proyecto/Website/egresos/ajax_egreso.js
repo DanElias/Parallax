@@ -1,5 +1,5 @@
 
-
+	//MUESTRA EL MODAL CON MAS INFORMACION
     function mostrar_informacion_egreso(folio){
         $.post('_controller_modal_mas_informacion_egreso.php', { id : folio })
         .done(function(data){
@@ -8,6 +8,7 @@
         });
     }
     
+    //MUESTRA EL FORM DE EDITAR CON SUS VALORES Y LOS DROPS CON SU OPCION SELECCIONADA
     function mostrar_editar_egreso(folio,rfc,cuenta){
         
    

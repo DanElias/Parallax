@@ -12,6 +12,7 @@
 
   if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) {
+        $_SESSION['folio_anterior'] = $row['folio_factura'];
           $edit_form = 
 
                   '<div id="_form_editar_egreso" class="modal modal-fixed-footer my_modal  my_big_modal">
@@ -59,7 +60,7 @@
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">attach_money</i>
-                                      <input  type="text" class="validate" id="importe2" name="importe2" required value="'.$row['importe'].'" maxlength="10" onkeyup="validar_importe()">
+                                      <input  type="text" class="validate" id="importe2" name="importe2" required value="'.$row['importe'].'" maxlength="30" onkeyup="validar_importe()">
                                       <label for="importe2">Importe</label>
                                       <span id="error_importe2"></span> 
                                   </div>
@@ -73,7 +74,7 @@
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">account_balance</i>
                                         <input  type="text" class="validate" id="cuenta_bancaria_egreso2" name="cuenta_bancaria_egreso2" required value="'.$row['cuenta_bancaria'].'" maxlength="20" onkeyup="validar_cuenta_bancaria()">
-                                        <label for="cuenta_bancaria_egreso2">Cuenta Bancaria</label>
+                                        <label for="cuenta_bancaria_egreso2">Cuenta/Tarjeta</label>
                                         <span id="error_cuenta_bancaria_egreso2"></span> 
                                   </div>
 
@@ -107,8 +108,8 @@
                                             </button>
                                       </div>
                                       <div class="col s6">
-                                          <button class="btn waves-effect waves-light red modal-close">Cancelar
-                                              <i class="material-icons right">highlight_off</i>
+                                          <button class="btn waves-effect waves-light red modal-close" type="button">Cancelar
+                                                <i class="material-icons right">highlight_off</i>
                                           </button>
                                       </div>
                                   </div>
@@ -133,37 +134,13 @@
                             });
                     </script>";
   
-    //echo '<script type="text/javascript" src="../js/validation_proveedor.js"></script>';
-
-                    
-    //M.updateTextFields() sirve para que se actualizen los text fields y se mueven los labels de los campos que ya estan llenos.}
+   
     
-} else { // si no hay eventos registrados en la tabla
-    $_SESSION['error_proveedor']="No encontramos el evento especificado, inténtalo más tarde";
-   // mostrar_alerta_error_modal_editar();
+} else {
+    //$_SESSION['error_proveedor']="No encontramos el evento especificado, inténtalo más tarde";
+   
 }
 
-  /*
-  function mostrar_alerta_error_modal_editar()
-      header_html();
-      sidenav_html();
-      evento_html();
-      form_evento_html();
-      controller_tabla_eventos_php();
-      form_eliminar_evento_html();
-      alerta_error($_SESSION['error_evento']);
-      modal_informacion_evento_html();
-      echo
-      "<script type='text/javascript'>
-              jQuery(document).ready(function(){
-                    jQuery('#_form_alerta_error').modal();
-                    jQuery(document).ready(function(){
-                        jQuery('#_form_alerta_error').modal('open');
-                    });
-              });
-      </script>";
-      footer_html();
-      echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
-  }*/
+  
 
 ?>
