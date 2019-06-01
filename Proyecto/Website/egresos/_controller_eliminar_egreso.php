@@ -34,7 +34,7 @@ modal_informacion_egreso_html();
                     <div class="row">
         
                         <div class="col s12 m6">
-                            <button class="modal-close btn waves-effect waves-light modal-close">Cancelar
+                            <button type="button" class="modal-close btn waves-effect waves-light modal-close">Cancelar
                                 <i class="material-icons right">highlight_off</i>
                             </button>
                         </div>
@@ -61,9 +61,13 @@ modal_informacion_egreso_html();
     </script>";
   
     
-footer_html();
+    footer_html();
     
-echo '<script type="text/javascript" src="ajax_egreso.js"></script>';
+    echo'<script type="text/javascript" src="ajax_egreso.js"></script> 
+        ';
+    //<script type="text/javascript" src="ajax.js"></script>
+         //<script type="text/javascript" src="validaciones.js"></script>
+         //<script type="text/javascript" src="validaciones_editar.js"></script>
 
 
 ?>

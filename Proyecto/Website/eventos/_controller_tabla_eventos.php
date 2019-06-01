@@ -24,6 +24,7 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query fue exitoso si me dió
         $query_table .= "<td>" . $row["lugar"] . "</td>";
         $query_table .= '<td style="display:none;">' . $row["imagen"] . '</td>'; //no quiero que este row aparezca en el front end pero si en excel y pdf de descarga
         $query_table .= '<td style="display:none;">' . $row["descripcion"] . '</td>';
+        $query_table .= '<td style="display:none;">' . $row["link_facebook"] . '</td>';
         
         $query_table .= 
                     '<td>
@@ -68,6 +69,7 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query fue exitoso si me dió
                                 <th>Lugar</th>
                                 <th style="display:none;">Imagen</th>
                                 <th style="display:none;">Descripcion</th>
+                                <th style="display:none;">Link Facebook</th>
                                 <th>Más Información</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>

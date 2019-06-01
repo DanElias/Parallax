@@ -49,7 +49,7 @@ function genBorrarTut2(numero){
 function llenarEdit(number){
   $.post('controladores/genEdit.php', { id : number } )
   .done(function(data){
-    console.log(data);
+    //console.log(data);
     $('#editarBeneficiario').html(data);
     M.AutoInit();
     M.updateTextFields();
@@ -86,6 +86,8 @@ function listaTutor(){
     //console.log(data);
     $('#tutor1').html(data);
     $('#tutor2').html(data);
+    //$('#etutor1').html(data);
+    //$('#etutor2').html(data);
     M.AutoInit();
   })
   .fail(function(){
@@ -115,7 +117,7 @@ function mEst(){
 function infoTutor(){
   $.post('tutorController.php', { opcion : 1 } )
   .done(function(data){
-    console.log("Funciono");
+    //console.log("Funciono");
     $('#todosTutores').html(data);
   });
   M.AutoInit();
@@ -127,6 +129,7 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
+    $('#idtutor1').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
     llenarEditTutor(ide);
     genBorrarTut(ide);
     $('#info1').attr("href", newURL);
@@ -138,11 +141,38 @@ $(document).ready(function(){
     var ide = this.value;
     var num = 1;
     var newURL = "#modal_informacion_tutor_" + ide;
+    $('#idtutor2').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
     llenarEditTutor2(ide);
     genBorrarTut2(ide);
     $('#info2').attr("href", newURL);
   });
 })
+
+$(document).on('click', '.editarBen', function(){
+  $('#etutor1').change(function() {
+      //console.log("Cambio de valor etutor1");
+      var ide = this.value;
+      var num = 1;
+      var newURL = "#modal_informacion_tutor_" + ide;
+      $('#eidtutor1').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
+      llenarEditTutor(ide);
+      genBorrarTut(ide);
+      $('#einfo1').attr("href", newURL);
+  });
+});
+
+$(document).on('click', '.editarBen', function(){
+  $('#etutor2').change(function() {
+      //console.log("Cambio de valor etutor1");
+      var ide = this.value;
+      var num = 1;
+      var newURL = "#modal_informacion_tutor_" + ide;
+      $('#eidtutor2').html("&nbsp;&nbsp;" + ide + "&nbsp;&nbsp;");
+      llenarEditTutor2(ide);
+      genBorrarTut2(ide);
+      $('#einfo2').attr("href", newURL);
+  });
+});
 
 $(document).ready(function(){
   $('#formEstado').submit(function (ev){
@@ -170,15 +200,20 @@ $(document).ready(function(){
   $('#eliminarBen').submit(function (ev){
     ev.preventDefault();
      var id = $("#borrar_id").val();
-     $.post('controladores/deleteBen.php', { id : id } )
-     .done(function(data){
-       alert('Beneficiario eliminado!');
-       location.reload(true);
-      })
-      .fail(function(){
-        alert('Error: no se pudo eliminar el beneficiario');
-        console.log('Error');
-      })
+     var name = $("#borrar_nomben").val();
+     if(validar_nomcom(name) && $.isNumeric(id)){
+       $.post('controladores/deleteBen.php', { id : id, nombre : name } )
+       .done(function(data){
+         alert(data);
+         location.reload(true);
+        })
+        .fail(function(){
+          alert('Error: no se pudo eliminar el beneficiario');
+          console.log('Error');
+        })
+      } else {
+        alert('El Beneficiario no pudo ser eliminado, intente más tarde');
+      }
     });
 });
 
@@ -186,128 +221,164 @@ $(document).ready(function(){
   $('#eliminarTut').submit(function (ev){
     ev.preventDefault();
      var id = $("#borrarTut_id").val();
-     $.post('controladores/deleteTutor.php', { id : id } )
-     .done(function(data){
-       alert('Tutor eliminado!');
-       infoTutor();
-       listaTutor();
-       location.reload(true);
-      })
-      .fail(function(){
-        alert('Error: no se pudo eliminar el tutor');
-        console.log('Error');
-      })
-    });
+     var name = $("#borrarTut_nombre").val();
+     if(validar_nomcom(name) && $.isNumeric(id)){
+       $.post('controladores/deleteTutor.php', { id : id, nombre : name } )
+       .done(function(data){
+         alert(data);
+         infoTutor();
+         listaTutor();
+         location.reload(true);
+        })
+        .fail(function(){
+          alert('Error: no se pudo eliminar el tutor');
+
+        })
+    } else {
+      alert('El tutor no pudo ser eliminado, intente más tarde');
+    }
+  });
 });
 
 $(document).ready(function(){
   $('#eliminarTut2').submit(function (ev){
     ev.preventDefault();
      var id = $("#borrarTut2_id").val();
-     $.post('controladores/deleteTutor.php', { id : id } )
-     .done(function(data){
-       alert('Tutor eliminado!');
-       infoTutor();
-       listaTutor();
-       location.reload(true);
-      })
-      .fail(function(){
-        alert('Error: no se pudo eliminar el tutor');
-        console.log('Error');
-      })
-    });
+     var name = $("#borrarTut2_nombre").val();
+     if(validar_nomcom(name) && $.isNumeric(id)){
+       $.post('controladores/deleteTutor.php', { id : id, nombre : name } )
+       .done(function(data){
+         alert(data);
+         infoTutor();
+         listaTutor();
+         location.reload(true);
+        })
+        .fail(function(){
+          alert('Error: no se pudo eliminar el tutor');
+
+        })
+    } else {
+      alert('El tutor no pudo ser eliminado, intente más tarde');
+    }
+  });
 });
 
 $(document).ready(function(){
   $("#registroTutor").submit(function (ev){
     ev.preventDefault();
-     var nombre= $('#nombre_tutor').val();
-     var apellido= $('#apellido_tutor').val();
-     var fecha= $('#fecha_nacimiento_tutor').val();
-     var telefono= $('#telefono').val();
-     var ocupacion= $('#ocupacion').val();
-     var empresa= $('#empresa').val();
-     var grado= $('#grado_estudios_tutor').val();
-     var titulo= $('#titulo').val();
-     $.post('controladores/registrarTutor.php', { nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
-     .done(function(data){
-       console.log('Insercion de tutor correcta');
-       alert('Tutor registrado con éxito!');
-       $('#nombre_tutor').val("");
-       $('#apellido_tutor').val("");
-       $('#fecha_nacimiento_tutor').val("");
-       $('#telefono').val("");
-       $('#ocupacion').val("");
-       $('#empresa').val("");
-       $('#grado_estudios_tutor').val("");
-       $('#titulo').val("");
-       infoTutor();
-       listaTutor();
-      })
-      .fail(function(){
-        alert('Error en registro, verifique datos de entrada');
+    if(validate_registrar_tutor()){
+       var nombre= $('#nombre_tutor').val();
+       var apellido= $('#apellido_tutor').val();
+       var fecha= $('#fecha_nacimiento_tutor').val();
+       var telefono= $('#telefono').val();
+       var ocupacion= $('#ocupacion').val();
+       var empresa= $('#empresa').val();
+       var grado= $('#grado_estudios_tutor').val();
+       var titulo= $('#titulo').val();
+       $.post('controladores/registrarTutor.php', { nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
+       .done(function(data){
+         alert(data);
+         if(data != 'Errores en los campos'){
+           $('#nombre_tutor').val("");
+           $('#apellido_tutor').val("");
+           $('#fecha_nacimiento_tutor').val("");
+           $('#telefono').val("");
+           $('#ocupacion').val("");
+           $('#empresa').val("");
+           $('#grado_estudios_tutor').val("");
+           $('#titulo').val("");
+           infoTutor();
+           listaTutor();
+         } else {
+           // Do nothing
+         }
+         //console.log('Insercion de tutor correcta');
+         //alert('Tutor registrado con éxito!');
 
-        console.log('Error');
-      })
+        })
+        .fail(function(){
+          alert('Error en registro, verifique datos de entrada');
+
+          //console.log('Error');
+        })
+      } else {
+        alert('Todavía hay campos con errores');
+      }
     });
 });
 
 $(document).ready(function(){
   $("#editarTutor").submit(function (ev){
     ev.preventDefault();
-    var id = $('#eid_t').val();
-     var nombre= $('#enombre_tutor').val();
-     var apellido= $('#eapellido_tutor').val();
-     var fecha= $('#efecha_nacimiento_tutor').val();
-     var telefono= $('#etelefono').val();
-     var ocupacion= $('#eocupacion').val();
-     var empresa= $('#eempresa').val();
-     var grado= $('#egrado_estudios_tutor').val();
-     var titulo= $('#etitulo').val();
-     $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
-     .done(function(data){
-       console.log('Tutor modificado correctmente');
-       alert('Tutor editado con éxito!');
-       infoTutor();
-       listaTutor();
-      })
-      .fail(function(){
-        alert('Error en edición, verifique datos de entrada');
+    if(validate_editar_tutor1()){
+      var id = $('#eid_t').val();
+       var nombre= $('#enombre_tutor').val();
+       var apellido= $('#eapellido_tutor').val();
+       var fecha= $('#efecha_nacimiento_tutor').val();
+       var telefono= $('#etelefono').val();
+       var ocupacion= $('#eocupacion').val();
+       var empresa= $('#eempresa').val();
+       var grado= $('#egrado_estudios_tutor').val();
+       var titulo= $('#etitulo').val();
+       $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
+       .done(function(data){
+         //console.log('Tutor modificado correctmente');
+         alert(data);
+         infoTutor();
+         listaTutor();
 
-        console.log('Error');
-      })
+        })
+        .fail(function(){
+          alert('Error en edición, verifique datos de entrada');
+
+          //console.log('Error');
+        })
+      } else {
+        alert('Hay campos con errores');
+      }
     });
 });
 $(document).ready(function(){
   $("#editarTutor2").submit(function (ev){
     ev.preventDefault();
-    var id = $('#eeid_t').val();
-     var nombre= $('#eenombre_tutor').val();
-     var apellido= $('#eeapellido_tutor').val();
-     var fecha= $('#eefecha_nacimiento_tutor').val();
-     var telefono= $('#eetelefono').val();
-     var ocupacion= $('#eeocupacion').val();
-     var empresa= $('#eeempresa').val();
-     var grado= $('#eegrado_estudios_tutor').val();
-     var titulo= $('#eetitulo').val();
-     $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
-     .done(function(data){
-       console.log('Tutor modificado correctmente');
-       alert('Tutor editado con éxito!');
-       infoTutor();
-       listaTutor();
-      })
-      .fail(function(){
-        alert('Error en edición, verifique datos de entrada');
+    if(validate_editar_tutor2()){
+      var id = $('#eeid_t').val();
+       var nombre= $('#eenombre_tutor').val();
+       var apellido= $('#eeapellido_tutor').val();
+       var fecha= $('#eefecha_nacimiento_tutor').val();
+       var telefono= $('#eetelefono').val();
+       var ocupacion= $('#eeocupacion').val();
+       var empresa= $('#eeempresa').val();
+       var grado= $('#eegrado_estudios_tutor').val();
+       var titulo= $('#eetitulo').val();
+       $.post('controladores/editTutor.php', { id : id, nombre : nombre, apellido : apellido, empresa : empresa, fecha : fecha, telefono : telefono, ocupacion : ocupacion, grado : grado, titulo : titulo } )
+       .done(function(data){
+         //console.log('Tutor modificado correctmente');
+         alert(data);
+         infoTutor();
+         listaTutor();
+        })
+        .fail(function(){
+          alert('Error en edición, verifique datos de entrada');
 
-        console.log('Error');
-      })
+          console.log('Error');
+        })
+      } else {
+        alert('Hay campos con errores');
+      }
     });
 });
 
 $(document).ready(function(){
   $("#registrarBeneficiario").submit(function (ev){
     ev.preventDefault();
+    if(!$('#benTut2').prop("checked")){
+      parentesco2 = "";
+      tut2 = "";
+      $('#errorPar2').html('');
+      $('#errorTut2').html('');
+    }
+    if(validate_registrar_ben()){
      var nombre= $('#nombre').val();
      var apellido_pat= $('#apellido_paterno').val();
      var apellido_mat = $('#apellido_materno').val();
@@ -330,43 +401,73 @@ $(document).ready(function(){
      }
      var parentesco1 = $('#parentesco1').val();
      var tut1 = $('#tutor1').val();
+     if(parentesco1 === null){
+       $('#errorPar1').html('*No puede dejarse vacío');
+       return;
+     } else {
+       $('#errorPar1').html('');
+     }
+     if(tut1 === null){
+       $('#errorTut1').html('*No puede dejarse vacío');
+       return;
+     } else {
+       $('#errorTut1').html('');
+     }
      var parentesco2 = $('#parentesco2').val();
      var tut2 = $('#tutor2').val();
      if(!$('#benTut2').prop("checked")){
        parentesco2 = "";
        tut2 = "";
+       $('#errorPar2').html('');
+       $('#errorTut2').html('');
+     } else {
+       if(parentesco2 === null){
+         $('#errorPar2').html('*No puede dejarse vacío');
+         return;
+       } else {
+         $('#errorPar2').html('');
+       }
+       if(tut2 === null){
+         $('#errorTut2').html('*No puede dejarse vacío');
+         return;
+       } else {
+         $('#errorTut2').html('');
+       }
      }
-     $.post('controladores/registrarBeneficiario.php', { nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
-     .done(function(data){
-       $('#nombre').val("");
-       $('#apellido_paterno').val("");
-       $('#apellido_materno').val("");
-       $('#fecha_nacimiento').val("");
-       $('#sexo').val("");
-       $('#numero_domicilio').val("");
-       $('#calle').val("");
-       $('#colonia').val("");
-       $('#escuela').val("");
-       $('#grado').val("");
-       $('#grupo').val("");
-       $('#cuota').val("");
-       $('#status').val("");
-       $('#enfermedades').val("");
-       alert('Beneficiario registrado!');
-       location.reload(true);
-      })
-      .fail(function(){
-        alert('Error en registro, verifique datos de entrada');
-
-        console.log('Error');
-      })
-    });
+     if(validate_registrar_ben()){
+       $.post('controladores/registrarBeneficiario.php', { nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
+       .done(function(data){
+         alert(data);
+         if(data == 'Error, no se insertó el beneficiario, revise los campos'){
+           $('#mensajeError').html('Si no encuentra el error, refresque la página');
+         } else {
+           location.reload(true);
+         }
+         //location.reload(true);
+        })
+        .fail(function(){
+          alert('Error en registro, verifique datos de entrada');
+        })
+      } else {
+        alert('Hay errores en los campos');
+      }
+    } else {
+      alert('Hay errores en los campos');
+    }
+  });
 });
 
 $(document).ready(function(){
   $("#_form_editar_beneficiarios").submit(function (ev){
     ev.preventDefault();
-     var id = $('#eid_b').val();
+    if(!$('#ebenTut2').prop("checked")){
+      parentesco2 = "";
+      tut2 = "";
+      $('#eerrorPar2').html('');
+      $('#eerrorTut2').html('');
+    }
+    if(validate_editar_ben()){
+      var id = $('#eid_b').val();
      var nombre= $('#enombre').val();
      var apellido_pat= $('#eapellido_paterno').val();
      var apellido_mat = $('#eapellido_materno').val();
@@ -387,29 +488,62 @@ $(document).ready(function(){
      } else {
        estado = 0;
      }
-     $.post('controladores/editBen.php', { id : id, nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades } )
-     .done(function(data){
-       $('#nombre').val("");
-       $('#apellido_paterno').val("");
-       $('#apellido_materno').val("");
-       $('#fecha_nacimiento').val("");
-       $('#sexo').val("");
-       $('#numero_domicilio').val("");
-       $('#calle').val("");
-       $('#colonia').val("");
-       $('#escuela').val("");
-       $('#grado').val("");
-       $('#grupo').val("");
-       $('#cuota').val("");
-       $('#status').val("");
-       $('#enfermedades').val("");
-       alert('Beneficiario editado!');
-       location.reload(true);
-      })
-      .fail(function(){
-        alert('Error en edición, verifique datos de entrada');
-
-        console.log('Error');
-      })
-    });
+     var parentesco1 = $('#eparentesco1').val();
+     var tut1 = $('#etutor1').val();
+     if(parentesco1 === null){
+       $('#eerrorPar1').html('*No puede dejarse vacío');
+       return;
+     } else {
+       $('#eerrorPar1').html('');
+     }
+     if(tut1 === null){
+       $('#eerrorTut1').html('*No puede dejarse vacío');
+       return;
+     } else {
+       $('#eerrorTut1').html('');
+     }
+     var parentesco2 = $('#eparentesco2').val();
+     var tut2 = $('#etutor2').val();
+     if(!$('#ebenTut2').prop("checked")){
+       parentesco2 = "";
+       tut2 = "";
+       $('#eerrorPar2').html('');
+       $('#eerrorTut2').html('');
+     } else {
+       if(parentesco2 === null){
+         $('#eerrorPar2').html('*No puede dejarse vacío');
+         return;
+       } else {
+         $('#eerrorPar2').html('');
+       }
+       if(tut2 === null){
+         $('#eerrorTut2').html('*No puede dejarse vacío');
+         return;
+       } else {
+         $('#eerrorTut2').html('');
+       }
+     }
+     if(validate_editar_ben()){
+       $.post('controladores/editBen.php', { id : id, nombre : nombre, apellido_paterno : apellido_pat, apellido_materno : apellido_mat, sexo : sexo, fecha : fecha, numero : numero, calle : calle, colonia : colonia, escuela : escuela, grado : grado, grupo : grupo, estado : estado, nivel : status, cuota : cuota, alergias : enfermedades, par1 : parentesco1, idtut1 : tut1, par2 : parentesco2, idtut2 : tut2  } )
+       .done(function(data){
+         alert(data);
+         if(data == 'Error, no se editó el beneficiario, revise los campos'){
+           $('#emensajeError').html('Si no encuentra el error, refresque la página');
+         } else {
+           location.reload(true);
+         }
+         //location.reload(true);
+        })
+        .fail(function(){
+          alert('Error en edición, verifique datos de entrada');
+        })
+      } else {
+        alert('Corrija los errores antes de mandar la forma');
+        $('#emensajeError').html('Si no encuentra el error, refresque la página');
+      }
+    } else {
+      alert('Corrija los errores antes de mandar la forma');
+      $('#emensajeError').html('Si no encuentra el error, refresque la página');
+    }
+  });
 });

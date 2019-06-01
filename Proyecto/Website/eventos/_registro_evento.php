@@ -27,6 +27,7 @@ if (isset($_POST["submit"])) {
     $_POST["hora_evento"] = htmlentities($_POST["hora_evento"]);
     $_POST["lugar_evento"] = htmlentities($_POST["lugar_evento"]);
     $_POST["descripcion_evento"] = htmlentities($_POST["descripcion_evento"]);
+    $_POST["link_facebook"] = htmlentities($_POST["link_facebook"]);
 
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
     if (isset($_POST["nombre_evento"])
@@ -45,7 +46,7 @@ if (isset($_POST["submit"])) {
 
             //Validar que la imagen insertada sea valida
             if (validar_imagen()){
-                 if (insertarEvento($_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'])){
+                 if (insertarEvento($_POST["nombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["lugar_evento"], $_POST["descripcion_evento"], $_SESSION['link_imagen'], $_POST["link_facebook"])){
                     
                     //ya que se hizo bien el registro recargo la página y le muestro reto al usuario de que fue lo que se guardó
                     header_html();//recargo la pagina

@@ -7,7 +7,7 @@ session_start();
 $_GET['id'] = htmlentities($_GET['id']);
 
 if (eliminar_egreso_folio($_GET['id'])){
-        $_SESSION['exito_eliminar_egreso'] = 1;
+        $_SESSION['eliminar_egreso_exito'] = 1;
         header("location:_egreso_vista.php");
         if($GLOBALS['local_servidor'] == 1){
                     echo '<script type="text/javascript">
@@ -15,8 +15,8 @@ if (eliminar_egreso_folio($_GET['id'])){
                 </script>';
                 }
 } else {
-    echo "<script>alert('hola');</script>";
-    $_SESSION['error_eliminar_egreso']=1;
+    
+    $_SESSION['eliminar_egreso_error']=1;
     header("location:_egreso_vista.php");
     if($GLOBALS['local_servidor'] == 1){
                     echo '<script type="text/javascript">

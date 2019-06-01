@@ -31,36 +31,11 @@ function form_proveedor_html()
 }
 
 
-function form_eliminar_proveedor_html()
-{
-    include("_form_eliminar_proveedor.html");
-}
-
-
 function modal_informacion_proveedor_html()
 {
     include("_modal_informacion_proveedor.html");
 }
 
-/*
-function form_editar_proveedor()
-{
-    include("forms/_form_editar_proveedor.html");
-}
 
-function form_eliminar_proveedor()
-{
-    include("forms/_form_eliminar_proveedor.html");
-}
-
-function modal_informacion_proveedores()
-{
-    include("_modal_informacion_proveedores.html");
-}
-
-function controller_tabla_proveedores_php()
-{
-    include("controladores/_controller_tabla_proveedores.php");
-}*/
 
 ?>

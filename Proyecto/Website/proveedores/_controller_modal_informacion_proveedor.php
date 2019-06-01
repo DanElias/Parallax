@@ -94,9 +94,9 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <br><br>';
     }
-} else { // si no hay eventos registrados en la tabla
-    $_SESSION['error_proveedor']="No encontramos el evento solicitado. Inténtalo más tarde";
-    //mostrar_alerta_error_modal_informacion();
+} else { 
+    
+   
 }
 
 
@@ -132,29 +132,6 @@ echo '
          </div>
     </div>';
     
-/*
-    
-function mostrar_alerta_error_modal_informacion()
-{
-    header_html();
-    sidenav_html();
-    evento_html();
-    form_evento_html();
-    controller_tabla_eventos_php();
-    form_eliminar_evento_html();
-    alerta_error($_SESSION['error_proveedor']);
-    modal_informacion_evento_html();
-    echo
-    "<script type='text/javascript'>
-            $(document).ready(function(){
-                  $('#_form_alerta_error').modal();
-                  $(document).ready(function(){
-                      $('#_form_alerta_error').modal('open');
-                  });
-            });
-    </script>";
-    footer_html();
-     echo '<script type="text/javascript" src="ajax_eventos.js"></script>';
-}*/
+
 
 ?>

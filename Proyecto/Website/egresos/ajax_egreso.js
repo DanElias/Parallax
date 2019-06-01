@@ -1,5 +1,5 @@
 
-
+	//MUESTRA EL MODAL CON MAS INFORMACION
     function mostrar_informacion_egreso(folio){
         $.post('_controller_modal_mas_informacion_egreso.php', { id : folio })
         .done(function(data){
@@ -8,16 +8,14 @@
         });
     }
     
+    //MUESTRA EL FORM DE EDITAR CON SUS VALORES Y LOS DROPS CON SU OPCION SELECCIONADA
     function mostrar_editar_egreso(folio,rfc,cuenta){
         
-        //console.log(folio);
-        //console.log(rfc);
-        //console.log(cuenta);
-
+   
         $.post('_egreso_editar_form.php', { id : folio } )
         .done(function(data){
             //console.log(data);
-            $.post('mostrar_cuentacontable.php', { id : folio } )
+            $.post('mostrar_cuentacontable2.php', { id : folio } )
             .done(function(data){
                 $('#drop_cuenta2').html(data);
                 $('#drop_cuenta2 option[value='+cuenta+']').attr('selected',true);
@@ -25,7 +23,7 @@
                
             });
 
-            $.post('mostrar_proveedor.php', { id : folio } )
+            $.post('mostrar_proveedor2.php', { id : folio } )
             .done(function(data){
                 $('#drop_proveedor2').html(data);
                 $('#drop_proveedor2 option[value='+rfc+']').attr('selected',true);
