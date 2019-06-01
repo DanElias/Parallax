@@ -49,7 +49,7 @@ function closeDb($mysql)
 function obtenerEventos()
 {
     $conn = conectDb();
-    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento";
+    $sql = "SELECT * FROM evento";
     if($stmt = $conn->prepare($sql)){
       $stmt->execute();
       $result = $stmt->get_result();
@@ -305,7 +305,7 @@ function verificar_proveedor_en_egreso($rfc){
         closeDB($conn);
     }else{
         closeDB($conn);
-  
+
     }
     return $result;
     closeDB($conn);
@@ -402,7 +402,7 @@ function eliminar_egreso_folio($folio_factura){
     closeDB($conn);
     return $result;
   }
-  
+
   function obtener_nombre_cuenta($id_cuenta)
   {
     $conn = conectDb();
@@ -517,7 +517,7 @@ function eliminar_egreso_folio($folio_factura){
   }
 
 /*------------------------------------------------------LOGIN USUARIOS ROLES PRIVILEGIOS----------------------------------------------------------------------*/
-  
+
   function editarRol($descripcion,$id_rol)
 {
     $conn = conectDb();
@@ -739,7 +739,7 @@ function registrar_Rol($nombre)
   }
 
   function obtenerUsuariosPorID($id_usuario)
-  { 
+  {
     $conn = conectDb();
     $sql = "SELECT id_usuario,nombre,apellido,email,fecha_nacimiento,id_rol FROM usuario WHERE id_usuario = ?";
     if($stmt = $conn->prepare($sql)){
@@ -760,7 +760,7 @@ function registrar_Rol($nombre)
     closeDb($conn);
     return $result;
   }
-  
+
   function autentificarse($email, $password)
   {
     $conn = conectDb();
@@ -806,7 +806,7 @@ function registrar_Rol($nombre)
   }
 
 /*------------------------------------------------------REPORTES EGRESOS----------------------------------------------------------------------*/
-  
+
   function obtenerEgresosPeriodo($fecha_inicial, $fecha_final)
   {
     $conn = conectDb();
@@ -837,7 +837,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function editarTutor($id,$nombre, $apellido,$telefono,$fecha, $ocupacion, $empresa, $grado, $titulo){
     $conn = conectDb();
     $sql = "UPDATE tutor SET nombre=?, apellido=?, telefono=?, fecha_nacimiento=?, ocupacion=?, nombre_empresa=?, grado_estudio=?, titulo_obtenido=? WHERE id_tutor=?";
@@ -854,7 +854,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function getNombreTutor(){
     $conn = conectDb();
     $sql = "SELECT id_tutor,nombre,apellido FROM tutor ORDER BY apellido";
@@ -866,7 +866,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getNombreBeneficiarios(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario,nombre,apellido,fecha_nacimiento,grupo,estado FROM beneficiario";
@@ -878,7 +878,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getBeneficiariosActivos(){
     $conn = conectDb();
     $sql = "SELECT * FROM beneficiario WHERE estado=1";
@@ -890,7 +890,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getInfoBeneficiarios(){
     $conn = conectDb();
     $sql = "SELECT * FROM beneficiario";
@@ -902,7 +902,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getEstadoById($id){
     $conn = conectDb();
     $sql = "SELECT estado FROM beneficiario WHERE id_beneficiario=?";
@@ -922,7 +922,7 @@ function registrar_Rol($nombre)
     }
     return $estado;
   }
-  
+
   function modificarEstado($id,$estado){
     $conn = conectDb();
     $sql = "UPDATE beneficiario SET estado=? WHERE id_beneficiario=?";
@@ -935,7 +935,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getInfoTutores(){
     $conn = conectDb();
     $sql = "SELECT * FROM tutor";
@@ -947,7 +947,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getInfoById($id){
     $conn = conectDb();
     $sql = "SELECT * FROM beneficiario WHERE id_beneficiario=?";
@@ -960,7 +960,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getInfoTutorById($id){
     $conn = conectDb();
     $sql = "SELECT * FROM tutor WHERE id_tutor=?";
@@ -973,7 +973,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getIDsBen(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario FROM beneficiario";
@@ -985,7 +985,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEstado(){
     $conn = conectDb();
     $sql = "
@@ -1000,7 +1000,7 @@ function registrar_Rol($nombre)
 	closeDB($conn);
     return $result;
   }
-  
+
   function benTutor($idben){
     $conn = conectDb();
     $sql = "SELECT t.nombre as name, t.apellido as lastname, bt.parentesco as rel, t.id_tutor as id FROM tutor t, beneficiario_tutor bt, beneficiario b WHERE b.id_beneficiario=bt.id_beneficiario AND t.id_tutor=bt.id_tutor AND b.id_beneficiario=?";
@@ -1013,7 +1013,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function correctID_Tut($id){
     $conn = conectDb();
     $sql = "SELECT nombre, apellido FROM tutor WHERE id_tutor=?";
@@ -1026,7 +1026,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function correctID_Ben($id){
     $conn = conectDb();
     $sql = "SELECT nombre, apellido_paterno, apellido_materno FROM beneficiario WHERE id_beneficiario=?";
@@ -1039,7 +1039,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function getLastBen(){
     $conn = conectDb();
     $sql = "SELECT id_beneficiario FROM beneficiario ORDER BY id_beneficiario DESC LIMIT 1";
@@ -1051,7 +1051,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function insertarBeneficiario($nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
     $conn = conectDb();
     $sql = "INSERT INTO beneficiario(nombre, apellido_paterno, apellido_materno, estado, fecha_nacimiento, sexo, grado_escolar, grupo, numero_calle, calle, colonia, nivel_socioeconomico, nombre_escuela, enfermedades_alergias, cuota) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -1068,7 +1068,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function editarBeneficiario($id,$nombre,$apellido_p,$apellido_m,$estado,$fecha,$sexo,$grado,$grupo,$numero,$calle,$colonia,$nivel,$escuela,$alergias,$cuota){
     deleteBenTut1($id);
     $conn = conectDb();
@@ -1086,7 +1086,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function deleteBeneficiario($id){
     deleteBenTut1($id);
     $conn = conectDb();
@@ -1104,7 +1104,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function deleteBenTut1($id){
     $conn = conectDb();
     $sql = "DELETE FROM beneficiario_tutor WHERE id_beneficiario=?";
@@ -1121,7 +1121,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function deleteBenTut2($id){
     $conn = conectDb();
     $sql = "DELETE FROM beneficiario_tutor WHERE id_tutor=?";
@@ -1138,7 +1138,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function deleteTutor($id){
     deleteBenTut2($id);
     $conn = conectDb();
@@ -1156,7 +1156,7 @@ function registrar_Rol($nombre)
     }
     closeDB($conn);
   }
-  
+
   function insertarBenTut($id_ben,$id_tutor,$parentesco){
     $conn = conectDb();
     $sql = "INSERT INTO beneficiario_tutor(id_beneficiario, id_tutor, parentesco) VALUES (?,?,?)";
@@ -1193,7 +1193,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteGradoEscolar($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1213,7 +1213,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteGrupo($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1233,7 +1233,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteNivel($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1253,7 +1253,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEscuela($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1273,7 +1273,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEnfermedades($estado){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1293,7 +1293,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteCuota($estado){
     $conn = conectDb();
     $sql = "
@@ -1310,7 +1310,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteOcupacion(){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1328,7 +1328,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEmpresa(){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1346,7 +1346,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteEstudio(){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1364,7 +1364,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-  
+
   function reporteTitulo(){
     $conn = conectDb();
     $conn->set_charset("utf8");
@@ -1382,7 +1382,7 @@ function registrar_Rol($nombre)
     closeDB($conn);
     return $result;
   }
-    
+
 function reporteCuenta($fecha_inicial, $fecha_final){
     $conn = conectDb();
     $conn->set_charset("utf8");
