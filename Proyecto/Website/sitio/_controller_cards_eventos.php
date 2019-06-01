@@ -52,8 +52,19 @@ if (mysqli_num_rows($result) > 0) {
                                     
                                          <i class="material-icons prefix">description</i>
                                         Descripción: ' . $row["descripcion"] . '
-                                        <br> <br>   
-                                     </div>
+                                        <br> <br>';
+                                        
+                 if($row["link_facebook"]!=NULL){
+                                    
+                     $cards .= '        <i class="material-icons prefix">camera_alt</i>
+                                        <a href="' . $row["link_facebook"] . '" target="_blank"> Visita el Álbum de Facebook</a>
+                                        <br>';
+                }                    
+                                        
+                                        
+                                        
+                     $cards .=   '
+                                </div>
                                     <br> 
                                 
                                     <div class="col s12 m4">
@@ -142,8 +153,18 @@ if (mysqli_num_rows($result2) > 0) {
                                     
                                          <i class="material-icons prefix">description</i>
                                         Descripción: ' . $row["descripcion"] . '
-                                        <br> <br>   
-                                     </div>
+                                        <br><br>';
+                                        
+                        if($row["link_facebook"]!=NULL){
+                            $cards2 .=' <i class="material-icons prefix">camera_alt</i>
+                                        <a href="' . $row["link_facebook"] . '" target="_blank"> Visita el Álbum de Facebook</a>
+                                        <br>';
+                        }     
+                                        
+                                        
+                                        
+                                        
+                         $cards2 .='</div>
                                     <br> 
                                 
                                     <div class="col s12 m4">

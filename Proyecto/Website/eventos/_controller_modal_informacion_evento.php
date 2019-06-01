@@ -71,8 +71,26 @@ if (mysqli_num_rows($result) > 0) { //checa que el query haya arrojado un result
                                                 Descripcion: ' . $row["descripcion"] . '
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </div>';
+                                    
+                 if($row["link_facebook"]!=NULL){
+                    
+                     $cards .= '    <div class="row" style="font-family: Ubuntu; color: #0d3d63; font-size: 1em; text-align:left;">
+                                        <div class="col s12">
+                                            <div>
+                                                <i class="material-icons prefix">camera_alt</i>
+                                                
+                                                <a href="' . $row["link_facebook"] . '" target="_blank">Visita el Álbum de Facebook</a>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>';
+                }                              
+                                    
+               
+                                    
+                                    
+                $cards .=       '</div>
                             </div>
                         </div>
                     </div>

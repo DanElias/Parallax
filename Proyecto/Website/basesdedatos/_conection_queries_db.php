@@ -211,7 +211,7 @@ function obtenerEventosPorNombre($nombre_evento)
     closeDb($conn);
     return $result;*/
     $conn = conectDb();
-    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE nombre LIKE '%?%'";
+    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen, link_facebook FROM evento WHERE nombre LIKE '%?%'";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$nombre_evento);
       $stmt->execute();
@@ -250,7 +250,7 @@ function obtenerEventosPorID($id_evento)
     return $result;
     */
     $conn = conectDb();
-    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento WHERE id_evento = ?";
+    $sql = "SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen, link_facebook FROM evento WHERE id_evento = ?";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('i',$id_evento);
       $stmt->execute();
@@ -280,7 +280,7 @@ function obtenerEventoReciente()
 function obtenerEventosSiguientes($fecha){
     $conn = conectDb();
      $sql = "
-          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
+          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen, link_facebook FROM evento
           WHERE fecha>= ? ";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$fecha);
@@ -294,7 +294,7 @@ function obtenerEventosSiguientes($fecha){
 function obtenerEventosPasados($fecha){
     $conn = conectDb();
      $sql = "
-          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen FROM evento
+          SELECT id_evento, nombre, fecha, hora, lugar, descripcion, imagen, link_facebook FROM evento
           WHERE fecha< ? ";
     if($stmt = $conn->prepare($sql)){
       $stmt->bind_param('s',$fecha);
@@ -306,7 +306,7 @@ function obtenerEventosPasados($fecha){
     return $result;
 }
 //Inserta un nuevo evento en la base de datos
-function insertarEvento($nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento)
+function insertarEvento($nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento, $link_facebook)
 {
     /*$conn = conectDb();
     //INSERT INTO evento VALUES (,'Venta de Garage' ,'2019-03-28', '16:30:00','Mariana Sala I.A.P.' ,'Vamos a vender mobiliario para obtener fondos.', '../eventos/uploads/f3.jpg')
@@ -320,9 +320,9 @@ function insertarEvento($nombre_evento, $fecha_evento, $hora_evento, $lugar_even
         return false;
     }*/
     $conn = conectDb();
-    $sql = "INSERT INTO evento (nombre, fecha, hora, lugar, descripcion, imagen) VALUES (?,?,?,?,?,?)";
+    $sql = "INSERT INTO evento (nombre, fecha, hora, lugar, descripcion, imagen, link_facebook) VALUES (?,?,?,?,?,?,?)";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('ssssss',$nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento);
+      $stmt->bind_param('sssssss',$nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento, $link_facebook);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();
@@ -335,7 +335,7 @@ function insertarEvento($nombre_evento, $fecha_evento, $hora_evento, $lugar_even
     closeDB($conn);
 }
 //Inserta un nuevo evento en la base de datos
-function editarEvento($id_evento, $nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento)
+function editarEvento($id_evento, $nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento, $link_facebook)
 {
     /*$conn = conectDb();
     $sql = "UPDATE evento SET id_evento=$id_evento, nombre='" . $nombre_evento . "', fecha='" . $fecha_evento . "', hora='" . $hora_evento . "', lugar='" . $lugar_evento . "', descripcion='" . $descripcion_evento . "', imagen='" . $imagen_evento . "'
@@ -348,9 +348,9 @@ function editarEvento($id_evento, $nombre_evento, $fecha_evento, $hora_evento, $
         return false;
     }*/
     $conn = conectDb();
-    $sql = "UPDATE evento SET id_evento=?, nombre=?, fecha=?, hora=?, lugar=?, descripcion=?, imagen=? WHERE id_evento=?";
+    $sql = "UPDATE evento SET id_evento=?, nombre=?, fecha=?, hora=?, lugar=?, descripcion=?, imagen=?, link_facebook=? WHERE id_evento=?";
     if($stmt = $conn->prepare($sql)){
-      $stmt->bind_param('issssssi',$id_evento, $nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento, $id_evento);
+      $stmt->bind_param('isssssssi',$id_evento, $nombre_evento, $fecha_evento, $hora_evento, $lugar_evento, $descripcion_evento, $imagen_evento, $link_facebook, $id_evento);
       $stmt->execute();
       $result = $stmt->get_result();
       $stmt->close();

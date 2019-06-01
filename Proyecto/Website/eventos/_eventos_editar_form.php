@@ -66,7 +66,7 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                             <form class="col s12" action="_registro_editar_evento.php" method="post" enctype="multipart/form-data">
                                 
                                 <div class="row">
-                                    <div class="input-field col s6">
+                                    <div class="input-field col s4">
                                       <i class="material-icons prefix">event</i>
                                       <input  type="text" class="validate ubuntu-text" name="enombre_evento" id="enombre_evento" required value="' . $row['nombre'] . '" required onkeyup="validar_campo_evento(\'enombre_evento\',\'#evalidar_nombre_evento\')">
                                       <label for="nombre_evento">Nombre del evento</label>
@@ -81,23 +81,29 @@ if (mysqli_num_rows($result) > 0) { //reviso que el query me haya dado un result
                                       <i class="material-icons prefix">access_time</i>
                                     <input type="time" name="hora_evento" id="hora_evento" value="' . $row['hora'] . '" required  class="ubuntu-text">
                                     </div>
-                                </div>
-                            
-                                
-                                <div class="row">
-                                    <div class="input-field col s2">
+                                    <div class="input-field col s4">
                                       <i class="material-icons prefix">place</i>
                                       <input  type="text" class="validate ubuntu-text" name="elugar_evento" required id="elugar_evento" value="' . $row['lugar'] . '" required onkeyup="validar_campo_evento(\'elugar_evento\',\'#evalidar_lugar_evento\')">
                                       <label for="lugar_evento">Lugar</label>
                                       <div class="red-text text-accent-3" id="evalidar_lugar_evento"></div>
                                     </div>
-                                    <div class="input-field col s10">
+                                </div>
+                            
+                                
+                                <div class="row">
+                                    <div class="input-field col s6">
                                       <i class="material-icons prefix">description</i>
                                       <input  type="text" class="validate ubuntu-text" name="edescripcion_evento" required id="edescripcion_evento" value="' . $row['descripcion'] . '" required onkeyup="validar_campo_evento(\'edescripcion_evento\',\'#evalidar_descripcion_evento\')">
                                       <label for="descripcion_evento">Descripción</label>
                                       <div class="red-text text-accent-3" id="evalidar_descripcion_evento"></div>
                                     </div>
+                                    <div class="input-field col s6">
+                                      <i class="material-icons prefix">camera_alt</i>
+                                      <input  type="text" class="ubuntu-text" name="elink_facebook" id="elink_facebook" value="' . $row['link_facebook'] . '">
+                                      <label for="elink_facebook">Link a Álbum de Facebook</label>
+                                    </div>
                                 </div>
+                                
                                 
                                 <!--<form class="col s12" action="_registro_evento.php" method="post" enctype="multipart/form-data">-->
                                     <div class="row">

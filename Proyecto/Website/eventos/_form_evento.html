@@ -36,7 +36,7 @@ Este archivo es el el modal que tiene el form de agregar evento, lo incluyo en e
         <form class="col s12" action="_registro_evento.php" method="post" enctype="multipart/form-data">
 
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s4">
                     <i class="material-icons prefix">event</i>
                     <input type="text" class="validate ubuntu-text" name="nombre_evento" id="nombre_evento" class="ubuntu-text" required onkeyup="validar_campo_evento('nombre_evento','#validar_nombre_evento')">
                     <label for="nombre_evento">Nombre del evento</label>
@@ -50,23 +50,29 @@ Este archivo es el el modal que tiene el form de agregar evento, lo incluyo en e
                     <i class="material-icons prefix">access_time</i>
                     <input type="time" name="hora_evento" id="hora_evento"  required class="ubuntu-text">
                 </div>
-            </div>
-
-
-            <div class="row">
-                <div class="input-field col s2">
+                <div class="input-field col s4">
                     <i class="material-icons prefix">place</i>
                     <input type="text" class="validate ubuntu-text" name="lugar_evento" id="lugar_evento" required onkeyup="validar_campo_evento('lugar_evento','#validar_lugar_evento')">
                     <label for="lugar_evento">Lugar</label>
                     <div class="red-text text-accent-3" id="validar_lugar_evento">*Campo obligatorio</div>
                 </div>
-                <div class="input-field col s10">
+            </div>
+
+
+            <div class="row">
+                <div class="input-field col s6">
                     <i class="material-icons prefix">description</i>
                     <input type="text" class="validate ubuntu-text" name="descripcion_evento" id="descripcion_evento" required onkeyup="validar_campo_evento('descripcion_evento','#validar_descripcion_evento')">
                     <label for="descripcion_evento">Descripción</label>
                     <div class="red-text text-accent-3" id="validar_descripcion_evento">*Campo obligatorio</div>
                 </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">camera_alt</i>
+                    <input type="text" class="ubuntu-text" name="link_facebook" id="link_facebook">
+                    <label for="link_facebook">Link a Álbum de Facebook</label>
+                </div>
             </div>
+            
 
             <!--<form class="col s12" action="_registro_evento.php" method="post" enctype="multipart/form-data">-->
             <div class="row">
