@@ -30,6 +30,7 @@ if (isset($_POST["esubmit"])) {
     $_POST["hora_evento"] = htmlentities($_POST["hora_evento"]);
     $_POST["elugar_evento"] = htmlentities($_POST["elugar_evento"]);
     $_POST["edescripcion_evento"] = htmlentities($_POST["edescripcion_evento"]);
+    $_POST["elink_facebook"] = htmlentities($_POST["elink_facebook"]);
 
     //Aquí checo que se hayan llenado todos los campos y que no sólo estén vacíos
     if (isset($_POST["enombre_evento"])
@@ -51,7 +52,7 @@ if (isset($_POST["esubmit"])) {
                 
                 //editarEvento es una funcion de connection queries que hace un UPDATE en la tabla
                 //también checo que si haya un elemento con ese id haha
-                if (editarEvento($_POST["id_evento"], $_POST["enombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["elugar_evento"], $_POST["edescripcion_evento"], $_SESSION['link_imagen'])){
+                if (editarEvento($_POST["id_evento"], $_POST["enombre_evento"], $_POST["fecha_evento"], $_POST["hora_evento"], $_POST["elugar_evento"], $_POST["edescripcion_evento"], $_SESSION['link_imagen'], $_POST["elink_facebook"])){
                     
                     header_html();//recargo la pagina
                     sidenav_html();
