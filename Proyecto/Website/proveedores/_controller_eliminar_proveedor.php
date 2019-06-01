@@ -80,9 +80,9 @@
                     <div class="row">
         
                         <div class="col s12 m6">
-                            <button type="button" class="modal-close btn waves-effect waves-light modal-close">Cancelar
+                            <a href="" type="button" class="modal-close btn waves-effect waves-light modal-close">Cancelar
                                 <i class="material-icons right">highlight_off</i>
-                            </button>
+                            </a>
                         </div>
                         <div class="col s12 m6">
                             <a class="btn red" type="submit" name="action" href="_eliminar_proveedor.php?id='.$_GET['id'].'">Estoy
@@ -109,7 +109,12 @@
     
   
     footer_html();
-    echo    '<script type="text/javascript" src="ajax_proveedor.js"></script>
+    echo    '
+
+            <script type="text/javascript" src="ajax_proveedor.js"></script>
+            <script type="text/javascript" src="validaciones_registrar.js"></script>
+            <script type="text/javascript" src="validaciones_editar.js"></script>
+            <script type="text/javascript" src="ajax.js"></script>
             ';
             /*
                 <script type="text/javascript" src="validaciones_registrar.js"></script>

@@ -60,7 +60,7 @@ if (isset($_SESSION["usuario"]) && $_SESSION['cinco'] == 1) {
 
 
 	    footer_html();
-
+	    header("location:../proveedores/registrar_proveedor.php");
 	}else {
 	    header("location:../login/_login_vista.php");
 
