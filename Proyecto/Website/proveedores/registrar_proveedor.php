@@ -43,44 +43,44 @@ if (isset($_POST["submit"])) {
         if(strlen($_POST["rfc"])<10 || (preg_match('/[^A-Za-z0-9]/', $_POST["rfc"])) || 
             !(preg_match('/[A-Za-z]/', $_POST["rfc"])) || !(preg_match('/[0-9]/', $_POST["rfc"]))){
             $flag = false;
-            echo "rfc invalido";
+            //echo "rfc invalido";
         }
         
         //ALIAS DEBE SER A LO MUCHO 20, LETRAS Y NUMEROS, SIN CARACTERES ESPECIALES
         if(!(preg_match('/[áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/',$_POST['alias']))){
-           	echo "<h1>Todo bien, hasta con acentos</h1>";
+           	//echo "<h1>Todo bien, hasta con acentos</h1>";
             $flag = false;
         }
 
         //RAZON A LO MUCHO 30, MISMO QUE ALIAS
      
         if(!(preg_match('/[áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/',$_POST['razon_social']))){
-            echo "<h1>Todo bien, hasta con acentos</h1>";
+            //echo "<h1>Todo bien, hasta con acentos</h1>";
             $flag = false;
         }
        
         //NOMBRE CONTACTO DE 40, LETRAS
         if(!(preg_match('/[A-Za-záéíóúüñÑÁÉÍÓÚü.\s]/',$_POST['nombre_contacto']))){
             $flag = false;
-            echo "nombre invalido";
+            //echo "nombre invalido";
         }
 
         //TELEFONO A LO MUCHO 20, NUMEROS, GUIONES Y ESPACIOS
         if(preg_match('/[^0-9-\s]/', $_POST["telefono_proveedor"])){
             $flag = false;
-            echo "telefono malo";
+            //echo "telefono malo";
         }
 
         //BANCO A LO MUCHO 40, SOLO NO CARACTERES ESPECIALES, MISMO QUE ALIAS
         if(!(preg_match('/[áéíóúüñÑÁÉÍÓÚüA-Za-z0-9.\s]/',$_POST['banco']))){
-            echo "banco invalido";
+            //echo "banco invalido";
             $flag = false;
         }
 
         //CUENTA DE 20, SOLO NUMEROS
         if(strlen($_POST["cuenta_bancaria"])<18|| !(is_numeric($_POST['cuenta_bancaria']))){
             $flag = false;
-            echo "cuenta invalido";
+           // echo "cuenta invalido";
 
             
         }
