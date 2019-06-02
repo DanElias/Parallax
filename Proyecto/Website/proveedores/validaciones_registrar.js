@@ -1,13 +1,4 @@
-/*
-document.getElementById("rfc").onkeyup =  validar_rfc;
-document.getElementById("alias").onkeyup =  validar_alias;
-document.getElementById("razon_social").onkeyup =  validar_razon;
-document.getElementById("nombre_contacto").onkeyup =  validar_nombre;
-document.getElementById("telefono_proveedor").onkeyup =  validar_telefono;
-document.getElementById("banco").onkeyup =  validar_banco;
-document.getElementById("cuenta_bancaria").onkeyup =  validar_cuenta;
-document.getElementById("guardar_proveedor").onclick =  validar_form;
-*/
+
 
 var flag_rfc = true;
 var flag_alias = true;

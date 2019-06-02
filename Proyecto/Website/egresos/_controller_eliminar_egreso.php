@@ -5,7 +5,13 @@ require_once("_util_egreso.php");// utiliza el util de eventos para recargar la 
 
 session_start(); //para poder utilizar session
 
-$_GET['id'] = htmlentities($_GET['id']);
+
+$_GET['folio'] = htmlentities($_GET['folio']);
+//echo $_GET['folio'];
+//$_POST['hola'] = htmlentities($_POST['hola']);
+//echo $_POST['hola'];
+
+
 
 header_html();
 sidenav_html();
@@ -39,9 +45,10 @@ modal_informacion_egreso_html();
                             </button>
                         </div>
                         <div class="col s12 m6">
-                            <a class="btn red" type="submit" name="action" href="_eliminar_egreso.php?id='.$_GET['id'].'">Estoy
+                              <a class="btn red" type="submit" name="action" href="_eliminar_egreso.php?id='.$_GET['folio'].'">Estoy
                                 seguro de Eliminar<i class="material-icons right">check_circle_outline</i>
                             </a>
+                        </a>
                         </div>
                     </div>
                 </div>
@@ -63,11 +70,12 @@ modal_informacion_egreso_html();
     
     footer_html();
     
-    echo'<script type="text/javascript" src="ajax_egreso.js"></script> 
-        ';
-    //<script type="text/javascript" src="ajax.js"></script>
-         //<script type="text/javascript" src="validaciones.js"></script>
-         //<script type="text/javascript" src="validaciones_editar.js"></script>
+    echo'
+
+    <script type="text/javascript" src="ajax_egreso.js"></script> 
+    	
+        <script type="text/javascript" src="validaciones.js"></script>
+        <script type="text/javascript" src="validaciones_editar.js"></script>';
 
 
 ?>

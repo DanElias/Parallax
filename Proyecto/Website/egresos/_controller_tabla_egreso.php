@@ -32,13 +32,15 @@ if (mysqli_num_rows($result) > 0) {
                         </a>
                     </td>';
         $query_table .= '<td>
-                        <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable" href="_controller_eliminar_egreso.php?id=' . $row['folio_factura'] . '">
+                       <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable"  href="_controller_eliminar_egreso.php?folio='.$row['folio_factura'].'">
                             <i class="material-icons">delete</i>
                         </a>
-                    </td>';
+                    </td>';     
         $query_table .= "</tr>";
+       
     }
 
+	
     echo '
         <div class="wrapper">
              
@@ -84,7 +86,7 @@ if (mysqli_num_rows($result) > 0) {
             
             </div><!--div del wrapper que empieza después del sidenav-->';
 
-} else { // si no hay eventos registrados en la tabla
+} else { 
      echo ' <div class="wrapper">
                 <div class="section white  my_section">
                     <div class="table-wrapper responsive-table new_data_table">

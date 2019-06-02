@@ -1,15 +1,4 @@
 
-/*
-document.getElementById("folio_factura").onkeyup =  validar_folio;
-document.getElementById("concepto").onkeyup =  validar_concepto;
-document.getElementById("importe").onkeyup =  validar_importe;
-document.getElementById("cuenta_bancaria_egreso").onkeyup =  validar_cuenta_bancaria;
-document.getElementById("drop_proveedor").onchange =  validar_drop_proveedor;
-document.getElementById("drop_cuenta").onchange =  validar_drop_cuenta;
-//LOS DROPS SE VALIDAN CUANDO LE DAS SUBMIT
-document.getElementById("observaciones").onkeyup =  validar_observaciones;
-document.getElementById("guardar_egreso").onclick =  validar_form;*/
-
 
 var flag_folio = true;
 var flag_concepto = true;
