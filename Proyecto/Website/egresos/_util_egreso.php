@@ -15,10 +15,6 @@ function footer_html()
     include("../views/_footer_admin.html");
 }
 
-function form_eliminar_beneficiarios_html()
-{
-    include("_form_eliminar_beneficiarios.html");
-}
 
 function body_egreso()
 {

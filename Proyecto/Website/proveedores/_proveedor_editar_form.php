@@ -1,4 +1,4 @@
-F<?php
+<?php
 
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
   require_once("_util_proveedor.php");
