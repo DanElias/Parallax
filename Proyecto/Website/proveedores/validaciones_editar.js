@@ -139,6 +139,14 @@ function validar_cuenta(){
 }
 
 function validar_form(){
+  /*
+  console.log(flag_rfc);
+  console.log(flag_alias); 
+  console.log(flag_razon); 
+  console.log(flag_nombre);
+  console.log(flag_telefono);
+  console.log(flag_banco); 
+  console.log(flag_cuenta);*/
 	
   	if(!(flag_rfc && flag_alias && flag_razon && flag_nombre && flag_telefono && flag_banco && flag_cuenta)){
         return false;

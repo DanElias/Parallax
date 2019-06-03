@@ -105,7 +105,7 @@
                                   </div>
                                   <div class="input-field col s3">
                                       <i class="material-icons prefix">library_books</i>
-                                      <input  type="text" class="validate" id="concepto2" name="concepto2" required value="'.$concepto.'" maxlength="30" onkeyup="validar_concepto()">
+                                      <input  type="text" class="validate" id="concepto2" name="concepto2" required value="'.$concepto.'" maxlength="50" onkeyup="validar_concepto()">
                                       <label for="icon_prefix">Concepto</label>
                                       <span id="error_concepto2"></span> 
                                   </div>

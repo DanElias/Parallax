@@ -40,7 +40,7 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="modal-content my_modal_content">
                             <p>Aquí puede editar un nuevo Proveedor</p>
 
-                            <form class="col s12" action="_registro_editar_proveedor.php" method="post" enctype="multipart/form-data" onsubmit=" return validar_form();">
+                            <form class="col s12" action="_registro_editar_proveedor.php" method="post" enctype="multipart/form-data" onsubmit="return validar_form();">
                                <div class="row">
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">face</i>
@@ -51,14 +51,14 @@ if (mysqli_num_rows($result) > 0) {
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">attach_money</i>
-                                        <input maxlength="20" type="text" class="validate ubuntu-text" id="alias_editar" name="alias_editar" required value="'.$row['alias'].'" onkeyup="validar_alias()">
+                                        <input maxlength="100" type="text" class="validate ubuntu-text" id="alias_editar" name="alias_editar" required value="'.$row['alias'].'" onkeyup="validar_alias()">
                                         <label for="alias_editar">Alias</label>
                                         <span id="error_alias_editar"></span>
                                     </div>
 
                                     <div class="input-field col s4">
                                         <i class="material-icons prefix">home</i>
-                                        <input maxlength="30" type="text" class="validate ubuntu-text" name="razon_social_editar" id="razon_social_editar" required value="'.$row['razon_social'].'" onkeyup="validar_razon()">
+                                        <input maxlength="100" type="text" class="validate ubuntu-text" name="razon_social_editar" id="razon_social_editar" required value="'.$row['razon_social'].'" onkeyup="validar_razon()">
                                         <label for="razon_social_editar">Razon social</label>
                                         <span id="error_razon_editar"></span>
                                     </div>
@@ -67,7 +67,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">domain</i>
-                                        <input maxlength="40" type="text" class="validate ubuntu-text" name="nombre_contacto_editar" id="nombre_contacto_editar" required value="'.$row['nombre_contacto'].'" onkeyup="validar_nombre()">
+                                        <input maxlength="100" type="text" class="validate ubuntu-text" name="nombre_contacto_editar" id="nombre_contacto_editar" required value="'.$row['nombre_contacto'].'" onkeyup="validar_nombre()">
                                         <label for="nombre_contacto_editar">Nombre contacto</label>
                                         <span id="error_nombre_editar"></span>
                                     </div>
@@ -84,7 +84,7 @@ if (mysqli_num_rows($result) > 0) {
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">account_balance</i>
-                                        <input maxlength="40" type="text" class="validate ubuntu-text" id="banco_editar" name="banco_editar" required value="'.$row['banco'].'" onkeyup="validar_banco()">
+                                        <input maxlength="100" type="text" class="validate ubuntu-text" id="banco_editar" name="banco_editar" required value="'.$row['banco'].'" onkeyup="validar_banco()">
                                         <label for="banco_editar">Banco</label>
                                         <span id="error_banco_editar"></span>
                                     </div>
