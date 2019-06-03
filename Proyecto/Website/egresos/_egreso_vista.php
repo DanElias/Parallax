@@ -12,6 +12,8 @@ if (isset($_SESSION["usuario"])) {
         body_egreso();
         controller_tabla_egreso_php();
         form_egreso_html();
+        drop_proveedor();
+        drop_cuenta();
         modal_informacion_egreso_html();
 
         if($_SESSION['eliminar_egreso_exito'] == 1){
@@ -47,7 +49,9 @@ if (isset($_SESSION["usuario"])) {
         }
 
 
-        echo '	<script type="text/javascript" src="ajax_egreso.js"></script>
+        echo '	
+                <script type="text/javascript" src="../js/ajax.js"></script>
+                <script type="text/javascript" src="ajax_egreso.js"></script>
                 <script type="text/javascript" src="validaciones.js"></script>
                 <script type="text/javascript" src="validaciones_editar.js"></script>';
 

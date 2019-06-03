@@ -64,7 +64,14 @@
                                     <span id="error_cuenta_bancaria_egreso"></span>
 					             
                                 </div>
-                                 
+                                  <?php if(isset($drop_proveedores)): ?>
+                                     <?=$drop_proveedores?> 
+                                     echo                   
+                                  <?php endif ?>
+                
+                                  <?php if(isset($drop_cuenta)): ?>
+                                    <?=$drop_cuenta?>                   
+                                  <?php endif ?>
                                 
                                	<div class="input-field col s3" id="drop_proveedor">
                                 </div>

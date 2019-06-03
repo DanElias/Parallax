@@ -12,6 +12,6 @@
         }
     }
    $drop_proveedores.="</select><label for='selected_proveedor' style='font-size:0.8em'>Proveedor</label><span id='error_proveedor_egreso'></span>";
-   echo $drop_proveedores;
+   //echo $drop_proveedores;
     
 ?>
