@@ -79,10 +79,10 @@ function validar_drop_proveedorR(){
 }
 
 
-function validar_drop_cuenta(){
+function validar_drop_cuentaR(){
     var cuenta = $('#selected_cuenta').val();
     if(cuenta=='0'){
-        $("#error_cuenta_egreso").html('*Debes seleccionar una cuenta').css("color","red");
+        $("#error_cuenta_egreso").html('*Debes seleccionar una cuenta contable').css("color","red");
         $("#error_cuenta_egreso").show();
         flag_drop_cuenta = false;
     }else{

@@ -25,15 +25,6 @@ function controller_tabla_egreso_php(){
     include('_controller_tabla_egreso.php');
 }
 
-function drop_proveedor()
-{
-    include("mostrar_proveedor.php");
-}
-
-function drop_cuenta()
-{
-    include("mostrar_cuentacontable.php");
-}
 
 function form_egreso_html()
 {

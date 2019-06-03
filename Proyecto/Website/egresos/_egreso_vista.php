@@ -12,8 +12,6 @@ if (isset($_SESSION["usuario"])) {
         body_egreso();
         controller_tabla_egreso_php();
         form_egreso_html();
-        drop_proveedor();
-        drop_cuenta();
         modal_informacion_egreso_html();
 
         if($_SESSION['eliminar_egreso_exito'] == 1){

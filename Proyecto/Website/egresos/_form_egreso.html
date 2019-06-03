@@ -66,21 +66,15 @@
                                 </div>
 
 
-                                  <?php if(isset($drop_proveedores)): ?>
-                                     <?=$drop_proveedores?>                   
-                                  <?php endif ?>
-                
-                                  <?php if(isset($drop_cuenta)): ?>
-                                    <?=$drop_cuenta?>                   
-                                  <?php endif ?>
-                                <!--
-                               	<div class="input-field col s3" id="drop_proveedor">
-                                </div>
-                                
-                                <label for="drop_proveedor">Proveedor</label>   
-                                <label class="input-field col s3" for="drop_cuenta ">Cuenta Contable</label>
-                                
-                                <div class="input-field col s3" id="drop_cuenta"></div>-->
+                                <?php if(isset($_SESSION['drop_proveedores'])): ?>
+				                     <?=$_SESSION['drop_proveedores']?>                   
+				                 <?php endif ?>
+
+				                <?php if(isset($_SESSION['drop_cuenta'])): ?>
+				                    <?=$_SESSION['drop_cuenta']?>                   
+				                <?php endif ?>
+                                  
+                               
                             
                             </div>
                             <div></div>

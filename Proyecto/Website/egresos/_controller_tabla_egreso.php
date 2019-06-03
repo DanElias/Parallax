@@ -3,9 +3,36 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
 require_once("../basesdedatos/_conection_queries_db.php");
 //require_once("./_util_eventos.php");
-
+session_start();
 $result = obtenerEgresos();
 $query_table = "";
+
+
+ //obtener el drop de proveedor y seleccionar el del egreso
+  $proveedores = obtenerProveedor();
+  $drop_proveedores = "<div class='input-field col s3'><select required name='rfc' id='selected_proveedor' onchange='validar_drop_proveedorR()'><option value='0'>Selecciona el proveedor</option>";
+   
+  if(mysqli_num_rows($proveedores)>0){
+        while($row = mysqli_fetch_assoc($proveedores)){
+            $drop_proveedores.="<option value='".$row['rfc']."'>".$row['razon_social']."</option>"; 
+        }
+  }
+  
+  $drop_proveedores.="</select><label for='selected_proveedor' style='font-size:0.8em'>Proveedor</label><span id='error_proveedor_egreso'></span></div>";
+  $_SESSION["drop_proveedores"] = $drop_proveedores;
+  //echo $drop_proveedores;
+  
+  //obtener el drop de cuenta contable y seleccionar el del egresp
+  $cuenta = obtenerCuentas();
+  $drop_cuenta ="<div class='input-field col s3'><select required name='id_cuentacontable' id='selected_cuenta' onchange='validar_drop_cuentaR()'><option value='0'>Selecciona la cuenta contable</option>";
+  if(mysqli_num_rows($cuenta)>0){
+        while($row = mysqli_fetch_assoc($cuenta)){
+            $drop_cuenta.="<option value='".$row['id_cuentacontable']."'>".$row['nombre']."</option>" ;  
+        }
+   }
+
+  $drop_cuenta.="</select><label style= 'font-size:0.8em'>Cuenta contable</label><span id='error_cuenta_egreso'></span></div>";
+  $_SESSION["drop_cuenta"] = $drop_cuenta;
 
 if (mysqli_num_rows($result) > 0) {
     //output data of each row;

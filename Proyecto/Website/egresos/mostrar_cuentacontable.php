@@ -13,6 +13,6 @@
         }
     }
    $drop_cuenta.="</select><label style= 'font-size:0.8em'>Cuenta contable</label><span id='error_cuenta_egreso'></span>";
-   echo $drop_cuenta;
+   //echo $drop_cuenta;
     
 ?>
