@@ -47,7 +47,7 @@ session_start();
   		window.location="https://www.marianasala.org/Website/admin/_admin_vista.php";
   		</script>';*/
               }
-                header("location:../admin/_admin_vista.php");
+                header("Location: ../admin/_admin_vista.php");
           } else {
               $_SESSION['error_bd_login']=0;
               $error = "El usuario aparece más de una vez, contacte al administradorS";
