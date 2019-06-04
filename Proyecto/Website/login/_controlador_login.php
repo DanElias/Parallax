@@ -7,23 +7,22 @@ session_start();
 
  if (isset($_POST["submit"])){
 
-    $_POST['email'] = htmlentities($_POST['email']);
-    $_POST['password'] = htmlentities($_POST['password']);
+
 
 
     if (isset($_POST["email"]) && isset($_POST["password"])) {
 
 
       //Datos que va a tomar, validar con htmltiteies
-      $_POST['email'] = htmlentities($_POST['email']);
-      $_POST['password'] = htmlentities($_POST['password']);
+      $email = htmlentities($_POST['email']);
+      $pass = htmlentities($_POST['password']);
 
       $_SESSION['error_bd_login']=1;
 
-      $usuario = login($_POST["email"], $_POST["password"]);
+      $usuario = login($email, $pass);
 
 
-      if (autentificarse(($_POST["email"]), ($_POST["password"]))) {
+      if (autentificarse($email, $pass)) {
 
           //Te manda a location de admin
           //header("location:../admin/_admin_vista.php");
