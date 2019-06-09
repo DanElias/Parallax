@@ -2,12 +2,11 @@
 
 require_once("../basesdedatos/_conection_queries_db.php");
 
-$rfc;
-$id_cuenta;
-$observaciones;
+
 $_POST['id'] = htmlentities($_POST['id']);
+
 if (isset($_POST['id']) && $_POST['id'] != "") {
-    $result = obtener_egreso_folio($_POST['id']);
+    $result = obtener_egreso_id($_POST['id']);
     $cards = "";
 
     if (mysqli_num_rows($result) > 0) {

@@ -3,7 +3,7 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
 require_once("../basesdedatos/_conection_queries_db.php");
 //require_once("./_util_eventos.php");
-session_start();
+//session_start();
 $result = obtenerEgresos();
 $query_table = "";
 
@@ -49,17 +49,17 @@ if (mysqli_num_rows($result) > 0) {
         //$query_table .= '<td style="display:none;">' . $row["id_cuentacontable"] . '</td>'; 
         $query_table .= '<td>
                             <a class="modal-trigger" href="javascript:void(0);"                       
-                                onclick="mostrar_informacion_egreso(\''.$row['folio_factura'].'\')">Mas información
+                                onclick="mostrar_informacion_egreso(\''.$row['id_egreso'].'\')">Mas información
                             </a>
                         </td>';
         $query_table .=
             '<td>
-                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['folio_factura'].'\',\''.$row['rfc'].'\',\''.$row['id_cuentacontable'].'\')" id="edit_button">
+                        <a class="btn btn-medium waves-effect waves-light modal-trigger amber darken-1 accent-3 hoverable" href="javascript:void(0);" onclick="mostrar_editar_egreso(\''.$row['id_egreso'].'\')" id="edit_button">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>';
         $query_table .= '<td>
-                       <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable"  href="_controller_eliminar_egreso.php?folio='.$row['folio_factura'].'">
+                       <a class="btn btn-medium waves-effect waves-light red accent-3 hoverable"  href="_controller_eliminar_egreso.php?id_egreso='.$row['id_egreso'].'">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>';     

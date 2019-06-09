@@ -6,11 +6,7 @@ require_once("_util_egreso.php");// utiliza el util de eventos para recargar la 
 session_start(); //para poder utilizar session
 
 
-$_GET['folio'] = htmlentities($_GET['folio']);
-//echo $_GET['folio'];
-//$_POST['hola'] = htmlentities($_POST['hola']);
-//echo $_POST['hola'];
-
+$_GET['id_egreso'] = htmlentities($_GET['id_egreso']);
 
 
 header_html();
@@ -45,7 +41,7 @@ modal_informacion_egreso_html();
                             </button>
                         </div>
                         <div class="col s12 m6">
-                              <a class="btn red" type="submit" name="action" href="_eliminar_egreso.php?id='.$_GET['folio'].'">Estoy
+                              <a class="btn red" type="submit" name="action" href="_eliminar_egreso.php?id_egreso='.$_GET['id_egreso'].'">Estoy
                                 seguro de Eliminar<i class="material-icons right">check_circle_outline</i>
                             </a>
                         </a>

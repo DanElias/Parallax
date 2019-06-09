@@ -4,16 +4,17 @@
     require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y 
 
     session_start();
-    
+
+
+
     $_SESSION['editar_egreso_exito'] = 0;
     $_SESSION['editar_egreso_error'] = 0;
     
-
-
+   
     
     if (isset($_POST["submit2"])){
 
-        $_SESSION['folio_anterior'] = htmlentities($_SESSION['folio_anterior']);
+
         $_POST["folio_factura2"] = htmlentities($_POST["folio_factura2"]);
         $_POST["concepto2"] = htmlentities($_POST["concepto2"]);
         $_POST["importe2"] = htmlentities($_POST["importe2"]);
@@ -42,6 +43,9 @@
        
 
         ){
+
+        	//echo "<h1>ID QUE LLEGO DEL FORM".$_POST["idEgreso"]."</h1>";
+            //$result =  obtener_id_de_egreso($_POST["folio_factura2"],$_POST["concepto2"],$_POST["importe2"],$_POST["fecha_egreso2"]); 
 
             $flag = true;
 
@@ -83,6 +87,17 @@
                 $flag = false;
                 //echo "<br>ID MALO";
             }
+            //echo "<br>".$id_egreso;
+            /*
+            echo "<br>".$_POST["folio_factura2"]; 
+            echo "<br>".$_POST["concepto2"]; 
+            echo "<br>".$_POST["importe2"]; 
+            echo "<br>".$_POST["fecha_egreso2"]; 
+            echo "<br>".$_POST["cuenta_bancaria_egreso2"]; 
+            echo "<br>".$_POST["rfc2"]; 
+            echo "<br>".$_POST["id_cuentacontable2"]; 
+            echo "<br>".$_POST["observaciones2"];
+            $_POST["idEgreso"]*/ 
 
             if(!$flag){
                
@@ -97,7 +112,9 @@
 
               // echo "<br>NO SE MANDARA EL REGISTRO";
             }else{
-                $editar = editar_egreso($_POST["folio_factura2"],$_SESSION['folio_anterior'],$_POST["concepto2"],$_POST["importe2"],$_POST["fecha_egreso2"], $_POST["observaciones2"], $_POST["cuenta_bancaria_egreso2"], $_POST["rfc2"], $_POST["id_cuentacontable2"]);
+
+                
+                $editar = editar_egreso($_POST["idEgreso"],$_POST["folio_factura2"],$_POST["concepto2"],$_POST["importe2"],$_POST["fecha_egreso2"], $_POST["observaciones2"], $_POST["cuenta_bancaria_egreso2"], $_POST["rfc2"], $_POST["id_cuentacontable2"]);
 
                if($editar){
                     //echo "Se mando el registro";
@@ -122,7 +139,7 @@
                     }
                 }
 
-            }//llave del else antes de editar   
+            }    //llave del else antes de editar   
            
         }
     }

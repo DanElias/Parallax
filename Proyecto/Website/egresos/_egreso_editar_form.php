@@ -5,14 +5,17 @@
   require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
   session_start();
   //$_SESSION['id_proveedor'] = $_POST['id'];
+  //$_SESSION['id_egreso'] = $_POST['id'];
   $_POST['id'] = htmlentities($_POST['id']);
-  //echo $_POST['id'];
+  //$_SESSION['id'] = $_POST['id'];
+  //$_POST['nueva'] = $_POST['id'];
+  
 
   //obtener valires del egreso editado
-  $result = obtener_egreso_folio($_POST['id']);
+  $result = obtener_egreso_id($_POST['id']);
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $_SESSION['folio_anterior'] = $row['folio_factura'];
+        $folio_factura = $row['folio_factura'];
         $concepto = $row['concepto'];
         $importe = $row['importe'];
         $fecha = $row['fecha'];
@@ -23,6 +26,7 @@
 
       }
   }
+
 
 
 
@@ -98,7 +102,7 @@
                               <div class="row">
                                   <div class="input-field col s4">
                                       <i class="material-icons prefix">clear_all</i>
-                                      <input  type="text" class="validate" id="folio_factura2" name="folio_factura2" required value="'.$_SESSION['folio_anterior'].'" maxlength="30" onkeyup="validar_folio()">
+                                      <input  type="text" class="validate" id="folio_factura2" name="folio_factura2" required value="'.$folio_factura.'" maxlength="30" onkeyup="validar_folio()">
                                       <label for="folio_factura2">Folio Factura</label>
                                       <span id="error_folio2"></span> 
                                       
@@ -143,6 +147,10 @@
                                       <span id="error_observaciones2"></span> 
 
                                   </div>
+                                    <div class="input-field col s6">
+                                      <input style="display: none;" type="text" name="idEgreso" value="'.$_POST['id'].'">
+                                  </div>
+
                               </div>
 
                               <div class="my_modal_buttons">

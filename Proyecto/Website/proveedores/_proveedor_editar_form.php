@@ -3,7 +3,7 @@
 // en este php mando llamar mis funciones de query y conexiones con la base de datos
   require_once("_util_proveedor.php");
   require_once("../basesdedatos/_conection_queries_db.php"); //Accedo a mi archivo de conection y queries con la base de datos
-  session_start();
+  //session_start();
   $_SESSION['id_proveedor'] = $_POST['id'];
   $_POST['id'] = htmlentities($_POST['id']);
   $result = obtener_proveedor_id($_POST['id']);
